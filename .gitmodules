@@ -1,0 +1,6 @@
+[submodule "solarischeck"]
+	path = solarischeck
+	url = git@github.com:r-hub/solarischeck.git
+[submodule "r-debug"]
+	path = r-debug
+	url = git@github.com:wch/r-debug.git
