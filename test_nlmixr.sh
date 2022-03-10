@@ -21,6 +21,8 @@ for current_dir in ${packages[@]}; do
     cd $current_dir
     git checkout main
     git pull
+    # Clean up old files
+    git clean -d -x -f
     R -e "devtools::install_local(force=TRUE)"
     if [[ $? -ne 0 ]] ; then
       echo Error installing ${current_dir}
