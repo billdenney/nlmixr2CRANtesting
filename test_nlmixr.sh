@@ -23,13 +23,19 @@ for current_dir in ${packages[@]}; do
     git pull
     # Clean up old files
     git clean -d -x -f
-    R -e "devtools::install_local(force=TRUE)"
+    # The 2>&1 redirects stderr to stdout
+    # The tee copies stdout to a file and stdout
+    R -e "devtools::install_local(force=TRUE)" 2>&1 | \
+	tee ../outputs/${current_dir}_install.txt
     if [[ $? -ne 0 ]] ; then
       echo Error installing ${current_dir}
       exit 1
     fi
     if [ -d tests/testthat ]; then
-      R -e "devtools::load_all();devtools::test()"
+      # The 2>&1 redirects stderr to stdout
+      # The tee copies stdout to a file and stdout
+      R -e "devtools::load_all();devtools::test()" 2>&1 | \
+	tee ../outputs/${current_dir}_test.txt
       if [[ $? -ne 0 ]] ; then
         echo Crash while testing ${current_dir}
         echo Try R -g gdb then r at the prompt

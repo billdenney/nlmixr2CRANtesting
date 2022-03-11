@@ -1,0 +1,1730 @@
+
+R version 4.1.2 (2021-11-01) -- "Bird Hippie"
+Copyright (C) 2021 The R Foundation for Statistical Computing
+Platform: x86_64-pc-linux-gnu (64-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+  Natural language support but running in an English locale
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+> devtools::load_all();devtools::test()
+ℹ Loading nlmixr2est
+Registered S3 methods overwritten by 'RcppArmadillo':
+  method               from     
+  predict.fastLm       RcppEigen
+  print.fastLm         RcppEigen
+  summary.fastLm       RcppEigen
+  print.summary.fastLm RcppEigen
+Exports from /home/bill/GitHub/nlmixr2CRANtesting/nlmixr2est/src/cholse.cpp:
+   NumericMatrix cholSE_(NumericMatrix A, double tol)
+
+Exports from /home/bill/GitHub/nlmixr2CRANtesting/nlmixr2est/src/expandNlme.cpp:
+   List nlmixrExpandFdParNlme_(CharacterVector state, CharacterVector vars)
+
+Exports from /home/bill/GitHub/nlmixr2CRANtesting/nlmixr2est/src/inner.cpp:
+   void freeFocei()
+   NumericVector foceiInnerLp(NumericVector eta, int id = 1)
+   double likInner(NumericVector eta, int id = 1)
+   double foceiLik(NumericVector theta)
+   double foceiOfv(NumericVector theta)
+   NumericVector foceiNumericGrad(NumericVector theta)
+   NumericVector foceiSetup_(const RObject& obj, const RObject& data, NumericVector theta, Nullable<LogicalVector> thetaFixed = R_NilValue, Nullable<LogicalVector> skipCov = R_NilValue, RObject rxInv = R_NilValue, Nullable<NumericVector> lower = R_NilValue, Nullable<NumericVector> upper = R_NilValue, Nullable<NumericMatrix> etaMat = R_NilValue, Nullable<List> control = R_NilValue)
+   double foceiOuterF(NumericVector& theta)
+   NumericVector foceiOuterG(NumericVector& theta)
+   Environment foceiOuter(Environment e)
+   List nlmixr2Gill83_(Function what, NumericVector args, Environment envir, LogicalVector which, double gillRtol, int gillK = 10, double gillStep = 2, double gillFtol = 0, bool optGillF = true)
+   double nlmixr2Eval_(NumericVector theta, std::string md5)
+   RObject nlmixr2Unscaled_(NumericVector theta, std::string md5)
+   NumericVector nlmixr2Grad_(NumericVector theta, std::string md5)
+   RObject nlmixr2ParHist_(std::string md5)
+   RObject nlmixr2Hess_(RObject thetaT, RObject fT, RObject e, RObject gillInfoT)
+   NumericMatrix sqrtm(NumericMatrix m)
+   NumericMatrix foceiCalcCov(Environment e)
+   Environment foceiFitCpp_(Environment e)
+   NumericVector boxCox_(NumericVector x = 1, double lambda = 1, int yj = 0)
+   NumericVector iBoxCox_(NumericVector x = 1, double lambda = 1, int yj = 0)
+
+Exports from /home/bill/GitHub/nlmixr2CRANtesting/nlmixr2est/src/ode_cmt1.cpp:
+   SEXP lin_cmt_stan(Eigen::Map<Eigen::VectorXd> obs_time, Eigen::Map<Eigen::VectorXd> dose_time, Eigen::Map<Eigen::VectorXd> dose, Eigen::Map<Eigen::VectorXd> Tinf, Eigen::Map<Eigen::VectorXd> params, SEXP oralSEXP, SEXP infusionSEXP, SEXP ncmtSEXP, SEXP parameterizationSEXP)
+   SEXP llik_binomial_c(Eigen::Map<Eigen::VectorXd> y, Eigen::Map<Eigen::VectorXd> N, Eigen::Map<Eigen::VectorXd> params)
+   SEXP llik_poisson(Eigen::Map<Eigen::VectorXd> y, Eigen::Map<Eigen::VectorXd> params)
+   SEXP llik_normal(Eigen::Map<Eigen::VectorXd> y, Eigen::Map<Eigen::VectorXd> params)
+   SEXP llik_betabinomial(Eigen::Map<Eigen::VectorXd> y, Eigen::Map<Eigen::VectorXd> N, Eigen::Map<Eigen::VectorXd> params)
+   SEXP llik_student_t(Eigen::Map<Eigen::VectorXd> y, Eigen::Map<Eigen::VectorXd> params)
+   SEXP llik_beta(Eigen::Map<Eigen::VectorXd> y, Eigen::Map<Eigen::VectorXd> params)
+   SEXP llik_neg_binomial(Eigen::Map<Eigen::VectorXd> y, Eigen::Map<Eigen::VectorXd> params)
+
+Exports from /home/bill/GitHub/nlmixr2CRANtesting/nlmixr2est/src/resid.cpp:
+   RObject augPredTrans(NumericVector& pred, NumericVector& ipred, NumericVector& lambda, RObject& yjIn, NumericVector& low, NumericVector& hi)
+
+Exports from /home/bill/GitHub/nlmixr2CRANtesting/nlmixr2est/src/saem.cpp:
+   SEXP saem_do_pred(SEXP in_phi, SEXP in_evt, SEXP in_opt)
+   SEXP saem_fit(SEXP xSEXP)
+
+Exports from /home/bill/GitHub/nlmixr2CRANtesting/nlmixr2est/src/shrink.cpp:
+   List nlmixr2Parameters(NumericVector theta, DataFrame eta)
+
+/home/bill/GitHub/nlmixr2CRANtesting/nlmixr2est/src/RcppExports.cpp updated.
+/home/bill/GitHub/nlmixr2CRANtesting/nlmixr2est/R/RcppExports.R updated.
+/home/bill/GitHub/nlmixr2CRANtesting/nlmixr2est/inst/include/nlmixr2est_RcppExports.h updated.
+Re-compiling nlmixr2est
+  ─  installing *source* package ‘nlmixr2est’ ...
+   ** using staged installation
+     --------[begin src/Makevars]--------
+     # -*- mode: makefile-gmake -*-
+   ARMA=`"$(R_HOME)/bin$(R_ARCH_BIN)/Rscript" -e 'cat(file.path(find.package("RcppArmadillo"),"include"))'`
+   BH=`"$(R_HOME)/bin$(R_ARCH_BIN)/Rscript" -e 'cat(file.path(find.package("BH"),"include"))'`
+   RCPP=`"$(R_HOME)/bin$(R_ARCH_BIN)/Rscript" -e 'cat(file.path(find.package("Rcpp"),"include"))'`
+   EG=`"$(R_HOME)/bin$(R_ARCH_BIN)/Rscript" -e 'cat(file.path(find.package("RcppEigen"),"include"))'`
+   SH=`"$(R_HOME)/bin$(R_ARCH_BIN)/Rscript" -e 'cat(file.path(find.package("StanHeaders"),"include"))'`
+   
+   CXX_STD     = CXX14
+   CXX14STD = -std=gnu++14
+   
+   PKG_LIBS = $(LAPACK_LIBS) $(BLAS_LIBS) $(FLIBS) $(SHLIB_OPENMP_CXXFLAGS)
+   PKG_CXXFLAGS = -Id -I../inst/include -DBOOST_DISABLE_ASSERTS -DBOOST_NO_CXX11_STATIC_ASSERT -isystem"$(BH)" -isystem"$(EG)" -isystem"$(SH)" -isystem"$(RCPP)" -isystem"$(ARMA)"  $(SHLIB_OPENMP_CXXFLAGS)
+   SHLIB_LDFLAGS = $(SHLIB_CXXLDFLAGS) 
+   SHLIB_LD = $(SHLIB_CXXLD)
+   SOURCES_C = init.c rprintf.c merge3.c lbfgsR.c utilc.c
+   SOURCES_CPP = expandNlme.cpp saem.cpp inner.cpp npde.cpp shrink.cpp ires.cpp res.cpp cwres.cpp censResid.cpp cholse.cpp neldermead.cpp resid.cpp slice.cpp RcppExportMod.cpp ode_cmt1.cpp RcppExports.cpp
+   OBJECTS = $(SOURCES_CPP:.cpp=.o) $(SOURCES_C:.c=.o) 
+   
+   all: $(SHLIB)
+   $(SHLIB): $(OBJECTS)
+   
+   --------[end src/Makevars]--------
+     ** libs
+     g++ -std=gnu++14 -I"/usr/share/R/include" -DNDEBUG  -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/dparser/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/rxode2/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/RcppEigen/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/lbfgsb3c/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/Rcpp/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/BH/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/StanHeaders/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/RcppArmadillo/include'   -Id -I../inst/include -DBOOST_DISABLE_ASSERTS -DBOOST_NO_CXX11_STATIC_ASSERT -isystem"`"/usr/lib/R/bin/Rscript" -e 'cat(file.path(find.package("BH"),"include"))'`" -isystem"`"/usr/lib/R/bin/Rscript" -e 'cat(file.path(find.package("RcppEigen"),"include"))'`" -isystem"`"/usr/lib/R/bin/Rscript" -e 'cat(file.path(find.package("StanHeaders"),"include"))'`" -isystem"`"/usr/lib/R/bin/Rscript" -e 'cat(file.path(find.package("Rcpp"),"include"))'`" -isystem"`"/usr/lib/R/bin/Rscript" -e 'cat(file.path(find.package("RcppArmadillo"),"include"))'`"  -fopenmp -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-i2PIHO/r-base-4.1.2=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c expandNlme.cpp -o expandNlme.o
+     g++ -std=gnu++14 -I"/usr/share/R/include" -DNDEBUG  -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/dparser/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/rxode2/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/RcppEigen/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/lbfgsb3c/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/Rcpp/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/BH/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/StanHeaders/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/RcppArmadillo/include'   -Id -I../inst/include -DBOOST_DISABLE_ASSERTS -DBOOST_NO_CXX11_STATIC_ASSERT -isystem"`"/usr/lib/R/bin/Rscript" -e 'cat(file.path(find.package("BH"),"include"))'`" -isystem"`"/usr/lib/R/bin/Rscript" -e 'cat(file.path(find.package("RcppEigen"),"include"))'`" -isystem"`"/usr/lib/R/bin/Rscript" -e 'cat(file.path(find.package("StanHeaders"),"include"))'`" -isystem"`"/usr/lib/R/bin/Rscript" -e 'cat(file.path(find.package("Rcpp"),"include"))'`" -isystem"`"/usr/lib/R/bin/Rscript" -e 'cat(file.path(find.package("RcppArmadillo"),"include"))'`"  -fopenmp -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-i2PIHO/r-base-4.1.2=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c saem.cpp -o saem.o
+g++ -std=gnu++14 -I"/usr/share/R/include" -DNDEBUG  -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/dparser/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/rxode2/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/RcppEigen/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/lbfgsb3c/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/Rcpp/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/BH/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/StanHeaders/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/RcppArmadillo/include'   -Id -I../inst/include -DBOOST_DISABLE_ASSERTS -DBOOST_NO_CXX11_STATIC_ASSERT -isystem"`"/usr/lib/R/bin/Rscri     g++ -std=gnu++14 -I"/usr/share/R/include" -DNDEBUG  -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/dparser/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/rxode2/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/RcppEigen/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/lbfgsb3c/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/Rcpp/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/BH/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/StanHeaders/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/RcppArmadillo/include'   -Id -I../inst/include -DBOOST_DISABLE_ASSERTS -DBOOST_NO_CXX11_STATIC_ASSERT -isystem"`"/usr/lib/R/bin/Rscript" -e 'cat(file.path(find.package("BH"),"include"))'`" -isystem"`"/usr/lib/R/bin/Rscript" -e 'cat(file.path(find.package("RcppEigen"),"include"))'`" -isystem"`"/usr/lib/R/bin/Rscript" -e 'cat(file.path(find.package("StanHeaders"),"include"))'`" -isystem"`"/usr/lib/R/bin/Rscript" -e 'cat(file.path(find.package("Rcpp"),"include"))'`" -isystem"`"/usr/lib/R/bin/Rscript" -e 'cat(file.path(find.package("RcppArmadillo"),"include"))'`"  -fopenmp -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-i2PIHO/r-base-4.1.2=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c inner.cpp -o inner.o
+   g++ -std=gnu++14 -I"/usr/share/R/include" -DNDEBUG  -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/dparser/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/rxode2/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/RcppEigen/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/lbfgsb3c/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/Rcpp/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/BH/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/StanHeaders/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/RcppArmadillo/include'   -Id -I../inst/include -DBOOST_DISABLE_ASSERTS -DBOOST_NO_CXX11_STATIC_ASSERT -isystem"`"/usr/lib/R/bin/Rscript" -e 'cat(file.path(find.package("BH"),"include"))'`" -isystem"`"/usr/lib/R/bin/Rscript" -e 'cat(file.path(find.package("RcppEigen"),"include"))'`" -isystem"`"/usr/lib/R/bin/Rscript" -e 'cat(file.path(find.package("StanHeaders"),"include"))'`" -isystem"`"/usr/lib/R/bin/Rscript" -e 'cat(file.path(find.package("Rcpp"),"include"))'`" -isystem"`"/usr/lib/R/bin/Rscript" -e 'cat(file.path(find.package("RcppArmadillo"),"include"))'`"  -fopenmp -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-i2PIHO/r-base-4.1.2=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c npde.cpp -o npde.o
+g++ -std=gnu++14 -I"/usr/share/R/include" -DNDEBUG  -I'/     g++ -std=gnu++14 -I"/usr/share/R/include" -DNDEBUG  -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/dparser/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/rxode2/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/RcppEigen/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/lbfgsb3c/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/Rcpp/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/BH/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/StanHeaders/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/RcppArmadillo/include'   -Id -I../inst/include -DBOOST_DISABLE_ASSERTS -DBOOST_NO_CXX11_STATIC_ASSERT -isystem"`"/usr/lib/R/bin/Rscript" -e 'cat(file.path(find.package("BH"),"include"))'`" -isystem"`"/usr/lib/R/bin/Rscript" -e 'cat(file.path(find.package("RcppEigen"),"include"))'`" -isystem"`"/usr/lib/R/bin/Rscript" -e 'cat(file.path(find.package("StanHeaders"),"include"))'`" -isystem"`"/usr/lib/R/bin/Rscript" -e 'cat(file.path(find.package("Rcpp"),"include"))'`" -isystem"`"/usr/lib/R/bin/Rscript" -e 'cat(file.path(find.package("RcppArmadillo"),"include"))'`"  -fopenmp -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-i2PIHO/r-base-4.1.2=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c shrink.cpp -o shrink.o
+g++ -std=gnu++14 -I"/usr/share/R/include" -DNDEBUG  -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/dparser/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/rxode2/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/RcppEigen/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/lbfgsb3c/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/Rcpp/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/BH/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/StanHeaders/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/RcppArmadillo/include'   -Id -I../inst/include -DBOOST_DISABLE_ASSERTS -DBOOST_NO_CXX11_STATIC_ASSERT -isystem"`"/usr/lib/R/bin/Rscript" -e 'cat(file.path(find.package("BH"),"include"))     g++ -std=gnu++14 -I"/usr/share/R/include" -DNDEBUG  -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/dparser/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/rxode2/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/RcppEigen/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/lbfgsb3c/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/Rcpp/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/BH/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/StanHeaders/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/RcppArmadillo/include'   -Id -I../inst/include -DBOOST_DISABLE_ASSERTS -DBOOST_NO_CXX11_STATIC_ASSERT -isystem"`"/usr/lib/R/bin/Rscript" -e 'cat(file.path(find.package("BH"),"include"))'`" -isystem"`"/usr/lib/R/bin/Rscript" -e 'cat(file.path(find.package("RcppEigen"),"include"))'`" -isystem"`"/usr/lib/R/bin/Rscript" -e 'cat(file.path(find.package("StanHeaders"),"include"))'`" -isystem"`"/usr/lib/R/bin/Rscript" -e 'cat(file.path(find.package("Rcpp"),"include"))'`" -isystem"`"/usr/lib/R/bin/Rscript" -e 'cat(file.path(find.package("RcppArmadillo"),"include"))'`"  -fopenmp -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-i2PIHO/r-base-4.1.2=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c ires.cpp -o ires.o
+     g++ -std=gnu++14 -I"/usr/share/R/include" -DNDEBUG  -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/dparser/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/rxode2/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/RcppEigen/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/lbfgsb3c/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/Rcpp/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/BH/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/StanHeaders/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/RcppArmadillo/include'   -Id -I../inst/include -DBOOST_DISABLE_ASSERTS -DBOOST_NO_CXX11_STATIC_ASSERT -isystem"`"/usr/lib/R/bin/Rscript" -e 'cat(file.path(find.package("BH"),"include"))'`" -isystem"`"/usr/lib/R/bin/Rscript" -e 'cat(file.path(find.package("RcppEigen"),"include"))'`" -isystem"`"/usr/lib/R/bin/Rscript" -e 'cat(file.path(find.package("StanHeaders"),"include"))'`" -isystem"`"/usr/lib/R/bin/Rscript" -e 'cat(file.path(find.package("Rcpp"),"include"))'`" -isystem"`"/usr/lib/R/bin/Rscript" -e 'cat(file.path(find.package("RcppArmadillo"),"include"))'`"  -fopenmp -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-i2PIHO/r-base-4.1.2=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c res.cpp -o res.o
+g++ -std=gnu++14 -I"/usr/share/R/include" -DNDEBUG  -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/dparser/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/rxode2/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/RcppEigen/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/lbfgsb3c/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/Rcpp/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/BH/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/StanHeaders/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/RcppArmadillo/include'   -Id -I../inst/include -DBOOST_DISABLE_ASSERTS -DBOOST_NO_CXX11_STATIC_ASSERT -isystem"`"/usr/lib/R/bin/Rscript     g++ -std=gnu++14 -I"/usr/share/R/include" -DNDEBUG  -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/dparser/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/rxode2/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/RcppEigen/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/lbfgsb3c/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/Rcpp/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/BH/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/StanHeaders/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/RcppArmadillo/include'   -Id -I../inst/include -DBOOST_DISABLE_ASSERTS -DBOOST_NO_CXX11_STATIC_ASSERT -isystem"`"/usr/lib/R/bin/Rscript" -e 'cat(file.path(find.package("BH"),"include"))'`" -isystem"`"/usr/lib/R/bin/Rscript" -e 'cat(file.path(find.package("RcppEigen"),"include"))'`" -isystem"`"/usr/lib/R/bin/Rscript" -e 'cat(file.path(find.package("StanHeaders"),"include"))'`" -isystem"`"/usr/lib/R/bin/Rscript" -e 'cat(file.path(find.package("Rcpp"),"include"))'`" -isystem"`"/usr/lib/R/bin/Rscript" -e 'cat(file.path(find.package("RcppArmadillo"),"include"))'`"  -fopenmp -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-i2PIHO/r-base-4.1.2=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c cwres.cpp -o cwres.o
+   g++ -std=gnu++14 -I"/usr/share/R/include" -DNDEBUG  -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/dparser/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/rxode2/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/RcppEigen/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/lbfgsb3c/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/Rcpp/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/BH/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/StanHeaders/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/RcppArmadillo/include'   -Id -I../inst/include -DBOOST_DISABLE_ASSERTS -DBOOST_NO_CXX11_STATIC_ASSERT -isystem"`"/usr/lib/R/bin/Rscript" -e 'cat(file.path(find.package("BH"),"include"))'`" -isystem"`"/usr/lib/R/bin/Rscript" -e 'cat(file.path(find.package("RcppEigen"),"include"))'`" -isystem"`"/usr/lib/R/bin/Rscript" -e 'cat(file.path(find.package("StanHeaders"),"include"))'`" -isystem"`"/usr/lib/R/bin/Rscript" -e 'cat(file.path(find.package("Rcpp"),"include"))'`" -isystem"`"/usr/lib/R/bin/Rscript" -e 'cat(file.path(find.package("RcppArmadillo"),"include"))'`"  -fopenmp -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-i2PIHO/r-base-4.1.2=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c censResid.cpp -o censResid.o
+g++ -std=gnu++14 -I"/usr/share/R/include" -DNDEB     g++ -std=gnu++14 -I"/usr/share/R/include" -DNDEBUG  -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/dparser/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/rxode2/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/RcppEigen/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/lbfgsb3c/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/Rcpp/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/BH/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/StanHeaders/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/RcppArmadillo/include'   -Id -I../inst/include -DBOOST_DISABLE_ASSERTS -DBOOST_NO_CXX11_STATIC_ASSERT -isystem"`"/usr/lib/R/bin/Rscript" -e 'cat(file.path(find.package("BH"),"include"))'`" -isystem"`"/usr/lib/R/bin/Rscript" -e 'cat(file.path(find.package("RcppEigen"),"include"))'`" -isystem"`"/usr/lib/R/bin/Rscript" -e 'cat(file.path(find.package("StanHeaders"),"include"))'`" -isystem"`"/usr/lib/R/bin/Rscript" -e 'cat(file.path(find.package("Rcpp"),"include"))'`" -isystem"`"/usr/lib/R/bin/Rscript" -e 'cat(file.path(find.package("RcppArmadillo"),"include"))'`"  -fopenmp -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-i2PIHO/r-base-4.1.2=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c cholse.cpp -o cholse.o
+g++ -std=gnu++14 -I"/usr/share/R/include" -DNDEBUG  -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/dparser/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/rxode2/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/RcppEigen/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/lbfgsb3c/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/Rcpp/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/BH/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/StanHeaders/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/RcppArmadillo/include'   -Id -I../inst/include -DBOOST_DISABLE_ASSERTS -DBOOST_NO_CXX11_STATIC_ASSERT -isystem"`"/usr/lib/R/bin/Rscript" -e 'cat(file.path(find.package("BH"),"in     g++ -std=gnu++14 -I"/usr/share/R/include" -DNDEBUG  -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/dparser/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/rxode2/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/RcppEigen/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/lbfgsb3c/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/Rcpp/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/BH/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/StanHeaders/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/RcppArmadillo/include'   -Id -I../inst/include -DBOOST_DISABLE_ASSERTS -DBOOST_NO_CXX11_STATIC_ASSERT -isystem"`"/usr/lib/R/bin/Rscript" -e 'cat(file.path(find.package("BH"),"include"))'`" -isystem"`"/usr/lib/R/bin/Rscript" -e 'cat(file.path(find.package("RcppEigen"),"include"))'`" -isystem"`"/usr/lib/R/bin/Rscript" -e 'cat(file.path(find.package("StanHeaders"),"include"))'`" -isystem"`"/usr/lib/R/bin/Rscript" -e 'cat(file.path(find.package("Rcpp"),"include"))'`" -isystem"`"/usr/lib/R/bin/Rscript" -e 'cat(file.path(find.package("RcppArmadillo"),"include"))'`"  -fopenmp -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-i2PIHO/r-base-4.1.2=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c neldermead.cpp -o neldermead.o
+   g++ -std=gnu++14 -I"/usr/share/R/include" -DNDEBUG  -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/dparser/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/rxode2/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/RcppEigen/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/lbfgsb3c/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/Rcpp/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/BH/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/StanHeaders/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/RcppArmadillo/include'   -Id -I../inst/include -DBOOST_DISABLE_ASSERTS -DBOOST_NO_CXX11_STATIC_ASSERT -isystem"`"/usr/lib/R/bin/Rscript" -e 'cat(file.path(find.package("BH"),"include"))'`" -isystem"`"/usr/lib/R/bin/Rscript" -e 'cat(file.path(find.package("RcppEigen"),"include"))'`" -isystem"`"/usr/lib/R/bin/Rscript" -e 'cat(file.path(find.package("StanHeaders"),"include"))'`" -isystem"`"/usr/lib/R/bin/Rscript" -e 'cat(file.path(find.package("Rcpp"),"include"))'`" -isystem"`"/usr/lib/R/bin/Rscript" -e 'cat(file.path(find.package("RcppArmadillo"),"include"))'`"  -fopenmp -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-i2PIHO/r-base-4.1.2=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c resid.cpp -o resid.o
+g++ -std=gnu++14 -I"/usr/share/R/include" -DNDEBUG  -I'/home/bill/R/x86_64-pc-linux-gnu-     g++ -std=gnu++14 -I"/usr/share/R/include" -DNDEBUG  -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/dparser/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/rxode2/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/RcppEigen/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/lbfgsb3c/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/Rcpp/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/BH/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/StanHeaders/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/RcppArmadillo/include'   -Id -I../inst/include -DBOOST_DISABLE_ASSERTS -DBOOST_NO_CXX11_STATIC_ASSERT -isystem"`"/usr/lib/R/bin/Rscript" -e 'cat(file.path(find.package("BH"),"include"))'`" -isystem"`"/usr/lib/R/bin/Rscript" -e 'cat(file.path(find.package("RcppEigen"),"include"))'`" -isystem"`"/usr/lib/R/bin/Rscript" -e 'cat(file.path(find.package("StanHeaders"),"include"))'`" -isystem"`"/usr/lib/R/bin/Rscript" -e 'cat(file.path(find.package("Rcpp"),"include"))'`" -isystem"`"/usr/lib/R/bin/Rscript" -e 'cat(file.path(find.package("RcppArmadillo"),"include"))'`"  -fopenmp -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-i2PIHO/r-base-4.1.2=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c slice.cpp -o slice.o
+g++ -std=gnu++14 -I"/usr/share/R/include" -DNDEBUG  -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/dparser/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/rxode2/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/RcppEigen/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/lbfgsb3c/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/Rcpp/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/BH/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/StanHeaders/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/RcppArmadillo/include'   -Id -I../inst/include -DBOOST_DISABLE_ASSERTS -DBOOST_NO_CXX11_STATIC_ASSERT -isystem"`"/usr/lib/R/bin/Rscript" -e 'cat(file.path(find.package("BH"),"include"))'`" -isystem"`"/usr/lib/R/bin/Rscr     g++ -std=gnu++14 -I"/usr/share/R/include" -DNDEBUG  -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/dparser/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/rxode2/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/RcppEigen/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/lbfgsb3c/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/Rcpp/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/BH/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/StanHeaders/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/RcppArmadillo/include'   -Id -I../inst/include -DBOOST_DISABLE_ASSERTS -DBOOST_NO_CXX11_STATIC_ASSERT -isystem"`"/usr/lib/R/bin/Rscript" -e 'cat(file.path(find.package("BH"),"include"))'`" -isystem"`"/usr/lib/R/bin/Rscript" -e 'cat(file.path(find.package("RcppEigen"),"include"))'`" -isystem"`"/usr/lib/R/bin/Rscript" -e 'cat(file.path(find.package("StanHeaders"),"include"))'`" -isystem"`"/usr/lib/R/bin/Rscript" -e 'cat(file.path(find.package("Rcpp"),"include"))'`" -isystem"`"/usr/lib/R/bin/Rscript" -e 'cat(file.path(find.package("RcppArmadillo"),"include"))'`"  -fopenmp -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-i2PIHO/r-base-4.1.2=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c RcppExportMod.cpp -o RcppExportMod.o
+   g++ -std=gnu++14 -I"/usr/share/R/include" -DNDEBUG  -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/dparser/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/rxode2/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/RcppEigen/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/lbfgsb3c/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/Rcpp/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/BH/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/StanHeaders/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/RcppArmadillo/include'   -Id -I../inst/include -DBOOST_DISABLE_ASSERTS -DBOOST_NO_CXX11_STATIC_ASSERT -isystem"`"/usr/lib/R/bin/Rscript" -e 'cat(file.path(find.package("BH"),"include"))'`" -isystem"`"/usr/lib/R/bin/Rscript" -e 'cat(file.path(find.package("RcppEigen"),"include"))'`" -isystem"`"/usr/lib/R/bin/Rscript" -e 'cat(file.path(find.package("StanHeaders"),"include"))'`" -isystem"`"/usr/lib/R/bin/Rscript" -e 'cat(file.path(find.package("Rcpp"),"include"))'`" -isystem"`"/usr/lib/R/bin/Rscript" -e 'cat(file.path(find.package("RcppArmadillo"),"include"))'`"  -fopenmp -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-i2PIHO/r-base-4.1.2=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c ode_cmt1.cpp -o ode_cmt1.o
+g++ -std=gnu++14 -I"/usr/share/R/include" -DNDEBUG  -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/dparser/include' -     g++ -std=gnu++14 -I"/usr/share/R/include" -DNDEBUG  -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/dparser/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/rxode2/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/RcppEigen/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/lbfgsb3c/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/Rcpp/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/BH/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/StanHeaders/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/RcppArmadillo/include'   -Id -I../inst/include -DBOOST_DISABLE_ASSERTS -DBOOST_NO_CXX11_STATIC_ASSERT -isystem"`"/usr/lib/R/bin/Rscript" -e 'cat(file.path(find.package("BH"),"include"))'`" -isystem"`"/usr/lib/R/bin/Rscript" -e 'cat(file.path(find.package("RcppEigen"),"include"))'`" -isystem"`"/usr/lib/R/bin/Rscript" -e 'cat(file.path(find.package("StanHeaders"),"include"))'`" -isystem"`"/usr/lib/R/bin/Rscript" -e 'cat(file.path(find.package("Rcpp"),"include"))'`" -isystem"`"/usr/lib/R/bin/Rscript" -e 'cat(file.path(find.package("RcppArmadillo"),"include"))'`"  -fopenmp -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-i2PIHO/r-base-4.1.2=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c RcppExports.cpp -o RcppExports.o
+   gcc -std=gnu99 -std=gnu11 -I"/usr/share/R/include" -DNDEBUG  -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/dparser/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/rxode2/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/RcppEigen/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/lbfgsb3c/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/Rcpp/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/BH/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/StanHeaders/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/RcppArmadillo/include'    -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-i2PIHO/r-base-4.1.2=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c init.c -o init.o
+gcc -std=gnu99 -std     gcc -std=gnu99 -std=gnu11 -I"/usr/share/R/include" -DNDEBUG  -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/dparser/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/rxode2/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/RcppEigen/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/lbfgsb3c/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/Rcpp/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/BH/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/StanHeaders/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/RcppArmadillo/include'    -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-i2PIHO/r-base-4.1.2=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c rprintf.c -o rprintf.o
+   gcc -std=gnu99 -std=gnu11 -I"/usr/share/R/include" -DNDEBUG  -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/dparser/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/rxode2/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/RcppEigen/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/lbfgsb3c/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/Rcpp/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/BH/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/StanHeaders/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/RcppArmadillo/include'    -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-i2PIHO/r-base-4.1.2=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c merge3.c -o merge3.o
+     gcc -std=gnu99 -std=gnu11 -I"/usr/share/R/include" -DNDEBUG  -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/dparser/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/rxode2/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/RcppEigen/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/lbfgsb3c/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/Rcpp/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/BH/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/StanHeaders/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/RcppArmadillo/include'    -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-i2PIHO/r-base-4.1.2=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c lbfgsR.c -o lbfgsR.o
+   gcc -std=gnu99 -std=gnu11 -I"/usr/share/R/include" -DNDEBUG  -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/dparser/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/rxode2/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/RcppEigen/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/lbfgsb3c/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/Rcpp/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/BH/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/StanHeaders/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/RcppArmadillo/include'    -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-i2PIHO/r-base-4.1.2=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c utilc.c -o utilc.o
+     g++ -std=gnu++14 -shared -L/usr/lib/R/lib -Wl,-Bsymbolic-functions -Wl,-z,relro -o nlmixr2est.so expandNlme.o saem.o inner.o npde.o shrink.o ires.o res.o cwres.o censResid.o cholse.o neldermead.o resid.o slice.o RcppExportMod.o ode_cmt1.o RcppExports.o init.o rprintf.o merge3.o lbfgsR.o utilc.o -llapack -lblas -lgfortran -lm -lquadmath -fopenmp -L/usr/lib/R/lib -lR
+     installing to /tmp/RtmpBoFiPd/devtools_install_2e5dcf3346b66b/00LOCK-nlmixr2est/00new/nlmixr2est/libs
+     ** checking absolute paths in shared objects and dynamic libraries
+  ─  DONE (nlmixr2est)
+Loading required package: nlmixr2data
+ℹ Loading nlmixr2est
+ℹ Testing nlmixr2est
+✔ | F W S  OK | Context
+
+⠏ |         0 | broom                                                           Calculating -2LL by Gaussian quadrature (nnodes=3,nsd=1.6)
+
+⠋ |         1 | broom                                                           
+⠦ |         7 | broom                                                           
+⠸ |        34 | broom                                                           
+⠏ |        70 | broom                                                           
+⠦ |        87 | broom                                                           
+⠇ |       129 | broom                                                           
+⠏ |       170 | broom                                                           
+⠹ |       173 | broom                                                           
+⠙ |       212 | broom                                                           
+⠼ |       255 | broom                                                           
+⠇ |       259 | broom                                                           
+⠧ |       298 | broom                                                           
+⠏ |       340 | broom                                                           
+⠼ |       345 | broom                                                           
+⠦ |       387 | broom                                                           
+⠧ |       428 | broom                                                           
+⠋ |       431 | broom                                                           
+⠋ |       471 | broom                                                           
+⠸ |       514 | broom                                                           
+✔ |       520 | broom [14.3s]
+
+⠏ |         0 | control                                                         
+⠦ |        17 | control                                                         
+⠦ |        37 | control                                                         
+✔ |        39 | control [0.2s]
+
+⠏ |         0 | cov-focei                                                       
+⠋ |         1 | cov-focei                                                       
+✔ |         1 | cov-focei [3.3s]
+
+⠏ |         0 | cwres                                                           
+⠋ |         1 | cwres                                                           
+⠙ |         2 | cwres                                                           
+⠼ |         5 | cwres                                                           
+⠴ |         6 | cwres                                                           
+⠇ |         9 | cwres                                                           
+⠏ |        10 | cwres                                                           
+⠹ |        13 | cwres                                                           
+✔ |        13 | cwres [12.9s]
+
+⠏ |         0 | focei-cens                                                      
+⠋ |         1 | focei-cens                                                      
+⠹ |         3 | focei-cens                                                      
+⠼ |         5 | focei-cens                                                      
+⠧ |         8 | focei-cens                                                      
+⠇ |         9 | focei-cens                                                      
+⠙ |        12 | focei-cens                                                      
+✔ |        13 | focei-cens [2.8s]
+
+⠏ |         0 | focei-inner                                                     
+⠋ |         1 | focei-inner                                                     
+✔ |         1 | focei-inner [2.0s]
+
+⠏ |         0 | focei-wang2007                                                  
+⠋ |         1 | focei-wang2007                                                  
+⠋ |        31 | focei-wang2007                                                  
+⠙ |        32 | focei-wang2007                                                  
+⠹ |        33 | focei-wang2007                                                  
+⠸ |        34 | focei-wang2007                                                  
+⠼ |        35 | focei-wang2007                                                  
+⠴ |        36 | focei-wang2007                                                  
+⠦ |        37 | focei-wang2007                                                  
+⠧ |        38 | focei-wang2007                                                  
+⠇ |        39 | focei-wang2007                                                  
+⠏ |        40 | focei-wang2007                                                  
+⠋ |        41 | focei-wang2007                                                  
+⠙ |        42 | focei-wang2007                                                  
+⠹ |        43 | focei-wang2007                                                  
+⠸ |        44 | focei-wang2007                                                  
+⠼ |        45 | focei-wang2007                                                  
+⠴ |        46 | focei-wang2007                                                  
+⠦ |        47 | focei-wang2007                                                  
+⠧ |        48 | focei-wang2007                                                  
+⠇ |        49 | focei-wang2007                                                  
+⠏ |        50 | focei-wang2007                                                  
+⠋ |        51 | focei-wang2007                                                  
+⠙ |        52 | focei-wang2007                                                  
+⠹ |        53 | focei-wang2007                                                  
+⠸ |        54 | focei-wang2007                                                  
+⠼ |        55 | focei-wang2007                                                  
+⠴ |        56 | focei-wang2007                                                  
+⠦ |        57 | focei-wang2007                                                  
+⠧ |        58 | focei-wang2007                                                  
+⠇ |        59 | focei-wang2007                                                  
+⠏ |        60 | focei-wang2007                                                  
+⠋ |        61 | focei-wang2007                                                  
+⠙ |        62 | focei-wang2007                                                  
+⠹ |        63 | focei-wang2007                                                  
+⠸ |        64 | focei-wang2007                                                  
+⠼ |        65 | focei-wang2007                                                  
+⠴ |        66 | focei-wang2007                                                  
+⠦ |        67 | focei-wang2007                                                  
+⠧ |        68 | focei-wang2007                                                  
+⠇ |        69 | focei-wang2007                                                  
+⠏ |        70 | focei-wang2007                                                  
+⠋ |        71 | focei-wang2007                                                  
+⠙ |        72 | focei-wang2007                                                  
+⠹ |        73 | focei-wang2007                                                  
+⠸ |        74 | focei-wang2007                                                  
+⠼ |        75 | focei-wang2007                                                  
+⠴ |        76 | focei-wang2007                                                  
+⠦ |        77 | focei-wang2007                                                  
+⠧ |        78 | focei-wang2007                                                  
+⠇ |        79 | focei-wang2007                                                  
+⠏ |        80 | focei-wang2007                                                  
+⠋ |        81 | focei-wang2007                                                  
+⠙ |        82 | focei-wang2007                                                  
+⠹ |        83 | focei-wang2007                                                  
+⠸ |        84 | focei-wang2007                                                  
+⠼ |        85 | focei-wang2007                                                  
+⠴ |        86 | focei-wang2007                                                  
+⠦ |        87 | focei-wang2007                                                  
+⠧ |        88 | focei-wang2007                                                  
+⠇ |        89 | focei-wang2007                                                  
+⠏ |        90 | focei-wang2007                                                  
+⠋ |        91 | focei-wang2007                                                  
+⠙ |        92 | focei-wang2007                                                  
+⠹ |        93 | focei-wang2007                                                  
+⠸ |        94 | focei-wang2007                                                  
+⠼ |        95 | focei-wang2007                                                  
+⠴ |        96 | focei-wang2007                                                  
+⠦ |        97 | focei-wang2007                                                  
+⠧ |        98 | focei-wang2007                                                  
+⠇ |        99 | focei-wang2007                                                  
+⠏ |       100 | focei-wang2007                                                  
+⠋ |       101 | focei-wang2007                                                  
+⠙ |       102 | focei-wang2007                                                  
+⠹ |       103 | focei-wang2007                                                  
+⠸ |       104 | focei-wang2007                                                  
+⠼ |       105 | focei-wang2007                                                  
+⠴ |       106 | focei-wang2007                                                  
+⠦ |       107 | focei-wang2007                                                  
+⠧ |       108 | focei-wang2007                                                  
+⠋ | 1     110 | focei-wang2007                                                  
+⠙ | 1     111 | focei-wang2007                                                  
+⠹ | 1     112 | focei-wang2007                                                  
+⠸ | 1     113 | focei-wang2007                                                  
+⠼ | 1     114 | focei-wang2007                                                  
+⠴ | 1     115 | focei-wang2007                                                  
+⠦ | 1     116 | focei-wang2007                                                  
+⠧ | 1     117 | focei-wang2007                                                  
+⠇ | 1     118 | focei-wang2007                                                  
+⠏ | 1     119 | focei-wang2007                                                  
+⠋ | 1     120 | focei-wang2007                                                  
+⠙ | 1     121 | focei-wang2007                                                  
+⠹ | 1     122 | focei-wang2007                                                  
+⠸ | 1     123 | focei-wang2007                                                  
+⠼ | 1     124 | focei-wang2007                                                  
+⠴ | 1     125 | focei-wang2007                                                  
+⠦ | 1     126 | focei-wang2007                                                  
+⠧ | 1     127 | focei-wang2007                                                  
+⠇ | 1     128 | focei-wang2007                                                  
+⠏ | 1     129 | focei-wang2007                                                  
+⠋ | 1     130 | focei-wang2007                                                  
+⠙ | 1     131 | focei-wang2007                                                  
+⠹ | 1     132 | focei-wang2007                                                  
+⠸ | 1     133 | focei-wang2007                                                  
+⠼ | 1     134 | focei-wang2007                                                  
+⠴ | 1     135 | focei-wang2007                                                  
+⠦ | 1     136 | focei-wang2007                                                  
+⠧ | 1     137 | focei-wang2007                                                  
+⠇ | 1     138 | focei-wang2007                                                  
+⠏ | 1     139 | focei-wang2007                                                  
+⠋ | 1     140 | focei-wang2007                                                  
+⠙ | 1     141 | focei-wang2007                                                  
+⠹ | 1     142 | focei-wang2007                                                  
+⠸ | 1     143 | focei-wang2007                                                  
+⠼ | 1     144 | focei-wang2007                                                  
+⠴ | 1     145 | focei-wang2007                                                  
+⠦ | 1     146 | focei-wang2007                                                  
+⠧ | 1     147 | focei-wang2007                                                  
+⠇ | 1     148 | focei-wang2007                                                  
+⠏ | 1     149 | focei-wang2007                                                  
+⠋ | 1     150 | focei-wang2007                                                  
+⠙ | 1     151 | focei-wang2007                                                  
+⠹ | 1     152 | focei-wang2007                                                  
+⠸ | 1     153 | focei-wang2007                                                  
+⠼ | 1     154 | focei-wang2007                                                  
+⠴ | 1     155 | focei-wang2007                                                  
+⠦ | 1     156 | focei-wang2007                                                  
+⠧ | 1     157 | focei-wang2007                                                  
+⠇ | 1     158 | focei-wang2007                                                  
+⠏ | 1     159 | focei-wang2007                                                  
+⠋ | 1     160 | focei-wang2007                                                  
+⠙ | 1     161 | focei-wang2007                                                  
+⠹ | 1     162 | focei-wang2007                                                  
+⠸ | 1     163 | focei-wang2007                                                  
+⠼ | 1     164 | focei-wang2007                                                  
+⠴ | 1     165 | focei-wang2007                                                  
+⠦ | 1     166 | focei-wang2007                                                  
+⠧ | 1     167 | focei-wang2007                                                  
+⠇ | 1     168 | focei-wang2007                                                  
+⠏ | 1     169 | focei-wang2007                                                  
+⠋ | 1     170 | focei-wang2007                                                  
+⠙ | 1     171 | focei-wang2007                                                  
+⠹ | 1     172 | focei-wang2007                                                  
+⠸ | 1     173 | focei-wang2007                                                  
+⠼ | 1     174 | focei-wang2007                                                  
+⠴ | 1     175 | focei-wang2007                                                  
+⠦ | 1     176 | focei-wang2007                                                  
+⠧ | 1     177 | focei-wang2007                                                  
+⠇ | 1     178 | focei-wang2007                                                  
+⠏ | 1     179 | focei-wang2007                                                  
+⠋ | 1     180 | focei-wang2007                                                  
+⠙ | 1     181 | focei-wang2007                                                  
+⠹ | 1     182 | focei-wang2007                                                  
+⠸ | 1     183 | focei-wang2007                                                  
+⠼ | 1     184 | focei-wang2007                                                  
+⠴ | 1     185 | focei-wang2007                                                  
+⠦ | 1     186 | focei-wang2007                                                  
+⠧ | 1     187 | focei-wang2007                                                  
+⠇ | 1     188 | focei-wang2007                                                  
+⠏ | 1     189 | focei-wang2007                                                  
+⠋ | 1     190 | focei-wang2007                                                  
+⠙ | 1     191 | focei-wang2007                                                  
+⠹ | 1     192 | focei-wang2007                                                  
+⠸ | 1     193 | focei-wang2007                                                  
+⠼ | 1     194 | focei-wang2007                                                  
+⠴ | 1     195 | focei-wang2007                                                  
+⠦ | 1     196 | focei-wang2007                                                  
+⠧ | 1     197 | focei-wang2007                                                  
+⠇ | 1     198 | focei-wang2007                                                  
+⠏ | 1     199 | focei-wang2007                                                  
+⠋ | 1     200 | focei-wang2007                                                  
+⠙ | 1     201 | focei-wang2007                                                  
+⠹ | 1     202 | focei-wang2007                                                  
+⠸ | 1     203 | focei-wang2007                                                  
+⠼ | 1     204 | focei-wang2007                                                  
+⠴ | 1     205 | focei-wang2007                                                  
+⠦ | 1     206 | focei-wang2007                                                  
+⠧ | 1     207 | focei-wang2007                                                  
+⠇ | 1     208 | focei-wang2007                                                  
+⠏ | 1     209 | focei-wang2007                                                  
+⠋ | 1     210 | focei-wang2007                                                  
+⠙ | 1     211 | focei-wang2007                                                  
+⠹ | 1     212 | focei-wang2007                                                  
+⠸ | 1     213 | focei-wang2007                                                  
+⠼ | 1     214 | focei-wang2007                                                  
+⠴ | 1     215 | focei-wang2007                                                  
+⠦ | 1     216 | focei-wang2007                                                  
+⠧ | 1     217 | focei-wang2007                                                  
+⠇ | 1     218 | focei-wang2007                                                  
+⠏ | 1     219 | focei-wang2007                                                  
+⠋ | 1     220 | focei-wang2007                                                  
+⠙ | 1     221 | focei-wang2007                                                  
+⠹ | 1     222 | focei-wang2007                                                  
+⠸ | 1     223 | focei-wang2007                                                  
+⠼ | 1     224 | focei-wang2007                                                  
+⠴ | 1     225 | focei-wang2007                                                  
+⠦ | 1     226 | focei-wang2007                                                  
+⠧ | 1     227 | focei-wang2007                                                  
+⠇ | 1     228 | focei-wang2007                                                  
+⠏ | 1     229 | focei-wang2007                                                  
+⠋ | 1     230 | focei-wang2007                                                  
+⠙ | 1     231 | focei-wang2007                                                  
+⠹ | 1     232 | focei-wang2007                                                  
+⠸ | 1     233 | focei-wang2007                                                  
+⠼ | 1     234 | focei-wang2007                                                  
+⠴ | 1     235 | focei-wang2007                                                  
+⠦ | 1     236 | focei-wang2007                                                  
+⠧ | 1     237 | focei-wang2007                                                  
+⠇ | 1     238 | focei-wang2007                                                  
+⠏ | 1     239 | focei-wang2007                                                  
+⠋ | 1     240 | focei-wang2007                                                  
+⠙ | 1     241 | focei-wang2007                                                  
+⠹ | 1     242 | focei-wang2007                                                  
+⠸ | 1     243 | focei-wang2007                                                  
+⠼ | 1     244 | focei-wang2007                                                  
+⠴ | 1     245 | focei-wang2007                                                  
+⠦ | 1     246 | focei-wang2007                                                  
+⠧ | 1     247 | focei-wang2007                                                  
+⠇ | 1     248 | focei-wang2007                                                  
+⠏ | 1     249 | focei-wang2007                                                  
+⠋ | 1     250 | focei-wang2007                                                  
+⠙ | 1     251 | focei-wang2007                                                  
+⠹ | 1     252 | focei-wang2007                                                  
+⠸ | 1     253 | focei-wang2007                                                  
+⠼ | 1     254 | focei-wang2007                                                  
+⠴ | 1     255 | focei-wang2007                                                  
+⠦ | 1     256 | focei-wang2007                                                  
+⠧ | 1     257 | focei-wang2007                                                  
+⠇ | 1     258 | focei-wang2007                                                  
+⠏ | 1     259 | focei-wang2007                                                  
+⠋ | 1     260 | focei-wang2007                                                  
+⠙ | 1     261 | focei-wang2007                                                  
+⠹ | 1     262 | focei-wang2007                                                  
+⠸ | 1     263 | focei-wang2007                                                  
+⠼ | 1     264 | focei-wang2007                                                  
+⠴ | 1     265 | focei-wang2007                                                  
+⠦ | 1     266 | focei-wang2007                                                  
+⠧ | 1     267 | focei-wang2007                                                  
+⠇ | 1     268 | focei-wang2007                                                  
+⠏ | 1     269 | focei-wang2007                                                  
+⠋ | 1     270 | focei-wang2007                                                  
+⠙ | 1     271 | focei-wang2007                                                  
+⠹ | 1     272 | focei-wang2007                                                  
+⠸ | 1     273 | focei-wang2007                                                  
+⠼ | 1     274 | focei-wang2007                                                  
+⠴ | 1     275 | focei-wang2007                                                  
+⠦ | 1     276 | focei-wang2007                                                  
+⠧ | 1     277 | focei-wang2007                                                  
+⠇ | 1     278 | focei-wang2007                                                  
+⠏ | 1     279 | focei-wang2007                                                  
+⠋ | 1     280 | focei-wang2007                                                  
+⠙ | 1     281 | focei-wang2007                                                  
+⠹ | 1     282 | focei-wang2007                                                  
+⠸ | 1     283 | focei-wang2007                                                  
+⠼ | 1     284 | focei-wang2007                                                  
+⠴ | 1     285 | focei-wang2007                                                  
+⠦ | 1     286 | focei-wang2007                                                  
+⠧ | 1     287 | focei-wang2007                                                  
+⠇ | 1     288 | focei-wang2007                                                  
+⠏ | 1     289 | focei-wang2007                                                  
+⠋ | 1     290 | focei-wang2007                                                  
+⠙ | 1     291 | focei-wang2007                                                  
+⠹ | 1     292 | focei-wang2007                                                  
+⠸ | 1     293 | focei-wang2007                                                  
+⠼ | 1     294 | focei-wang2007                                                  
+⠴ | 1     295 | focei-wang2007                                                  
+⠦ | 1     296 | focei-wang2007                                                  
+⠧ | 1     297 | focei-wang2007                                                  
+⠇ | 1     298 | focei-wang2007                                                  
+⠏ | 1     299 | focei-wang2007                                                  
+⠋ | 1     300 | focei-wang2007                                                  
+⠙ | 1     301 | focei-wang2007                                                  
+⠹ | 1     302 | focei-wang2007                                                  
+⠸ | 1     303 | focei-wang2007                                                  
+⠼ | 1     304 | focei-wang2007                                                  
+⠴ | 1     305 | focei-wang2007                                                  
+⠦ | 1     306 | focei-wang2007                                                  
+⠧ | 1     307 | focei-wang2007                                                  
+⠇ | 1     308 | focei-wang2007                                                  
+⠏ | 1     309 | focei-wang2007                                                  
+⠋ | 1     310 | focei-wang2007                                                  
+⠙ | 1     311 | focei-wang2007                                                  
+⠹ | 1     312 | focei-wang2007                                                  
+⠸ | 1     313 | focei-wang2007                                                  
+⠼ | 1     314 | focei-wang2007                                                  
+⠴ | 1     315 | focei-wang2007                                                  
+⠦ | 1     316 | focei-wang2007                                                  
+⠧ | 1     317 | focei-wang2007                                                  
+⠇ | 1     318 | focei-wang2007                                                  
+⠏ | 1     319 | focei-wang2007                                                  
+⠋ | 1     320 | focei-wang2007                                                  
+⠙ | 1     321 | focei-wang2007                                                  
+⠹ | 1     322 | focei-wang2007                                                  
+⠸ | 1     323 | focei-wang2007                                                  
+⠼ | 1     324 | focei-wang2007                                                  
+⠴ | 1     325 | focei-wang2007                                                  
+⠦ | 1     326 | focei-wang2007                                                  
+⠧ | 1     327 | focei-wang2007                                                  
+⠇ | 1     328 | focei-wang2007                                                  
+⠏ | 1     329 | focei-wang2007                                                  
+⠋ | 1     330 | focei-wang2007                                                  
+⠙ | 1     331 | focei-wang2007                                                  
+⠹ | 1     332 | focei-wang2007                                                  
+⠸ | 1     333 | focei-wang2007                                                  
+⠼ | 1     334 | focei-wang2007                                                  
+⠴ | 1     335 | focei-wang2007                                                  
+⠦ | 1     336 | focei-wang2007                                                  
+✖ | 1     336 | focei-wang2007 [1246.9s]
+────────────────────────────────────────────────────────────────────────────────
+Error (test-focei-wang2007.R:561:3): lognormal likelihood can be determined by data too
+Error in `round(expect_warning(expect_warning(testErr("add lnorm", function(f) {
+    f %>% model(lipre ~ add(add.sd)) %>% ini(add.sd = sqrt(0.1))
+}, log = TRUE) + 2 * sum(datl$DV), "changed to"), "changed to"), 
+    3)`: non-numeric argument to mathematical function
+Backtrace:
+ 1. testthat::expect_equal(...)
+      at test-focei-wang2007.R:561:2
+ 4. stats::setNames(...)
+────────────────────────────────────────────────────────────────────────────────
+
+⠏ |         0 | issue-281                                                       > loading into symengine environment...
+> pruning branches (`if`/`else`) of saem model...
+v done
+> finding duplicate expressions in saem model...
+[====|====|====|====|====|====|====|====|====|====] 0:00:00 
+
+> optimizing duplicate expressions in saem model...
+[====|====|====|====|====|====|====|====|====|====] 0:00:00 
+
+v done
+
+⠋ |         1 | issue-281                                                       > loading into symengine environment...
+> pruning branches (`if`/`else`) of saem model...
+v done
+> finding duplicate expressions in saem predOnly model 0...
+[====|====|====|====|====|====|====|====|====|====] 0:00:00 
+
+> finding duplicate expressions in saem predOnly model 1...
+[====|====|====|====|====|====|====|====|====|====] 0:00:00 
+
+> optimizing duplicate expressions in saem predOnly model 1...
+[====|====|====|====|====|====|====|====|====|====] 0:00:00 
+
+> finding duplicate expressions in saem predOnly model 2...
+[====|====|====|====|====|====|====|====|====|====] 0:00:00 
+
+> optimizing duplicate expressions in saem predOnly model 2...
+[====|====|====|====|====|====|====|====|====|====] 0:00:00 
+
+v done
+
+⠙ |         2 | issue-281                                                       
+✔ |         2 | issue-281 [1.8s]
+
+⠏ |         0 | issue-429                                                       
+⠋ |         1 | issue-429                                                       
+✔ |         2 | issue-429 [6.8s]
+
+⠏ |         0 | issue-502                                                       Error : Error calculating covariance via linearization
+
+⠋ |         1 | issue-502                                                       
+✔ |         1 | issue-502 [4.0s]
+
+⠏ |         0 | issue-503                                                       
+⠋ |         1 | issue-503                                                       
+✔ |         1 | issue-503 [6.1s]
+
+⠏ |         0 | keep                                                            
+⠋ |         1 | keep                                                            
+⠦ |        17 | keep                                                            
+⠹ |        33 | keep                                                            
+⠇ |        49 | keep                                                            
+⠼ |        65 | keep                                                            
+⠋ |        81 | keep                                                            
+✔ |        96 | keep [19.6s]
+
+⠏ |         0 | nlme                                                            
+⠋ |         1 | nlme                                                            
+⠙ |         2 | nlme                                                            
+⠹ |         3 | nlme                                                            
+⠸ |         4 | nlme                                                            
+⠼ |         5 | nlme                                                            
+⠴ |         6 | nlme                                                            
+⠦ |         7 | nlme                                                            
+✔ |         7 | nlme [18.5s]
+
+⠏ |         0 | npde                                                            
+⠋ |         1 | npde                                                            
+⠙ |         2 | npde                                                            
+⠸ |         4 | npde                                                            
+⠼ |         5 | npde                                                            
+⠦ |         7 | npde                                                            
+✔ |         7 | npde [6.4s]
+
+⠏ |         0 | saem-aic                                                        
+⠋ |         1 | saem-aic                                                        
+⠸ |         4 | saem-aic                                                        
+⠼ |         5 | saem-aic                                                        
+⠴ |         6 | saem-aic                                                        
+⠦ |         7 | saem-aic                                                        
+✔ |         9 | saem-aic [2.5s]
+
+⠏ |         0 | saem-drop                                                       
+✔ |        11 | saem-drop
+
+⠏ |         0 | saem-theo_sd                                                    
+⠋ |         1 | saem-theo_sd                                                    
+⠦ | 3       4 | saem-theo_sd                                                    
+⠙ | 3       9 | saem-theo_sd                                                    
+⠦ | 5      12 | saem-theo_sd                                                    
+⠋ | 8      13 | saem-theo_sd                                                    
+⠦ | 9      18 | saem-theo_sd                                                    
+⠙ | 11      21 | saem-theo_sd                                                   
+⠦ | 14      23 | saem-theo_sd                                                   
+⠋ | 17      24 | saem-theo_sd                                                   
+⠸ | 20      24 | saem-theo_sd                                                   
+⠋ | 21      30 | saem-theo_sd                                                   
+⠼ | 22      33 | saem-theo_sd                                                   
+⠏ | 25      35 | saem-theo_sd                                                   
+⠴ | 27      39 | saem-theo_sd                                                   
+⠋ | 30      41 | saem-theo_sd                                                   
+⠴ | 31      45 | saem-theo_sd                                                   
+✖ | 32      46 | saem-theo_sd [163.8s]
+────────────────────────────────────────────────────────────────────────────────
+Failure (test-saem-theo_sd.R:198:7): add: logitNorm prop: prop tbs:  addProp: combined1
+as.list(val[i, ]) (`actual`) not equal to as.list(.test[i, ]) (`expected`).
+
+  `actual$objf`: 228.5
+`expected$objf`: 229.1
+
+Failure (test-saem-theo_sd.R:198:7): add: logitNorm prop: prop tbs:  addProp: combined1
+as.list(val[i, ]) (`actual`) not equal to as.list(.test[i, ]) (`expected`).
+
+  `actual$objf`: -158.6
+`expected$objf`: -157.8
+
+Failure (test-saem-theo_sd.R:198:7): add: logitNorm prop: prop tbs:  addProp: combined1
+as.list(val[i, ]) (`actual`) not equal to as.list(.test[i, ]) (`expected`).
+
+  `actual$objf`: 199
+`expected$objf`: 236
+
+  `actual$tka`: 0.4
+`expected$tka`: 0.5
+
+  `actual$tcl`: 0.6
+`expected$tcl`: 0.2
+
+  `actual$tv`: 3.8
+`expected$tv`: 3.9
+
+  `actual$pow.sd`: 1.6
+`expected$pow.sd`: 1.9
+
+  `actual$pw`: -0.61
+`expected$pw`: -0.63
+
+Failure (test-saem-theo_sd.R:198:7): add: logitNorm prop: prop tbs:  addProp: combined1
+as.list(val[i, ]) (`actual`) not equal to as.list(.test[i, ]) (`expected`).
+
+  `actual$objf`: -394
+`expected$objf`: -365
+
+  `actual$tka`: 0.36
+`expected$tka`: 0.35
+
+  `actual$tv`: 3.44
+`expected$tv`: 3.46
+
+Failure (test-saem-theo_sd.R:198:7): add: logitNorm prop: prop tbs:  addProp: combined1
+as.list(val[i, ]) (`actual`) not equal to as.list(.test[i, ]) (`expected`).
+
+  `actual$objf`: -580
+`expected$objf`: -567
+
+  `actual$tka`: 0.44
+`expected$tka`: 0.47
+
+  `actual$tcl`: 0.99
+`expected$tcl`: 1.01
+
+Failure (test-saem-theo_sd.R:198:7): add: logitNorm prop: prop tbs:  addProp: combined1
+as.list(val[i, ]) (`actual`) not equal to as.list(.test[i, ]) (`expected`).
+
+  `actual$objf`: 134
+`expected$objf`: 127
+
+  `actual$tv`: 3.48
+`expected$tv`: 3.49
+
+  `actual$pow.sd`: 0.20
+`expected$pow.sd`: 0.18
+
+  `actual$pw`: -2.96
+`expected$pw`: -2.87
+
+Failure (test-saem-theo_sd.R:198:7): add: logitNorm prop: prop tbs:  addProp: combined1
+as.list(val[i, ]) (`actual`) not equal to as.list(.test[i, ]) (`expected`).
+
+  `actual$pw`: -5.8
+`expected$pw`: -5.6
+
+Failure (test-saem-theo_sd.R:198:7): add: logitNorm prop: prop tbs:  addProp: combined1
+as.list(val[i, ]) (`actual`) not equal to as.list(.test[i, ]) (`expected`).
+
+  `actual$objf`:  -18
+`expected$objf`: -183
+
+  `actual$tka`: 0.40
+`expected$tka`: 0.46
+
+  `actual$tcl`: 0.99
+`expected$tcl`: 1.00
+
+  `actual$tv`: 3.49
+`expected$tv`: 3.51
+
+  `actual$pw`: 1.99
+`expected$pw`: 2.08
+
+  `actual$lambda`: 2.98
+`expected$lambda`: 2.93
+
+Failure (test-saem-theo_sd.R:198:7): add: logitNorm prop: prop tbs:  addProp: combined1
+as.list(val[i, ]) (`actual`) not equal to as.list(.test[i, ]) (`expected`).
+
+  `actual$objf`: 32.23
+`expected$objf`: 32.30
+
+Failure (test-saem-theo_sd.R:198:7): add: logitNorm prop: prop tbs:  addProp: combined1
+as.list(val[i, ]) (`actual`) not equal to as.list(.test[i, ]) (`expected`).
+
+  `actual$objf`: 551
+`expected$objf`: 451
+
+  `actual$tka`: 0.4
+`expected$tka`: 0.6
+
+  `actual$tcl`: 1.24
+`expected$tcl`: 1.19
+
+  `actual$tv`: 3.86
+`expected$tv`: 3.85
+
+  `actual$pow.sd`: 3
+`expected$pow.sd`: 2
+
+  `actual$pw`: -3.8
+`expected$pw`: -3.2
+
+Failure (test-saem-theo_sd.R:198:7): add: logitNorm prop: prop tbs:  addProp: combined1
+as.list(val[i, ]) (`actual`) not equal to as.list(.test[i, ]) (`expected`).
+
+  `actual$tv`: 3.46
+`expected$tv`: 3.47
+
+Failure (test-saem-theo_sd.R:198:7): add: logitNorm prop: prop tbs:  addProp: combined1
+as.list(val[i, ]) (`actual`) not equal to as.list(.test[i, ]) (`expected`).
+
+  `actual$objf`: 127.9
+`expected$objf`: 128.1
+
+  `actual$tka`: 0.42
+`expected$tka`: 0.44
+
+  `actual$tv`: 3.48
+`expected$tv`: 3.49
+
+Failure (test-saem-theo_sd.R:198:7): add: logitNorm prop: prop tbs:  addProp: combined1
+as.list(val[i, ]) (`actual`) not equal to as.list(.test[i, ]) (`expected`).
+
+  `actual$objf`: 151.5
+`expected$objf`: 152.1
+
+Failure (test-saem-theo_sd.R:198:7): add: logitNorm prop: prop tbs:  addProp: combined1
+as.list(val[i, ]) (`actual`) not equal to as.list(.test[i, ]) (`expected`).
+
+  `actual$tka`: 0.29
+`expected$tka`: 0.30
+
+  `actual$tcl`: 1.01
+`expected$tcl`: 1.02
+
+  `actual$tv`: 3.46
+`expected$tv`: 3.47
+
+  `actual$lnorm.sd`: 0.18
+`expected$lnorm.sd`: 0.17
+
+Failure (test-saem-theo_sd.R:198:7): add: logitNorm prop: prop tbs:  addProp: combined1
+as.list(val[i, ]) (`actual`) not equal to as.list(.test[i, ]) (`expected`).
+
+  `actual$objf`: -637
+`expected$objf`: -635
+
+  `actual$tka`: 0.42
+`expected$tka`: 0.41
+
+Failure (test-saem-theo_sd.R:198:7): add: logitNorm prop: prop tbs:  addProp: combined1
+as.list(val[i, ]) (`actual`) not equal to as.list(.test[i, ]) (`expected`).
+
+  `actual$objf`: 632
+`expected$objf`: 638
+
+  `actual$tka`: -4.97
+`expected$tka`: -4.94
+
+  `actual$tv`: 3.88
+`expected$tv`: 3.89
+
+  `actual$pow.sd`: 7.06
+`expected$pow.sd`: 7.15
+
+Failure (test-saem-theo_sd.R:198:7): add: logitNorm prop: prop tbs:  addProp: combined1
+as.list(val[i, ]) (`actual`) not equal to as.list(.test[i, ]) (`expected`).
+
+  `actual$objf`: 306
+`expected$objf`: 318
+
+  `actual$tka`: 0.46
+`expected$tka`: 0.39
+
+  `actual$tcl`: 1.24
+`expected$tcl`: 1.33
+
+  `actual$tv`: 3.82
+`expected$tv`: 3.86
+
+  `actual$add.sd`: 0.02
+`expected$add.sd`: 0.00
+
+  `actual$pow.sd`: 0.76
+`expected$pow.sd`: 0.84
+
+  `actual$pw`: 0.45
+`expected$pw`: 0.43
+
+Failure (test-saem-theo_sd.R:198:7): add: logitNorm prop: prop tbs:  addProp: combined1
+as.list(val[i, ]) (`actual`) not equal to as.list(.test[i, ]) (`expected`).
+
+  `actual$objf`: -155
+`expected$objf`: -156
+
+  `actual$tka`: 0.79
+`expected$tka`: 0.87
+
+  `actual$tcl`: 1.09
+`expected$tcl`: 1.11
+
+  `actual$tv`: 4.08
+`expected$tv`: 4.05
+
+  `actual$lnorm.sd`: 0.02
+`expected$lnorm.sd`: 0.01
+
+  `actual$pow.sd`: 0.71
+`expected$pow.sd`: 0.69
+
+  `actual$pw`: 0.00
+`expected$pw`: 0.01
+
+Failure (test-saem-theo_sd.R:198:7): add: logitNorm prop: prop tbs:  addProp: combined1
+as.list(val[i, ]) (`actual`) not equal to as.list(.test[i, ]) (`expected`).
+
+  `actual$objf`: 170
+`expected$objf`: 180
+
+  `actual$tka`: 0.8
+`expected$tka`: 0.9
+
+  `actual$tcl`:  0.1
+`expected$tcl`: -0.0
+
+  `actual$tv`: 4.00
+`expected$tv`: 4.01
+
+  `actual$pow.sd`: 1.43
+`expected$pow.sd`: 1.44
+
+Failure (test-saem-theo_sd.R:198:7): add: logitNorm prop: prop tbs:  addProp: combined1
+as.list(val[i, ]) (`actual`) not equal to as.list(.test[i, ]) (`expected`).
+
+  `actual$objf`: -50
+`expected$objf`: -49
+
+  `actual$tka`: 0.56
+`expected$tka`: 0.59
+
+  `actual$tcl`: 0.14
+`expected$tcl`: 0.13
+
+  `actual$pow.sd`: 1.02
+`expected$pow.sd`: 1.03
+
+Failure (test-saem-theo_sd.R:198:7): add: logitNorm prop: prop tbs:  addProp: combined1
+as.list(val[i, ]) (`actual`) not equal to as.list(.test[i, ]) (`expected`).
+
+  `actual$tka`: 0.28
+`expected$tka`: 0.29
+
+Failure (test-saem-theo_sd.R:198:7): add: logitNorm prop: prop tbs:  addProp: combined1
+as.list(val[i, ]) (`actual`) not equal to as.list(.test[i, ]) (`expected`).
+
+  `actual$objf`: 606
+`expected$objf`: 756
+
+  `actual$tka`: -50
+`expected$tka`: -17
+
+  `actual$tcl`: 5
+`expected$tcl`: 8
+
+  `actual$tv`: 3
+`expected$tv`: 4
+
+  `actual$lambda`: -2.97
+`expected$lambda`: -3.00
+
+Failure (test-saem-theo_sd.R:198:7): add: logitNorm prop: prop tbs:  addProp: combined1
+as.list(val[i, ]) (`actual`) not equal to as.list(.test[i, ]) (`expected`).
+
+  `actual$pw`: -2.19
+`expected$pw`: -2.20
+
+Failure (test-saem-theo_sd.R:198:7): add: logitNorm prop: prop tbs:  addProp: combined1
+as.list(val[i, ]) (`actual`) not equal to as.list(.test[i, ]) (`expected`).
+
+  `actual$objf`: 133.4
+`expected$objf`: 134.2
+
+  `actual$tka`: 0.43
+`expected$tka`: 0.44
+
+  `actual$tcl`: 1.02
+`expected$tcl`: 1.01
+
+  `actual$pw`: -3.01
+`expected$pw`: -2.98
+
+Failure (test-saem-theo_sd.R:198:7): add: logitNorm prop: prop tbs:  addProp: combined1
+as.list(val[i, ]) (`actual`) not equal to as.list(.test[i, ]) (`expected`).
+
+  `actual$tka`: 0.44
+`expected$tka`: 0.43
+
+  `actual$pw`: 3.61
+`expected$pw`: 3.66
+
+Failure (test-saem-theo_sd.R:198:7): add: logitNorm prop: prop tbs:  addProp: combined1
+as.list(val[i, ]) (`actual`) not equal to as.list(.test[i, ]) (`expected`).
+
+  `actual$tka`: 0.48
+`expected$tka`: 0.47
+
+  `actual$pw`: -9.97
+`expected$pw`: -9.95
+
+Failure (test-saem-theo_sd.R:198:7): add: logitNorm prop: prop tbs:  addProp: combined1
+as.list(val[i, ]) (`actual`) not equal to as.list(.test[i, ]) (`expected`).
+
+  `actual$objf`: 606
+`expected$objf`: 753
+
+  `actual$tka`: -49
+`expected$tka`: -17
+
+  `actual$tcl`: 5
+`expected$tcl`: 8
+
+  `actual$tv`: 3
+`expected$tv`: 4
+
+  `actual$lambda`: -2.97
+`expected$lambda`: -3.00
+
+Failure (test-saem-theo_sd.R:198:7): add: logitNorm prop: prop tbs:  addProp: combined1
+as.list(val[i, ]) (`actual`) not equal to as.list(.test[i, ]) (`expected`).
+
+  `actual$tka`: 0.48
+`expected$tka`: 0.49
+
+  `actual$tv`: 3.45
+`expected$tv`: 3.46
+
+Failure (test-saem-theo_sd.R:198:7): add: logitNorm prop: prop tbs:  addProp: combined1
+as.list(val[i, ]) (`actual`) not equal to as.list(.test[i, ]) (`expected`).
+
+  `actual$tka`: 0.44
+`expected$tka`: 0.43
+
+  `actual$tcl`: 1.00
+`expected$tcl`: 1.01
+
+Failure (test-saem-theo_sd.R:198:7): add: logitNorm prop: prop tbs:  addProp: combined1
+as.list(val[i, ]) (`actual`) not equal to as.list(.test[i, ]) (`expected`).
+
+  `actual$objf`: 697
+`expected$objf`: 701
+
+  `actual$tka`: -2.19
+`expected$tka`: -2.23
+
+  `actual$tcl`: 2.64
+`expected$tcl`: 2.61
+
+  `actual$tv`: 4.27
+`expected$tv`: 4.25
+
+  `actual$lambda`: 0.32
+`expected$lambda`: 0.31
+
+Failure (test-saem-theo_sd.R:198:7): add: logitNorm prop: prop tbs:  addProp: combined1
+as.list(val[i, ]) (`actual`) not equal to as.list(.test[i, ]) (`expected`).
+
+  `actual$objf`: 440
+`expected$objf`: 544
+
+  `actual$tka`: 0.36
+`expected$tka`: 0.34
+
+  `actual$tcl`: 1.29
+`expected$tcl`: 1.21
+
+  `actual$tv`: 3.9
+`expected$tv`: 3.8
+
+  `actual$pow.sd`: 1.7
+`expected$pow.sd`: 2.7
+
+  `actual$pw`: -3.5
+`expected$pw`: -3.6
+
+  `actual$lambda`: -2.99
+`expected$lambda`: -3.00
+
+Failure (test-saem-theo_sd.R:198:7): add: logitNorm prop: prop tbs:  addProp: combined1
+as.list(val[i, ]) (`actual`) not equal to as.list(.test[i, ]) (`expected`).
+
+  `actual$objf`: 333
+`expected$objf`: 205
+
+  `actual$tka`: 0.46
+`expected$tka`: 0.47
+
+  `actual$tcl`: 0.99
+`expected$tcl`: 1.00
+
+  `actual$tv`: 3.46
+`expected$tv`: 3.47
+────────────────────────────────────────────────────────────────────────────────
+
+⠏ |         0 | saem-translate                                                  
+⠋ |         1 | saem-translate                                                  
+⠏ |        20 | saem-translate                                                  
+⠦ |        27 | saem-translate                                                  
+⠹ |        53 | saem-translate                                                  
+⠸ |        54 | saem-translate                                                  
+✔ |        76 | saem-translate [0.8s]
+
+⠏ |         0 | sens-fd                                                         
+⠋ |         1 | sens-fd                                                         
+⠙ |         2 | sens-fd                                                         
+⠹ |         3 | sens-fd                                                         
+⠸ |         4 | sens-fd                                                         
+⠼ |         5 | sens-fd                                                         
+⠴ |         6 | sens-fd                                                         
+⠦ |         7 | sens-fd                                                         
+⠧ |         8 | sens-fd                                                         
+✔ |         8 | sens-fd [5.2s]
+
+⠏ |         0 | table-cmt                                                       
+⠋ |         1 | table-cmt                                                       
+⠦ |         7 | table-cmt                                                       
+⠏ |        10 | table-cmt                                                       
+⠹ |        13 | table-cmt                                                       
+✔ |        13 | table-cmt [9.0s]
+
+⠏ |         0 | tad-in-models                                                   → loading into symengine environment...
+→ pruning branches (`if`/`else`) of full model...
+✔ done
+→ calculate jacobian
+[====|====|====|====|====|====|====|====|====|====
+→ calculate sensitivities
+[====|====|====|====|====|====|====|====|====|====] 0:00:00 
+
+→ calculate ∂(f)/∂(η)
+[====|====|====|====|====|====|====|====|====|====] 0:00:00 
+
+→ calculate ∂(R²)/∂(η)
+[====|====|====|====|====|====|====|====|====|====] 0:00:00 
+
+→ finding duplicate expressions in inner model...
+[====|====|====|====|====|====|====|====|====|====] 0:00:00 
+
+→ optimizing duplicate expressions in inner model...
+[====|====|====|====|====|====|====|====|====|====] 0:00:00 
+
+→ finding duplicate expressions in EBE model...
+[====|====|====|====|====|====|====|====|====|====] 0:00:00 
+
+→ optimizing duplicate expressions in EBE model...
+[====|====|====|====|====|====|====|====|====|====] 0:00:00 
+
+→ compiling inner model...
+✔ done
+→ finding duplicate expressions in FD model...
+[====|====|====|====|====|====|====|====|====|====] 0:00:00 
+
+→ optimizing duplicate expressions in FD model...
+[====|====|====|====|====|====|====|====|====|====] 0:00:00 
+
+→ compiling EBE model...
+✔ done
+→ compiling events FD model...
+✔ done
+calculating covariance matrix
+[====|====|====|====|====|====|====|====|====|====] 0:00:25 
+done
+→ Calculating residuals/tables
+✔ done
+→ compress origData in nlmixr2 object, save 13096
+→ compress parHist in nlmixr2 object, save 2536
+
+⠋ |   1     0 | tad-in-models                                                   → loading into symengine environment...
+→ pruning branches (`if`/`else`) of saem model...
+✔ done
+→ finding duplicate expressions in saem model...
+[====|====|====|====|====|====|====|====|====|====] 0:00:00 
+
+→ optimizing duplicate expressions in saem model...
+[====|====|====|====|====|====|====|====|====|====] 0:00:00 
+
+✔ done
+params:	lV	lka	ln	lCL	lktr	V(eta.lka)	V(eta.ln)	V(eta.lCL)	err.pk
+001: 0.594844	-2.484197	2.523810	1.645013	4.262072	0.018538	0.881647	0.052682	3.948960	
+002: 0.468275	-2.467599	1.876699	1.434370	4.297082	0.017611	0.837564	0.050048	2.764591	
+003: 0.374830	-2.455009	1.375934	1.213904	4.668424	0.016731	0.820186	0.047546	1.897614	
+004: 0.359711	-2.460915	1.238778	1.050003	4.725388	0.015894	0.779176	0.045168	1.269310	
+005: 0.407900	-2.478770	1.147063	1.016498	4.894918	0.015100	0.740218	0.042910	1.043577	
+006: 0.437301	-2.473152	1.265879	1.012396	4.604193	0.014345	0.703207	0.040765	0.978042	
+007: 0.476006	-2.475487	1.046326	1.013362	4.501974	0.013627	0.668046	0.038726	0.985016	
+008: 0.474372	-2.459337	0.907364	1.019907	4.367198	0.012946	0.634644	0.036790	0.956724	
+009: 0.492302	-2.452532	0.899244	1.031543	4.236697	0.012299	0.602912	0.034950	0.963326	
+010: 0.440281	-2.431046	0.980304	1.031262	4.453611	0.011684	0.572766	0.035321	0.948059	
+011: 0.474739	-2.445239	0.887665	1.014145	4.369113	0.011100	0.544128	0.035736	0.932789	
+012: 0.437490	-2.444029	0.992361	1.028358	4.309372	0.010545	0.516922	0.038390	0.920176	
+013: 0.429749	-2.449197	1.005112	1.022455	4.302203	0.010017	0.491075	0.036470	0.932041	
+014: 0.449224	-2.437945	1.045700	1.027482	3.985156	0.009516	0.466522	0.034647	0.927550	
+015: 0.469376	-2.427801	1.057292	1.031259	4.007344	0.009041	0.443196	0.033782	0.942730	
+016: 0.435396	-2.447361	1.022391	1.022435	3.765945	0.008589	0.421036	0.042617	0.941368	
+017: 0.436903	-2.445417	0.964655	1.016354	3.706463	0.008159	0.399984	0.040486	0.943363	
+018: 0.366495	-2.453575	0.872149	1.021172	3.692761	0.008741	0.379985	0.042154	0.939871	
+019: 0.367396	-2.456140	0.751896	1.029728	3.579210	0.008304	0.360986	0.040046	0.931592	
+020: 0.415629	-2.456532	0.741059	1.013506	3.557607	0.007889	0.342936	0.038044	0.924067	
+021: 0.376928	-2.454753	0.817210	1.011770	3.468587	0.007494	0.325790	0.036142	0.917899	
+022: 0.360192	-2.458760	0.763296	1.018529	3.494527	0.007120	0.386895	0.035622	0.929044	
+023: 0.288746	-2.464437	0.807512	1.016357	3.408414	0.008067	0.367550	0.035356	0.927270	
+024: 0.286027	-2.474902	0.788571	1.009225	3.341221	0.007663	0.350135	0.039851	0.923243	
+025: 0.298356	-2.485320	0.784068	1.010155	3.362588	0.007280	0.351481	0.039184	0.935851	
+026: 0.256873	-2.478273	0.790322	1.013207	3.272079	0.007627	0.408428	0.037224	0.929075	
+027: 0.297308	-2.475722	0.665285	1.015260	3.310149	0.007402	0.521796	0.035363	0.936558	
+028: 0.281219	-2.463765	0.680306	1.013803	3.320046	0.007032	0.495706	0.035516	0.913706	
+029: 0.284445	-2.454848	0.698717	1.033329	3.304649	0.009791	0.470921	0.038607	0.913937	
+030: 0.258098	-2.473222	0.558837	1.010255	3.260988	0.010447	0.484368	0.037554	0.919304	
+031: 0.233265	-2.494241	0.564075	1.005634	3.207283	0.010469	0.460150	0.037637	0.923183	
+032: 0.286072	-2.488405	0.503739	1.013993	3.160364	0.010469	0.437142	0.037696	0.931647	
+033: 0.326500	-2.475803	0.551571	1.013651	3.205095	0.010893	0.415285	0.035812	0.933791	
+034: 0.329338	-2.481231	0.561138	1.011585	3.213216	0.012246	0.394521	0.035927	0.944353	
+035: 0.314728	-2.481119	0.603985	1.022224	3.215789	0.011634	0.374795	0.038135	0.938660	
+036: 0.333131	-2.470713	0.696913	1.011478	3.216620	0.011052	0.356055	0.036228	0.934809	
+037: 0.339296	-2.474844	0.691601	1.024099	3.206590	0.010500	0.338252	0.038529	0.949667	
+038: 0.348452	-2.470663	0.716850	1.003996	3.220082	0.009975	0.321340	0.036602	0.952778	
+039: 0.292791	-2.475026	0.692649	1.013366	3.225232	0.009671	0.305273	0.041665	0.946153	
+040: 0.271926	-2.472309	0.708401	1.017040	3.215427	0.010363	0.290009	0.039581	0.928666	
+041: 0.307258	-2.481007	0.791546	1.017898	3.186236	0.010056	0.275509	0.041031	0.922644	
+042: 0.338364	-2.483466	0.760533	1.003242	3.190547	0.009818	0.261733	0.042893	0.930170	
+043: 0.318299	-2.485497	0.686585	1.004488	3.191681	0.009327	0.248646	0.042683	0.937767	
+044: 0.327807	-2.494040	0.629882	1.000607	3.194798	0.008860	0.236214	0.040549	0.923793	
+045: 0.290855	-2.481758	0.728845	1.005771	3.188922	0.008518	0.224403	0.038521	0.927187	
+046: 0.281749	-2.477230	0.727573	1.011256	3.185817	0.008195	0.263356	0.037722	0.934561	
+047: 0.295847	-2.486789	0.766807	1.001796	3.180131	0.007785	0.250188	0.035836	0.937941	
+048: 0.275830	-2.488286	0.738989	1.011780	3.192442	0.007396	0.287962	0.034044	0.942300	
+049: 0.234387	-2.472638	0.842193	1.010607	3.193309	0.008047	0.342526	0.034642	0.936106	
+050: 0.232247	-2.492067	0.803791	1.014590	3.184529	0.008393	0.325399	0.036687	0.939858	
+051: 0.271028	-2.486775	0.725457	1.019527	3.167950	0.008179	0.354764	0.040266	0.930871	
+052: 0.216451	-2.493062	0.663968	1.008352	3.176286	0.007771	0.453337	0.038253	0.931654	
+053: 0.275958	-2.496158	0.506951	1.004033	3.180716	0.007382	0.463363	0.036340	0.937327	
+054: 0.278441	-2.499074	0.534823	1.008411	3.165809	0.007013	0.464170	0.034523	0.935887	
+055: 0.299489	-2.499720	0.511358	0.996778	3.155862	0.007123	0.482400	0.032797	0.933447	
+056: 0.233715	-2.487689	0.553283	1.007686	3.157835	0.007711	0.458280	0.032814	0.934821	
+057: 0.277157	-2.504502	0.543114	0.994299	3.153892	0.007325	0.435366	0.031173	0.930974	
+058: 0.264685	-2.491660	0.574559	0.991731	3.158238	0.006959	0.413597	0.036236	0.931986	
+059: 0.222143	-2.492486	0.643770	0.999527	3.144463	0.006611	0.392917	0.039380	0.925489	
+060: 0.194133	-2.504189	0.647485	1.001947	3.150916	0.006280	0.373272	0.037411	0.933116	
+061: 0.226665	-2.496899	0.690826	0.994303	3.145703	0.005966	0.354608	0.035541	0.941292	
+062: 0.222705	-2.495452	0.737153	0.998389	3.140053	0.005668	0.344186	0.033764	0.952558	
+063: 0.214608	-2.475104	0.638779	1.011469	3.137360	0.005385	0.353888	0.034667	0.936415	
+064: 0.252584	-2.484180	0.606730	1.004624	3.135821	0.005314	0.336194	0.035806	0.933069	
+065: 0.196257	-2.485710	0.646115	1.013027	3.142690	0.005049	0.369268	0.034140	0.926479	
+066: 0.255340	-2.489979	0.570872	1.000916	3.143815	0.004796	0.418290	0.035220	0.930045	
+067: 0.268010	-2.495842	0.429489	0.987957	3.142776	0.004556	0.397375	0.036885	0.950929	
+068: 0.300313	-2.496571	0.478745	0.992664	3.143874	0.004329	0.377506	0.035041	0.945427	
+069: 0.236390	-2.505337	0.562805	0.994011	3.146525	0.004112	0.358631	0.033289	0.940447	
+070: 0.239100	-2.501422	0.568864	1.004139	3.147708	0.003907	0.340700	0.034439	0.938599	
+071: 0.258006	-2.496456	0.512448	1.011266	3.145153	0.003711	0.384927	0.036043	0.943824	
+072: 0.297418	-2.483591	0.449946	1.018121	3.141361	0.003574	0.425569	0.034241	0.927035	
+073: 0.317662	-2.474958	0.440052	1.015340	3.142263	0.003396	0.404290	0.033979	0.932844	
+074: 0.316535	-2.473103	0.460465	1.007191	3.143771	0.003226	0.406920	0.032280	0.923051	
+075: 0.297120	-2.466364	0.399699	1.024867	3.140219	0.003830	0.391139	0.032593	0.936953	
+076: 0.324445	-2.461654	0.451734	1.022345	3.132688	0.003638	0.371582	0.037030	0.951678	
+077: 0.259877	-2.461147	0.570452	1.021690	3.131073	0.003749	0.353003	0.035458	0.945291	
+078: 0.290187	-2.453231	0.562805	1.025451	3.125085	0.003663	0.335353	0.034464	0.944662	
+079: 0.260124	-2.453878	0.533684	1.025697	3.125070	0.005644	0.368660	0.033206	0.948769	
+080: 0.300145	-2.444958	0.646716	1.031292	3.131375	0.007291	0.384132	0.037999	0.935642	
+081: 0.307774	-2.464303	0.695368	1.019406	3.134294	0.006927	0.369510	0.037373	0.935388	
+082: 0.260896	-2.464778	0.728602	1.017659	3.137456	0.006580	0.351035	0.035983	0.937648	
+083: 0.266464	-2.468599	0.758224	1.010493	3.138633	0.006251	0.333483	0.034202	0.926613	
+084: 0.304012	-2.467911	0.738206	1.010354	3.140018	0.005939	0.316809	0.032492	0.929106	
+085: 0.301975	-2.460760	0.779117	1.014247	3.149218	0.006313	0.300968	0.033329	0.922218	
+086: 0.285464	-2.463250	0.695632	1.015681	3.150567	0.009855	0.285920	0.035877	0.934761	
+087: 0.254287	-2.469341	0.704230	1.008186	3.150503	0.009362	0.347196	0.035798	0.937941	
+088: 0.321722	-2.463591	0.563164	1.013274	3.149367	0.008894	0.361736	0.034008	0.936151	
+089: 0.304052	-2.457413	0.612790	1.016100	3.145472	0.008961	0.343649	0.036190	0.938043	
+090: 0.302641	-2.467121	0.669160	1.023174	3.144773	0.009017	0.326466	0.034825	0.934118	
+091: 0.279185	-2.451305	0.666061	1.036489	3.140608	0.009848	0.316670	0.038910	0.923434	
+092: 0.266568	-2.456554	0.740169	1.025812	3.143454	0.009355	0.347804	0.038802	0.918742	
+093: 0.285073	-2.450903	0.658388	1.030179	3.144278	0.009914	0.353200	0.038821	0.925915	
+094: 0.306716	-2.441834	0.658877	1.033444	3.140262	0.009418	0.476611	0.040736	0.926555	
+095: 0.303280	-2.448707	0.649331	1.026396	3.137802	0.011129	0.452780	0.045495	0.927963	
+096: 0.324273	-2.438313	0.657979	1.034033	3.136311	0.011813	0.472386	0.047863	0.937858	
+097: 0.355322	-2.443209	0.627920	1.034533	3.139519	0.011562	0.448766	0.045926	0.942568	
+098: 0.360014	-2.451791	0.597957	1.014549	3.137294	0.010984	0.426328	0.043629	0.933168	
+099: 0.304066	-2.442020	0.603100	1.020450	3.137375	0.012033	0.449449	0.041448	0.936211	
+100: 0.271120	-2.460092	0.558464	1.018019	3.136662	0.011431	0.495476	0.039375	0.935366	
+101: 0.306802	-2.462777	0.617773	1.012080	3.137431	0.010860	0.470702	0.037407	0.926608	
+102: 0.276972	-2.474987	0.685534	1.013421	3.137907	0.012038	0.447167	0.036248	0.928976	
+103: 0.310135	-2.467029	0.636982	1.024617	3.137762	0.011436	0.424809	0.040552	0.932900	
+104: 0.304413	-2.459527	0.489615	1.021306	3.136173	0.010864	0.403568	0.045064	0.922820	
+105: 0.343617	-2.465201	0.492091	1.019319	3.135687	0.010973	0.391716	0.042811	0.931554	
+106: 0.361360	-2.466572	0.505258	1.015867	3.133997	0.010425	0.372130	0.040815	0.939162	
+107: 0.323851	-2.472213	0.335081	1.008318	3.134866	0.011447	0.404858	0.039490	0.930587	
+108: 0.297023	-2.473061	0.407245	1.013721	3.133799	0.011908	0.465478	0.041424	0.914742	
+109: 0.287487	-2.479657	0.338629	1.013653	3.132245	0.013857	0.442204	0.039898	0.923813	
+110: 0.332895	-2.469576	0.393726	1.005204	3.135165	0.013165	0.420094	0.037903	0.920970	
+111: 0.341024	-2.463823	0.353986	1.010091	3.134834	0.012506	0.512485	0.036008	0.919390	
+112: 0.344621	-2.455449	0.434683	1.016527	3.137329	0.011881	0.486861	0.038989	0.917510	
+113: 0.257474	-2.461500	0.509002	1.024523	3.137449	0.011287	0.462518	0.041391	0.933835	
+114: 0.222949	-2.467710	0.581394	1.018929	3.139058	0.010723	0.439392	0.039322	0.937109	
+115: 0.263781	-2.458277	0.625697	1.018400	3.134959	0.010186	0.417423	0.039369	0.922532	
+116: 0.236013	-2.471221	0.597025	1.017445	3.133474	0.011553	0.396552	0.037655	0.911298	
+117: 0.235992	-2.476983	0.435376	1.003775	3.132527	0.010976	0.394562	0.036716	0.934411	
+118: 0.265595	-2.472972	0.521927	1.015932	3.132951	0.010427	0.374834	0.036958	0.924753	
+119: 0.237497	-2.476730	0.426915	1.016243	3.131785	0.009905	0.372885	0.035630	0.937176	
+120: 0.202082	-2.492974	0.464602	1.007726	3.131313	0.009410	0.373913	0.038918	0.940112	
+121: 0.263010	-2.495611	0.442590	0.997691	3.130913	0.012349	0.355217	0.036972	0.937934	
+122: 0.217507	-2.497010	0.391704	1.000295	3.132866	0.011731	0.387005	0.036507	0.943738	
+123: 0.267665	-2.473702	0.557677	1.016577	3.132354	0.011145	0.454322	0.039762	0.934905	
+124: 0.277870	-2.470145	0.520668	1.014322	3.133975	0.010588	0.474673	0.038418	0.924126	
+125: 0.287993	-2.474056	0.438496	1.005538	3.129957	0.010058	0.597319	0.038896	0.927766	
+126: 0.314224	-2.483112	0.426919	1.007541	3.131977	0.010756	0.602649	0.042201	0.927556	
+127: 0.312818	-2.483635	0.406832	0.999706	3.130688	0.010218	0.590241	0.041484	0.923241	
+128: 0.290054	-2.477153	0.521678	1.012828	3.130861	0.009707	0.560729	0.040135	0.929722	
+129: 0.291960	-2.477926	0.542020	1.015811	3.132022	0.009655	0.532692	0.040903	0.919580	
+130: 0.281387	-2.477777	0.448493	1.009618	3.130762	0.009172	0.506058	0.038857	0.919751	
+131: 0.314129	-2.468946	0.441428	1.009925	3.130787	0.008714	0.553738	0.036915	0.920485	
+132: 0.311095	-2.468991	0.461777	1.014528	3.129061	0.008278	0.561961	0.035650	0.933354	
+133: 0.296247	-2.480055	0.409971	1.017965	3.129426	0.007864	0.533863	0.035731	0.937155	
+134: 0.224694	-2.476070	0.543199	1.016813	3.128026	0.008476	0.507169	0.036472	0.925268	
+135: 0.314656	-2.476131	0.431423	1.009390	3.127553	0.008052	0.481811	0.038670	0.908077	
+136: 0.270211	-2.474060	0.377388	1.006207	3.125933	0.007649	0.558609	0.038161	0.921345	
+137: 0.319817	-2.470595	0.325379	1.003710	3.126769	0.007267	0.588802	0.037431	0.928471	
+138: 0.302782	-2.484692	0.356719	1.008691	3.125928	0.007450	0.559362	0.037590	0.926741	
+139: 0.274830	-2.469642	0.392065	1.016949	3.125566	0.007078	0.531394	0.036979	0.925333	
+140: 0.352047	-2.457255	0.342467	1.040331	3.124366	0.006915	0.576525	0.038927	0.938624	
+141: 0.329307	-2.458849	0.363354	1.033198	3.124996	0.006570	0.547699	0.036980	0.936138	
+142: 0.303734	-2.462542	0.402237	1.012232	3.127712	0.007085	0.640993	0.035131	0.943622	
+143: 0.334632	-2.478362	0.559276	1.003352	3.128502	0.006845	0.608943	0.033375	0.944140	
+144: 0.347740	-2.482119	0.431178	0.996844	3.127257	0.007819	0.578496	0.032662	0.938119	
+145: 0.369355	-2.492681	0.280107	0.994534	3.127229	0.009766	0.549571	0.038517	0.934709	
+146: 0.329270	-2.499336	0.263236	1.006050	3.126869	0.009277	0.566583	0.041027	0.947439	
+147: 0.363035	-2.490000	0.294965	1.009502	3.125964	0.008814	0.646551	0.038975	0.944639	
+148: 0.385442	-2.465132	0.192355	1.006966	3.124862	0.008566	0.614224	0.037027	0.943151	
+149: 0.387680	-2.468881	0.178614	1.008742	3.124504	0.008138	0.583513	0.035175	0.940472	
+150: 0.340058	-2.469741	0.268963	1.009327	3.124784	0.007731	0.594114	0.038751	0.926267	
+151: 0.255432	-2.479980	0.365783	1.011386	3.123039	0.007345	0.564408	0.038987	0.925401	
+152: 0.314747	-2.482871	0.420781	1.008207	3.122169	0.005665	0.537941	0.037920	0.940798	
+153: 0.315137	-2.496210	0.440431	0.999724	3.122896	0.005706	0.374654	0.032648	0.935953	
+154: 0.314389	-2.488903	0.474291	1.001723	3.123935	0.004368	0.315815	0.035152	0.938830	
+155: 0.318897	-2.474258	0.565984	1.012248	3.123541	0.004524	0.308288	0.035190	0.939465	
+156: 0.314056	-2.476889	0.503391	1.015242	3.123037	0.004018	0.310479	0.037747	0.930138	
+157: 0.320809	-2.479217	0.470622	1.013708	3.123214	0.003421	0.336209	0.034472	0.941577	
+158: 0.312222	-2.480033	0.473153	1.007477	3.124042	0.003412	0.402194	0.032956	0.938474	
+159: 0.232618	-2.482332	0.475334	1.001275	3.124343	0.003466	0.452808	0.031972	0.933962	
+160: 0.288779	-2.487321	0.441038	1.010577	3.126526	0.002796	0.505966	0.037342	0.944166	
+161: 0.259002	-2.486282	0.526449	1.013115	3.126537	0.002030	0.313950	0.034445	0.958081	
+162: 0.269452	-2.496052	0.532387	0.988374	3.126138	0.001912	0.405385	0.033625	0.938020	
+163: 0.249090	-2.506141	0.477922	1.006116	3.126092	0.001924	0.397400	0.034442	0.942002	
+164: 0.250330	-2.498308	0.509340	1.003354	3.125839	0.001732	0.394257	0.034466	0.933477	
+165: 0.258329	-2.501175	0.458611	0.998905	3.125611	0.001764	0.454324	0.031363	0.929462	
+166: 0.236400	-2.499358	0.507852	0.999736	3.124647	0.002120	0.522855	0.033495	0.930169	
+167: 0.214288	-2.497113	0.514741	1.005586	3.123830	0.001944	0.587470	0.029346	0.930031	
+168: 0.199714	-2.500744	0.508931	0.995063	3.125284	0.002074	0.497457	0.029767	0.939720	
+169: 0.249778	-2.500435	0.604742	1.010223	3.127262	0.001909	0.494883	0.033314	0.949068	
+170: 0.242371	-2.503615	0.561520	1.006116	3.126953	0.001932	0.422195	0.031151	0.944380	
+171: 0.241033	-2.510707	0.571648	1.004975	3.128092	0.001695	0.378585	0.031082	0.952754	
+172: 0.241918	-2.513341	0.562032	1.003185	3.127136	0.002255	0.288560	0.038148	0.948650	
+173: 0.211599	-2.521006	0.590141	0.990341	3.127564	0.001335	0.377499	0.036263	0.947585	
+174: 0.170281	-2.517257	0.581504	1.000445	3.128198	0.001621	0.381898	0.034220	0.947955	
+175: 0.216074	-2.520919	0.519680	0.987669	3.126812	0.001415	0.368495	0.033834	0.943154	
+176: 0.231337	-2.525212	0.562434	0.986623	3.126392	0.001369	0.377672	0.032681	0.944865	
+177: 0.217937	-2.520682	0.644520	0.974886	3.127443	0.001618	0.400306	0.033460	0.948488	
+178: 0.158958	-2.518581	0.710994	0.992827	3.126860	0.001324	0.430225	0.030324	0.944494	
+179: 0.175647	-2.515668	0.581608	0.992076	3.127287	0.001175	0.526904	0.032587	0.938555	
+180: 0.208729	-2.516133	0.527058	0.997087	3.127541	0.001201	0.541921	0.031448	0.950937	
+181: 0.166350	-2.519218	0.606802	0.993891	3.127324	0.001113	0.497874	0.025425	0.957603	
+182: 0.207748	-2.512874	0.490168	1.004264	3.126670	0.001206	0.487219	0.031499	0.933379	
+183: 0.264018	-2.508892	0.442624	0.999450	3.127030	0.001453	0.389983	0.034555	0.937534	
+184: 0.278366	-2.496240	0.408855	1.009375	3.129314	0.001104	0.490946	0.031993	0.942878	
+185: 0.286668	-2.492680	0.454891	0.992071	3.128908	0.001228	0.605582	0.032332	0.938452	
+186: 0.267816	-2.497929	0.479257	0.994046	3.129378	0.001343	0.462858	0.038007	0.937643	
+187: 0.336017	-2.487808	0.416220	1.004532	3.129238	0.000819	0.452655	0.035108	0.946057	
+188: 0.344550	-2.487453	0.285089	0.999719	3.128290	0.000718	0.459867	0.029871	0.942603	
+189: 0.302735	-2.488493	0.260390	0.996753	3.128623	0.000484	0.442208	0.028527	0.934138	
+190: 0.343740	-2.490143	0.217122	1.008012	3.127971	0.000554	0.504529	0.034491	0.935024	
+191: 0.325825	-2.490209	0.117515	1.009474	3.128527	0.000610	0.558834	0.036585	0.936038	
+192: 0.345807	-2.489230	0.179688	1.002600	3.128853	0.000572	0.619741	0.030667	0.943921	
+193: 0.289587	-2.490305	0.123654	0.996542	3.127914	0.000522	0.764830	0.033580	0.942039	
+194: 0.283162	-2.490656	0.142227	1.012038	3.128000	0.000400	0.743456	0.036069	0.939021	
+195: 0.313312	-2.490475	0.199962	1.005739	3.127365	0.000328	0.927342	0.031956	0.947388	
+196: 0.248130	-2.491293	0.200467	1.001441	3.127944	0.000304	0.900768	0.032078	0.963195	
+197: 0.239628	-2.491957	0.321080	1.006483	3.127429	0.000285	0.914623	0.030363	0.948328	
+198: 0.341311	-2.494094	0.263807	1.000351	3.128089	0.000262	0.995308	0.030003	0.960092	
+199: 0.296637	-2.494012	0.372706	0.996253	3.128694	0.000178	0.813312	0.035968	0.941719	
+200: 0.268101	-2.494415	0.265934	0.991058	3.127741	0.000152	0.690125	0.032885	0.953547	
+201: 0.288667	-2.494686	0.261771	0.998732	3.127523	0.000157	0.695734	0.033390	0.944914	
+202: 0.298497	-2.494938	0.309419	0.999113	3.127328	0.000160	0.670319	0.033678	0.947066	
+203: 0.304026	-2.494849	0.294341	1.000515	3.127196	0.000159	0.653420	0.033419	0.943207	
+204: 0.310678	-2.494751	0.299083	0.999804	3.127115	0.000154	0.653690	0.033028	0.942523	
+205: 0.312728	-2.494707	0.300687	1.000164	3.126995	0.000152	0.652467	0.032650	0.941409	
+206: 0.313639	-2.494226	0.301527	0.999325	3.126979	0.000145	0.644716	0.032231	0.941392	
+207: 0.306815	-2.494176	0.312625	0.999317	3.127056	0.000141	0.633437	0.032432	0.940346	
+208: 0.301698	-2.494075	0.320108	0.999434	3.127064	0.000142	0.632380	0.032071	0.939676	
+209: 0.302985	-2.494041	0.327961	0.999403	3.127154	0.000138	0.618291	0.032171	0.939517	
+210: 0.302641	-2.493964	0.340816	0.999252	3.127234	0.000138	0.610208	0.032307	0.940090	
+211: 0.303619	-2.494021	0.345212	0.999650	3.127242	0.000135	0.605666	0.032474	0.940350	
+212: 0.304778	-2.493858	0.343451	0.999580	3.127235	0.000134	0.599867	0.032507	0.940839	
+213: 0.307821	-2.493622	0.344527	0.999994	3.127269	0.000132	0.595090	0.032385	0.940675	
+214: 0.310562	-2.493523	0.345450	0.999870	3.127319	0.000129	0.589196	0.032089	0.940328	
+215: 0.309762	-2.493512	0.341399	1.000272	3.127287	0.000128	0.583326	0.031934	0.941162	
+216: 0.309918	-2.493429	0.343594	1.000771	3.127303	0.000127	0.577319	0.031809	0.940764	
+217: 0.312043	-2.493393	0.341697	1.000568	3.127332	0.000128	0.574382	0.031723	0.940750	
+218: 0.311960	-2.493388	0.344823	1.000815	3.127329	0.000128	0.566713	0.031814	0.940631	
+219: 0.310184	-2.493319	0.343297	1.001081	3.127326	0.000126	0.567043	0.031908	0.941275	
+220: 0.310593	-2.493311	0.343024	1.001189	3.127360	0.000124	0.562239	0.031875	0.941418	
+221: 0.311691	-2.493342	0.335907	1.001811	3.127309	0.000123	0.567439	0.031900	0.941813	
+222: 0.311633	-2.493346	0.326937	1.002227	3.127255	0.000122	0.573937	0.031828	0.941788	
+223: 0.312234	-2.493245	0.323958	1.002554	3.127232	0.000121	0.586296	0.031755	0.941866	
+224: 0.312602	-2.493132	0.324609	1.002463	3.127214	0.000121	0.591802	0.031723	0.941787	
+225: 0.313522	-2.493124	0.327340	1.002666	3.127181	0.000121	0.586545	0.031612	0.941845	
+226: 0.313046	-2.493157	0.329499	1.002171	3.127187	0.000121	0.577591	0.031431	0.942170	
+227: 0.313029	-2.493208	0.330273	1.002077	3.127203	0.000122	0.573040	0.031483	0.941822	
+228: 0.313353	-2.493265	0.333493	1.001932	3.127201	0.000123	0.566032	0.031525	0.941658	
+229: 0.312436	-2.493260	0.333026	1.002113	3.127219	0.000123	0.565849	0.031449	0.941259	
+230: 0.310803	-2.493225	0.335049	1.002145	3.127227	0.000125	0.564676	0.031494	0.941226	
+231: 0.310060	-2.493154	0.336756	1.002322	3.127231	0.000125	0.560359	0.031621	0.940920	
+232: 0.310900	-2.493106	0.335333	1.002029	3.127214	0.000126	0.560770	0.031651	0.940966	
+233: 0.310995	-2.493011	0.335213	1.001780	3.127202	0.000126	0.557472	0.031650	0.940811	
+234: 0.312429	-2.492930	0.336967	1.001682	3.127208	0.000127	0.552891	0.031679	0.940658	
+235: 0.313288	-2.492789	0.339654	1.001761	3.127196	0.000127	0.546875	0.031738	0.940701	
+236: 0.313413	-2.492703	0.340812	1.001755	3.127190	0.000127	0.540968	0.031714	0.940996	
+237: 0.314214	-2.492640	0.340038	1.001432	3.127178	0.000126	0.538140	0.031712	0.941305	
+238: 0.315163	-2.492638	0.341194	1.001302	3.127171	0.000125	0.534511	0.031736	0.941558	
+239: 0.316132	-2.492661	0.342625	1.001115	3.127160	0.000124	0.530205	0.031655	0.942103	
+240: 0.316086	-2.492672	0.344357	1.000980	3.127182	0.000124	0.527781	0.031641	0.942154	
+241: 0.316532	-2.492681	0.343904	1.000997	3.127190	0.000124	0.525962	0.031651	0.941992	
+242: 0.317047	-2.492682	0.344488	1.001078	3.127200	0.000124	0.525311	0.031584	0.942069	
+243: 0.317119	-2.492769	0.346351	1.001060	3.127215	0.000123	0.522205	0.031550	0.941975	
+244: 0.316355	-2.492796	0.346773	1.001181	3.127217	0.000122	0.520198	0.031610	0.941966	
+245: 0.315597	-2.492849	0.347775	1.001302	3.127214	0.000121	0.519038	0.031668	0.942234	
+246: 0.314384	-2.492916	0.350027	1.001281	3.127206	0.000121	0.517664	0.031687	0.942298	
+247: 0.313442	-2.492992	0.352372	1.001300	3.127191	0.000120	0.516484	0.031724	0.942542	
+248: 0.312249	-2.493091	0.353533	1.001553	3.127198	0.000120	0.515872	0.031749	0.942147	
+249: 0.310916	-2.493134	0.353584	1.001656	3.127211	0.000120	0.517095	0.031768	0.942363	
+250: 0.309196	-2.493123	0.355801	1.001994	3.127207	0.000119	0.517319	0.031747	0.942434	
+251: 0.308038	-2.493110	0.359416	1.002330	3.127203	0.000119	0.515147	0.031803	0.942520	
+252: 0.307051	-2.493092	0.362098	1.002291	3.127198	0.000119	0.513828	0.031724	0.942361	
+253: 0.305602	-2.493078	0.366282	1.002146	3.127203	0.000118	0.515446	0.031604	0.942593	
+254: 0.305686	-2.493092	0.366236	1.002103	3.127211	0.000118	0.518992	0.031567	0.942562	
+255: 0.304930	-2.493074	0.365456	1.002155	3.127213	0.000118	0.520707	0.031525	0.942445	
+256: 0.304722	-2.493054	0.364580	1.001977	3.127219	0.000117	0.524536	0.031494	0.942387	
+257: 0.304866	-2.493040	0.362219	1.001944	3.127221	0.000116	0.527545	0.031505	0.942396	
+258: 0.304067	-2.493045	0.360405	1.001913	3.127228	0.000115	0.528431	0.031459	0.942293	
+259: 0.303387	-2.493026	0.360321	1.002004	3.127241	0.000114	0.528803	0.031440	0.942212	
+260: 0.303114	-2.493031	0.360206	1.002017	3.127238	0.000114	0.531198	0.031433	0.942188	
+261: 0.302809	-2.493036	0.360957	1.001933	3.127236	0.000114	0.531079	0.031414	0.942080	
+262: 0.303680	-2.493029	0.360338	1.001798	3.127230	0.000114	0.531391	0.031424	0.942185	
+263: 0.304400	-2.493003	0.361014	1.001715	3.127220	0.000114	0.530086	0.031392	0.942143	
+264: 0.304254	-2.492976	0.360838	1.001637	3.127234	0.000115	0.530312	0.031419	0.942219	
+265: 0.304245	-2.492909	0.359739	1.001703	3.127241	0.000116	0.532249	0.031424	0.942345	
+266: 0.304319	-2.492850	0.358768	1.001727	3.127251	0.000117	0.531509	0.031451	0.942521	
+267: 0.304473	-2.492800	0.358222	1.001782	3.127258	0.000117	0.530878	0.031411	0.942630	
+268: 0.304228	-2.492766	0.359173	1.001814	3.127263	0.000117	0.529271	0.031340	0.942610	
+269: 0.303868	-2.492739	0.359535	1.001842	3.127264	0.000117	0.527699	0.031310	0.942500	
+270: 0.303401	-2.492740	0.360698	1.001959	3.127268	0.000117	0.528295	0.031288	0.942473	
+271: 0.302427	-2.492735	0.362407	1.001977	3.127271	0.000117	0.529116	0.031273	0.942570	
+272: 0.301401	-2.492769	0.366218	1.001877	3.127271	0.000117	0.530515	0.031256	0.942672	
+273: 0.300998	-2.492832	0.368798	1.001854	3.127273	0.000117	0.529931	0.031253	0.942535	
+274: 0.300629	-2.492888	0.370671	1.001988	3.127268	0.000116	0.528893	0.031283	0.942432	
+275: 0.300549	-2.492906	0.371816	1.001998	3.127257	0.000116	0.528796	0.031254	0.942367	
+276: 0.301277	-2.492912	0.371983	1.001935	3.127253	0.000116	0.528411	0.031188	0.942438	
+277: 0.301204	-2.492910	0.373191	1.002052	3.127247	0.000115	0.527362	0.031219	0.942496	
+278: 0.300584	-2.492863	0.374677	1.002098	3.127245	0.000115	0.526863	0.031177	0.942471	
+279: 0.300713	-2.492824	0.376701	1.002031	3.127241	0.000114	0.528166	0.031144	0.942469	
+280: 0.300648	-2.492784	0.376898	1.001937	3.127243	0.000114	0.531204	0.031137	0.942325	
+281: 0.300139	-2.492763	0.378710	1.002054	3.127250	0.000114	0.530905	0.031126	0.942374	
+282: 0.299728	-2.492748	0.381300	1.002152	3.127247	0.000114	0.530279	0.031124	0.942606	
+283: 0.299117	-2.492760	0.384059	1.002290	3.127247	0.000114	0.530847	0.031115	0.942869	
+284: 0.298933	-2.492748	0.384768	1.002352	3.127245	0.000113	0.532745	0.031066	0.943184	
+285: 0.298234	-2.492743	0.386554	1.002357	3.127248	0.000113	0.532955	0.031088	0.943409	
+286: 0.297972	-2.492722	0.387840	1.002509	3.127251	0.000114	0.533892	0.031093	0.943571	
+287: 0.297643	-2.492695	0.387813	1.002525	3.127252	0.000114	0.536277	0.031102	0.943652	
+288: 0.297567	-2.492669	0.387623	1.002540	3.127254	0.000114	0.538161	0.031100	0.943878	
+289: 0.297406	-2.492662	0.388278	1.002604	3.127257	0.000113	0.540803	0.031106	0.943932	
+290: 0.297324	-2.492644	0.389990	1.002615	3.127260	0.000114	0.542699	0.031086	0.943965	
+291: 0.297459	-2.492645	0.391497	1.002594	3.127258	0.000114	0.542586	0.031098	0.944025	
+292: 0.297562	-2.492647	0.393067	1.002536	3.127253	0.000114	0.541957	0.031081	0.944110	
+293: 0.297097	-2.492652	0.393960	1.002543	3.127249	0.000114	0.542718	0.031064	0.944177	
+294: 0.297229	-2.492651	0.394946	1.002462	3.127251	0.000114	0.544032	0.031043	0.944400	
+295: 0.297098	-2.492660	0.396147	1.002462	3.127255	0.000114	0.544532	0.031049	0.944438	
+296: 0.297050	-2.492687	0.397758	1.002475	3.127249	0.000114	0.544747	0.031074	0.944518	
+297: 0.297295	-2.492694	0.398870	1.002505	3.127246	0.000114	0.544624	0.031090	0.944720	
+298: 0.297431	-2.492701	0.399356	1.002602	3.127249	0.000115	0.543451	0.031110	0.944969	
+299: 0.297354	-2.492685	0.400064	1.002544	3.127250	0.000115	0.543348	0.031118	0.945170	
+300: 0.297502	-2.492674	0.400366	1.002496	3.127250	0.000115	0.544549	0.031116	0.945416	
+301: 0.297734	-2.492670	0.401321	1.002588	3.127248	0.000115	0.544946	0.031108	0.945703	
+302: 0.298267	-2.492634	0.401676	1.002629	3.127245	0.000115	0.545542	0.031082	0.945884	
+303: 0.298574	-2.492605	0.401163	1.002527	3.127242	0.000115	0.545386	0.031080	0.945952	
+304: 0.298579	-2.492577	0.400811	1.002543	3.127241	0.000116	0.545665	0.031086	0.946054	
+305: 0.298727	-2.492555	0.400932	1.002553	3.127242	0.000116	0.544921	0.031120	0.946279	
+306: 0.299165	-2.492545	0.400738	1.002586	3.127242	0.000116	0.544966	0.031092	0.946493	
+307: 0.299697	-2.492539	0.399702	1.002567	3.127243	0.000116	0.544775	0.031075	0.946606	
+308: 0.300123	-2.492529	0.398990	1.002607	3.127242	0.000115	0.544796	0.031099	0.946777	
+309: 0.300479	-2.492527	0.398432	1.002632	3.127239	0.000115	0.544639	0.031105	0.946890	
+310: 0.300869	-2.492544	0.399255	1.002605	3.127239	0.000116	0.544103	0.031076	0.947090	
+311: 0.300882	-2.492556	0.400565	1.002644	3.127238	0.000116	0.544082	0.031045	0.947404	
+312: 0.301158	-2.492587	0.401024	1.002611	3.127237	0.000116	0.543904	0.031013	0.947711	
+313: 0.301388	-2.492613	0.400481	1.002638	3.127234	0.000116	0.544627	0.031048	0.948067	
+314: 0.301271	-2.492637	0.399559	1.002727	3.127235	0.000116	0.545591	0.031083	0.948364	
+315: 0.301104	-2.492661	0.398735	1.002704	3.127232	0.000116	0.546868	0.031078	0.948672	
+316: 0.301049	-2.492679	0.399827	1.002564	3.127235	0.000116	0.548270	0.031049	0.948990	
+317: 0.300803	-2.492693	0.399693	1.002562	3.127237	0.000116	0.550383	0.031037	0.949242	
+318: 0.300480	-2.492705	0.402151	1.002610	3.127236	0.000116	0.551816	0.031029	0.949532	
+319: 0.300055	-2.492726	0.404260	1.002700	3.127238	0.000116	0.552952	0.031061	0.949928	
+320: 0.300046	-2.492734	0.405246	1.002828	3.127239	0.000116	0.553562	0.031084	0.950212	
+321: 0.300487	-2.492742	0.405431	1.002875	3.127237	0.000116	0.554607	0.031053	0.950625	
+322: 0.300892	-2.492740	0.405569	1.002842	3.127236	0.000115	0.555310	0.031030	0.951071	
+323: 0.301274	-2.492736	0.405590	1.002823	3.127233	0.000115	0.554778	0.031016	0.951472	
+324: 0.301667	-2.492741	0.405451	1.002845	3.127234	0.000116	0.554982	0.031008	0.951873	
+325: 0.302018	-2.492754	0.405114	1.002855	3.127235	0.000116	0.555085	0.031019	0.952301	
+326: 0.302115	-2.492775	0.404001	1.002880	3.127237	0.000116	0.555053	0.031005	0.952660	
+327: 0.302276	-2.492791	0.403563	1.002899	3.127239	0.000116	0.555005	0.031018	0.953066	
+328: 0.302483	-2.492793	0.403219	1.002976	3.127239	0.000116	0.555738	0.031003	0.953561	
+329: 0.302611	-2.492813	0.402553	1.002988	3.127238	0.000116	0.557223	0.031005	0.953974	
+330: 0.302888	-2.492818	0.401956	1.003071	3.127239	0.000117	0.557839	0.031025	0.954364	
+331: 0.303336	-2.492821	0.400855	1.003076	3.127241	0.000117	0.558192	0.031026	0.954810	
+332: 0.303615	-2.492830	0.401197	1.003027	3.127241	0.000117	0.558143	0.031025	0.955466	
+333: 0.303722	-2.492837	0.401873	1.003018	3.127240	0.000117	0.558663	0.031002	0.955939	
+334: 0.303910	-2.492844	0.402051	1.002988	3.127240	0.000117	0.560267	0.030990	0.956424	
+335: 0.304137	-2.492853	0.402753	1.003039	3.127240	0.000117	0.561257	0.031001	0.956870	
+336: 0.304301	-2.492865	0.403322	1.002982	3.127239	0.000117	0.562597	0.030984	0.957336	
+337: 0.304378	-2.492892	0.403053	1.003048	3.127240	0.000118	0.565127	0.030970	0.957773	
+338: 0.304351	-2.492925	0.403363	1.003054	3.127240	0.000118	0.568859	0.030969	0.958164	
+339: 0.304229	-2.492939	0.403879	1.003165	3.127240	0.000118	0.572445	0.030967	0.958675	
+340: 0.304177	-2.492944	0.404592	1.003177	3.127239	0.000118	0.575323	0.030950	0.959132	
+341: 0.304044	-2.492948	0.404719	1.003193	3.127239	0.000118	0.578159	0.030943	0.959470	
+342: 0.303941	-2.492962	0.405650	1.003245	3.127239	0.000118	0.580306	0.030948	0.959965	
+343: 0.303731	-2.492973	0.405804	1.003240	3.127239	0.000118	0.581764	0.030936	0.960506	
+344: 0.303605	-2.492978	0.406712	1.003263	3.127239	0.000118	0.582649	0.030919	0.960992	
+345: 0.303473	-2.492988	0.407907	1.003248	3.127239	0.000118	0.583743	0.030909	0.961438	
+346: 0.303443	-2.493011	0.408382	1.003271	3.127237	0.000118	0.584406	0.030908	0.961938	
+347: 0.303516	-2.493024	0.409204	1.003289	3.127237	0.000118	0.585053	0.030917	0.962435	
+348: 0.303498	-2.493026	0.410237	1.003307	3.127236	0.000118	0.586056	0.030887	0.962893	
+349: 0.303696	-2.493026	0.411512	1.003346	3.127235	0.000118	0.586377	0.030859	0.963367	
+350: 0.303749	-2.493028	0.412810	1.003338	3.127236	0.000118	0.587425	0.030842	0.963886	
+351: 0.303800	-2.493039	0.414004	1.003310	3.127236	0.000119	0.588874	0.030833	0.964318	
+352: 0.303953	-2.493042	0.415481	1.003250	3.127236	0.000119	0.589978	0.030809	0.964827	
+353: 0.304062	-2.493046	0.416699	1.003215	3.127235	0.000119	0.591085	0.030813	0.965306	
+354: 0.304221	-2.493044	0.417091	1.003210	3.127235	0.000119	0.592922	0.030814	0.965786	
+355: 0.304372	-2.493042	0.417485	1.003216	3.127234	0.000119	0.593901	0.030819	0.966294	
+356: 0.304458	-2.493047	0.417463	1.003236	3.127233	0.000119	0.595627	0.030798	0.966847	
+357: 0.304585	-2.493039	0.417220	1.003248	3.127233	0.000119	0.595465	0.030810	0.967433	
+358: 0.304576	-2.493039	0.417310	1.003251	3.127233	0.000119	0.596969	0.030801	0.967938	
+359: 0.304516	-2.493039	0.418289	1.003231	3.127233	0.000119	0.600120	0.030796	0.968390	
+360: 0.304427	-2.493037	0.419729	1.003231	3.127233	0.000118	0.601694	0.030815	0.968886	
+361: 0.304295	-2.493040	0.421187	1.003258	3.127233	0.000119	0.602665	0.030817	0.969512	
+362: 0.304269	-2.493052	0.423084	1.003179	3.127233	0.000118	0.603119	0.030812	0.970095	
+363: 0.304291	-2.493048	0.423846	1.003141	3.127233	0.000119	0.604736	0.030816	0.970606	
+364: 0.304354	-2.493033	0.424159	1.003186	3.127233	0.000119	0.606493	0.030817	0.971080	
+365: 0.304393	-2.493027	0.424304	1.003157	3.127233	0.000119	0.608976	0.030800	0.971631	
+366: 0.304472	-2.493029	0.424203	1.003147	3.127233	0.000119	0.611066	0.030813	0.972097	
+367: 0.304497	-2.493031	0.424239	1.003126	3.127233	0.000119	0.613102	0.030800	0.972652	
+368: 0.304628	-2.493035	0.424333	1.003223	3.127233	0.000120	0.615397	0.030794	0.973110	
+369: 0.304686	-2.493039	0.424787	1.003208	3.127233	0.000120	0.618217	0.030779	0.973593	
+370: 0.304744	-2.493041	0.425894	1.003194	3.127233	0.000120	0.619689	0.030767	0.974071	
+371: 0.304744	-2.493061	0.427256	1.003216	3.127233	0.000121	0.621112	0.030773	0.974515	
+372: 0.304701	-2.493074	0.428240	1.003245	3.127233	0.000121	0.622248	0.030769	0.974962	
+373: 0.304623	-2.493089	0.429742	1.003243	3.127233	0.000121	0.622962	0.030765	0.975501	
+374: 0.304556	-2.493111	0.431078	1.003206	3.127233	0.000121	0.623011	0.030753	0.976008	
+375: 0.304498	-2.493125	0.432071	1.003222	3.127233	0.000121	0.623439	0.030730	0.976541	
+376: 0.304553	-2.493138	0.432816	1.003171	3.127233	0.000121	0.624936	0.030709	0.977094	
+377: 0.304569	-2.493145	0.433635	1.003187	3.127233	0.000122	0.626297	0.030700	0.977583	
+378: 0.304645	-2.493142	0.433983	1.003203	3.127233	0.000122	0.628681	0.030694	0.978056	
+379: 0.304655	-2.493135	0.434241	1.003244	3.127233	0.000122	0.629924	0.030663	0.978546	
+380: 0.304587	-2.493126	0.435469	1.003239	3.127233	0.000122	0.631303	0.030642	0.979030	
+381: 0.304548	-2.493113	0.436804	1.003341	3.127233	0.000122	0.632621	0.030640	0.979518	
+382: 0.304537	-2.493107	0.437885	1.003409	3.127233	0.000122	0.633576	0.030640	0.979944	
+383: 0.304436	-2.493108	0.439024	1.003437	3.127233	0.000122	0.634975	0.030641	0.980445	
+384: 0.304460	-2.493122	0.440338	1.003455	3.127233	0.000122	0.636804	0.030620	0.980958	
+385: 0.304472	-2.493134	0.441547	1.003479	3.127232	0.000122	0.637815	0.030610	0.981520	
+386: 0.304473	-2.493133	0.442815	1.003461	3.127232	0.000122	0.638302	0.030613	0.982012	
+387: 0.304479	-2.493136	0.444025	1.003447	3.127232	0.000123	0.639689	0.030606	0.982469	
+388: 0.304496	-2.493136	0.445097	1.003483	3.127233	0.000123	0.641757	0.030603	0.982910	
+389: 0.304594	-2.493140	0.446099	1.003516	3.127233	0.000123	0.643365	0.030592	0.983309	
+390: 0.304636	-2.493148	0.446610	1.003537	3.127233	0.000123	0.644763	0.030604	0.983747	
+391: 0.304609	-2.493157	0.446944	1.003514	3.127233	0.000123	0.646912	0.030604	0.984247	
+392: 0.304562	-2.493167	0.447553	1.003517	3.127233	0.000123	0.649252	0.030609	0.984652	
+393: 0.304591	-2.493172	0.448194	1.003547	3.127233	0.000123	0.650379	0.030600	0.985094	
+394: 0.304535	-2.493184	0.448601	1.003596	3.127233	0.000123	0.651422	0.030609	0.985535	
+395: 0.304500	-2.493181	0.449136	1.003679	3.127233	0.000123	0.653486	0.030614	0.986001	
+396: 0.304492	-2.493183	0.449190	1.003716	3.127232	0.000124	0.655819	0.030625	0.986471	
+397: 0.304482	-2.493184	0.448968	1.003708	3.127232	0.000124	0.658351	0.030624	0.986891	
+398: 0.304482	-2.493180	0.449840	1.003710	3.127233	0.000124	0.659434	0.030623	0.987372	
+399: 0.304466	-2.493190	0.449775	1.003721	3.127233	0.000124	0.661374	0.030617	0.987848	
+400: 0.304447	-2.493188	0.449918	1.003739	3.127233	0.000124	0.662939	0.030623	0.988417	
+401: 0.304418	-2.493189	0.450730	1.003754	3.127233	0.000124	0.664258	0.030627	0.988901	
+402: 0.304393	-2.493185	0.451509	1.003784	3.127233	0.000124	0.664723	0.030629	0.989317	
+403: 0.304411	-2.493184	0.452642	1.003791	3.127233	0.000124	0.665753	0.030615	0.989710	
+404: 0.304397	-2.493176	0.453500	1.003830	3.127233	0.000124	0.667241	0.030616	0.990132	
+405: 0.304419	-2.493161	0.453997	1.003839	3.127233	0.000125	0.669105	0.030605	0.990577	
+406: 0.304408	-2.493146	0.454659	1.003794	3.127233	0.000125	0.670564	0.030594	0.991002	
+407: 0.304364	-2.493141	0.455241	1.003843	3.127233	0.000125	0.672721	0.030591	0.991413	
+408: 0.304379	-2.493138	0.455751	1.003896	3.127233	0.000126	0.675480	0.030587	0.991801	
+409: 0.304354	-2.493138	0.456568	1.003913	3.127233	0.000126	0.678176	0.030580	0.992180	
+410: 0.304373	-2.493139	0.457767	1.003900	3.127233	0.000126	0.680471	0.030574	0.992521	
+411: 0.304362	-2.493132	0.458765	1.003893	3.127233	0.000126	0.681812	0.030554	0.992927	
+412: 0.304340	-2.493125	0.459854	1.003850	3.127233	0.000126	0.682745	0.030541	0.993349	
+413: 0.304335	-2.493128	0.460890	1.003884	3.127233	0.000126	0.683837	0.030549	0.993792	
+414: 0.304328	-2.493134	0.461560	1.003915	3.127233	0.000126	0.684978	0.030558	0.994228	
+415: 0.304320	-2.493128	0.462198	1.003950	3.127233	0.000126	0.686416	0.030570	0.994643	
+416: 0.304342	-2.493124	0.462650	1.004010	3.127233	0.000126	0.687661	0.030576	0.994987	
+417: 0.304309	-2.493114	0.463019	1.004031	3.127233	0.000126	0.688957	0.030576	0.995411	
+418: 0.304330	-2.493102	0.463379	1.004054	3.127233	0.000127	0.689819	0.030583	0.995827	
+419: 0.304328	-2.493098	0.463860	1.004096	3.127233	0.000127	0.690590	0.030587	0.996208	
+420: 0.304309	-2.493092	0.464500	1.004093	3.127233	0.000127	0.691480	0.030578	0.996557	
+421: 0.304323	-2.493100	0.464707	1.004097	3.127233	0.000127	0.692485	0.030583	0.996986	
+422: 0.304335	-2.493103	0.464844	1.004092	3.127233	0.000127	0.694218	0.030570	0.997399	
+423: 0.304312	-2.493101	0.465566	1.004089	3.127233	0.000127	0.695307	0.030565	0.997786	
+424: 0.304307	-2.493102	0.466034	1.004079	3.127233	0.000127	0.696441	0.030561	0.998106	
+425: 0.304310	-2.493093	0.465852	1.004079	3.127233	0.000127	0.698109	0.030555	0.998514	
+426: 0.304291	-2.493083	0.466040	1.004119	3.127233	0.000127	0.700661	0.030543	0.998932	
+427: 0.304255	-2.493060	0.466656	1.004130	3.127233	0.000127	0.703236	0.030537	0.999384	
+428: 0.304288	-2.493050	0.467182	1.004152	3.127233	0.000127	0.704950	0.030518	0.999757	
+429: 0.304276	-2.493039	0.467585	1.004124	3.127233	0.000127	0.707111	0.030516	1.000094	
+430: 0.304241	-2.493038	0.467940	1.004138	3.127233	0.000127	0.708079	0.030515	1.000421	
+431: 0.304232	-2.493034	0.468023	1.004161	3.127233	0.000127	0.710278	0.030515	1.000758	
+432: 0.304219	-2.493034	0.468412	1.004182	3.127233	0.000127	0.711925	0.030515	1.001068	
+433: 0.304224	-2.493042	0.468876	1.004208	3.127233	0.000127	0.713290	0.030514	1.001413	
+434: 0.304228	-2.493047	0.468892	1.004217	3.127233	0.000127	0.714820	0.030510	1.001745	
+435: 0.304225	-2.493050	0.468854	1.004235	3.127233	0.000127	0.716489	0.030502	1.002122	
+436: 0.304230	-2.493048	0.469372	1.004248	3.127233	0.000127	0.718314	0.030500	1.002481	
+437: 0.304244	-2.493044	0.469461	1.004216	3.127233	0.000126	0.719645	0.030490	1.002889	
+438: 0.304226	-2.493046	0.470084	1.004204	3.127233	0.000126	0.720457	0.030494	1.003213	
+439: 0.304234	-2.493038	0.470288	1.004209	3.127233	0.000127	0.721884	0.030488	1.003528	
+440: 0.304230	-2.493034	0.470677	1.004225	3.127233	0.000127	0.722472	0.030477	1.003890	
+441: 0.304233	-2.493034	0.470876	1.004246	3.127233	0.000126	0.724114	0.030474	1.004187	
+442: 0.304230	-2.493030	0.471129	1.004257	3.127233	0.000127	0.725340	0.030454	1.004545	
+443: 0.304243	-2.493019	0.471621	1.004214	3.127233	0.000127	0.727370	0.030450	1.004835	
+444: 0.304267	-2.493009	0.472104	1.004224	3.127233	0.000127	0.728212	0.030446	1.005121	
+445: 0.304263	-2.493005	0.472531	1.004247	3.127233	0.000127	0.729354	0.030441	1.005440	
+446: 0.304248	-2.493005	0.473483	1.004250	3.127233	0.000127	0.730245	0.030433	1.005782	
+447: 0.304252	-2.493019	0.474037	1.004261	3.127233	0.000127	0.730994	0.030432	1.006106	
+448: 0.304264	-2.493024	0.474113	1.004261	3.127233	0.000127	0.731902	0.030433	1.006421	
+449: 0.304258	-2.493024	0.474384	1.004229	3.127233	0.000128	0.733300	0.030420	1.006715	
+450: 0.304261	-2.493031	0.474406	1.004229	3.127233	0.000128	0.734170	0.030420	1.007083	
+451: 0.304257	-2.493037	0.474524	1.004247	3.127233	0.000127	0.734716	0.030404	1.007467	
+452: 0.304263	-2.493033	0.474673	1.004285	3.127233	0.000127	0.735926	0.030402	1.007798	
+453: 0.304245	-2.493028	0.474853	1.004262	3.127233	0.000127	0.737354	0.030392	1.008057	
+454: 0.304238	-2.493019	0.475363	1.004293	3.127233	0.000127	0.738125	0.030385	1.008398	
+455: 0.304243	-2.493009	0.475611	1.004318	3.127233	0.000127	0.739142	0.030374	1.008696	
+456: 0.304244	-2.493004	0.476039	1.004302	3.127233	0.000127	0.739282	0.030360	1.009006	
+457: 0.304245	-2.492992	0.476210	1.004336	3.127233	0.000127	0.740310	0.030344	1.009333	
+458: 0.304245	-2.492989	0.476239	1.004339	3.127233	0.000128	0.741421	0.030335	1.009624	
+459: 0.304247	-2.492975	0.476663	1.004390	3.127233	0.000128	0.741903	0.030334	1.009904	
+460: 0.304232	-2.492965	0.477354	1.004400	3.127233	0.000128	0.742464	0.030332	1.010214	
+461: 0.304230	-2.492961	0.477890	1.004460	3.127233	0.000128	0.743135	0.030328	1.010515	
+462: 0.304227	-2.492955	0.477999	1.004517	3.127233	0.000128	0.743906	0.030342	1.010833	
+463: 0.304216	-2.492948	0.478146	1.004609	3.127233	0.000128	0.745172	0.030381	1.011188	
+464: 0.304206	-2.492947	0.477887	1.004692	3.127233	0.000128	0.746612	0.030391	1.011509	
+465: 0.304201	-2.492958	0.477888	1.004710	3.127233	0.000128	0.748378	0.030391	1.011768	
+466: 0.304191	-2.492963	0.477947	1.004708	3.127233	0.000128	0.749347	0.030386	1.012034	
+467: 0.304198	-2.492964	0.478606	1.004728	3.127233	0.000128	0.749825	0.030376	1.012313	
+468: 0.304196	-2.492971	0.479097	1.004706	3.127233	0.000127	0.749819	0.030369	1.012595	
+469: 0.304201	-2.492971	0.479177	1.004741	3.127233	0.000127	0.750572	0.030381	1.012880	
+470: 0.304192	-2.492964	0.479249	1.004710	3.127233	0.000127	0.751086	0.030388	1.013169	
+471: 0.304199	-2.492966	0.479482	1.004714	3.127233	0.000127	0.751629	0.030386	1.013430	
+472: 0.304208	-2.492958	0.480108	1.004735	3.127233	0.000127	0.752642	0.030389	1.013678	
+473: 0.304203	-2.492947	0.480563	1.004743	3.127233	0.000127	0.754088	0.030376	1.013873	
+474: 0.304205	-2.492940	0.480972	1.004724	3.127233	0.000127	0.755060	0.030375	1.014151	
+475: 0.304206	-2.492934	0.481593	1.004735	3.127233	0.000127	0.756349	0.030374	1.014420	
+476: 0.304203	-2.492929	0.482458	1.004759	3.127233	0.000128	0.756910	0.030368	1.014684	
+477: 0.304198	-2.492929	0.482585	1.004786	3.127233	0.000128	0.758062	0.030361	1.014969	
+478: 0.304195	-2.492924	0.483207	1.004768	3.127233	0.000128	0.758580	0.030355	1.015256	
+479: 0.304194	-2.492919	0.483616	1.004783	3.127233	0.000128	0.759789	0.030368	1.015519	
+480: 0.304193	-2.492918	0.484050	1.004793	3.127233	0.000128	0.760601	0.030361	1.015790	
+481: 0.304201	-2.492916	0.484285	1.004796	3.127233	0.000128	0.760884	0.030353	1.016072	
+482: 0.304194	-2.492917	0.484206	1.004833	3.127233	0.000128	0.761021	0.030367	1.016371	
+483: 0.304193	-2.492918	0.484435	1.004862	3.127233	0.000127	0.762158	0.030387	1.016644	
+484: 0.304184	-2.492918	0.484302	1.004911	3.127233	0.000127	0.763548	0.030395	1.016845	
+485: 0.304189	-2.492919	0.484570	1.004904	3.127233	0.000127	0.764424	0.030387	1.017098	
+486: 0.304194	-2.492920	0.484769	1.004902	3.127233	0.000128	0.765611	0.030405	1.017320	
+487: 0.304205	-2.492920	0.484830	1.004896	3.127233	0.000128	0.766328	0.030390	1.017543	
+488: 0.304204	-2.492923	0.484832	1.004862	3.127233	0.000128	0.767832	0.030380	1.017769	
+489: 0.304197	-2.492923	0.484718	1.004852	3.127233	0.000128	0.769688	0.030390	1.017974	
+490: 0.304201	-2.492920	0.485207	1.004868	3.127233	0.000127	0.770366	0.030391	1.018193	
+491: 0.304200	-2.492919	0.485794	1.004851	3.127233	0.000127	0.770881	0.030390	1.018457	
+492: 0.304207	-2.492912	0.486032	1.004832	3.127233	0.000127	0.771253	0.030377	1.018683	
+493: 0.304219	-2.492904	0.486377	1.004819	3.127233	0.000127	0.772014	0.030371	1.018910	
+494: 0.304213	-2.492902	0.486746	1.004845	3.127233	0.000127	0.772835	0.030359	1.019124	
+495: 0.304213	-2.492900	0.487201	1.004886	3.127233	0.000127	0.772875	0.030363	1.019402	
+496: 0.304217	-2.492895	0.487380	1.004875	3.127233	0.000127	0.773383	0.030354	1.019637	
+497: 0.304210	-2.492892	0.487565	1.004881	3.127233	0.000127	0.773621	0.030351	1.019850	
+498: 0.304209	-2.492884	0.487306	1.004937	3.127233	0.000127	0.773404	0.030351	1.020116	
+499: 0.304207	-2.492871	0.487471	1.004969	3.127233	0.000127	0.773524	0.030346	1.020377	
+500: 0.304208	-2.492870	0.487650	1.004973	3.127233	0.000127	0.773578	0.030352	1.020597	
+Calculating covariance matrix
+[====|====|====|====|====|====|====|====|====|====] 0:00:00 
+
+→ loading into symengine environment...
+→ pruning branches (`if`/`else`) of saem model...
+✔ done
+→ finding duplicate expressions in saem predOnly model 0...
+[====|====|====|====|====|====|====|====|====|====] 0:00:00 
+
+→ finding duplicate expressions in saem predOnly model 1...
+[====|====|====|====|====|====|====|====|====|====] 0:00:00 
+
+→ optimizing duplicate expressions in saem predOnly model 1...
+[====|====|====|====|====|====|====|====|====|====] 0:00:00 
+
+→ finding duplicate expressions in saem predOnly model 2...
+[====|====|====|====|====|====|====|====|====|====] 0:00:00 
+
+✔ done
+→ Calculating residuals/tables
+✔ done
+→ compress origData in nlmixr2 object, save 13096
+→ compress phiM in nlmixr2 object, save 137368
+→ compress parHist in nlmixr2 object, save 12408
+
+⠦ |   5     2 | tad-in-models                                                   
+✔ |   5     2 | tad-in-models [79.7s]
+────────────────────────────────────────────────────────────────────────────────
+Warning (test-tad-in-models.R:35:1): (code run outside of `test_that()`)
+gradient problems with initial estimate and covariance; see $scaleInfo
+Backtrace:
+  1. testthat::expect_error(...)
+       at test-tad-in-models.R:35:0
+  8. nlmixr2est::nlmixr2.function(my.model.pk, d, est = "focei", control = foceiControl(print = 0L))
+       at nlmixr2est/R/nlmixr2.R:117:2
+  9. nlmixr2est::nlmixr2Est0(.env)
+       at nlmixr2est/R/nlmixr2.R:145:2
+ 10. base::lapply(.lst[[2]], warning, call. = FALSE)
+       at nlmixr2est/R/nlmixr2Est.R:146:2
+
+Warning (test-tad-in-models.R:35:1): (code run outside of `test_that()`)
+using S matrix to calculate covariance, can check sandwich or R matrix with $covRS and $covR
+Backtrace:
+  1. testthat::expect_error(...)
+       at test-tad-in-models.R:35:0
+  8. nlmixr2est::nlmixr2.function(my.model.pk, d, est = "focei", control = foceiControl(print = 0L))
+       at nlmixr2est/R/nlmixr2.R:117:2
+  9. nlmixr2est::nlmixr2Est0(.env)
+       at nlmixr2est/R/nlmixr2.R:145:2
+ 10. base::lapply(.lst[[2]], warning, call. = FALSE)
+       at nlmixr2est/R/nlmixr2Est.R:146:2
+
+Warning (test-tad-in-models.R:35:1): (code run outside of `test_that()`)
+last objective function was not at minimum, possible problems in optimization
+Backtrace:
+  1. testthat::expect_error(...)
+       at test-tad-in-models.R:35:0
+  8. nlmixr2est::nlmixr2.function(my.model.pk, d, est = "focei", control = foceiControl(print = 0L))
+       at nlmixr2est/R/nlmixr2.R:117:2
+  9. nlmixr2est::nlmixr2Est0(.env)
+       at nlmixr2est/R/nlmixr2.R:145:2
+ 10. base::lapply(.lst[[2]], warning, call. = FALSE)
+       at nlmixr2est/R/nlmixr2Est.R:146:2
+
+Warning (test-tad-in-models.R:35:1): (code run outside of `test_that()`)
+ETAs were reset to zero during optimization; (Can control by foceiControl(resetEtaP=.))
+Backtrace:
+  1. testthat::expect_error(...)
+       at test-tad-in-models.R:35:0
+  8. nlmixr2est::nlmixr2.function(my.model.pk, d, est = "focei", control = foceiControl(print = 0L))
+       at nlmixr2est/R/nlmixr2.R:117:2
+  9. nlmixr2est::nlmixr2Est0(.env)
+       at nlmixr2est/R/nlmixr2.R:145:2
+ 10. base::lapply(.lst[[2]], warning, call. = FALSE)
+       at nlmixr2est/R/nlmixr2Est.R:146:2
+
+Warning (test-tad-in-models.R:35:1): (code run outside of `test_that()`)
+initial ETAs were nudged; (can control by foceiControl(etaNudge=., etaNudge2=))
+Backtrace:
+  1. testthat::expect_error(...)
+       at test-tad-in-models.R:35:0
+  8. nlmixr2est::nlmixr2.function(my.model.pk, d, est = "focei", control = foceiControl(print = 0L))
+       at nlmixr2est/R/nlmixr2.R:117:2
+  9. nlmixr2est::nlmixr2Est0(.env)
+       at nlmixr2est/R/nlmixr2.R:145:2
+ 10. base::lapply(.lst[[2]], warning, call. = FALSE)
+       at nlmixr2est/R/nlmixr2Est.R:146:2
+────────────────────────────────────────────────────────────────────────────────
+
+⠏ |         0 | timing                                                          
+⠋ |         1 | timing                                                          
+✔ |         5 | timing [0.6s]
+
+⠏ |         0 | update-estimates                                                
+⠋ |         1 | update-estimates                                                
+✔ |         1 | update-estimates [3.1s]
+
+══ Results ═════════════════════════════════════════════════════════════════════
+Duration: 1610.5 s
+
+[ FAIL 33 | WARN 5 | SKIP 0 | PASS 1210 ]
+
+I believe in you!
+> 
+> 

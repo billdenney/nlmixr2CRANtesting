@@ -1,0 +1,44 @@
+
+R version 4.1.2 (2021-11-01) -- "Bird Hippie"
+Copyright (C) 2021 The R Foundation for Statistical Computing
+Platform: x86_64-pc-linux-gnu (64-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+  Natural language support but running in an English locale
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+> devtools::install_local(force=TRUE)
+     checking for file ‘/tmp/Rtmpyv5aKZ/file2e03227c5a9667/nlmixr2data/DESCRIPTION’ ...  ✔  checking for file ‘/tmp/Rtmpyv5aKZ/file2e03227c5a9667/nlmixr2data/DESCRIPTION’
+  ─  preparing ‘nlmixr2data’:
+     checking DESCRIPTION meta-information ...  ✔  checking DESCRIPTION meta-information
+  ─  checking for LF line-endings in source and make files and shell scripts
+  ─  checking for empty or unneeded directories
+  ─  building ‘nlmixr2data_1.0.0.tar.gz’
+     
+Installing package into ‘/home/bill/R/x86_64-pc-linux-gnu-library/4.1’
+(as ‘lib’ is unspecified)
+* installing *source* package ‘nlmixr2data’ ...
+** using staged installation
+** R
+** data
+*** moving datasets to lazyload DB
+** byte-compile and prepare package for lazy loading
+** help
+*** installing help indices
+** building package indices
+** testing if installed package can be loaded from temporary location
+** testing if installed package can be loaded from final location
+** testing if installed package keeps a record of temporary installation path
+* DONE (nlmixr2data)
+> 
+> 
