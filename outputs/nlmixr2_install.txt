@@ -19,12 +19,12 @@ Type 'q()' to quit R.
 
 > devtools::install_local(force=TRUE)
 
-     checking for file ‘/tmp/RtmpDzU5GV/file2ed8e63e9a0529/nlmixr2/DESCRIPTION’ ...  ✔  checking for file ‘/tmp/RtmpDzU5GV/file2ed8e63e9a0529/nlmixr2/DESCRIPTION’
+     checking for file ‘/tmp/RtmpHy46R1/file2fb66b69becd21/nlmixr2/DESCRIPTION’ ...  ✔  checking for file ‘/tmp/RtmpHy46R1/file2fb66b69becd21/nlmixr2/DESCRIPTION’
   ─  preparing ‘nlmixr2’:
-     checking DESCRIPTION meta-information ...  ✔  checking DESCRIPTION meta-information
+   checking DESCRIPTION meta-information ...  ✔  checking DESCRIPTION meta-information
   ─  checking for LF line-endings in source and make files and shell scripts
-  ─  checking for empty or unneeded directories
-─  building ‘nlmixr2_0.0.0.9000.tar.gz’
+─  checking for empty or unneeded directories
+  ─  building ‘nlmixr2_0.0.0.9000.tar.gz’
      
 Installing package into ‘/home/bill/R/x86_64-pc-linux-gnu-library/4.1’
 (as ‘lib’ is unspecified)

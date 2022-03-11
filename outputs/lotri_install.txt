@@ -19,9 +19,9 @@ Type 'q()' to quit R.
 
 > devtools::install_local(force=TRUE)
 
-     checking for file ‘/tmp/RtmpxD65zk/file2e03835eddb283/lotri/DESCRIPTION’ ...  ✔  checking for file ‘/tmp/RtmpxD65zk/file2e03835eddb283/lotri/DESCRIPTION’
+     checking for file ‘/tmp/Rtmp2wJDZY/file2ee12a14210b5c/lotri/DESCRIPTION’ ...  ✔  checking for file ‘/tmp/Rtmp2wJDZY/file2ee12a14210b5c/lotri/DESCRIPTION’
   ─  preparing ‘lotri’:
-     checking DESCRIPTION meta-information ...  ✔  checking DESCRIPTION meta-information
+   checking DESCRIPTION meta-information     checking DESCRIPTION meta-information ...  ✔  checking DESCRIPTION meta-information
 ─  cleaning src
   ─  checking for LF line-endings in source and make files and shell scripts
   ─  checking for empty or unneeded directories

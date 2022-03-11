@@ -19,11 +19,11 @@ Type 'q()' to quit R.
 
 > devtools::load_all();devtools::test()
 ℹ Loading nlmixr2extra
-Exports from /home/bill/GitHub/nlmixr2CRANtesting/nlmixr2extra/src/preCondInv.cpp:
+Exports from /home/bill/GitHub/nlmixr2CRANtesting/packages/nlmixr2extra/src/preCondInv.cpp:
    SEXP preCondInv(SEXP Rin)
 
-/home/bill/GitHub/nlmixr2CRANtesting/nlmixr2extra/src/RcppExports.cpp updated.
-/home/bill/GitHub/nlmixr2CRANtesting/nlmixr2extra/R/RcppExports.R updated.
+/home/bill/GitHub/nlmixr2CRANtesting/packages/nlmixr2extra/src/RcppExports.cpp updated.
+/home/bill/GitHub/nlmixr2CRANtesting/packages/nlmixr2extra/R/RcppExports.R updated.
 Re-compiling nlmixr2extra
   ─  installing *source* package ‘nlmixr2extra’ ...
      ** using staged installation
@@ -32,7 +32,7 @@ Re-compiling nlmixr2extra
      gcc -std=gnu99 -std=gnu11 -I"/usr/share/R/include" -DNDEBUG  -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/Rcpp/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/RcppArmadillo/include'    -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-i2PIHO/r-base-4.1.2=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c init.c -o init.o
    g++ -std=gnu++11 -I"/usr/share/R/include" -DNDEBUG  -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/Rcpp/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/RcppArmadillo/include'   -fopenmp -DARMA_USE_CXX11 -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-i2PIHO/r-base-4.1.2=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c preCondInv.cpp -o preCondInv.o
      g++ -std=gnu++11 -shared -L/usr/lib/R/lib -Wl,-Bsymbolic-functions -Wl,-z,relro -o nlmixr2extra.so RcppExports.o init.o preCondInv.o -fopenmp -llapack -lblas -lgfortran -lm -lquadmath -L/usr/lib/R/lib -lR
-     installing to /tmp/Rtmpz8PcKs/devtools_install_2ed7111187094f/00LOCK-nlmixr2extra/00new/nlmixr2extra/libs
+     installing to /tmp/RtmpwyAiBh/devtools_install_2fb4a06b8c35df/00LOCK-nlmixr2extra/00new/nlmixr2extra/libs
      ** checking absolute paths in shared objects and dynamic libraries
   ─  DONE (nlmixr2extra)
 ℹ Loading nlmixr2extra
@@ -50,7 +50,7 @@ Re-compiling nlmixr2extra
 ⠸ |         4 | bootstrap                                                       
 ⠴ |         6 | bootstrap                                                       
 ⠦ |         7 | bootstrap                                                       
-✔ |         7 | bootstrap [21.0s]
+✔ |         7 | bootstrap [20.7s]
 
 ⠏ |         0 | precondition                                                    > loading into symengine environment...
 > pruning branches (`if`/`else`) of full model...
@@ -134,14 +134,14 @@ Updated original fit object fit2
 ⠋ |         1 | precondition                                                    > compress origData in nlmixr2 object, save 5952
 Updated original fit object fit2
 
-⠏ |        10 | precondition                                                    > compress origData in nlmixr2 object, save 5952
+⠹ |        13 | precondition                                                    > compress origData in nlmixr2 object, save 5952
 Updated original fit object fit2
 
-⠇ |        19 | precondition                                                    
-✔ |        27 | precondition [8.0s]
+⠏ |        20 | precondition                                                    
+✔ |        27 | precondition [7.9s]
 
 ══ Results ═════════════════════════════════════════════════════════════════════
-Duration: 29.4 s
+Duration: 28.9 s
 
 [ FAIL 0 | WARN 0 | SKIP 0 | PASS 75 ]
 

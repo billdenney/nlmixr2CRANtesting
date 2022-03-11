@@ -19,11 +19,11 @@ Type 'q()' to quit R.
 
 > devtools::install_local(force=TRUE)
 
-     checking for file ‘/tmp/RtmpEPG0cC/file2e58402a4cc2e7/nlmixr2est/DESCRIPTION’ ...  ✔  checking for file ‘/tmp/RtmpEPG0cC/file2e58402a4cc2e7/nlmixr2est/DESCRIPTION’
+     checking for file ‘/tmp/RtmpMesxcm/file2f35db20e910c7/nlmixr2est/DESCRIPTION’ ...  ✔  checking for file ‘/tmp/RtmpMesxcm/file2f35db20e910c7/nlmixr2est/DESCRIPTION’
   ─  preparing ‘nlmixr2est’:
-   checking DESCRIPTION meta-information ...  ✔  checking DESCRIPTION meta-information
-─  cleaning src
-  ─  running ‘cleanup’
+     checking DESCRIPTION meta-information ...  ✔  checking DESCRIPTION meta-information
+  ─  cleaning src
+─  running ‘cleanup’
   ─  checking for LF line-endings in source and make files and shell scripts
   ─  checking for empty or unneeded directories
      Removed empty directory ‘nlmixr2est/build’

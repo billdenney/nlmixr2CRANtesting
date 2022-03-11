@@ -19,13 +19,13 @@ Type 'q()' to quit R.
 
 > devtools::install_local(force=TRUE)
 
-     checking for file ‘/tmp/Rtmpz9fy9s/file2e04802717d956/rxode2/DESCRIPTION’ ...  ✔  checking for file ‘/tmp/Rtmpz9fy9s/file2e04802717d956/rxode2/DESCRIPTION’
+     checking for file ‘/tmp/RtmpTTq4ce/file2ee21c33f47743/rxode2/DESCRIPTION’ ...  ✔  checking for file ‘/tmp/RtmpTTq4ce/file2ee21c33f47743/rxode2/DESCRIPTION’
   ─  preparing ‘rxode2’:
      checking DESCRIPTION meta-information ...  ✔  checking DESCRIPTION meta-information
-─  cleaning src
-  ─  running ‘cleanup’
+  ─  cleaning src
+─  running ‘cleanup’
   ─  installing the package to process help pages
-  ─  saving partial Rd database (1m 15.6s)
+  ─  saving partial Rd database (1m 15s)
   ─  cleaning src
   ─  running ‘cleanup’
   ─  checking for LF line-endings in source and make files and shell scripts
@@ -67,7 +67,7 @@ all: $(SHLIB)
 
 --------[end src/Makevars]--------
 --------[begin R/RxODE_md5.R]--------
-rxode2.md5 <- "bedc29c79ea0bcb685fb715ee7738015"
+rxode2.md5 <- "62b7a46251bb757025faf98cb852b146"
 
 --------[end R/RxODE_md5.R]--------
 ** libs

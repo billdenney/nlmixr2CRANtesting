@@ -21,8 +21,8 @@ Type 'q()' to quit R.
 ℹ Loading lotri
 Re-compiling lotri
   ─  installing *source* package ‘lotri’ ...
-   ** using staged installation
-     ** libs
+     ** using staged installation
+   ** libs
    gcc -std=gnu99 -std=gnu11 -I"/usr/share/R/include" -DNDEBUG      -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-i2PIHO/r-base-4.1.2=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c asLotriMat.c -o asLotriMat.o
    gcc -std=gnu99 -std=gnu11 -I"/usr/share/R/include" -DNDEBUG      -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-i2PIHO/r-base-4.1.2=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c lotriBounds.c -o lotriBounds.o
    gcc -std=gnu99 -std=gnu11 -I"/usr/share/R/include" -DNDEBUG      -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-i2PIHO/r-base-4.1.2=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c lotriLstToMat.c -o lotriLstToMat.o
@@ -30,7 +30,7 @@ Re-compiling lotri
    gcc -std=gnu99 -std=gnu11 -I"/usr/share/R/include" -DNDEBUG      -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-i2PIHO/r-base-4.1.2=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c lotriProp.c -o lotriProp.o
    gcc -std=gnu99 -std=gnu11 -I"/usr/share/R/include" -DNDEBUG      -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-i2PIHO/r-base-4.1.2=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c matlist.c -o matlist.o
      gcc -std=gnu99 -std=gnu11 -shared -L/usr/lib/R/lib -Wl,-Bsymbolic-functions -Wl,-z,relro -o lotri.so asLotriMat.o lotriBounds.o lotriLstToMat.o lotriNest.o lotriProp.o matlist.o -L/usr/lib/R/lib -lR
-     installing to /tmp/RtmpwAewSn/devtools_install_2e0415918b550/00LOCK-lotri/00new/lotri/libs
+     installing to /tmp/RtmpxSpiXZ/devtools_install_2ee1bc6201f8ae/00LOCK-lotri/00new/lotri/libs
      ** checking absolute paths in shared objects and dynamic libraries
   ─  DONE (lotri)
 ℹ Loading lotri

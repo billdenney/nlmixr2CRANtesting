@@ -18,8 +18,9 @@ Type 'demo()' for some demos, 'help()' for on-line help, or
 Type 'q()' to quit R.
 
 > devtools::install_local(force=TRUE)
-
-     checking for file ‘/tmp/RtmpzpzJRQ/file2ed60d4464f949/nlmixr2plot/DESCRIPTION’ ...  ✔  checking for file ‘/tmp/RtmpzpzJRQ/file2ed60d4464f949/nlmixr2plot/DESCRIPTION’
+nlmixr2extra (1.0.0 -> NA) [local]
+Error : Could not copy `/home/bill/GitHub/nlmixr2CRANtesting/nlmixr2extra` to `/tmp/RtmpFS0xh6/file2fb3a233ad8f46`
+     checking for file ‘/tmp/RtmpFS0xh6/file2fb3a2c3cecb9/nlmixr2plot/DESCRIPTION’ ...  ✔  checking for file ‘/tmp/RtmpFS0xh6/file2fb3a2c3cecb9/nlmixr2plot/DESCRIPTION’
   ─  preparing ‘nlmixr2plot’:
    checking DESCRIPTION meta-information ...  ✔  checking DESCRIPTION meta-information
   ─  checking for LF line-endings in source and make files and shell scripts
