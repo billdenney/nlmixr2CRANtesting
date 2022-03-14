@@ -7,21 +7,28 @@
 [submodule "packages/nlmixr2data"]
 	path = packages/nlmixr2data
 	url = git@github.com:nlmixr2/nlmixr2data
+	branch = main
 [submodule "packages/lotri"]
 	path = packages/lotri
 	url = git@github.com:nlmixr2/lotri
+	branch = main
 [submodule "packages/rxode2"]
 	path = packages/rxode2
 	url = git@github.com:nlmixr2/rxode2
+	branch = main
 [submodule "packages/nlmixr2est"]
 	path = packages/nlmixr2est
 	url = git@github.com:nlmixr2/nlmixr2est
+	branch = main
 [submodule "packages/nlmixr2plot"]
 	path = packages/nlmixr2plot
 	url = git@github.com:nlmixr2/nlmixr2plot
+	branch = main
 [submodule "packages/nlmixr2extra"]
 	path = packages/nlmixr2extra
 	url = git@github.com:nlmixr2/nlmixr2extra
+	branch = main
 [submodule "packages/nlmixr2"]
 	path = packages/nlmixr2
 	url = git@github.com:nlmixr2/nlmixr2
+	branch = main
