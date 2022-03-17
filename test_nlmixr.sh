@@ -8,18 +8,26 @@ base_clone_url="git@github.com:nlmixr2/"
 # for testthat
 NOT_CRAN="true"
 
-# Update everything
-git submodule update --recursive --remote
-git commit -am "submodules updated"
-
 # Remove the old results and prepare for the new
-git rm outputs/*txt
+git rm -f outputs/*txt
 mkdir -p outputs
+mkdir -p packages
 
 for current_dir in ${packages[@]}; do
   echo Starting $current_dir
   (
-    cd packages/$current_dir
+    cd packages
+    if [ ! -d ${current_dir} ]; then
+      clone_url="${base_clone_url}${current_dir}.git"
+      git clone "${clone_url}"
+    fi
+    if [ ! -d ${current_dir} ]; then
+      echo Failed cloning "${clone_url}"
+      break
+    fi
+    cd $current_dir
+    git checkout main
+    git pull
     # Clean up old files
     git clean -d -x -f
     # The 2>&1 redirects stderr to stdout

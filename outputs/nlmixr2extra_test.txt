@@ -1,150 +1,0 @@
-
-R version 4.1.2 (2021-11-01) -- "Bird Hippie"
-Copyright (C) 2021 The R Foundation for Statistical Computing
-Platform: x86_64-pc-linux-gnu (64-bit)
-
-R is free software and comes with ABSOLUTELY NO WARRANTY.
-You are welcome to redistribute it under certain conditions.
-Type 'license()' or 'licence()' for distribution details.
-
-  Natural language support but running in an English locale
-
-R is a collaborative project with many contributors.
-Type 'contributors()' for more information and
-'citation()' on how to cite R or R packages in publications.
-
-Type 'demo()' for some demos, 'help()' for on-line help, or
-'help.start()' for an HTML browser interface to help.
-Type 'q()' to quit R.
-
-> devtools::load_all();devtools::test()
-ℹ Loading nlmixr2extra
-Exports from /home/bill/GitHub/nlmixr2CRANtesting/packages/nlmixr2extra/src/preCondInv.cpp:
-   SEXP preCondInv(SEXP Rin)
-
-/home/bill/GitHub/nlmixr2CRANtesting/packages/nlmixr2extra/src/RcppExports.cpp updated.
-/home/bill/GitHub/nlmixr2CRANtesting/packages/nlmixr2extra/R/RcppExports.R updated.
-Re-compiling nlmixr2extra
-  ─  installing *source* package ‘nlmixr2extra’ ...
-     ** using staged installation
-     ** libs
-     g++ -std=gnu++11 -I"/usr/share/R/include" -DNDEBUG  -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/Rcpp/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/RcppArmadillo/include'   -fopenmp -DARMA_USE_CXX11 -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-i2PIHO/r-base-4.1.2=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c RcppExports.cpp -o RcppExports.o
-     gcc -std=gnu99 -std=gnu11 -I"/usr/share/R/include" -DNDEBUG  -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/Rcpp/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/RcppArmadillo/include'    -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-i2PIHO/r-base-4.1.2=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c init.c -o init.o
-   g++ -std=gnu++11 -I"/usr/share/R/include" -DNDEBUG  -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/Rcpp/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/RcppArmadillo/include'   -fopenmp -DARMA_USE_CXX11 -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-i2PIHO/r-base-4.1.2=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c preCondInv.cpp -o preCondInv.o
-     g++ -std=gnu++11 -shared -L/usr/lib/R/lib -Wl,-Bsymbolic-functions -Wl,-z,relro -o nlmixr2extra.so RcppExports.o init.o preCondInv.o -fopenmp -llapack -lblas -lgfortran -lm -lquadmath -L/usr/lib/R/lib -lR
-     installing to /tmp/RtmpwyAiBh/devtools_install_2fb4a06b8c35df/00LOCK-nlmixr2extra/00new/nlmixr2extra/libs
-     ** checking absolute paths in shared objects and dynamic libraries
-  ─  DONE (nlmixr2extra)
-ℹ Loading nlmixr2extra
-ℹ Testing nlmixr2extra
-✔ | F W S  OK | Context
-
-⠏ |         0 | autocovar                                                       
-⠙ |         2 | autocovar                                                       
-⠙ |        12 | autocovar                                                       
-⠏ |        40 | autocovar                                                       
-✔ |        41 | autocovar [0.4s]
-
-⠏ |         0 | bootstrap                                                       
-⠙ |         2 | bootstrap                                                       
-⠸ |         4 | bootstrap                                                       
-⠴ |         6 | bootstrap                                                       
-⠦ |         7 | bootstrap                                                       
-✔ |         7 | bootstrap [20.7s]
-
-⠏ |         0 | precondition                                                    > loading into symengine environment...
-> pruning branches (`if`/`else`) of full model...
-v done
-> calculate jacobian
-[====|====|====|====|====|====|====|====|====|====] 0:00:00 
-
-> calculate sensitivities
-[====|====|====|====|====|====|====|====|====|====] 0:00:00 
-
-> calculate d(f)/d(eta)
-[====|====|====|====|====|====|====|====|====|====] 0:00:00 
-
-> calculate d(R^2)/d(eta)
-[====|====|====|====|====|====|====|====|====|====] 0:00:00 
-
-> finding duplicate expressions in inner model...
-[====|====|====|====|====|====|====|====|====|====] 0:00:00 
-
-> optimizing duplicate expressions in inner model...
-[====|====|====|====|====|====|====|====|====|====] 0:00:00 
-
-> finding duplicate expressions in EBE model...
-[====|====|====|====|====|====|====|====|====|====] 0:00:00 
-
-> optimizing duplicate expressions in EBE model...
-[====|====|====|====|====|====|====|====|====|====] 0:00:00 
-
-> compiling inner model...
-v done
-> finding duplicate expressions in FD model...
-[====|====|====|====|====|====|====|====|====|====] 0:00:00 
-
-> optimizing duplicate expressions in FD model...
-[====|====|====|====|====|====|====|====|====|====] 0:00:00 
-
-> compiling EBE model...
-v done
-> compiling events FD model...
-v done
-calculating covariance matrix
-[====|====|====|====|====|====|====|====|====|====] 0:00:00 
-> loading into symengine environment...
-> pruning branches (`if`/`else`) of full model...
-v done
-> calculate jacobian
-[====|====|====|====|====|====|====|====|====|====
-> calculate sensitivities
-[====|====|====|====|====|====|====|====|====|====] 0:00:00 
-
-> calculate d(f)/d(eta)
-[====|====|====|====|====|====|====|====|====|====] 0:00:00 
-
-> finding duplicate expressions in inner model...
-[====|====|====|====|====|====|====|====|====|====] 0:00:00 
-
-> optimizing duplicate expressions in inner model...
-[====|====|====|====|====|====|====|====|====|====] 0:00:00 
-
-> finding duplicate expressions in EBE model...
-[====|====|====|====|====|====|====|====|====|====] 0:00:00 
-
-> optimizing duplicate expressions in EBE model...
-[====|====|====|====|====|====|====|====|====|====] 0:00:00 
-
-> compiling inner model...
-v done
-> finding duplicate expressions in FD model...
-[====|====|====|====|====|====|====|====|====|====] 0:00:00 
-
-> optimizing duplicate expressions in FD model...
-[====|====|====|====|====|====|====|====|====|====] 0:00:00 
-
-> compiling EBE model...
-v done
-> compiling events FD model...
-v done
-> compress origData in nlmixr2 object, save 5952
-Updated original fit object fit2
-
-⠋ |         1 | precondition                                                    > compress origData in nlmixr2 object, save 5952
-Updated original fit object fit2
-
-⠹ |        13 | precondition                                                    > compress origData in nlmixr2 object, save 5952
-Updated original fit object fit2
-
-⠏ |        20 | precondition                                                    
-✔ |        27 | precondition [7.9s]
-
-══ Results ═════════════════════════════════════════════════════════════════════
-Duration: 28.9 s
-
-[ FAIL 0 | WARN 0 | SKIP 0 | PASS 75 ]
-
-💅 Your tests are beautiful 💅
-> 
-> 

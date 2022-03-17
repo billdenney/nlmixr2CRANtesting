@@ -1,57 +1,0 @@
-
-R version 4.1.2 (2021-11-01) -- "Bird Hippie"
-Copyright (C) 2021 The R Foundation for Statistical Computing
-Platform: x86_64-pc-linux-gnu (64-bit)
-
-R is free software and comes with ABSOLUTELY NO WARRANTY.
-You are welcome to redistribute it under certain conditions.
-Type 'license()' or 'licence()' for distribution details.
-
-  Natural language support but running in an English locale
-
-R is a collaborative project with many contributors.
-Type 'contributors()' for more information and
-'citation()' on how to cite R or R packages in publications.
-
-Type 'demo()' for some demos, 'help()' for on-line help, or
-'help.start()' for an HTML browser interface to help.
-Type 'q()' to quit R.
-
-> devtools::install_local(force=TRUE)
-
-     checking for file ‘/tmp/Rtmp2wJDZY/file2ee12a14210b5c/lotri/DESCRIPTION’ ...  ✔  checking for file ‘/tmp/Rtmp2wJDZY/file2ee12a14210b5c/lotri/DESCRIPTION’
-  ─  preparing ‘lotri’:
-   checking DESCRIPTION meta-information     checking DESCRIPTION meta-information ...  ✔  checking DESCRIPTION meta-information
-─  cleaning src
-  ─  checking for LF line-endings in source and make files and shell scripts
-  ─  checking for empty or unneeded directories
-  ─  building ‘lotri_0.4.0.tar.gz’
-     
-Installing package into ‘/home/bill/R/x86_64-pc-linux-gnu-library/4.1’
-(as ‘lib’ is unspecified)
-* installing *source* package ‘lotri’ ...
-** using staged installation
-** libs
-gcc -std=gnu99 -std=gnu11 -I"/usr/share/R/include" -DNDEBUG      -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-i2PIHO/r-base-4.1.2=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c asLotriMat.c -o asLotriMat.o
-gcc -std=gnu99 -std=gnu11 -I"/usr/share/R/include" -DNDEBUG      -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-i2PIHO/r-base-4.1.2=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c lotriBounds.c -o lotriBounds.o
-gcc -std=gnu99 -std=gnu11 -I"/usr/share/R/include" -DNDEBUG      -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-i2PIHO/r-base-4.1.2=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c lotriLstToMat.c -o lotriLstToMat.o
-gcc -std=gnu99 -std=gnu11 -I"/usr/share/R/include" -DNDEBUG      -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-i2PIHO/r-base-4.1.2=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c lotriNest.c -o lotriNest.o
-gcc -std=gnu99 -std=gnu11 -I"/usr/share/R/include" -DNDEBUG      -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-i2PIHO/r-base-4.1.2=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c lotriProp.c -o lotriProp.o
-gcc -std=gnu99 -std=gnu11 -I"/usr/share/R/include" -DNDEBUG      -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-i2PIHO/r-base-4.1.2=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c matlist.c -o matlist.o
-gcc -std=gnu99 -std=gnu11 -shared -L/usr/lib/R/lib -Wl,-Bsymbolic-functions -Wl,-z,relro -o lotri.so asLotriMat.o lotriBounds.o lotriLstToMat.o lotriNest.o lotriProp.o matlist.o -L/usr/lib/R/lib -lR
-installing to /home/bill/R/x86_64-pc-linux-gnu-library/4.1/00LOCK-lotri/00new/lotri/libs
-** R
-** inst
-** byte-compile and prepare package for lazy loading
-** help
-*** installing help indices
-*** copying figures
-** building package indices
-** installing vignettes
-** testing if installed package can be loaded from temporary location
-** checking absolute paths in shared objects and dynamic libraries
-** testing if installed package can be loaded from final location
-** testing if installed package keeps a record of temporary installation path
-* DONE (lotri)
-> 
-> 
