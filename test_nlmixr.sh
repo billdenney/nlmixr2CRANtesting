@@ -1,5 +1,23 @@
 #!/bin/bash
 
+# Parse command line arguments (from https://unix.stackexchange.com/questions/129391/passing-named-arguments-to-shell-scripts)
+while [ $# -gt 0 ]; do
+  case "$1" in
+    --valgrind=*)
+      valgrind="${1#*=}"
+      ;;
+    --help=*)
+      help="${1#*=}"
+      ;;
+    *)
+      printf "****************************************\n"
+      printf "* Error: Invalid argument.  Try --help *\n"
+      printf "****************************************\n"
+      exit 1
+  esac
+  shift
+done
+
 # Packages must be listed in dependency order and must be submodules
 # in the "packages" directory of this git repo
 packages=("nlmixr2data" "lotri" "rxode2" "nlmixr2est" "nlmixr2plot" "nlmixr2extra" "nlmixr2")
@@ -42,8 +60,15 @@ for current_dir in ${packages[@]}; do
     git clean -d -x -f
     # The 2>&1 redirects stderr to stdout
     # The tee copies stdout to a file and stdout
-    R -e "devtools::install_local(force=TRUE)" 2>&1 | \
-	tee ../../outputs/${current_dir}_install.txt
+    if [ -z ${valgrind+x} ]; then
+      echo "Not using valgrind"
+      R -e "devtools::install_local(force=TRUE)" 2>&1 | \
+        tee ../../outputs/${current_dir}_install.txt
+    else
+      echo "Using valgrind"
+      R -e "devtools::install_local(force=TRUE)" 2>&1 | \
+          tee ../../outputs/${current_dir}_install_valgrind.txt
+    fi
     if [[ $? -ne 0 ]] ; then
       echo Error installing ${current_dir}
       break
@@ -52,8 +77,14 @@ for current_dir in ${packages[@]}; do
       # The 2>&1 redirects stderr to stdout
       # The tee copies stdout to a file and stdout
       #R -e "devtools::load_all();devtools::test(reporter=${reporter_setup})" 2>&1 | \
-      R -e "devtools::load_all();devtools::test()" 2>&1 | \
-	tee ../../outputs/${current_dir}_test.txt
+      if [ -z ${valgrind+x} ]; then
+        echo "Not using valgrind"
+        R -e "devtools::load_all();devtools::test()" 2>&1 | \
+          tee ../../outputs/${current_dir}_test.txt
+      else
+        R -d "valgrind --tool=memcheck --leak-check=full" -e "devtools::load_all();devtools::test()" 2>&1 | \
+          tee ../../outputs/${current_dir}_test_valgrind.txt
+      fi
       if [[ $? -ne 0 ]] ; then
         echo Crash while testing ${current_dir}
         echo Try R -d gdb then r at the prompt

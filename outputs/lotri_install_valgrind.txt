@@ -18,31 +18,8 @@ Type 'demo()' for some demos, 'help()' for on-line help, or
 Type 'q()' to quit R.
 
 > devtools::install_local(force=TRUE)
-crayon (1.5.0 -> 1.5.1) [CRAN]
-Installing 1 packages: crayon
-Installing package into ‘/home/bill/R/x86_64-pc-linux-gnu-library/4.1’
-(as ‘lib’ is unspecified)
-trying URL 'https://cloud.r-project.org/src/contrib/crayon_1.5.1.tar.gz'
-Content type 'application/x-gzip' length 40178 bytes (39 KB)
-==================================================
-downloaded 39 KB
 
-* installing *source* package ‘crayon’ ...
-** package ‘crayon’ successfully unpacked and MD5 sums checked
-** using staged installation
-** R
-** byte-compile and prepare package for lazy loading
-** help
-*** installing help indices
-** building package indices
-** testing if installed package can be loaded from temporary location
-** testing if installed package can be loaded from final location
-** testing if installed package keeps a record of temporary installation path
-* DONE (crayon)
-
-The downloaded source packages are in
-	‘/tmp/RtmptUhdXs/downloaded_packages’
-     checking for file ‘/tmp/RtmptUhdXs/file32dec27489bb59/lotri/DESCRIPTION’ ...  ✔  checking for file ‘/tmp/RtmptUhdXs/file32dec27489bb59/lotri/DESCRIPTION’
+     checking for file ‘/tmp/RtmpT9Ppnq/file9f47593ce7f5/lotri/DESCRIPTION’ ...  ✔  checking for file ‘/tmp/RtmpT9Ppnq/file9f47593ce7f5/lotri/DESCRIPTION’
   ─  preparing ‘lotri’:
      checking DESCRIPTION meta-information ...  ✔  checking DESCRIPTION meta-information
   ─  cleaning src
