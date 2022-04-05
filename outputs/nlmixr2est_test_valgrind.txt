@@ -1,0 +1,1007 @@
+==72977== Memcheck, a memory error detector
+==72977== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==72977== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
+==72977== Command: /usr/lib/R/bin/exec/R -e devtools::load_all();devtools::test()
+==72977== 
+
+R version 4.1.3 (2022-03-10) -- "One Push-Up"
+Copyright (C) 2022 The R Foundation for Statistical Computing
+Platform: x86_64-pc-linux-gnu (64-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+  Natural language support but running in an English locale
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+> devtools::load_all();devtools::test()
+ℹ Loading nlmixr2est
+Registered S3 methods overwritten by 'RcppArmadillo':
+  method               from     
+  predict.fastLm       RcppEigen
+  print.fastLm         RcppEigen
+  summary.fastLm       RcppEigen
+  print.summary.fastLm RcppEigen
+Exports from /home/bill/GitHub/nlmixr2CRANtesting/packages/nlmixr2est/src/cholse.cpp:
+   NumericMatrix cholSE_(NumericMatrix A, double tol)
+
+Exports from /home/bill/GitHub/nlmixr2CRANtesting/packages/nlmixr2est/src/expandNlme.cpp:
+   List nlmixrExpandFdParNlme_(CharacterVector state, CharacterVector vars)
+
+Exports from /home/bill/GitHub/nlmixr2CRANtesting/packages/nlmixr2est/src/inner.cpp:
+   void freeFocei()
+   NumericVector foceiInnerLp(NumericVector eta, int id = 1)
+   double likInner(NumericVector eta, int id = 1)
+   double foceiLik(NumericVector theta)
+   double foceiOfv(NumericVector theta)
+   NumericVector foceiNumericGrad(NumericVector theta)
+   NumericVector foceiSetup_(const RObject& obj, const RObject& data, NumericVector theta, Nullable<LogicalVector> thetaFixed = R_NilValue, Nullable<LogicalVector> skipCov = R_NilValue, RObject rxInv = R_NilValue, Nullable<NumericVector> lower = R_NilValue, Nullable<NumericVector> upper = R_NilValue, Nullable<NumericMatrix> etaMat = R_NilValue, Nullable<List> control = R_NilValue)
+   double foceiOuterF(NumericVector& theta)
+   NumericVector foceiOuterG(NumericVector& theta)
+   Environment foceiOuter(Environment e)
+   List nlmixr2Gill83_(Function what, NumericVector args, Environment envir, LogicalVector which, double gillRtol, int gillK = 10, double gillStep = 2, double gillFtol = 0, bool optGillF = true)
+   double nlmixr2Eval_(NumericVector theta, std::string md5)
+   RObject nlmixr2Unscaled_(NumericVector theta, std::string md5)
+   NumericVector nlmixr2Grad_(NumericVector theta, std::string md5)
+   RObject nlmixr2ParHist_(std::string md5)
+   RObject nlmixr2Hess_(RObject thetaT, RObject fT, RObject e, RObject gillInfoT)
+   NumericMatrix sqrtm(NumericMatrix m)
+   NumericMatrix foceiCalcCov(Environment e)
+   Environment foceiFitCpp_(Environment e)
+   NumericVector boxCox_(NumericVector x = 1, double lambda = 1, int yj = 0)
+   NumericVector iBoxCox_(NumericVector x = 1, double lambda = 1, int yj = 0)
+
+Exports from /home/bill/GitHub/nlmixr2CRANtesting/packages/nlmixr2est/src/ode_cmt1.cpp:
+   SEXP lin_cmt_stan(Eigen::Map<Eigen::VectorXd> obs_time, Eigen::Map<Eigen::VectorXd> dose_time, Eigen::Map<Eigen::VectorXd> dose, Eigen::Map<Eigen::VectorXd> Tinf, Eigen::Map<Eigen::VectorXd> params, SEXP oralSEXP, SEXP infusionSEXP, SEXP ncmtSEXP, SEXP parameterizationSEXP)
+   SEXP llik_binomial_c(Eigen::Map<Eigen::VectorXd> y, Eigen::Map<Eigen::VectorXd> N, Eigen::Map<Eigen::VectorXd> params)
+   SEXP llik_poisson(Eigen::Map<Eigen::VectorXd> y, Eigen::Map<Eigen::VectorXd> params)
+   SEXP llik_normal(Eigen::Map<Eigen::VectorXd> y, Eigen::Map<Eigen::VectorXd> params)
+   SEXP llik_betabinomial(Eigen::Map<Eigen::VectorXd> y, Eigen::Map<Eigen::VectorXd> N, Eigen::Map<Eigen::VectorXd> params)
+   SEXP llik_student_t(Eigen::Map<Eigen::VectorXd> y, Eigen::Map<Eigen::VectorXd> params)
+   SEXP llik_beta(Eigen::Map<Eigen::VectorXd> y, Eigen::Map<Eigen::VectorXd> params)
+   SEXP llik_neg_binomial(Eigen::Map<Eigen::VectorXd> y, Eigen::Map<Eigen::VectorXd> params)
+
+Exports from /home/bill/GitHub/nlmixr2CRANtesting/packages/nlmixr2est/src/resid.cpp:
+   RObject augPredTrans(NumericVector& pred, NumericVector& ipred, NumericVector& lambda, RObject& yjIn, NumericVector& low, NumericVector& hi)
+
+Exports from /home/bill/GitHub/nlmixr2CRANtesting/packages/nlmixr2est/src/saem.cpp:
+   SEXP saem_do_pred(SEXP in_phi, SEXP in_evt, SEXP in_opt)
+   SEXP saem_fit(SEXP xSEXP)
+
+Exports from /home/bill/GitHub/nlmixr2CRANtesting/packages/nlmixr2est/src/shrink.cpp:
+   List nlmixr2Parameters(NumericVector theta, DataFrame eta)
+
+/home/bill/GitHub/nlmixr2CRANtesting/packages/nlmixr2est/src/RcppExports.cpp updated.
+/home/bill/GitHub/nlmixr2CRANtesting/packages/nlmixr2est/R/RcppExports.R updated.
+/home/bill/GitHub/nlmixr2CRANtesting/packages/nlmixr2est/inst/include/nlmixr2est_RcppExports.h updated.
+Re-compiling nlmixr2est
+  ─  installing *source* package ‘nlmixr2est’ ...
+   ** using staged installation
+     --------[begin src/Makevars]--------
+   # -*- mode: makefile-gmake -*-
+   ARMA=`"$(R_HOME)/bin$(R_ARCH_BIN)/Rscript" -e 'cat(file.path(find.package("RcppArmadillo"),"include"))'`
+   BH=`"$(R_HOME)/bin$(R_ARCH_BIN)/Rscript" -e 'cat(file.path(find.package("BH"),"include"))'`
+   RCPP=`"$(R_HOME)/bin$(R_ARCH_BIN)/Rscript" -e 'cat(file.path(find.package("Rcpp"),"include"))'`
+   EG=`"$(R_HOME)/bin$(R_ARCH_BIN)/Rscript" -e 'cat(file.path(find.package("RcppEigen"),"include"))'`
+   SH=`"$(R_HOME)/bin$(R_ARCH_BIN)/Rscript" -e 'cat(file.path(find.package("StanHeaders"),"include"))'`
+   
+   CXX_STD     = CXX14
+   CXX14STD = -std=gnu++14
+   
+   PKG_LIBS = $(LAPACK_LIBS) $(BLAS_LIBS) $(FLIBS) $(SHLIB_OPENMP_CXXFLAGS)
+   PKG_CXXFLAGS = -Id -I../inst/include -DBOOST_DISABLE_ASSERTS -DBOOST_NO_CXX11_STATIC_ASSERT -isystem"$(BH)" -isystem"$(EG)" -isystem"$(SH)" -isystem"$(RCPP)" -isystem"$(ARMA)"  $(SHLIB_OPENMP_CXXFLAGS)
+   SHLIB_LDFLAGS = $(SHLIB_CXXLDFLAGS) 
+   SHLIB_LD = $(SHLIB_CXXLD)
+   SOURCES_C = init.c rprintf.c merge3.c lbfgsR.c utilc.c
+   SOURCES_CPP = inner.cpp expandNlme.cpp saem.cpp npde.cpp shrink.cpp ires.cpp res.cpp cwres.cpp censResid.cpp cholse.cpp neldermead.cpp resid.cpp slice.cpp RcppExportMod.cpp ode_cmt1.cpp RcppExports.cpp
+   OBJECTS = $(SOURCES_CPP:.cpp=.o) $(SOURCES_C:.c=.o) 
+   
+   all: $(SHLIB)
+   $(SHLIB): $(OBJECTS)
+   
+   --------[end src/Makevars]--------
+     ** libs
+     g++ -std=gnu++14 -I"/usr/share/R/include" -DNDEBUG  -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/dparser/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/rxode2/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/RcppEigen/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/lbfgsb3c/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/Rcpp/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/BH/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/StanHeaders/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/RcppArmadillo/include'   -Id -I../inst/include -DBOOST_DISABLE_ASSERTS -DBOOST_NO_CXX11_STATIC_ASSERT -isystem"`"/usr/lib/R/bin/Rscript" -e 'cat(file.path(find.package("BH"),"include"))'`" -isystem"`"/usr/lib/R/bin/Rscript" -e 'cat(file.path(find.package("RcppEigen"),"include"))'`" -isystem"`"/usr/lib/R/bin/Rscript" -e 'cat(file.path(find.package("StanHeaders"),"include"))'`" -isystem"`"/usr/lib/R/bin/Rscript" -e 'cat(file.path(find.package("Rcpp"),"include"))'`" -isystem"`"/usr/lib/R/bin/Rscript" -e 'cat(file.path(find.package("RcppArmadillo"),"include"))'`"  -fopenmp -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-lENDSu/r-base-4.1.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c inner.cpp -o inner.o
+g++ -std=gnu++14 -I"/usr/share/R/include" -DNDEBUG  -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/dparser/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/rxode2/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/RcppEigen/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/lbfgsb3c/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/Rcpp/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/BH/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/StanHeaders/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/RcppArmadillo/include'   -Id -I../inst/include -DBOOST_DISABLE_ASSERTS -DBOOST_NO_CXX11_STATIC_ASSERT -isystem"`"/usr/lib/R/bin/Rsc     g++ -std=gnu++14 -I"/usr/share/R/include" -DNDEBUG  -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/dparser/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/rxode2/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/RcppEigen/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/lbfgsb3c/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/Rcpp/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/BH/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/StanHeaders/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/RcppArmadillo/include'   -Id -I../inst/include -DBOOST_DISABLE_ASSERTS -DBOOST_NO_CXX11_STATIC_ASSERT -isystem"`"/usr/lib/R/bin/Rscript" -e 'cat(file.path(find.package("BH"),"include"))'`" -isystem"`"/usr/lib/R/bin/Rscript" -e 'cat(file.path(find.package("RcppEigen"),"include"))'`" -isystem"`"/usr/lib/R/bin/Rscript" -e 'cat(file.path(find.package("StanHeaders"),"include"))'`" -isystem"`"/usr/lib/R/bin/Rscript" -e 'cat(file.path(find.package("Rcpp"),"include"))'`" -isystem"`"/usr/lib/R/bin/Rscript" -e 'cat(file.path(find.package("RcppArmadillo"),"include"))'`"  -fopenmp -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-lENDSu/r-base-4.1.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c expandNlme.cpp -o expandNlme.o
+   g++ -std=gnu++14 -I"/usr/share/R/include" -DNDEBUG  -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/dparser/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/rxode2/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/RcppEigen/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/lbfgsb3c/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/Rcpp/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/BH/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/StanHeaders/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/RcppArmadillo/include'   -Id -I../inst/include -DBOOST_DISABLE_ASSERTS -DBOOST_NO_CXX11_STATIC_ASSERT -isystem"`"/usr/lib/R/bin/Rscript" -e 'cat(file.path(find.package("BH"),"include"))'`" -isystem"`"/usr/lib/R/bin/Rscript" -e 'cat(file.path(find.package("RcppEigen"),"include"))'`" -isystem"`"/usr/lib/R/bin/Rscript" -e 'cat(file.path(find.package("StanHeaders"),"include"))'`" -isystem"`"/usr/lib/R/bin/Rscript" -e 'cat(file.path(find.package("Rcpp"),"include"))'`" -isystem"`"/usr/lib/R/bin/Rscript" -e 'cat(file.path(find.package("RcppArmadillo"),"include"))'`"  -fopenmp -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-lENDSu/r-base-4.1.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c saem.cpp -o saem.o
+g++ -std=gnu++14 -I"/usr/share/R/include" -D     g++ -std=gnu++14 -I"/usr/share/R/include" -DNDEBUG  -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/dparser/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/rxode2/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/RcppEigen/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/lbfgsb3c/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/Rcpp/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/BH/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/StanHeaders/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/RcppArmadillo/include'   -Id -I../inst/include -DBOOST_DISABLE_ASSERTS -DBOOST_NO_CXX11_STATIC_ASSERT -isystem"`"/usr/lib/R/bin/Rscript" -e 'cat(file.path(find.package("BH"),"include"))'`" -isystem"`"/usr/lib/R/bin/Rscript" -e 'cat(file.path(find.package("RcppEigen"),"include"))'`" -isystem"`"/usr/lib/R/bin/Rscript" -e 'cat(file.path(find.package("StanHeaders"),"include"))'`" -isystem"`"/usr/lib/R/bin/Rscript" -e 'cat(file.path(find.package("Rcpp"),"include"))'`" -isystem"`"/usr/lib/R/bin/Rscript" -e 'cat(file.path(find.package("RcppArmadillo"),"include"))'`"  -fopenmp -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-lENDSu/r-base-4.1.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c npde.cpp -o npde.o
+g++ -std=gnu++14 -I"/usr/share/R/include" -DNDEBUG  -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/dparser/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/rxode2/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/RcppEigen/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/lbfgsb3c/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/Rcpp/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/BH/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/StanHeaders/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/RcppArmadillo/include'   -Id -I../inst/include -DBOOST_DISABLE_ASSERTS -DBOOST_NO_CXX11_STATIC_ASSERT -isystem"`"/usr/lib/R/bin/Rscript" -e 'cat(file.path(find.package("BH"),"in     g++ -std=gnu++14 -I"/usr/share/R/include" -DNDEBUG  -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/dparser/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/rxode2/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/RcppEigen/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/lbfgsb3c/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/Rcpp/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/BH/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/StanHeaders/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/RcppArmadillo/include'   -Id -I../inst/include -DBOOST_DISABLE_ASSERTS -DBOOST_NO_CXX11_STATIC_ASSERT -isystem"`"/usr/lib/R/bin/Rscript" -e 'cat(file.path(find.package("BH"),"include"))'`" -isystem"`"/usr/lib/R/bin/Rscript" -e 'cat(file.path(find.package("RcppEigen"),"include"))'`" -isystem"`"/usr/lib/R/bin/Rscript" -e 'cat(file.path(find.package("StanHeaders"),"include"))'`" -isystem"`"/usr/lib/R/bin/Rscript" -e 'cat(file.path(find.package("Rcpp"),"include"))'`" -isystem"`"/usr/lib/R/bin/Rscript" -e 'cat(file.path(find.package("RcppArmadillo"),"include"))'`"  -fopenmp -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-lENDSu/r-base-4.1.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c shrink.cpp -o shrink.o
+   g++ -std=gnu++14 -I"/usr/share/R/include" -DNDEBUG  -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/dparser/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/rxode2/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/RcppEigen/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/lbfgsb3c/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/Rcpp/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/BH/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/StanHeaders/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/RcppArmadillo/include'   -Id -I../inst/include -DBOOST_DISABLE_ASSERTS -DBOOST_NO_CXX11_STATIC_ASSERT -isystem"`"/usr/lib/R/bin/Rscript" -e 'cat(file.path(find.package("BH"),"include"))'`" -isystem"`"/usr/lib/R/bin/Rscript" -e 'cat(file.path(find.package("RcppEigen"),"include"))'`" -isystem"`"/usr/lib/R/bin/Rscript" -e 'cat(file.path(find.package("StanHeaders"),"include"))'`" -isystem"`"/usr/lib/R/bin/Rscript" -e 'cat(file.path(find.package("Rcpp"),"include"))'`" -isystem"`"/usr/lib/R/bin/Rscript" -e 'cat(file.path(find.package("RcppArmadillo"),"include"))'`"  -fopenmp -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-lENDSu/r-base-4.1.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c ires.cpp -o ires.o
+g++ -std=gnu++14 -I"/usr/share/R/include" -DNDEBUG  -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.     g++ -std=gnu++14 -I"/usr/share/R/include" -DNDEBUG  -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/dparser/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/rxode2/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/RcppEigen/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/lbfgsb3c/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/Rcpp/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/BH/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/StanHeaders/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/RcppArmadillo/include'   -Id -I../inst/include -DBOOST_DISABLE_ASSERTS -DBOOST_NO_CXX11_STATIC_ASSERT -isystem"`"/usr/lib/R/bin/Rscript" -e 'cat(file.path(find.package("BH"),"include"))'`" -isystem"`"/usr/lib/R/bin/Rscript" -e 'cat(file.path(find.package("RcppEigen"),"include"))'`" -isystem"`"/usr/lib/R/bin/Rscript" -e 'cat(file.path(find.package("StanHeaders"),"include"))'`" -isystem"`"/usr/lib/R/bin/Rscript" -e 'cat(file.path(find.package("Rcpp"),"include"))'`" -isystem"`"/usr/lib/R/bin/Rscript" -e 'cat(file.path(find.package("RcppArmadillo"),"include"))'`"  -fopenmp -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-lENDSu/r-base-4.1.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c res.cpp -o res.o
+g++ -std=gnu++14 -I"/usr/share/R/include" -DNDEBUG  -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/dparser/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/rxode2/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/RcppEigen/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/lbfgsb3c/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/Rcpp/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/BH/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/StanHeaders/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/RcppArmadillo/include'   -Id -I../inst/include -DBOOST_DISABLE_ASSERTS -DBOOST_NO_CXX11_STATIC_ASSERT -isystem"`"/usr/lib/R/bin/Rscript" -e 'cat(file.path(find.package("BH"),"include"))'`" -isystem"`"/usr/lib/R/bin/Rscript" -e 'cat(f     g++ -std=gnu++14 -I"/usr/share/R/include" -DNDEBUG  -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/dparser/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/rxode2/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/RcppEigen/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/lbfgsb3c/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/Rcpp/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/BH/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/StanHeaders/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/RcppArmadillo/include'   -Id -I../inst/include -DBOOST_DISABLE_ASSERTS -DBOOST_NO_CXX11_STATIC_ASSERT -isystem"`"/usr/lib/R/bin/Rscript" -e 'cat(file.path(find.package("BH"),"include"))'`" -isystem"`"/usr/lib/R/bin/Rscript" -e 'cat(file.path(find.package("RcppEigen"),"include"))'`" -isystem"`"/usr/lib/R/bin/Rscript" -e 'cat(file.path(find.package("StanHeaders"),"include"))'`" -isystem"`"/usr/lib/R/bin/Rscript" -e 'cat(file.path(find.package("Rcpp"),"include"))'`" -isystem"`"/usr/lib/R/bin/Rscript" -e 'cat(file.path(find.package("RcppArmadillo"),"include"))'`"  -fopenmp -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-lENDSu/r-base-4.1.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c cwres.cpp -o cwres.o
+   g++ -std=gnu++14 -I"/usr/share/R/include" -DNDEBUG  -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/dparser/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/rxode2/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/RcppEigen/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/lbfgsb3c/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/Rcpp/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/BH/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/StanHeaders/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/RcppArmadillo/include'   -Id -I../inst/include -DBOOST_DISABLE_ASSERTS -DBOOST_NO_CXX11_STATIC_ASSERT -isystem"`"/usr/lib/R/bin/Rscript" -e 'cat(file.path(find.package("BH"),"include"))'`" -isystem"`"/usr/lib/R/bin/Rscript" -e 'cat(file.path(find.package("RcppEigen"),"include"))'`" -isystem"`"/usr/lib/R/bin/Rscript" -e 'cat(file.path(find.package("StanHeaders"),"include"))'`" -isystem"`"/usr/lib/R/bin/Rscript" -e 'cat(file.path(find.package("Rcpp"),"include"))'`" -isystem"`"/usr/lib/R/bin/Rscript" -e 'cat(file.path(find.package("RcppArmadillo"),"include"))'`"  -fopenmp -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-lENDSu/r-base-4.1.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c censResid.cpp -o censResid.o
+g++ -std=gnu++14 -I"/usr/share/R/include" -DNDEBUG  -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/dparser/include' -I'/home/bill/R/x86_64-pc-lin     g++ -std=gnu++14 -I"/usr/share/R/include" -DNDEBUG  -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/dparser/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/rxode2/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/RcppEigen/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/lbfgsb3c/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/Rcpp/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/BH/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/StanHeaders/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/RcppArmadillo/include'   -Id -I../inst/include -DBOOST_DISABLE_ASSERTS -DBOOST_NO_CXX11_STATIC_ASSERT -isystem"`"/usr/lib/R/bin/Rscript" -e 'cat(file.path(find.package("BH"),"include"))'`" -isystem"`"/usr/lib/R/bin/Rscript" -e 'cat(file.path(find.package("RcppEigen"),"include"))'`" -isystem"`"/usr/lib/R/bin/Rscript" -e 'cat(file.path(find.package("StanHeaders"),"include"))'`" -isystem"`"/usr/lib/R/bin/Rscript" -e 'cat(file.path(find.package("Rcpp"),"include"))'`" -isystem"`"/usr/lib/R/bin/Rscript" -e 'cat(file.path(find.package("RcppArmadillo"),"include"))'`"  -fopenmp -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-lENDSu/r-base-4.1.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c cholse.cpp -o cholse.o
+     g++ -std=gnu++14 -I"/usr/share/R/include" -DNDEBUG  -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/dparser/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/rxode2/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/RcppEigen/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/lbfgsb3c/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/Rcpp/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/BH/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/StanHeaders/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/RcppArmadillo/include'   -Id -I../inst/include -DBOOST_DISABLE_ASSERTS -DBOOST_NO_CXX11_STATIC_ASSERT -isystem"`"/usr/lib/R/bin/Rscript" -e 'cat(file.path(find.package("BH"),"include"))'`" -isystem"`"/usr/lib/R/bin/Rscript" -e 'cat(file.path(find.package("RcppEigen"),"include"))'`" -isystem"`"/usr/lib/R/bin/Rscript" -e 'cat(file.path(find.package("StanHeaders"),"include"))'`" -isystem"`"/usr/lib/R/bin/Rscript" -e 'cat(file.path(find.package("Rcpp"),"include"))'`" -isystem"`"/usr/lib/R/bin/Rscript" -e 'cat(file.path(find.package("RcppArmadillo"),"include"))'`"  -fopenmp -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-lENDSu/r-base-4.1.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c neldermead.cpp -o neldermead.o
+g++ -std=gnu++14 -I"/usr/share/R/include" -DNDEBUG  -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/dparser/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/rxode2/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/RcppEigen/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/lbfgsb3c/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/Rcpp/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/BH/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/StanHeaders/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/RcppArmadillo/include'   -Id -I../inst/include -DBOOST_DISABLE_ASSERTS -DBOOST_NO_CXX11_STATIC_ASSERT -isystem"`"/usr/lib     g++ -std=gnu++14 -I"/usr/share/R/include" -DNDEBUG  -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/dparser/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/rxode2/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/RcppEigen/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/lbfgsb3c/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/Rcpp/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/BH/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/StanHeaders/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/RcppArmadillo/include'   -Id -I../inst/include -DBOOST_DISABLE_ASSERTS -DBOOST_NO_CXX11_STATIC_ASSERT -isystem"`"/usr/lib/R/bin/Rscript" -e 'cat(file.path(find.package("BH"),"include"))'`" -isystem"`"/usr/lib/R/bin/Rscript" -e 'cat(file.path(find.package("RcppEigen"),"include"))'`" -isystem"`"/usr/lib/R/bin/Rscript" -e 'cat(file.path(find.package("StanHeaders"),"include"))'`" -isystem"`"/usr/lib/R/bin/Rscript" -e 'cat(file.path(find.package("Rcpp"),"include"))'`" -isystem"`"/usr/lib/R/bin/Rscript" -e 'cat(file.path(find.package("RcppArmadillo"),"include"))'`"  -fopenmp -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-lENDSu/r-base-4.1.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c resid.cpp -o resid.o
+   g++ -std=gnu++14 -I"/usr/share/R/include" -DNDEBUG  -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/dparser/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/rxode2/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/RcppEigen/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/lbfgsb3c/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/Rcpp/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/BH/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/StanHeaders/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/RcppArmadillo/include'   -Id -I../inst/include -DBOOST_DISABLE_ASSERTS -DBOOST_NO_CXX11_STATIC_ASSERT -isystem"`"/usr/lib/R/bin/Rscript" -e 'cat(file.path(find.package("BH"),"include"))'`" -isystem"`"/usr/lib/R/bin/Rscript" -e 'cat(file.path(find.package("RcppEigen"),"include"))'`" -isystem"`"/usr/lib/R/bin/Rscript" -e 'cat(file.path(find.package("StanHeaders"),"include"))'`" -isystem"`"/usr/lib/R/bin/Rscript" -e 'cat(file.path(find.package("Rcpp"),"include"))'`" -isystem"`"/usr/lib/R/bin/Rscript" -e 'cat(file.path(find.package("RcppArmadillo"),"include"))'`"  -fopenmp -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-lENDSu/r-base-4.1.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c slice.cpp -o slice.o
+g++ -std=gnu++14 -I"/usr/share/R/include"      g++ -std=gnu++14 -I"/usr/share/R/include" -DNDEBUG  -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/dparser/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/rxode2/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/RcppEigen/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/lbfgsb3c/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/Rcpp/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/BH/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/StanHeaders/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/RcppArmadillo/include'   -Id -I../inst/include -DBOOST_DISABLE_ASSERTS -DBOOST_NO_CXX11_STATIC_ASSERT -isystem"`"/usr/lib/R/bin/Rscript" -e 'cat(file.path(find.package("BH"),"include"))'`" -isystem"`"/usr/lib/R/bin/Rscript" -e 'cat(file.path(find.package("RcppEigen"),"include"))'`" -isystem"`"/usr/lib/R/bin/Rscript" -e 'cat(file.path(find.package("StanHeaders"),"include"))'`" -isystem"`"/usr/lib/R/bin/Rscript" -e 'cat(file.path(find.package("Rcpp"),"include"))'`" -isystem"`"/usr/lib/R/bin/Rscript" -e 'cat(file.path(find.package("RcppArmadillo"),"include"))'`"  -fopenmp -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-lENDSu/r-base-4.1.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c RcppExportMod.cpp -o RcppExportMod.o
+g++ -std=gnu++14 -I"/usr/share/R/include" -DNDEBUG  -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/dparser/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/rxode2/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/RcppEigen/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/lbfgsb3c/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/Rcpp/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/BH/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/StanHeaders/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/RcppArmadillo/include'   -Id -I../inst/include -DBOOST_DISABLE_ASSERTS -DBOOST_NO_CXX11_STATIC_ASSERT -isystem"`"/usr/lib/R/bin/Rscript" -e 'cat(file.path(fi     g++ -std=gnu++14 -I"/usr/share/R/include" -DNDEBUG  -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/dparser/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/rxode2/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/RcppEigen/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/lbfgsb3c/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/Rcpp/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/BH/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/StanHeaders/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/RcppArmadillo/include'   -Id -I../inst/include -DBOOST_DISABLE_ASSERTS -DBOOST_NO_CXX11_STATIC_ASSERT -isystem"`"/usr/lib/R/bin/Rscript" -e 'cat(file.path(find.package("BH"),"include"))'`" -isystem"`"/usr/lib/R/bin/Rscript" -e 'cat(file.path(find.package("RcppEigen"),"include"))'`" -isystem"`"/usr/lib/R/bin/Rscript" -e 'cat(file.path(find.package("StanHeaders"),"include"))'`" -isystem"`"/usr/lib/R/bin/Rscript" -e 'cat(file.path(find.package("Rcpp"),"include"))'`" -isystem"`"/usr/lib/R/bin/Rscript" -e 'cat(file.path(find.package("RcppArmadillo"),"include"))'`"  -fopenmp -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-lENDSu/r-base-4.1.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c ode_cmt1.cpp -o ode_cmt1.o
+   g++ -std=gnu++14 -I"/usr/share/R/include" -DNDEBUG  -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/dparser/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/rxode2/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/RcppEigen/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/lbfgsb3c/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/Rcpp/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/BH/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/StanHeaders/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/RcppArmadillo/include'   -Id -I../inst/include -DBOOST_DISABLE_ASSERTS -DBOOST_NO_CXX11_STATIC_ASSERT -isystem"`"/usr/lib/R/bin/Rscript" -e 'cat(file.path(find.package("BH"),"include"))'`" -isystem"`"/usr/lib/R/bin/Rscript" -e 'cat(file.path(find.package("RcppEigen"),"include"))'`" -isystem"`"/usr/lib/R/bin/Rscript" -e 'cat(file.path(find.package("StanHeaders"),"include"))'`" -isystem"`"/usr/lib/R/bin/Rscript" -e 'cat(file.path(find.package("Rcpp"),"include"))'`" -isystem"`"/usr/lib/R/bin/Rscript" -e 'cat(file.path(find.package("RcppArmadillo"),"include"))'`"  -fopenmp -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-lENDSu/r-base-4.1.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c RcppExports.cpp -o RcppExports.o
+gcc -I"/usr/share/R/include" -DNDEBUG  -I'/home/bill/R/x86_6     gcc -I"/usr/share/R/include" -DNDEBUG  -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/dparser/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/rxode2/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/RcppEigen/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/lbfgsb3c/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/Rcpp/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/BH/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/StanHeaders/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/RcppArmadillo/include'    -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-lENDSu/r-base-4.1.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c init.c -o init.o
+   gcc -I"/usr/share/R/include" -DNDEBUG  -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/dparser/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/rxode2/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/RcppEigen/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/lbfgsb3c/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/Rcpp/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/BH/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/StanHeaders/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/RcppArmadillo/include'    -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-lENDSu/r-base-4.1.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c rprintf.c -o rprintf.o
+gcc -I"/usr/share/R/include" -DNDEBUG  -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/dparser/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/rxode2/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/RcppEigen/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/lbfgsb3c/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/Rcpp/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/BH/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/StanHeaders/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/RcppArmadillo/in     gcc -I"/usr/share/R/include" -DNDEBUG  -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/dparser/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/rxode2/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/RcppEigen/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/lbfgsb3c/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/Rcpp/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/BH/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/StanHeaders/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/RcppArmadillo/include'    -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-lENDSu/r-base-4.1.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c merge3.c -o merge3.o
+   gcc -I"/usr/share/R/include" -DNDEBUG  -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/dparser/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/rxode2/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/RcppEigen/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/lbfgsb3c/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/Rcpp/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/BH/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/StanHeaders/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/RcppArmadillo/include'    -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-lENDSu/r-base-4.1.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c lbfgsR.c -o lbfgsR.o
+   gcc -I"/usr/share/R/include" -DNDEBUG  -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/dparser/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/rxode2/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/RcppEigen/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/lbfgsb3c/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/Rcpp/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/BH/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/StanHeaders/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/RcppArmadillo/include'    -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-lENDSu/r-base-4.1.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c utilc.c -o utilc.o
+     g++ -std=gnu++14 -shared -L/usr/lib/R/lib -Wl,-Bsymbolic-functions -Wl,-z,relro -o nlmixr2est.so inner.o expandNlme.o saem.o npde.o shrink.o ires.o res.o cwres.o censResid.o cholse.o neldermead.o resid.o slice.o RcppExportMod.o ode_cmt1.o RcppExports.o init.o rprintf.o merge3.o lbfgsR.o utilc.o -llapack -lblas -lgfortran -lm -lquadmath -fopenmp -L/usr/lib/R/lib -lR
+     installing to /tmp/RtmpronHfp/devtools_install_11d1129ac6887/00LOCK-nlmixr2est/00new/nlmixr2est/libs
+     ** checking absolute paths in shared objects and dynamic libraries
+  ─  DONE (nlmixr2est)
+Loading required package: nlmixr2data
+ℹ Loading nlmixr2est
+ℹ Testing nlmixr2est
+✔ | F W S  OK | Context
+
+⠏ |         0 | broom                                                           Calculating -2LL by Gaussian quadrature (nnodes=3,nsd=1.6)
+
+⠋ |         1 | broom                                                           
+⠙ |         2 | broom                                                           
+⠹ |         3 | broom                                                           
+⠼ |         5 | broom                                                           
+⠴ |         6 | broom                                                           
+⠦ |         7 | broom                                                           
+⠧ |         8 | broom                                                           
+⠏ |        10 | broom                                                           
+⠙ |        12 | broom                                                           
+⠹ |        13 | broom                                                           
+⠸ |        14 | broom                                                           
+⠴ |        16 | broom                                                           
+⠧ |        18 | broom                                                           
+⠏ |        20 | broom                                                           
+⠙ |        22 | broom                                                           
+⠸ |        24 | broom                                                           
+⠼ |        25 | broom                                                           
+⠦ |        27 | broom                                                           
+⠇ |        29 | broom                                                           
+⠏ |        30 | broom                                                           
+⠙ |        32 | broom                                                           
+⠸ |        34 | broom                                                           
+⠴ |        36 | broom                                                           
+⠦ |        37 | broom                                                           
+⠇ |        39 | broom                                                           
+⠋ |        41 | broom                                                           
+⠙ |        42 | broom                                                           
+⠸ |        44 | broom                                                           
+⠴ |        46 | broom                                                           
+⠦ |        47 | broom                                                           
+⠇ |        49 | broom                                                           
+⠋ |        51 | broom                                                           
+⠹ |        53 | broom                                                           
+⠸ |        54 | broom                                                           
+⠴ |        56 | broom                                                           
+⠧ |        58 | broom                                                           
+⠇ |        59 | broom                                                           
+⠋ |        61 | broom                                                           
+⠹ |        63 | broom                                                           
+⠸ |        64 | broom                                                           
+⠴ |        66 | broom                                                           
+⠧ |        68 | broom                                                           
+⠏ |        70 | broom                                                           
+⠋ |        71 | broom                                                           
+⠹ |        73 | broom                                                           
+⠼ |        75 | broom                                                           
+⠴ |        76 | broom                                                           
+⠧ |        78 | broom                                                           
+⠏ |        80 | broom                                                           
+⠋ |        81 | broom                                                           
+⠹ |        83 | broom                                                           
+⠼ |        85 | broom                                                           ==72977== Conditional jump or move depends on uninitialised value(s)
+==72977==    at 0x21FEE3A1: sqrt<double> (eop_aux.hpp:65)
+==72977==    by 0x21FEE3A1: process<double> (eop_core_meat.hpp:1046)
+==72977==    by 0x21FEE3A1: at_alt (eOp_meat.hpp:146)
+==72977==    by 0x21FEE3A1: apply<arma::Mat<double>, arma::eOp<arma::Mat<double>, arma::eop_sqrt> > (eop_core_meat.hpp:281)
+==72977==    by 0x21FEE3A1: operator=<arma::eOp<arma::Mat<double>, arma::eop_sqrt>, arma::eop_scalar_div_pre> (Mat_meat.hpp:5054)
+==72977==    by 0x21FEE3A1: innerOpt() (inner.cpp:1957)
+==72977==    by 0x21FEF65E: foceiLik0 (inner.cpp:1974)
+==72977==    by 0x21FEF65E: foceiOfv0(double*) (inner.cpp:2006)
+==72977==    by 0x21FF5A45: foceiOfvOptim (inner.cpp:3566)
+==72977==    by 0x220C2264: _nlmixr2est_foceiOuterF (RcppExports.cpp:158)
+==72977==    by 0x494146F: ??? (in /usr/lib/R/lib/libR.so)
+==72977==    by 0x49419A4: ??? (in /usr/lib/R/lib/libR.so)
+==72977==    by 0x4997FE2: Rf_eval (in /usr/lib/R/lib/libR.so)
+==72977==    by 0x499B452: ??? (in /usr/lib/R/lib/libR.so)
+==72977==    by 0x4997D9A: Rf_eval (in /usr/lib/R/lib/libR.so)
+==72977==    by 0x499976E: ??? (in /usr/lib/R/lib/libR.so)
+==72977==    by 0x499A661: Rf_applyClosure (in /usr/lib/R/lib/libR.so)
+==72977==    by 0x4997ACE: Rf_eval (in /usr/lib/R/lib/libR.so)
+==72977== 
+==72977== Conditional jump or move depends on uninitialised value(s)
+==72977==    at 0x21FEE3BA: sqrt<double> (eop_aux.hpp:65)
+==72977==    by 0x21FEE3BA: process<double> (eop_core_meat.hpp:1046)
+==72977==    by 0x21FEE3BA: at_alt (eOp_meat.hpp:146)
+==72977==    by 0x21FEE3BA: apply<arma::Mat<double>, arma::eOp<arma::Mat<double>, arma::eop_sqrt> > (eop_core_meat.hpp:281)
+==72977==    by 0x21FEE3BA: operator=<arma::eOp<arma::Mat<double>, arma::eop_sqrt>, arma::eop_scalar_div_pre> (Mat_meat.hpp:5054)
+==72977==    by 0x21FEE3BA: innerOpt() (inner.cpp:1957)
+==72977==    by 0x21FEF65E: foceiLik0 (inner.cpp:1974)
+==72977==    by 0x21FEF65E: foceiOfv0(double*) (inner.cpp:2006)
+==72977==    by 0x21FF5A45: foceiOfvOptim (inner.cpp:3566)
+==72977==    by 0x220C2264: _nlmixr2est_foceiOuterF (RcppExports.cpp:158)
+==72977==    by 0x494146F: ??? (in /usr/lib/R/lib/libR.so)
+==72977==    by 0x49419A4: ??? (in /usr/lib/R/lib/libR.so)
+==72977==    by 0x4997FE2: Rf_eval (in /usr/lib/R/lib/libR.so)
+==72977==    by 0x499B452: ??? (in /usr/lib/R/lib/libR.so)
+==72977==    by 0x4997D9A: Rf_eval (in /usr/lib/R/lib/libR.so)
+==72977==    by 0x499976E: ??? (in /usr/lib/R/lib/libR.so)
+==72977==    by 0x499A661: Rf_applyClosure (in /usr/lib/R/lib/libR.so)
+==72977==    by 0x4997ACE: Rf_eval (in /usr/lib/R/lib/libR.so)
+==72977== 
+==72977== Conditional jump or move depends on uninitialised value(s)
+==72977==    at 0x21FEE415: sqrt<double> (eop_aux.hpp:65)
+==72977==    by 0x21FEE415: process<double> (eop_core_meat.hpp:1046)
+==72977==    by 0x21FEE415: operator[] (eOp_meat.hpp:114)
+==72977==    by 0x21FEE415: apply<arma::Mat<double>, arma::eOp<arma::Mat<double>, arma::eop_sqrt> > (eop_core_meat.hpp:287)
+==72977==    by 0x21FEE415: operator=<arma::eOp<arma::Mat<double>, arma::eop_sqrt>, arma::eop_scalar_div_pre> (Mat_meat.hpp:5054)
+==72977==    by 0x21FEE415: innerOpt() (inner.cpp:1957)
+==72977==    by 0x21FEF65E: foceiLik0 (inner.cpp:1974)
+==72977==    by 0x21FEF65E: foceiOfv0(double*) (inner.cpp:2006)
+==72977==    by 0x21FF5A45: foceiOfvOptim (inner.cpp:3566)
+==72977==    by 0x220C2264: _nlmixr2est_foceiOuterF (RcppExports.cpp:158)
+==72977==    by 0x494146F: ??? (in /usr/lib/R/lib/libR.so)
+==72977==    by 0x49419A4: ??? (in /usr/lib/R/lib/libR.so)
+==72977==    by 0x4997FE2: Rf_eval (in /usr/lib/R/lib/libR.so)
+==72977==    by 0x499B452: ??? (in /usr/lib/R/lib/libR.so)
+==72977==    by 0x4997D9A: Rf_eval (in /usr/lib/R/lib/libR.so)
+==72977==    by 0x499976E: ??? (in /usr/lib/R/lib/libR.so)
+==72977==    by 0x499A661: Rf_applyClosure (in /usr/lib/R/lib/libR.so)
+==72977==    by 0x4997ACE: Rf_eval (in /usr/lib/R/lib/libR.so)
+==72977== 
+==72977== Conditional jump or move depends on uninitialised value(s)
+==72977==    at 0x21FCAD4C: thetaReset(double) (inner.cpp:1764)
+==72977==    by 0x21FEE519: innerOpt() (inner.cpp:1962)
+==72977==    by 0x21FEF65E: foceiLik0 (inner.cpp:1974)
+==72977==    by 0x21FEF65E: foceiOfv0(double*) (inner.cpp:2006)
+==72977==    by 0x21FF5A45: foceiOfvOptim (inner.cpp:3566)
+==72977==    by 0x220C2264: _nlmixr2est_foceiOuterF (RcppExports.cpp:158)
+==72977==    by 0x494146F: ??? (in /usr/lib/R/lib/libR.so)
+==72977==    by 0x49419A4: ??? (in /usr/lib/R/lib/libR.so)
+==72977==    by 0x4997FE2: Rf_eval (in /usr/lib/R/lib/libR.so)
+==72977==    by 0x499B452: ??? (in /usr/lib/R/lib/libR.so)
+==72977==    by 0x4997D9A: Rf_eval (in /usr/lib/R/lib/libR.so)
+==72977==    by 0x499976E: ??? (in /usr/lib/R/lib/libR.so)
+==72977==    by 0x499A661: Rf_applyClosure (in /usr/lib/R/lib/libR.so)
+==72977== 
+
+⠦ |        87 | broom                                                           
+⠧ |        88 | broom                                                           
+⠏ |        90 | broom                                                           
+⠙ |        92 | broom                                                           
+⠹ |        93 | broom                                                           
+⠸ |        94 | broom                                                           
+⠴ |        96 | broom                                                           
+⠧ |        98 | broom                                                           
+⠇ |        99 | broom                                                           
+⠏ |       100 | broom                                                           
+⠙ |       102 | broom                                                           
+⠸ |       104 | broom                                                           
+⠴ |       106 | broom                                                           
+⠧ |       108 | broom                                                           
+⠏ |       110 | broom                                                           
+⠋ |       111 | broom                                                           
+⠹ |       113 | broom                                                           
+⠼ |       115 | broom                                                           
+⠴ |       116 | broom                                                           
+⠧ |       118 | broom                                                           
+⠏ |       120 | broom                                                           
+⠙ |       122 | broom                                                           
+⠹ |       123 | broom                                                           
+⠼ |       125 | broom                                                           
+⠦ |       127 | broom                                                           
+⠧ |       128 | broom                                                           
+⠏ |       130 | broom                                                           
+⠙ |       132 | broom                                                           
+⠹ |       133 | broom                                                           
+⠼ |       135 | broom                                                           
+⠦ |       137 | broom                                                           
+⠇ |       139 | broom                                                           
+⠏ |       140 | broom                                                           
+⠙ |       142 | broom                                                           
+⠸ |       144 | broom                                                           
+⠼ |       145 | broom                                                           
+⠦ |       147 | broom                                                           
+⠇ |       149 | broom                                                           
+⠏ |       150 | broom                                                           
+⠙ |       152 | broom                                                           
+⠸ |       154 | broom                                                           
+⠴ |       156 | broom                                                           
+⠦ |       157 | broom                                                           
+⠇ |       159 | broom                                                           
+⠋ |       161 | broom                                                           
+⠙ |       162 | broom                                                           
+⠸ |       164 | broom                                                           
+⠴ |       166 | broom                                                           
+⠦ |       167 | broom                                                           
+⠇ |       169 | broom                                                           
+⠋ |       171 | broom                                                           
+⠹ |       173 | broom                                                           
+⠸ |       174 | broom                                                           
+⠴ |       176 | broom                                                           
+⠧ |       178 | broom                                                           
+⠇ |       179 | broom                                                           
+⠋ |       181 | broom                                                           
+⠹ |       183 | broom                                                           
+⠼ |       185 | broom                                                           
+⠴ |       186 | broom                                                           
+⠧ |       188 | broom                                                           
+⠏ |       190 | broom                                                           
+⠙ |       192 | broom                                                           
+⠸ |       194 | broom                                                           
+⠦ |       197 | broom                                                           
+⠇ |       199 | broom                                                           
+⠙ |       202 | broom                                                           
+⠸ |       204 | broom                                                           
+⠴ |       206 | broom                                                           
+⠧ |       208 | broom                                                           
+⠇ |       209 | broom                                                           
+⠋ |       211 | broom                                                           
+⠸ |       214 | broom                                                           
+⠴ |       216 | broom                                                           
+⠇ |       219 | broom                                                           
+⠋ |       221 | broom                                                           
+⠹ |       223 | broom                                                           
+⠼ |       225 | broom                                                           
+⠦ |       227 | broom                                                           
+⠇ |       229 | broom                                                           
+⠋ |       231 | broom                                                           
+⠹ |       233 | broom                                                           
+⠼ |       235 | broom                                                           
+⠴ |       236 | broom                                                           
+⠧ |       238 | broom                                                           
+⠏ |       240 | broom                                                           
+⠙ |       242 | broom                                                           
+⠸ |       244 | broom                                                           
+⠴ |       246 | broom                                                           
+⠧ |       248 | broom                                                           
+⠏ |       250 | broom                                                           
+⠙ |       252 | broom                                                           
+⠸ |       254 | broom                                                           
+⠴ |       256 | broom                                                           
+⠧ |       258 | broom                                                           ==72977== Conditional jump or move depends on uninitialised value(s)
+==72977==    at 0x21FEE3A1: sqrt<double> (eop_aux.hpp:65)
+==72977==    by 0x21FEE3A1: process<double> (eop_core_meat.hpp:1046)
+==72977==    by 0x21FEE3A1: at_alt (eOp_meat.hpp:146)
+==72977==    by 0x21FEE3A1: apply<arma::Mat<double>, arma::eOp<arma::Mat<double>, arma::eop_sqrt> > (eop_core_meat.hpp:281)
+==72977==    by 0x21FEE3A1: operator=<arma::eOp<arma::Mat<double>, arma::eop_sqrt>, arma::eop_scalar_div_pre> (Mat_meat.hpp:5054)
+==72977==    by 0x21FEE3A1: innerOpt() (inner.cpp:1957)
+==72977==    by 0x21FEF65E: foceiLik0 (inner.cpp:1974)
+==72977==    by 0x21FEF65E: foceiOfv0(double*) (inner.cpp:2006)
+==72977==    by 0x21FF1B01: foceiOuterFinal(double*, Rcpp::Environment_Impl<Rcpp::PreserveStorage>) (inner.cpp:3515)
+==72977==    by 0x21FF5666: foceiOuter(Rcpp::Environment_Impl<Rcpp::PreserveStorage>) (inner.cpp:3930)
+==72977==    by 0x21FFFBC9: foceiFitCpp_(Rcpp::Environment_Impl<Rcpp::PreserveStorage>) (inner.cpp:6112)
+==72977==    by 0x220C5623: _nlmixr2est_foceiFitCpp_ (RcppExports.cpp:293)
+==72977==    by 0x494146F: ??? (in /usr/lib/R/lib/libR.so)
+==72977==    by 0x49419A4: ??? (in /usr/lib/R/lib/libR.so)
+==72977==    by 0x4997FE2: Rf_eval (in /usr/lib/R/lib/libR.so)
+==72977==    by 0x499B452: ??? (in /usr/lib/R/lib/libR.so)
+==72977==    by 0x4997D9A: Rf_eval (in /usr/lib/R/lib/libR.so)
+==72977==    by 0x499976E: ??? (in /usr/lib/R/lib/libR.so)
+==72977== 
+==72977== Conditional jump or move depends on uninitialised value(s)
+==72977==    at 0x21FEE3BA: sqrt<double> (eop_aux.hpp:65)
+==72977==    by 0x21FEE3BA: process<double> (eop_core_meat.hpp:1046)
+==72977==    by 0x21FEE3BA: at_alt (eOp_meat.hpp:146)
+==72977==    by 0x21FEE3BA: apply<arma::Mat<double>, arma::eOp<arma::Mat<double>, arma::eop_sqrt> > (eop_core_meat.hpp:281)
+==72977==    by 0x21FEE3BA: operator=<arma::eOp<arma::Mat<double>, arma::eop_sqrt>, arma::eop_scalar_div_pre> (Mat_meat.hpp:5054)
+==72977==    by 0x21FEE3BA: innerOpt() (inner.cpp:1957)
+==72977==    by 0x21FEF65E: foceiLik0 (inner.cpp:1974)
+==72977==    by 0x21FEF65E: foceiOfv0(double*) (inner.cpp:2006)
+==72977==    by 0x21FF1B01: foceiOuterFinal(double*, Rcpp::Environment_Impl<Rcpp::PreserveStorage>) (inner.cpp:3515)
+==72977==    by 0x21FF5666: foceiOuter(Rcpp::Environment_Impl<Rcpp::PreserveStorage>) (inner.cpp:3930)
+==72977==    by 0x21FFFBC9: foceiFitCpp_(Rcpp::Environment_Impl<Rcpp::PreserveStorage>) (inner.cpp:6112)
+==72977==    by 0x220C5623: _nlmixr2est_foceiFitCpp_ (RcppExports.cpp:293)
+==72977==    by 0x494146F: ??? (in /usr/lib/R/lib/libR.so)
+==72977==    by 0x49419A4: ??? (in /usr/lib/R/lib/libR.so)
+==72977==    by 0x4997FE2: Rf_eval (in /usr/lib/R/lib/libR.so)
+==72977==    by 0x499B452: ??? (in /usr/lib/R/lib/libR.so)
+==72977==    by 0x4997D9A: Rf_eval (in /usr/lib/R/lib/libR.so)
+==72977==    by 0x499976E: ??? (in /usr/lib/R/lib/libR.so)
+==72977== 
+==72977== Conditional jump or move depends on uninitialised value(s)
+==72977==    at 0x21FEE415: sqrt<double> (eop_aux.hpp:65)
+==72977==    by 0x21FEE415: process<double> (eop_core_meat.hpp:1046)
+==72977==    by 0x21FEE415: operator[] (eOp_meat.hpp:114)
+==72977==    by 0x21FEE415: apply<arma::Mat<double>, arma::eOp<arma::Mat<double>, arma::eop_sqrt> > (eop_core_meat.hpp:287)
+==72977==    by 0x21FEE415: operator=<arma::eOp<arma::Mat<double>, arma::eop_sqrt>, arma::eop_scalar_div_pre> (Mat_meat.hpp:5054)
+==72977==    by 0x21FEE415: innerOpt() (inner.cpp:1957)
+==72977==    by 0x21FEF65E: foceiLik0 (inner.cpp:1974)
+==72977==    by 0x21FEF65E: foceiOfv0(double*) (inner.cpp:2006)
+==72977==    by 0x21FF1B01: foceiOuterFinal(double*, Rcpp::Environment_Impl<Rcpp::PreserveStorage>) (inner.cpp:3515)
+==72977==    by 0x21FF5666: foceiOuter(Rcpp::Environment_Impl<Rcpp::PreserveStorage>) (inner.cpp:3930)
+==72977==    by 0x21FFFBC9: foceiFitCpp_(Rcpp::Environment_Impl<Rcpp::PreserveStorage>) (inner.cpp:6112)
+==72977==    by 0x220C5623: _nlmixr2est_foceiFitCpp_ (RcppExports.cpp:293)
+==72977==    by 0x494146F: ??? (in /usr/lib/R/lib/libR.so)
+==72977==    by 0x49419A4: ??? (in /usr/lib/R/lib/libR.so)
+==72977==    by 0x4997FE2: Rf_eval (in /usr/lib/R/lib/libR.so)
+==72977==    by 0x499B452: ??? (in /usr/lib/R/lib/libR.so)
+==72977==    by 0x4997D9A: Rf_eval (in /usr/lib/R/lib/libR.so)
+==72977==    by 0x499976E: ??? (in /usr/lib/R/lib/libR.so)
+==72977== 
+
+⠇ |       259 | broom                                                           
+⠏ |       260 | broom                                                           
+⠙ |       262 | broom                                                           
+⠸ |       264 | broom                                                           
+⠼ |       265 | broom                                                           
+⠴ |       266 | broom                                                           
+⠧ |       268 | broom                                                           
+⠏ |       270 | broom                                                           
+⠋ |       271 | broom                                                           
+⠙ |       272 | broom                                                           
+⠸ |       274 | broom                                                           
+⠴ |       276 | broom                                                           
+⠧ |       278 | broom                                                           
+⠏ |       280 | broom                                                           
+⠙ |       282 | broom                                                           
+⠹ |       283 | broom                                                           
+⠼ |       285 | broom                                                           
+⠦ |       287 | broom                                                           
+⠧ |       288 | broom                                                           
+⠏ |       290 | broom                                                           
+⠙ |       292 | broom                                                           
+⠸ |       294 | broom                                                           
+⠼ |       295 | broom                                                           
+⠦ |       297 | broom                                                           
+⠇ |       299 | broom                                                           
+⠏ |       300 | broom                                                           
+⠙ |       302 | broom                                                           
+⠸ |       304 | broom                                                           
+⠼ |       305 | broom                                                           
+⠴ |       306 | broom                                                           
+⠧ |       308 | broom                                                           
+⠏ |       310 | broom                                                           
+⠋ |       311 | broom                                                           
+⠙ |       312 | broom                                                           
+⠸ |       314 | broom                                                           
+⠴ |       316 | broom                                                           
+⠦ |       317 | broom                                                           
+⠇ |       319 | broom                                                           
+⠋ |       321 | broom                                                           
+⠙ |       322 | broom                                                           
+⠸ |       324 | broom                                                           
+⠴ |       326 | broom                                                           
+⠧ |       328 | broom                                                           
+⠇ |       329 | broom                                                           
+⠋ |       331 | broom                                                           
+⠹ |       333 | broom                                                           
+⠸ |       334 | broom                                                           
+⠴ |       336 | broom                                                           
+⠧ |       338 | broom                                                           
+⠇ |       339 | broom                                                           
+⠋ |       341 | broom                                                           
+⠹ |       343 | broom                                                           
+⠼ |       345 | broom                                                           
+⠴ |       346 | broom                                                           
+⠧ |       348 | broom                                                           
+⠏ |       350 | broom                                                           
+⠋ |       351 | broom                                                           
+⠙ |       352 | broom                                                           
+⠸ |       354 | broom                                                           
+⠴ |       356 | broom                                                           
+⠦ |       357 | broom                                                           
+⠧ |       358 | broom                                                           
+⠏ |       360 | broom                                                           
+⠙ |       362 | broom                                                           
+⠸ |       364 | broom                                                           
+⠴ |       366 | broom                                                           
+⠧ |       368 | broom                                                           
+⠇ |       369 | broom                                                           
+⠋ |       371 | broom                                                           
+⠹ |       373 | broom                                                           
+⠸ |       374 | broom                                                           
+⠴ |       376 | broom                                                           
+⠧ |       378 | broom                                                           
+⠏ |       380 | broom                                                           
+⠋ |       381 | broom                                                           
+⠹ |       383 | broom                                                           
+⠼ |       385 | broom                                                           
+⠴ |       386 | broom                                                           
+⠧ |       388 | broom                                                           
+⠏ |       390 | broom                                                           
+⠋ |       391 | broom                                                           
+⠹ |       393 | broom                                                           
+⠼ |       395 | broom                                                           
+⠦ |       397 | broom                                                           
+⠧ |       398 | broom                                                           
+⠏ |       400 | broom                                                           
+⠙ |       402 | broom                                                           
+⠹ |       403 | broom                                                           
+⠼ |       405 | broom                                                           
+⠦ |       407 | broom                                                           
+⠧ |       408 | broom                                                           
+⠇ |       409 | broom                                                           
+⠋ |       411 | broom                                                           
+⠹ |       413 | broom                                                           
+⠸ |       414 | broom                                                           
+⠼ |       415 | broom                                                           
+⠦ |       417 | broom                                                           
+⠇ |       419 | broom                                                           
+⠏ |       420 | broom                                                           
+⠙ |       422 | broom                                                           
+⠸ |       424 | broom                                                           
+⠼ |       425 | broom                                                           
+⠦ |       427 | broom                                                           
+⠇ |       429 | broom                                                           
+⠋ |       431 | broom                                                           
+⠙ |       432 | broom                                                           
+⠹ |       433 | broom                                                           
+⠼ |       435 | broom                                                           
+⠴ |       436 | broom                                                           
+⠦ |       437 | broom                                                           
+⠧ |       438 | broom                                                           
+⠏ |       440 | broom                                                           
+⠙ |       442 | broom                                                           
+⠸ |       444 | broom                                                           
+⠴ |       446 | broom                                                           
+⠦ |       447 | broom                                                           
+⠇ |       449 | broom                                                           
+⠋ |       451 | broom                                                           
+⠙ |       452 | broom                                                           
+⠸ |       454 | broom                                                           
+⠴ |       456 | broom                                                           
+⠦ |       457 | broom                                                           
+⠇ |       459 | broom                                                           
+⠋ |       461 | broom                                                           
+⠙ |       462 | broom                                                           
+⠸ |       464 | broom                                                           
+⠴ |       466 | broom                                                           
+⠧ |       468 | broom                                                           
+⠇ |       469 | broom                                                           
+⠋ |       471 | broom                                                           
+⠹ |       473 | broom                                                           
+⠸ |       474 | broom                                                           
+⠴ |       476 | broom                                                           
+⠧ |       478 | broom                                                           
+⠇ |       479 | broom                                                           
+⠋ |       481 | broom                                                           
+⠹ |       483 | broom                                                           
+⠼ |       485 | broom                                                           
+⠴ |       486 | broom                                                           
+⠧ |       488 | broom                                                           
+⠏ |       490 | broom                                                           
+⠙ |       492 | broom                                                           
+⠸ |       494 | broom                                                           
+⠴ |       496 | broom                                                           
+⠦ |       497 | broom                                                           
+⠇ |       499 | broom                                                           
+⠋ |       501 | broom                                                           
+⠹ |       503 | broom                                                           
+⠸ |       504 | broom                                                           
+⠴ |       506 | broom                                                           
+⠧ |       508 | broom                                                           
+⠇ |       509 | broom                                                           
+⠏ |       510 | broom                                                           
+⠙ |       512 | broom                                                           
+⠸ |       514 | broom                                                           
+⠼ |       515 | broom                                                           
+⠦ |       517 | broom                                                           
+⠇ |       519 | broom                                                           
+✔ |       520 | broom [2536.4s]
+
+⠏ |         0 | control                                                         
+⠋ |         1 | control                                                         
+⠙ |         2 | control                                                         
+⠸ |         4 | control                                                         
+⠴ |         6 | control                                                         
+⠧ |         8 | control                                                         
+⠇ |         9 | control                                                         
+⠏ |        10 | control                                                         
+⠋ |        11 | control                                                         
+⠙ |        12 | control                                                         
+⠸ |        14 | control                                                         
+⠼ |        15 | control                                                         
+⠴ |        16 | control                                                         
+⠦ |        17 | control                                                         
+⠧ |        18 | control                                                         
+⠏ |        20 | control                                                         
+⠙ |        22 | control                                                         
+⠸ |        24 | control                                                         
+⠼ |        25 | control                                                         
+⠴ |        26 | control                                                         
+⠦ |        27 | control                                                         
+⠧ |        28 | control                                                         
+⠇ |        29 | control                                                         
+⠏ |        30 | control                                                         
+⠋ |        31 | control                                                         
+⠹ |        33 | control                                                         
+⠼ |        35 | control                                                         
+⠦ |        37 | control                                                         
+⠧ |        38 | control                                                         
+⠇ |        39 | control                                                         
+✔ |        39 | control [9.1s]
+
+⠏ |         0 | cov-focei                                                       
+⠋ |         1 | cov-focei                                                       
+✔ |         1 | cov-focei [66.7s]
+
+⠏ |         0 | cwres                                                           
+⠋ |         1 | cwres                                                           
+⠙ |   1     1 | cwres                                                           
+⠹ |   2     1 | cwres                                                           
+⠸ |   3     1 | cwres                                                           
+⠼ |   4     1 | cwres                                                           
+⠴ |   5     1 | cwres                                                           
+⠦ |   5     2 | cwres                                                           
+⠇ |   5     4 | cwres                                                           
+⠏ |   5     5 | cwres                                                           
+⠋ |   6     5 | cwres                                                           
+⠙ |   7     5 | cwres                                                           
+⠹ |   8     5 | cwres                                                           
+⠸ |   9     5 | cwres                                                           
+⠼ |   10     5 | cwres                                                          
+⠴ |   10     6 | cwres                                                          
+⠧ | 1 10     7 | cwres                                                          
+⠇ | 1 10     8 | cwres                                                          
+⠏ | 1 11     8 | cwres                                                          
+⠋ | 1 12     8 | cwres                                                          
+⠙ | 1 13     8 | cwres                                                          
+⠹ | 1 14     8 | cwres                                                          
+⠸ | 1 15     8 | cwres                                                          
+⠼ | 1 15     9 | cwres                                                          
+⠦ | 1 15    11 | cwres                                                          
+⠧ | 1 15    12 | cwres                                                          
+✖ | 1 15    12 | cwres [355.3s]
+────────────────────────────────────────────────────────────────────────────────
+Warning (test-cwres.R:30:3): cwres (and focei objective fun) is added to saem with addCwres
+gradient problems with initial estimate and covariance; see $scaleInfo
+Backtrace:
+  1. base::suppressMessages(expect_error(addCwres(fit), NA))
+       at test-cwres.R:30:2
+  9. nlmixr2est::addCwres(fit)
+ 13. nlmixr2est::nlmixr2.nlmixr2FitData(...)
+       at nlmixr2est/R/nlmixr2.R:115:2
+ 14. nlmixr2est::nlmixr2Est0(.env)
+       at nlmixr2est/R/nlmixr2.R:285:2
+ 15. base::lapply(.lst[[2]], warning, call. = FALSE)
+       at nlmixr2est/R/nlmixr2Est.R:176:2
+
+Warning (test-cwres.R:30:3): cwres (and focei objective fun) is added to saem with addCwres
+last objective function was not at minimum, possible problems in optimization
+Backtrace:
+  1. base::suppressMessages(expect_error(addCwres(fit), NA))
+       at test-cwres.R:30:2
+  9. nlmixr2est::addCwres(fit)
+ 13. nlmixr2est::nlmixr2.nlmixr2FitData(...)
+       at nlmixr2est/R/nlmixr2.R:115:2
+ 14. nlmixr2est::nlmixr2Est0(.env)
+       at nlmixr2est/R/nlmixr2.R:285:2
+ 15. base::lapply(.lst[[2]], warning, call. = FALSE)
+       at nlmixr2est/R/nlmixr2Est.R:176:2
+
+Warning (test-cwres.R:30:3): cwres (and focei objective fun) is added to saem with addCwres
+ETAs were reset to zero during optimization; (Can control by foceiControl(resetEtaP=.))
+Backtrace:
+  1. base::suppressMessages(expect_error(addCwres(fit), NA))
+       at test-cwres.R:30:2
+  9. nlmixr2est::addCwres(fit)
+ 13. nlmixr2est::nlmixr2.nlmixr2FitData(...)
+       at nlmixr2est/R/nlmixr2.R:115:2
+ 14. nlmixr2est::nlmixr2Est0(.env)
+       at nlmixr2est/R/nlmixr2.R:285:2
+ 15. base::lapply(.lst[[2]], warning, call. = FALSE)
+       at nlmixr2est/R/nlmixr2Est.R:176:2
+
+Warning (test-cwres.R:30:3): cwres (and focei objective fun) is added to saem with addCwres
+initial ETAs were nudged; (can control by foceiControl(etaNudge=., etaNudge2=))
+Backtrace:
+  1. base::suppressMessages(expect_error(addCwres(fit), NA))
+       at test-cwres.R:30:2
+  9. nlmixr2est::addCwres(fit)
+ 13. nlmixr2est::nlmixr2.nlmixr2FitData(...)
+       at nlmixr2est/R/nlmixr2.R:115:2
+ 14. nlmixr2est::nlmixr2Est0(.env)
+       at nlmixr2est/R/nlmixr2.R:285:2
+ 15. base::lapply(.lst[[2]], warning, call. = FALSE)
+       at nlmixr2est/R/nlmixr2Est.R:176:2
+
+Warning (test-cwres.R:30:3): cwres (and focei objective fun) is added to saem with addCwres
+'ID' missing in 'parameters' dataset
+individual parameters are assumed to have the same order as the event dataset
+Backtrace:
+  1. base::suppressMessages(expect_error(addCwres(fit), NA))
+       at test-cwres.R:30:2
+  9. nlmixr2est::addCwres(fit)
+ 13. nlmixr2est::nlmixr2.nlmixr2FitData(...)
+       at nlmixr2est/R/nlmixr2.R:115:2
+ 14. nlmixr2est::nlmixr2Est0(.env)
+       at nlmixr2est/R/nlmixr2.R:285:2
+ 15. base::lapply(.lst[[2]], warning, call. = FALSE)
+       at nlmixr2est/R/nlmixr2Est.R:176:2
+
+Warning (test-cwres.R:37:3): cwres (and focei objective fun) is added to saem with addCwres
+gradient problems with initial estimate and covariance; see $scaleInfo
+Backtrace:
+  1. base::suppressMessages(...)
+       at test-cwres.R:37:2
+  9. nlmixr2est::addCwres(fit, focei = FALSE)
+ 13. nlmixr2est::nlmixr2.nlmixr2FitData(...)
+       at nlmixr2est/R/nlmixr2.R:115:2
+ 14. nlmixr2est::nlmixr2Est0(.env)
+       at nlmixr2est/R/nlmixr2.R:285:2
+ 15. base::lapply(.lst[[2]], warning, call. = FALSE)
+       at nlmixr2est/R/nlmixr2Est.R:176:2
+
+Warning (test-cwres.R:37:3): cwres (and focei objective fun) is added to saem with addCwres
+last objective function was not at minimum, possible problems in optimization
+Backtrace:
+  1. base::suppressMessages(...)
+       at test-cwres.R:37:2
+  9. nlmixr2est::addCwres(fit, focei = FALSE)
+ 13. nlmixr2est::nlmixr2.nlmixr2FitData(...)
+       at nlmixr2est/R/nlmixr2.R:115:2
+ 14. nlmixr2est::nlmixr2Est0(.env)
+       at nlmixr2est/R/nlmixr2.R:285:2
+ 15. base::lapply(.lst[[2]], warning, call. = FALSE)
+       at nlmixr2est/R/nlmixr2Est.R:176:2
+
+Warning (test-cwres.R:37:3): cwres (and focei objective fun) is added to saem with addCwres
+ETAs were reset to zero during optimization; (Can control by foceiControl(resetEtaP=.))
+Backtrace:
+  1. base::suppressMessages(...)
+       at test-cwres.R:37:2
+  9. nlmixr2est::addCwres(fit, focei = FALSE)
+ 13. nlmixr2est::nlmixr2.nlmixr2FitData(...)
+       at nlmixr2est/R/nlmixr2.R:115:2
+ 14. nlmixr2est::nlmixr2Est0(.env)
+       at nlmixr2est/R/nlmixr2.R:285:2
+ 15. base::lapply(.lst[[2]], warning, call. = FALSE)
+       at nlmixr2est/R/nlmixr2Est.R:176:2
+
+Warning (test-cwres.R:37:3): cwres (and focei objective fun) is added to saem with addCwres
+initial ETAs were nudged; (can control by foceiControl(etaNudge=., etaNudge2=))
+Backtrace:
+  1. base::suppressMessages(...)
+       at test-cwres.R:37:2
+  9. nlmixr2est::addCwres(fit, focei = FALSE)
+ 13. nlmixr2est::nlmixr2.nlmixr2FitData(...)
+       at nlmixr2est/R/nlmixr2.R:115:2
+ 14. nlmixr2est::nlmixr2Est0(.env)
+       at nlmixr2est/R/nlmixr2.R:285:2
+ 15. base::lapply(.lst[[2]], warning, call. = FALSE)
+       at nlmixr2est/R/nlmixr2Est.R:176:2
+
+Warning (test-cwres.R:37:3): cwres (and focei objective fun) is added to saem with addCwres
+'ID' missing in 'parameters' dataset
+individual parameters are assumed to have the same order as the event dataset
+Backtrace:
+  1. base::suppressMessages(...)
+       at test-cwres.R:37:2
+  9. nlmixr2est::addCwres(fit, focei = FALSE)
+ 13. nlmixr2est::nlmixr2.nlmixr2FitData(...)
+       at nlmixr2est/R/nlmixr2.R:115:2
+ 14. nlmixr2est::nlmixr2Est0(.env)
+       at nlmixr2est/R/nlmixr2.R:285:2
+ 15. base::lapply(.lst[[2]], warning, call. = FALSE)
+       at nlmixr2est/R/nlmixr2Est.R:176:2
+
+Failure (test-cwres.R:39:3): cwres (and focei objective fun) is added to saem with addCwres
+row.names(fit$objDf) (`actual`) not equal to "FOCE" (`expected`).
+
+`actual`:   "FOCEi"
+`expected`: "FOCE" 
+
+Warning (test-cwres.R:44:3): cwres (and focei objective fun) is added to saem with addCwres
+gradient problems with initial estimate and covariance; see $scaleInfo
+Backtrace:
+ 1. base::suppressMessages(addCwres(fit, updateObject = FALSE))
+      at test-cwres.R:44:2
+ 3. nlmixr2est::addCwres(fit, updateObject = FALSE)
+ 7. nlmixr2est::nlmixr2.nlmixr2FitData(...)
+      at nlmixr2est/R/nlmixr2.R:115:2
+ 8. nlmixr2est::nlmixr2Est0(.env)
+      at nlmixr2est/R/nlmixr2.R:285:2
+ 9. base::lapply(.lst[[2]], warning, call. = FALSE)
+      at nlmixr2est/R/nlmixr2Est.R:176:2
+
+Warning (test-cwres.R:44:3): cwres (and focei objective fun) is added to saem with addCwres
+last objective function was not at minimum, possible problems in optimization
+Backtrace:
+ 1. base::suppressMessages(addCwres(fit, updateObject = FALSE))
+      at test-cwres.R:44:2
+ 3. nlmixr2est::addCwres(fit, updateObject = FALSE)
+ 7. nlmixr2est::nlmixr2.nlmixr2FitData(...)
+      at nlmixr2est/R/nlmixr2.R:115:2
+ 8. nlmixr2est::nlmixr2Est0(.env)
+      at nlmixr2est/R/nlmixr2.R:285:2
+ 9. base::lapply(.lst[[2]], warning, call. = FALSE)
+      at nlmixr2est/R/nlmixr2Est.R:176:2
+
+Warning (test-cwres.R:44:3): cwres (and focei objective fun) is added to saem with addCwres
+ETAs were reset to zero during optimization; (Can control by foceiControl(resetEtaP=.))
+Backtrace:
+ 1. base::suppressMessages(addCwres(fit, updateObject = FALSE))
+      at test-cwres.R:44:2
+ 3. nlmixr2est::addCwres(fit, updateObject = FALSE)
+ 7. nlmixr2est::nlmixr2.nlmixr2FitData(...)
+      at nlmixr2est/R/nlmixr2.R:115:2
+ 8. nlmixr2est::nlmixr2Est0(.env)
+      at nlmixr2est/R/nlmixr2.R:285:2
+ 9. base::lapply(.lst[[2]], warning, call. = FALSE)
+      at nlmixr2est/R/nlmixr2Est.R:176:2
+
+Warning (test-cwres.R:44:3): cwres (and focei objective fun) is added to saem with addCwres
+initial ETAs were nudged; (can control by foceiControl(etaNudge=., etaNudge2=))
+Backtrace:
+ 1. base::suppressMessages(addCwres(fit, updateObject = FALSE))
+      at test-cwres.R:44:2
+ 3. nlmixr2est::addCwres(fit, updateObject = FALSE)
+ 7. nlmixr2est::nlmixr2.nlmixr2FitData(...)
+      at nlmixr2est/R/nlmixr2.R:115:2
+ 8. nlmixr2est::nlmixr2Est0(.env)
+      at nlmixr2est/R/nlmixr2.R:285:2
+ 9. base::lapply(.lst[[2]], warning, call. = FALSE)
+      at nlmixr2est/R/nlmixr2Est.R:176:2
+
+Warning (test-cwres.R:44:3): cwres (and focei objective fun) is added to saem with addCwres
+'ID' missing in 'parameters' dataset
+individual parameters are assumed to have the same order as the event dataset
+Backtrace:
+ 1. base::suppressMessages(addCwres(fit, updateObject = FALSE))
+      at test-cwres.R:44:2
+ 3. nlmixr2est::addCwres(fit, updateObject = FALSE)
+ 7. nlmixr2est::nlmixr2.nlmixr2FitData(...)
+      at nlmixr2est/R/nlmixr2.R:115:2
+ 8. nlmixr2est::nlmixr2Est0(.env)
+      at nlmixr2est/R/nlmixr2.R:285:2
+ 9. base::lapply(.lst[[2]], warning, call. = FALSE)
+      at nlmixr2est/R/nlmixr2Est.R:176:2
+────────────────────────────────────────────────────────────────────────────────
+
+⠏ |         0 | focei-cens                                                      
+⠋ |         1 | focei-cens                                                      
+⠙ |         2 | focei-cens                                                      
+⠹ |         3 | focei-cens                                                      
+⠸ |         4 | focei-cens                                                      
+⠼ |         5 | focei-cens                                                      
+⠴ |         6 | focei-cens                                                      
+⠧ |         8 | focei-cens                                                      
+⠇ |         9 | focei-cens                                                      
+⠋ |        11 | focei-cens                                                      
+⠙ |        12 | focei-cens                                                      
+✔ |        13 | focei-cens [58.3s]
+
+⠏ |         0 | focei-inner                                                     
+⠋ |         1 | focei-inner                                                     
+✔ |         1 | focei-inner [34.7s]
+
+⠏ |         0 | focei-wang2007                                                  
+⠋ |         1 | focei-wang2007                                                  
+⠹ |         3 | focei-wang2007                                                  
+⠼ |         5 | focei-wang2007                                                  
+⠴ |         6 | focei-wang2007                                                  
+⠧ |         8 | focei-wang2007                                                  
+⠏ |        10 | focei-wang2007                                                  
+⠙ |        12 | focei-wang2007                                                  
+⠸ |        14 | focei-wang2007                                                  
+⠴ |        16 | focei-wang2007                                                  
+⠧ |        18 | focei-wang2007                                                  
+⠏ |        20 | focei-wang2007                                                  
+⠙ |        22 | focei-wang2007                                                  
+⠸ |        24 | focei-wang2007                                                  
+⠴ |        26 | focei-wang2007                                                  
+⠧ |        28 | focei-wang2007                                                  
+⠏ |        30 | focei-wang2007                                                  
+⠋ |        31 | focei-wang2007                                                  ! remove population parameter `prop.sd`
+! remove population parameter `prop.sd`
+
+⠙ |        32 | focei-wang2007                                                  
+⠹ |        33 | focei-wang2007                                                  ! remove population parameter `prop.sd`
+! remove population parameter `prop.sd`
+
+⠸ |        34 | focei-wang2007                                                  
+⠼ |        35 | focei-wang2007                                                  ! remove population parameter `prop.sd`
+! remove population parameter `prop.sd`
+
+⠴ |        36 | focei-wang2007                                                  ! remove population parameter `prop.sd`
+ℹ add residual parameter `add.sd` and set estimate to 1
+! remove population parameter `prop.sd`
+ℹ add residual parameter `add.sd` and set estimate to 1
+
+⠦ |        37 | focei-wang2007                                                  ! remove population parameter `prop.sd`
+! remove population parameter `prop.sd`
+
+⠧ |        38 | focei-wang2007                                                  ! remove population parameter `prop.sd`
+ℹ add residual parameter `pow.sd` and set estimate to 1
+ℹ add residual parameter `pw` and set estimate to 1
+! remove population parameter `prop.sd`
+ℹ add residual parameter `pow.sd` and set estimate to 1
+ℹ add residual parameter `pw` and set estimate to 1
+
+⠇ |        39 | focei-wang2007                                                  ! remove population parameter `prop.sd`
+ℹ add residual parameter `pow.sd` and set estimate to 1
+ℹ add residual parameter `pw` and set estimate to 1
+! remove population parameter `prop.sd`
+ℹ add residual parameter `pow.sd` and set estimate to 1
+ℹ add residual parameter `pw` and set estimate to 1
+
+⠏ |        40 | focei-wang2007                                                  ! remove population parameter `prop.sd`
+ℹ add residual parameter `pow.sd` and set estimate to 1
+ℹ add residual parameter `pw` and set estimate to 1
+! remove population parameter `prop.sd`
+ℹ add residual parameter `pow.sd` and set estimate to 1
+ℹ add residual parameter `pw` and set estimate to 1
+
+⠋ |        41 | focei-wang2007                                                  ! remove population parameter `prop.sd`
+ℹ add residual parameter `pw` and set estimate to 1
+! remove population parameter `prop.sd`
+ℹ add residual parameter `pw` and set estimate to 1
+
+⠙ |        42 | focei-wang2007                                                  ! remove population parameter `prop.sd`
+ℹ add residual parameter `pow.sd` and set estimate to 1
+ℹ add residual parameter `pw` and set estimate to 1
+! remove population parameter `prop.sd`
+ℹ add residual parameter `pow.sd` and set estimate to 1
+ℹ add residual parameter `pw` and set estimate to 1
+
+⠹ |        43 | focei-wang2007                                                  ! remove population parameter `prop.sd`
+ℹ add residual parameter `pw` and set estimate to 1
+! remove population parameter `prop.sd`
+ℹ add residual parameter `pw` and set estimate to 1
+
+⠸ |        44 | focei-wang2007                                                  ! remove population parameter `prop.sd`
+ℹ add residual parameter `pow.sd` and set estimate to 1
+! remove population parameter `prop.sd`
+ℹ add residual parameter `pow.sd` and set estimate to 1
+
+⠼ |        45 | focei-wang2007                                                  ! remove population parameter `prop.sd`
+! remove population parameter `prop.sd`
+
+⠴ |        46 | focei-wang2007                                                  ! remove population parameter `prop.sd`
+ℹ add residual parameter `pow.sd` and set estimate to 1
+ℹ add residual parameter `pw` and set estimate to 1
+! remove population parameter `prop.sd`
+ℹ add residual parameter `pow.sd` and set estimate to 1
+ℹ add residual parameter `pw` and set estimate to 1
+
+⠦ |        47 | focei-wang2007                                                  ! remove population parameter `prop.sd`
+ℹ add residual parameter `pw` and set estimate to 1
+! remove population parameter `prop.sd`
+ℹ add residual parameter `pw` and set estimate to 1
+
+⠧ |        48 | focei-wang2007                                                  ! remove population parameter `prop.sd`
+ℹ add residual parameter `pow.sd` and set estimate to 1
+! remove population parameter `prop.sd`
+ℹ add residual parameter `pow.sd` and set estimate to 1
+
+⠇ |        49 | focei-wang2007                                                  ! remove population parameter `prop.sd`
+! remove population parameter `prop.sd`
+
+⠏ |        50 | focei-wang2007                                                  ! remove population parameter `prop.sd`
+ℹ add residual parameter `pow.sd` and set estimate to 1
+ℹ add residual parameter `pw` and set estimate to 1
+! remove population parameter `prop.sd`
+ℹ add residual parameter `pow.sd` and set estimate to 1
+ℹ add residual parameter `pw` and set estimate to 1
+
+⠋ |        51 | focei-wang2007                                                  ! remove population parameter `prop.sd`
+ℹ add residual parameter `pw` and set estimate to 1
+! remove population parameter `prop.sd`
+ℹ add residual parameter `pw` and set estimate to 1
+
+⠙ |        52 | focei-wang2007                                                  ! remove population parameter `prop.sd`
+ℹ add residual parameter `pow.sd` and set estimate to 1
+! remove population parameter `prop.sd`
+ℹ add residual parameter `pow.sd` and set estimate to 1
+
+⠹ |        53 | focei-wang2007                                                  ! remove population parameter `prop.sd`
+! remove population parameter `prop.sd`
+
+⠸ |        54 | focei-wang2007                                                  ℹ add residual parameter `add.sd` and set estimate to 1
+ℹ add residual parameter `add.sd` and set estimate to 1
+
+⠼ |        55 | focei-wang2007                                                  
+⠴ |        56 | focei-wang2007                                                  ℹ add residual parameter `add.sd` and set estimate to 1
+ℹ add residual parameter `add.sd` and set estimate to 1
+
+⠦ |        57 | focei-wang2007                                                  ! remove population parameter `prop.sd`
+ℹ add residual parameter `add.sd` and set estimate to 1
+! remove population parameter `prop.sd`
+ℹ add residual parameter `add.sd` and set estimate to 1
+
+⠧ |        58 | focei-wang2007                                                  ! remove population parameter `prop.sd`
+! remove population parameter `prop.sd`

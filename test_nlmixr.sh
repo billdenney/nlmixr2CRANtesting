@@ -28,6 +28,7 @@ NOT_CRAN="true"
 
 # Remove the old results and prepare for the new
 git rm -f outputs/*txt
+rm -fv outputs/*txt
 mkdir -p outputs
 mkdir -p packages
 
@@ -66,7 +67,9 @@ for current_dir in ${packages[@]}; do
         tee ../../outputs/${current_dir}_install.txt
     else
       echo "Using valgrind"
-      R -e "devtools::install_local(force=TRUE)" 2>&1 | \
+      # docker run --rm wch1/r-debug RDvalgrind -d "valgrind --tool=memcheck --leak-check=full" \
+      R -d "valgrind --tool=memcheck --leak-check=full" \
+          -e "devtools::install_local(force=TRUE)" 2>&1 | \
           tee ../../outputs/${current_dir}_install_valgrind.txt
     fi
     if [[ $? -ne 0 ]] ; then
@@ -82,8 +85,10 @@ for current_dir in ${packages[@]}; do
         R -e "devtools::load_all();devtools::test()" 2>&1 | \
           tee ../../outputs/${current_dir}_test.txt
       else
-        R -d "valgrind --tool=memcheck --leak-check=full" -e "devtools::load_all();devtools::test()" 2>&1 | \
-          tee ../../outputs/${current_dir}_test_valgrind.txt
+          # docker run --rm wch1/r-debug RDvalgrind -d "valgrind --tool=memcheck --leak-check=full" \
+          R -d "valgrind --tool=memcheck --leak-check=full" \
+            -e "devtools::load_all();devtools::test()" 2>&1 | \
+            tee ../../outputs/${current_dir}_test_valgrind.txt
       fi
       if [[ $? -ne 0 ]] ; then
         echo Crash while testing ${current_dir}
