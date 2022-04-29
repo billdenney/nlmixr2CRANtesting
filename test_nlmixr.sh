@@ -98,6 +98,13 @@ for current_dir in ${packages[@]}; do
     else
       echo "No test directory found (tests/testthat)"
     fi
+    if [ -f _pkgdown.yml ]; then
+      # build the pkdgown site to test that it succeeds
+      R -e "devtools::load_all();pkgdown::build_site()" 2>&1 | \
+        tee ../../outputs/${current_dir}_pkgdown.txt
+    else
+      echo "No pkgdown site found"
+    fi
   )
   echo Completed $current_dir
 done

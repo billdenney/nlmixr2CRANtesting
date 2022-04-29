@@ -1,0 +1,228 @@
+
+R version 4.1.3 (2022-03-10) -- "One Push-Up"
+Copyright (C) 2022 The R Foundation for Statistical Computing
+Platform: x86_64-pc-linux-gnu (64-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+  Natural language support but running in an English locale
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+> devtools::load_all();pkgdown::build_site()
+ℹ Loading nlmixr2
+Loading required package: nlmixr2data
+-- Installing package into temporary library -----------------------------------
+== Building pkgdown site =======================================================
+Reading from: '/home/bill/GitHub/nlmixr2CRANtesting/packages/nlmixr2'
+Writing to:   '/home/bill/GitHub/nlmixr2CRANtesting/packages/nlmixr2/docs'
+-- Initialising site -----------------------------------------------------------
+Copying '../../../../R/x86_64-pc-linux-gnu-library/4.1/pkgdown/BS5/assets/link.svg' to 'link.svg'
+Copying '../../../../R/x86_64-pc-linux-gnu-library/4.1/pkgdown/BS5/assets/pkgdown.js' to 'pkgdown.js'
+-- Building home ---------------------------------------------------------------
+Writing 'authors.html'
+Reading 'LICENSE.md'
+Writing 'LICENSE.html'
+Copying 'man/figures/README-unnamed-chunk-2-1.png' to 'reference/figures/README-unnamed-chunk-2-1.png'
+Copying 'man/figures/README-unnamed-chunk-2-10.png' to 'reference/figures/README-unnamed-chunk-2-10.png'
+Copying 'man/figures/README-unnamed-chunk-2-11.png' to 'reference/figures/README-unnamed-chunk-2-11.png'
+Copying 'man/figures/README-unnamed-chunk-2-12.png' to 'reference/figures/README-unnamed-chunk-2-12.png'
+Copying 'man/figures/README-unnamed-chunk-2-13.png' to 'reference/figures/README-unnamed-chunk-2-13.png'
+Copying 'man/figures/README-unnamed-chunk-2-14.png' to 'reference/figures/README-unnamed-chunk-2-14.png'
+Copying 'man/figures/README-unnamed-chunk-2-15.png' to 'reference/figures/README-unnamed-chunk-2-15.png'
+Copying 'man/figures/README-unnamed-chunk-2-16.png' to 'reference/figures/README-unnamed-chunk-2-16.png'
+Copying 'man/figures/README-unnamed-chunk-2-17.png' to 'reference/figures/README-unnamed-chunk-2-17.png'
+Copying 'man/figures/README-unnamed-chunk-2-18.png' to 'reference/figures/README-unnamed-chunk-2-18.png'
+Copying 'man/figures/README-unnamed-chunk-2-19.png' to 'reference/figures/README-unnamed-chunk-2-19.png'
+Copying 'man/figures/README-unnamed-chunk-2-2.png' to 'reference/figures/README-unnamed-chunk-2-2.png'
+Copying 'man/figures/README-unnamed-chunk-2-20.png' to 'reference/figures/README-unnamed-chunk-2-20.png'
+Copying 'man/figures/README-unnamed-chunk-2-21.png' to 'reference/figures/README-unnamed-chunk-2-21.png'
+Copying 'man/figures/README-unnamed-chunk-2-22.png' to 'reference/figures/README-unnamed-chunk-2-22.png'
+Copying 'man/figures/README-unnamed-chunk-2-23.png' to 'reference/figures/README-unnamed-chunk-2-23.png'
+Copying 'man/figures/README-unnamed-chunk-2-24.png' to 'reference/figures/README-unnamed-chunk-2-24.png'
+Copying 'man/figures/README-unnamed-chunk-2-25.png' to 'reference/figures/README-unnamed-chunk-2-25.png'
+Copying 'man/figures/README-unnamed-chunk-2-26.png' to 'reference/figures/README-unnamed-chunk-2-26.png'
+Copying 'man/figures/README-unnamed-chunk-2-27.png' to 'reference/figures/README-unnamed-chunk-2-27.png'
+Copying 'man/figures/README-unnamed-chunk-2-28.png' to 'reference/figures/README-unnamed-chunk-2-28.png'
+Copying 'man/figures/README-unnamed-chunk-2-3.png' to 'reference/figures/README-unnamed-chunk-2-3.png'
+Copying 'man/figures/README-unnamed-chunk-2-4.png' to 'reference/figures/README-unnamed-chunk-2-4.png'
+Copying 'man/figures/README-unnamed-chunk-2-5.png' to 'reference/figures/README-unnamed-chunk-2-5.png'
+Copying 'man/figures/README-unnamed-chunk-2-6.png' to 'reference/figures/README-unnamed-chunk-2-6.png'
+Copying 'man/figures/README-unnamed-chunk-2-7.png' to 'reference/figures/README-unnamed-chunk-2-7.png'
+Copying 'man/figures/README-unnamed-chunk-2-8.png' to 'reference/figures/README-unnamed-chunk-2-8.png'
+Copying 'man/figures/README-unnamed-chunk-2-9.png' to 'reference/figures/README-unnamed-chunk-2-9.png'
+Writing '404.html'
+-- Building function reference -------------------------------------------------
+Writing 'reference/index.html'
+Loading required package: nlmixr2data
+Reading 'man/addCwres.Rd'
+Writing 'reference/addCwres.html'
+Reading 'man/addNpde.Rd'
+Writing 'reference/addNpde.html'
+Reading 'man/addTable.Rd'
+Writing 'reference/addTable.html'
+Reading 'man/bootplot.Rd'
+Writing 'reference/bootplot.html'
+Reading 'man/bootstrapFit.Rd'
+Writing 'reference/bootstrapFit.html'
+Reading 'man/covarSearchAuto.Rd'
+Writing 'reference/covarSearchAuto.html'
+Reading 'man/foceiControl.Rd'
+Writing 'reference/foceiControl.html'
+Reading 'man/nlmeControl.Rd'
+Writing 'reference/nlmeControl.html'
+Reading 'man/nlmixr2.Rd'
+Writing 'reference/nlmixr2.html'
+Reading 'man/preconditionFit.Rd'
+Writing 'reference/preconditionFit.html'
+Reading 'man/reexports.Rd'
+Writing 'reference/reexports.html'
+Reading 'man/saemControl.Rd'
+Writing 'reference/saemControl.html'
+Reading 'man/setOfv.Rd'
+Writing 'reference/setOfv.html'
+Reading 'man/tableControl.Rd'
+Writing 'reference/tableControl.html'
+Reading 'man/traceplot.Rd'
+Writing 'reference/traceplot.html'
+Reading 'man/vpcPlot.Rd'
+Writing 'reference/vpcPlot.html'
+Reading 'man/vpcSim.Rd'
+Writing 'reference/vpcSim.html'
+-- Building articles -----------------------------------------------------------
+Writing 'articles/index.html'
+Reading 'vignettes/addingCovariances.Rmd'
+-- RMarkdown error -------------------------------------------------------------
+Loading required package: nlmixr2data
+[36mℹ[39m parameter labels from comments will be replaced by 'label()'
+→ loading into [34m[34msymengine[34m[39m environment...
+→ pruning branches (`if`/`else`) of saem model...
+[32m✔[39m done
+→ finding duplicate expressions in saem model...
+[32m✔[39m done
+rxode2 1.0.0 using 16 threads (see ?getRxThreads)
+  no cache: create with `rxCreateCache()`
+Calculating covariance matrix
+→ loading into [34m[34msymengine[34m[39m environment...
+→ pruning branches (`if`/`else`) of saem model...
+[32m✔[39m done
+→ finding duplicate expressions in saem predOnly model 0...
+→ finding duplicate expressions in saem predOnly model 1...
+→ finding duplicate expressions in saem predOnly model 2...
+[32m✔[39m done
+→ Calculating residuals/tables
+→ loading into [34m[34msymengine[34m[39m environment...
+→ pruning branches (`if`/`else`) of full model...
+[32m✔[39m done
+→ calculate jacobian
+→ calculate sensitivities
+→ calculate ∂(f)/∂(η)
+→ calculate ∂(R²)/∂(η)
+→ finding duplicate expressions in inner model...
+→ optimizing duplicate expressions in inner model...
+→ finding duplicate expressions in EBE model...
+→ optimizing duplicate expressions in EBE model...
+→ compiling inner model...
+[32m✔[39m done
+→ finding duplicate expressions in FD model...
+→ optimizing duplicate expressions in FD model...
+→ compiling EBE model...
+[32m✔[39m done
+→ compiling events FD model...
+[32m✔[39m done
+[32m✔[39m done
+→ compress origData in nlmixr2 object, save 33192
+→ compress phiM in nlmixr2 object, save 233144
+→ compress parHist in nlmixr2 object, save 7728
+→ loading into [34m[34msymengine[34m[39m environment...
+→ pruning branches (`if`/`else`) of full model...
+[32m✔[39m done
+→ calculate jacobian
+→ calculate sensitivities
+→ calculate ∂(f)/∂(η)
+→ calculate ∂(R²)/∂(η)
+→ finding duplicate expressions in inner model...
+→ optimizing duplicate expressions in inner model...
+→ finding duplicate expressions in EBE model...
+→ optimizing duplicate expressions in EBE model...
+→ compiling inner model...
+[32m✔[39m done
+→ finding duplicate expressions in FD model...
+→ optimizing duplicate expressions in FD model...
+→ compiling EBE model...
+[32m✔[39m done
+→ compiling events FD model...
+[32m✔[39m done
+Quitting from lines 64-69 (addingCovariances.Rmd) 
+Quitting from lines 64-69 (addingCovariances.Rmd) 
+Error : 'rxSetCovariateNamesForPiping' is not an exported object from 'namespace:rxode2'
+--------------------------------------------------------------------------------
+Error in render_rmarkdown(pkg, input = input, output = output_file, output_format = format,  : 
+  Failed to render RMarkdown
+Caused by error:
+! callr subprocess failed: 'rxSetCovariateNamesForPiping' is not an exported object from 'namespace:rxode2'
+Caused by error:
+! 'rxSetCovariateNamesForPiping' is not an exported object from 'namespace:rxode2'
+
+Error: <callr_status_error: callr subprocess failed: Failed to render RMarkdown
+Caused by error:
+! callr subprocess failed: 'rxSetCovariateNamesForPiping' is not an exported object from 'namespace:rxode2'
+Caused by error:
+! 'rxSetCovariateNamesForPiping' is not an exported object from 'namespace:rxode2'>
+-->
+<callr_remote_error in render_rmarkdown(pkg, input = input, output = output_file, output_format =  ...:
+ Failed to render RMarkdown
+Caused by error:
+! callr subprocess failed: 'rxSetCovariateNamesForPiping' is not an exported object from 'namespace:rxode2'
+Caused by error:
+! 'rxSetCovariateNamesForPiping' is not an exported object from 'namespace:rxode2'>
+ in process 394340 
+
+ Stack trace:
+
+ Process 394271:
+ 1. pkgdown::build_site()
+ 2. pkgdown:::build_site_external(pkg = pkg, examples = examples,  ...
+ 3. callr::r(function(..., crayon_enabled, crayon_colors, pkgdown_internet) { ...
+ 4. callr:::get_result(output = out, options)
+ 5. throw(newerr, parent = remerr[[2]])
+
+ x callr subprocess failed: Failed to render RMarkdown
+Caused by error:
+! callr subprocess failed: 'rxSetCovariateNamesForPiping' is not an exported object from 'namespace:rxode2'
+Caused by error:
+! 'rxSetCovariateNamesForPiping' is not an exported object from 'namespace:rxode2' 
+
+ Process 394340:
+ 17. (function (..., crayon_enabled, crayon_colors, pkgdown_internet)  ...
+ 18. pkgdown::build_site(...)
+ 19. pkgdown:::build_site_local(pkg = pkg, examples = examples, run_dont_run = r ...
+ 20. pkgdown:::build_articles(pkg, lazy = lazy, override = override,  ...
+ 21. purrr::walk(pkg$vignettes$name, build_article, pkg = pkg, quiet = quiet,  ...
+ 22. purrr:::map(.x, .f, ...)
+ 23. pkgdown:::.f(.x[[i]], ...)
+ 24. pkgdown:::render_rmarkdown(pkg, input = input, output = output_file,  ...
+ 25. base:::tryCatch(callr::r_safe(function(...) rmarkdown::render(...),  ...
+ 26. base:::tryCatchList(expr, classes, parentenv, handlers)
+ 27. base:::tryCatchOne(expr, names, parentenv, handlers[[1L]])
+ 28. value[[3L]](cond)
+ 29. rlang:::abort("Failed to render RMarkdown", parent = cnd)
+ 30. rlang:::signal_abort(cnd, .file)
+ 31. base:::signalCondition(cnd)
+ 32. (function (e)  ...
+
+ x Failed to render RMarkdown
+Caused by error:
+! callr subprocess failed: 'rxSetCovariateNamesForPiping' is not an exported object from 'namespace:rxode2'
+Caused by error:
+! 'rxSetCovariateNamesForPiping' is not an exported object from 'namespace:rxode2' 
+
+Execution halted
