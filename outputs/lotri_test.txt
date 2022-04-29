@@ -30,7 +30,7 @@ Re-compiling lotri
    gcc -I"/usr/share/R/include" -DNDEBUG      -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-lENDSu/r-base-4.1.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c lotriProp.c -o lotriProp.o
    gcc -I"/usr/share/R/include" -DNDEBUG      -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-lENDSu/r-base-4.1.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c matlist.c -o matlist.o
      gcc -shared -L/usr/lib/R/lib -Wl,-Bsymbolic-functions -Wl,-z,relro -o lotri.so asLotriMat.o lotriBounds.o lotriLstToMat.o lotriNest.o lotriProp.o matlist.o -L/usr/lib/R/lib -lR
-     installing to /tmp/Rtmplmk3P7/devtools_install_58e7175e1d9dc/00LOCK-lotri/00new/lotri/libs
+     installing to /tmp/RtmpFFATuz/devtools_install_6959e36b24e4a/00LOCK-lotri/00new/lotri/libs
      ** checking absolute paths in shared objects and dynamic libraries
   ─  DONE (lotri)
 ℹ Loading lotri
@@ -66,8 +66,8 @@ Re-compiling lotri
 ⠼ |        15 | lotri-matrix                                                    
 ⠧ |        28 | lotri-matrix                                                    
 ⠦ |        37 | lotri-matrix                                                    
-⠴ |        56 | lotri-matrix                                                    
-⠧ |        68 | lotri-matrix                                                    
+⠦ |        57 | lotri-matrix                                                    
+⠇ |        69 | lotri-matrix                                                    
 ✔ |        74 | lotri-matrix [0.6s]
 
 ⠏ |         0 | lotri                                                           
@@ -81,7 +81,7 @@ Re-compiling lotri
 ✔ |        14 | lotriSep
 
 ⠏ |         0 | theta-lhs-as.expression                                         
-⠹ |        23 | theta-lhs-as.expression                                         
+⠸ |        24 | theta-lhs-as.expression                                         
 ✔ |        27 | theta-lhs-as.expression [0.1s]
 
 ⠏ |         0 | transformations                                                 

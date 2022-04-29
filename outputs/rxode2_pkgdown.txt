@@ -21,7 +21,7 @@ Type 'q()' to quit R.
 
 > devtools::load_all();pkgdown::build_site()
 ℹ Loading rxode2
-rxode2 1.0.0 using 16 threads (see ?getRxThreads)
+rxode2 2.0.6 using 16 threads (see ?getRxThreads)
   no cache: create with `rxCreateCache()`
 Warning: Failed to parse usage:
 

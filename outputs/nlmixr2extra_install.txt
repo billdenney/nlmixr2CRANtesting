@@ -20,13 +20,13 @@ Type 'q()' to quit R.
 > devtools::install_local(force=TRUE)
 
 Skipping 1 packages not available: symengine
-     checking for file ‘/tmp/Rtmp9XdGvc/file5fff1393f68e0/nlmixr2extra/DESCRIPTION’ ...  ✔  checking for file ‘/tmp/Rtmp9XdGvc/file5fff1393f68e0/nlmixr2extra/DESCRIPTION’
+     checking for file ‘/tmp/RtmpCT6NCA/file773155ac908af/nlmixr2extra/DESCRIPTION’ ...  ✔  checking for file ‘/tmp/RtmpCT6NCA/file773155ac908af/nlmixr2extra/DESCRIPTION’
   ─  preparing ‘nlmixr2extra’:
    checking DESCRIPTION meta-information ...  ✔  checking DESCRIPTION meta-information
 ─  cleaning src
   ─  checking for LF line-endings in source and make files and shell scripts
   ─  checking for empty or unneeded directories
-─  building ‘nlmixr2extra_2.0.6.tar.gz’
+  ─  building ‘nlmixr2extra_2.0.6.tar.gz’
      
 Installing package into ‘/home/bill/R/x86_64-pc-linux-gnu-library/4.1’
 (as ‘lib’ is unspecified)

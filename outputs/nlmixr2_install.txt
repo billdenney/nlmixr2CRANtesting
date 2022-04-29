@@ -19,9 +19,9 @@ Type 'q()' to quit R.
 
 > devtools::install_local(force=TRUE)
 
-     checking for file ‘/tmp/RtmpfuR7nk/file603c5cac14d0/nlmixr2/DESCRIPTION’ ...  ✔  checking for file ‘/tmp/RtmpfuR7nk/file603c5cac14d0/nlmixr2/DESCRIPTION’
+     checking for file ‘/tmp/RtmpVDTXUY/file778873c683b55/nlmixr2/DESCRIPTION’ ...  ✔  checking for file ‘/tmp/RtmpVDTXUY/file778873c683b55/nlmixr2/DESCRIPTION’
   ─  preparing ‘nlmixr2’:
-     checking DESCRIPTION meta-information ...  ✔  checking DESCRIPTION meta-information
+   checking      checking DESCRIPTION meta-information ...  ✔  checking DESCRIPTION meta-information
   ─  checking for LF line-endings in source and make files and shell scripts
   ─  checking for empty or unneeded directories
 ─  building ‘nlmixr2_2.0.6.tar.gz’

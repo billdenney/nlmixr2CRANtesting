@@ -55,6 +55,12 @@ Writing 'reference/bootplot.html'
 Reading 'man/bootstrapFit.Rd'
 Writing 'reference/bootstrapFit.html'
 Reading 'man/covarSearchAuto.Rd'
+
+warning: chol(): given matrix is not symmetric
+
+warning: chol(): given matrix is not symmetric
+
+warning: chol(): given matrix is not symmetric
 Writing 'reference/covarSearchAuto.html'
 Reading 'man/forwardSearch.Rd'
 Writing 'reference/forwardSearch.html'

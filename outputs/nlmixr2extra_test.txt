@@ -32,7 +32,7 @@ Re-compiling nlmixr2extra
      gcc -I"/usr/share/R/include" -DNDEBUG  -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/Rcpp/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/RcppArmadillo/include'    -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-lENDSu/r-base-4.1.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c init.c -o init.o
    g++ -std=gnu++11 -I"/usr/share/R/include" -DNDEBUG  -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/Rcpp/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/RcppArmadillo/include'   -fopenmp -DARMA_USE_CXX11 -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-lENDSu/r-base-4.1.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c preCondInv.cpp -o preCondInv.o
      g++ -std=gnu++11 -shared -L/usr/lib/R/lib -Wl,-Bsymbolic-functions -Wl,-z,relro -o nlmixr2extra.so RcppExports.o init.o preCondInv.o -fopenmp -llapack -lblas -lgfortran -lm -lquadmath -L/usr/lib/R/lib -lR
-     installing to /tmp/RtmpAHaHEX/devtools_install_6007f632bbd76/00LOCK-nlmixr2extra/00new/nlmixr2extra/libs
+     installing to /tmp/RtmpKFDE4h/devtools_install_773a31ba083d4/00LOCK-nlmixr2extra/00new/nlmixr2extra/libs
      ** checking absolute paths in shared objects and dynamic libraries
   ─  DONE (nlmixr2extra)
 ℹ Loading nlmixr2extra
@@ -46,70 +46,105 @@ Re-compiling nlmixr2extra
 ✔ |        41 | autocovar [0.4s]
 
 ⠏ |         0 | bootstrap                                                       
-⠙ | 1       1 | bootstrap                                                       
-⠹ | 2       1 | bootstrap                                                       
-⠸ | 3       1 | bootstrap                                                       Error : 'rxSetCovariateNamesForPiping' is not an exported object from 'namespace:rxode2'
+⠙ |         2 | bootstrap                                                       
+⠸ |         4 | bootstrap                                                       
+⠴ |         6 | bootstrap                                                       
+⠦ |         7 | bootstrap                                                       
+✔ |         7 | bootstrap [22.8s]
 
-⠼ | 4       1 | bootstrap                                                       
-✖ | 5       1 | bootstrap [12.0s]
-────────────────────────────────────────────────────────────────────────────────
-Error (test-bootstrap.R:31:5): resuming the fit should not return the same datasets as before
-Error: 'rxSetCovariateNamesForPiping' is not an exported object from 'namespace:rxode2'
-Backtrace:
- 1. base::suppressMessages(...)
-      at test-bootstrap.R:31:4
- 6. nlmixr2est:::nlmixr2.function(...)
- 7. nlmixr2est:::.nlmixr2clearPipe()
+⠏ |         0 | precondition                                                    > loading into symengine environment...
+> pruning branches (`if`/`else`) of full model...
+v done
+> calculate jacobian
+[====|====|====|====|====|====|====|====|====|====] 0:00:00 
 
-Error (test-bootstrap.R:87:5): different confidence levels should result in different bands
-Error: 'rxSetCovariateNamesForPiping' is not an exported object from 'namespace:rxode2'
-Backtrace:
- 1. base::suppressMessages(...)
-      at test-bootstrap.R:87:4
- 6. nlmixr2est:::nlmixr2.function(...)
- 7. nlmixr2est:::.nlmixr2clearPipe()
+> calculate sensitivities
+[====|====|====|====|====|====|====|====|====|====] 0:00:00 
 
-Error (test-bootstrap.R:129:5): expected columns in fit$parFixedDf object should match
-Error: 'rxSetCovariateNamesForPiping' is not an exported object from 'namespace:rxode2'
-Backtrace:
- 1. base::suppressMessages(...)
-      at test-bootstrap.R:129:4
- 6. nlmixr2est:::nlmixr2.function(...)
- 7. nlmixr2est:::.nlmixr2clearPipe()
+> calculate d(f)/d(eta)
+[====|====|====|====|====|====|====|====|====|====] 0:00:00 
 
-Error (test-bootstrap.R:173:5): saem bootstrap
-Error: 'rxSetCovariateNamesForPiping' is not an exported object from 'namespace:rxode2'
-Backtrace:
- 1. base::suppressMessages(...)
-      at test-bootstrap.R:173:4
- 6. nlmixr2est:::nlmixr2.function(...)
- 7. nlmixr2est:::nlmixr2Est0(.env)
+> calculate d(R^2)/d(eta)
+[====|====|====|====|====|====|====|====|====|====] 0:00:00 
 
-Error (test-bootstrap.R:173:5): saem bootstrap
-Error: 'rxSetCovariateNamesForPiping' is not an exported object from 'namespace:rxode2'
-Backtrace:
- 1. base::suppressMessages(...)
-      at test-bootstrap.R:173:4
- 6. nlmixr2est:::nlmixr2.function(...)
- 7. nlmixr2est:::.nlmixr2clearPipe()
-────────────────────────────────────────────────────────────────────────────────
+> finding duplicate expressions in inner model...
+[====|====|====|====|====|====|====|====|====|====] 0:00:00 
 
-⠏ |         0 | precondition                                                    
-⠋ | 1       0 | precondition                                                    
-✖ | 1       0 | precondition [3.8s]
-────────────────────────────────────────────────────────────────────────────────
-Error (test-precondition.R:24:3): precondition tests
-Error: 'rxSetCovariateNamesForPiping' is not an exported object from 'namespace:rxode2'
-Backtrace:
- 1. base::suppressMessages(...)
-      at test-precondition.R:24:2
- 6. nlmixr2est:::nlmixr2.function(...)
- 7. nlmixr2est:::.nlmixr2clearPipe()
-────────────────────────────────────────────────────────────────────────────────
+> optimizing duplicate expressions in inner model...
+[====|====|====|====|====|====|====|====|====|====] 0:00:00 
+
+> finding duplicate expressions in EBE model...
+[====|====|====|====|====|====|====|====|====|====] 0:00:00 
+
+> optimizing duplicate expressions in EBE model...
+[====|====|====|====|====|====|====|====|====|====] 0:00:00 
+
+> compiling inner model...
+v done
+> finding duplicate expressions in FD model...
+[====|====|====|====|====|====|====|====|====|====] 0:00:00 
+
+> optimizing duplicate expressions in FD model...
+[====|====|====|====|====|====|====|====|====|====] 0:00:00 
+
+> compiling EBE model...
+v done
+> compiling events FD model...
+v done
+calculating covariance matrix
+[====|====|====|====|====|====|====|====|====|====] 0:00:00 
+> loading into symengine environment...
+> pruning branches (`if`/`else`) of full model...
+v done
+> calculate jacobian
+[====|====|====|====|====|====|====|====|====|====
+> calculate sensitivities
+[====|====|====|====|====|====|====|====|====|====] 0:00:00 
+
+> calculate d(f)/d(eta)
+[====|====|====|====|====|====|====|====|====|====] 0:00:00 
+
+> finding duplicate expressions in inner model...
+[====|====|====|====|====|====|====|====|====|====] 0:00:00 
+
+> optimizing duplicate expressions in inner model...
+[====|====|====|====|====|====|====|====|====|====] 0:00:00 
+
+> finding duplicate expressions in EBE model...
+[====|====|====|====|====|====|====|====|====|====] 0:00:00 
+
+> optimizing duplicate expressions in EBE model...
+[====|====|====|====|====|====|====|====|====|====] 0:00:00 
+
+> compiling inner model...
+v done
+> finding duplicate expressions in FD model...
+[====|====|====|====|====|====|====|====|====|====] 0:00:00 
+
+> optimizing duplicate expressions in FD model...
+[====|====|====|====|====|====|====|====|====|====] 0:00:00 
+
+> compiling EBE model...
+v done
+> compiling events FD model...
+v done
+> compress origData in nlmixr2 object, save 5952
+Updated original fit object fit2
+
+⠋ |         1 | precondition                                                    > compress origData in nlmixr2 object, save 5952
+Updated original fit object fit2
+
+⠙ |        12 | precondition                                                    > compress origData in nlmixr2 object, save 5952
+Updated original fit object fit2
+
+⠇ |        19 | precondition                                                    
+✔ |        27 | precondition [8.0s]
 
 ══ Results ═════════════════════════════════════════════════════════════════════
-Duration: 16.2 s
+Duration: 31.1 s
 
-[ FAIL 6 | WARN 0 | SKIP 0 | PASS 42 ]
+[ FAIL 0 | WARN 0 | SKIP 0 | PASS 75 ]
+
+💅 Your tests are beautiful 💅
 > 
 > 

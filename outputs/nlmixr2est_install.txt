@@ -20,11 +20,11 @@ Type 'q()' to quit R.
 > devtools::install_local(force=TRUE)
 
 Skipping 1 packages not available: symengine
-     checking for file ‘/tmp/RtmpTo1kWk/file5e5657574cf6b/nlmixr2est/DESCRIPTION’ ...  ✔  checking for file ‘/tmp/RtmpTo1kWk/file5e5657574cf6b/nlmixr2est/DESCRIPTION’
+     checking for file ‘/tmp/RtmpDwcYXI/file6ec4f306e9669/nlmixr2est/DESCRIPTION’ ...  ✔  checking for file ‘/tmp/RtmpDwcYXI/file6ec4f306e9669/nlmixr2est/DESCRIPTION’
   ─  preparing ‘nlmixr2est’:
      checking DESCRIPTION meta-information ...  ✔  checking DESCRIPTION meta-information
-  ─  cleaning src
-─  running ‘cleanup’
+─  cleaning src
+  ─  running ‘cleanup’
   ─  checking for LF line-endings in source and make files and shell scripts
   ─  checking for empty or unneeded directories
      Removed empty directory ‘nlmixr2est/build’
