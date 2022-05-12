@@ -1,5 +1,5 @@
 
-R version 4.1.3 (2022-03-10) -- "One Push-Up"
+R version 4.2.0 (2022-04-22) -- "Vigorous Calisthenics"
 Copyright (C) 2022 The R Foundation for Statistical Computing
 Platform: x86_64-pc-linux-gnu (64-bit)
 
@@ -19,14 +19,16 @@ Type 'q()' to quit R.
 
 > devtools::load_all();devtools::test()
 ℹ Loading nlmixr2plot
-ℹ Loading nlmixr2plot
-ℹ Testing nlmixr2plot
-✔ | F W S  OK | Context
-
-⠏ |         0 | nlmixr2PlotList                                                 
-✔ |         5 | nlmixr2PlotList
-
-══ Results ═════════════════════════════════════════════════════════════════════
-[ FAIL 0 | WARN 0 | SKIP 0 | PASS 5 ]
-> 
-> 
+Error in `abort_for_missing_packages()`:
+! Dependency package(s) 'nlmixr2extra' not available.
+Backtrace:
+    ▆
+ 1. └─devtools::load_all()
+ 2.   └─pkgload::load_all(...)
+ 3.     └─pkgload:::load_imports(path)
+ 4.       └─pkgload:::abort_for_missing_packages(res, imports$package)
+ 5.         └─rlang::abort(...)
+Warning message:
+In (function (dep_name, dep_ver = "*")  :
+  Dependency package 'nlmixr2extra' not available.
+Execution halted

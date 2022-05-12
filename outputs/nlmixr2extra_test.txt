@@ -1,5 +1,5 @@
 
-R version 4.1.3 (2022-03-10) -- "One Push-Up"
+R version 4.2.0 (2022-04-22) -- "Vigorous Calisthenics"
 Copyright (C) 2022 The R Foundation for Statistical Computing
 Platform: x86_64-pc-linux-gnu (64-bit)
 
@@ -19,38 +19,41 @@ Type 'q()' to quit R.
 
 > devtools::load_all();devtools::test()
 ℹ Loading nlmixr2extra
+Exports from /home/bill/GitHub/nlmixr2CRANtesting/packages/nlmixr2extra/src/classicReverse.cpp:
+   List convertDataBack(IntegerVector id, NumericVector time, NumericVector amt, NumericVector ii, IntegerVector evid, IntegerVector cmt, IntegerVector cmtDvid, IntegerVector dvidDvid, int linNcmt = 0, int linKa = 0, int neq = 0, int replaceEvid = 5)
+
 Exports from /home/bill/GitHub/nlmixr2CRANtesting/packages/nlmixr2extra/src/preCondInv.cpp:
    SEXP preCondInv(SEXP Rin)
 
 /home/bill/GitHub/nlmixr2CRANtesting/packages/nlmixr2extra/src/RcppExports.cpp updated.
 /home/bill/GitHub/nlmixr2CRANtesting/packages/nlmixr2extra/R/RcppExports.R updated.
 Re-compiling nlmixr2extra
-  ─  installing *source* package ‘nlmixr2extra’ ...
-   ** using staged installation
-     ** libs
-     g++ -std=gnu++11 -I"/usr/share/R/include" -DNDEBUG  -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/Rcpp/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/RcppArmadillo/include'   -fopenmp -DARMA_USE_CXX11 -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-lENDSu/r-base-4.1.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c RcppExports.cpp -o RcppExports.o
-     gcc -I"/usr/share/R/include" -DNDEBUG  -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/Rcpp/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/RcppArmadillo/include'    -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-lENDSu/r-base-4.1.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c init.c -o init.o
-   g++ -std=gnu++11 -I"/usr/share/R/include" -DNDEBUG  -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/Rcpp/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.1/RcppArmadillo/include'   -fopenmp -DARMA_USE_CXX11 -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-lENDSu/r-base-4.1.3=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2 -g  -c preCondInv.cpp -o preCondInv.o
-     g++ -std=gnu++11 -shared -L/usr/lib/R/lib -Wl,-Bsymbolic-functions -Wl,-z,relro -o nlmixr2extra.so RcppExports.o init.o preCondInv.o -fopenmp -llapack -lblas -lgfortran -lm -lquadmath -L/usr/lib/R/lib -lR
-     installing to /tmp/RtmpKFDE4h/devtools_install_773a31ba083d4/00LOCK-nlmixr2extra/00new/nlmixr2extra/libs
-     ** checking absolute paths in shared objects and dynamic libraries
-  ─  DONE (nlmixr2extra)
-ℹ Loading nlmixr2extra
+* installing *source* package ‘nlmixr2extra’ ...
+** using staged installation
+** libs
+g++ -std=gnu++11 -I"/usr/share/R/include" -DNDEBUG  -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/Rcpp/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/RcppArmadillo/include'   -fopenmp -DARMA_USE_CXX11 -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-apO4Ea/r-base-4.2.0=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c RcppExports.cpp -o RcppExports.o
+g++ -std=gnu++11 -I"/usr/share/R/include" -DNDEBUG  -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/Rcpp/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/RcppArmadillo/include'   -fopenmp -DARMA_USE_CXX11 -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-apO4Ea/r-base-4.2.0=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c classicReverse.cpp -o classicReverse.o
+gcc -I"/usr/share/R/include" -DNDEBUG  -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/Rcpp/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/RcppArmadillo/include'    -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-apO4Ea/r-base-4.2.0=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c init.c -o init.o
+g++ -std=gnu++11 -I"/usr/share/R/include" -DNDEBUG  -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/Rcpp/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/RcppArmadillo/include'   -fopenmp -DARMA_USE_CXX11 -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-apO4Ea/r-base-4.2.0=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c preCondInv.cpp -o preCondInv.o
+g++ -std=gnu++11 -shared -L/usr/lib/R/lib -Wl,-Bsymbolic-functions -Wl,-z,relro -o nlmixr2extra.so RcppExports.o classicReverse.o init.o preCondInv.o -fopenmp -llapack -lblas -lgfortran -lm -lquadmath -L/usr/lib/R/lib -lR
+installing to /tmp/RtmpMVWEHP/devtools_install_b20a42c82a89f/00LOCK-nlmixr2extra/00new/nlmixr2extra/libs
+** checking absolute paths in shared objects and dynamic libraries
+* DONE (nlmixr2extra)
+ℹ Loading nlmixr2extra
 ℹ Testing nlmixr2extra
 ✔ | F W S  OK | Context
 
 ⠏ |         0 | autocovar                                                       
-⠙ |         2 | autocovar                                                       
-⠙ |        12 | autocovar                                                       
-⠏ |        40 | autocovar                                                       
-✔ |        41 | autocovar [0.4s]
+⠴ |         6 | autocovar                                                       
+⠼ |        35 | autocovar                                                       
+✔ |        41 | autocovar [0.2s]
 
 ⠏ |         0 | bootstrap                                                       
 ⠙ |         2 | bootstrap                                                       
 ⠸ |         4 | bootstrap                                                       
 ⠴ |         6 | bootstrap                                                       
 ⠦ |         7 | bootstrap                                                       
-✔ |         7 | bootstrap [22.8s]
+✔ |         7 | bootstrap [23.9s]
 
 ⠏ |         0 | precondition                                                    > loading into symengine environment...
 > pruning branches (`if`/`else`) of full model...
@@ -134,14 +137,14 @@ Updated original fit object fit2
 ⠋ |         1 | precondition                                                    > compress origData in nlmixr2 object, save 5952
 Updated original fit object fit2
 
-⠙ |        12 | precondition                                                    > compress origData in nlmixr2 object, save 5952
+⠏ |        10 | precondition                                                    > compress origData in nlmixr2 object, save 5952
 Updated original fit object fit2
 
-⠇ |        19 | precondition                                                    
-✔ |        27 | precondition [8.0s]
+⠋ |        21 | precondition                                                    
+✔ |        27 | precondition [7.9s]
 
 ══ Results ═════════════════════════════════════════════════════════════════════
-Duration: 31.1 s
+Duration: 32.1 s
 
 [ FAIL 0 | WARN 0 | SKIP 0 | PASS 75 ]
 

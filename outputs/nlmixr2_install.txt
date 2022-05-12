@@ -1,5 +1,5 @@
 
-R version 4.1.3 (2022-03-10) -- "One Push-Up"
+R version 4.2.0 (2022-04-22) -- "Vigorous Calisthenics"
 Copyright (C) 2022 The R Foundation for Statistical Computing
 Platform: x86_64-pc-linux-gnu (64-bit)
 
@@ -19,26 +19,20 @@ Type 'q()' to quit R.
 
 > devtools::install_local(force=TRUE)
 
-     checking for file ‘/tmp/RtmpVDTXUY/file778873c683b55/nlmixr2/DESCRIPTION’ ...  ✔  checking for file ‘/tmp/RtmpVDTXUY/file778873c683b55/nlmixr2/DESCRIPTION’
-  ─  preparing ‘nlmixr2’:
-   checking      checking DESCRIPTION meta-information ...  ✔  checking DESCRIPTION meta-information
-  ─  checking for LF line-endings in source and make files and shell scripts
-  ─  checking for empty or unneeded directories
-─  building ‘nlmixr2_2.0.6.tar.gz’
-     
-Installing package into ‘/home/bill/R/x86_64-pc-linux-gnu-library/4.1’
+Skipping 1 packages not available: nlmixr2plot
+* checking for file ‘/tmp/RtmpiJLyMt/fileb25d74f3f0bb0/nlmixr2/DESCRIPTION’ ... OK
+* preparing ‘nlmixr2’:
+* checking DESCRIPTION meta-information ... OK
+* checking for LF line-endings in source and make files and shell scripts
+* checking for empty or unneeded directories
+* building ‘nlmixr2_2.0.6.tar.gz’
+
+Installing package into ‘/home/bill/R/x86_64-pc-linux-gnu-library/4.2’
 (as ‘lib’ is unspecified)
-* installing *source* package ‘nlmixr2’ ...
-** using staged installation
-** R
-** byte-compile and prepare package for lazy loading
-** help
-*** installing help indices
-*** copying figures
-** building package indices
-** testing if installed package can be loaded from temporary location
-** testing if installed package can be loaded from final location
-** testing if installed package keeps a record of temporary installation path
-* DONE (nlmixr2)
+ERROR: dependency ‘nlmixr2plot’ is not available for package ‘nlmixr2’
+* removing ‘/home/bill/R/x86_64-pc-linux-gnu-library/4.2/nlmixr2’
+Warning message:
+In i.p(...) :
+  installation of package ‘/tmp/RtmpiJLyMt/fileb25d71fd9939a/nlmixr2_2.0.6.tar.gz’ had non-zero exit status
 > 
 > 

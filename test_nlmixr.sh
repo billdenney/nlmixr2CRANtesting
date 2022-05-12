@@ -42,6 +42,10 @@ testthat::ProgressReporter$new(\
  max_failures=Inf\
 )"
 
+# Install packages required for testing
+R -e "install.packages('devtools');install.packages('tidyverse');install.packages('pkgdown')"
+
+# Test everything
 for current_dir in ${packages[@]}; do
   echo Starting $current_dir
   (
@@ -55,8 +59,8 @@ for current_dir in ${packages[@]}; do
       break
     fi
     cd $current_dir
-    git checkout main
-    git pull
+    git fetch --all
+    git reset --hard origin/main
     # Clean up old files
     git clean -d -x -f
     # The 2>&1 redirects stderr to stdout
@@ -98,7 +102,7 @@ for current_dir in ${packages[@]}; do
     else
       echo "No test directory found (tests/testthat)"
     fi
-    if [ -f _pkgdown.yml ]; then
+    if [ -f "_pkgdown.yml" ]; then
       # build the pkdgown site to test that it succeeds
       R -e "devtools::load_all();pkgdown::build_site()" 2>&1 | \
         tee ../../outputs/${current_dir}_pkgdown.txt

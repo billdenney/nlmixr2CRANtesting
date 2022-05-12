@@ -1,5 +1,5 @@
 
-R version 4.1.3 (2022-03-10) -- "One Push-Up"
+R version 4.2.0 (2022-04-22) -- "Vigorous Calisthenics"
 Copyright (C) 2022 The R Foundation for Statistical Computing
 Platform: x86_64-pc-linux-gnu (64-bit)
 
@@ -18,14 +18,14 @@ Type 'demo()' for some demos, 'help()' for on-line help, or
 Type 'q()' to quit R.
 
 > devtools::install_local(force=TRUE)
-     checking for file ‘/tmp/Rtmpog0JfU/file692e632d6f347/nlmixr2data/DESCRIPTION’ ...  ✔  checking for file ‘/tmp/Rtmpog0JfU/file692e632d6f347/nlmixr2data/DESCRIPTION’
-  ─  preparing ‘nlmixr2data’:
-     checking DESCRIPTION meta-information ...  ✔  checking DESCRIPTION meta-information
-  ─  checking for LF line-endings in source and make files and shell scripts
-  ─  checking for empty or unneeded directories
-  ─  building ‘nlmixr2data_2.0.7.tar.gz’
-     
-Installing package into ‘/home/bill/R/x86_64-pc-linux-gnu-library/4.1’
+* checking for file ‘/tmp/RtmpJCCf9r/filea3c996c025ef7/nlmixr2data/DESCRIPTION’ ... OK
+* preparing ‘nlmixr2data’:
+* checking DESCRIPTION meta-information ... OK
+* checking for LF line-endings in source and make files and shell scripts
+* checking for empty or unneeded directories
+* building ‘nlmixr2data_2.0.7.tar.gz’
+
+Installing package into ‘/home/bill/R/x86_64-pc-linux-gnu-library/4.2’
 (as ‘lib’ is unspecified)
 * installing *source* package ‘nlmixr2data’ ...
 ** using staged installation

@@ -1,5 +1,5 @@
 
-R version 4.1.3 (2022-03-10) -- "One Push-Up"
+R version 4.2.0 (2022-04-22) -- "Vigorous Calisthenics"
 Copyright (C) 2022 The R Foundation for Statistical Computing
 Platform: x86_64-pc-linux-gnu (64-bit)
 
@@ -95,8 +95,8 @@ S3method(`nlmixr2`, `nlmixr2FitData`)(
 Reading from: '/home/bill/GitHub/nlmixr2CRANtesting/packages/nlmixr2est'
 Writing to:   '/home/bill/GitHub/nlmixr2CRANtesting/packages/nlmixr2est/docs'
 -- Initialising site -----------------------------------------------------------
-Copying '../../../../R/x86_64-pc-linux-gnu-library/4.1/pkgdown/BS5/assets/link.svg' to 'link.svg'
-Copying '../../../../R/x86_64-pc-linux-gnu-library/4.1/pkgdown/BS5/assets/pkgdown.js' to 'pkgdown.js'
+Copying '../../../../R/x86_64-pc-linux-gnu-library/4.2/pkgdown/BS5/assets/link.svg' to 'link.svg'
+Copying '../../../../R/x86_64-pc-linux-gnu-library/4.2/pkgdown/BS5/assets/pkgdown.js' to 'pkgdown.js'
 Copying 'pkgdown/favicon/apple-touch-icon-120x120.png' to 'apple-touch-icon-120x120.png'
 Copying 'pkgdown/favicon/apple-touch-icon-152x152.png' to 'apple-touch-icon-152x152.png'
 Copying 'pkgdown/favicon/apple-touch-icon-180x180.png' to 'apple-touch-icon-180x180.png'
@@ -129,6 +129,8 @@ Reading 'man/boxCox.Rd'
 Writing 'reference/boxCox.html'
 Reading 'man/cholSE.Rd'
 Writing 'reference/cholSE.html'
+Reading 'man/dot-foceiPreProcessData.Rd'
+Writing 'reference/dot-foceiPreProcessData.html'
 Reading 'man/dot-nlmixr2estLastPredSimulationInfo.Rd'
 Writing 'reference/dot-nlmixr2estLastPredSimulationInfo.html'
 Reading 'man/dot-nlmixrNlmeFun.Rd'

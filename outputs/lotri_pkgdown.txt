@@ -1,5 +1,5 @@
 
-R version 4.1.3 (2022-03-10) -- "One Push-Up"
+R version 4.2.0 (2022-04-22) -- "Vigorous Calisthenics"
 Copyright (C) 2022 The R Foundation for Statistical Computing
 Platform: x86_64-pc-linux-gnu (64-bit)
 
@@ -24,8 +24,8 @@ Type 'q()' to quit R.
 Reading from: '/home/bill/GitHub/nlmixr2CRANtesting/packages/lotri'
 Writing to:   '/home/bill/GitHub/nlmixr2CRANtesting/packages/lotri/docs'
 -- Initialising site -----------------------------------------------------------
-Copying '../../../../R/x86_64-pc-linux-gnu-library/4.1/pkgdown/BS5/assets/link.svg' to 'link.svg'
-Copying '../../../../R/x86_64-pc-linux-gnu-library/4.1/pkgdown/BS5/assets/pkgdown.js' to 'pkgdown.js'
+Copying '../../../../R/x86_64-pc-linux-gnu-library/4.2/pkgdown/BS5/assets/link.svg' to 'link.svg'
+Copying '../../../../R/x86_64-pc-linux-gnu-library/4.2/pkgdown/BS5/assets/pkgdown.js' to 'pkgdown.js'
 Copying 'pkgdown/favicon/apple-touch-icon-120x120.png' to 'apple-touch-icon-120x120.png'
 Copying 'pkgdown/favicon/apple-touch-icon-152x152.png' to 'apple-touch-icon-152x152.png'
 Copying 'pkgdown/favicon/apple-touch-icon-180x180.png' to 'apple-touch-icon-180x180.png'
@@ -62,11 +62,69 @@ Writing 'reference/lotriSep.html'
 -- Building articles -----------------------------------------------------------
 Writing 'articles/index.html'
 Reading 'vignettes/lotri-motivation.Rmd'
-Writing 'articles/lotri-motivation.html'
--- Building news ---------------------------------------------------------------
-Writing 'news/index.html'
-Writing 'sitemap.xml'
--- Building search index -------------------------------------------------------
-== DONE ========================================================================
-> 
-> 
+-- RMarkdown error -------------------------------------------------------------
+Quitting from lines 36-42 (lotri-motivation.Rmd) 
+Error in library(microbenchmark) : 
+  there is no package called 'microbenchmark'
+--------------------------------------------------------------------------------
+Error in render_rmarkdown(pkg, input = input, output = output_file, output_format = format,  : 
+  Failed to render RMarkdown
+Caused by error:
+! callr subprocess failed: there is no package called 'microbenchmark'
+Caused by error:
+! there is no package called 'microbenchmark'
+
+Error: <callr_status_error: callr subprocess failed: Failed to render RMarkdown
+Caused by error:
+! callr subprocess failed: there is no package called 'microbenchmark'
+Caused by error:
+! there is no package called 'microbenchmark'>
+-->
+<callr_remote_error in render_rmarkdown(pkg, input = input, output = output_file, output_format =  ...:
+ Failed to render RMarkdown
+Caused by error:
+! callr subprocess failed: there is no package called 'microbenchmark'
+Caused by error:
+! there is no package called 'microbenchmark'>
+ in process 671745 
+
+ Stack trace:
+
+ Process 671663:
+ 1. pkgdown::build_site()
+ 2. pkgdown:::build_site_external(pkg = pkg, examples = examples,  ...
+ 3. callr::r(function(..., crayon_enabled, crayon_colors, pkgdown_internet) { ...
+ 4. callr:::get_result(output = out, options)
+ 5. throw(newerr, parent = remerr[[2]])
+
+ x callr subprocess failed: Failed to render RMarkdown
+Caused by error:
+! callr subprocess failed: there is no package called 'microbenchmark'
+Caused by error:
+! there is no package called 'microbenchmark' 
+
+ Process 671745:
+ 17. (function (..., crayon_enabled, crayon_colors, pkgdown_internet)  ...
+ 18. pkgdown::build_site(...)
+ 19. pkgdown:::build_site_local(pkg = pkg, examples = examples, run_dont_run = r ...
+ 20. pkgdown:::build_articles(pkg, lazy = lazy, override = override,  ...
+ 21. purrr::walk(pkg$vignettes$name, build_article, pkg = pkg, quiet = quiet,  ...
+ 22. purrr:::map(.x, .f, ...)
+ 23. pkgdown:::.f(.x[[i]], ...)
+ 24. pkgdown:::render_rmarkdown(pkg, input = input, output = output_file,  ...
+ 25. base:::tryCatch(callr::r_safe(function(...) rmarkdown::render(...),  ...
+ 26. base:::tryCatchList(expr, classes, parentenv, handlers)
+ 27. base:::tryCatchOne(expr, names, parentenv, handlers[[1L]])
+ 28. value[[3L]](cond)
+ 29. rlang:::abort("Failed to render RMarkdown", parent = cnd)
+ 30. rlang:::signal_abort(cnd, .file)
+ 31. base:::signalCondition(cnd)
+ 32. (function (e)  ...
+
+ x Failed to render RMarkdown
+Caused by error:
+! callr subprocess failed: there is no package called 'microbenchmark'
+Caused by error:
+! there is no package called 'microbenchmark' 
+
+Execution halted
