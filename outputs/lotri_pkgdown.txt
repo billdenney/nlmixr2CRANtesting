@@ -86,11 +86,11 @@ Caused by error:
 ! callr subprocess failed: there is no package called 'microbenchmark'
 Caused by error:
 ! there is no package called 'microbenchmark'>
- in process 671745 
+ in process 881255 
 
  Stack trace:
 
- Process 671663:
+ Process 881173:
  1. pkgdown::build_site()
  2. pkgdown:::build_site_external(pkg = pkg, examples = examples,  ...
  3. callr::r(function(..., crayon_enabled, crayon_colors, pkgdown_internet) { ...
@@ -103,7 +103,7 @@ Caused by error:
 Caused by error:
 ! there is no package called 'microbenchmark' 
 
- Process 671745:
+ Process 881255:
  17. (function (..., crayon_enabled, crayon_colors, pkgdown_internet)  ...
  18. pkgdown::build_site(...)
  19. pkgdown:::build_site_local(pkg = pkg, examples = examples, run_dont_run = r ...

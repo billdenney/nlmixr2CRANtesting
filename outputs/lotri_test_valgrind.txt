@@ -1,0 +1,298 @@
+==881071== Memcheck, a memory error detector
+==881071== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==881071== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
+==881071== Command: /usr/lib/R/bin/exec/R -e devtools::load_all();devtools::test()
+==881071== 
+
+R version 4.2.0 (2022-04-22) -- "Vigorous Calisthenics"
+Copyright (C) 2022 The R Foundation for Statistical Computing
+Platform: x86_64-pc-linux-gnu (64-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+  Natural language support but running in an English locale
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+> devtools::load_all();devtools::test()
+ℹ Loading lotri
+Re-compiling lotri
+* installing *source* package ‘lotri’ ...
+** using staged installation
+** libs
+gcc -I"/usr/share/R/include" -DNDEBUG      -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-apO4Ea/r-base-4.2.0=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c asLotriMat.c -o asLotriMat.o
+gcc -I"/usr/share/R/include" -DNDEBUG      -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-apO4Ea/r-base-4.2.0=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c lotriBounds.c -o lotriBounds.o
+gcc -I"/usr/share/R/include" -DNDEBUG      -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-apO4Ea/r-base-4.2.0=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c lotriLstToMat.c -o lotriLstToMat.o
+gcc -I"/usr/share/R/include" -DNDEBUG      -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-apO4Ea/r-base-4.2.0=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c lotriNest.c -o lotriNest.o
+gcc -I"/usr/share/R/include" -DNDEBUG      -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-apO4Ea/r-base-4.2.0=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c lotriProp.c -o lotriProp.o
+gcc -I"/usr/share/R/include" -DNDEBUG      -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-apO4Ea/r-base-4.2.0=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c matlist.c -o matlist.o
+gcc -shared -L/usr/lib/R/lib -Wl,-Bsymbolic-functions -Wl,-z,relro -o lotri.so asLotriMat.o lotriBounds.o lotriLstToMat.o lotriNest.o lotriProp.o matlist.o -L/usr/lib/R/lib -lR
+installing to /tmp/RtmpWFVKxF/devtools_install_d71af63d0d1e0/00LOCK-lotri/00new/lotri/libs
+** checking absolute paths in shared objects and dynamic libraries
+* DONE (lotri)
+ℹ Loading lotri
+ℹ Testing lotri
+✔ | F W S  OK | Context
+
+⠏ |         0 | allNames                                                        
+⠋ |         1 | allNames                                                        
+⠙ |         2 | allNames                                                        
+⠹ |         3 | allNames                                                        
+⠼ |         5 | allNames                                                        
+✔ |         6 | allNames [9.0s]
+
+⠏ |         0 | as.data.frame                                                   
+⠋ |         1 | as.data.frame                                                   
+⠙ |         2 | as.data.frame                                                   
+⠹ |         3 | as.data.frame                                                   
+⠼ |         5 | as.data.frame                                                   
+⠴ |         6 | as.data.frame                                                   
+⠦ |         7 | as.data.frame                                                   
+⠧ |         8 | as.data.frame                                                   
+⠇ |         9 | as.data.frame                                                   
+✔ |         9 | as.data.frame [8.0s]
+
+⠏ |         0 | as.lotri                                                        
+⠋ |         1 | as.lotri                                                        
+⠹ |         3 | as.lotri                                                        
+⠸ |         4 | as.lotri                                                        
+⠼ |         5 | as.lotri                                                        
+⠴ |         6 | as.lotri                                                        
+⠦ |         7 | as.lotri                                                        
+⠧ |         8 | as.lotri                                                        
+⠇ |         9 | as.lotri                                                        
+⠏ |        10 | as.lotri                                                        
+⠋ |        11 | as.lotri                                                        
+⠙ |        12 | as.lotri                                                        
+⠹ |        13 | as.lotri                                                        
+✔ |        13 | as.lotri [2.1s]
+
+⠏ |         0 | bounds-c                                                        
+⠋ |         1 | bounds-c                                                        
+⠹ |         3 | bounds-c                                                        
+⠼ |         5 | bounds-c                                                        
+⠦ |         7 | bounds-c                                                        
+⠇ |         9 | bounds-c                                                        
+⠋ |        11 | bounds-c                                                        
+⠹ |        13 | bounds-c                                                        
+⠼ |        15 | bounds-c                                                        
+⠴ |        16 | bounds-c                                                        
+⠧ |        18 | bounds-c                                                        
+✔ |        18 | bounds-c [2.4s]
+
+⠏ |         0 | estimate-matrix-combination                                     
+⠋ |         1 | estimate-matrix-combination                                     
+⠙ |         2 | estimate-matrix-combination                                     
+⠸ |         4 | estimate-matrix-combination                                     
+⠴ |         6 | estimate-matrix-combination                                     
+⠦ |         7 | estimate-matrix-combination                                     
+⠧ |         8 | estimate-matrix-combination                                     
+✔ |         8 | estimate-matrix-combination [1.6s]
+
+⠏ |         0 | fixed-combine                                                   
+⠋ |         1 | fixed-combine                                                   
+⠹ |         3 | fixed-combine                                                   
+⠸ |         4 | fixed-combine                                                   
+⠴ |         6 | fixed-combine                                                   
+✔ |         6 | fixed-combine [1.2s]
+
+⠏ |         0 | fixed                                                           
+⠋ |         1 | fixed                                                           
+⠙ |         2 | fixed                                                           
+⠹ |         3 | fixed                                                           
+⠸ |         4 | fixed                                                           
+⠼ |         5 | fixed                                                           
+✔ |         5 | fixed [0.7s]
+
+⠏ |         0 | lotri-matrix                                                    
+⠋ |         1 | lotri-matrix                                                    
+⠙ |         2 | lotri-matrix                                                    
+⠹ |         3 | lotri-matrix                                                    
+⠸ |         4 | lotri-matrix                                                    
+⠼ |         5 | lotri-matrix                                                    
+⠴ |         6 | lotri-matrix                                                    
+⠦ |         7 | lotri-matrix                                                    
+⠧ |         8 | lotri-matrix                                                    
+⠏ |        10 | lotri-matrix                                                    
+⠋ |        11 | lotri-matrix                                                    
+⠙ |        12 | lotri-matrix                                                    
+⠹ |        13 | lotri-matrix                                                    
+⠸ |        14 | lotri-matrix                                                    
+⠴ |        16 | lotri-matrix                                                    
+⠧ |        18 | lotri-matrix                                                    
+⠇ |        19 | lotri-matrix                                                    
+⠏ |        20 | lotri-matrix                                                    
+⠙ |        22 | lotri-matrix                                                    
+⠹ |        23 | lotri-matrix                                                    
+⠼ |        25 | lotri-matrix                                                    
+⠦ |        27 | lotri-matrix                                                    
+⠧ |        28 | lotri-matrix                                                    
+⠏ |        30 | lotri-matrix                                                    
+⠋ |        31 | lotri-matrix                                                    
+⠙ |        32 | lotri-matrix                                                    
+⠹ |        33 | lotri-matrix                                                    
+⠸ |        34 | lotri-matrix                                                    
+⠼ |        35 | lotri-matrix                                                    
+⠴ |        36 | lotri-matrix                                                    
+⠧ |        38 | lotri-matrix                                                    
+⠏ |        40 | lotri-matrix                                                    
+⠋ |        41 | lotri-matrix                                                    
+⠙ |        42 | lotri-matrix                                                    
+⠸ |        44 | lotri-matrix                                                    
+⠼ |        45 | lotri-matrix                                                    
+⠴ |        46 | lotri-matrix                                                    
+⠧ |        48 | lotri-matrix                                                    
+⠇ |        49 | lotri-matrix                                                    
+⠏ |        50 | lotri-matrix                                                    
+⠋ |        51 | lotri-matrix                                                    
+⠙ |        52 | lotri-matrix                                                    
+⠹ |        53 | lotri-matrix                                                    
+⠸ |        54 | lotri-matrix                                                    
+⠼ |        55 | lotri-matrix                                                    
+⠴ |        56 | lotri-matrix                                                    
+⠧ |        58 | lotri-matrix                                                    
+⠇ |        59 | lotri-matrix                                                    
+⠏ |        60 | lotri-matrix                                                    
+⠋ |        61 | lotri-matrix                                                    
+⠙ |        62 | lotri-matrix                                                    
+⠹ |        63 | lotri-matrix                                                    
+⠸ |        64 | lotri-matrix                                                    
+⠴ |        66 | lotri-matrix                                                    
+⠦ |        67 | lotri-matrix                                                    
+⠧ |        68 | lotri-matrix                                                    
+⠏ |        70 | lotri-matrix                                                    
+⠋ |        71 | lotri-matrix                                                    
+⠙ |        72 | lotri-matrix                                                    
+⠹ |        73 | lotri-matrix                                                    
+⠸ |        74 | lotri-matrix                                                    
+✔ |        74 | lotri-matrix [8.9s]
+
+⠏ |         0 | lotri                                                           
+⠋ |         1 | lotri                                                           
+⠹ |         3 | lotri                                                           
+⠼ |         5 | lotri                                                           
+⠦ |         7 | lotri                                                           
+⠧ |         8 | lotri                                                           
+✔ |         8 | lotri [1.0s]
+
+⠏ |         0 | lotriMat                                                        
+⠋ |         1 | lotriMat                                                        
+⠹ |         3 | lotriMat                                                        
+⠼ |         5 | lotriMat                                                        
+⠴ |         6 | lotriMat                                                        
+⠦ |         7 | lotriMat                                                        
+⠧ |         8 | lotriMat                                                        
+⠇ |         9 | lotriMat                                                        
+⠏ |        10 | lotriMat                                                        
+⠋ |        11 | lotriMat                                                        
+⠙ |        12 | lotriMat                                                        
+⠹ |        13 | lotriMat                                                        
+⠸ |        14 | lotriMat                                                        
+⠼ |        15 | lotriMat                                                        
+⠴ |        16 | lotriMat                                                        
+⠧ |        18 | lotriMat                                                        
+⠇ |        19 | lotriMat                                                        
+⠏ |        20 | lotriMat                                                        
+⠙ |        22 | lotriMat                                                        
+⠹ |        23 | lotriMat                                                        
+⠸ |        24 | lotriMat                                                        
+⠼ |        25 | lotriMat                                                        
+⠴ |        26 | lotriMat                                                        
+⠧ |        28 | lotriMat                                                        
+✔ |        29 | lotriMat [4.3s]
+
+⠏ |         0 | lotriSep                                                        
+⠋ |         1 | lotriSep                                                        
+⠹ |         3 | lotriSep                                                        
+⠼ |         5 | lotriSep                                                        
+⠴ |         6 | lotriSep                                                        
+⠦ |         7 | lotriSep                                                        
+⠧ |         8 | lotriSep                                                        
+⠇ |         9 | lotriSep                                                        
+⠏ |        10 | lotriSep                                                        
+⠋ |        11 | lotriSep                                                        
+⠹ |        13 | lotriSep                                                        
+⠸ |        14 | lotriSep                                                        
+✔ |        14 | lotriSep [1.6s]
+
+⠏ |         0 | theta-lhs-as.expression                                         
+⠋ |         1 | theta-lhs-as.expression                                         
+⠹ |         3 | theta-lhs-as.expression                                         
+⠼ |         5 | theta-lhs-as.expression                                         
+⠦ |         7 | theta-lhs-as.expression                                         
+⠇ |         9 | theta-lhs-as.expression                                         
+⠋ |        11 | theta-lhs-as.expression                                         
+⠹ |        13 | theta-lhs-as.expression                                         
+⠼ |        15 | theta-lhs-as.expression                                         
+⠦ |        17 | theta-lhs-as.expression                                         
+⠇ |        19 | theta-lhs-as.expression                                         
+⠋ |        21 | theta-lhs-as.expression                                         
+⠙ |        22 | theta-lhs-as.expression                                         
+⠹ |        23 | theta-lhs-as.expression                                         
+⠸ |        24 | theta-lhs-as.expression                                         
+⠼ |        25 | theta-lhs-as.expression                                         
+⠦ |        27 | theta-lhs-as.expression                                         
+✔ |        27 | theta-lhs-as.expression [3.5s]
+
+⠏ |         0 | transformations                                                 
+⠋ |         1 | transformations                                                 
+⠙ |         2 | transformations                                                 
+⠹ |         3 | transformations                                                 
+⠸ |         4 | transformations                                                 
+⠼ |         5 | transformations                                                 
+⠴ |         6 | transformations                                                 
+⠧ |         8 | transformations                                                 
+⠇ |         9 | transformations                                                 
+⠏ |        10 | transformations                                                 
+⠋ |        11 | transformations                                                 
+✔ |        11 | transformations [1.7s]
+
+══ Results ═════════════════════════════════════════════════════════════════════
+Duration: 46.5 s
+
+[ FAIL 0 | WARN 0 | SKIP 0 | PASS 228 ]
+> 
+> 
+==881071== 
+==881071== HEAP SUMMARY:
+==881071==     in use at exit: 102,545,370 bytes in 21,787 blocks
+==881071==   total heap usage: 461,496 allocs, 439,709 frees, 468,958,434 bytes allocated
+==881071== 
+==881071== 320 bytes in 1 blocks are possibly lost in loss record 175 of 2,383
+==881071==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==881071==    by 0x40149DA: allocate_dtv (dl-tls.c:286)
+==881071==    by 0x40149DA: _dl_allocate_tls (dl-tls.c:532)
+==881071==    by 0x574B322: allocate_stack (allocatestack.c:622)
+==881071==    by 0x574B322: pthread_create@@GLIBC_2.2.5 (pthread_create.c:660)
+==881071==    by 0xCEF33F6: cli__start_thread (thread.c:51)
+==881071==    by 0xCEF33F6: cli__start_thread (thread.c:42)
+==881071==    by 0xCEF343A: clic_start_thread (thread.c:74)
+==881071==    by 0x494221F: ??? (in /usr/lib/R/lib/libR.so)
+==881071==    by 0x4985D36: ??? (in /usr/lib/R/lib/libR.so)
+==881071==    by 0x4999867: Rf_eval (in /usr/lib/R/lib/libR.so)
+==881071==    by 0x499B71E: ??? (in /usr/lib/R/lib/libR.so)
+==881071==    by 0x499C611: Rf_applyClosure (in /usr/lib/R/lib/libR.so)
+==881071==    by 0x498719D: ??? (in /usr/lib/R/lib/libR.so)
+==881071==    by 0x4999867: Rf_eval (in /usr/lib/R/lib/libR.so)
+==881071== 
+==881071== LEAK SUMMARY:
+==881071==    definitely lost: 0 bytes in 0 blocks
+==881071==    indirectly lost: 0 bytes in 0 blocks
+==881071==      possibly lost: 320 bytes in 1 blocks
+==881071==    still reachable: 102,545,050 bytes in 21,786 blocks
+==881071==                       of which reachable via heuristic:
+==881071==                         newarray           : 4,264 bytes in 1 blocks
+==881071==         suppressed: 0 bytes in 0 blocks
+==881071== Reachable blocks (those to which a pointer was found) are not shown.
+==881071== To see them, rerun with: --leak-check=full --show-leak-kinds=all
+==881071== 
+==881071== For lists of detected and suppressed errors, rerun with: -s
+==881071== ERROR SUMMARY: 1 errors from 1 contexts (suppressed: 0 from 0)

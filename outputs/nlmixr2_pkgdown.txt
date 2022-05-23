@@ -20,16 +20,171 @@ Type 'q()' to quit R.
 > devtools::load_all();pkgdown::build_site()
 ℹ Loading nlmixr2
 Loading required package: nlmixr2data
-Error in `abort_for_missing_packages()`:
-! Dependency package(s) 'nlmixr2plot' not available.
-Backtrace:
-    ▆
- 1. └─devtools::load_all()
- 2.   └─pkgload::load_all(...)
- 3.     └─pkgload:::load_imports(path)
- 4.       └─pkgload:::abort_for_missing_packages(res, imports$package)
- 5.         └─rlang::abort(...)
-Warning message:
-In (function (dep_name, dep_ver = "*")  :
-  Dependency package 'nlmixr2plot' not available.
+-- Installing package into temporary library -----------------------------------
+== Building pkgdown site =======================================================
+Reading from: '/home/bill/GitHub/nlmixr2CRANtesting/packages/nlmixr2'
+Writing to:   '/home/bill/GitHub/nlmixr2CRANtesting/packages/nlmixr2/docs'
+-- Initialising site -----------------------------------------------------------
+Copying '../../../../R/x86_64-pc-linux-gnu-library/4.2/pkgdown/BS5/assets/link.svg' to 'link.svg'
+Copying '../../../../R/x86_64-pc-linux-gnu-library/4.2/pkgdown/BS5/assets/pkgdown.js' to 'pkgdown.js'
+-- Building home ---------------------------------------------------------------
+Writing 'authors.html'
+Reading 'LICENSE.md'
+Writing 'LICENSE.html'
+Copying 'man/figures/README-unnamed-chunk-2-1.png' to 'reference/figures/README-unnamed-chunk-2-1.png'
+Copying 'man/figures/README-unnamed-chunk-2-10.png' to 'reference/figures/README-unnamed-chunk-2-10.png'
+Copying 'man/figures/README-unnamed-chunk-2-11.png' to 'reference/figures/README-unnamed-chunk-2-11.png'
+Copying 'man/figures/README-unnamed-chunk-2-12.png' to 'reference/figures/README-unnamed-chunk-2-12.png'
+Copying 'man/figures/README-unnamed-chunk-2-13.png' to 'reference/figures/README-unnamed-chunk-2-13.png'
+Copying 'man/figures/README-unnamed-chunk-2-14.png' to 'reference/figures/README-unnamed-chunk-2-14.png'
+Copying 'man/figures/README-unnamed-chunk-2-15.png' to 'reference/figures/README-unnamed-chunk-2-15.png'
+Copying 'man/figures/README-unnamed-chunk-2-16.png' to 'reference/figures/README-unnamed-chunk-2-16.png'
+Copying 'man/figures/README-unnamed-chunk-2-17.png' to 'reference/figures/README-unnamed-chunk-2-17.png'
+Copying 'man/figures/README-unnamed-chunk-2-18.png' to 'reference/figures/README-unnamed-chunk-2-18.png'
+Copying 'man/figures/README-unnamed-chunk-2-19.png' to 'reference/figures/README-unnamed-chunk-2-19.png'
+Copying 'man/figures/README-unnamed-chunk-2-2.png' to 'reference/figures/README-unnamed-chunk-2-2.png'
+Copying 'man/figures/README-unnamed-chunk-2-20.png' to 'reference/figures/README-unnamed-chunk-2-20.png'
+Copying 'man/figures/README-unnamed-chunk-2-21.png' to 'reference/figures/README-unnamed-chunk-2-21.png'
+Copying 'man/figures/README-unnamed-chunk-2-22.png' to 'reference/figures/README-unnamed-chunk-2-22.png'
+Copying 'man/figures/README-unnamed-chunk-2-23.png' to 'reference/figures/README-unnamed-chunk-2-23.png'
+Copying 'man/figures/README-unnamed-chunk-2-24.png' to 'reference/figures/README-unnamed-chunk-2-24.png'
+Copying 'man/figures/README-unnamed-chunk-2-25.png' to 'reference/figures/README-unnamed-chunk-2-25.png'
+Copying 'man/figures/README-unnamed-chunk-2-26.png' to 'reference/figures/README-unnamed-chunk-2-26.png'
+Copying 'man/figures/README-unnamed-chunk-2-27.png' to 'reference/figures/README-unnamed-chunk-2-27.png'
+Copying 'man/figures/README-unnamed-chunk-2-28.png' to 'reference/figures/README-unnamed-chunk-2-28.png'
+Copying 'man/figures/README-unnamed-chunk-2-3.png' to 'reference/figures/README-unnamed-chunk-2-3.png'
+Copying 'man/figures/README-unnamed-chunk-2-4.png' to 'reference/figures/README-unnamed-chunk-2-4.png'
+Copying 'man/figures/README-unnamed-chunk-2-5.png' to 'reference/figures/README-unnamed-chunk-2-5.png'
+Copying 'man/figures/README-unnamed-chunk-2-6.png' to 'reference/figures/README-unnamed-chunk-2-6.png'
+Copying 'man/figures/README-unnamed-chunk-2-7.png' to 'reference/figures/README-unnamed-chunk-2-7.png'
+Copying 'man/figures/README-unnamed-chunk-2-8.png' to 'reference/figures/README-unnamed-chunk-2-8.png'
+Copying 'man/figures/README-unnamed-chunk-2-9.png' to 'reference/figures/README-unnamed-chunk-2-9.png'
+Writing '404.html'
+-- Building function reference -------------------------------------------------
+Writing 'reference/index.html'
+Loading required package: nlmixr2data
+Reading 'man/addCwres.Rd'
+Writing 'reference/addCwres.html'
+Reading 'man/addNpde.Rd'
+Writing 'reference/addNpde.html'
+Reading 'man/addTable.Rd'
+Writing 'reference/addTable.html'
+Reading 'man/bootplot.Rd'
+Writing 'reference/bootplot.html'
+Reading 'man/bootstrapFit.Rd'
+Writing 'reference/bootstrapFit.html'
+Reading 'man/covarSearchAuto.Rd'
+
+warning: chol(): given matrix is not symmetric
+
+warning: chol(): given matrix is not symmetric
+
+warning: chol(): given matrix is not symmetric
+Writing 'reference/covarSearchAuto.html'
+Reading 'man/foceiControl.Rd'
+Writing 'reference/foceiControl.html'
+Reading 'man/nlmeControl.Rd'
+Writing 'reference/nlmeControl.html'
+Reading 'man/preconditionFit.Rd'
+Writing 'reference/preconditionFit.html'
+Reading 'man/reexports.Rd'
+Writing 'reference/reexports.html'
+Reading 'man/saemControl.Rd'
+Writing 'reference/saemControl.html'
+Reading 'man/setOfv.Rd'
+Writing 'reference/setOfv.html'
+Reading 'man/tableControl.Rd'
+Writing 'reference/tableControl.html'
+Reading 'man/traceplot.Rd'
+Writing 'reference/traceplot.html'
+Reading 'man/vpcPlot.Rd'
+Writing 'reference/vpcPlot.html'
+Reading 'man/vpcSim.Rd'
+Writing 'reference/vpcSim.html'
+-- Building articles -----------------------------------------------------------
+Writing 'articles/index.html'
+Reading 'vignettes/addingCovariances.Rmd'
+Writing 'articles/addingCovariances.html'
+Reading 'vignettes/broom.Rmd'
+-- RMarkdown error -------------------------------------------------------------
+Loading required package: dotwhisker
+Loading required package: huxtable
+Loading required package: huxtable
+Loading required package: officer
+Loading required package: flextable
+Loading required package: nlmixr2data
+Quitting from lines 36-67 (broom.Rmd) 
+Error in library(broom.mixed) : there is no package called 'broom.mixed'
+In addition: Warning messages:
+1: In library(package, lib.loc = lib.loc, character.only = TRUE, logical.return = TRUE,  :
+  there is no package called 'dotwhisker'
+2: In library(package, lib.loc = lib.loc, character.only = TRUE, logical.return = TRUE,  :
+  there is no package called 'huxtable'
+3: In library(package, lib.loc = lib.loc, character.only = TRUE, logical.return = TRUE,  :
+  there is no package called 'huxtable'
+4: In library(package, lib.loc = lib.loc, character.only = TRUE, logical.return = TRUE,  :
+  there is no package called 'officer'
+5: In library(package, lib.loc = lib.loc, character.only = TRUE, logical.return = TRUE,  :
+  there is no package called 'flextable'
+--------------------------------------------------------------------------------
+Error in render_rmarkdown(pkg, input = input, output = output_file, output_format = format,  : 
+  Failed to render RMarkdown
+Caused by error:
+! callr subprocess failed: there is no package called 'broom.mixed'
+Caused by error:
+! there is no package called 'broom.mixed'
+
+Error: <callr_status_error: callr subprocess failed: Failed to render RMarkdown
+Caused by error:
+! callr subprocess failed: there is no package called 'broom.mixed'
+Caused by error:
+! there is no package called 'broom.mixed'>
+-->
+<callr_remote_error in render_rmarkdown(pkg, input = input, output = output_file, output_format =  ...:
+ Failed to render RMarkdown
+Caused by error:
+! callr subprocess failed: there is no package called 'broom.mixed'
+Caused by error:
+! there is no package called 'broom.mixed'>
+ in process 944488 
+
+ Stack trace:
+
+ Process 944419:
+ 1. pkgdown::build_site()
+ 2. pkgdown:::build_site_external(pkg = pkg, examples = examples,  ...
+ 3. callr::r(function(..., crayon_enabled, crayon_colors, pkgdown_internet) { ...
+ 4. callr:::get_result(output = out, options)
+ 5. throw(newerr, parent = remerr[[2]])
+
+ x callr subprocess failed: Failed to render RMarkdown
+Caused by error:
+! callr subprocess failed: there is no package called 'broom.mixed'
+Caused by error:
+! there is no package called 'broom.mixed' 
+
+ Process 944488:
+ 17. (function (..., crayon_enabled, crayon_colors, pkgdown_internet)  ...
+ 18. pkgdown::build_site(...)
+ 19. pkgdown:::build_site_local(pkg = pkg, examples = examples, run_dont_run = r ...
+ 20. pkgdown:::build_articles(pkg, lazy = lazy, override = override,  ...
+ 21. purrr::walk(pkg$vignettes$name, build_article, pkg = pkg, quiet = quiet,  ...
+ 22. purrr:::map(.x, .f, ...)
+ 23. pkgdown:::.f(.x[[i]], ...)
+ 24. pkgdown:::render_rmarkdown(pkg, input = input, output = output_file,  ...
+ 25. base:::tryCatch(callr::r_safe(function(...) rmarkdown::render(...),  ...
+ 26. base:::tryCatchList(expr, classes, parentenv, handlers)
+ 27. base:::tryCatchOne(expr, names, parentenv, handlers[[1L]])
+ 28. value[[3L]](cond)
+ 29. rlang:::abort("Failed to render RMarkdown", parent = cnd)
+ 30. rlang:::signal_abort(cnd, .file)
+ 31. base:::signalCondition(cnd)
+ 32. (function (e)  ...
+
+ x Failed to render RMarkdown
+Caused by error:
+! callr subprocess failed: there is no package called 'broom.mixed'
+Caused by error:
+! there is no package called 'broom.mixed' 
+
 Execution halted

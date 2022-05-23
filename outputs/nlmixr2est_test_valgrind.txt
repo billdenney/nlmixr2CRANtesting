@@ -1,3 +1,8 @@
+==904580== Memcheck, a memory error detector
+==904580== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==904580== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
+==904580== Command: /usr/lib/R/bin/exec/R -e devtools::load_all();devtools::test()
+==904580== 
 
 R version 4.2.0 (2022-04-22) -- "Vigorous Calisthenics"
 Copyright (C) 2022 The R Foundation for Statistical Computing
@@ -126,7 +131,7 @@ gcc -I"/usr/share/R/include" -DNDEBUG  -I'/home/bill/R/x86_64-pc-linux-gnu-libra
 gcc -I"/usr/share/R/include" -DNDEBUG  -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/dparser/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/rxode2/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/RcppEigen/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/lbfgsb3c/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/Rcpp/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/BH/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/StanHeaders/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/RcppArmadillo/include'    -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-apO4Ea/r-base-4.2.0=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c lbfgsR.c -o lbfgsR.o
 gcc -I"/usr/share/R/include" -DNDEBUG  -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/dparser/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/rxode2/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/RcppEigen/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/lbfgsb3c/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/Rcpp/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/BH/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/StanHeaders/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/RcppArmadillo/include'    -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-apO4Ea/r-base-4.2.0=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c utilc.c -o utilc.o
 g++ -std=gnu++14 -shared -L/usr/lib/R/lib -Wl,-Bsymbolic-functions -Wl,-z,relro -o nlmixr2est.so inner.o expandNlme.o saem.o npde.o shrink.o ires.o res.o cwres.o censResid.o cholse.o neldermead.o resid.o slice.o RcppExportMod.o ode_cmt1.o RcppExports.o init.o rprintf.o merge3.o lbfgsR.o utilc.o -llapack -lblas -lgfortran -lm -lquadmath -fopenmp -L/usr/lib/R/lib -lR
-installing to /tmp/RtmpFDN4fr/devtools_install_a97927164285b/00LOCK-nlmixr2est/00new/nlmixr2est/libs
+installing to /tmp/RtmphEOX9h/devtools_install_dcd84707916c6/00LOCK-nlmixr2est/00new/nlmixr2est/libs
 ** checking absolute paths in shared objects and dynamic libraries
 * DONE (nlmixr2est)
 Loading required package: nlmixr2data
@@ -182,10 +187,10 @@ v done
 > calculate jacobian
 
 > calculate d(f)/d(eta)
-[====|====|====|====|====|====|====|====|====|====] 0:00:00 
+[====|====|====|====|====|====|====|====|====|====] 0:00:05 
 
 > calculate d(R^2)/d(eta)
-[====|====|====|====|====|====|====|====|====|====] 0:00:00 
+[====|====|====|====|====|====|====|====|====|====] 0:00:07 
 
 > finding duplicate expressions in inner model...
 [====|====|====|====|====|====|====|====|====|====] 0:00:00 
@@ -214,17 +219,17 @@ v done
 v done
 > compress origData in nlmixr2 object, save 14912
 > compress phiM in nlmixr2 object, save 168720
-> compress parHist in nlmixr2 object, save 10648
+> compress parHist in nlmixr2 object, save 10808
 > loading into symengine environment...
 > pruning branches (`if`/`else`) of full model...
 v done
 > calculate jacobian
 
 > calculate d(f)/d(eta)
-[====|====|====|====|====|====|====|====|====|====] 0:00:00 
+[====|====|====|====|====|====|====|====|====|====] 0:00:05 
 
 > calculate d(R^2)/d(eta)
-[====|====|====|====|====|====|====|====|====|====] 0:00:00 
+[====|====|====|====|====|====|====|====|====|====] 0:00:06 
 
 > finding duplicate expressions in inner model...
 [====|====|====|====|====|====|====|====|====|====] 0:00:00 
@@ -257,7 +262,7 @@ v done
 > calculate jacobian
 
 > calculate d(f)/d(eta)
-[====|====|====|====|====|====|====|====|====|====] 0:00:00 
+[====|====|====|====|====|====|====|====|====|====] 0:00:01 
 
 > finding duplicate expressions in inner model...
 [====|====|====|====|====|====|====|====|====|====] 0:00:00 
@@ -289,10 +294,10 @@ v done
 > calculate jacobian
 
 > calculate d(f)/d(eta)
-[====|====|====|====|====|====|====|====|====|====] 0:00:00 
+[====|====|====|====|====|====|====|====|====|====] 0:00:01 
 
 > calculate d(R^2)/d(eta)
-[====|====|====|====|====|====|====|====|====|====] 0:00:00 
+[====|====|====|====|====|====|====|====|====|====] 0:00:02 
 
 > finding duplicate expressions in inner model...
 [====|====|====|====|====|====|====|====|====|====] 0:00:00 
@@ -320,8 +325,322 @@ v done
 v done
 
 ⠙ |   1     1 | augpred                                                         
+⠹ |   2     1 | augpred                                                         
 ⠸ |   2     2 | augpred                                                         
-✖ | 1 2     2 | augpred [14.4s]
+⠼ | 1 2     2 | augpred                                                         i parameter labels from comments will be replaced by 'label()'
+> loading into symengine environment...
+> pruning branches (`if`/`else`) of full model...
+v done
+> finding duplicate expressions in EBE model...
+[====|====|====|====|====|====|====|====|====|====] 0:00:00 
+
+> optimizing duplicate expressions in EBE model...
+[====|====|====|====|====|====|====|====|====|====] 0:00:00 
+
+> compiling EBE model...
+v done
+Key: U: Unscaled Parameters; X: Back-transformed parameters; G: Gill difference gradient approximation
+F: Forward difference gradient approximation
+C: Central difference gradient approximation
+M: Mixed forward and central difference gradient approximation
+Unscaled parameters for Omegas=chol(solve(omega));
+Diagonals are transformed, as specified by foceiControl(diagXform=)
+|-----+---------------+-----------+-----------+-----------+-----------|
+|    #| Objective Fun |       tka |       tcl |        tv |    add.sd |
+|-----+---------------+-----------+-----------+-----------+-----------|
+|    1|     424.18822 |    -1.000 |   -0.6378 |     1.000 |   -0.8333 |
+|    U|     424.18822 |    0.4500 |    0.9933 |     3.450 |    0.7000 |
+|    X|     424.18822 |     1.568 |     2.700 |     31.50 |    0.7000 |
+|    G|    Gill Diff. |     124.8 |    -10.26 |    -397.0 |    -386.3 |
+|-----+---------------+-----------+-----------+-----------+-----------|
+|    2|     1160.9397 |    -1.220 |   -0.6198 |     1.699 |   -0.1531 |
+|    U|     1160.9397 |    0.2302 |     1.011 |     4.149 |    0.9381 |
+|    X|     1160.9397 |     1.259 |     2.749 |     63.37 |    0.9381 |
+|    3|     430.98040 |    -1.048 |   -0.6339 |     1.152 |   -0.6853 |
+|    U|      430.9804 |    0.4022 |    0.9972 |     3.602 |    0.7518 |
+|    X|      430.9804 |     1.495 |     2.711 |     36.68 |    0.7518 |
+|    4|     398.68452 |    -1.023 |   -0.6360 |     1.072 |   -0.7632 |
+|    U|     398.68452 |    0.4273 |    0.9951 |     3.522 |    0.7246 |
+|    X|     398.68452 |     1.533 |     2.705 |     33.86 |    0.7246 |
+|    F| Forward Diff. |    -79.21 |     126.6 |     356.8 |    -339.8 |
+|-----+---------------+-----------+-----------+-----------+-----------|
+|    5|     376.88862 |    -1.007 |   -0.6613 |     1.001 |   -0.6951 |
+|    U|     376.88862 |    0.4432 |    0.9697 |     3.451 |    0.7484 |
+|    X|     376.88862 |     1.558 |     2.637 |     31.52 |    0.7484 |
+|    F| Forward Diff. |     97.71 |    -61.80 |    -372.1 |    -300.6 |
+|-----+---------------+-----------+-----------+-----------+-----------|
+|    6|     353.99857 |    -1.025 |   -0.6516 |     1.069 |   -0.6211 |
+|    U|     353.99857 |    0.4248 |    0.9794 |     3.519 |    0.7743 |
+|    X|     353.99857 |     1.529 |     2.663 |     33.77 |    0.7743 |
+|    F| Forward Diff. |    -68.36 |     77.08 |     273.9 |    -261.7 |
+|-----+---------------+-----------+-----------+-----------+-----------|
+|    7|     334.91294 |    -1.010 |   -0.6697 |     1.007 |   -0.5424 |
+|    U|     334.91294 |    0.4404 |    0.9614 |     3.457 |    0.8018 |
+|    X|     334.91294 |     1.553 |     2.615 |     31.73 |    0.8018 |
+|    F| Forward Diff. |     68.00 |    -58.62 |    -278.4 |    -228.0 |
+|-----+---------------+-----------+-----------+-----------+-----------|
+|    8|     317.08422 |    -1.024 |   -0.6558 |     1.069 |   -0.4618 |
+|    U|     317.08422 |    0.4264 |    0.9752 |     3.519 |    0.8300 |
+|    X|     317.08422 |     1.532 |     2.652 |     33.74 |    0.8300 |
+|    F| Forward Diff. |    -56.87 |     59.20 |     225.0 |    -197.5 |
+|-----+---------------+-----------+-----------+-----------+-----------|
+|    9|     301.11299 |    -1.008 |   -0.6684 |     1.012 |   -0.3776 |
+|    U|     301.11299 |    0.4420 |    0.9627 |     3.462 |    0.8595 |
+|    X|     301.11299 |     1.556 |     2.619 |     31.90 |    0.8595 |
+|    F| Forward Diff. |     51.60 |    -40.72 |    -205.8 |    -170.3 |
+|-----+---------------+-----------+-----------+-----------+-----------|
+|   10|     287.50392 |    -1.021 |   -0.6559 |     1.067 |   -0.2918 |
+|    U|     287.50392 |    0.4294 |    0.9752 |     3.517 |    0.8896 |
+|    X|     287.50392 |     1.536 |     2.652 |     33.68 |    0.8896 |
+|    F| Forward Diff. |    -44.39 |     49.50 |     181.0 |    -146.7 |
+|-----+---------------+-----------+-----------+-----------+-----------|
+|   11|     274.80427 |    -1.008 |   -0.6696 |     1.017 |   -0.2034 |
+|    U|     274.80427 |    0.4416 |    0.9615 |     3.467 |    0.9205 |
+|    X|     274.80427 |     1.555 |     2.616 |     32.04 |    0.9205 |
+|    F| Forward Diff. |     38.00 |    -31.61 |    -153.5 |    -125.2 |
+|-----+---------------+-----------+-----------+-----------+-----------|
+|   12|     264.43478 |    -1.019 |   -0.6574 |     1.064 |   -0.1130 |
+|    U|     264.43478 |    0.4309 |    0.9736 |     3.514 |    0.9521 |
+|    X|     264.43478 |     1.539 |     2.648 |     33.58 |    0.9521 |
+|    F| Forward Diff. |    -34.14 |     38.44 |     139.8 |    -106.9 |
+|-----+---------------+-----------+-----------+-----------+-----------|
+|   13|     254.80527 |    -1.008 |   -0.6680 |     1.020 |  -0.02083 |
+|    U|     254.80527 |    0.4421 |    0.9630 |     3.470 |    0.9844 |
+|    X|     254.80527 |     1.556 |     2.620 |     32.15 |    0.9844 |
+|    F| Forward Diff. |     29.14 |    -21.75 |    -114.7 |    -90.28 |
+|-----+---------------+-----------+-----------+-----------+-----------|
+|   14|     247.19340 |    -1.024 |   -0.6758 |     1.062 |   0.07162 |
+|    U|      247.1934 |    0.4256 |    0.9553 |     3.512 |     1.017 |
+|    X|      247.1934 |     1.531 |     2.599 |     33.53 |     1.017 |
+|    F| Forward Diff. |    -32.32 |     11.80 |     104.2 |    -76.28 |
+|-----+---------------+-----------+-----------+-----------+-----------|
+|   15|     244.41634 |   -0.9834 |   -0.6105 |     1.024 |    0.1285 |
+|    U|     244.41634 |    0.4666 |     1.021 |     3.474 |     1.037 |
+|    X|     244.41634 |     1.595 |     2.775 |     32.26 |     1.037 |
+|    F| Forward Diff. |     39.88 |     50.92 |    -60.37 |    -69.49 |
+|-----+---------------+-----------+-----------+-----------+-----------|
+|   16|     238.55377 |    -1.019 |   -0.6745 |     1.059 |    0.1920 |
+|    U|     238.55377 |    0.4307 |    0.9566 |     3.509 |     1.059 |
+|    X|     238.55377 |     1.538 |     2.603 |     33.41 |     1.059 |
+|    F| Forward Diff. |    -23.20 |     9.410 |     77.57 |    -60.45 |
+|-----+---------------+-----------+-----------+-----------+-----------|
+|   17|     244.99689 |    -1.008 |   -0.7087 |    0.9839 |    0.2530 |
+|    U|     244.99689 |    0.4420 |    0.9224 |     3.434 |     1.080 |
+|    X|     244.99689 |     1.556 |     2.515 |     31.00 |     1.080 |
+|   18|     236.90387 |    -1.012 |   -0.6774 |     1.035 |    0.2108 |
+|    U|     236.90387 |    0.4379 |    0.9537 |     3.485 |     1.065 |
+|    X|     236.90387 |     1.549 |     2.595 |     32.62 |     1.065 |
+|    F| Forward Diff. |     6.222 |    -14.97 |    -37.23 |    -57.92 |
+|-----+---------------+-----------+-----------+-----------+-----------|
+|   19|     235.48581 |    -1.015 |   -0.6707 |     1.051 |    0.2365 |
+|    U|     235.48581 |    0.4351 |    0.9603 |     3.501 |     1.074 |
+|    X|     235.48581 |     1.545 |     2.613 |     33.16 |     1.074 |
+|    F| Forward Diff. |    -12.36 |     6.638 |     42.93 |    -55.06 |
+|-----+---------------+-----------+-----------+-----------+-----------|
+|   20|     234.21073 |    -1.009 |   -0.6737 |     1.032 |    0.2609 |
+|    U|     234.21073 |    0.4406 |    0.9574 |     3.482 |     1.083 |
+|    X|     234.21073 |     1.554 |     2.605 |     32.54 |     1.083 |
+|    F| Forward Diff. |     10.23 |    -12.80 |    -45.81 |    -52.46 |
+|-----+---------------+-----------+-----------+-----------+-----------|
+|   21|     233.05872 |    -1.014 |   -0.6681 |     1.053 |    0.2839 |
+|    U|     233.05872 |    0.4361 |    0.9630 |     3.503 |     1.091 |
+|    X|     233.05872 |     1.547 |     2.620 |     33.20 |     1.091 |
+|    F| Forward Diff. |    -12.50 |     10.06 |     47.72 |    -50.07 |
+|-----+---------------+-----------+-----------+-----------+-----------|
+|   22|     231.98555 |    -1.008 |   -0.6725 |     1.031 |    0.3061 |
+|    U|     231.98555 |    0.4416 |    0.9586 |     3.481 |     1.099 |
+|    X|     231.98555 |     1.555 |     2.608 |     32.51 |     1.099 |
+|    F| Forward Diff. |     11.59 |    -12.12 |    -48.71 |    -47.84 |
+|-----+---------------+-----------+-----------+-----------+-----------|
+|   23|     230.86406 |    -1.015 |   -0.6668 |     1.051 |    0.3290 |
+|    U|     230.86406 |    0.4352 |    0.9643 |     3.501 |     1.107 |
+|    X|     230.86406 |     1.545 |     2.623 |     33.16 |     1.107 |
+|    F| Forward Diff. |    -11.32 |     9.867 |     42.83 |    -45.57 |
+|-----+---------------+-----------+-----------+-----------+-----------|
+|   24|     229.82438 |    -1.010 |   -0.6714 |     1.031 |    0.3527 |
+|    U|     229.82438 |    0.4395 |    0.9597 |     3.481 |     1.115 |
+|    X|     229.82438 |     1.552 |     2.611 |     32.51 |     1.115 |
+|    F| Forward Diff. |     10.04 |    -10.70 |    -44.09 |    -43.34 |
+|-----+---------------+-----------+-----------+-----------+-----------|
+|   25|     228.74310 |    -1.014 |   -0.6682 |     1.051 |    0.3771 |
+|    U|      228.7431 |    0.4362 |    0.9628 |     3.501 |     1.124 |
+|    X|      228.7431 |     1.547 |     2.619 |     33.14 |     1.124 |
+|    F| Forward Diff. |    -10.11 |     7.967 |     38.05 |    -41.09 |
+|-----+---------------+-----------+-----------+-----------+-----------|
+|   26|     227.75230 |    -1.009 |   -0.6716 |     1.033 |    0.4022 |
+|    U|      227.7523 |    0.4408 |    0.9595 |     3.483 |     1.132 |
+|    X|      227.7523 |     1.554 |     2.610 |     32.55 |     1.132 |
+|    F| Forward Diff. |     9.250 |    -9.492 |    -39.19 |    -38.88 |
+|-----+---------------+-----------+-----------+-----------+-----------|
+|   27|     226.73804 |    -1.017 |   -0.6660 |     1.048 |    0.4278 |
+|    U|     226.73804 |    0.4332 |    0.9651 |     3.498 |     1.141 |
+|    X|     226.73804 |     1.542 |     2.625 |     33.06 |     1.141 |
+|    F| Forward Diff. |    -9.259 |     7.854 |     32.48 |    -36.68 |
+|-----+---------------+-----------+-----------+-----------+-----------|
+|   28|     225.86698 |    -1.006 |   -0.6745 |     1.035 |    0.4527 |
+|    U|     225.86698 |    0.4440 |    0.9566 |     3.485 |     1.150 |
+|    X|     225.86698 |     1.559 |     2.603 |     32.62 |     1.150 |
+|    F| Forward Diff. |     8.446 |    -9.890 |    -34.33 |    -34.65 |
+|-----+---------------+-----------+-----------+-----------+-----------|
+|   29|     224.92901 |    -1.014 |   -0.6654 |     1.048 |    0.4789 |
+|    U|     224.92901 |    0.4364 |    0.9657 |     3.498 |     1.159 |
+|    X|     224.92901 |     1.547 |     2.627 |     33.04 |     1.159 |
+|    F| Forward Diff. |    -6.751 |     7.759 |     26.89 |    -32.54 |
+|-----+---------------+-----------+-----------+-----------+-----------|
+|   30|     224.20564 |    -1.021 |   -0.6700 |     1.031 |    0.5039 |
+|    U|     224.20564 |    0.4294 |    0.9611 |     3.481 |     1.168 |
+|    X|     224.20564 |     1.536 |     2.615 |     32.48 |     1.168 |
+|    F| Forward Diff. |     4.652 |    -9.348 |    -33.01 |    -30.68 |
+|-----+---------------+-----------+-----------+-----------+-----------|
+|   31|     223.58138 |    -1.005 |   -0.6728 |     1.051 |    0.5220 |
+|    U|     223.58138 |    0.4451 |    0.9583 |     3.501 |     1.174 |
+|    X|     223.58138 |     1.561 |     2.607 |     33.14 |     1.174 |
+|    F| Forward Diff. |    -4.885 |     3.697 |     24.11 |    -29.29 |
+|-----+---------------+-----------+-----------+-----------+-----------|
+|   32|     223.00147 |   -0.9954 |   -0.6674 |     1.035 |    0.5471 |
+|    U|     223.00147 |    0.4546 |    0.9637 |     3.485 |     1.183 |
+|    X|     223.00147 |     1.575 |     2.621 |     32.63 |     1.183 |
+|    F| Forward Diff. |     13.28 |    -2.903 |    -35.64 |    -27.57 |
+|-----+---------------+-----------+-----------+-----------+-----------|
+|   33|     222.38749 |    -1.021 |   -0.6652 |     1.043 |    0.5639 |
+|    U|     222.38749 |    0.4293 |    0.9659 |     3.493 |     1.189 |
+|    X|     222.38749 |     1.536 |     2.627 |     32.90 |     1.189 |
+|    F| Forward Diff. |    -6.272 |     4.292 |     16.47 |    -26.30 |
+|-----+---------------+-----------+-----------+-----------+-----------|
+|   34|     221.97655 |    -1.017 |   -0.6734 |     1.029 |    0.5900 |
+|    U|     221.97655 |    0.4335 |    0.9577 |     3.479 |     1.198 |
+|    X|     221.97655 |     1.543 |     2.606 |     32.41 |     1.198 |
+|    F| Forward Diff. |     8.195 |    -13.24 |    -44.90 |    -24.68 |
+|-----+---------------+-----------+-----------+-----------+-----------|
+|   35|     221.37963 |   -0.9971 |   -0.6737 |     1.049 |    0.6036 |
+|    U|     221.37963 |    0.4529 |    0.9574 |     3.499 |     1.203 |
+|    X|     221.37963 |     1.573 |     2.605 |     33.09 |     1.203 |
+|    F| Forward Diff. |    0.3050 |     1.874 |     10.74 |    -23.62 |
+|-----+---------------+-----------+-----------+-----------+-----------|
+|   36|     220.89409 |   -0.9975 |   -0.6759 |     1.036 |    0.6322 |
+|    U|     220.89409 |    0.4525 |    0.9551 |     3.486 |     1.213 |
+|    X|     220.89409 |     1.572 |     2.599 |     32.66 |     1.213 |
+|    F| Forward Diff. |     10.63 |    -9.033 |    -34.79 |    -21.89 |
+|-----+---------------+-----------+-----------+-----------+-----------|
+|   37|     220.44843 |    -1.022 |   -0.6632 |     1.041 |    0.6456 |
+|    U|     220.44843 |    0.4275 |    0.9678 |     3.491 |     1.218 |
+|    X|     220.44843 |     1.533 |     2.632 |     32.83 |     1.218 |
+|    F| Forward Diff. |    -5.033 |     4.129 |     11.20 |    -20.96 |
+|-----+---------------+-----------+-----------+-----------+-----------|
+|   38|     220.02890 |    -1.016 |   -0.6742 |     1.032 |    0.6730 |
+|    U|      220.0289 |    0.4336 |    0.9569 |     3.482 |     1.227 |
+|    X|      220.0289 |     1.543 |     2.604 |     32.53 |     1.227 |
+|    F| Forward Diff. |     4.986 |    -10.77 |    -31.66 |    -19.37 |
+|-----+---------------+-----------+-----------+-----------+-----------|
+|   39|     219.62257 |   -0.9952 |   -0.6746 |     1.050 |    0.6877 |
+|    U|     219.62257 |    0.4548 |    0.9564 |     3.500 |     1.232 |
+|    X|     219.62257 |     1.576 |     2.602 |     33.12 |     1.232 |
+|    F| Forward Diff. |    0.5325 |     1.609 |     10.68 |    -18.44 |
+|-----+---------------+-----------+-----------+-----------+-----------|
+|   40|     219.30572 |    -1.001 |   -0.6691 |     1.034 |    0.7137 |
+|    U|     219.30572 |    0.4495 |    0.9620 |     3.484 |     1.241 |
+|    X|     219.30572 |     1.567 |     2.617 |     32.59 |     1.241 |
+|    F| Forward Diff. |     10.62 |    -4.882 |    -33.31 |    -17.03 |
+|-----+---------------+-----------+-----------+-----------+-----------|
+|   41|     218.90097 |    -1.027 |   -0.6689 |     1.040 |    0.7299 |
+|    U|     218.90097 |    0.4232 |    0.9622 |     3.490 |     1.247 |
+|    X|     218.90097 |     1.527 |     2.617 |     32.80 |     1.247 |
+|    F| Forward Diff. |    -6.223 |   -0.9880 |     7.647 |    -16.05 |
+|-----+---------------+-----------+-----------+-----------+-----------|
+|   42|     218.53616 |    -1.013 |   -0.6705 |     1.034 |    0.7572 |
+|    U|     218.53616 |    0.4374 |    0.9606 |     3.484 |     1.257 |
+|    X|     218.53616 |     1.549 |     2.613 |     32.59 |     1.257 |
+|    F| Forward Diff. |     5.075 |    -6.118 |    -24.58 |    -14.60 |
+|-----+---------------+-----------+-----------+-----------+-----------|
+|   43|     218.35372 |   -0.9983 |   -0.6524 |     1.046 |    0.7751 |
+|    U|     218.35372 |    0.4517 |    0.9787 |     3.496 |     1.263 |
+|    X|     218.35372 |     1.571 |     2.661 |     32.97 |     1.263 |
+|    F| Forward Diff. |     2.796 |     15.15 |     12.95 |    -13.70 |
+|-----+---------------+-----------+-----------+-----------+-----------|
+|   44|     217.97657 |   -0.9933 |   -0.6773 |     1.046 |    0.7937 |
+|    U|     217.97657 |    0.4567 |    0.9538 |     3.496 |     1.269 |
+|    X|     217.97657 |     1.579 |     2.596 |     32.99 |     1.269 |
+|    F| Forward Diff. |     4.194 |    -2.863 |    -5.254 |    -12.67 |
+|-----+---------------+-----------+-----------+-----------+-----------|
+|   45|     217.87378 |    -1.002 |   -0.6711 |     1.057 |    0.8210 |
+|    U|     217.87378 |    0.4477 |    0.9600 |     3.507 |     1.279 |
+|    X|     217.87378 |     1.565 |     2.612 |     33.36 |     1.279 |
+|    F| Forward Diff. |    -7.628 |     8.249 |     38.90 |    -11.44 |
+|-----+---------------+-----------+-----------+-----------+-----------|
+|   46|     217.45711 |    -1.018 |   -0.6617 |     1.037 |    0.8372 |
+|    U|     217.45711 |    0.4324 |    0.9694 |     3.487 |     1.285 |
+|    X|     217.45711 |     1.541 |     2.636 |     32.70 |     1.285 |
+|    F| Forward Diff. |    0.4505 |     2.505 |    -4.344 |    -10.52 |
+|-----+---------------+-----------+-----------+-----------+-----------|
+|   47|     217.27810 |    -1.019 |   -0.6676 |     1.048 |    0.8660 |
+|    U|      217.2781 |    0.4306 |    0.9635 |     3.498 |     1.295 |
+|    X|      217.2781 |     1.538 |     2.621 |     33.06 |     1.295 |
+|    F| Forward Diff. |    -8.230 |     4.883 |     25.80 |    -9.229 |
+|-----+---------------+-----------+-----------+-----------+-----------|
+|   48|     216.94271 |    -1.002 |   -0.6706 |     1.046 |    0.8922 |
+|    U|     216.94271 |    0.4476 |    0.9605 |     3.496 |     1.304 |
+|    X|     216.94271 |     1.565 |     2.613 |     33.00 |     1.304 |
+|   49|     216.85123 |   -0.9856 |   -0.6721 |     1.055 |    0.9196 |
+|    U|     216.85123 |    0.4644 |    0.9590 |     3.505 |     1.314 |
+|    X|     216.85123 |     1.591 |     2.609 |     33.29 |     1.314 |
+|    F| Forward Diff. |    0.8945 |     6.214 |     18.88 |    -6.845 |
+|-----+---------------+-----------+-----------+-----------+-----------|
+|   50|     216.49559 |    -1.009 |   -0.6540 |     1.038 |    0.9736 |
+|    U|     216.49559 |    0.4412 |    0.9771 |     3.488 |     1.332 |
+|    X|     216.49559 |     1.554 |     2.657 |     32.71 |     1.332 |
+|    F| Forward Diff. |     3.698 |     7.943 |    -4.244 |    -4.582 |
+|-----+---------------+-----------+-----------+-----------+-----------|
+|   51|     216.55072 |    -1.004 |   -0.6950 |     1.038 |     1.022 |
+|    U|     216.55072 |    0.4459 |    0.9361 |     3.488 |     1.349 |
+|    X|     216.55072 |     1.562 |     2.550 |     32.73 |     1.349 |
+|   52|     216.36028 |    -1.013 |   -0.6751 |     1.044 |    0.9919 |
+|    U|     216.36028 |    0.4371 |    0.9559 |     3.494 |     1.339 |
+|    X|     216.36028 |     1.548 |     2.601 |     32.91 |     1.339 |
+|    F| Forward Diff. |    -2.374 |    -2.751 |     3.433 |    -3.825 |
+|-----+---------------+-----------+-----------+-----------+-----------|
+|   53|     216.25753 |    -1.014 |   -0.6707 |     1.043 |     1.021 |
+|    U|     216.25753 |    0.4361 |    0.9604 |     3.493 |     1.349 |
+|    X|     216.25753 |     1.547 |     2.613 |     32.88 |     1.349 |
+|   54|     216.19966 |    -1.019 |   -0.6642 |     1.044 |     1.078 |
+|    U|     216.19966 |    0.4314 |    0.9669 |     3.494 |     1.369 |
+|    X|     216.19966 |     1.539 |     2.630 |     32.92 |     1.369 |
+|    F| Forward Diff. |    -4.341 |     4.277 |     13.36 |   -0.6539 |
+|-----+---------------+-----------+-----------+-----------+-----------|
+|   55|     216.56612 |   -0.9955 |   -0.6789 |     1.032 |     1.160 |
+|    U|     216.56612 |    0.4545 |    0.9521 |     3.482 |     1.398 |
+|    X|     216.56612 |     1.575 |     2.591 |     32.52 |     1.398 |
+|   56|     216.29226 |    -1.011 |   -0.6701 |     1.032 |     1.094 |
+|    U|     216.29226 |    0.4390 |    0.9609 |     3.482 |     1.374 |
+|    X|     216.29226 |     1.551 |     2.614 |     32.52 |     1.374 |
+|   57|     216.17404 |    -1.016 |   -0.6665 |     1.037 |     1.078 |
+|    U|     216.17404 |    0.4338 |    0.9646 |     3.487 |     1.369 |
+|    X|     216.17404 |     1.543 |     2.624 |     32.68 |     1.369 |
+|    F| Forward Diff. |     1.084 |    -1.053 |    -8.368 |   -0.6285 |
+|-----+---------------+-----------+-----------+-----------+-----------|
+|   58|     216.15572 |    -1.015 |   -0.6671 |     1.040 |     1.086 |
+|    U|     216.15572 |    0.4354 |    0.9640 |     3.490 |     1.372 |
+|    X|     216.15572 |     1.546 |     2.622 |     32.79 |     1.372 |
+|    F| Forward Diff. |   -0.3343 |    0.2755 |    -1.442 |   -0.3731 |
+|-----+---------------+-----------+-----------+-----------+-----------|
+|   59|     216.15189 |    -1.012 |   -0.6684 |     1.041 |     1.093 |
+|    U|     216.15189 |    0.4378 |    0.9627 |     3.491 |     1.374 |
+|    X|     216.15189 |     1.549 |     2.619 |     32.82 |     1.374 |
+|    F| Forward Diff. |  -0.04218 |   0.04308 |    -1.173 |   -0.1166 |
+|-----+---------------+-----------+-----------+-----------+-----------|
+|   60|     216.15189 |    -1.012 |   -0.6684 |     1.041 |     1.093 |
+|    U|     216.15189 |    0.4378 |    0.9627 |     3.491 |     1.374 |
+|    X|     216.15189 |     1.549 |     2.619 |     32.82 |     1.374 |
+calculating covariance matrix
+[====|====|====|====|====|====|====|====|====|====] 0:00:00 
+done
+> Calculating residuals/tables
+v done
+> compress origData in nlmixr2 object, save 5952
+> compress parHist in nlmixr2 object, save 1936
+
+⠴ | 1 3     2 | augpred                                                         
+⠦ | 1 3     3 | augpred                                                         
+✖ | 1 3     3 | augpred [346.7s]
 ────────────────────────────────────────────────────────────────────────────────
 Warning (test-augpred.R:76:7): test augPred
 initial ETAs were nudged; (can control by foceiControl(etaNudge=., etaNudge2=))
@@ -333,7 +652,7 @@ Backtrace:
  3. nlmixr2est::nlmixr2Est0(.env)
       at nlmixr2est/R/nlmixr2.R:193:2
  4. base::lapply(.lst[[2]], warning, call. = FALSE)
-      at nlmixr2est/R/nlmixr2Est.R:221:2
+      at nlmixr2est/R/nlmixr2Est.R:236:2
 
 Warning (test-augpred.R:76:7): test augPred
 Hessian reset during optimization; (can control by foceiControl(resetHessianAndEta=.))
@@ -345,7 +664,7 @@ Backtrace:
  3. nlmixr2est::nlmixr2Est0(.env)
       at nlmixr2est/R/nlmixr2.R:193:2
  4. base::lapply(.lst[[2]], warning, call. = FALSE)
-      at nlmixr2est/R/nlmixr2Est.R:221:2
+      at nlmixr2est/R/nlmixr2Est.R:236:2
 
 Error (test-augpred.R:84:5): test augPred with xgxr dataset
 <packageNotFoundError/error/condition>
@@ -357,6 +676,18 @@ Backtrace:
  6. base::withRestarts(stop(cond), retry_loadNamespace = function() NULL)
  7. base withOneRestart(expr, restarts[[1L]])
  8. base doWithOneRestart(return(expr), restart)
+
+Warning (test-augpred.R:154:5): augPred with pop only data
+gradient problems with initial estimate and covariance; see $scaleInfo
+Backtrace:
+ 1. nlmixr2est::nlmixr(...)
+      at test-augpred.R:154:4
+ 2. nlmixr2est::nlmixr2.function(...)
+      at nlmixr2est/R/nlmixr2.R:115:2
+ 3. nlmixr2est::nlmixr2Est0(.env)
+      at nlmixr2est/R/nlmixr2.R:193:2
+ 4. base::lapply(.lst[[2]], warning, call. = FALSE)
+      at nlmixr2est/R/nlmixr2Est.R:236:2
 ────────────────────────────────────────────────────────────────────────────────
 
 ⠏ |         0 | broom                                                           
@@ -366,7 +697,7 @@ Backtrace:
 ⠸ | 4       0 | broom                                                           
 ⠼ | 5       0 | broom                                                           
 ⠴ | 6       0 | broom                                                           
-✖ | 6       0 | broom [12.0s]
+✖ | 6       0 | broom [2390.4s]
 ────────────────────────────────────────────────────────────────────────────────
 Error (test-broom.R:57:5): tidy works on nlmixr fit SAEM fits
 <packageNotFoundError/error/condition>
@@ -430,29 +761,64 @@ Backtrace:
 ────────────────────────────────────────────────────────────────────────────────
 
 ⠏ |         0 | control                                                         
+⠋ |         1 | control                                                         
+⠙ |         2 | control                                                         
+⠸ |         4 | control                                                         
+⠴ |         6 | control                                                         
+⠧ |         8 | control                                                         
+⠇ |         9 | control                                                         
+⠏ |        10 | control                                                         
+⠋ |        11 | control                                                         
+⠙ |        12 | control                                                         
+⠸ |        14 | control                                                         
+⠼ |        15 | control                                                         
+⠴ |        16 | control                                                         
+⠦ |        17 | control                                                         
+⠧ |        18 | control                                                         
+⠏ |        20 | control                                                         
+⠙ |        22 | control                                                         
+⠸ |        24 | control                                                         
+⠼ |        25 | control                                                         
+⠴ |        26 | control                                                         
+⠧ |        28 | control                                                         
+⠇ |        29 | control                                                         
+⠏ |        30 | control                                                         
 ⠋ |        31 | control                                                         
-✔ |        43 | control [0.1s]
+⠹ |        33 | control                                                         
+⠼ |        35 | control                                                         
+⠦ |        37 | control                                                         
+⠧ |        38 | control                                                         
+⠇ |        39 | control                                                         
+⠏ |        40 | control                                                         
+⠋ |        41 | control                                                         
+⠙ |        42 | control                                                         
+⠹ |        43 | control                                                         
+✔ |        43 | control [5.8s]
 
 ⠏ |         0 | cov-focei                                                       
 ⠋ |         1 | cov-focei                                                       
-✔ |         1 | cov-focei [6.5s]
+✔ |         1 | cov-focei [129.9s]
 
 ⠏ |         0 | cov-mu                                                          
 ⠋ |         1 | cov-mu                                                          
-✔ |         1 | cov-mu [0.1s]
+✔ |         1 | cov-mu [2.8s]
 
 ⠏ |         0 | cwres                                                           
 ⠋ |         1 | cwres                                                           
 ⠙ |         2 | cwres                                                           
+⠸ |         4 | cwres                                                           
 ⠼ |         5 | cwres                                                           
 ⠴ |         6 | cwres                                                           
+⠧ |         8 | cwres                                                           
 ⠇ |         9 | cwres                                                           
 ⠏ |        10 | cwres                                                           
+⠙ |        12 | cwres                                                           
 ⠹ |        13 | cwres                                                           
-✔ |        13 | cwres [12.3s]
+✔ |        13 | cwres [322.8s]
 
 ⠏ |         0 | fix-cov                                                         
-⠋ |         1 | fix-cov                                                         > loading into symengine environment...
+⠋ |         1 | fix-cov                                                         
+⠙ |         2 | fix-cov                                                         > loading into symengine environment...
 > pruning branches (`if`/`else`) of saem model...
 v done
 > finding duplicate expressions in saem model...
@@ -986,7 +1352,7 @@ v done
 v done
 > compress origData in nlmixr2 object, save 7008
 > compress phiM in nlmixr2 object, save 58208
-> compress parHist in nlmixr2 object, save 15240
+> compress parHist in nlmixr2 object, save 15392
 
 ⠹ |   1     2 | fix-cov                                                         > loading into symengine environment...
 > pruning branches (`if`/`else`) of saem model...
@@ -1500,7 +1866,7 @@ params:	tka	tcl	sexf.cl	wt.cl	tv	wt.v2	V(eta.ka)	V(eta.cl)	V(eta.v)	add.sd
 499: 0.450000	1.384016	1.013743	3.676440	3.526685	-2.387872	0.524581	0.180652	0.047911	0.604935	
 500: 0.450000	1.384100	1.013518	3.676808	3.526703	-2.387636	0.524573	0.180715	0.047922	0.604829	
 Calculating covariance matrix
-[====|====|====|====|====|====|====|====|====|====] 0:00:00 
+[====|====|====|====|====|====|====|====|====|====] 0:00:03 
 Error : Error calculating covariance via linearization
 > loading into symengine environment...
 > pruning branches (`if`/`else`) of saem model...
@@ -1522,9 +1888,17 @@ v done
 v done
 > compress origData in nlmixr2 object, save 7008
 > compress phiM in nlmixr2 object, save 58208
-> compress parHist in nlmixr2 object, save 15240
+> compress parHist in nlmixr2 object, save 15392
 
-⠼ |   3     2 | fix-cov                                                         > loading into symengine environment...
+⠼ |   3     2 | fix-cov                                                         
+⠴ |   4     2 | fix-cov                                                         
+⠦ |   4     3 | fix-cov                                                         
+⠇ |   4     5 | fix-cov                                                         
+⠋ |   4     7 | fix-cov                                                         
+⠹ |   4     9 | fix-cov                                                         
+⠼ |   4    11 | fix-cov                                                         
+⠴ |   4    12 | fix-cov                                                         
+⠦ |   4    13 | fix-cov                                                         > loading into symengine environment...
 > pruning branches (`if`/`else`) of saem model...
 v done
 > finding duplicate expressions in saem model...
@@ -2058,9 +2432,12 @@ v done
 v done
 > compress origData in nlmixr2 object, save 7008
 > compress phiM in nlmixr2 object, save 88064
-> compress parHist in nlmixr2 object, save 14512
+> compress parHist in nlmixr2 object, save 14672
 
-⠧ |   5    13 | fix-cov                                                         > loading into symengine environment...
+⠧ |   5    13 | fix-cov                                                         
+⠇ |   6    13 | fix-cov                                                         
+⠏ |   6    14 | fix-cov                                                         
+⠋ |   6    15 | fix-cov                                                         > loading into symengine environment...
 > pruning branches (`if`/`else`) of saem model...
 v done
 > finding duplicate expressions in saem model...
@@ -2597,10 +2974,11 @@ v done
 v done
 > compress origData in nlmixr2 object, save 7008
 > compress phiM in nlmixr2 object, save 58208
-> compress parHist in nlmixr2 object, save 15240
+> compress parHist in nlmixr2 object, save 15392
 
 ⠙ |   7    15 | fix-cov                                                         
-✔ |   8    15 | fix-cov [13.1s]
+⠹ |   8    15 | fix-cov                                                         
+✔ |   8    15 | fix-cov [9831.5s]
 ────────────────────────────────────────────────────────────────────────────────
 Warning (test-fix-cov.R:82:5): test mu reference covariate in saem
 covariance matrix non-positive definite, corrected by sqrtm(fim %*% fim)
@@ -2612,7 +2990,7 @@ Backtrace:
  3. nlmixr2est::nlmixr2Est0(.env)
       at nlmixr2est/R/nlmixr2.R:193:2
  4. base::lapply(.lst[[2]], warning, call. = FALSE)
-      at nlmixr2est/R/nlmixr2Est.R:221:2
+      at nlmixr2est/R/nlmixr2Est.R:236:2
 
 Warning (test-fix-cov.R:82:5): test mu reference covariate in saem
 NAs introduced by coercion
@@ -2624,7 +3002,7 @@ Backtrace:
  3. nlmixr2est::nlmixr2Est0(.env)
       at nlmixr2est/R/nlmixr2.R:193:2
  4. base::lapply(.lst[[2]], warning, call. = FALSE)
-      at nlmixr2est/R/nlmixr2Est.R:221:2
+      at nlmixr2est/R/nlmixr2Est.R:236:2
 
 Warning (test-fix-cov.R:84:5): test mu reference covariate in saem
 covariance matrix non-positive definite, corrected by sqrtm(fim %*% fim)
@@ -2636,7 +3014,7 @@ Backtrace:
  3. nlmixr2est::nlmixr2Est0(.env)
       at nlmixr2est/R/nlmixr2.R:193:2
  4. base::lapply(.lst[[2]], warning, call. = FALSE)
-      at nlmixr2est/R/nlmixr2Est.R:221:2
+      at nlmixr2est/R/nlmixr2Est.R:236:2
 
 Warning (test-fix-cov.R:84:5): test mu reference covariate in saem
 NAs introduced by coercion
@@ -2648,7 +3026,7 @@ Backtrace:
  3. nlmixr2est::nlmixr2Est0(.env)
       at nlmixr2est/R/nlmixr2.R:193:2
  4. base::lapply(.lst[[2]], warning, call. = FALSE)
-      at nlmixr2est/R/nlmixr2Est.R:221:2
+      at nlmixr2est/R/nlmixr2Est.R:236:2
 
 Warning (test-fix-cov.R:129:5): test fixed parameters become non mu referenced covariates
 covariance matrix non-positive definite, corrected by sqrtm(fim %*% fim)
@@ -2660,7 +3038,7 @@ Backtrace:
  3. nlmixr2est::nlmixr2Est0(.env)
       at nlmixr2est/R/nlmixr2.R:193:2
  4. base::lapply(.lst[[2]], warning, call. = FALSE)
-      at nlmixr2est/R/nlmixr2Est.R:221:2
+      at nlmixr2est/R/nlmixr2Est.R:236:2
 
 Warning (test-fix-cov.R:129:5): test fixed parameters become non mu referenced covariates
 NAs introduced by coercion
@@ -2672,7 +3050,7 @@ Backtrace:
  3. nlmixr2est::nlmixr2Est0(.env)
       at nlmixr2est/R/nlmixr2.R:193:2
  4. base::lapply(.lst[[2]], warning, call. = FALSE)
-      at nlmixr2est/R/nlmixr2Est.R:221:2
+      at nlmixr2est/R/nlmixr2Est.R:236:2
 
 Warning (test-fix-cov.R:138:5): all non time-varying covs
 covariance matrix non-positive definite, corrected by sqrtm(fim %*% fim)
@@ -2684,7 +3062,7 @@ Backtrace:
  5. nlmixr2est::nlmixr2Est0(.env)
       at nlmixr2est/R/nlmixr2.R:193:2
  6. base::lapply(.lst[[2]], warning, call. = FALSE)
-      at nlmixr2est/R/nlmixr2Est.R:221:2
+      at nlmixr2est/R/nlmixr2Est.R:236:2
 
 Warning (test-fix-cov.R:138:5): all non time-varying covs
 NAs introduced by coercion
@@ -2696,7 +3074,7 @@ Backtrace:
  5. nlmixr2est::nlmixr2Est0(.env)
       at nlmixr2est/R/nlmixr2.R:193:2
  6. base::lapply(.lst[[2]], warning, call. = FALSE)
-      at nlmixr2est/R/nlmixr2Est.R:221:2
+      at nlmixr2est/R/nlmixr2Est.R:236:2
 ────────────────────────────────────────────────────────────────────────────────
 
 ⠏ |         0 | focei-cens                                                      
@@ -2710,14 +3088,34 @@ Backtrace:
 ⠇ |         9 | focei-cens                                                      
 ⠋ |        11 | focei-cens                                                      
 ⠙ |        12 | focei-cens                                                      
-✔ |        13 | focei-cens [4.6s]
+✔ |        13 | focei-cens [92.4s]
 
 ⠏ |         0 | focei-inner                                                     
 ⠋ |         1 | focei-inner                                                     
-✔ |         1 | focei-inner [1.9s]
+✔ |         1 | focei-inner [33.4s]
 
 ⠏ |         0 | focei-wang2007                                                  
-⠋ |         1 | focei-wang2007                                                  ℹ change initial estimate of `prop.sd` to `0.316227766016838`
+⠋ |         1 | focei-wang2007                                                  
+⠹ |         3 | focei-wang2007                                                  
+⠼ |         5 | focei-wang2007                                                  
+⠴ |         6 | focei-wang2007                                                  
+⠦ |         7 | focei-wang2007                                                  
+⠧ |         8 | focei-wang2007                                                  
+⠏ |        10 | focei-wang2007                                                  
+⠙ |        12 | focei-wang2007                                                  
+⠹ |        13 | focei-wang2007                                                  
+⠸ |        14 | focei-wang2007                                                  
+⠴ |        16 | focei-wang2007                                                  
+⠦ |        17 | focei-wang2007                                                  
+⠧ |        18 | focei-wang2007                                                  
+⠇ |        19 | focei-wang2007                                                  
+⠋ |        21 | focei-wang2007                                                  
+⠹ |        23 | focei-wang2007                                                  
+⠸ |        24 | focei-wang2007                                                  
+⠴ |        26 | focei-wang2007                                                  
+⠧ |        28 | focei-wang2007                                                  
+⠇ |        29 | focei-wang2007                                                  
+⠏ |        30 | focei-wang2007                                                  ℹ change initial estimate of `prop.sd` to `0.316227766016838`
 ℹ change initial estimate of `prop.sd` to `0.316227766016838`
 
 ⠋ |        31 | focei-wang2007                                                  ! remove population parameter `prop.sd`
@@ -5623,7 +6021,7 @@ i change initial estimate of `add.sd` to `0.316227766016838`
 ℹ change initial estimate of `lm` to `0.5`
 
 ⠼ |       335 | focei-wang2007                                                  
-✔ |       335 | focei-wang2007 [1232.3s]
+✔ |       335 | focei-wang2007 [28677.1s]
 
 ⠏ |         0 | integerish-focei-print                                          i parameter labels from comments will be replaced by 'label()'
 > loading into symengine environment...
@@ -5633,13 +6031,13 @@ v done
 [====|====|====|====|====|====|====|====|====|====] 0:00:00 
 
 > calculate sensitivities
-[====|====|====|====|====|====|====|====|====|====] 0:00:00 
+[====|====|====|====|====|====|====|====|====|====] 0:00:01 
 
 > calculate d(f)/d(eta)
 [====|====|====|====|====|====|====|====|====|====] 0:00:00 
 
 > calculate d(R^2)/d(eta)
-[====|====|====|====|====|====|====|====|====|====] 0:00:00 
+[====|====|====|====|====|====|====|====|====|====] 0:00:01 
 
 > finding duplicate expressions in inner model...
 [====|====|====|====|====|====|====|====|====|====] 0:00:00 
@@ -5709,7 +6107,7 @@ Diagonals are transformed, as specified by foceiControl(diagXform=)
 |    X|     429.27302 |     1.033 |    0.1337 |     7.882 |    0.1395 |
 |.....................|    0.6191 |     1.007 |     1.878 |     2.147 |
 calculating covariance matrix
-[====|====|====|====|====|====|====|====|====|====] 0:00:01 
+[====|====|====|====|====|====|====|====|====|====] 0:00:50 
 done
 > Calculating residuals/tables
 v done
@@ -5717,7 +6115,10 @@ v done
 > compress parHist in nlmixr2 object, save 2528
 
 ⠋ |   1     0 | integerish-focei-print                                          
-✔ |   4 1   0 | integerish-focei-print [6.3s]
+⠙ |   2     0 | integerish-focei-print                                          
+⠹ |   3     0 | integerish-focei-print                                          
+⠸ |   4     0 | integerish-focei-print                                          
+✔ |   4 1   0 | integerish-focei-print [190.7s]
 ────────────────────────────────────────────────────────────────────────────────
 Warning (test-integerish-focei-print.R:40:7): integerish error focei
 gradient problems with initial estimate and covariance; see $scaleInfo
@@ -5729,7 +6130,7 @@ Backtrace:
  3. nlmixr2est::nlmixr2Est0(.env)
       at nlmixr2est/R/nlmixr2.R:193:2
  4. base::lapply(.lst[[2]], warning, call. = FALSE)
-      at nlmixr2est/R/nlmixr2Est.R:221:2
+      at nlmixr2est/R/nlmixr2Est.R:236:2
 
 Warning (test-integerish-focei-print.R:40:7): integerish error focei
 last objective function was not at minimum, possible problems in optimization
@@ -5741,7 +6142,7 @@ Backtrace:
  3. nlmixr2est::nlmixr2Est0(.env)
       at nlmixr2est/R/nlmixr2.R:193:2
  4. base::lapply(.lst[[2]], warning, call. = FALSE)
-      at nlmixr2est/R/nlmixr2Est.R:221:2
+      at nlmixr2est/R/nlmixr2Est.R:236:2
 
 Warning (test-integerish-focei-print.R:40:7): integerish error focei
 ETAs were reset to zero during optimization; (Can control by foceiControl(resetEtaP=.))
@@ -5753,7 +6154,7 @@ Backtrace:
  3. nlmixr2est::nlmixr2Est0(.env)
       at nlmixr2est/R/nlmixr2.R:193:2
  4. base::lapply(.lst[[2]], warning, call. = FALSE)
-      at nlmixr2est/R/nlmixr2Est.R:221:2
+      at nlmixr2est/R/nlmixr2Est.R:236:2
 
 Warning (test-integerish-focei-print.R:40:7): integerish error focei
 initial ETAs were nudged; (can control by foceiControl(etaNudge=., etaNudge2=))
@@ -5765,7 +6166,7 @@ Backtrace:
  3. nlmixr2est::nlmixr2Est0(.env)
       at nlmixr2est/R/nlmixr2.R:193:2
  4. base::lapply(.lst[[2]], warning, call. = FALSE)
-      at nlmixr2est/R/nlmixr2Est.R:221:2
+      at nlmixr2est/R/nlmixr2Est.R:236:2
 
 Skip (test-integerish-focei-print.R:2:3): integerish error focei
 Reason: empty test
@@ -5803,29 +6204,72 @@ v done
 v done
 
 ⠙ |         2 | issue-281                                                       
-✔ |         2 | issue-281 [1.8s]
+✔ |         2 | issue-281 [43.4s]
 
 ⠏ |         0 | issue-429                                                       
 ⠋ |         1 | issue-429                                                       
-✔ |         2 | issue-429 [7.2s]
+✔ |         2 | issue-429 [128.5s]
 
 ⠏ |         0 | issue-502                                                       Error : Error calculating covariance via linearization
 
 ⠋ |         1 | issue-502                                                       
-✔ |         1 | issue-502 [4.1s]
+✔ |         1 | issue-502 [79.5s]
 
 ⠏ |         0 | issue-503                                                       
 ⠋ |         1 | issue-503                                                       
-✔ |         1 | issue-503 [9.3s]
+✔ |         1 | issue-503 [216.2s]
 
 ⠏ |         0 | keep                                                            
 ⠋ |         1 | keep                                                            
+⠹ |         3 | keep                                                            
+⠼ |         5 | keep                                                            
+⠦ |         7 | keep                                                            
+⠇ |         9 | keep                                                            
+⠋ |        11 | keep                                                            
+⠹ |        13 | keep                                                            
+⠼ |        15 | keep                                                            
 ⠦ |        17 | keep                                                            
+⠇ |        19 | keep                                                            
+⠋ |        21 | keep                                                            
+⠹ |        23 | keep                                                            
+⠼ |        25 | keep                                                            
+⠦ |        27 | keep                                                            
+⠇ |        29 | keep                                                            
+⠋ |        31 | keep                                                            
 ⠹ |        33 | keep                                                            
+⠼ |        35 | keep                                                            
+⠦ |        37 | keep                                                            
+⠇ |        39 | keep                                                            
+⠋ |        41 | keep                                                            
+⠙ |        42 | keep                                                            
+⠸ |        44 | keep                                                            
+⠴ |        46 | keep                                                            
+⠧ |        48 | keep                                                            
 ⠇ |        49 | keep                                                            
+⠋ |        51 | keep                                                            
+⠹ |        53 | keep                                                            
+⠼ |        55 | keep                                                            
+⠦ |        57 | keep                                                            
+⠇ |        59 | keep                                                            
+⠋ |        61 | keep                                                            
+⠹ |        63 | keep                                                            
 ⠼ |        65 | keep                                                            
+⠦ |        67 | keep                                                            
+⠇ |        69 | keep                                                            
+⠋ |        71 | keep                                                            
+⠹ |        73 | keep                                                            
+⠼ |        75 | keep                                                            
+⠦ |        77 | keep                                                            
+⠇ |        79 | keep                                                            
 ⠋ |        81 | keep                                                            
-✔ |        96 | keep [18.8s]
+⠹ |        83 | keep                                                            
+⠼ |        85 | keep                                                            
+⠦ |        87 | keep                                                            
+⠇ |        89 | keep                                                            
+⠋ |        91 | keep                                                            
+⠹ |        93 | keep                                                            
+⠼ |        95 | keep                                                            
+✔ |        96 | keep [4758.6s]
 
 ⠏ |         0 | nlme                                                            
 ⠋ |         1 | nlme                                                            
@@ -5838,7 +6282,7 @@ v done
 ⠧ |         8 | nlme                                                            
 ⠇ |         9 | nlme                                                            
 ⠏ |        10 | nlme                                                            
-✔ |        10 | nlme [49.5s]
+✔ |        10 | nlme [2260.6s]
 
 ⠏ |         0 | np                                                              
 ⠋ |         1 | np                                                              
@@ -6458,7 +6902,7 @@ v done
 > calculate jacobian
 
 > calculate d(f)/d(eta)
-[====|====|====|====|====|====|====|====|====|====] 0:00:00 
+[====|====|====|====|====|====|====|====|====|====] 0:00:01 
 
 > finding duplicate expressions in inner model...
 [====|====|====|====|====|====|====|====|====|====] 0:00:00 
@@ -6872,7 +7316,9 @@ v done
 > compress parHist in nlmixr2 object, save 1904
 i initial model updated with final estimates, zero etas are excluded from output
 
-⠧ |   3     5 | np                                                              i parameter labels from comments will be replaced by 'label()'
+⠧ |   3     5 | np                                                              
+⠇ |   4     5 | np                                                              
+⠏ |   5     5 | np                                                              i parameter labels from comments will be replaced by 'label()'
 i the following etas are removed from the model since their initial estimates are zero: eta.ka, eta.v
 > loading into symengine environment...
 > pruning branches (`if`/`else`) of full model...
@@ -6880,7 +7326,7 @@ v done
 > calculate jacobian
 
 > calculate d(f)/d(eta)
-[====|====|====|====|====|====|====|====|====|====] 0:00:00 
+[====|====|====|====|====|====|====|====|====|====] 0:00:01 
 
 > calculate d(R^2)/d(eta)
 [====|====|====|====|====|====|====|====|====|====] 0:00:00 
@@ -7297,7 +7743,9 @@ v done
 > compress parHist in nlmixr2 object, save 1904
 i initial model updated with final estimates, zero etas are excluded from output
 
-⠙ |   6     6 | np                                                              i parameter labels from comments will be replaced by 'label()'
+⠙ |   6     6 | np                                                              
+⠹ |   7     6 | np                                                              
+⠸ |   8     6 | np                                                              i parameter labels from comments will be replaced by 'label()'
 i the following etas are removed from the model since their initial estimates are zero: eta.ka, eta.v
 > loading into symengine environment...
 > pruning branches (`if`/`else`) of saem model...
@@ -7827,11 +8275,11 @@ v done
 v done
 > compress origData in nlmixr2 object, save 5952
 > compress phiM in nlmixr2 object, save 70032
-> compress parHist in nlmixr2 object, save 7616
+> compress parHist in nlmixr2 object, save 7768
 i initial model updated with final estimates, zero etas are excluded from output
 
 ⠴ |   8     8 | np                                                              
-✔ |   8     8 | np [8.5s]
+✔ |   8     8 | np [190.4s]
 ────────────────────────────────────────────────────────────────────────────────
 Warning (test-np.R:49:5): Test naive pooled
 gradient problems with initial estimate and covariance; see $scaleInfo
@@ -7843,7 +8291,7 @@ Backtrace:
   9. nlmixr2est::nlmixr2Est0(.env)
        at nlmixr2est/R/nlmixr2.R:193:2
  10. base::lapply(.lst[[2]], warning, call. = FALSE)
-       at nlmixr2est/R/nlmixr2Est.R:221:2
+       at nlmixr2est/R/nlmixr2Est.R:236:2
 
 Warning (test-np.R:51:5): Test naive pooled
 gradient problems with initial estimate and covariance; see $scaleInfo
@@ -7855,7 +8303,7 @@ Backtrace:
   9. nlmixr2est::nlmixr2Est0(.env)
        at nlmixr2est/R/nlmixr2.R:193:2
  10. base::lapply(.lst[[2]], warning, call. = FALSE)
-       at nlmixr2est/R/nlmixr2Est.R:221:2
+       at nlmixr2est/R/nlmixr2Est.R:236:2
 
 Warning (test-np.R:76:5): Test naive pooled
 gradient problems with initial estimate and covariance; see $scaleInfo
@@ -7867,7 +8315,7 @@ Backtrace:
   9. nlmixr2est::nlmixr2Est0(.env)
        at nlmixr2est/R/nlmixr2.R:193:2
  10. base::lapply(.lst[[2]], warning, call. = FALSE)
-       at nlmixr2est/R/nlmixr2Est.R:221:2
+       at nlmixr2est/R/nlmixr2Est.R:236:2
 
 Warning (test-np.R:76:5): Test naive pooled
 ETAs were reset to zero during optimization; (Can control by foceiControl(resetEtaP=.))
@@ -7879,7 +8327,7 @@ Backtrace:
   9. nlmixr2est::nlmixr2Est0(.env)
        at nlmixr2est/R/nlmixr2.R:193:2
  10. base::lapply(.lst[[2]], warning, call. = FALSE)
-       at nlmixr2est/R/nlmixr2Est.R:221:2
+       at nlmixr2est/R/nlmixr2Est.R:236:2
 
 Warning (test-np.R:76:5): Test naive pooled
 initial ETAs were nudged; (can control by foceiControl(etaNudge=., etaNudge2=))
@@ -7891,7 +8339,7 @@ Backtrace:
   9. nlmixr2est::nlmixr2Est0(.env)
        at nlmixr2est/R/nlmixr2.R:193:2
  10. base::lapply(.lst[[2]], warning, call. = FALSE)
-       at nlmixr2est/R/nlmixr2Est.R:221:2
+       at nlmixr2est/R/nlmixr2Est.R:236:2
 
 Warning (test-np.R:77:5): Test naive pooled
 gradient problems with initial estimate and covariance; see $scaleInfo
@@ -7903,7 +8351,7 @@ Backtrace:
   9. nlmixr2est::nlmixr2Est0(.env)
        at nlmixr2est/R/nlmixr2.R:193:2
  10. base::lapply(.lst[[2]], warning, call. = FALSE)
-       at nlmixr2est/R/nlmixr2Est.R:221:2
+       at nlmixr2est/R/nlmixr2Est.R:236:2
 
 Warning (test-np.R:77:5): Test naive pooled
 ETAs were reset to zero during optimization; (Can control by foceiControl(resetEtaP=.))
@@ -7915,7 +8363,7 @@ Backtrace:
   9. nlmixr2est::nlmixr2Est0(.env)
        at nlmixr2est/R/nlmixr2.R:193:2
  10. base::lapply(.lst[[2]], warning, call. = FALSE)
-       at nlmixr2est/R/nlmixr2Est.R:221:2
+       at nlmixr2est/R/nlmixr2Est.R:236:2
 
 Warning (test-np.R:77:5): Test naive pooled
 initial ETAs were nudged; (can control by foceiControl(etaNudge=., etaNudge2=))
@@ -7927,7 +8375,7 @@ Backtrace:
   9. nlmixr2est::nlmixr2Est0(.env)
        at nlmixr2est/R/nlmixr2.R:193:2
  10. base::lapply(.lst[[2]], warning, call. = FALSE)
-       at nlmixr2est/R/nlmixr2Est.R:221:2
+       at nlmixr2est/R/nlmixr2Est.R:236:2
 ────────────────────────────────────────────────────────────────────────────────
 
 ⠏ |         0 | npde                                                            
@@ -7936,7 +8384,7 @@ Backtrace:
 ⠸ |         4 | npde                                                            
 ⠼ |         5 | npde                                                            
 ⠦ |         7 | npde                                                            
-✔ |         7 | npde [8.1s]
+✔ |         7 | npde [238.1s]
 
 ⠏ |         0 | rx-model-props                                                  i parameter labels from comments will be replaced by 'label()'
 i parameter labels from comments will be replaced by 'label()'
@@ -8468,40 +8916,40 @@ v done
 v done
 > compress origData in nlmixr2 object, save 5952
 > compress phiM in nlmixr2 object, save 63664
-> compress parHist in nlmixr2 object, save 9392
+> compress parHist in nlmixr2 object, save 9544
 i parameter labels from comments will be replaced by 'label()'
 
 ⠋ |         1 | rx-model-props                                                  
-✔ |         2 | rx-model-props [2.1s]
+✔ |         2 | rx-model-props [60.8s]
 
 ⠏ |         0 | rxsolve                                                         i parameter labels from comments will be replaced by 'label()'
 
-⠋ | 1       0 | rxsolve                                                         
-✖ | 1       0 | rxsolve [0.2s]
-────────────────────────────────────────────────────────────────────────────────
-Error (test-rxsolve.R:25:3): nlmixr interface for solving works
-Error in ``$<-.rxSolve`(`*tmp*`, "reset", value = TRUE)`: Cannot convert object to an environment: [type=NULL; target=ENVSXP].
-Backtrace:
- 1. nlmixr2est::nlmixr(one.cmt, nlmixr2data::theo_sd, "rxSolve")
-      at test-rxsolve.R:25:2
- 2. nlmixr2est::nlmixr2.function(one.cmt, nlmixr2data::theo_sd, "rxSolve")
-      at nlmixr2est/R/nlmixr2.R:115:2
- 3. nlmixr2est::nlmixr2Est0(.env)
-      at nlmixr2est/R/nlmixr2.R:193:2
- 5. rxode2:::`$<-.rxSolve`(`*tmp*`, "reset", value = `<lgl>`)
-      at nlmixr2est/R/nlmixr2Est.R:163:4
-────────────────────────────────────────────────────────────────────────────────
+⠋ |         1 | rxsolve                                                         i parameter labels from comments will be replaced by 'label()'
+
+⠙ |         2 | rxsolve                                                         i parameter labels from comments will be replaced by 'label()'
+
+⠹ |         3 | rxsolve                                                         
+✔ |         3 | rxsolve [18.5s]
 
 ⠏ |         0 | saem-aic                                                        
 ⠋ |         1 | saem-aic                                                        
+⠹ |         3 | saem-aic                                                        
 ⠸ |         4 | saem-aic                                                        
 ⠼ |         5 | saem-aic                                                        
 ⠴ |         6 | saem-aic                                                        
+⠦ |         7 | saem-aic                                                        
 ⠧ |         8 | saem-aic                                                        
-✔ |         9 | saem-aic [2.4s]
+⠇ |         9 | saem-aic                                                        
+✔ |         9 | saem-aic [70.1s]
 
 ⠏ |         0 | saem-drop                                                       
-✔ |        11 | saem-drop
+⠋ |         1 | saem-drop                                                       
+⠹ |         3 | saem-drop                                                       
+⠼ |         5 | saem-drop                                                       
+⠦ |         7 | saem-drop                                                       
+⠇ |         9 | saem-drop                                                       
+⠋ |        11 | saem-drop                                                       
+✔ |        11 | saem-drop [0.8s]
 
 ⠏ |         0 | saem-funny-mu                                                   > loading into symengine environment...
 > pruning branches (`if`/`else`) of saem model...
@@ -9033,15 +9481,16 @@ v done
 v done
 > compress origData in nlmixr2 object, save 5952
 > compress phiM in nlmixr2 object, save 204984
-> compress parHist in nlmixr2 object, save 12752
+> compress parHist in nlmixr2 object, save 12904
 
-⠋ |   1     0 | saem-funny-mu                                                   > loading into symengine environment...
+⠋ |   1     0 | saem-funny-mu                                                   
+⠙ |   2     0 | saem-funny-mu                                                   > loading into symengine environment...
 > pruning branches (`if`/`else`) of full model...
 v done
 > calculate jacobian
 
 > calculate d(f)/d(eta)
-[====|====|====|====|====|====|====|====|====|====] 0:00:00 
+[====|====|====|====|====|====|====|====|====|====] 0:00:06 
 
 > calculate d(R^2)/d(eta)
 [====|====|====|====|====|====|====|====|====|====] 0:00:00 
@@ -9350,7 +9799,7 @@ Diagonals are transformed, as specified by foceiControl(diagXform=)
 |.....................|-6.744e-08 |    0.6945 |     1.256 |     1.950 |
 |.....................|     2.688 |...........|...........|...........|
 calculating covariance matrix
-[====|====|====|====|====|====|====|====|====|====] 0:00:00 
+[====|====|====|====|====|====|====|====|====|====] 0:00:11 
 done
 > Calculating residuals/tables
 v done
@@ -9358,7 +9807,9 @@ v done
 > compress parHist in nlmixr2 object, save 2328
 
 ⠸ |   3     1 | saem-funny-mu                                                   
-✔ |   5     2 | saem-funny-mu [6.2s]
+⠼ |   4     1 | saem-funny-mu                                                   
+⠴ |   5     1 | saem-funny-mu                                                   
+✔ |   5     2 | saem-funny-mu [139.7s]
 ────────────────────────────────────────────────────────────────────────────────
 Warning (test-saem-funny-mu.R:24:5): funny one-compartment model
 covariance matrix non-positive definite, corrected by sqrtm(fim %*% fim)
@@ -9370,7 +9821,7 @@ Backtrace:
   9. nlmixr2est::nlmixr2Est0(.env)
        at nlmixr2est/R/nlmixr2.R:193:2
  10. base::lapply(.lst[[2]], warning, call. = FALSE)
-       at nlmixr2est/R/nlmixr2Est.R:221:2
+       at nlmixr2est/R/nlmixr2Est.R:236:2
 
 Warning (test-saem-funny-mu.R:24:5): funny one-compartment model
 NAs introduced by coercion
@@ -9382,7 +9833,7 @@ Backtrace:
   9. nlmixr2est::nlmixr2Est0(.env)
        at nlmixr2est/R/nlmixr2.R:193:2
  10. base::lapply(.lst[[2]], warning, call. = FALSE)
-       at nlmixr2est/R/nlmixr2Est.R:221:2
+       at nlmixr2est/R/nlmixr2Est.R:236:2
 
 Warning (test-saem-funny-mu.R:26:5): funny one-compartment model
 gradient problems with initial estimate and covariance; see $scaleInfo
@@ -9394,7 +9845,7 @@ Backtrace:
   9. nlmixr2est::nlmixr2Est0(.env)
        at nlmixr2est/R/nlmixr2.R:193:2
  10. base::lapply(.lst[[2]], warning, call. = FALSE)
-       at nlmixr2est/R/nlmixr2Est.R:221:2
+       at nlmixr2est/R/nlmixr2Est.R:236:2
 
 Warning (test-saem-funny-mu.R:26:5): funny one-compartment model
 ETAs were reset to zero during optimization; (Can control by foceiControl(resetEtaP=.))
@@ -9406,7 +9857,7 @@ Backtrace:
   9. nlmixr2est::nlmixr2Est0(.env)
        at nlmixr2est/R/nlmixr2.R:193:2
  10. base::lapply(.lst[[2]], warning, call. = FALSE)
-       at nlmixr2est/R/nlmixr2Est.R:221:2
+       at nlmixr2est/R/nlmixr2Est.R:236:2
 
 Warning (test-saem-funny-mu.R:26:5): funny one-compartment model
 initial ETAs were nudged; (can control by foceiControl(etaNudge=., etaNudge2=))
@@ -9418,33 +9869,132 @@ Backtrace:
   9. nlmixr2est::nlmixr2Est0(.env)
        at nlmixr2est/R/nlmixr2.R:193:2
  10. base::lapply(.lst[[2]], warning, call. = FALSE)
-       at nlmixr2est/R/nlmixr2Est.R:221:2
+       at nlmixr2est/R/nlmixr2Est.R:236:2
 ────────────────────────────────────────────────────────────────────────────────
 
 ⠏ |         0 | saem-theo_sd                                                    
 ⠋ |         1 | saem-theo_sd                                                    
+⠙ |         2 | saem-theo_sd                                                    
+⠹ |         3 | saem-theo_sd                                                    
+⠸ |         4 | saem-theo_sd                                                    
+⠼ |         5 | saem-theo_sd                                                    
+⠴ |         6 | saem-theo_sd                                                    
+⠦ |         7 | saem-theo_sd                                                    
+⠧ |         8 | saem-theo_sd                                                    
+⠇ |         9 | saem-theo_sd                                                    
+⠏ |        10 | saem-theo_sd                                                    
+⠋ |        11 | saem-theo_sd                                                    
+⠙ |        12 | saem-theo_sd                                                    
+⠹ |        13 | saem-theo_sd                                                    
+⠸ |        14 | saem-theo_sd                                                    
+⠼ |        15 | saem-theo_sd                                                    
+⠴ |        16 | saem-theo_sd                                                    
+⠦ |        17 | saem-theo_sd                                                    
+⠧ |        18 | saem-theo_sd                                                    
+⠇ |        19 | saem-theo_sd                                                    
+⠏ |        20 | saem-theo_sd                                                    
+⠋ |        21 | saem-theo_sd                                                    
+⠙ |        22 | saem-theo_sd                                                    
 ⠹ |        23 | saem-theo_sd                                                    
+⠸ |        24 | saem-theo_sd                                                    
+⠼ |        25 | saem-theo_sd                                                    
+⠴ |        26 | saem-theo_sd                                                    
+⠦ |        27 | saem-theo_sd                                                    
+⠧ |        28 | saem-theo_sd                                                    
+⠇ |        29 | saem-theo_sd                                                    
+⠏ |        30 | saem-theo_sd                                                    
+⠋ |        31 | saem-theo_sd                                                    
+⠙ |        32 | saem-theo_sd                                                    
+⠹ |        33 | saem-theo_sd                                                    
+⠸ |        34 | saem-theo_sd                                                    
+⠼ |        35 | saem-theo_sd                                                    
+⠴ |        36 | saem-theo_sd                                                    
+⠦ |        37 | saem-theo_sd                                                    
+⠧ |        38 | saem-theo_sd                                                    
+⠇ |        39 | saem-theo_sd                                                    
+⠏ |        40 | saem-theo_sd                                                    
+⠋ |        41 | saem-theo_sd                                                    
+⠙ |        42 | saem-theo_sd                                                    
+⠹ |        43 | saem-theo_sd                                                    
+⠸ |        44 | saem-theo_sd                                                    
+⠼ |        45 | saem-theo_sd                                                    
+⠴ |        46 | saem-theo_sd                                                    
+⠦ |        47 | saem-theo_sd                                                    
 ⠧ |        48 | saem-theo_sd                                                    
+⠇ |        49 | saem-theo_sd                                                    
+⠏ |        50 | saem-theo_sd                                                    
+⠋ |        51 | saem-theo_sd                                                    
+⠙ |        52 | saem-theo_sd                                                    
+⠹ |        53 | saem-theo_sd                                                    
+⠸ |        54 | saem-theo_sd                                                    
+⠼ |        55 | saem-theo_sd                                                    
+⠴ |        56 | saem-theo_sd                                                    
+⠦ |        57 | saem-theo_sd                                                    
+⠧ |        58 | saem-theo_sd                                                    
+⠇ |        59 | saem-theo_sd                                                    
+⠏ |        60 | saem-theo_sd                                                    
+⠋ |        61 | saem-theo_sd                                                    
+⠙ |        62 | saem-theo_sd                                                    
+⠹ |        63 | saem-theo_sd                                                    
+⠸ |        64 | saem-theo_sd                                                    
+⠼ |        65 | saem-theo_sd                                                    
+⠴ |        66 | saem-theo_sd                                                    
+⠦ |        67 | saem-theo_sd                                                    
+⠧ |        68 | saem-theo_sd                                                    
+⠇ |        69 | saem-theo_sd                                                    
 ⠏ |        70 | saem-theo_sd                                                    
-✔ |        78 | saem-theo_sd [158.3s]
+⠋ |        71 | saem-theo_sd                                                    
+⠙ |        72 | saem-theo_sd                                                    
+⠹ |        73 | saem-theo_sd                                                    
+⠸ |        74 | saem-theo_sd                                                    
+⠼ |        75 | saem-theo_sd                                                    
+⠴ |        76 | saem-theo_sd                                                    
+⠦ |        77 | saem-theo_sd                                                    
+⠧ |        78 | saem-theo_sd                                                    
+✔ |        78 | saem-theo_sd [19135.7s]
 
 ⠏ |         0 | saem-translate                                                  
 ⠋ |         1 | saem-translate                                                  
+⠹ |         3 | saem-translate                                                  
+⠼ |         5 | saem-translate                                                  
+⠦ |         7 | saem-translate                                                  
+⠇ |         9 | saem-translate                                                  
+⠋ |        11 | saem-translate                                                  
+⠹ |        13 | saem-translate                                                  
+⠼ |        15 | saem-translate                                                  
+⠦ |        17 | saem-translate                                                  
+⠇ |        19 | saem-translate                                                  
+⠋ |        21 | saem-translate                                                  
+⠹ |        23 | saem-translate                                                  
+⠼ |        25 | saem-translate                                                  
 ⠦ |        27 | saem-translate                                                  
-⠹ | 1      52 | saem-translate                                                  
-⠧ | 1      57 | saem-translate                                                  
-✖ | 1      75 | saem-translate [0.7s]
-────────────────────────────────────────────────────────────────────────────────
-Failure (test-saem-translate.R:239:3): theo wt cov parsing
-f$saemModelPredReplaceLst (`actual`) not equal to c(...) (`expected`).
-
-    actual              | expected                               
-[1] "THETA[1] + ETA[1]" | "THETA[1] + ETA[1]"                 [1]
-[2] "THETA[2] + ETA[2]" - "THETA[2] + ETA[2] + wt * THETA[4]" [2]
-[3] "THETA[3] + ETA[3]" | "THETA[3] + ETA[3]"                 [3]
-[4] "THETA[4]"          | "THETA[4]"                          [4]
-[5] "THETA[5]"          | "THETA[5]"                          [5]
-────────────────────────────────────────────────────────────────────────────────
+⠇ |        29 | saem-translate                                                  
+⠋ |        31 | saem-translate                                                  
+⠹ |        33 | saem-translate                                                  
+⠼ |        35 | saem-translate                                                  
+⠦ |        37 | saem-translate                                                  
+⠇ |        39 | saem-translate                                                  
+⠋ |        41 | saem-translate                                                  
+⠹ |        43 | saem-translate                                                  
+⠼ |        45 | saem-translate                                                  
+⠦ |        47 | saem-translate                                                  
+⠇ |        49 | saem-translate                                                  
+⠋ |        51 | saem-translate                                                  
+⠹ |        53 | saem-translate                                                  
+⠼ |        55 | saem-translate                                                  
+⠴ |        56 | saem-translate                                                  
+⠧ |        58 | saem-translate                                                  
+⠏ |        60 | saem-translate                                                  
+⠙ |        62 | saem-translate                                                  
+⠸ |        64 | saem-translate                                                  
+⠴ |        66 | saem-translate                                                  
+⠧ |        68 | saem-translate                                                  
+⠏ |        70 | saem-translate                                                  
+⠙ |        72 | saem-translate                                                  
+⠸ |        74 | saem-translate                                                  
+⠴ |        76 | saem-translate                                                  
+⠧ |        78 | saem-translate                                                  
+✔ |        78 | saem-translate [19.4s]
 
 ⠏ |         0 | sens-fd                                                         
 ⠋ |         1 | sens-fd                                                         
@@ -9455,22 +10005,25 @@ f$saemModelPredReplaceLst (`actual`) not equal to c(...) (`expected`).
 ⠴ |         6 | sens-fd                                                         
 ⠦ |         7 | sens-fd                                                         
 ⠧ |         8 | sens-fd                                                         
-✔ |         8 | sens-fd [5.1s]
+✔ |         8 | sens-fd [114.3s]
 
 ⠏ |         0 | table-cmt                                                       
 ⠋ |         1 | table-cmt                                                       
+⠹ |         3 | table-cmt                                                       
+⠸ |         4 | table-cmt                                                       
 ⠦ |         7 | table-cmt                                                       
 ⠏ |        10 | table-cmt                                                       
 ⠹ |        13 | table-cmt                                                       
-✔ |        13 | table-cmt [8.7s]
+✔ |        13 | table-cmt [160.7s]
 
 ⠏ |         0 | tad-in-models                                                   → loading into symengine environment...
 → pruning branches (`if`/`else`) of full model...
 ✔ done
 → calculate jacobian
 [====|====|====|====|====|====|====|====|====|====
+=|====|====|====|====|====|====|====] 0:00:03 
 → calculate sensitivities
-[====|====|====|====|====|====|====|====|====|====] 0:00:00 
+[====|====|====|====|====|====|====|====|====|====] 0:00:05 
 
 → calculate ∂(f)/∂(η)
 [====|====|====|====|====|====|====|====|====|====] 0:00:00 
@@ -9479,10 +10032,10 @@ f$saemModelPredReplaceLst (`actual`) not equal to c(...) (`expected`).
 [====|====|====|====|====|====|====|====|====|====] 0:00:00 
 
 → finding duplicate expressions in inner model...
-[====|====|====|====|====|====|====|====|====|====] 0:00:00 
+[====|====|====|====|====|====|====|====|====|====] 0:00:01 
 
 → optimizing duplicate expressions in inner model...
-[====|====|====|====|====|====|====|====|====|====] 0:00:00 
+[====|====|====|====|====|====|====|====|====|====] 0:00:01 
 
 → finding duplicate expressions in EBE model...
 [====|====|====|====|====|====|====|====|====|====] 0:00:00 
@@ -9503,14 +10056,18 @@ f$saemModelPredReplaceLst (`actual`) not equal to c(...) (`expected`).
 → compiling events FD model...
 ✔ done
 calculating covariance matrix
-[====|====|====|====|====|====|====|====|====|====] 0:00:25 
+[====|====|====|====|====|====|====|====|====|====] 0:16:47 
 done
 → Calculating residuals/tables
 ✔ done
 → compress origData in nlmixr2 object, save 13096
 → compress parHist in nlmixr2 object, save 2536
 
-⠋ |   1     0 | tad-in-models                                                   → loading into symengine environment...
+⠋ |   1     0 | tad-in-models                                                   
+⠙ |   2     0 | tad-in-models                                                   
+⠹ |   3     0 | tad-in-models                                                   
+⠸ |   4     0 | tad-in-models                                                   
+⠼ |   5     0 | tad-in-models                                                   → loading into symengine environment...
 → pruning branches (`if`/`else`) of saem model...
 ✔ done
 → finding duplicate expressions in saem model...
@@ -9532,7 +10089,7 @@ params:	lV	lka	ln	lCL	lktr	V(eta.lka)	V(eta.ln)	V(eta.lCL)	err.pk
 009: 0.492302	-2.452532	0.899244	1.031543	4.236697	0.012299	0.602912	0.034950	0.963326	
 010: 0.440281	-2.431046	0.980304	1.031262	4.453611	0.011684	0.572766	0.035321	0.948059	
 011: 0.474739	-2.445239	0.887665	1.014145	4.369113	0.011100	0.544128	0.035736	0.932789	
-012: 0.437490	-2.444029	0.992361	1.028358	4.309372	0.010545	0.516922	0.038390	0.920176	
+012: 0.437490	-2.444029	0.992361	1.028358	4.309372	0.010545	0.516922	0.038390	0.920177	
 013: 0.429749	-2.449197	1.005112	1.022455	4.302203	0.010017	0.491075	0.036470	0.932041	
 014: 0.449224	-2.437945	1.045700	1.027482	3.985156	0.009516	0.466522	0.034647	0.927551	
 015: 0.469376	-2.427801	1.057292	1.031259	4.007344	0.009041	0.443196	0.033782	0.942730	
@@ -9729,7 +10286,7 @@ params:	lV	lka	ln	lCL	lktr	V(eta.lka)	V(eta.ln)	V(eta.lCL)	err.pk
 206: 0.313639	-2.494226	0.301527	0.999325	3.126979	0.000145	0.644716	0.032231	0.941392	
 207: 0.306815	-2.494176	0.312625	0.999317	3.127056	0.000141	0.633437	0.032432	0.940346	
 208: 0.301698	-2.494075	0.320108	0.999434	3.127064	0.000142	0.632380	0.032071	0.939676	
-209: 0.302985	-2.494041	0.327961	0.999403	3.127154	0.000138	0.618291	0.032171	0.939516	
+209: 0.302985	-2.494041	0.327961	0.999403	3.127154	0.000138	0.618291	0.032171	0.939517	
 210: 0.302641	-2.493964	0.340816	0.999252	3.127234	0.000138	0.610208	0.032307	0.940090	
 211: 0.303619	-2.494021	0.345212	0.999650	3.127242	0.000135	0.605666	0.032474	0.940350	
 212: 0.304778	-2.493858	0.343451	0.999580	3.127235	0.000134	0.599867	0.032507	0.940839	
@@ -10044,10 +10601,10 @@ Calculating covariance matrix
 ✔ done
 → compress origData in nlmixr2 object, save 13096
 → compress phiM in nlmixr2 object, save 134896
-→ compress parHist in nlmixr2 object, save 12400
+→ compress parHist in nlmixr2 object, save 12552
 
 ⠦ |   5     2 | tad-in-models                                                   
-✔ |   5     2 | tad-in-models [77.1s]
+✔ |   5     2 | tad-in-models [14790.3s]
 ────────────────────────────────────────────────────────────────────────────────
 Warning (test-tad-in-models.R:1:1): (code run outside of `test_that()`)
 gradient problems with initial estimate and covariance; see $scaleInfo
@@ -10059,7 +10616,7 @@ Backtrace:
  11. nlmixr2est::nlmixr2Est0(.env)
        at nlmixr2est/R/nlmixr2.R:193:2
  12. base::lapply(.lst[[2]], warning, call. = FALSE)
-       at nlmixr2est/R/nlmixr2Est.R:221:2
+       at nlmixr2est/R/nlmixr2Est.R:236:2
 
 Warning (test-tad-in-models.R:1:1): (code run outside of `test_that()`)
 using S matrix to calculate covariance, can check sandwich or R matrix with $covRS and $covR
@@ -10071,7 +10628,7 @@ Backtrace:
  11. nlmixr2est::nlmixr2Est0(.env)
        at nlmixr2est/R/nlmixr2.R:193:2
  12. base::lapply(.lst[[2]], warning, call. = FALSE)
-       at nlmixr2est/R/nlmixr2Est.R:221:2
+       at nlmixr2est/R/nlmixr2Est.R:236:2
 
 Warning (test-tad-in-models.R:1:1): (code run outside of `test_that()`)
 last objective function was not at minimum, possible problems in optimization
@@ -10083,7 +10640,7 @@ Backtrace:
  11. nlmixr2est::nlmixr2Est0(.env)
        at nlmixr2est/R/nlmixr2.R:193:2
  12. base::lapply(.lst[[2]], warning, call. = FALSE)
-       at nlmixr2est/R/nlmixr2Est.R:221:2
+       at nlmixr2est/R/nlmixr2Est.R:236:2
 
 Warning (test-tad-in-models.R:1:1): (code run outside of `test_that()`)
 ETAs were reset to zero during optimization; (Can control by foceiControl(resetEtaP=.))
@@ -10095,7 +10652,7 @@ Backtrace:
  11. nlmixr2est::nlmixr2Est0(.env)
        at nlmixr2est/R/nlmixr2.R:193:2
  12. base::lapply(.lst[[2]], warning, call. = FALSE)
-       at nlmixr2est/R/nlmixr2Est.R:221:2
+       at nlmixr2est/R/nlmixr2Est.R:236:2
 
 Warning (test-tad-in-models.R:1:1): (code run outside of `test_that()`)
 initial ETAs were nudged; (can control by foceiControl(etaNudge=., etaNudge2=))
@@ -10107,42 +10664,562 @@ Backtrace:
  11. nlmixr2est::nlmixr2Est0(.env)
        at nlmixr2est/R/nlmixr2.R:193:2
  12. base::lapply(.lst[[2]], warning, call. = FALSE)
-       at nlmixr2est/R/nlmixr2Est.R:221:2
+       at nlmixr2est/R/nlmixr2Est.R:236:2
 ────────────────────────────────────────────────────────────────────────────────
 
 ⠏ |         0 | timing                                                          
-⠋ |         1 | timing                                                          
-✔ |         5 | timing [0.6s]
+⠋ | 1       0 | timing                                                          
+⠹ | 1       2 | timing                                                          
+⠼ | 1       4 | timing                                                          
+✖ | 1       4 | timing [3.3s]
+────────────────────────────────────────────────────────────────────────────────
+Failure (test-timing.R:18:3): test timing engine
+env$time$time2 < 0.4 is not TRUE
+
+`actual`:   FALSE
+`expected`: TRUE 
+────────────────────────────────────────────────────────────────────────────────
 
 ⠏ |         0 | unary-mu                                                        i parameter labels from comments will be replaced by 'label()'
 i parameter labels from comments will be replaced by 'label()'
 
 ⠋ |         1 | unary-mu                                                        
-✔ |         1 | unary-mu [0.2s]
+✔ |         1 | unary-mu [5.1s]
 
 ⠏ |         0 | update-estimates                                                
 ⠋ |         1 | update-estimates                                                
-✔ |         1 | update-estimates [3.1s]
+✔ |         1 | update-estimates [102.1s]
 
-⠏ |         0 | vpcSim                                                          
-✖ | 1       0 | vpcSim
+⠏ |         0 | vpcSim                                                          i parameter labels from comments will be replaced by 'label()'
+> loading into symengine environment...
+> pruning branches (`if`/`else`) of full model...
+v done
+> calculate jacobian
+[====|====|====|====|====|====|====|====|====|====] 0:00:01 
+
+> calculate sensitivities
+[====|====|====|====|====|====|====|====|====|====] 0:00:03 
+
+> calculate d(f)/d(eta)
+[====|====|====|====|====|====|====|====|====|====] 0:00:07 
+
+> calculate d(R^2)/d(eta)
+[====|====|====|====|====|====|====|====|====|====] 0:00:02 
+
+> finding duplicate expressions in inner model...
+[====|====|====|====|====|====|====|====|====|====] 0:00:04 
+
+> optimizing duplicate expressions in inner model...
+[====|====|====|====|====|====|====|====|====|====] 0:00:05 
+
+> finding duplicate expressions in EBE model...
+[====|====|====|====|====|====|====|====|====|====] 0:00:01 
+
+> optimizing duplicate expressions in EBE model...
+[====|====|====|====|====|====|====|====|====|====] 0:00:01 
+
+> compiling inner model...
+v done
+> finding duplicate expressions in FD model...
+[====|====|====|====|====|====|====|====|====|====] 0:00:00 
+
+> optimizing duplicate expressions in FD model...
+[====|====|====|====|====|====|====|====|====|====] 0:00:00 
+
+> compiling EBE model...
+v done
+> compiling events FD model...
+v done
+Key: U: Unscaled Parameters; X: Back-transformed parameters; G: Gill difference gradient approximation
+F: Forward difference gradient approximation
+C: Central difference gradient approximation
+M: Mixed forward and central difference gradient approximation
+Unscaled parameters for Omegas=chol(solve(omega));
+Diagonals are transformed, as specified by foceiControl(diagXform=)
+|-----+---------------+-----------+-----------+-----------+-----------|
+|    #| Objective Fun |      tktr |       tcl |        tv |eps.pkprop |
+|.....................| eps.pkadd |      tc50 |       te0 | eps.pdadd |
+|.....................|        o1 |        o2 |        o3 |        o4 |
+|.....................|        o5 |...........|...........|...........|
+|-----+---------------+-----------+-----------+-----------+-----------|
+|    5| 6.5448987e+16 |   -0.3169 |    -1.882 |    -2.421 |   -0.1832 |
+|.....................|   -0.1712 |  -0.04035 |    0.5962 |    -1.000 |
+|.....................|   0.03770 |   -0.6464 |   -0.9207 |   -0.3427 |
+|.....................|    0.7306 |...........|...........|...........|
+|    U| 6.5448987e+16 |    0.6381 |    -3.185 |    0.5733 |    0.1385 |
+|.....................|    0.5552 |    0.9146 |     6.066 | 5.960e-07 |
+|.....................|     1.973 |     2.265 |     1.778 |     1.890 |
+|.....................|     4.714 |...........|...........|...........|
+|    X| 6.5448987e+16 |     1.893 |   0.04139 |     1.774 |    0.1385 |
+|.....................|    0.5552 |     2.496 |     431.1 | 5.960e-07 |
+|.....................|     1.973 |     2.265 |     1.778 |     1.890 |
+|.....................|     4.714 |...........|...........|...........|
+|    F| Forward Diff. |    -24.17 |     40.89 |     42.87 |    -35.32 |
+|.....................|    -36.56 |    -61.59 |    -68.64 |     106.9 |
+|.....................|    -44.73 |     4.913 |    -5.282 |    -15.80 |
+|.....................|    -69.19 |...........|...........|...........|
+|-----+---------------+-----------+-----------+-----------+-----------|
+|   10|     1816.5374 |   -0.9160 |   -0.6941 |   -0.9013 |   -0.9867 |
+|.....................|   -0.9739 |    -1.073 |   -0.9952 |   -0.7355 |
+|.....................|   -0.9039 |   -0.8819 |   -0.7590 |   -0.8704 |
+|.....................|   -0.7746 |...........|...........|...........|
+|    U|     1816.5374 |   0.03895 |    -1.997 |     2.092 |   0.09831 |
+|.....................|    0.3946 |   -0.1175 |     4.475 |     13.22 |
+|.....................|     1.032 |     1.846 |     2.065 |     1.262 |
+|.....................|     2.037 |...........|...........|...........|
+|    X|     1816.5374 |     1.040 |    0.1358 |     8.105 |   0.09831 |
+|.....................|    0.3946 |    0.8891 |     87.79 |     13.22 |
+|.....................|     1.032 |     1.846 |     2.065 |     1.262 |
+|.....................|     2.037 |...........|...........|...........|
+|    F| Forward Diff. |    -46.35 |    -2.760 |     31.88 |    -54.27 |
+|.....................|    -56.94 |    -70.48 |    -31.35 |     208.3 |
+|.....................|    -57.41 |     3.428 |    -8.860 |    -28.07 |
+|.....................|    -62.82 |...........|...........|...........|
+|-----+---------------+-----------+-----------+-----------+-----------|
+|   15|     1799.2617 |   -0.8631 |   -0.6952 |   -0.8597 |   -0.9192 |
+|.....................|   -0.9038 |   -0.9834 |   -0.9323 |   -0.7404 |
+|.....................|   -0.8349 |   -0.7982 |   -0.7394 |   -0.8389 |
+|.....................|   -0.6688 |...........|...........|...........|
+|    U|     1799.2617 |   0.09189 |    -1.998 |     2.134 |    0.1017 |
+|.....................|    0.4087 |  -0.02838 |     4.538 |     12.98 |
+|.....................|     1.101 |     1.995 |     2.100 |     1.300 |
+|.....................|     2.225 |...........|...........|...........|
+|    X|     1799.2617 |     1.096 |    0.1356 |     8.449 |    0.1017 |
+|.....................|    0.4087 |    0.9720 |     93.49 |     12.98 |
+|.....................|     1.101 |     1.995 |     2.100 |     1.300 |
+|.....................|     2.225 |...........|...........|...........|
+|   20|     1788.3707 |   -0.8312 |   -0.7123 |   -0.8883 |   -0.9064 |
+|.....................|   -0.8874 |   -0.9347 |   -0.9489 |   -0.7432 |
+|.....................|   -0.8140 |   -0.8298 |   -0.7480 |   -0.8002 |
+|.....................|   -0.5809 |...........|...........|...........|
+|    U|     1788.3707 |    0.1238 |    -2.015 |     2.105 |    0.1023 |
+|.....................|    0.4120 |   0.02025 |     4.521 |     12.84 |
+|.....................|     1.121 |     1.939 |     2.085 |     1.346 |
+|.....................|     2.382 |...........|...........|...........|
+|    X|     1788.3707 |     1.132 |    0.1333 |     8.211 |    0.1023 |
+|.....................|    0.4120 |     1.020 |     91.95 |     12.84 |
+|.....................|     1.121 |     1.939 |     2.085 |     1.346 |
+|.....................|     2.382 |...........|...........|...........|
+|    F| Forward Diff. |    -10.14 |     12.44 |     23.22 |    -25.23 |
+|.....................|    -28.82 |    -37.41 |    -25.19 |     78.25 |
+|.....................|    -16.46 |     15.62 |    0.9839 |    -24.12 |
+|.....................|    -53.53 |...........|...........|...........|
+|-----+---------------+-----------+-----------+-----------+-----------|
+|   25|     1777.8072 |   -0.7978 |   -0.7299 |   -0.8870 |   -0.8810 |
+|.....................|   -0.8515 |   -0.8548 |   -0.9483 |   -0.7674 |
+|.....................|   -0.8023 |   -0.8564 |   -0.7566 |   -0.7360 |
+|.....................|   -0.4601 |...........|...........|...........|
+|    U|     1777.8072 |    0.1572 |    -2.033 |     2.107 |    0.1036 |
+|.....................|    0.4191 |    0.1002 |     4.522 |     11.63 |
+|.....................|     1.133 |     1.892 |     2.069 |     1.422 |
+|.....................|     2.596 |...........|...........|...........|
+|    X|     1777.8072 |     1.170 |    0.1310 |     8.222 |    0.1036 |
+|.....................|    0.4191 |     1.105 |     92.00 |     11.63 |
+|.....................|     1.133 |     1.892 |     2.069 |     1.422 |
+|.....................|     2.596 |...........|...........|...........|
+|    F| Forward Diff. |    -9.803 |    -4.360 |    -8.338 |    -31.05 |
+|.....................|    -34.21 |    -61.33 |    -48.70 |    -218.4 |
+|.....................|    -19.54 |    0.2969 |    -1.973 |    -20.71 |
+|.....................|    -44.17 |...........|...........|...........|
+|-----+---------------+-----------+-----------+-----------+-----------|
+|   30|     1768.1065 |   -0.7754 |   -0.7211 |   -0.8946 |   -0.8464 |
+|.....................|   -0.8064 |   -0.7747 |   -0.9317 |   -0.7434 |
+|.....................|   -0.7550 |   -0.8484 |   -0.7481 |   -0.6852 |
+|.....................|   -0.3784 |...........|...........|...........|
+|    U|     1768.1065 |    0.1796 |    -2.024 |     2.099 |    0.1053 |
+|.....................|    0.4282 |    0.1803 |     4.538 |     12.83 |
+|.....................|     1.180 |     1.906 |     2.084 |     1.482 |
+|.....................|     2.742 |...........|...........|...........|
+|    X|     1768.1065 |     1.197 |    0.1322 |     8.159 |    0.1053 |
+|.....................|    0.4282 |     1.198 |     93.54 |     12.83 |
+|.....................|     1.180 |     1.906 |     2.084 |     1.482 |
+|.....................|     2.742 |...........|...........|...........|
+|    F| Forward Diff. |    -9.799 |     6.972 |     14.49 |     6.600 |
+|.....................|     1.747 |    -7.672 |     32.91 |    -44.14 |
+|.....................|    -22.27 |    -4.597 |    -2.328 |    -22.35 |
+|.....................|    -36.83 |...........|...........|...........|
+|-----+---------------+-----------+-----------+-----------+-----------|
+|   35|     1762.8101 |   -0.7872 |   -0.7158 |   -0.8865 |   -0.8532 |
+|.....................|   -0.7947 |   -0.7425 |   -0.9330 |   -0.7577 |
+|.....................|   -0.7315 |   -0.8577 |   -0.7509 |   -0.6304 |
+|.....................|   -0.3010 |...........|...........|...........|
+|    U|     1762.8101 |    0.1678 |    -2.018 |     2.107 |    0.1050 |
+|.....................|    0.4305 |    0.2125 |     4.537 |     12.12 |
+|.....................|     1.204 |     1.889 |     2.079 |     1.548 |
+|.....................|     2.879 |...........|...........|...........|
+|    X|     1762.8101 |     1.183 |    0.1329 |     8.226 |    0.1050 |
+|.....................|    0.4305 |     1.237 |     93.42 |     12.12 |
+|.....................|     1.204 |     1.889 |     2.079 |     1.548 |
+|.....................|     2.879 |...........|...........|...........|
+|    F| Forward Diff. |    -38.61 |    0.4795 |    -5.886 |    -11.77 |
+|.....................|    -16.76 |    -24.41 |     14.34 |    -67.10 |
+|.....................|    -14.75 |    -12.40 |    -7.406 |    -20.21 |
+|.....................|    -32.28 |...........|...........|...........|
+|-----+---------------+-----------+-----------+-----------+-----------|
+|   40|     1761.1823 |   -0.7954 |   -0.7117 |   -0.8902 |   -0.8447 |
+|.....................|   -0.7805 |   -0.7216 |   -0.9290 |   -0.7574 |
+|.....................|   -0.7096 |   -0.8576 |   -0.7472 |   -0.6164 |
+|.....................|   -0.2814 |...........|...........|...........|
+|    U|     1761.1823 |    0.1596 |    -2.014 |     2.104 |    0.1054 |
+|.....................|    0.4333 |    0.2333 |     4.541 |     12.13 |
+|.....................|     1.226 |     1.890 |     2.086 |     1.564 |
+|.....................|     2.914 |...........|...........|...........|
+|    X|     1761.1823 |     1.173 |    0.1334 |     8.196 |    0.1054 |
+|.....................|    0.4333 |     1.263 |     93.79 |     12.13 |
+|.....................|     1.226 |     1.890 |     2.086 |     1.564 |
+|.....................|     2.914 |...........|...........|...........|
+|    F| Forward Diff. |    -20.65 |     12.91 |    -35.49 |    -33.01 |
+|.....................|    -43.09 |     24.80 |     35.77 |     54.86 |
+|.....................|     33.95 |     26.09 |     15.45 |    -12.14 |
+|.....................|    -23.34 |...........|...........|...........|
+|-----+---------------+-----------+-----------+-----------+-----------|
+|   45|     1759.7657 |   -0.7999 |   -0.7287 |   -0.8876 |   -0.8374 |
+|.....................|   -0.7666 |   -0.7118 |   -0.9350 |   -0.7554 |
+|.....................|   -0.7060 |   -0.8589 |   -0.7523 |   -0.6012 |
+|.....................|   -0.2536 |...........|...........|...........|
+|    U|     1759.7657 |    0.1551 |    -2.031 |     2.106 |    0.1058 |
+|.....................|    0.4361 |    0.2432 |     4.535 |     12.23 |
+|.....................|     1.229 |     1.887 |     2.077 |     1.582 |
+|.....................|     2.964 |...........|...........|...........|
+|    X|     1759.7657 |     1.168 |    0.1312 |     8.217 |    0.1058 |
+|.....................|    0.4361 |     1.275 |     93.23 |     12.23 |
+|.....................|     1.229 |     1.887 |     2.077 |     1.582 |
+|.....................|     2.964 |...........|...........|...........|
+|    F| Forward Diff. |    -24.18 |    -12.74 |     7.230 |    -27.12 |
+|.....................|    -33.18 |    -38.77 |    -16.16 |    -70.38 |
+|.....................|    -9.215 |    -2.323 |    -1.980 |    -15.41 |
+|.....................|    -27.82 |...........|...........|...........|
+|-----+---------------+-----------+-----------+-----------+-----------|
+|   50|     1757.4053 |   -0.8038 |   -0.7337 |   -0.8905 |   -0.8231 |
+|.....................|   -0.7397 |   -0.6870 |   -0.9281 |   -0.7568 |
+|.....................|   -0.6929 |   -0.8580 |   -0.7560 |   -0.5742 |
+|.....................|   -0.2064 |...........|...........|...........|
+|    U|     1757.4053 |    0.1512 |    -2.036 |     2.103 |    0.1065 |
+|.....................|    0.4415 |    0.2680 |     4.542 |     12.16 |
+|.....................|     1.243 |     1.889 |     2.070 |     1.614 |
+|.....................|     3.048 |...........|...........|...........|
+|    X|     1757.4053 |     1.163 |    0.1305 |     8.193 |    0.1065 |
+|.....................|    0.4415 |     1.307 |     93.88 |     12.16 |
+|.....................|     1.243 |     1.889 |     2.070 |     1.614 |
+|.....................|     3.048 |...........|...........|...........|
+|    F| Forward Diff. |    -19.53 |  -0.02944 |    -2.488 |    -5.132 |
+|.....................|    -10.53 |    -13.53 |     7.187 |    -11.15 |
+|.....................|    -4.197 |     3.610 |     1.925 |    -14.14 |
+|.....................|    -23.54 |...........|...........|...........|
+|-----+---------------+-----------+-----------+-----------+-----------|
+|   55|     1755.3617 |   -0.7780 |   -0.7269 |   -0.8889 |   -0.8157 |
+|.....................|   -0.7178 |   -0.6585 |   -0.9372 |   -0.7483 |
+|.....................|   -0.6713 |   -0.8571 |   -0.7558 |   -0.5387 |
+|.....................|   -0.1461 |...........|...........|...........|
+|    U|     1755.3617 |    0.1770 |    -2.029 |     2.105 |    0.1069 |
+|.....................|    0.4459 |    0.2965 |     4.533 |     12.59 |
+|.....................|     1.264 |     1.891 |     2.071 |     1.657 |
+|.....................|     3.155 |...........|...........|...........|
+|    X|     1755.3617 |     1.194 |    0.1314 |     8.206 |    0.1069 |
+|.....................|    0.4459 |     1.345 |     93.03 |     12.59 |
+|.....................|     1.264 |     1.891 |     2.071 |     1.657 |
+|.....................|     3.155 |...........|...........|...........|
+|    F| Forward Diff. |    -57.97 |    -35.96 |    -2.184 |    -15.25 |
+|.....................|    -21.95 |    -24.35 |    -29.92 |     34.88 |
+|.....................|    -16.31 |    -11.43 |    -6.257 |    -10.70 |
+|.....................|    -18.62 |...........|...........|...........|
+|-----+---------------+-----------+-----------+-----------+-----------|
+|   60|     1752.3229 |   -0.7461 |   -0.7130 |   -0.8911 |   -0.8148 |
+|.....................|   -0.6881 |   -0.6166 |   -0.9420 |   -0.7627 |
+|.....................|   -0.6645 |   -0.8789 |   -0.7654 |   -0.4727 |
+|.....................|  -0.03674 |...........|...........|...........|
+|    U|     1752.3229 |    0.2089 |    -2.016 |     2.103 |    0.1069 |
+|.....................|    0.4518 |    0.3384 |     4.528 |     11.87 |
+|.....................|     1.271 |     1.852 |     2.054 |     1.735 |
+|.....................|     3.349 |...........|...........|...........|
+|    X|     1752.3229 |     1.232 |    0.1332 |     8.188 |    0.1069 |
+|.....................|    0.4518 |     1.403 |     92.59 |     11.87 |
+|.....................|     1.271 |     1.852 |     2.054 |     1.735 |
+|.....................|     3.349 |...........|...........|...........|
+|    F| Forward Diff. |     2.574 |     13.20 |     8.724 |    -3.427 |
+|.....................|    -9.025 |    -7.847 |    -10.78 |     18.16 |
+|.....................|    -10.80 |    -12.52 |    -5.932 |    -7.330 |
+|.....................|    -15.61 |...........|...........|...........|
+|-----+---------------+-----------+-----------+-----------+-----------|
+|   65|     1751.2954 |   -0.7533 |   -0.7242 |   -0.8924 |   -0.8245 |
+|.....................|   -0.6880 |   -0.6196 |   -0.9397 |   -0.7559 |
+|.....................|   -0.6662 |   -0.8756 |   -0.7654 |   -0.4567 |
+|.....................| -0.004288 |...........|...........|...........|
+|    U|     1751.2954 |    0.2017 |    -2.027 |     2.101 |    0.1064 |
+|.....................|    0.4518 |    0.3354 |     4.530 |     12.21 |
+|.....................|     1.269 |     1.858 |     2.054 |     1.754 |
+|.....................|     3.407 |...........|...........|...........|
+|    X|     1751.2954 |     1.223 |    0.1318 |     8.178 |    0.1064 |
+|.....................|    0.4518 |     1.398 |     92.79 |     12.21 |
+|.....................|     1.269 |     1.858 |     2.054 |     1.754 |
+|.....................|     3.407 |...........|...........|...........|
+|   70|     1749.5474 |   -0.7403 |   -0.7447 |   -0.8832 |   -0.8542 |
+|.....................|   -0.6793 |   -0.5914 |   -0.9378 |   -0.7537 |
+|.....................|   -0.6909 |   -0.8568 |   -0.7907 |   -0.3924 |
+|.....................|    0.1211 |...........|...........|...........|
+|    U|     1749.5474 |    0.2147 |    -2.047 |     2.111 |    0.1049 |
+|.....................|    0.4536 |    0.3636 |     4.532 |     12.31 |
+|.....................|     1.245 |     1.891 |     2.009 |     1.831 |
+|.....................|     3.630 |...........|...........|...........|
+|    X|     1749.5474 |     1.239 |    0.1291 |     8.253 |    0.1049 |
+|.....................|    0.4536 |     1.439 |     92.98 |     12.31 |
+|.....................|     1.245 |     1.891 |     2.009 |     1.831 |
+|.....................|     3.630 |...........|...........|...........|
+|    F| Forward Diff. |     69.14 |     27.65 |    -2.772 |    -12.56 |
+|.....................|    -17.31 |    -8.718 |    -10.72 |    -33.14 |
+|.....................|    -17.77 |    -9.431 |    -11.84 |    -3.759 |
+|.....................|    -10.65 |...........|...........|...........|
+|-----+---------------+-----------+-----------+-----------+-----------|
+|   75|     1749.2015 |   -0.7416 |   -0.7513 |   -0.8911 |   -0.8588 |
+|.....................|   -0.6739 |   -0.5826 |   -0.9386 |   -0.7586 |
+|.....................|   -0.6987 |   -0.8607 |   -0.7811 |   -0.3849 |
+|.....................|    0.1447 |...........|...........|...........|
+|    U|     1749.2015 |    0.2134 |    -2.054 |     2.103 |    0.1047 |
+|.....................|    0.4547 |    0.3724 |     4.531 |     12.07 |
+|.....................|     1.237 |     1.884 |     2.026 |     1.840 |
+|.....................|     3.672 |...........|...........|...........|
+|    X|     1749.2015 |     1.238 |    0.1282 |     8.188 |    0.1047 |
+|.....................|    0.4547 |     1.451 |     92.90 |     12.07 |
+|.....................|     1.237 |     1.884 |     2.026 |     1.840 |
+|.....................|     3.672 |...........|...........|...........|
+|   80|     1749.1821 |   -0.7414 |   -0.7509 |   -0.8911 |   -0.8589 |
+|.....................|   -0.6740 |   -0.5829 |   -0.9387 |   -0.7580 |
+|.....................|   -0.6985 |   -0.8605 |   -0.7809 |   -0.3848 |
+|.....................|    0.1449 |...........|...........|...........|
+|    U|     1749.1821 |    0.2136 |    -2.053 |     2.103 |    0.1047 |
+|.....................|    0.4546 |    0.3720 |     4.531 |     12.10 |
+|.....................|     1.237 |     1.884 |     2.026 |     1.840 |
+|.....................|     3.672 |...........|...........|...........|
+|    X|     1749.1821 |     1.238 |    0.1283 |     8.188 |    0.1047 |
+|.....................|    0.4546 |     1.451 |     92.89 |     12.10 |
+|.....................|     1.237 |     1.884 |     2.026 |     1.840 |
+|.....................|     3.672 |...........|...........|...........|
+|    F| Forward Diff. |    -8.795 |    -14.13 |    -1.429 |     4.938 |
+|.....................|     2.335 |     12.61 |     6.755 |    -9.409 |
+|.....................|    0.6596 |     1.903 |    -4.785 |    -1.085 |
+|.....................|    -10.64 |...........|...........|...........|
+|-----+---------------+-----------+-----------+-----------+-----------|
+|   85|     1749.1521 |   -0.7410 |   -0.7504 |   -0.8912 |   -0.8591 |
+|.....................|   -0.6738 |   -0.5837 |   -0.9389 |   -0.7574 |
+|.....................|   -0.6982 |   -0.8604 |   -0.7801 |   -0.3846 |
+|.....................|    0.1459 |...........|...........|...........|
+|    U|     1749.1521 |    0.2140 |    -2.053 |     2.103 |    0.1047 |
+|.....................|    0.4547 |    0.3713 |     4.531 |     12.13 |
+|.....................|     1.237 |     1.885 |     2.028 |     1.840 |
+|.....................|     3.674 |...........|...........|...........|
+|    X|     1749.1521 |     1.239 |    0.1284 |     8.188 |    0.1047 |
+|.....................|    0.4547 |     1.450 |     92.87 |     12.13 |
+|.....................|     1.237 |     1.885 |     2.028 |     1.840 |
+|.....................|     3.674 |...........|...........|...........|
+|    F| Forward Diff. |     4.700 |    -12.89 |    -8.741 |    -5.153 |
+|.....................|    -8.774 |    0.6209 |    -5.977 |    -12.46 |
+|.....................|    -11.03 |    -4.854 |    -8.894 |    -3.017 |
+|.....................|    -10.56 |...........|...........|...........|
+|-----+---------------+-----------+-----------+-----------+-----------|
+|   90|     1748.9771 |   -0.7396 |   -0.7476 |   -0.8910 |   -0.8580 |
+|.....................|   -0.6703 |   -0.5850 |   -0.9389 |   -0.7564 |
+|.....................|   -0.6958 |   -0.8605 |   -0.7746 |   -0.3822 |
+|.....................|    0.1529 |...........|...........|...........|
+|    U|     1748.9771 |    0.2154 |    -2.050 |     2.103 |    0.1048 |
+|.....................|    0.4554 |    0.3700 |     4.531 |     12.18 |
+|.....................|     1.240 |     1.884 |     2.037 |     1.843 |
+|.....................|     3.687 |...........|...........|...........|
+|    X|     1748.9771 |     1.240 |    0.1287 |     8.189 |    0.1048 |
+|.....................|    0.4554 |     1.448 |     92.87 |     12.18 |
+|.....................|     1.240 |     1.884 |     2.037 |     1.843 |
+|.....................|     3.687 |...........|...........|...........|
+|    F| Forward Diff. |     18.92 |     7.191 |   -0.2098 |   -0.1883 |
+|.....................|    -2.218 |     3.841 |    -10.85 |     3.154 |
+|.....................|    -1.596 |    -9.154 |    -3.679 |   -0.3997 |
+|.....................|    -8.056 |...........|...........|...........|
+|-----+---------------+-----------+-----------+-----------+-----------|
+|   95|     1748.2429 |   -0.7398 |   -0.7471 |   -0.8913 |   -0.8820 |
+|.....................|   -0.6443 |   -0.5994 |   -0.9384 |   -0.7598 |
+|.....................|   -0.6782 |   -0.8737 |   -0.7672 |   -0.3549 |
+|.....................|    0.2267 |...........|...........|...........|
+|    U|     1748.2429 |    0.2152 |    -2.050 |     2.102 |    0.1035 |
+|.....................|    0.4606 |    0.3556 |     4.532 |     12.01 |
+|.....................|     1.257 |     1.861 |     2.050 |     1.875 |
+|.....................|     3.818 |...........|...........|...........|
+|    X|     1748.2429 |     1.240 |    0.1288 |     8.186 |    0.1035 |
+|.....................|    0.4606 |     1.427 |     92.92 |     12.01 |
+|.....................|     1.257 |     1.861 |     2.050 |     1.875 |
+|.....................|     3.818 |...........|...........|...........|
+|  100|     1748.0720 |   -0.7363 |   -0.7425 |   -0.8911 |   -0.8815 |
+|.....................|   -0.6434 |   -0.6000 |   -0.9364 |   -0.7555 |
+|.....................|   -0.6756 |   -0.8710 |   -0.7662 |   -0.3549 |
+|.....................|    0.2295 |...........|...........|...........|
+|    U|      1748.072 |    0.2187 |    -2.045 |     2.103 |    0.1036 |
+|.....................|    0.4608 |    0.3550 |     4.534 |     12.22 |
+|.....................|     1.260 |     1.866 |     2.052 |     1.875 |
+|.....................|     3.823 |...........|...........|...........|
+|    X|      1748.072 |     1.244 |    0.1294 |     8.188 |    0.1036 |
+|.....................|    0.4608 |     1.426 |     93.11 |     12.22 |
+|.....................|     1.260 |     1.866 |     2.052 |     1.875 |
+|.....................|     3.823 |...........|...........|...........|
+|    F| Forward Diff. |    -11.24 |    -3.916 |     5.630 |     8.950 |
+|.....................|     8.749 |     20.02 |     14.70 |     13.57 |
+|.....................|     16.74 |     6.424 |     5.240 |     2.144 |
+|.....................|    -5.893 |...........|...........|...........|
+|-----+---------------+-----------+-----------+-----------+-----------|
+|  105|     1748.0278 |   -0.7346 |   -0.7423 |   -0.8913 |   -0.8818 |
+|.....................|   -0.6422 |   -0.5992 |   -0.9370 |   -0.7569 |
+|.....................|   -0.6754 |   -0.8696 |   -0.7664 |   -0.3546 |
+|.....................|    0.2324 |...........|...........|...........|
+|    U|     1748.0278 |    0.2204 |    -2.045 |     2.102 |    0.1036 |
+|.....................|    0.4610 |    0.3558 |     4.533 |     12.15 |
+|.....................|     1.260 |     1.868 |     2.052 |     1.876 |
+|.....................|     3.828 |...........|...........|...........|
+|    X|     1748.0278 |     1.247 |    0.1294 |     8.186 |    0.1036 |
+|.....................|    0.4610 |     1.427 |     93.05 |     12.15 |
+|.....................|     1.260 |     1.868 |     2.052 |     1.876 |
+|.....................|     3.828 |...........|...........|...........|
+|  110|     1748.0234 |   -0.7347 |   -0.7423 |   -0.8913 |   -0.8817 |
+|.....................|   -0.6421 |   -0.5990 |   -0.9369 |   -0.7568 |
+|.....................|   -0.6753 |   -0.8696 |   -0.7663 |   -0.3546 |
+|.....................|    0.2323 |...........|...........|...........|
+|    U|     1748.0234 |    0.2203 |    -2.045 |     2.102 |    0.1036 |
+|.....................|    0.4610 |    0.3560 |     4.533 |     12.16 |
+|.....................|     1.260 |     1.868 |     2.052 |     1.876 |
+|.....................|     3.828 |...........|...........|...........|
+|    X|     1748.0234 |     1.246 |    0.1294 |     8.187 |    0.1036 |
+|.....................|    0.4610 |     1.428 |     93.06 |     12.16 |
+|.....................|     1.260 |     1.868 |     2.052 |     1.876 |
+|.....................|     3.828 |...........|...........|...........|
+|  115|     1748.0234 |   -0.7347 |   -0.7423 |   -0.8913 |   -0.8817 |
+|.....................|   -0.6421 |   -0.5990 |   -0.9369 |   -0.7568 |
+|.....................|   -0.6753 |   -0.8696 |   -0.7663 |   -0.3546 |
+|.....................|    0.2323 |...........|...........|...........|
+|    U|     1748.0234 |    0.2203 |    -2.045 |     2.102 |    0.1036 |
+|.....................|    0.4610 |    0.3560 |     4.533 |     12.16 |
+|.....................|     1.260 |     1.868 |     2.052 |     1.876 |
+|.....................|     3.828 |...........|...........|...........|
+|    X|     1748.0234 |     1.246 |    0.1294 |     8.187 |    0.1036 |
+|.....................|    0.4610 |     1.428 |     93.06 |     12.16 |
+|.....................|     1.260 |     1.868 |     2.052 |     1.876 |
+|.....................|     3.828 |...........|...........|...........|
+calculating covariance matrix
+[====|====|====|====|====|====|====|====|====|====] 0:05:17 
+done
+> Calculating residuals/tables
+v done
+> compress origData in nlmixr2 object, save 29184
+> compress parHist in nlmixr2 object, save 5968
+
+⠋ |   1     0 | vpcSim                                                          
+⠙ |   2     0 | vpcSim                                                          
+⠹ |   3     0 | vpcSim                                                          
+⠸ |   4     0 | vpcSim                                                          
+⠼ |   4     1 | vpcSim                                                          
+⠴ |   4     2 | vpcSim                                                          
+⠦ |   4     3 | vpcSim                                                          
+✔ |   4     4 | vpcSim [3320.4s]
 ────────────────────────────────────────────────────────────────────────────────
-Error (test-vpcSim.R:12:5): vpcSim retains column information
-Error in ``:=`(MDV, ifelse(is.na(DV), 1, 0))`: Check that is.data.table(DT) == TRUE. Otherwise, := and `:=`(...) are defined for use in j, once only and in particular ways. See help(":=").
+Warning (test-vpcSim.R:50:5): vpcSim retains column information
+gradient problems with initial estimate and covariance; see $scaleInfo
 Backtrace:
- 1. PKPDdata[, `:=`(MDV, ifelse(is.na(DV), 1, 0))]
-      at test-vpcSim.R:12:4
- 4. `:=`(MDV, ifelse(is.na(DV), 1, 0))
+ 1. nlmixr2est::nlmixr(...)
+      at test-vpcSim.R:50:4
+ 2. nlmixr2est::nlmixr2.function(...)
+      at nlmixr2est/R/nlmixr2.R:115:2
+ 3. nlmixr2est::nlmixr2Est0(.env)
+      at nlmixr2est/R/nlmixr2.R:193:2
+ 4. base::lapply(.lst[[2]], warning, call. = FALSE)
+      at nlmixr2est/R/nlmixr2Est.R:236:2
+
+Warning (test-vpcSim.R:50:5): vpcSim retains column information
+last objective function was not at minimum, possible problems in optimization
+Backtrace:
+ 1. nlmixr2est::nlmixr(...)
+      at test-vpcSim.R:50:4
+ 2. nlmixr2est::nlmixr2.function(...)
+      at nlmixr2est/R/nlmixr2.R:115:2
+ 3. nlmixr2est::nlmixr2Est0(.env)
+      at nlmixr2est/R/nlmixr2.R:193:2
+ 4. base::lapply(.lst[[2]], warning, call. = FALSE)
+      at nlmixr2est/R/nlmixr2Est.R:236:2
+
+Warning (test-vpcSim.R:50:5): vpcSim retains column information
+ETAs were reset to zero during optimization; (Can control by foceiControl(resetEtaP=.))
+Backtrace:
+ 1. nlmixr2est::nlmixr(...)
+      at test-vpcSim.R:50:4
+ 2. nlmixr2est::nlmixr2.function(...)
+      at nlmixr2est/R/nlmixr2.R:115:2
+ 3. nlmixr2est::nlmixr2Est0(.env)
+      at nlmixr2est/R/nlmixr2.R:193:2
+ 4. base::lapply(.lst[[2]], warning, call. = FALSE)
+      at nlmixr2est/R/nlmixr2Est.R:236:2
+
+Warning (test-vpcSim.R:50:5): vpcSim retains column information
+initial ETAs were nudged; (can control by foceiControl(etaNudge=., etaNudge2=))
+Backtrace:
+ 1. nlmixr2est::nlmixr(...)
+      at test-vpcSim.R:50:4
+ 2. nlmixr2est::nlmixr2.function(...)
+      at nlmixr2est/R/nlmixr2.R:115:2
+ 3. nlmixr2est::nlmixr2Est0(.env)
+      at nlmixr2est/R/nlmixr2.R:193:2
+ 4. base::lapply(.lst[[2]], warning, call. = FALSE)
+      at nlmixr2est/R/nlmixr2Est.R:236:2
 ────────────────────────────────────────────────────────────────────────────────
 
 ══ Results ═════════════════════════════════════════════════════════════════════
-Duration: 1676.2 s
+Duration: 87893.0 s
 
 ── Skipped tests  ──────────────────────────────────────────────────────────────
 • empty test (1)
 
-[ FAIL 10 | WARN 32 | SKIP 1 | PASS 758 ]
-
-I believe in you!
+[ FAIL 8 | WARN 37 | SKIP 1 | PASS 768 ]
 > 
 > 
+==904580== 
+==904580== HEAP SUMMARY:
+==904580==     in use at exit: 903,578,946 bytes in 203,571 blocks
+==904580==   total heap usage: 734,592,019 allocs, 734,388,448 frees, 2,505,703,403,244 bytes allocated
+==904580== 
+==904580== 1,200 bytes in 3 blocks are possibly lost in loss record 2,224 of 6,891
+==904580==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==904580==    by 0x40149DA: allocate_dtv (dl-tls.c:286)
+==904580==    by 0x40149DA: _dl_allocate_tls (dl-tls.c:532)
+==904580==    by 0x574B322: allocate_stack (allocatestack.c:622)
+==904580==    by 0x574B322: pthread_create@@GLIBC_2.2.5 (pthread_create.c:660)
+==904580==    by 0x571ADEA: ??? (in /usr/lib/x86_64-linux-gnu/libgomp.so.1.0.0)
+==904580==    by 0x57128E0: GOMP_parallel (in /usr/lib/x86_64-linux-gnu/libgomp.so.1.0.0)
+==904580==    by 0x162874F0: forder (forder.c:486)
+==904580==    by 0x49421C3: ??? (in /usr/lib/R/lib/libR.so)
+==904580==    by 0x4985D36: ??? (in /usr/lib/R/lib/libR.so)
+==904580==    by 0x4999867: Rf_eval (in /usr/lib/R/lib/libR.so)
+==904580==    by 0x499B71E: ??? (in /usr/lib/R/lib/libR.so)
+==904580==    by 0x499C611: Rf_applyClosure (in /usr/lib/R/lib/libR.so)
+==904580==    by 0x498719D: ??? (in /usr/lib/R/lib/libR.so)
+==904580== 
+==904580== 4,800 bytes in 12 blocks are possibly lost in loss record 2,430 of 6,891
+==904580==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==904580==    by 0x40149DA: allocate_dtv (dl-tls.c:286)
+==904580==    by 0x40149DA: _dl_allocate_tls (dl-tls.c:532)
+==904580==    by 0x574B322: allocate_stack (allocatestack.c:622)
+==904580==    by 0x574B322: pthread_create@@GLIBC_2.2.5 (pthread_create.c:660)
+==904580==    by 0x571ADEA: ??? (in /usr/lib/x86_64-linux-gnu/libgomp.so.1.0.0)
+==904580==    by 0x57128E0: GOMP_parallel (in /usr/lib/x86_64-linux-gnu/libgomp.so.1.0.0)
+==904580==    by 0x15B047E1: par_liblsoda (par_solve.cpp:1488)
+==904580==    by 0x15B07954: par_solve (par_solve.cpp:1973)
+==904580==    by 0x256B61C3: user_function(arma::Mat<double> const&, arma::Mat<double> const&, Rcpp::Vector<19, Rcpp::PreserveStorage> const&) (saem.cpp:2013)
+==904580==    by 0x256DBBD2: SAEM::saem_fit() (saem.cpp:755)
+==904580==    by 0x256B88D9: saem_fit(SEXPREC*) (saem.cpp:2157)
+==904580==    by 0x2574864E: _nlmixr2est_saem_fit (RcppExports.cpp:464)
+==904580==    by 0x494224F: ??? (in /usr/lib/R/lib/libR.so)
+==904580== 
+==904580== LEAK SUMMARY:
+==904580==    definitely lost: 0 bytes in 0 blocks
+==904580==    indirectly lost: 0 bytes in 0 blocks
+==904580==      possibly lost: 6,000 bytes in 15 blocks
+==904580==    still reachable: 903,572,946 bytes in 203,556 blocks
+==904580==                       of which reachable via heuristic:
+==904580==                         newarray           : 4,264 bytes in 1 blocks
+==904580==         suppressed: 0 bytes in 0 blocks
+==904580== Reachable blocks (those to which a pointer was found) are not shown.
+==904580== To see them, rerun with: --leak-check=full --show-leak-kinds=all
+==904580== 
+==904580== For lists of detected and suppressed errors, rerun with: -s
+==904580== ERROR SUMMARY: 2 errors from 2 contexts (suppressed: 0 from 0)

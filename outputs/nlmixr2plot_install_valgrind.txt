@@ -1,0 +1,825 @@
+==939764== Memcheck, a memory error detector
+==939764== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==939764== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
+==939764== Command: /usr/lib/R/bin/exec/R -e devtools::install_local(force=TRUE)
+==939764== 
+
+R version 4.2.0 (2022-04-22) -- "Vigorous Calisthenics"
+Copyright (C) 2022 The R Foundation for Statistical Computing
+Platform: x86_64-pc-linux-gnu (64-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+  Natural language support but running in an English locale
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+> devtools::install_local(force=TRUE)
+htmlwidgets  (NA    -> 1.5.4  ) [CRAN]
+viridis      (NA    -> 0.6.2  ) [CRAN]
+htmlTable    (NA    -> 2.4.0  ) [CRAN]
+gridExtra    (NA    -> 2.3    ) [CRAN]
+latticeExtra (NA    -> 0.6-29 ) [CRAN]
+Formula      (NA    -> 1.2-4  ) [CRAN]
+openssl      (2.0.0 -> 2.0.1  ) [CRAN]
+lmom         (NA    -> 2.8    ) [CRAN]
+rootSolve    (NA    -> 1.8.2.3) [CRAN]
+gld          (NA    -> 2.6.4  ) [CRAN]
+Exact        (NA    -> 3.1    ) [CRAN]
+expm         (NA    -> 0.999-6) [CRAN]
+mvtnorm      (NA    -> 1.1-3  ) [CRAN]
+pander       (NA    -> 0.6.5  ) [CRAN]
+minpack.lm   (NA    -> 1.2-2  ) [CRAN]
+Hmisc        (NA    -> 4.7-0  ) [CRAN]
+DescTools    (NA    -> 0.99.45) [CRAN]
+Deriv        (NA    -> 4.1.3  ) [CRAN]
+binom        (NA    -> 1.1-1.1) [CRAN]
+xgxr         (NA    -> 1.1.1  ) [CRAN]
+Installing 20 packages: htmlwidgets, viridis, htmlTable, gridExtra, latticeExtra, Formula, openssl, lmom, rootSolve, gld, Exact, expm, mvtnorm, pander, minpack.lm, Hmisc, DescTools, Deriv, binom, xgxr
+Installing packages into ‘/home/bill/R/x86_64-pc-linux-gnu-library/4.2’
+(as ‘lib’ is unspecified)
+trying URL 'https://cloud.r-project.org/src/contrib/htmlwidgets_1.5.4.tar.gz'
+Content type 'application/x-gzip' length 956850 bytes (934 KB)
+==================================================
+downloaded 934 KB
+
+trying URL 'https://cloud.r-project.org/src/contrib/viridis_0.6.2.tar.gz'
+Content type 'application/x-gzip' length 3031731 bytes (2.9 MB)
+==================================================
+downloaded 2.9 MB
+
+trying URL 'https://cloud.r-project.org/src/contrib/htmlTable_2.4.0.tar.gz'
+Content type 'application/x-gzip' length 438209 bytes (427 KB)
+==================================================
+downloaded 427 KB
+
+trying URL 'https://cloud.r-project.org/src/contrib/gridExtra_2.3.tar.gz'
+Content type 'application/x-gzip' length 1062844 bytes (1.0 MB)
+==================================================
+downloaded 1.0 MB
+
+trying URL 'https://cloud.r-project.org/src/contrib/latticeExtra_0.6-29.tar.gz'
+Content type 'application/x-gzip' length 1292315 bytes (1.2 MB)
+==================================================
+downloaded 1.2 MB
+
+trying URL 'https://cloud.r-project.org/src/contrib/Formula_1.2-4.tar.gz'
+Content type 'application/x-gzip' length 164214 bytes (160 KB)
+==================================================
+downloaded 160 KB
+
+trying URL 'https://cloud.r-project.org/src/contrib/openssl_2.0.1.tar.gz'
+Content type 'application/x-gzip' length 1204569 bytes (1.1 MB)
+==================================================
+downloaded 1.1 MB
+
+trying URL 'https://cloud.r-project.org/src/contrib/lmom_2.8.tar.gz'
+Content type 'application/x-gzip' length 336215 bytes (328 KB)
+==================================================
+downloaded 328 KB
+
+trying URL 'https://cloud.r-project.org/src/contrib/rootSolve_1.8.2.3.tar.gz'
+Content type 'application/x-gzip' length 526589 bytes (514 KB)
+==================================================
+downloaded 514 KB
+
+trying URL 'https://cloud.r-project.org/src/contrib/gld_2.6.4.tar.gz'
+Content type 'application/x-gzip' length 61644 bytes (60 KB)
+==================================================
+downloaded 60 KB
+
+trying URL 'https://cloud.r-project.org/src/contrib/Exact_3.1.tar.gz'
+Content type 'application/x-gzip' length 44831 bytes (43 KB)
+==================================================
+downloaded 43 KB
+
+trying URL 'https://cloud.r-project.org/src/contrib/expm_0.999-6.tar.gz'
+Content type 'application/x-gzip' length 151884 bytes (148 KB)
+==================================================
+downloaded 148 KB
+
+trying URL 'https://cloud.r-project.org/src/contrib/mvtnorm_1.1-3.tar.gz'
+Content type 'application/x-gzip' length 166421 bytes (162 KB)
+==================================================
+downloaded 162 KB
+
+trying URL 'https://cloud.r-project.org/src/contrib/pander_0.6.5.tar.gz'
+Content type 'application/x-gzip' length 393677 bytes (384 KB)
+==================================================
+downloaded 384 KB
+
+trying URL 'https://cloud.r-project.org/src/contrib/minpack.lm_1.2-2.tar.gz'
+Content type 'application/x-gzip' length 41227 bytes (40 KB)
+==================================================
+downloaded 40 KB
+
+trying URL 'https://cloud.r-project.org/src/contrib/Hmisc_4.7-0.tar.gz'
+Content type 'application/x-gzip' length 790794 bytes (772 KB)
+==================================================
+downloaded 772 KB
+
+trying URL 'https://cloud.r-project.org/src/contrib/DescTools_0.99.45.tar.gz'
+Content type 'application/x-gzip' length 2633529 bytes (2.5 MB)
+==================================================
+downloaded 2.5 MB
+
+trying URL 'https://cloud.r-project.org/src/contrib/Deriv_4.1.3.tar.gz'
+Content type 'application/x-gzip' length 37214 bytes (36 KB)
+==================================================
+downloaded 36 KB
+
+trying URL 'https://cloud.r-project.org/src/contrib/binom_1.1-1.1.tar.gz'
+Content type 'application/x-gzip' length 247220 bytes (241 KB)
+==================================================
+downloaded 241 KB
+
+trying URL 'https://cloud.r-project.org/src/contrib/xgxr_1.1.1.tar.gz'
+Content type 'application/x-gzip' length 648881 bytes (633 KB)
+==================================================
+downloaded 633 KB
+
+* installing *source* package ‘htmlwidgets’ ...
+** package ‘htmlwidgets’ successfully unpacked and MD5 sums checked
+** using staged installation
+** R
+** inst
+** byte-compile and prepare package for lazy loading
+Failed with error:  ‘there is no package called ‘shiny’’
+** help
+*** installing help indices
+** building package indices
+** installing vignettes
+** testing if installed package can be loaded from temporary location
+** testing if installed package can be loaded from final location
+** testing if installed package keeps a record of temporary installation path
+* DONE (htmlwidgets)
+* installing *source* package ‘gridExtra’ ...
+** package ‘gridExtra’ successfully unpacked and MD5 sums checked
+** using staged installation
+** R
+** inst
+** byte-compile and prepare package for lazy loading
+** help
+*** installing help indices
+** building package indices
+** installing vignettes
+** testing if installed package can be loaded from temporary location
+** testing if installed package can be loaded from final location
+** testing if installed package keeps a record of temporary installation path
+* DONE (gridExtra)
+* installing *source* package ‘latticeExtra’ ...
+** package ‘latticeExtra’ successfully unpacked and MD5 sums checked
+** using staged installation
+** R
+** data
+*** moving datasets to lazyload DB
+** inst
+** byte-compile and prepare package for lazy loading
+** help
+*** installing help indices
+** building package indices
+** testing if installed package can be loaded from temporary location
+** testing if installed package can be loaded from final location
+** testing if installed package keeps a record of temporary installation path
+* DONE (latticeExtra)
+* installing *source* package ‘Formula’ ...
+** package ‘Formula’ successfully unpacked and MD5 sums checked
+** using staged installation
+** R
+** inst
+** byte-compile and prepare package for lazy loading
+** help
+*** installing help indices
+** building package indices
+** installing vignettes
+** testing if installed package can be loaded from temporary location
+** testing if installed package can be loaded from final location
+** testing if installed package keeps a record of temporary installation path
+* DONE (Formula)
+* installing *source* package ‘openssl’ ...
+** package ‘openssl’ successfully unpacked and MD5 sums checked
+** using staged installation
+Found pkg-config cflags and libs!
+Using PKG_CFLAGS=
+Using PKG_LIBS=-l:libssl.so.1.1 -l:libcrypto.so.1.1
+** libs
+rm -f aes.o base64.o bignum.o cert.o compatibility.o diffie.o envelope.o error.o hash.o info.o keygen.o keys.o onload.o openssh.o password.o pbkdf.o pem.o pkcs12.o pkcs7.o rand.o rsa.o signing.o ssl.o stream.o write.o x25519.o openssl.so bcrypt/libstatbcrypt.a bcrypt/bcrypt_pbkdf.o bcrypt/blowfish.o
+gcc -I"/usr/share/R/include" -DNDEBUG      -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-apO4Ea/r-base-4.2.0=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c aes.c -o aes.o
+gcc -I"/usr/share/R/include" -DNDEBUG      -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-apO4Ea/r-base-4.2.0=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c base64.c -o base64.o
+gcc -I"/usr/share/R/include" -DNDEBUG      -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-apO4Ea/r-base-4.2.0=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c bignum.c -o bignum.o
+gcc -I"/usr/share/R/include" -DNDEBUG      -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-apO4Ea/r-base-4.2.0=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c cert.c -o cert.o
+gcc -I"/usr/share/R/include" -DNDEBUG      -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-apO4Ea/r-base-4.2.0=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c compatibility.c -o compatibility.o
+gcc -I"/usr/share/R/include" -DNDEBUG      -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-apO4Ea/r-base-4.2.0=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c diffie.c -o diffie.o
+gcc -I"/usr/share/R/include" -DNDEBUG      -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-apO4Ea/r-base-4.2.0=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c envelope.c -o envelope.o
+gcc -I"/usr/share/R/include" -DNDEBUG      -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-apO4Ea/r-base-4.2.0=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c error.c -o error.o
+gcc -I"/usr/share/R/include" -DNDEBUG      -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-apO4Ea/r-base-4.2.0=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c hash.c -o hash.o
+gcc -I"/usr/share/R/include" -DNDEBUG      -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-apO4Ea/r-base-4.2.0=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c info.c -o info.o
+gcc -I"/usr/share/R/include" -DNDEBUG      -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-apO4Ea/r-base-4.2.0=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c keygen.c -o keygen.o
+gcc -I"/usr/share/R/include" -DNDEBUG      -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-apO4Ea/r-base-4.2.0=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c keys.c -o keys.o
+gcc -I"/usr/share/R/include" -DNDEBUG      -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-apO4Ea/r-base-4.2.0=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c onload.c -o onload.o
+gcc -I"/usr/share/R/include" -DNDEBUG      -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-apO4Ea/r-base-4.2.0=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c openssh.c -o openssh.o
+gcc -I"/usr/share/R/include" -DNDEBUG      -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-apO4Ea/r-base-4.2.0=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c password.c -o password.o
+gcc -I"/usr/share/R/include" -DNDEBUG      -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-apO4Ea/r-base-4.2.0=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c pbkdf.c -o pbkdf.o
+gcc -I"/usr/share/R/include" -DNDEBUG      -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-apO4Ea/r-base-4.2.0=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c pem.c -o pem.o
+gcc -I"/usr/share/R/include" -DNDEBUG      -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-apO4Ea/r-base-4.2.0=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c pkcs12.c -o pkcs12.o
+gcc -I"/usr/share/R/include" -DNDEBUG      -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-apO4Ea/r-base-4.2.0=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c pkcs7.c -o pkcs7.o
+gcc -I"/usr/share/R/include" -DNDEBUG      -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-apO4Ea/r-base-4.2.0=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c rand.c -o rand.o
+gcc -I"/usr/share/R/include" -DNDEBUG      -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-apO4Ea/r-base-4.2.0=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c rsa.c -o rsa.o
+gcc -I"/usr/share/R/include" -DNDEBUG      -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-apO4Ea/r-base-4.2.0=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c signing.c -o signing.o
+gcc -I"/usr/share/R/include" -DNDEBUG      -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-apO4Ea/r-base-4.2.0=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c ssl.c -o ssl.o
+gcc -I"/usr/share/R/include" -DNDEBUG      -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-apO4Ea/r-base-4.2.0=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c stream.c -o stream.o
+gcc -I"/usr/share/R/include" -DNDEBUG      -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-apO4Ea/r-base-4.2.0=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c write.c -o write.o
+gcc -I"/usr/share/R/include" -DNDEBUG      -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-apO4Ea/r-base-4.2.0=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c x25519.c -o x25519.o
+gcc -I"/usr/share/R/include" -DNDEBUG      -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-apO4Ea/r-base-4.2.0=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c bcrypt/bcrypt_pbkdf.c -o bcrypt/bcrypt_pbkdf.o
+gcc -I"/usr/share/R/include" -DNDEBUG      -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-apO4Ea/r-base-4.2.0=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c bcrypt/blowfish.c -o bcrypt/blowfish.o
+ar rcs bcrypt/libstatbcrypt.a bcrypt/bcrypt_pbkdf.o bcrypt/blowfish.o
+gcc -shared -L/usr/lib/R/lib -Wl,-Bsymbolic-functions -Wl,-z,relro -o openssl.so aes.o base64.o bignum.o cert.o compatibility.o diffie.o envelope.o error.o hash.o info.o keygen.o keys.o onload.o openssh.o password.o pbkdf.o pem.o pkcs12.o pkcs7.o rand.o rsa.o signing.o ssl.o stream.o write.o x25519.o -Lbcrypt -lstatbcrypt -l:libssl.so.1.1 -l:libcrypto.so.1.1 -L/usr/lib/R/lib -lR
+installing to /home/bill/R/x86_64-pc-linux-gnu-library/4.2/00LOCK-openssl/00new/openssl/libs
+** R
+** inst
+** byte-compile and prepare package for lazy loading
+** help
+*** installing help indices
+** building package indices
+** installing vignettes
+** testing if installed package can be loaded from temporary location
+** checking absolute paths in shared objects and dynamic libraries
+** testing if installed package can be loaded from final location
+** testing if installed package keeps a record of temporary installation path
+* DONE (openssl)
+* installing *source* package ‘lmom’ ...
+** package ‘lmom’ successfully unpacked and MD5 sums checked
+** using staged installation
+** libs
+gfortran -fno-optimize-sibling-calls  -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-apO4Ea/r-base-4.2.0=. -fstack-protector-strong  -c d1mach.f -o d1mach.o
+gfortran -fno-optimize-sibling-calls  -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-apO4Ea/r-base-4.2.0=. -fstack-protector-strong  -c dqagie.f -o dqagie.o
+gfortran -fno-optimize-sibling-calls  -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-apO4Ea/r-base-4.2.0=. -fstack-protector-strong  -c dqagse.f -o dqagse.o
+gfortran -fno-optimize-sibling-calls  -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-apO4Ea/r-base-4.2.0=. -fstack-protector-strong  -c dqelg.f -o dqelg.o
+gfortran -fno-optimize-sibling-calls  -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-apO4Ea/r-base-4.2.0=. -fstack-protector-strong  -c dqk15i.f -o dqk15i.o
+gfortran -fno-optimize-sibling-calls  -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-apO4Ea/r-base-4.2.0=. -fstack-protector-strong  -c dqk21.f -o dqk21.o
+gfortran -fno-optimize-sibling-calls  -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-apO4Ea/r-base-4.2.0=. -fstack-protector-strong  -c dqpsrt.f -o dqpsrt.o
+gcc -I"/usr/share/R/include" -DNDEBUG      -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-apO4Ea/r-base-4.2.0=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c init.c -o init.o
+gcc -I"/usr/share/R/include" -DNDEBUG      -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-apO4Ea/r-base-4.2.0=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c lmomc.c -o lmomc.o
+gfortran -fno-optimize-sibling-calls  -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-apO4Ea/r-base-4.2.0=. -fstack-protector-strong  -c lmoments.f -o lmoments.o
+gfortran -fno-optimize-sibling-calls  -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-apO4Ea/r-base-4.2.0=. -fstack-protector-strong  -c samlm.f -o samlm.o
+samlm.f:35:72:
+
+   35 |    10 XMOM(J)=ZERO
+      |                                                                        1
+Warning: Fortran 2018 deleted feature: DO termination statement which is not END DO or CONTINUE with label 10 at (1)
+samlm.f:102:72:
+
+  102 |    80 XMOM(J)=XMOM(J)*AMULT
+      |                                                                        1
+Warning: Fortran 2018 deleted feature: DO termination statement which is not END DO or CONTINUE with label 80 at (1)
+lmoments.f:288:72:
+
+  288 |    10 XMOM(J)=TWO/DFLOAT(J*(J-1))
+      |                                                                        1
+Warning: Fortran 2018 deleted feature: DO termination statement which is not END DO or CONTINUE with label 10 at (1)
+lmoments.f:448:72:
+
+  448 |    10 XMOM(I)=ZMOM(I)
+      |                                                                        1
+Warning: Fortran 2018 deleted feature: DO termination statement which is not END DO or CONTINUE with label 10 at (1)
+lmoments.f:624:72:
+
+  624 |    10 SUM=SUM*GG+Z(K,M)
+      |                                                                        1
+Warning: Fortran 2018 deleted feature: DO termination statement which is not END DO or CONTINUE with label 10 at (1)
+lmoments.f:712:72:
+
+  712 |     2 XMOM(I)=ZMOM(I)
+      |                                                                        1
+Warning: Fortran 2018 deleted feature: DO termination statement which is not END DO or CONTINUE with label 2 at (1)
+lmoments.f:739:72:
+
+  739 |    10 SUM(M)=ZERO
+      |                                                                        1
+Warning: Fortran 2018 deleted feature: DO termination statement which is not END DO or CONTINUE with label 10 at (1)
+lmoments.f:755:72:
+
+  755 |    20 SUM(M)=SUM(M)+E*P
+      |                                                                        1
+Warning: Fortran 2018 deleted feature: DO termination statement which is not END DO or CONTINUE with label 20 at (1)
+lmoments.f:758:72:
+
+  758 |    40 EST(M)=SUM(M)*XINC
+      |                                                                        1
+Warning: Fortran 2018 deleted feature: DO termination statement which is not END DO or CONTINUE with label 40 at (1)
+lmoments.f:764:72:
+
+  764 |    50 ESTX(M)=EST(M)
+      |                                                                        1
+Warning: Fortran 2018 deleted feature: DO termination statement which is not END DO or CONTINUE with label 50 at (1)
+lmoments.f:780:72:
+
+  780 |    60 SUM(M)=SUM(M)+E*P
+      |                                                                        1
+Warning: Fortran 2018 deleted feature: DO termination statement which is not END DO or CONTINUE with label 60 at (1)
+lmoments.f:797:72:
+
+  797 |   110 XMOM(M)=CONST*EST(M)
+      |                                                                        1
+Warning: Fortran 2018 deleted feature: DO termination statement which is not END DO or CONTINUE with label 110 at (1)
+lmoments.f:928:72:
+
+  928 |    10 XMOM(J)=ZMOM(J)
+      |                                                                        1
+Warning: Fortran 2018 deleted feature: DO termination statement which is not END DO or CONTINUE with label 10 at (1)
+lmoments.f:1004:72:
+
+ 1004 |    20 BETA(IR)=DEXP(ARG)
+      |                                                                        1
+Warning: Fortran 2018 deleted feature: DO termination statement which is not END DO or CONTINUE with label 20 at (1)
+lmoments.f:1011:72:
+
+ 1011 |    40 BETA(IR)=DEXP(DLGAM-G*DLOG(R))*(ONE-HALF*H*G*(ONE+G)/R)
+      |                                                                        1
+Warning: Fortran 2018 deleted feature: DO termination statement which is not END DO or CONTINUE with label 40 at (1)
+lmoments.f:1020:72:
+
+ 1020 |    60 BETA(IR)=DEXP(ARG)
+      |                                                                        1
+Warning: Fortran 2018 deleted feature: DO termination statement which is not END DO or CONTINUE with label 60 at (1)
+lmoments.f:1027:72:
+
+ 1027 |    80 BETA(IR)=EU+DLOG(-H)+DIGAMD(-R/H)
+      |                                                                        1
+Warning: Fortran 2018 deleted feature: DO termination statement which is not END DO or CONTINUE with label 80 at (1)
+lmoments.f:1034:72:
+
+ 1034 |   100 BETA(IR)=EU+DLOG(R)
+      |                                                                        1
+Warning: Fortran 2018 deleted feature: DO termination statement which is not END DO or CONTINUE with label 100 at (1)
+lmoments.f:1041:72:
+
+ 1041 |   120 BETA(IR)=EU+DLOG(H)+DIGAMD(ONE+R/H)
+      |                                                                        1
+Warning: Fortran 2018 deleted feature: DO termination statement which is not END DO or CONTINUE with label 120 at (1)
+lmoments.f:1135:72:
+
+ 1135 |    10 XMOM(M)=ZMOM(M)
+      |                                                                        1
+Warning: Fortran 2018 deleted feature: DO termination statement which is not END DO or CONTINUE with label 10 at (1)
+lmoments.f:1819:72:
+
+ 1819 |    10 PARA(I)=ZERO
+      |                                                                        1
+Warning: Fortran 2018 deleted feature: DO termination statement which is not END DO or CONTINUE with label 10 at (1)
+lmoments.f:2114:72:
+
+ 2114 |  1010 PARA(I)=ZERO
+      |                                                                        1
+Warning: Fortran 2018 deleted feature: DO termination statement which is not END DO or CONTINUE with label 1010 at (1)
+lmoments.f:2234:72:
+
+ 2234 |  1010 PARA(I)=ZERO
+      |                                                                        1
+Warning: Fortran 2018 deleted feature: DO termination statement which is not END DO or CONTINUE with label 1010 at (1)
+lmoments.f:2333:72:
+
+ 2333 |  1010 PARA(I)=ZERO
+      |                                                                        1
+Warning: Fortran 2018 deleted feature: DO termination statement which is not END DO or CONTINUE with label 1010 at (1)
+gcc -shared -L/usr/lib/R/lib -Wl,-Bsymbolic-functions -Wl,-z,relro -o lmom.so d1mach.o dqagie.o dqagse.o dqelg.o dqk15i.o dqk21.o dqpsrt.o init.o lmomc.o lmoments.o samlm.o -lgfortran -lm -lquadmath -L/usr/lib/R/lib -lR
+installing to /home/bill/R/x86_64-pc-linux-gnu-library/4.2/00LOCK-lmom/00new/lmom/libs
+** R
+** inst
+** byte-compile and prepare package for lazy loading
+** help
+*** installing help indices
+** building package indices
+** testing if installed package can be loaded from temporary location
+** checking absolute paths in shared objects and dynamic libraries
+** testing if installed package can be loaded from final location
+** testing if installed package keeps a record of temporary installation path
+* DONE (lmom)
+* installing *source* package ‘rootSolve’ ...
+** package ‘rootSolve’ successfully unpacked and MD5 sums checked
+** using staged installation
+** libs
+gcc -I"/usr/share/R/include" -DNDEBUG      -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-apO4Ea/r-base-4.2.0=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c R_init_rootSolve.c -o R_init_rootSolve.o
+gcc -I"/usr/share/R/include" -DNDEBUG      -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-apO4Ea/r-base-4.2.0=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c call_runsteady.c -o call_runsteady.o
+gcc -I"/usr/share/R/include" -DNDEBUG      -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-apO4Ea/r-base-4.2.0=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c call_steady.c -o call_steady.o
+gcc -I"/usr/share/R/include" -DNDEBUG      -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-apO4Ea/r-base-4.2.0=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c call_stsparse.c -o call_stsparse.o
+gfortran -fno-optimize-sibling-calls  -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-apO4Ea/r-base-4.2.0=. -fstack-protector-strong  -c dlinpk.f -o dlinpk.o
+gfortran -fno-optimize-sibling-calls  -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-apO4Ea/r-base-4.2.0=. -fstack-protector-strong  -c dsparsk.f -o dsparsk.o
+gfortran -fno-optimize-sibling-calls  -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-apO4Ea/r-base-4.2.0=. -fstack-protector-strong  -c lsodes.f -o lsodes.o
+gfortran -fno-optimize-sibling-calls  -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-apO4Ea/r-base-4.2.0=. -fstack-protector-strong  -c sparse.f -o sparse.o
+gfortran -fno-optimize-sibling-calls  -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-apO4Ea/r-base-4.2.0=. -fstack-protector-strong  -c sparsecoeff.f -o sparsecoeff.o
+gfortran -fno-optimize-sibling-calls  -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-apO4Ea/r-base-4.2.0=. -fstack-protector-strong  -c sparsekit.f -o sparsekit.o
+gfortran -fno-optimize-sibling-calls  -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-apO4Ea/r-base-4.2.0=. -fstack-protector-strong  -c steady.f -o steady.o
+gcc -I"/usr/share/R/include" -DNDEBUG      -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-apO4Ea/r-base-4.2.0=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c steady_utils.c -o steady_utils.o
+gfortran -fno-optimize-sibling-calls  -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-apO4Ea/r-base-4.2.0=. -fstack-protector-strong  -c testMap.f -o testMap.o
+gcc -shared -L/usr/lib/R/lib -Wl,-Bsymbolic-functions -Wl,-z,relro -o rootSolve.so R_init_rootSolve.o call_runsteady.o call_steady.o call_stsparse.o dlinpk.o dsparsk.o lsodes.o sparse.o sparsecoeff.o sparsekit.o steady.o steady_utils.o testMap.o -lgfortran -lm -lquadmath -L/usr/lib/R/lib -lR
+installing to /home/bill/R/x86_64-pc-linux-gnu-library/4.2/00LOCK-rootSolve/00new/rootSolve/libs
+** R
+** demo
+** inst
+** byte-compile and prepare package for lazy loading
+** help
+*** installing help indices
+** building package indices
+** installing vignettes
+** testing if installed package can be loaded from temporary location
+** checking absolute paths in shared objects and dynamic libraries
+** testing if installed package can be loaded from final location
+** testing if installed package keeps a record of temporary installation path
+* DONE (rootSolve)
+* installing *source* package ‘expm’ ...
+** package ‘expm’ successfully unpacked and MD5 sums checked
+** using staged installation
+** libs
+gcc -I"/usr/share/R/include" -DNDEBUG      -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-apO4Ea/r-base-4.2.0=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c R_dgebal.c -o R_dgebal.o
+gcc -I"/usr/share/R/include" -DNDEBUG      -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-apO4Ea/r-base-4.2.0=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c expm-eigen.c -o expm-eigen.o
+gcc -I"/usr/share/R/include" -DNDEBUG      -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-apO4Ea/r-base-4.2.0=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c expm.c -o expm.o
+gcc -I"/usr/share/R/include" -DNDEBUG      -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-apO4Ea/r-base-4.2.0=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c init.c -o init.o
+gcc -I"/usr/share/R/include" -DNDEBUG      -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-apO4Ea/r-base-4.2.0=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c logm-eigen.c -o logm-eigen.o
+gfortran -fno-optimize-sibling-calls  -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-apO4Ea/r-base-4.2.0=. -fstack-protector-strong  -c matexp.f -o matexp.o
+gcc -I"/usr/share/R/include" -DNDEBUG      -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-apO4Ea/r-base-4.2.0=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c matexp_MH09.c -o matexp_MH09.o
+gcc -I"/usr/share/R/include" -DNDEBUG      -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-apO4Ea/r-base-4.2.0=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c matpow.c -o matpow.o
+gfortran -fno-optimize-sibling-calls  -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-apO4Ea/r-base-4.2.0=. -fstack-protector-strong  -c matrexp.f -o matrexp.o
+gfortran -fno-optimize-sibling-calls  -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-apO4Ea/r-base-4.2.0=. -fstack-protector-strong  -c matrexpO.f -o matrexpO.o
+gfortran -fno-optimize-sibling-calls  -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-apO4Ea/r-base-4.2.0=. -fstack-protector-strong  -c mexp-common.f -o mexp-common.o
+gcc -shared -L/usr/lib/R/lib -Wl,-Bsymbolic-functions -Wl,-z,relro -o expm.so R_dgebal.o expm-eigen.o expm.o init.o logm-eigen.o matexp.o matexp_MH09.o matpow.o matrexp.o matrexpO.o mexp-common.o -llapack -lblas -lgfortran -lm -lquadmath -lgfortran -lm -lquadmath -L/usr/lib/R/lib -lR
+installing to /home/bill/R/x86_64-pc-linux-gnu-library/4.2/00LOCK-expm/00new/expm/libs
+** R
+** data
+** demo
+** inst
+** byte-compile and prepare package for lazy loading
+** help
+*** installing help indices
+** building package indices
+** installing vignettes
+** testing if installed package can be loaded from temporary location
+** checking absolute paths in shared objects and dynamic libraries
+** testing if installed package can be loaded from final location
+** testing if installed package keeps a record of temporary installation path
+* DONE (expm)
+* installing *source* package ‘mvtnorm’ ...
+** package ‘mvtnorm’ successfully unpacked and MD5 sums checked
+** using staged installation
+** libs
+gcc -I"/usr/share/R/include" -DNDEBUG      -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-apO4Ea/r-base-4.2.0=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c C_FORTRAN_interface.c -o C_FORTRAN_interface.o
+gcc -I"/usr/share/R/include" -DNDEBUG      -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-apO4Ea/r-base-4.2.0=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c miwa.c -o miwa.o
+gfortran -fno-optimize-sibling-calls  -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-apO4Ea/r-base-4.2.0=. -fstack-protector-strong  -c mvt.f -o mvt.o
+gcc -I"/usr/share/R/include" -DNDEBUG      -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-apO4Ea/r-base-4.2.0=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c mvtnorm-init.c -o mvtnorm-init.o
+gfortran -fno-optimize-sibling-calls  -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-apO4Ea/r-base-4.2.0=. -fstack-protector-strong  -c tvpack.f -o tvpack.o
+gcc -shared -L/usr/lib/R/lib -Wl,-Bsymbolic-functions -Wl,-z,relro -o mvtnorm.so C_FORTRAN_interface.o miwa.o mvt.o mvtnorm-init.o tvpack.o -lgfortran -lm -lquadmath -L/usr/lib/R/lib -lR
+installing to /home/bill/R/x86_64-pc-linux-gnu-library/4.2/00LOCK-mvtnorm/00new/mvtnorm/libs
+** R
+** inst
+** byte-compile and prepare package for lazy loading
+** help
+*** installing help indices
+** building package indices
+** installing vignettes
+** testing if installed package can be loaded from temporary location
+** checking absolute paths in shared objects and dynamic libraries
+** testing if installed package can be loaded from final location
+** testing if installed package keeps a record of temporary installation path
+* DONE (mvtnorm)
+* installing *source* package ‘pander’ ...
+** package ‘pander’ successfully unpacked and MD5 sums checked
+** using staged installation
+** libs
+g++ -std=gnu++14 -I"/usr/share/R/include" -DNDEBUG  -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/Rcpp/include'    -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-apO4Ea/r-base-4.2.0=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c RcppExports.cpp -o RcppExports.o
+g++ -std=gnu++14 -I"/usr/share/R/include" -DNDEBUG  -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/Rcpp/include'    -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-apO4Ea/r-base-4.2.0=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c helpers.cpp -o helpers.o
+g++ -std=gnu++14 -I"/usr/share/R/include" -DNDEBUG  -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/Rcpp/include'    -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-apO4Ea/r-base-4.2.0=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c pandoc.cpp -o pandoc.o
+g++ -std=gnu++14 -shared -L/usr/lib/R/lib -Wl,-Bsymbolic-functions -Wl,-z,relro -o pander.so RcppExports.o helpers.o pandoc.o -L/usr/lib/R/lib -lR
+installing to /home/bill/R/x86_64-pc-linux-gnu-library/4.2/00LOCK-pander/00new/pander/libs
+** R
+** inst
+** byte-compile and prepare package for lazy loading
+** help
+*** installing help indices
+** building package indices
+** installing vignettes
+** testing if installed package can be loaded from temporary location
+** checking absolute paths in shared objects and dynamic libraries
+** testing if installed package can be loaded from final location
+** testing if installed package keeps a record of temporary installation path
+* DONE (pander)
+* installing *source* package ‘minpack.lm’ ...
+** package ‘minpack.lm’ successfully unpacked and MD5 sums checked
+** using staged installation
+** libs
+gfortran -fno-optimize-sibling-calls  -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-apO4Ea/r-base-4.2.0=. -fstack-protector-strong  -c chkder.f -o chkder.o
+gfortran -fno-optimize-sibling-calls  -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-apO4Ea/r-base-4.2.0=. -fstack-protector-strong  -c dogleg.f -o dogleg.o
+gfortran -fno-optimize-sibling-calls  -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-apO4Ea/r-base-4.2.0=. -fstack-protector-strong  -c dpmpar.f -o dpmpar.o
+gfortran -fno-optimize-sibling-calls  -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-apO4Ea/r-base-4.2.0=. -fstack-protector-strong  -c enorm.f -o enorm.o
+gcc -I"/usr/share/R/include" -DNDEBUG      -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-apO4Ea/r-base-4.2.0=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c fcn_lmder.c -o fcn_lmder.o
+gcc -I"/usr/share/R/include" -DNDEBUG      -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-apO4Ea/r-base-4.2.0=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c fcn_lmdif.c -o fcn_lmdif.o
+gcc -I"/usr/share/R/include" -DNDEBUG      -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-apO4Ea/r-base-4.2.0=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c fcn_message.c -o fcn_message.o
+gfortran -fno-optimize-sibling-calls  -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-apO4Ea/r-base-4.2.0=. -fstack-protector-strong  -c fdjac2.f -o fdjac2.o
+gcc -I"/usr/share/R/include" -DNDEBUG      -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-apO4Ea/r-base-4.2.0=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c get_element.c -o get_element.o
+gcc -I"/usr/share/R/include" -DNDEBUG      -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-apO4Ea/r-base-4.2.0=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c init.c -o init.o
+gfortran -fno-optimize-sibling-calls  -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-apO4Ea/r-base-4.2.0=. -fstack-protector-strong  -c lmder.f -o lmder.o
+gfortran -fno-optimize-sibling-calls  -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-apO4Ea/r-base-4.2.0=. -fstack-protector-strong  -c lmdif.f -o lmdif.o
+gfortran -fno-optimize-sibling-calls  -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-apO4Ea/r-base-4.2.0=. -fstack-protector-strong  -c lmpar.f -o lmpar.o
+gcc -I"/usr/share/R/include" -DNDEBUG      -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-apO4Ea/r-base-4.2.0=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c nls_lm.c -o nls_lm.o
+gcc -I"/usr/share/R/include" -DNDEBUG      -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-apO4Ea/r-base-4.2.0=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c prod.c -o prod.o
+gfortran -fno-optimize-sibling-calls  -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-apO4Ea/r-base-4.2.0=. -fstack-protector-strong  -c qform.f -o qform.o
+gfortran -fno-optimize-sibling-calls  -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-apO4Ea/r-base-4.2.0=. -fstack-protector-strong  -c qrfac.f -o qrfac.o
+gfortran -fno-optimize-sibling-calls  -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-apO4Ea/r-base-4.2.0=. -fstack-protector-strong  -c qrsolv.f -o qrsolv.o
+gfortran -fno-optimize-sibling-calls  -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-apO4Ea/r-base-4.2.0=. -fstack-protector-strong  -c r1mpyq.f -o r1mpyq.o
+gfortran -fno-optimize-sibling-calls  -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-apO4Ea/r-base-4.2.0=. -fstack-protector-strong  -c r1updt.f -o r1updt.o
+gfortran -fno-optimize-sibling-calls  -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-apO4Ea/r-base-4.2.0=. -fstack-protector-strong  -c rwupdt.f -o rwupdt.o
+gcc -I"/usr/share/R/include" -DNDEBUG      -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-apO4Ea/r-base-4.2.0=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c transpose.c -o transpose.o
+gcc -I"/usr/share/R/include" -DNDEBUG      -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-apO4Ea/r-base-4.2.0=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c vector.c -o vector.o
+gcc -shared -L/usr/lib/R/lib -Wl,-Bsymbolic-functions -Wl,-z,relro -o minpack.lm.so chkder.o dogleg.o dpmpar.o enorm.o fcn_lmder.o fcn_lmdif.o fcn_message.o fdjac2.o get_element.o init.o lmder.o lmdif.o lmpar.o nls_lm.o prod.o qform.o qrfac.o qrsolv.o r1mpyq.o r1updt.o rwupdt.o transpose.o vector.o -llapack -lblas -lgfortran -lm -lquadmath -lgfortran -lm -lquadmath -L/usr/lib/R/lib -lR
+installing to /home/bill/R/x86_64-pc-linux-gnu-library/4.2/00LOCK-minpack.lm/00new/minpack.lm/libs
+** R
+** inst
+** byte-compile and prepare package for lazy loading
+** help
+*** installing help indices
+** building package indices
+** testing if installed package can be loaded from temporary location
+** checking absolute paths in shared objects and dynamic libraries
+** testing if installed package can be loaded from final location
+** testing if installed package keeps a record of temporary installation path
+* DONE (minpack.lm)
+* installing *source* package ‘Deriv’ ...
+** package ‘Deriv’ successfully unpacked and MD5 sums checked
+** using staged installation
+** R
+** inst
+** byte-compile and prepare package for lazy loading
+** help
+*** installing help indices
+** building package indices
+** testing if installed package can be loaded from temporary location
+** testing if installed package can be loaded from final location
+** testing if installed package keeps a record of temporary installation path
+* DONE (Deriv)
+* installing *source* package ‘binom’ ...
+** package ‘binom’ successfully unpacked and MD5 sums checked
+** using staged installation
+** libs
+gcc -I"/usr/share/R/include" -DNDEBUG      -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-apO4Ea/r-base-4.2.0=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c binom.c -o binom.o
+gcc -shared -L/usr/lib/R/lib -Wl,-Bsymbolic-functions -Wl,-z,relro -o binom.so binom.o -L/usr/lib/R/lib -lR
+installing to /home/bill/R/x86_64-pc-linux-gnu-library/4.2/00LOCK-binom/00new/binom/libs
+** R
+** inst
+** byte-compile and prepare package for lazy loading
+** help
+*** installing help indices
+** building package indices
+** testing if installed package can be loaded from temporary location
+** checking absolute paths in shared objects and dynamic libraries
+** testing if installed package can be loaded from final location
+** testing if installed package keeps a record of temporary installation path
+* DONE (binom)
+* installing *source* package ‘viridis’ ...
+** package ‘viridis’ successfully unpacked and MD5 sums checked
+** using staged installation
+** R
+** data
+*** moving datasets to lazyload DB
+** inst
+** byte-compile and prepare package for lazy loading
+** help
+*** installing help indices
+*** copying figures
+** building package indices
+** installing vignettes
+** testing if installed package can be loaded from temporary location
+** testing if installed package can be loaded from final location
+** testing if installed package keeps a record of temporary installation path
+* DONE (viridis)
+* installing *source* package ‘htmlTable’ ...
+** package ‘htmlTable’ successfully unpacked and MD5 sums checked
+** using staged installation
+** R
+** data
+** inst
+** byte-compile and prepare package for lazy loading
+** help
+*** installing help indices
+** building package indices
+** installing vignettes
+** testing if installed package can be loaded from temporary location
+** testing if installed package can be loaded from final location
+** testing if installed package keeps a record of temporary installation path
+* DONE (htmlTable)
+* installing *source* package ‘gld’ ...
+** package ‘gld’ successfully unpacked and MD5 sums checked
+** using staged installation
+** libs
+gcc -I"/usr/share/R/include" -DNDEBUG      -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-apO4Ea/r-base-4.2.0=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c fit_fkml.c -o fit_fkml.o
+gcc -I"/usr/share/R/include" -DNDEBUG      -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-apO4Ea/r-base-4.2.0=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c gld.fm5.fx.c -o gld.fm5.fx.o
+gcc -I"/usr/share/R/include" -DNDEBUG      -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-apO4Ea/r-base-4.2.0=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c gld.fmkl.fx.c -o gld.fmkl.fx.o
+gcc -I"/usr/share/R/include" -DNDEBUG      -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-apO4Ea/r-base-4.2.0=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c gld.rs.fx.c -o gld.rs.fx.o
+gcc -I"/usr/share/R/include" -DNDEBUG      -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-apO4Ea/r-base-4.2.0=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c gld.vsk.fx.c -o gld.vsk.fx.o
+gcc -I"/usr/share/R/include" -DNDEBUG      -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-apO4Ea/r-base-4.2.0=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c gld_init.c -o gld_init.o
+gcc -shared -L/usr/lib/R/lib -Wl,-Bsymbolic-functions -Wl,-z,relro -o gld.so fit_fkml.o gld.fm5.fx.o gld.fmkl.fx.o gld.rs.fx.o gld.vsk.fx.o gld_init.o -L/usr/lib/R/lib -lR
+installing to /home/bill/R/x86_64-pc-linux-gnu-library/4.2/00LOCK-gld/00new/gld/libs
+** R
+** byte-compile and prepare package for lazy loading
+** help
+*** installing help indices
+** building package indices
+** testing if installed package can be loaded from temporary location
+** checking absolute paths in shared objects and dynamic libraries
+** testing if installed package can be loaded from final location
+** testing if installed package keeps a record of temporary installation path
+* DONE (gld)
+* installing *source* package ‘Exact’ ...
+** package ‘Exact’ successfully unpacked and MD5 sums checked
+** using staged installation
+** R
+** inst
+** byte-compile and prepare package for lazy loading
+** help
+*** installing help indices
+** building package indices
+** testing if installed package can be loaded from temporary location
+** testing if installed package can be loaded from final location
+** testing if installed package keeps a record of temporary installation path
+* DONE (Exact)
+* installing *source* package ‘Hmisc’ ...
+** package ‘Hmisc’ successfully unpacked and MD5 sums checked
+** using staged installation
+** libs
+gcc -I"/usr/share/R/include" -DNDEBUG      -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-apO4Ea/r-base-4.2.0=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c Hmisc.c -o Hmisc.o
+gfortran -fno-optimize-sibling-calls  -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-apO4Ea/r-base-4.2.0=. -fstack-protector-strong  -c cidxcn.f -o cidxcn.o
+gfortran -fno-optimize-sibling-calls  -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-apO4Ea/r-base-4.2.0=. -fstack-protector-strong  -c cidxcp.f -o cidxcp.o
+gfortran -fno-optimize-sibling-calls  -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-apO4Ea/r-base-4.2.0=. -fstack-protector-strong  -c hoeffd.f -o hoeffd.o
+gcc -I"/usr/share/R/include" -DNDEBUG      -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-apO4Ea/r-base-4.2.0=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c init.c -o init.o
+gfortran -fno-optimize-sibling-calls  -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-apO4Ea/r-base-4.2.0=. -fstack-protector-strong  -c jacklins.f -o jacklins.o
+gfortran -fno-optimize-sibling-calls  -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-apO4Ea/r-base-4.2.0=. -fstack-protector-strong  -c largrec.f -o largrec.o
+gcc -I"/usr/share/R/include" -DNDEBUG      -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-apO4Ea/r-base-4.2.0=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c mChoice.c -o mChoice.o
+gfortran -fno-optimize-sibling-calls  -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-apO4Ea/r-base-4.2.0=. -fstack-protector-strong  -c maxempr.f -o maxempr.o
+gcc -I"/usr/share/R/include" -DNDEBUG      -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-apO4Ea/r-base-4.2.0=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c nstr.c -o nstr.o
+gcc -I"/usr/share/R/include" -DNDEBUG      -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-apO4Ea/r-base-4.2.0=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c ranksort.c -o ranksort.o
+gfortran -fno-optimize-sibling-calls  -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-apO4Ea/r-base-4.2.0=. -fstack-protector-strong  -c rcorr.f -o rcorr.o
+gcc -I"/usr/share/R/include" -DNDEBUG      -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-apO4Ea/r-base-4.2.0=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c string_box.c -o string_box.o
+gfortran -fno-optimize-sibling-calls  -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-apO4Ea/r-base-4.2.0=. -fstack-protector-strong  -c wclosest.f -o wclosest.o
+gcc -shared -L/usr/lib/R/lib -Wl,-Bsymbolic-functions -Wl,-z,relro -o Hmisc.so Hmisc.o cidxcn.o cidxcp.o hoeffd.o init.o jacklins.o largrec.o mChoice.o maxempr.o nstr.o ranksort.o rcorr.o string_box.o wclosest.o -lgfortran -lm -lquadmath -L/usr/lib/R/lib -lR
+installing to /home/bill/R/x86_64-pc-linux-gnu-library/4.2/00LOCK-Hmisc/00new/Hmisc/libs
+** R
+** inst
+** byte-compile and prepare package for lazy loading
+** help
+*** installing help indices
+** building package indices
+** testing if installed package can be loaded from temporary location
+** checking absolute paths in shared objects and dynamic libraries
+** testing if installed package can be loaded from final location
+** testing if installed package keeps a record of temporary installation path
+* DONE (Hmisc)
+* installing *source* package ‘DescTools’ ...
+** package ‘DescTools’ successfully unpacked and MD5 sums checked
+** using staged installation
+** libs
+gcc -I"/usr/share/R/include" -DNDEBUG  -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/Rcpp/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/BH/include'    -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-apO4Ea/r-base-4.2.0=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c ADinf.c -o ADinf.o
+gcc -I"/usr/share/R/include" -DNDEBUG  -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/Rcpp/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/BH/include'    -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-apO4Ea/r-base-4.2.0=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c AnDarl.c -o AnDarl.o
+g++ -std=gnu++11 -I"/usr/share/R/include" -DNDEBUG  -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/Rcpp/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/BH/include'    -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-apO4Ea/r-base-4.2.0=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c RcppExports.cpp -o RcppExports.o
+g++ -std=gnu++11 -I"/usr/share/R/include" -DNDEBUG  -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/Rcpp/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/BH/include'    -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-apO4Ea/r-base-4.2.0=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c aux_fct.cpp -o aux_fct.o
+gcc -I"/usr/share/R/include" -DNDEBUG  -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/Rcpp/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/BH/include'    -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-apO4Ea/r-base-4.2.0=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c between.c -o between.o
+gfortran -fno-optimize-sibling-calls  -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-apO4Ea/r-base-4.2.0=. -fstack-protector-strong  -c cidxcn.f -o cidxcn.o
+gcc -I"/usr/share/R/include" -DNDEBUG  -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/Rcpp/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/BH/include'    -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-apO4Ea/r-base-4.2.0=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c conc.c -o conc.o
+gcc -I"/usr/share/R/include" -DNDEBUG  -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/Rcpp/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/BH/include'    -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-apO4Ea/r-base-4.2.0=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c exactsum.c -o exactsum.o
+g++ -std=gnu++11 -I"/usr/share/R/include" -DNDEBUG  -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/Rcpp/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/BH/include'    -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-apO4Ea/r-base-4.2.0=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c extremes.cpp -o extremes.o
+gcc -I"/usr/share/R/include" -DNDEBUG  -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/Rcpp/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/BH/include'    -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-apO4Ea/r-base-4.2.0=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c fdwilcox.c -o fdwilcox.o
+gcc -I"/usr/share/R/include" -DNDEBUG  -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/Rcpp/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/BH/include'    -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-apO4Ea/r-base-4.2.0=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c fpow.c -o fpow.o
+g++ -std=gnu++11 -I"/usr/share/R/include" -DNDEBUG  -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/Rcpp/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/BH/include'    -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-apO4Ea/r-base-4.2.0=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c gompertz.cpp -o gompertz.o
+gfortran -fno-optimize-sibling-calls  -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-apO4Ea/r-base-4.2.0=. -fstack-protector-strong  -c hoeffd.f -o hoeffd.o
+gcc -I"/usr/share/R/include" -DNDEBUG  -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/Rcpp/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/BH/include'    -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-apO4Ea/r-base-4.2.0=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c init.c -o init.o
+gfortran -fno-optimize-sibling-calls  -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-apO4Ea/r-base-4.2.0=. -fstack-protector-strong  -c jtpdf.f -o jtpdf.o
+gcc -I"/usr/share/R/include" -DNDEBUG  -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/Rcpp/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/BH/include'    -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-apO4Ea/r-base-4.2.0=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c ks.c -o ks.o
+gcc -I"/usr/share/R/include" -DNDEBUG  -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/Rcpp/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/BH/include'    -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-apO4Ea/r-base-4.2.0=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c moments.c -o moments.o
+gfortran -fno-optimize-sibling-calls  -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-apO4Ea/r-base-4.2.0=. -fstack-protector-strong  -c pan.f -o pan.o
+gcc -I"/usr/share/R/include" -DNDEBUG  -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/Rcpp/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/BH/include'    -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-apO4Ea/r-base-4.2.0=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c pointinpolygon.c -o pointinpolygon.o
+gcc -I"/usr/share/R/include" -DNDEBUG  -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/Rcpp/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/BH/include'    -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-apO4Ea/r-base-4.2.0=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c ranksort.c -o ranksort.o
+gcc -I"/usr/share/R/include" -DNDEBUG  -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/Rcpp/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/BH/include'    -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-apO4Ea/r-base-4.2.0=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c roman2int.c -o roman2int.o
+gcc -I"/usr/share/R/include" -DNDEBUG  -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/Rcpp/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/BH/include'    -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-apO4Ea/r-base-4.2.0=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c tbrm.c -o tbrm.o
+gcc -I"/usr/share/R/include" -DNDEBUG  -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/Rcpp/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/BH/include'    -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-apO4Ea/r-base-4.2.0=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c wgt_himed.c -o wgt_himed.o
+In file included from /home/bill/R/x86_64-pc-linux-gnu-library/4.2/BH/include/boost/bind/mem_fn.hpp:25,
+                 from /home/bill/R/x86_64-pc-linux-gnu-library/4.2/BH/include/boost/mem_fn.hpp:22,
+                 from /home/bill/R/x86_64-pc-linux-gnu-library/4.2/BH/include/boost/function/detail/prologue.hpp:18,
+                 from /home/bill/R/x86_64-pc-linux-gnu-library/4.2/BH/include/boost/function.hpp:30,
+                 from /home/bill/R/x86_64-pc-linux-gnu-library/4.2/BH/include/boost/algorithm/string/detail/find_iterator.hpp:18,
+                 from /home/bill/R/x86_64-pc-linux-gnu-library/4.2/BH/include/boost/algorithm/string/find_iterator.hpp:24,
+                 from /home/bill/R/x86_64-pc-linux-gnu-library/4.2/BH/include/boost/algorithm/string/iter_find.hpp:27,
+                 from /home/bill/R/x86_64-pc-linux-gnu-library/4.2/BH/include/boost/algorithm/string/split.hpp:16,
+                 from /home/bill/R/x86_64-pc-linux-gnu-library/4.2/BH/include/boost/algorithm/string.hpp:23,
+                 from aux_fct.cpp:12:
+/home/bill/R/x86_64-pc-linux-gnu-library/4.2/BH/include/boost/get_pointer.hpp:48:40: warning: ‘template<class> class std::auto_ptr’ is deprecated [-Wdeprecated-declarations]
+   48 | template<class T> T * get_pointer(std::auto_ptr<T> const& p)
+      |                                        ^~~~~~~~
+In file included from /usr/include/c++/9/bits/locale_conv.h:41,
+                 from /usr/include/c++/9/locale:43,
+                 from /usr/include/c++/9/iomanip:43,
+                 from /home/bill/R/x86_64-pc-linux-gnu-library/4.2/Rcpp/include/RcppCommon.h:53,
+                 from /home/bill/R/x86_64-pc-linux-gnu-library/4.2/Rcpp/include/Rcpp.h:27,
+                 from aux_fct.cpp:4:
+/usr/include/c++/9/bits/unique_ptr.h:53:28: note: declared here
+   53 |   template<typename> class auto_ptr;
+      |                            ^~~~~~~~
+g++ -std=gnu++11 -shared -L/usr/lib/R/lib -Wl,-Bsymbolic-functions -Wl,-z,relro -o DescTools.so ADinf.o AnDarl.o RcppExports.o aux_fct.o between.o cidxcn.o conc.o exactsum.o extremes.o fdwilcox.o fpow.o gompertz.o hoeffd.o init.o jtpdf.o ks.o moments.o pan.o pointinpolygon.o ranksort.o roman2int.o tbrm.o wgt_himed.o -lgfortran -lm -lquadmath -L/usr/lib/R/lib -lR
+installing to /home/bill/R/x86_64-pc-linux-gnu-library/4.2/00LOCK-DescTools/00new/DescTools/libs
+** R
+** data
+*** moving datasets to lazyload DB
+** demo
+** inst
+** byte-compile and prepare package for lazy loading
+** help
+*** installing help indices
+*** copying figures
+** building package indices
+** installing vignettes
+** testing if installed package can be loaded from temporary location
+** checking absolute paths in shared objects and dynamic libraries
+** testing if installed package can be loaded from final location
+** testing if installed package keeps a record of temporary installation path
+* DONE (DescTools)
+* installing *source* package ‘xgxr’ ...
+** package ‘xgxr’ successfully unpacked and MD5 sums checked
+** using staged installation
+** R
+** data
+*** moving datasets to lazyload DB
+** inst
+** byte-compile and prepare package for lazy loading
+** help
+*** installing help indices
+** building package indices
+** installing vignettes
+** testing if installed package can be loaded from temporary location
+** testing if installed package can be loaded from final location
+** testing if installed package keeps a record of temporary installation path
+* DONE (xgxr)
+
+The downloaded source packages are in
+	‘/tmp/RtmpfsaqrJ/downloaded_packages’
+* checking for file ‘/tmp/RtmpfsaqrJ/filee56f457acd697/nlmixr2plot/DESCRIPTION’ ... OK
+* preparing ‘nlmixr2plot’:
+* checking DESCRIPTION meta-information ... OK
+* checking for LF line-endings in source and make files and shell scripts
+* checking for empty or unneeded directories
+* building ‘nlmixr2plot_2.0.6.tar.gz’
+
+Installing package into ‘/home/bill/R/x86_64-pc-linux-gnu-library/4.2’
+(as ‘lib’ is unspecified)
+* installing *source* package ‘nlmixr2plot’ ...
+** using staged installation
+** R
+** byte-compile and prepare package for lazy loading
+** help
+*** installing help indices
+*** copying figures
+** building package indices
+** testing if installed package can be loaded from temporary location
+** testing if installed package can be loaded from final location
+** testing if installed package keeps a record of temporary installation path
+* DONE (nlmixr2plot)
+> 
+> 
+==939764== 
+==939764== HEAP SUMMARY:
+==939764==     in use at exit: 160,157,105 bytes in 28,883 blocks
+==939764==   total heap usage: 2,498,340 allocs, 2,469,457 frees, 1,936,045,728 bytes allocated
+==939764== 
+==939764== 320 bytes in 1 blocks are possibly lost in loss record 193 of 1,900
+==939764==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==939764==    by 0x40149DA: allocate_dtv (dl-tls.c:286)
+==939764==    by 0x40149DA: _dl_allocate_tls (dl-tls.c:532)
+==939764==    by 0x574B322: allocate_stack (allocatestack.c:622)
+==939764==    by 0x574B322: pthread_create@@GLIBC_2.2.5 (pthread_create.c:660)
+==939764==    by 0xCEF33F6: cli__start_thread (thread.c:51)
+==939764==    by 0xCEF33F6: cli__start_thread (thread.c:42)
+==939764==    by 0xCEF343A: clic_start_thread (thread.c:74)
+==939764==    by 0x494221F: ??? (in /usr/lib/R/lib/libR.so)
+==939764==    by 0x4985D36: ??? (in /usr/lib/R/lib/libR.so)
+==939764==    by 0x4999867: Rf_eval (in /usr/lib/R/lib/libR.so)
+==939764==    by 0x499B71E: ??? (in /usr/lib/R/lib/libR.so)
+==939764==    by 0x499C611: Rf_applyClosure (in /usr/lib/R/lib/libR.so)
+==939764==    by 0x498719D: ??? (in /usr/lib/R/lib/libR.so)
+==939764==    by 0x4999867: Rf_eval (in /usr/lib/R/lib/libR.so)
+==939764== 
+==939764== LEAK SUMMARY:
+==939764==    definitely lost: 0 bytes in 0 blocks
+==939764==    indirectly lost: 0 bytes in 0 blocks
+==939764==      possibly lost: 320 bytes in 1 blocks
+==939764==    still reachable: 160,156,785 bytes in 28,882 blocks
+==939764==                       of which reachable via heuristic:
+==939764==                         newarray           : 4,264 bytes in 1 blocks
+==939764==         suppressed: 0 bytes in 0 blocks
+==939764== Reachable blocks (those to which a pointer was found) are not shown.
+==939764== To see them, rerun with: --leak-check=full --show-leak-kinds=all
+==939764== 
+==939764== For lists of detected and suppressed errors, rerun with: -s
+==939764== ERROR SUMMARY: 1 errors from 1 contexts (suppressed: 0 from 0)

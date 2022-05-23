@@ -1,3 +1,8 @@
+==881493== Memcheck, a memory error detector
+==881493== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==881493== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
+==881493== Command: /usr/lib/R/bin/exec/R -e devtools::install_local(force=TRUE)
+==881493== 
 
 R version 4.2.0 (2022-04-22) -- "Vigorous Calisthenics"
 Copyright (C) 2022 The R Foundation for Statistical Computing
@@ -18,8 +23,56 @@ Type 'demo()' for some demos, 'help()' for on-line help, or
 Type 'q()' to quit R.
 
 > devtools::install_local(force=TRUE)
+RcppArmad... (0.11.0.0.0 -> 0.11.1.1.0) [CRAN]
+Installing 1 packages: RcppArmadillo
+Installing package into ‘/home/bill/R/x86_64-pc-linux-gnu-library/4.2’
+(as ‘lib’ is unspecified)
+trying URL 'https://cloud.r-project.org/src/contrib/RcppArmadillo_0.11.1.1.0.tar.gz'
+Content type 'application/x-gzip' length 1371134 bytes (1.3 MB)
+==================================================
+downloaded 1.3 MB
 
-* checking for file ‘/tmp/Rtmp9uDD7h/filea413d33c319dd/rxode2/DESCRIPTION’ ... OK
+* installing *source* package ‘RcppArmadillo’ ...
+** package ‘RcppArmadillo’ successfully unpacked and MD5 sums checked
+** using staged installation
+checking whether the C++ compiler works... yes
+checking for C++ compiler default output file name... a.out
+checking for suffix of executables... 
+checking whether we are cross compiling... no
+checking for suffix of object files... o
+checking whether we are using the GNU C++ compiler... yes
+checking whether g++ -std=gnu++14 accepts -g... yes
+checking how to run the C++ preprocessor... g++ -std=gnu++14 -E
+checking whether we are using the GNU C++ compiler... (cached) yes
+checking whether g++ -std=gnu++14 accepts -g... (cached) yes
+checking whether we have a suitable tempdir... /tmp
+checking whether R CMD SHLIB can already compile programs using OpenMP... yes
+checking LAPACK_LIBS... system LAPACK found
+configure: creating ./config.status
+config.status: creating inst/include/RcppArmadilloConfigGenerated.h
+config.status: creating src/Makevars
+** libs
+g++ -std=gnu++11 -I"/usr/share/R/include" -DNDEBUG  -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/Rcpp/include'   -I../inst/include -fopenmp -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-apO4Ea/r-base-4.2.0=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c RcppArmadillo.cpp -o RcppArmadillo.o
+g++ -std=gnu++11 -I"/usr/share/R/include" -DNDEBUG  -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/Rcpp/include'   -I../inst/include -fopenmp -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-apO4Ea/r-base-4.2.0=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c RcppExports.cpp -o RcppExports.o
+g++ -std=gnu++11 -I"/usr/share/R/include" -DNDEBUG  -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/Rcpp/include'   -I../inst/include -fopenmp -fpic  -g -O2 -fdebug-prefix-map=/build/r-base-apO4Ea/r-base-4.2.0=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c fastLm.cpp -o fastLm.o
+g++ -std=gnu++11 -shared -L/usr/lib/R/lib -Wl,-Bsymbolic-functions -Wl,-z,relro -o RcppArmadillo.so RcppArmadillo.o RcppExports.o fastLm.o -fopenmp -llapack -lblas -lgfortran -lm -lquadmath -L/usr/lib/R/lib -lR
+installing to /home/bill/R/x86_64-pc-linux-gnu-library/4.2/00LOCK-RcppArmadillo/00new/RcppArmadillo/libs
+** R
+** inst
+** byte-compile and prepare package for lazy loading
+** help
+*** installing help indices
+** building package indices
+** installing vignettes
+** testing if installed package can be loaded from temporary location
+** checking absolute paths in shared objects and dynamic libraries
+** testing if installed package can be loaded from final location
+** testing if installed package keeps a record of temporary installation path
+* DONE (RcppArmadillo)
+
+The downloaded source packages are in
+	‘/tmp/RtmpmG3hfA/downloaded_packages’
+* checking for file ‘/tmp/RtmpmG3hfA/filed73557ee31c2/rxode2/DESCRIPTION’ ... OK
 * preparing ‘rxode2’:
 * checking DESCRIPTION meta-information ... OK
 * cleaning src
@@ -64,7 +117,7 @@ all: $(SHLIB)
 
 --------[end src/Makevars]--------
 --------[begin R/RxODE_md5.R]--------
-rxode2.md5 <- "8acbe11379b51b6a579e535d6a83a720"
+rxode2.md5 <- "3a57292eb4d7b48c66e2020a55f640ca"
 
 --------[end R/RxODE_md5.R]--------
 ** libs
@@ -165,3 +218,38 @@ installing via 'install.libs.R' to /home/bill/R/x86_64-pc-linux-gnu-library/4.2/
 * DONE (rxode2)
 > 
 > 
+==881493== 
+==881493== HEAP SUMMARY:
+==881493==     in use at exit: 164,512,353 bytes in 28,574 blocks
+==881493==   total heap usage: 1,939,762 allocs, 1,911,188 frees, 1,850,667,080 bytes allocated
+==881493== 
+==881493== 320 bytes in 1 blocks are possibly lost in loss record 181 of 1,839
+==881493==    at 0x483DD99: calloc (in /usr/lib/x86_64-linux-gnu/valgrind/vgpreload_memcheck-amd64-linux.so)
+==881493==    by 0x40149DA: allocate_dtv (dl-tls.c:286)
+==881493==    by 0x40149DA: _dl_allocate_tls (dl-tls.c:532)
+==881493==    by 0x574B322: allocate_stack (allocatestack.c:622)
+==881493==    by 0x574B322: pthread_create@@GLIBC_2.2.5 (pthread_create.c:660)
+==881493==    by 0xCEF33F6: cli__start_thread (thread.c:51)
+==881493==    by 0xCEF33F6: cli__start_thread (thread.c:42)
+==881493==    by 0xCEF343A: clic_start_thread (thread.c:74)
+==881493==    by 0x494221F: ??? (in /usr/lib/R/lib/libR.so)
+==881493==    by 0x4985D36: ??? (in /usr/lib/R/lib/libR.so)
+==881493==    by 0x4999867: Rf_eval (in /usr/lib/R/lib/libR.so)
+==881493==    by 0x499B71E: ??? (in /usr/lib/R/lib/libR.so)
+==881493==    by 0x499C611: Rf_applyClosure (in /usr/lib/R/lib/libR.so)
+==881493==    by 0x498719D: ??? (in /usr/lib/R/lib/libR.so)
+==881493==    by 0x4999867: Rf_eval (in /usr/lib/R/lib/libR.so)
+==881493== 
+==881493== LEAK SUMMARY:
+==881493==    definitely lost: 0 bytes in 0 blocks
+==881493==    indirectly lost: 0 bytes in 0 blocks
+==881493==      possibly lost: 320 bytes in 1 blocks
+==881493==    still reachable: 164,512,033 bytes in 28,573 blocks
+==881493==                       of which reachable via heuristic:
+==881493==                         newarray           : 4,264 bytes in 1 blocks
+==881493==         suppressed: 0 bytes in 0 blocks
+==881493== Reachable blocks (those to which a pointer was found) are not shown.
+==881493== To see them, rerun with: --leak-check=full --show-leak-kinds=all
+==881493== 
+==881493== For lists of detected and suppressed errors, rerun with: -s
+==881493== ERROR SUMMARY: 1 errors from 1 contexts (suppressed: 0 from 0)
