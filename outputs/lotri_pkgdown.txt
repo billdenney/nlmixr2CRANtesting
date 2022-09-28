@@ -1,0 +1,72 @@
+
+R version 4.2.1 (2022-06-23) -- "Funny-Looking Kid"
+Copyright (C) 2022 The R Foundation for Statistical Computing
+Platform: x86_64-pc-linux-gnu (64-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+  Natural language support but running in an English locale
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+> devtools::load_all();pkgdown::build_site()
+ℹ Loading lotri
+-- Installing package into temporary library -----------------------------------
+== Building pkgdown site =======================================================
+Reading from: '/home/bill/GitHub/nlmixr2CRANtesting/packages/lotri'
+Writing to:   '/home/bill/GitHub/nlmixr2CRANtesting/packages/lotri/docs'
+-- Initialising site -----------------------------------------------------------
+Copying '../../../../R/x86_64-pc-linux-gnu-library/4.2/pkgdown/BS5/assets/link.svg' to 'link.svg'
+Copying '../../../../R/x86_64-pc-linux-gnu-library/4.2/pkgdown/BS5/assets/pkgdown.js' to 'pkgdown.js'
+Copying 'pkgdown/favicon/apple-touch-icon-120x120.png' to 'apple-touch-icon-120x120.png'
+Copying 'pkgdown/favicon/apple-touch-icon-152x152.png' to 'apple-touch-icon-152x152.png'
+Copying 'pkgdown/favicon/apple-touch-icon-180x180.png' to 'apple-touch-icon-180x180.png'
+Copying 'pkgdown/favicon/apple-touch-icon-60x60.png' to 'apple-touch-icon-60x60.png'
+Copying 'pkgdown/favicon/apple-touch-icon-76x76.png' to 'apple-touch-icon-76x76.png'
+Copying 'pkgdown/favicon/apple-touch-icon.png' to 'apple-touch-icon.png'
+Copying 'pkgdown/favicon/favicon-16x16.png' to 'favicon-16x16.png'
+Copying 'pkgdown/favicon/favicon-32x32.png' to 'favicon-32x32.png'
+Copying 'pkgdown/favicon/favicon.ico' to 'favicon.ico'
+Copying 'man/figures/logo.png' to 'logo.png'
+-- Building home ---------------------------------------------------------------
+Writing 'authors.html'
+Copying 'man/figures/README-unnamed-chunk-7-1.png' to 'reference/figures/README-unnamed-chunk-7-1.png'
+Copying 'man/figures/README-unnamed-chunk-8-1.png' to 'reference/figures/README-unnamed-chunk-8-1.png'
+Copying 'man/figures/README-unnamed-chunk-9-1.png' to 'reference/figures/README-unnamed-chunk-9-1.png'
+Copying 'man/figures/logo.png' to 'reference/figures/logo.png'
+Writing '404.html'
+-- Building function reference -------------------------------------------------
+Writing 'reference/index.html'
+Reading 'man/as.lotri.Rd'
+Writing 'reference/as.lotri.html'
+Reading 'man/lotri.Rd'
+Writing 'reference/lotri.html'
+Reading 'man/lotriDataFrameToLotriExpression.Rd'
+Writing 'reference/lotriDataFrameToLotriExpression.html'
+Reading 'man/lotriEst.Rd'
+Writing 'reference/lotriEst.html'
+Reading 'man/lotriMat.Rd'
+Writing 'reference/lotriMat.html'
+Reading 'man/lotriMatInv.Rd'
+Writing 'reference/lotriMatInv.html'
+Reading 'man/lotriSep.Rd'
+Writing 'reference/lotriSep.html'
+-- Building articles -----------------------------------------------------------
+Writing 'articles/index.html'
+Reading 'vignettes/lotri-motivation.Rmd'
+Writing 'articles/lotri-motivation.html'
+-- Building news ---------------------------------------------------------------
+Writing 'news/index.html'
+Writing 'sitemap.xml'
+-- Building search index -------------------------------------------------------
+== DONE ========================================================================
+> 
+> 

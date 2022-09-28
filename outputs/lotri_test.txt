@@ -1,0 +1,97 @@
+
+R version 4.2.1 (2022-06-23) -- "Funny-Looking Kid"
+Copyright (C) 2022 The R Foundation for Statistical Computing
+Platform: x86_64-pc-linux-gnu (64-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+  Natural language support but running in an English locale
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+> devtools::load_all();devtools::test()
+ℹ Loading lotri
+Re-compiling lotri
+* installing *source* package ‘lotri’ ...
+** using staged installation
+** libs
+gcc -I"/usr/share/R/include" -DNDEBUG      -fpic  -g -O2 -ffile-prefix-map=/build/r-base-wSz8CH/r-base-4.2.1=. -flto=auto -ffat-lto-objects -flto=auto -ffat-lto-objects -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c asLotriMat.c -o asLotriMat.o
+gcc -I"/usr/share/R/include" -DNDEBUG      -fpic  -g -O2 -ffile-prefix-map=/build/r-base-wSz8CH/r-base-4.2.1=. -flto=auto -ffat-lto-objects -flto=auto -ffat-lto-objects -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c lotriBounds.c -o lotriBounds.o
+gcc -I"/usr/share/R/include" -DNDEBUG      -fpic  -g -O2 -ffile-prefix-map=/build/r-base-wSz8CH/r-base-4.2.1=. -flto=auto -ffat-lto-objects -flto=auto -ffat-lto-objects -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c lotriLstToMat.c -o lotriLstToMat.o
+gcc -I"/usr/share/R/include" -DNDEBUG      -fpic  -g -O2 -ffile-prefix-map=/build/r-base-wSz8CH/r-base-4.2.1=. -flto=auto -ffat-lto-objects -flto=auto -ffat-lto-objects -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c lotriNest.c -o lotriNest.o
+gcc -I"/usr/share/R/include" -DNDEBUG      -fpic  -g -O2 -ffile-prefix-map=/build/r-base-wSz8CH/r-base-4.2.1=. -flto=auto -ffat-lto-objects -flto=auto -ffat-lto-objects -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c lotriProp.c -o lotriProp.o
+gcc -I"/usr/share/R/include" -DNDEBUG      -fpic  -g -O2 -ffile-prefix-map=/build/r-base-wSz8CH/r-base-4.2.1=. -flto=auto -ffat-lto-objects -flto=auto -ffat-lto-objects -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c matlist.c -o matlist.o
+gcc -shared -L/usr/lib/R/lib -Wl,-Bsymbolic-functions -flto=auto -ffat-lto-objects -flto=auto -Wl,-z,relro -o lotri.so asLotriMat.o lotriBounds.o lotriLstToMat.o lotriNest.o lotriProp.o matlist.o -L/usr/lib/R/lib -lR
+installing to /tmp/Rtmpxb8pXI/devtools_install_bcdf184eee19/00LOCK-lotri/00new/lotri/libs
+** checking absolute paths in shared objects and dynamic libraries
+* DONE (lotri)
+ℹ Testing lotri
+✔ | F W S  OK | Context
+
+⠏ |         0 | allNames                                                        
+⠋ |         1 | allNames                                                        
+✔ |         6 | allNames [0.4s]
+
+⠏ |         0 | as.data.frame                                                   
+⠋ |         1 | as.data.frame                                                   
+⠧ |         8 | as.data.frame                                                   
+✔ |         9 | as.data.frame [0.3s]
+
+⠏ |         0 | as.lotri                                                        
+✔ |        14 | as.lotri
+
+⠏ |         0 | bad-lotri                                                       
+✔ |         1 | bad-lotri
+
+⠏ |         0 | bounds-c                                                        
+✔ |        18 | bounds-c
+
+⠏ |         0 | estimate-matrix-combination                                     
+✔ |         8 | estimate-matrix-combination
+
+⠏ |         0 | fixed-combine                                                   
+✔ |         6 | fixed-combine
+
+⠏ |         0 | fixed                                                           
+✔ |         5 | fixed
+
+⠏ |         0 | label                                                           
+✔ |         1 | label
+
+⠏ |         0 | lotri-matrix                                                    
+⠋ |        21 | lotri-matrix                                                    
+⠇ |        49 | lotri-matrix                                                    
+⠹ |        73 | lotri-matrix                                                    
+✔ |        74 | lotri-matrix [0.3s]
+
+⠏ |         0 | lotri                                                           
+✔ |         8 | lotri
+
+⠏ |         0 | lotriMat                                                        
+⠇ |        19 | lotriMat                                                        
+✔ |        29 | lotriMat [0.1s]
+
+⠏ |         0 | lotriSep                                                        
+✔ |        14 | lotriSep
+
+⠏ |         0 | theta-lhs-as.expression                                         
+⠸ |        24 | theta-lhs-as.expression                                         
+✔ |        27 | theta-lhs-as.expression [0.1s]
+
+⠏ |         0 | transformations                                                 
+✔ |        11 | transformations
+
+══ Results ═════════════════════════════════════════════════════════════════════
+Duration: 1.6 s
+
+[ FAIL 0 | WARN 0 | SKIP 0 | PASS 231 ]
+> 
+> 

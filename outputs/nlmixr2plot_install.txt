@@ -1,0 +1,44 @@
+
+R version 4.2.1 (2022-06-23) -- "Funny-Looking Kid"
+Copyright (C) 2022 The R Foundation for Statistical Computing
+Platform: x86_64-pc-linux-gnu (64-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+  Natural language support but running in an English locale
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+> devtools::install_local(force=TRUE)
+
+* checking for file ‘/tmp/RtmpEP16BO/file33d691d2658da/nlmixr2plot/DESCRIPTION’ ... OK
+* preparing ‘nlmixr2plot’:
+* checking DESCRIPTION meta-information ... OK
+* checking for LF line-endings in source and make files and shell scripts
+* checking for empty or unneeded directories
+* building ‘nlmixr2plot_2.0.6.tar.gz’
+
+Installing package into ‘/home/bill/R/x86_64-pc-linux-gnu-library/4.2’
+(as ‘lib’ is unspecified)
+* installing *source* package ‘nlmixr2plot’ ...
+** using staged installation
+** R
+** byte-compile and prepare package for lazy loading
+** help
+*** installing help indices
+*** copying figures
+** building package indices
+** testing if installed package can be loaded from temporary location
+** testing if installed package can be loaded from final location
+** testing if installed package keeps a record of temporary installation path
+* DONE (nlmixr2plot)
+> 
+> 

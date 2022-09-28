@@ -1,0 +1,109 @@
+
+R version 4.2.1 (2022-06-23) -- "Funny-Looking Kid"
+Copyright (C) 2022 The R Foundation for Statistical Computing
+Platform: x86_64-pc-linux-gnu (64-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+  Natural language support but running in an English locale
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+> devtools::load_all();pkgdown::build_site()
+ℹ Loading nlmixr2
+Loading required package: nlmixr2data
+-- Installing package into temporary library -----------------------------------
+== Building pkgdown site =======================================================
+Reading from: '/home/bill/GitHub/nlmixr2CRANtesting/packages/nlmixr2'
+Writing to:   '/home/bill/GitHub/nlmixr2CRANtesting/packages/nlmixr2/docs'
+-- Initialising site -----------------------------------------------------------
+Copying '../../../../R/x86_64-pc-linux-gnu-library/4.2/pkgdown/BS5/assets/link.svg' to 'link.svg'
+Copying '../../../../R/x86_64-pc-linux-gnu-library/4.2/pkgdown/BS5/assets/pkgdown.js' to 'pkgdown.js'
+Copying 'pkgdown/favicon/apple-touch-icon-120x120.png' to 'apple-touch-icon-120x120.png'
+Copying 'pkgdown/favicon/apple-touch-icon-152x152.png' to 'apple-touch-icon-152x152.png'
+Copying 'pkgdown/favicon/apple-touch-icon-180x180.png' to 'apple-touch-icon-180x180.png'
+Copying 'pkgdown/favicon/apple-touch-icon-60x60.png' to 'apple-touch-icon-60x60.png'
+Copying 'pkgdown/favicon/apple-touch-icon-76x76.png' to 'apple-touch-icon-76x76.png'
+Copying 'pkgdown/favicon/apple-touch-icon.png' to 'apple-touch-icon.png'
+Copying 'pkgdown/favicon/favicon-16x16.png' to 'favicon-16x16.png'
+Copying 'pkgdown/favicon/favicon-32x32.png' to 'favicon-32x32.png'
+Copying 'pkgdown/favicon/favicon.ico' to 'favicon.ico'
+Copying 'logo.png' to 'logo.png'
+-- Building home ---------------------------------------------------------------
+Writing 'authors.html'
+Reading 'LICENSE.md'
+Writing 'LICENSE.html'
+Copying 'man/figures/README-unnamed-chunk-2-1.png' to 'reference/figures/README-unnamed-chunk-2-1.png'
+Copying 'man/figures/README-unnamed-chunk-2-10.png' to 'reference/figures/README-unnamed-chunk-2-10.png'
+Copying 'man/figures/README-unnamed-chunk-2-11.png' to 'reference/figures/README-unnamed-chunk-2-11.png'
+Copying 'man/figures/README-unnamed-chunk-2-12.png' to 'reference/figures/README-unnamed-chunk-2-12.png'
+Copying 'man/figures/README-unnamed-chunk-2-13.png' to 'reference/figures/README-unnamed-chunk-2-13.png'
+Copying 'man/figures/README-unnamed-chunk-2-14.png' to 'reference/figures/README-unnamed-chunk-2-14.png'
+Copying 'man/figures/README-unnamed-chunk-2-15.png' to 'reference/figures/README-unnamed-chunk-2-15.png'
+Copying 'man/figures/README-unnamed-chunk-2-16.png' to 'reference/figures/README-unnamed-chunk-2-16.png'
+Copying 'man/figures/README-unnamed-chunk-2-17.png' to 'reference/figures/README-unnamed-chunk-2-17.png'
+Copying 'man/figures/README-unnamed-chunk-2-18.png' to 'reference/figures/README-unnamed-chunk-2-18.png'
+Copying 'man/figures/README-unnamed-chunk-2-19.png' to 'reference/figures/README-unnamed-chunk-2-19.png'
+Copying 'man/figures/README-unnamed-chunk-2-2.png' to 'reference/figures/README-unnamed-chunk-2-2.png'
+Copying 'man/figures/README-unnamed-chunk-2-20.png' to 'reference/figures/README-unnamed-chunk-2-20.png'
+Copying 'man/figures/README-unnamed-chunk-2-21.png' to 'reference/figures/README-unnamed-chunk-2-21.png'
+Copying 'man/figures/README-unnamed-chunk-2-22.png' to 'reference/figures/README-unnamed-chunk-2-22.png'
+Copying 'man/figures/README-unnamed-chunk-2-23.png' to 'reference/figures/README-unnamed-chunk-2-23.png'
+Copying 'man/figures/README-unnamed-chunk-2-24.png' to 'reference/figures/README-unnamed-chunk-2-24.png'
+Copying 'man/figures/README-unnamed-chunk-2-25.png' to 'reference/figures/README-unnamed-chunk-2-25.png'
+Copying 'man/figures/README-unnamed-chunk-2-26.png' to 'reference/figures/README-unnamed-chunk-2-26.png'
+Copying 'man/figures/README-unnamed-chunk-2-27.png' to 'reference/figures/README-unnamed-chunk-2-27.png'
+Copying 'man/figures/README-unnamed-chunk-2-28.png' to 'reference/figures/README-unnamed-chunk-2-28.png'
+Copying 'man/figures/README-unnamed-chunk-2-3.png' to 'reference/figures/README-unnamed-chunk-2-3.png'
+Copying 'man/figures/README-unnamed-chunk-2-4.png' to 'reference/figures/README-unnamed-chunk-2-4.png'
+Copying 'man/figures/README-unnamed-chunk-2-5.png' to 'reference/figures/README-unnamed-chunk-2-5.png'
+Copying 'man/figures/README-unnamed-chunk-2-6.png' to 'reference/figures/README-unnamed-chunk-2-6.png'
+Copying 'man/figures/README-unnamed-chunk-2-7.png' to 'reference/figures/README-unnamed-chunk-2-7.png'
+Copying 'man/figures/README-unnamed-chunk-2-8.png' to 'reference/figures/README-unnamed-chunk-2-8.png'
+Copying 'man/figures/README-unnamed-chunk-2-9.png' to 'reference/figures/README-unnamed-chunk-2-9.png'
+Writing '404.html'
+-- Building function reference -------------------------------------------------
+Error in check_missing_topics(rows, pkg) : 
+  All topics must be included in reference index
+✖ Missing topics: vpcCens, vpcCensTad, vpcPlotTad
+ℹ Either add to _pkgdown.yml or use @keyword internal
+Error: 
+! error in callr subprocess
+Caused by error in `check_missing_topics(rows, pkg)`:
+! All topics must be included in reference index
+✖ Missing topics: vpcCens, vpcCensTad, vpcPlotTad
+ℹ Either add to _pkgdown.yml or use @keyword internal
+---
+Backtrace:
+1. pkgdown::build_site()
+2. pkgdown:::build_site_external(pkg = pkg, examples = examples, run_dont_run = run_don…
+3. callr::r(function(..., cli_colors, pkgdown_internet) { …
+4. callr:::get_result(output = out, options)
+5. callr:::throw(callr_remote_error(remerr))
+6. callr:::callr_remote_error(remerr)
+7. callr:::throw(err, parent = remerr[[3]])
+---
+Subprocess backtrace:
+ 1. pkgdown::build_site(...)
+ 2. pkgdown:::build_site_local(pkg = pkg, examples = examples, run_dont_run = run_dont_r…
+ 3. pkgdown::build_reference(pkg, lazy = lazy, examples = examples, run_dont_run = run_…
+ 4. pkgdown::build_reference_index(pkg)
+ 5. pkgdown::render_page(pkg, "reference-index", data = data_reference_index(pkg), …
+ 6. pkgdown:::render_page_html(pkg, name = name, data = data, depth = depth)
+ 7. utils::modifyList(data_template(pkg, depth = depth), data)
+ 8. base::stopifnot(is.list(x), is.list(val))
+ 9. pkgdown:::data_reference_index(pkg)
+10. pkgdown:::check_missing_topics(rows, pkg)
+11. rlang::abort(c("All topics must be included in reference index", x = paste0("Miss…
+12. | rlang:::signal_abort(cnd, .file)
+13. | base::signalCondition(cnd)
+14. global (function (e) …
+Execution halted

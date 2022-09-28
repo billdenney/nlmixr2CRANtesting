@@ -1,0 +1,97 @@
+
+R version 4.2.1 (2022-06-23) -- "Funny-Looking Kid"
+Copyright (C) 2022 The R Foundation for Statistical Computing
+Platform: x86_64-pc-linux-gnu (64-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+  Natural language support but running in an English locale
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+> devtools::load_all();pkgdown::build_site()
+ℹ Loading nlmixr2data
+-- Installing package into temporary library -----------------------------------
+== Building pkgdown site =======================================================
+Reading from: '/home/bill/GitHub/nlmixr2CRANtesting/packages/nlmixr2data'
+Writing to:   '/home/bill/GitHub/nlmixr2CRANtesting/packages/nlmixr2data/docs'
+-- Initialising site -----------------------------------------------------------
+Copying '../../../../R/x86_64-pc-linux-gnu-library/4.2/pkgdown/BS5/assets/link.svg' to 'link.svg'
+Copying '../../../../R/x86_64-pc-linux-gnu-library/4.2/pkgdown/BS5/assets/pkgdown.js' to 'pkgdown.js'
+Copying 'pkgdown/favicon/apple-touch-icon-120x120.png' to 'apple-touch-icon-120x120.png'
+Copying 'pkgdown/favicon/apple-touch-icon-152x152.png' to 'apple-touch-icon-152x152.png'
+Copying 'pkgdown/favicon/apple-touch-icon-180x180.png' to 'apple-touch-icon-180x180.png'
+Copying 'pkgdown/favicon/apple-touch-icon-60x60.png' to 'apple-touch-icon-60x60.png'
+Copying 'pkgdown/favicon/apple-touch-icon-76x76.png' to 'apple-touch-icon-76x76.png'
+Copying 'pkgdown/favicon/apple-touch-icon.png' to 'apple-touch-icon.png'
+Copying 'pkgdown/favicon/favicon-16x16.png' to 'favicon-16x16.png'
+Copying 'pkgdown/favicon/favicon-32x32.png' to 'favicon-32x32.png'
+Copying 'pkgdown/favicon/favicon.ico' to 'favicon.ico'
+-- Building home ---------------------------------------------------------------
+Writing 'authors.html'
+Reading 'LICENSE.md'
+Writing 'LICENSE.html'
+Writing '404.html'
+-- Building function reference -------------------------------------------------
+Writing 'reference/index.html'
+Reading 'man/Bolus_1CPT.Rd'
+Writing 'reference/Bolus_1CPT.html'
+Reading 'man/Bolus_1CPTMM.Rd'
+Writing 'reference/Bolus_1CPTMM.html'
+Reading 'man/Bolus_2CPT.Rd'
+Writing 'reference/Bolus_2CPT.html'
+Reading 'man/Bolus_2CPTMM.Rd'
+Writing 'reference/Bolus_2CPTMM.html'
+Reading 'man/Infusion_1CPT.Rd'
+Writing 'reference/Infusion_1CPT.html'
+Reading 'man/Infusion_1CPTMM.Rd'
+Writing 'reference/Infusion_1CPTMM.html'
+Reading 'man/Infusion_2CPT.Rd'
+Writing 'reference/Infusion_2CPT.html'
+Reading 'man/Infusion_2CPTMM.Rd'
+Writing 'reference/Infusion_2CPTMM.html'
+Reading 'man/Oral_1CPT.Rd'
+Writing 'reference/Oral_1CPT.html'
+Reading 'man/Oral_1CPTMM.Rd'
+Writing 'reference/Oral_1CPTMM.html'
+Reading 'man/Oral_2CPT.Rd'
+Writing 'reference/Oral_2CPT.html'
+Reading 'man/Oral_2CPTMM.Rd'
+Writing 'reference/Oral_2CPTMM.html'
+Reading 'man/Wang2007.Rd'
+Writing 'reference/Wang2007.html'
+Reading 'man/invgaussian.Rd'
+Writing 'reference/invgaussian.html'
+Reading 'man/mavoglurant.Rd'
+Writing 'reference/mavoglurant.html'
+Reading 'man/metabolite.Rd'
+Writing 'reference/metabolite.html'
+Reading 'man/nimoData.Rd'
+Writing 'reference/nimoData.html'
+Reading 'man/pheno_sd.Rd'
+Writing 'reference/pheno_sd.html'
+Reading 'man/pump.Rd'
+Writing 'reference/pump.html'
+Reading 'man/rats.Rd'
+Writing 'reference/rats.html'
+Reading 'man/theo_md.Rd'
+Writing 'reference/theo_md.html'
+Reading 'man/theo_sd.Rd'
+Writing 'reference/theo_sd.html'
+Reading 'man/warfarin.Rd'
+Writing 'reference/warfarin.html'
+Reading 'man/wbcSim.Rd'
+Writing 'reference/wbcSim.html'
+Writing 'sitemap.xml'
+-- Building search index -------------------------------------------------------
+== DONE ========================================================================
+> 
+> 
