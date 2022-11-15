@@ -1,5 +1,5 @@
 
-R version 4.2.1 (2022-06-23) -- "Funny-Looking Kid"
+R version 4.2.2 Patched (2022-11-10 r83330) -- "Innocent and Trusting"
 Copyright (C) 2022 The R Foundation for Statistical Computing
 Platform: x86_64-pc-linux-gnu (64-bit)
 
@@ -23,14 +23,14 @@ Re-compiling lotri
 * installing *source* package ‘lotri’ ...
 ** using staged installation
 ** libs
-gcc -I"/usr/share/R/include" -DNDEBUG      -fpic  -g -O2 -ffile-prefix-map=/build/r-base-wSz8CH/r-base-4.2.1=. -flto=auto -ffat-lto-objects -flto=auto -ffat-lto-objects -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c asLotriMat.c -o asLotriMat.o
-gcc -I"/usr/share/R/include" -DNDEBUG      -fpic  -g -O2 -ffile-prefix-map=/build/r-base-wSz8CH/r-base-4.2.1=. -flto=auto -ffat-lto-objects -flto=auto -ffat-lto-objects -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c lotriBounds.c -o lotriBounds.o
-gcc -I"/usr/share/R/include" -DNDEBUG      -fpic  -g -O2 -ffile-prefix-map=/build/r-base-wSz8CH/r-base-4.2.1=. -flto=auto -ffat-lto-objects -flto=auto -ffat-lto-objects -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c lotriLstToMat.c -o lotriLstToMat.o
-gcc -I"/usr/share/R/include" -DNDEBUG      -fpic  -g -O2 -ffile-prefix-map=/build/r-base-wSz8CH/r-base-4.2.1=. -flto=auto -ffat-lto-objects -flto=auto -ffat-lto-objects -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c lotriNest.c -o lotriNest.o
-gcc -I"/usr/share/R/include" -DNDEBUG      -fpic  -g -O2 -ffile-prefix-map=/build/r-base-wSz8CH/r-base-4.2.1=. -flto=auto -ffat-lto-objects -flto=auto -ffat-lto-objects -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c lotriProp.c -o lotriProp.o
-gcc -I"/usr/share/R/include" -DNDEBUG      -fpic  -g -O2 -ffile-prefix-map=/build/r-base-wSz8CH/r-base-4.2.1=. -flto=auto -ffat-lto-objects -flto=auto -ffat-lto-objects -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c matlist.c -o matlist.o
+gcc -I"/usr/share/R/include" -DNDEBUG      -fpic  -g -O2 -ffile-prefix-map=/build/r-base-Faorqz/r-base-4.2.2.20221110=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c asLotriMat.c -o asLotriMat.o
+gcc -I"/usr/share/R/include" -DNDEBUG      -fpic  -g -O2 -ffile-prefix-map=/build/r-base-Faorqz/r-base-4.2.2.20221110=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c lotriBounds.c -o lotriBounds.o
+gcc -I"/usr/share/R/include" -DNDEBUG      -fpic  -g -O2 -ffile-prefix-map=/build/r-base-Faorqz/r-base-4.2.2.20221110=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c lotriLstToMat.c -o lotriLstToMat.o
+gcc -I"/usr/share/R/include" -DNDEBUG      -fpic  -g -O2 -ffile-prefix-map=/build/r-base-Faorqz/r-base-4.2.2.20221110=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c lotriNest.c -o lotriNest.o
+gcc -I"/usr/share/R/include" -DNDEBUG      -fpic  -g -O2 -ffile-prefix-map=/build/r-base-Faorqz/r-base-4.2.2.20221110=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c lotriProp.c -o lotriProp.o
+gcc -I"/usr/share/R/include" -DNDEBUG      -fpic  -g -O2 -ffile-prefix-map=/build/r-base-Faorqz/r-base-4.2.2.20221110=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c matlist.c -o matlist.o
 gcc -shared -L/usr/lib/R/lib -Wl,-Bsymbolic-functions -flto=auto -ffat-lto-objects -flto=auto -Wl,-z,relro -o lotri.so asLotriMat.o lotriBounds.o lotriLstToMat.o lotriNest.o lotriProp.o matlist.o -L/usr/lib/R/lib -lR
-installing to /tmp/Rtmpxb8pXI/devtools_install_bcdf184eee19/00LOCK-lotri/00new/lotri/libs
+installing to /tmp/Rtmps1dCAA/devtools_install_d5b21c8cf7a/00LOCK-lotri/00new/lotri/libs
 ** checking absolute paths in shared objects and dynamic libraries
 * DONE (lotri)
 ℹ Testing lotri
@@ -38,11 +38,11 @@ installing to /tmp/Rtmpxb8pXI/devtools_install_bcdf184eee19/00LOCK-lotri/00new/l
 
 ⠏ |         0 | allNames                                                        
 ⠋ |         1 | allNames                                                        
-✔ |         6 | allNames [0.4s]
+✔ |         6 | allNames [0.3s]
 
 ⠏ |         0 | as.data.frame                                                   
 ⠋ |         1 | as.data.frame                                                   
-⠧ |         8 | as.data.frame                                                   
+⠦ |         7 | as.data.frame                                                   
 ✔ |         9 | as.data.frame [0.3s]
 
 ⠏ |         0 | as.lotri                                                        
@@ -67,17 +67,17 @@ installing to /tmp/Rtmpxb8pXI/devtools_install_bcdf184eee19/00LOCK-lotri/00new/l
 ✔ |         1 | label
 
 ⠏ |         0 | lotri-matrix                                                    
-⠋ |        21 | lotri-matrix                                                    
-⠇ |        49 | lotri-matrix                                                    
-⠹ |        73 | lotri-matrix                                                    
+⠙ |        22 | lotri-matrix                                                    
+⠸ |        44 | lotri-matrix                                                    
+⠧ |        68 | lotri-matrix                                                    
 ✔ |        74 | lotri-matrix [0.3s]
 
 ⠏ |         0 | lotri                                                           
 ✔ |         8 | lotri
 
 ⠏ |         0 | lotriMat                                                        
-⠇ |        19 | lotriMat                                                        
-✔ |        29 | lotriMat [0.1s]
+⠧ |        18 | lotriMat                                                        
+✔ |        29 | lotriMat [0.2s]
 
 ⠏ |         0 | lotriSep                                                        
 ✔ |        14 | lotriSep
@@ -90,7 +90,7 @@ installing to /tmp/Rtmpxb8pXI/devtools_install_bcdf184eee19/00LOCK-lotri/00new/l
 ✔ |        11 | transformations
 
 ══ Results ═════════════════════════════════════════════════════════════════════
-Duration: 1.6 s
+Duration: 1.7 s
 
 [ FAIL 0 | WARN 0 | SKIP 0 | PASS 231 ]
 > 

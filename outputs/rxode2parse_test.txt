@@ -1,0 +1,90 @@
+
+R version 4.2.2 Patched (2022-11-10 r83330) -- "Innocent and Trusting"
+Copyright (C) 2022 The R Foundation for Statistical Computing
+Platform: x86_64-pc-linux-gnu (64-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+  Natural language support but running in an English locale
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+> devtools::load_all();devtools::test()
+ℹ Loading rxode2parse
+Exports from /home/bill/GitHub/nlmixr2CRANtesting/packages/rxode2parse/src/qs.cpp:
+   Rcpp::CharacterVector rxQs(SEXP const x)
+   SEXP rxQr(const std::string& encoded_string)
+   SEXP rxode2parseSetRstudio(bool isRstudio = false)
+   bool rxParseSetSilentErr(int silent)
+
+/home/bill/GitHub/nlmixr2CRANtesting/packages/rxode2parse/src/RcppExports.cpp updated.
+/home/bill/GitHub/nlmixr2CRANtesting/packages/rxode2parse/R/RcppExports.R updated.
+Re-compiling rxode2parse
+* installing *source* package ‘rxode2parse’ ...
+** using staged installation
+--------[begin src/Makevars]--------
+# -*- mode: makefile-gmake -*-
+BH=/home/bill/R/x86_64-pc-linux-gnu-library/4.2/BH/include
+RCPP=/home/bill/R/x86_64-pc-linux-gnu-library/4.2/Rcpp/include
+EG=/home/bill/R/x86_64-pc-linux-gnu-library/4.2/RcppEigen/include
+SH=-isystem'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/StanHeaders/include/src' 
+CXX_STD = CXX14
+CXX14STD = -std=gnu++14
+
+################################################################################
+## Package library flags.
+PKG_LIBS    = $(LAPACK_LIBS) $(BLAS_LIBS) $(FLIBS) $(SHLIB_OPENMP_CXXFLAGS) 
+
+# Release options
+PKG_CFLAGS  =  -D_isrxode2parse_
+PKG_CXXFLAGS = $(SHLIB_OPENMP_CXXFLAGS) -D_isrxode2parse_ -DBOOST_DISABLE_ASSERTS -DBOOST_NO_CXX11_STATIC_ASSERT -DBOOST_PHOENIX_NO_VARIADIC_EXPRESSION -DBOOST_NO_AUTO_PTR -D_REENTRANT -isystem"$(BH)" -isystem"$(EG)" $(SH) -isystem"$(RCPP)"
+
+
+--------[end src/Makevars]--------
+--------[begin R/RxODE_md5.R]--------
+rxode2parse.md5 <- "11a4f344dd14cf5f8c5eddde719235e2"
+
+--------[end R/RxODE_md5.R]--------
+** libs
+g++ -std=gnu++14 -I"/usr/share/R/include" -DNDEBUG  -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/BH/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/dparser/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/Rcpp/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/RcppEigen/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/StanHeaders/include'   -fopenmp -D_isrxode2parse_ -DBOOST_DISABLE_ASSERTS -DBOOST_NO_CXX11_STATIC_ASSERT -DBOOST_PHOENIX_NO_VARIADIC_EXPRESSION -DBOOST_NO_AUTO_PTR -D_REENTRANT -isystem"/home/bill/R/x86_64-pc-linux-gnu-library/4.2/BH/include" -isystem"/home/bill/R/x86_64-pc-linux-gnu-library/4.2/RcppEigen/include" -isystem'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/StanHeaders/include/src'  -isystem"/home/bill/R/x86_64-pc-linux-gnu-library/4.2/Rcpp/include" -fpic  -g -O2 -ffile-prefix-map=/build/r-base-Faorqz/r-base-4.2.2.20221110=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c RcppExports.cpp -o RcppExports.o
+gcc -I"/usr/share/R/include" -DNDEBUG  -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/BH/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/dparser/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/Rcpp/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/RcppEigen/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/StanHeaders/include'   -D_isrxode2parse_ -fpic  -g -O2 -ffile-prefix-map=/build/r-base-Faorqz/r-base-4.2.2.20221110=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c codegen.c -o codegen.o
+gcc -I"/usr/share/R/include" -DNDEBUG  -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/BH/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/dparser/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/Rcpp/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/RcppEigen/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/StanHeaders/include'   -D_isrxode2parse_ -fpic  -g -O2 -ffile-prefix-map=/build/r-base-Faorqz/r-base-4.2.2.20221110=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c genModelVars.c -o genModelVars.o
+gcc -I"/usr/share/R/include" -DNDEBUG  -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/BH/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/dparser/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/Rcpp/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/RcppEigen/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/StanHeaders/include'   -D_isrxode2parse_ -fpic  -g -O2 -ffile-prefix-map=/build/r-base-Faorqz/r-base-4.2.2.20221110=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c getOption.c -o getOption.o
+gcc -I"/usr/share/R/include" -DNDEBUG  -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/BH/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/dparser/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/Rcpp/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/RcppEigen/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/StanHeaders/include'   -D_isrxode2parse_ -fpic  -g -O2 -ffile-prefix-map=/build/r-base-Faorqz/r-base-4.2.2.20221110=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c init.c -o init.o
+gcc -I"/usr/share/R/include" -DNDEBUG  -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/BH/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/dparser/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/Rcpp/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/RcppEigen/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/StanHeaders/include'   -D_isrxode2parse_ -fpic  -g -O2 -ffile-prefix-map=/build/r-base-Faorqz/r-base-4.2.2.20221110=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c lincmt.c -o lincmt.o
+g++ -std=gnu++14 -I"/usr/share/R/include" -DNDEBUG  -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/BH/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/dparser/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/Rcpp/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/RcppEigen/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/StanHeaders/include'   -fopenmp -D_isrxode2parse_ -DBOOST_DISABLE_ASSERTS -DBOOST_NO_CXX11_STATIC_ASSERT -DBOOST_PHOENIX_NO_VARIADIC_EXPRESSION -DBOOST_NO_AUTO_PTR -D_REENTRANT -isystem"/home/bill/R/x86_64-pc-linux-gnu-library/4.2/BH/include" -isystem"/home/bill/R/x86_64-pc-linux-gnu-library/4.2/RcppEigen/include" -isystem'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/StanHeaders/include/src'  -isystem"/home/bill/R/x86_64-pc-linux-gnu-library/4.2/Rcpp/include" -fpic  -g -O2 -ffile-prefix-map=/build/r-base-Faorqz/r-base-4.2.2.20221110=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c lincmtB.cpp -o lincmtB.o
+gcc -I"/usr/share/R/include" -DNDEBUG  -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/BH/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/dparser/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/Rcpp/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/RcppEigen/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/StanHeaders/include'   -D_isrxode2parse_ -fpic  -g -O2 -ffile-prefix-map=/build/r-base-Faorqz/r-base-4.2.2.20221110=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c parseLinCmt.c -o parseLinCmt.o
+gcc -I"/usr/share/R/include" -DNDEBUG  -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/BH/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/dparser/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/Rcpp/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/RcppEigen/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/StanHeaders/include'   -D_isrxode2parse_ -fpic  -g -O2 -ffile-prefix-map=/build/r-base-Faorqz/r-base-4.2.2.20221110=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c print_node.c -o print_node.o
+g++ -std=gnu++14 -I"/usr/share/R/include" -DNDEBUG  -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/BH/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/dparser/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/Rcpp/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/RcppEigen/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/StanHeaders/include'   -fopenmp -D_isrxode2parse_ -DBOOST_DISABLE_ASSERTS -DBOOST_NO_CXX11_STATIC_ASSERT -DBOOST_PHOENIX_NO_VARIADIC_EXPRESSION -DBOOST_NO_AUTO_PTR -D_REENTRANT -isystem"/home/bill/R/x86_64-pc-linux-gnu-library/4.2/BH/include" -isystem"/home/bill/R/x86_64-pc-linux-gnu-library/4.2/RcppEigen/include" -isystem'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/StanHeaders/include/src'  -isystem"/home/bill/R/x86_64-pc-linux-gnu-library/4.2/Rcpp/include" -fpic  -g -O2 -ffile-prefix-map=/build/r-base-Faorqz/r-base-4.2.2.20221110=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c qs.cpp -o qs.o
+gcc -I"/usr/share/R/include" -DNDEBUG  -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/BH/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/dparser/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/Rcpp/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/RcppEigen/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/StanHeaders/include'   -D_isrxode2parse_ -fpic  -g -O2 -ffile-prefix-map=/build/r-base-Faorqz/r-base-4.2.2.20221110=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c sbuf.c -o sbuf.o
+gcc -I"/usr/share/R/include" -DNDEBUG  -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/BH/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/dparser/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/Rcpp/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/RcppEigen/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/StanHeaders/include'   -D_isrxode2parse_ -fpic  -g -O2 -ffile-prefix-map=/build/r-base-Faorqz/r-base-4.2.2.20221110=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c tran.c -o tran.o
+gcc -I"/usr/share/R/include" -DNDEBUG  -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/BH/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/dparser/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/Rcpp/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/RcppEigen/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/StanHeaders/include'   -D_isrxode2parse_ -fpic  -g -O2 -ffile-prefix-map=/build/r-base-Faorqz/r-base-4.2.2.20221110=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c utilc.c -o utilc.o
+g++ -std=gnu++14 -shared -L/usr/lib/R/lib -Wl,-Bsymbolic-functions -flto=auto -ffat-lto-objects -flto=auto -Wl,-z,relro -o rxode2parse.so RcppExports.o codegen.o genModelVars.o getOption.o init.o lincmt.o lincmtB.o parseLinCmt.o print_node.o qs.o sbuf.o tran.o utilc.o -llapack -lblas -lgfortran -lm -lquadmath -fopenmp -L/usr/lib/R/lib -lR
+installing to /tmp/Rtmp5Xc8gk/devtools_install_123d325e7875/00LOCK-rxode2parse/00new/rxode2parse/libs
+** checking absolute paths in shared objects and dynamic libraries
+* DONE (rxode2parse)
+ℹ Testing rxode2parse
+✔ | F W S  OK | Context
+
+⠏ |         0 | parsing                                                         
+⠋ |        21 | parsing                                                         
+⠼ |        45 | parsing                                                         
+⠴ |        66 | parsing                                                         
+⠸ |        84 | parsing                                                         
+⠴ |       106 | parsing                                                         
+✔ |       127 | parsing [0.6s]
+
+══ Results ═════════════════════════════════════════════════════════════════════
+Duration: 0.6 s
+
+[ FAIL 0 | WARN 0 | SKIP 0 | PASS 127 ]
+> 
+> 

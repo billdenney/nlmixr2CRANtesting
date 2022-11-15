@@ -1,5 +1,5 @@
 
-R version 4.2.1 (2022-06-23) -- "Funny-Looking Kid"
+R version 4.2.2 Patched (2022-11-10 r83330) -- "Innocent and Trusting"
 Copyright (C) 2022 The R Foundation for Statistical Computing
 Platform: x86_64-pc-linux-gnu (64-bit)
 
@@ -209,6 +209,8 @@ Reading 'man/nmObjHandleControlObject.Rd'
 Writing 'reference/nmObjHandleControlObject.html'
 Reading 'man/nmObjHandleModelObject.Rd'
 Writing 'reference/nmObjHandleModelObject.html'
+Reading 'man/nmObjUiSetCompressed.Rd'
+Writing 'reference/nmObjUiSetCompressed.html'
 Reading 'man/nmSuppressMsg.Rd'
 Writing 'reference/nmSuppressMsg.html'
 Reading 'man/nmsimplex.Rd'

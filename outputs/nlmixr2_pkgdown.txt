@@ -1,5 +1,5 @@
 
-R version 4.2.1 (2022-06-23) -- "Funny-Looking Kid"
+R version 4.2.2 Patched (2022-11-10 r83330) -- "Innocent and Trusting"
 Copyright (C) 2022 The R Foundation for Statistical Computing
 Platform: x86_64-pc-linux-gnu (64-bit)
 
@@ -73,13 +73,13 @@ Writing '404.html'
 -- Building function reference -------------------------------------------------
 Error in check_missing_topics(rows, pkg) : 
   All topics must be included in reference index
-✖ Missing topics: vpcCens, vpcCensTad, vpcPlotTad
+✖ Missing topics: nlmixr2CheckInstall
 ℹ Either add to _pkgdown.yml or use @keyword internal
 Error: 
 ! error in callr subprocess
 Caused by error in `check_missing_topics(rows, pkg)`:
 ! All topics must be included in reference index
-✖ Missing topics: vpcCens, vpcCensTad, vpcPlotTad
+✖ Missing topics: nlmixr2CheckInstall
 ℹ Either add to _pkgdown.yml or use @keyword internal
 ---
 Backtrace:

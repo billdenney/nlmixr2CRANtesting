@@ -1,5 +1,5 @@
 
-R version 4.2.1 (2022-06-23) -- "Funny-Looking Kid"
+R version 4.2.2 Patched (2022-11-10 r83330) -- "Innocent and Trusting"
 Copyright (C) 2022 The R Foundation for Statistical Computing
 Platform: x86_64-pc-linux-gnu (64-bit)
 
@@ -27,14 +27,14 @@ Loading required package: nlmixr2data
 ⠋ |         1 | basic-nlmixr2                                                   
 ⠹ |         3 | basic-nlmixr2                                                   
 ⠼ |         5 | basic-nlmixr2                                                   
-✔ |         5 | basic-nlmixr2 [5.0s]
+✔ |         5 | basic-nlmixr2 [4.7s]
 
 ⠏ |         0 | ini-pipe                                                        
 ⠋ |         1 | ini-pipe                                                        
-✔ |         1 | ini-pipe [0.3s]
+✔ |         1 | ini-pipe [0.1s]
 
 ══ Results ═════════════════════════════════════════════════════════════════════
-Duration: 5.3 s
+Duration: 4.8 s
 
 [ FAIL 0 | WARN 0 | SKIP 0 | PASS 6 ]
 > 

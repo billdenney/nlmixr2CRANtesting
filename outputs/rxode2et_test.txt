@@ -1,0 +1,181 @@
+
+R version 4.2.2 Patched (2022-11-10 r83330) -- "Innocent and Trusting"
+Copyright (C) 2022 The R Foundation for Statistical Computing
+Platform: x86_64-pc-linux-gnu (64-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+  Natural language support but running in an English locale
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+> devtools::load_all();devtools::test()
+ℹ Loading rxode2et
+Exports from /home/bill/GitHub/nlmixr2CRANtesting/packages/rxode2et/src/et.cpp:
+   CharacterVector etDollarNames(RObject obj)
+   RObject etUpdate(RObject obj, RObject arg = R_NilValue, RObject value = R_NilValue, LogicalVector exact = true)
+   RObject et_(List input, List et__)
+   List etSeq_(List ets, int handleSamples = 0, int waitType = 0, double defaultIi = 0, bool rbind = false, int uniqueId = 0, int reserveLen = 0, bool needSort = true, CharacterVector newUnits = CharacterVector::create(), LogicalVector newShow = LogicalVector::create(), bool isCmtIntIn = false)
+   List etRep_(RObject curEt, int times, NumericVector wait, IntegerVector ids, int handleSamples, int waitType, double ii)
+
+Exports from /home/bill/GitHub/nlmixr2CRANtesting/packages/rxode2et/src/etTran.cpp:
+   RObject forderForceBase(bool forceBase = false)
+
+Exports from /home/bill/GitHub/nlmixr2CRANtesting/packages/rxode2et/src/rxStack.cpp:
+   List rxStack(List Data, Nullable<CharacterVector> vars = R_NilValue)
+
+/home/bill/GitHub/nlmixr2CRANtesting/packages/rxode2et/src/RcppExports.cpp updated.
+/home/bill/GitHub/nlmixr2CRANtesting/packages/rxode2et/R/RcppExports.R updated.
+Re-compiling rxode2et
+* installing *source* package ‘rxode2et’ ...
+** using staged installation
+
+R version 4.2.2 Patched (2022-11-10 r83330) -- "Innocent and Trusting"
+Copyright (C) 2022 The R Foundation for Statistical Computing
+Platform: x86_64-pc-linux-gnu (64-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+  Natural language support but running in an English locale
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+> ## This is only for rxode2
+> .in <- suppressWarnings(readLines("src/Makevars.in"))
+> 
+> if (.Platform$OS.type == "windows" && !file.exists("src/Makevars.win")) {
++   .in <- gsub("@CXX14STD@", "-std=c++1y", .in)
++   file.out <- file("src/Makevars.win", "wb")
++   writeLines(gsub("@ISYSTEM@", "I", .in),
++              file.out)
++   close(file.out)
++ } else {
++   .in <- gsub("@CXX14STD@", "-std=gnu++14", .in)
++   file.out <- file("src/Makevars", "wb")
++   writeLines(gsub("@ISYSTEM@", "isystem", .in),
++              file.out)
++   close(file.out)
++ }
+> 
+> if (file.exists("man/reexports.Rd")) {
++   l <- readLines("man/reexports.Rd")
++   if (!any(regexpr("[\\]value", l) != -1)) {
++     l <- c(l, "\\value{ Inherited from parent routine }")
++     file.out <- file("man/reexports.Rd", "wb")
++     writeLines(l, file.out)
++     close(file.out)
++   }
++ }
+> 
+> 
+> unlink("R/rxode2_md5.R")
+> 
+> cpp <- list.files("src", pattern = ".(c|h|cpp|f)$")
+> #Rfiles <- list.files("R/", pattern = ".R")
+> 
+> cmd <- file.path(R.home("bin"), "R")
+> args <- c("CMD", "config")
+> 
+> md5 <- digest::digest(c(lapply(c(paste0("src/", cpp)#,
++                                  #paste0("inst/include/", include)#,
++                                  #paste0("R/", Rfiles)
++                                  ), digest::digest, file = TRUE),
++                         ## vapply(c("BLAS_LIBS", "CC",  "CFLAGS", "CPICFLAGS",
++                         ##          "CXX", "CXXFLAGS", "CXXPICFLAGS",
++                         ##          "CXX11", "CXX11STD", "CXX11FLAGS", "CXX11PICFLAGS",
++                         ##          "CXX14", "CXX14STD", "CXX14FLAGS", "CXX14PICFLAGS",
++                         ##          "CXX17", "CXX17STD", "CXX17FLAGS", "CXX17PICFLAGS",
++                         ##          "CXX20", "CXX20STD", "CXX20FLAGS", "CXX20PICFLAGS",
++                         ##          "FC", "FFLAGS", "FCFLAGS",  "FPICFLAGS"),
++                         ##        function(cfg) {
++                         ##          rawToChar(sys::exec_internal(cmd, c(args, cfg))$stdout)
++                         ##        }, character(1)
++                         ##       ),
++                         ""
++                         ))
+> unlink("R/rxode2et_md5.R")
+> md5file <- file("R/rxode2et_md5.R", "wb")
+> writeLines(sprintf("rxode2et.md5 <- \"%s\"\n", md5), md5file)
+> close(md5file)
+> 
+> l <- readLines(file.path(system.file(package="rxode2random"), "include", "rxode2random_as.h"))
+> l <- gsub("qtest", "_rxode2et_qtest", l)
+> 
+> rxode2et_as.h <- file("src/rxode2et_as.h", "wb")
+> writeLines(l, rxode2et_as.h)
+> close(rxode2et_as.h)
+> 
+> proc.time()
+   user  system elapsed 
+  0.091   0.015   0.100 
+--------[begin src/Makevars]--------
+# -*- mode: makefile-gmake -*-
+CXX_STD = CXX14
+CXX14STD = -std=gnu++14
+
+################################################################################
+## Package library flags.
+PKG_LIBS    = $(LAPACK_LIBS) $(BLAS_LIBS) $(FLIBS) $(SHLIB_OPENMP_CXXFLAGS)
+
+# Release options
+PKG_CFLAGS  =  -D_isrxode2et_
+PKG_CXXFLAGS = $(SHLIB_OPENMP_CXXFLAGS) -D_isrxode2et_ 
+--------[end src/Makevars]--------
+--------[begin R/rxode2et_md5.R]--------
+rxode2et.md5 <- "611cae322d919305311b0bdf15c50b1f"
+
+--------[begin R/rxode2et_md5.R]--------
+** libs
+g++ -std=gnu++14 -I"/usr/share/R/include" -DNDEBUG  -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/rxode2random/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/rxode2parse/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/Rcpp/include'   -fopenmp -D_isrxode2et_  -fpic  -g -O2 -ffile-prefix-map=/build/r-base-Faorqz/r-base-4.2.2.20221110=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c RcppExports.cpp -o RcppExports.o
+g++ -std=gnu++14 -I"/usr/share/R/include" -DNDEBUG  -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/rxode2random/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/rxode2parse/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/Rcpp/include'   -fopenmp -D_isrxode2et_  -fpic  -g -O2 -ffile-prefix-map=/build/r-base-Faorqz/r-base-4.2.2.20221110=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c cbindThetaOmega.cpp -o cbindThetaOmega.o
+g++ -std=gnu++14 -I"/usr/share/R/include" -DNDEBUG  -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/rxode2random/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/rxode2parse/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/Rcpp/include'   -fopenmp -D_isrxode2et_  -fpic  -g -O2 -ffile-prefix-map=/build/r-base-Faorqz/r-base-4.2.2.20221110=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c et.cpp -o et.o
+g++ -std=gnu++14 -I"/usr/share/R/include" -DNDEBUG  -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/rxode2random/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/rxode2parse/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/Rcpp/include'   -fopenmp -D_isrxode2et_  -fpic  -g -O2 -ffile-prefix-map=/build/r-base-Faorqz/r-base-4.2.2.20221110=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c etTran.cpp -o etTran.o
+gcc -I"/usr/share/R/include" -DNDEBUG  -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/rxode2random/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/rxode2parse/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/Rcpp/include'   -D_isrxode2et_ -fpic  -g -O2 -ffile-prefix-map=/build/r-base-Faorqz/r-base-4.2.2.20221110=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c init.c -o init.o
+gcc -I"/usr/share/R/include" -DNDEBUG  -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/rxode2random/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/rxode2parse/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/Rcpp/include'   -D_isrxode2et_ -fpic  -g -O2 -ffile-prefix-map=/build/r-base-Faorqz/r-base-4.2.2.20221110=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c isEt.c -o isEt.o
+g++ -std=gnu++14 -I"/usr/share/R/include" -DNDEBUG  -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/rxode2random/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/rxode2parse/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/Rcpp/include'   -fopenmp -D_isrxode2et_  -fpic  -g -O2 -ffile-prefix-map=/build/r-base-Faorqz/r-base-4.2.2.20221110=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c rxStack.cpp -o rxStack.o
+gcc -I"/usr/share/R/include" -DNDEBUG  -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/rxode2random/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/rxode2parse/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/Rcpp/include'   -D_isrxode2et_ -fpic  -g -O2 -ffile-prefix-map=/build/r-base-Faorqz/r-base-4.2.2.20221110=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c rxode2random.c -o rxode2random.o
+g++ -std=gnu++14 -shared -L/usr/lib/R/lib -Wl,-Bsymbolic-functions -flto=auto -ffat-lto-objects -flto=auto -Wl,-z,relro -o rxode2et.so RcppExports.o cbindThetaOmega.o et.o etTran.o init.o isEt.o rxStack.o rxode2random.o -llapack -lblas -lgfortran -lm -lquadmath -fopenmp -L/usr/lib/R/lib -lR
+installing to /tmp/RtmpVfaCtp/devtools_install_19924d44d53e/00LOCK-rxode2et/00new/rxode2et/libs
+** checking absolute paths in shared objects and dynamic libraries
+* DONE (rxode2et)
+ℹ Testing rxode2et
+✔ | F W S  OK | Context
+
+⠏ |         0 | et                                                              
+⠴ |         6 | et                                                              
+⠇ |        49 | et                                                              
+⠦ |        97 | et                                                              
+⠋ |       111 | et                                                              
+⠙ |       112 | et                                                              
+⠸ |       134 | et                                                              
+⠸ |       164 | et                                                              
+⠇ |       199 | et                                                              
+⠸ |       244 | et                                                              
+⠧ |       258 | et                                                              
+⠹ |       273 | et                                                              
+⠙ |       292 | et                                                              
+⠼ |       315 | et                                                              
+✔ |       321 | et [1.6s]
+
+══ Results ═════════════════════════════════════════════════════════════════════
+Duration: 1.7 s
+
+[ FAIL 0 | WARN 0 | SKIP 0 | PASS 321 ]
+> 
+> 

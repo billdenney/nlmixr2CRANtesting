@@ -1,0 +1,132 @@
+
+R version 4.2.2 Patched (2022-11-10 r83330) -- "Innocent and Trusting"
+Copyright (C) 2022 The R Foundation for Statistical Computing
+Platform: x86_64-pc-linux-gnu (64-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+  Natural language support but running in an English locale
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+> devtools::load_all();devtools::test()
+ℹ Loading rxode2random
+Exports from /home/bill/GitHub/nlmixr2CRANtesting/packages/rxode2random/src/cvPost.cpp:
+   NumericVector rinvchisq(const int n = 1, const double& nu = 1.0, const double& scale = 1)
+   arma::mat rLKJ1(int d, double eta = 1.0, bool cholesky = false)
+   arma::mat rLKJcv1(arma::vec sd, double eta = 1.0)
+   arma::mat rLKJcvLsd1(arma::vec logSd, arma::vec logSdSD, double eta = 1.0)
+   arma::mat invWR1d(int d, double nu, bool omegaIsChol = false)
+   arma::mat rcvC1(arma::vec sdEst, double nu = 3.0, int diagXformType = 1, int rType = 1, bool returnChol = false)
+   SEXP cvPost_(SEXP nuS, SEXP omegaS, SEXP nS, SEXP omegaIsCholS, SEXP returnCholS, SEXP typeS, SEXP diagXformTypeS)
+   SEXP expandTheta_(SEXP thetaS, SEXP thetaMatS, SEXP thetaLowerS, SEXP thetaUpperS, SEXP nStudS, SEXP nCoresRVS)
+   SEXP expandPars_(SEXP objectS, SEXP paramsS, SEXP eventsS, SEXP controlS)
+   SEXP nestingInfo_(SEXP omega, List data)
+
+Exports from /home/bill/GitHub/nlmixr2CRANtesting/packages/rxode2random/src/fast_factor.cpp:
+   SEXP convertId_(SEXP x)
+
+Exports from /home/bill/GitHub/nlmixr2CRANtesting/packages/rxode2random/src/rxthreefry.cpp:
+   SEXP rxRmvn_(NumericMatrix A_, arma::rowvec mu, arma::mat sigma, int ncores = 1, bool isChol = false)
+   List rxMvnrnd(int n, arma::mat& L, arma::vec& l, arma::vec& u, arma::vec mu, double a = 0.4, double tol = 2.05)
+   List rxCholperm(arma::mat Sig, arma::vec l, arma::vec u, double eps = 1e-10)
+   List rxGradpsi(arma::vec y, arma::mat L, arma::vec l, arma::vec u)
+   NumericVector rxNleq(arma::vec l, arma::vec u, arma::mat L)
+   arma::mat rxMvrandn_(NumericMatrix A_, arma::rowvec mu, arma::mat sigma, arma::vec lower, arma::vec upper, int ncores = 1, double a = 0.4, double tol = 2.05, double nlTol = 1e-10, int nlMaxiter = 100)
+   RObject rxSeedEng(int ncores = 1)
+   IntegerVector rxnbinomMu_(int size, double mu, int n, int ncores)
+   IntegerVector rxnbinom_(int size, double prob, int n, int ncores)
+   IntegerVector rxbinom_(int n0, double prob, int n, int ncores)
+   NumericVector rxcauchy_(double location, double scale, int n, int ncores)
+   NumericVector rxchisq_(double df, int n, int ncores)
+   NumericVector rxexp_(double rate, int n, int ncores)
+   NumericVector rxf_(double df1, double df2, int n, int ncores)
+   NumericVector rxgamma_(double shape, double rate, int n, int ncores)
+   NumericVector rxbeta_(double shape1, double shape2, int n, int ncores)
+   IntegerVector rxgeom_(double prob, int n, int ncores)
+   NumericVector rxnorm_(double mean, double sd, int n, int ncores)
+   IntegerVector rxpois_(double lambda, int n, int ncores)
+   NumericVector rxt__(double df, int n, int ncores)
+   NumericVector rxunif_(double low, double hi, int n, int ncores)
+   NumericVector rxweibull_(double shape, double scale, int n, int ncores)
+   SEXP rxRmvn0(NumericMatrix& A_, arma::rowvec mu, arma::mat sigma, arma::vec lower, arma::vec upper, int ncores = 1, bool isChol = false, double a = 0.4, double tol = 2.05, double nlTol = 1e-10, int nlMaxiter = 100)
+   SEXP rxRmvnSEXP(SEXP nS, SEXP muS, SEXP sigmaS, SEXP lowerS, SEXP upperS, SEXP ncoresS, SEXP isCholS, SEXP keepNamesS, SEXP aS, SEXP tolS, SEXP nlTolS, SEXP nlMaxiterS)
+   NumericVector rpp_(SEXP nS, SEXP lambdaS, SEXP gammaS, SEXP probS, SEXP t0S, SEXP tmaxS, SEXP randomOrderS)
+   double rxordSelect(double u, NumericVector cs)
+
+Exports from /home/bill/GitHub/nlmixr2CRANtesting/packages/rxode2random/src/seed.cpp:
+   int rxGetSeed()
+
+/home/bill/GitHub/nlmixr2CRANtesting/packages/rxode2random/src/RcppExports.cpp updated.
+/home/bill/GitHub/nlmixr2CRANtesting/packages/rxode2random/R/RcppExports.R updated.
+Re-compiling rxode2random
+* installing *source* package ‘rxode2random’ ...
+** using staged installation
+--------[begin src/Makevars]--------
+# -*- mode: makefile-gmake -*-
+
+CXX_STD = CXX14
+CXX14STD = -std=gnu++14
+
+################################################################################
+## Package library flags.
+PKG_LIBS    = $(LAPACK_LIBS) $(BLAS_LIBS) $(FLIBS) $(SHLIB_OPENMP_CXXFLAGS)
+
+# Release options
+PKG_CFLAGS  =  -D_isrxode2random_
+PKG_CXXFLAGS = $(SHLIB_OPENMP_CXXFLAGS) -D_isrxode2random_ 
+
+
+--------[end src/Makevars]--------
+--------[begin R/rxode2random_md5.R]--------
+rxode2random.md5 <- "0cbf7265b7d6980b9bdbee92a8cd1b90"
+
+--------[end R/rxode2random_md5.R]--------
+** libs
+g++ -std=gnu++14 -I"/usr/share/R/include" -DNDEBUG  -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/sitmo/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/rxode2parse/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/Rcpp/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/RcppArmadillo/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/BH/include'   -fopenmp -D_isrxode2random_  -fpic  -g -O2 -ffile-prefix-map=/build/r-base-Faorqz/r-base-4.2.2.20221110=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c RcppExports.cpp -o RcppExports.o
+g++ -std=gnu++14 -I"/usr/share/R/include" -DNDEBUG  -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/sitmo/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/rxode2parse/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/Rcpp/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/RcppArmadillo/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/BH/include'   -fopenmp -D_isrxode2random_  -fpic  -g -O2 -ffile-prefix-map=/build/r-base-Faorqz/r-base-4.2.2.20221110=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c checkmate.cpp -o checkmate.o
+gcc -I"/usr/share/R/include" -DNDEBUG  -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/sitmo/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/rxode2parse/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/Rcpp/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/RcppArmadillo/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/BH/include'   -D_isrxode2random_ -fpic  -g -O2 -ffile-prefix-map=/build/r-base-Faorqz/r-base-4.2.2.20221110=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c checkmate_stub.c -o checkmate_stub.o
+g++ -std=gnu++14 -I"/usr/share/R/include" -DNDEBUG  -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/sitmo/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/rxode2parse/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/Rcpp/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/RcppArmadillo/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/BH/include'   -fopenmp -D_isrxode2random_  -fpic  -g -O2 -ffile-prefix-map=/build/r-base-Faorqz/r-base-4.2.2.20221110=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c cvPost.cpp -o cvPost.o
+g++ -std=gnu++14 -I"/usr/share/R/include" -DNDEBUG  -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/sitmo/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/rxode2parse/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/Rcpp/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/RcppArmadillo/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/BH/include'   -fopenmp -D_isrxode2random_  -fpic  -g -O2 -ffile-prefix-map=/build/r-base-Faorqz/r-base-4.2.2.20221110=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c fast_factor.cpp -o fast_factor.o
+gcc -I"/usr/share/R/include" -DNDEBUG  -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/sitmo/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/rxode2parse/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/Rcpp/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/RcppArmadillo/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/BH/include'   -D_isrxode2random_ -fpic  -g -O2 -ffile-prefix-map=/build/r-base-Faorqz/r-base-4.2.2.20221110=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c init.c -o init.o
+g++ -std=gnu++14 -I"/usr/share/R/include" -DNDEBUG  -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/sitmo/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/rxode2parse/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/Rcpp/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/RcppArmadillo/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/BH/include'   -fopenmp -D_isrxode2random_  -fpic  -g -O2 -ffile-prefix-map=/build/r-base-Faorqz/r-base-4.2.2.20221110=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c rxthreefry.cpp -o rxthreefry.o
+g++ -std=gnu++14 -I"/usr/share/R/include" -DNDEBUG  -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/sitmo/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/rxode2parse/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/Rcpp/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/RcppArmadillo/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/BH/include'   -fopenmp -D_isrxode2random_  -fpic  -g -O2 -ffile-prefix-map=/build/r-base-Faorqz/r-base-4.2.2.20221110=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c seed.cpp -o seed.o
+gcc -I"/usr/share/R/include" -DNDEBUG  -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/sitmo/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/rxode2parse/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/Rcpp/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/RcppArmadillo/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/BH/include'   -D_isrxode2random_ -fpic  -g -O2 -ffile-prefix-map=/build/r-base-Faorqz/r-base-4.2.2.20221110=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c utilc.c -o utilc.o
+g++ -std=gnu++14 -shared -L/usr/lib/R/lib -Wl,-Bsymbolic-functions -flto=auto -ffat-lto-objects -flto=auto -Wl,-z,relro -o rxode2random.so RcppExports.o checkmate.o checkmate_stub.o cvPost.o fast_factor.o init.o rxthreefry.o seed.o utilc.o -llapack -lblas -lgfortran -lm -lquadmath -fopenmp -L/usr/lib/R/lib -lR
+installing to /tmp/RtmpaGf8xp/devtools_install_15f540306afc/00LOCK-rxode2random/00new/rxode2random/libs
+** checking absolute paths in shared objects and dynamic libraries
+* DONE (rxode2random)
+ℹ Testing rxode2random
+✔ | F W S  OK | Context
+
+⠏ |         0 | cholperm                                                        
+⠼ |         5 | cholperm                                                        
+⠦ |        27 | cholperm                                                        
+✔ |        34 | cholperm [0.2s]
+
+⠏ |         0 | cvpost                                                          
+✔ |        21 | cvpost
+
+⠏ |         0 | dfRep                                                           
+✔ |        15 | dfRep
+
+⠏ |         0 | phi                                                             
+✔ |         2 | phi
+
+⠏ |         0 | random                                                          
+✔ |        26 | random
+
+══ Results ═════════════════════════════════════════════════════════════════════
+Duration: 0.4 s
+
+[ FAIL 0 | WARN 0 | SKIP 0 | PASS 98 ]
+> 
+> 

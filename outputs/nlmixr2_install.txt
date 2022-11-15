@@ -1,5 +1,5 @@
 
-R version 4.2.1 (2022-06-23) -- "Funny-Looking Kid"
+R version 4.2.2 Patched (2022-11-10 r83330) -- "Innocent and Trusting"
 Copyright (C) 2022 The R Foundation for Statistical Computing
 Platform: x86_64-pc-linux-gnu (64-bit)
 
@@ -19,12 +19,13 @@ Type 'q()' to quit R.
 
 > devtools::install_local(force=TRUE)
 
-* checking for file ‘/tmp/RtmpSK1DO2/file34fe26c4a58cd/nlmixr2/DESCRIPTION’ ... OK
+* checking for file ‘/tmp/RtmpJsiMYO/file11a3c6b30e922/nlmixr2/DESCRIPTION’ ... OK
 * preparing ‘nlmixr2’:
 * checking DESCRIPTION meta-information ... OK
 * checking for LF line-endings in source and make files and shell scripts
 * checking for empty or unneeded directories
-* building ‘nlmixr2_2.0.7.tar.gz’
+Removed empty directory ‘nlmixr2/vignettes’
+* building ‘nlmixr2_2.0.8.9000.tar.gz’
 
 Installing package into ‘/home/bill/R/x86_64-pc-linux-gnu-library/4.2’
 (as ‘lib’ is unspecified)
@@ -37,7 +38,6 @@ Installing package into ‘/home/bill/R/x86_64-pc-linux-gnu-library/4.2’
 *** installing help indices
 *** copying figures
 ** building package indices
-** installing vignettes
 ** testing if installed package can be loaded from temporary location
 ** testing if installed package can be loaded from final location
 ** testing if installed package keeps a record of temporary installation path
