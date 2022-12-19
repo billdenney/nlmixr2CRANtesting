@@ -63,7 +63,7 @@ Type 'q()' to quit R.
 > 
 > proc.time()
    user  system elapsed 
-  0.087   0.012   0.093 
+  0.080   0.020   0.095 
 --------[begin src/Makevars]--------
 ## -*- mode: makefile; -*-
 
@@ -78,7 +78,7 @@ g++ -std=gnu++11 -I"/usr/share/R/include" -DNDEBUG  -I'/home/bill/R/x86_64-pc-li
 gcc -I"/usr/share/R/include" -DNDEBUG  -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/Rcpp/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/RcppArmadillo/include'    -fpic  -g -O2 -ffile-prefix-map=/build/r-base-Faorqz/r-base-4.2.2.20221110=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c init.c -o init.o
 g++ -std=gnu++11 -I"/usr/share/R/include" -DNDEBUG  -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/Rcpp/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/RcppArmadillo/include'   -fopenmp -DARMA_USE_CXX11 -fpic  -g -O2 -ffile-prefix-map=/build/r-base-Faorqz/r-base-4.2.2.20221110=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c preCondInv.cpp -o preCondInv.o
 g++ -std=gnu++11 -shared -L/usr/lib/R/lib -Wl,-Bsymbolic-functions -flto=auto -ffat-lto-objects -flto=auto -Wl,-z,relro -o nlmixr2extra.so RcppExports.o init.o preCondInv.o -fopenmp -llapack -lblas -lgfortran -lm -lquadmath -L/usr/lib/R/lib -lR
-installing to /tmp/RtmpX6C9N0/devtools_install_111f34d3b8cac/00LOCK-nlmixr2extra/00new/nlmixr2extra/libs
+installing to /tmp/RtmpFcILxw/devtools_install_1216f423a8e14/00LOCK-nlmixr2extra/00new/nlmixr2extra/libs
 ** checking absolute paths in shared objects and dynamic libraries
 * DONE (nlmixr2extra)
 ℹ Testing nlmixr2extra
@@ -89,7 +89,7 @@ installing to /tmp/RtmpX6C9N0/devtools_install_111f34d3b8cac/00LOCK-nlmixr2extra
 ⠸ |         4 | bootstrap                                                       
 ⠴ |         6 | bootstrap                                                       
 ⠦ |         7 | bootstrap                                                       
-✔ |         7 | bootstrap [26.8s]
+✔ |         7 | bootstrap [27.1s]
 
 ⠏ |         0 | computing                                                       
 ✔ |         6 | computing
@@ -208,14 +208,14 @@ Updated original fit object fit2
 ⠋ |         1 | precondition                                                    > compress origData in nlmixr2 object, save 5952
 Updated original fit object fit2
 
-⠏ |        10 | precondition                                                    > compress origData in nlmixr2 object, save 5952
+⠋ |        11 | precondition                                                    > compress origData in nlmixr2 object, save 5952
 Updated original fit object fit2
 
 ⠇ |        19 | precondition                                                    
-✔ |        27 | precondition [8.4s]
+✔ |        27 | precondition [8.6s]
 
 ══ Results ═════════════════════════════════════════════════════════════════════
-Duration: 40.3 s
+Duration: 40.7 s
 
 [ FAIL 0 | WARN 0 | SKIP 0 | PASS 63 ]
 > 

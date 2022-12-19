@@ -24,6 +24,7 @@ Exports from /home/bill/GitHub/nlmixr2CRANtesting/packages/rxode2parse/src/qs.cp
    SEXP rxQr(const std::string& encoded_string)
    SEXP rxode2parseSetRstudio(bool isRstudio = false)
    bool rxParseSetSilentErr(int silent)
+   Rcpp::List rxUpdateTrans_(Rcpp::List ret, std::string prefix, std::string libName)
 
 /home/bill/GitHub/nlmixr2CRANtesting/packages/rxode2parse/src/RcppExports.cpp updated.
 /home/bill/GitHub/nlmixr2CRANtesting/packages/rxode2parse/R/RcppExports.R updated.
@@ -68,23 +69,374 @@ gcc -I"/usr/share/R/include" -DNDEBUG  -I'/home/bill/R/x86_64-pc-linux-gnu-libra
 gcc -I"/usr/share/R/include" -DNDEBUG  -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/BH/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/dparser/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/Rcpp/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/RcppEigen/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/StanHeaders/include'   -D_isrxode2parse_ -fpic  -g -O2 -ffile-prefix-map=/build/r-base-Faorqz/r-base-4.2.2.20221110=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c tran.c -o tran.o
 gcc -I"/usr/share/R/include" -DNDEBUG  -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/BH/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/dparser/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/Rcpp/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/RcppEigen/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/StanHeaders/include'   -D_isrxode2parse_ -fpic  -g -O2 -ffile-prefix-map=/build/r-base-Faorqz/r-base-4.2.2.20221110=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c utilc.c -o utilc.o
 g++ -std=gnu++14 -shared -L/usr/lib/R/lib -Wl,-Bsymbolic-functions -flto=auto -ffat-lto-objects -flto=auto -Wl,-z,relro -o rxode2parse.so RcppExports.o codegen.o genModelVars.o getOption.o init.o lincmt.o lincmtB.o parseLinCmt.o print_node.o qs.o sbuf.o tran.o utilc.o -llapack -lblas -lgfortran -lm -lquadmath -fopenmp -L/usr/lib/R/lib -lR
-installing to /tmp/Rtmp5Xc8gk/devtools_install_123d325e7875/00LOCK-rxode2parse/00new/rxode2parse/libs
+installing to /tmp/RtmpjP1wym/devtools_install_49b944c01fae/00LOCK-rxode2parse/00new/rxode2parse/libs
 ** checking absolute paths in shared objects and dynamic libraries
 * DONE (rxode2parse)
 ℹ Testing rxode2parse
 ✔ | F W S  OK | Context
 
+⠏ |         0 | lincmt-parse                                                    
+⠹ |         3 | lincmt-parse                                                    
+⠦ |        17 | lincmt-parse                                                    
+⠙ |        32 | lincmt-parse                                                    
+⠴ |        46 | lincmt-parse                                                    
+⠋ |        61 | lincmt-parse                                                    
+⠴ |        76 | lincmt-parse                                                    
+⠏ |        90 | lincmt-parse                                                    
+⠼ |       105 | lincmt-parse                                                    
+⠏ |       120 | lincmt-parse                                                    
+⠼ |       135 | lincmt-parse                                                    
+⠇ |       149 | lincmt-parse                                                    
+⠸ |       164 | lincmt-parse                                                    
+⠧ |       178 | lincmt-parse                                                    
+⠹ |       193 | lincmt-parse                                                    
+⠧ |       208 | lincmt-parse                                                    
+⠙ |       222 | lincmt-parse                                                    
+⠦ |       237 | lincmt-parse                                                    
+⠋ |       251 | lincmt-parse                                                    
+⠴ |       266 | lincmt-parse                                                    
+⠋ |       281 | lincmt-parse                                                    
+⠴ |       296 | lincmt-parse                                                    
+⠋ |       311 | lincmt-parse                                                    
+⠴ |       326 | lincmt-parse                                                    
+⠏ |       340 | lincmt-parse                                                    
+⠼ |       355 | lincmt-parse                                                    
+⠇ |       369 | lincmt-parse                                                    
+⠸ |       384 | lincmt-parse                                                    
+⠇ |       399 | lincmt-parse                                                    
+⠹ |       413 | lincmt-parse                                                    
+⠧ |       428 | lincmt-parse                                                    
+⠙ |       442 | lincmt-parse                                                    
+⠦ |       457 | lincmt-parse                                                    
+⠋ |       471 | lincmt-parse                                                    
+⠴ |       486 | lincmt-parse                                                    
+⠏ |       500 | lincmt-parse                                                    
+⠼ |       515 | lincmt-parse                                                    
+⠇ |       529 | lincmt-parse                                                    
+⠸ |       544 | lincmt-parse                                                    
+⠧ |       558 | lincmt-parse                                                    
+⠹ |       573 | lincmt-parse                                                    
+⠧ |       588 | lincmt-parse                                                    
+⠹ |       603 | lincmt-parse                                                    
+⠧ |       618 | lincmt-parse                                                    
+⠹ |       633 | lincmt-parse                                                    
+⠇ |       649 | lincmt-parse                                                    
+⠸ |       664 | lincmt-parse                                                    
+⠇ |       679 | lincmt-parse                                                    
+⠸ |       694 | lincmt-parse                                                    
+⠏ |       710 | lincmt-parse                                                    
+⠸ |       724 | lincmt-parse                                                    
+⠇ |       739 | lincmt-parse                                                    
+⠸ |       754 | lincmt-parse                                                    
+⠏ |       770 | lincmt-parse                                                    
+⠼ |       785 | lincmt-parse                                                    
+⠏ |       800 | lincmt-parse                                                    
+⠼ |       815 | lincmt-parse                                                    
+⠋ |       831 | lincmt-parse                                                    
+⠴ |       846 | lincmt-parse                                                    
+⠋ |       861 | lincmt-parse                                                    
+⠼ |       875 | lincmt-parse                                                    
+⠋ |       891 | lincmt-parse                                                    
+⠴ |       906 | lincmt-parse                                                    
+⠙ |       922 | lincmt-parse                                                    
+⠧ |       938 | lincmt-parse                                                    
+⠸ |       954 | lincmt-parse                                                    
+⠇ |       969 | lincmt-parse                                                    
+⠸ |       984 | lincmt-parse                                                    
+⠧ |       998 | lincmt-parse                                                    
+⠹ |       1013 | lincmt-parse                                                   
+⠧ |       1028 | lincmt-parse                                                   
+⠙ |       1042 | lincmt-parse                                                   
+⠦ |       1057 | lincmt-parse                                                   
+⠋ |       1071 | lincmt-parse                                                   
+⠴ |       1086 | lincmt-parse                                                   
+⠏ |       1100 | lincmt-parse                                                   
+⠼ |       1115 | lincmt-parse                                                   
+⠇ |       1129 | lincmt-parse                                                   
+⠸ |       1144 | lincmt-parse                                                   
+⠧ |       1158 | lincmt-parse                                                   
+⠹ |       1173 | lincmt-parse                                                   
+⠦ |       1187 | lincmt-parse                                                   
+⠙ |       1202 | lincmt-parse                                                   
+⠸ |       1204 | lincmt-parse                                                   
+⠏ |       1220 | lincmt-parse                                                   
+⠼ |       1235 | lincmt-parse                                                   
+⠋ |       1251 | lincmt-parse                                                   
+⠴ |       1266 | lincmt-parse                                                   
+⠙ |       1282 | lincmt-parse                                                   
+⠴ |       1296 | lincmt-parse                                                   
+⠋ |       1311 | lincmt-parse                                                   
+⠴ |       1326 | lincmt-parse                                                   
+⠋ |       1341 | lincmt-parse                                                   
+⠴ |       1356 | lincmt-parse                                                   
+⠏ |       1370 | lincmt-parse                                                   
+⠼ |       1385 | lincmt-parse                                                   
+⠏ |       1400 | lincmt-parse                                                   
+⠼ |       1415 | lincmt-parse                                                   
+⠏ |       1430 | lincmt-parse                                                   
+⠸ |       1444 | lincmt-parse                                                   
+⠇ |       1459 | lincmt-parse                                                   
+⠸ |       1474 | lincmt-parse                                                   
+⠇ |       1489 | lincmt-parse                                                   
+⠹ |       1503 | lincmt-parse                                                   
+⠧ |       1518 | lincmt-parse                                                   
+⠹ |       1533 | lincmt-parse                                                   
+⠧ |       1548 | lincmt-parse                                                   
+⠹ |       1563 | lincmt-parse                                                   
+⠧ |       1578 | lincmt-parse                                                   
+⠸ |       1594 | lincmt-parse                                                   
+⠏ |       1610 | lincmt-parse                                                   
+⠼ |       1625 | lincmt-parse                                                   
+⠋ |       1641 | lincmt-parse                                                   
+⠴ |       1656 | lincmt-parse                                                   
+⠙ |       1672 | lincmt-parse                                                   
+⠦ |       1687 | lincmt-parse                                                   
+⠹ |       1703 | lincmt-parse                                                   
+⠇ |       1719 | lincmt-parse                                                   
+⠸ |       1734 | lincmt-parse                                                   
+⠏ |       1750 | lincmt-parse                                                   
+⠼ |       1765 | lincmt-parse                                                   
+⠋ |       1781 | lincmt-parse                                                   
+⠴ |       1796 | lincmt-parse                                                   
+⠋ |       1811 | lincmt-parse                                                   
+⠸ |       1824 | lincmt-parse                                                   
+⠇ |       1839 | lincmt-parse                                                   
+⠸ |       1854 | lincmt-parse                                                   
+⠏ |       1870 | lincmt-parse                                                   
+⠼ |       1885 | lincmt-parse                                                   
+⠋ |       1901 | lincmt-parse                                                   
+⠴ |       1916 | lincmt-parse                                                   
+⠏ |       1930 | lincmt-parse                                                   
+⠼ |       1945 | lincmt-parse                                                   
+⠇ |       1959 | lincmt-parse                                                   
+⠸ |       1974 | lincmt-parse                                                   
+⠧ |       1988 | lincmt-parse                                                   
+⠹ |       2003 | lincmt-parse                                                   
+⠦ |       2017 | lincmt-parse                                                   
+⠙ |       2032 | lincmt-parse                                                   
+⠴ |       2046 | lincmt-parse                                                   
+⠋ |       2061 | lincmt-parse                                                   
+⠼ |       2075 | lincmt-parse                                                   
+⠏ |       2090 | lincmt-parse                                                   
+⠸ |       2104 | lincmt-parse                                                   
+⠇ |       2119 | lincmt-parse                                                   
+⠹ |       2133 | lincmt-parse                                                   
+⠧ |       2148 | lincmt-parse                                                   
+⠙ |       2162 | lincmt-parse                                                   
+⠦ |       2177 | lincmt-parse                                                   
+⠙ |       2192 | lincmt-parse                                                   
+⠴ |       2206 | lincmt-parse                                                   
+⠋ |       2221 | lincmt-parse                                                   
+⠴ |       2236 | lincmt-parse                                                   
+⠋ |       2251 | lincmt-parse                                                   
+⠼ |       2265 | lincmt-parse                                                   
+⠏ |       2280 | lincmt-parse                                                   
+⠸ |       2294 | lincmt-parse                                                   
+⠇ |       2309 | lincmt-parse                                                   
+⠹ |       2323 | lincmt-parse                                                   
+⠦ |       2337 | lincmt-parse                                                   
+⠙ |       2352 | lincmt-parse                                                   
+⠴ |       2366 | lincmt-parse                                                   
+⠋ |       2381 | lincmt-parse                                                   
+⠹ |       2393 | lincmt-parse                                                   
+⠧ |       2408 | lincmt-parse                                                   
+⠙ |       2422 | lincmt-parse                                                   
+⠦ |       2437 | lincmt-parse                                                   
+⠋ |       2451 | lincmt-parse                                                   
+⠴ |       2466 | lincmt-parse                                                   
+⠏ |       2480 | lincmt-parse                                                   
+⠸ |       2494 | lincmt-parse                                                   
+⠇ |       2509 | lincmt-parse                                                   
+⠹ |       2523 | lincmt-parse                                                   
+⠧ |       2538 | lincmt-parse                                                   
+⠹ |       2553 | lincmt-parse                                                   
+⠧ |       2568 | lincmt-parse                                                   
+⠙ |       2582 | lincmt-parse                                                   
+⠦ |       2597 | lincmt-parse                                                   
+⠋ |       2611 | lincmt-parse                                                   
+⠴ |       2626 | lincmt-parse                                                   
+⠋ |       2641 | lincmt-parse                                                   
+⠼ |       2655 | lincmt-parse                                                   
+⠏ |       2670 | lincmt-parse                                                   
+⠼ |       2685 | lincmt-parse                                                   
+⠏ |       2700 | lincmt-parse                                                   
+⠼ |       2715 | lincmt-parse                                                   
+⠇ |       2729 | lincmt-parse                                                   
+⠼ |       2745 | lincmt-parse                                                   
+⠇ |       2759 | lincmt-parse                                                   
+⠸ |       2774 | lincmt-parse                                                   
+⠧ |       2788 | lincmt-parse                                                   
+⠙ |       2802 | lincmt-parse                                                   
+⠧ |       2818 | lincmt-parse                                                   
+⠹ |       2833 | lincmt-parse                                                   
+⠇ |       2849 | lincmt-parse                                                   
+⠸ |       2864 | lincmt-parse                                                   
+⠏ |       2880 | lincmt-parse                                                   
+⠼ |       2895 | lincmt-parse                                                   
+⠇ |       2909 | lincmt-parse                                                   
+⠸ |       2924 | lincmt-parse                                                   
+⠦ |       2937 | lincmt-parse                                                   
+⠙ |       2952 | lincmt-parse                                                   
+⠴ |       2966 | lincmt-parse                                                   
+⠋ |       2981 | lincmt-parse                                                   
+⠦ |       2997 | lincmt-parse                                                   
+⠋ |       3011 | lincmt-parse                                                   
+⠴ |       3026 | lincmt-parse                                                   
+⠏ |       3040 | lincmt-parse                                                   
+⠼ |       3055 | lincmt-parse                                                   
+⠏ |       3070 | lincmt-parse                                                   
+⠸ |       3084 | lincmt-parse                                                   
+⠇ |       3099 | lincmt-parse                                                   
+⠹ |       3113 | lincmt-parse                                                   
+⠇ |       3129 | lincmt-parse                                                   
+⠹ |       3143 | lincmt-parse                                                   
+⠦ |       3157 | lincmt-parse                                                   
+⠹ |       3173 | lincmt-parse                                                   
+⠧ |       3188 | lincmt-parse                                                   
+⠸ |       3204 | lincmt-parse                                                   
+⠧ |       3218 | lincmt-parse                                                   
+⠙ |       3232 | lincmt-parse                                                   
+⠦ |       3247 | lincmt-parse                                                   
+⠙ |       3262 | lincmt-parse                                                   
+⠦ |       3277 | lincmt-parse                                                   
+⠋ |       3291 | lincmt-parse                                                   
+⠼ |       3305 | lincmt-parse                                                   
+⠋ |       3321 | lincmt-parse                                                   
+⠼ |       3335 | lincmt-parse                                                   
+⠏ |       3350 | lincmt-parse                                                   
+⠸ |       3364 | lincmt-parse                                                   
+⠧ |       3378 | lincmt-parse                                                   
+⠹ |       3393 | lincmt-parse                                                   
+⠴ |       3406 | lincmt-parse                                                   
+⠏ |       3420 | lincmt-parse                                                   
+⠹ |       3433 | lincmt-parse                                                   
+⠧ |       3448 | lincmt-parse                                                   
+⠹ |       3463 | lincmt-parse                                                   
+⠦ |       3477 | lincmt-parse                                                   
+⠙ |       3492 | lincmt-parse                                                   
+⠴ |       3506 | lincmt-parse                                                   
+⠋ |       3521 | lincmt-parse                                                   
+⠦ |       3537 | lincmt-parse                                                   
+⠙ |       3552 | lincmt-parse                                                   
+⠧ |       3568 | lincmt-parse                                                   
+⠹ |       3583 | lincmt-parse                                                   
+⠇ |       3599 | lincmt-parse                                                   
+⠼ |       3615 | lincmt-parse                                                   
+⠏ |       3630 | lincmt-parse                                                   
+⠴ |       3646 | lincmt-parse                                                   
+⠋ |       3661 | lincmt-parse                                                   
+⠴ |       3676 | lincmt-parse                                                   
+⠙ |       3692 | lincmt-parse                                                   
+⠦ |       3707 | lincmt-parse                                                   
+⠹ |       3723 | lincmt-parse                                                   
+⠧ |       3738 | lincmt-parse                                                   
+⠙ |       3752 | lincmt-parse                                                   
+⠧ |       3768 | lincmt-parse                                                   
+⠹ |       3783 | lincmt-parse                                                   
+⠦ |       3797 | lincmt-parse                                                   
+⠹ |       3813 | lincmt-parse                                                   
+⠇ |       3829 | lincmt-parse                                                   
+⠙ |       3842 | lincmt-parse                                                   
+⠦ |       3857 | lincmt-parse                                                   
+⠋ |       3871 | lincmt-parse                                                   
+⠴ |       3886 | lincmt-parse                                                   
+⠏ |       3900 | lincmt-parse                                                   
+⠸ |       3914 | lincmt-parse                                                   
+⠇ |       3929 | lincmt-parse                                                   
+⠹ |       3943 | lincmt-parse                                                   
+⠼ |       3955 | lincmt-parse                                                   
+⠏ |       3970 | lincmt-parse                                                   
+⠹ |       3983 | lincmt-parse                                                   
+⠦ |       3997 | lincmt-parse                                                   
+⠙ |       4012 | lincmt-parse                                                   
+⠴ |       4026 | lincmt-parse                                                   
+⠋ |       4041 | lincmt-parse                                                   
+⠴ |       4056 | lincmt-parse                                                   
+⠏ |       4070 | lincmt-parse                                                   
+⠼ |       4085 | lincmt-parse                                                   
+⠋ |       4101 | lincmt-parse                                                   
+⠸ |       4114 | lincmt-parse                                                   
+⠧ |       4128 | lincmt-parse                                                   
+⠹ |       4143 | lincmt-parse                                                   
+⠦ |       4157 | lincmt-parse                                                   
+⠋ |       4171 | lincmt-parse                                                   
+⠴ |       4186 | lincmt-parse                                                   
+⠏ |       4200 | lincmt-parse                                                   
+⠸ |       4214 | lincmt-parse                                                   
+⠏ |       4230 | lincmt-parse                                                   
+⠴ |       4246 | lincmt-parse                                                   
+⠋ |       4261 | lincmt-parse                                                   
+⠼ |       4275 | lincmt-parse                                                   
+⠇ |       4289 | lincmt-parse                                                   
+⠼ |       4305 | lincmt-parse                                                   
+⠏ |       4320 | lincmt-parse                                                   
+⠧ |       4338 | lincmt-parse                                                   
+⠹ |       4353 | lincmt-parse                                                   
+⠇ |       4369 | lincmt-parse                                                   
+⠸ |       4384 | lincmt-parse                                                   
+⠏ |       4400 | lincmt-parse                                                   
+⠴ |       4416 | lincmt-parse                                                   
+⠏ |       4420 | lincmt-parse                                                   
+⠦ |       4437 | lincmt-parse                                                   
+⠧ |       4448 | lincmt-parse                                                   
+⠋ |       4461 | lincmt-parse                                                   
+⠴ |       4476 | lincmt-parse                                                   
+⠋ |       4491 | lincmt-parse                                                   
+⠴ |       4506 | lincmt-parse                                                   
+⠋ |       4521 | lincmt-parse                                                   
+⠴ |       4536 | lincmt-parse                                                   
+⠙ |       4552 | lincmt-parse                                                   
+⠧ |       4568 | lincmt-parse                                                   
+✔ |       4573 | lincmt-parse [32.5s]
+
 ⠏ |         0 | parsing                                                         
-⠋ |        21 | parsing                                                         
+⠙ |        22 | parsing                                                         
 ⠼ |        45 | parsing                                                         
-⠴ |        66 | parsing                                                         
-⠸ |        84 | parsing                                                         
-⠴ |       106 | parsing                                                         
-✔ |       127 | parsing [0.6s]
+⠼ |        65 | parsing                                                         
+⠋ |        81 | parsing                                                         
+⠙ |       102 | parsing                                                         
+⠙ |       122 | parsing                                                         rxode2 model syntax error:
+================================================================================
+
+rxode2 syntax error:
+:001: a+b<-fun+fun  +  fun
+       ^
+================================================================================
+Error : rxode2 syntax error:
+:001: a+b<-fun+fun  +  fun
+       ^
+more errors could be listed above
+[1] "rxode2 syntax error:\n:001: a+b<-fun+fun  +  fun\n       ^\nmore errors could be listed above"
+rxode2 model syntax error:
+================================================================================
+:001: 'llikNorm' takes 3 arguments, supplied 5:
+      a= llikNorm(a, b, c, d, f)
+         ^~~~~~~~
+================================================================================
+rxode2 model syntax error:
+================================================================================
+:001: 'llikNorm' takes 3-4 arguments, supplied 5:
+      a= llikNorm(a, b, c, d, f)
+      ^~~~~~~~
+================================================================================
+rxode2 model syntax error:
+================================================================================
+:001: 'llikNorm' takes 2-3 arguments, supplied 5:
+      a= llikNorm(a, b, c, d, f)
+      ^~~~~~~~
+================================================================================
+rxode2 model syntax error:
+================================================================================
+:001: 'cos' takes 1 arguments, supplied 5:
+      a=cos(b, c, d, e, f)
+        ^~~
+================================================================================
+
+✔ |       144 | parsing [0.7s]
 
 ══ Results ═════════════════════════════════════════════════════════════════════
-Duration: 0.6 s
+Duration: 33.2 s
 
-[ FAIL 0 | WARN 0 | SKIP 0 | PASS 127 ]
+[ FAIL 0 | WARN 0 | SKIP 0 | PASS 4717 ]
 > 
 > 

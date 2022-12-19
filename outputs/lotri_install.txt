@@ -18,31 +18,8 @@ Type 'demo()' for some demos, 'help()' for on-line help, or
 Type 'q()' to quit R.
 
 > devtools::install_local(force=TRUE)
-crayon (1.5.1 -> 1.5.2) [CRAN]
-Installing 1 packages: crayon
-Installing package into ‘/home/bill/R/x86_64-pc-linux-gnu-library/4.2’
-(as ‘lib’ is unspecified)
-trying URL 'https://cloud.r-project.org/src/contrib/crayon_1.5.2.tar.gz'
-Content type 'application/x-gzip' length 40567 bytes (39 KB)
-==================================================
-downloaded 39 KB
 
-* installing *source* package ‘crayon’ ...
-** package ‘crayon’ successfully unpacked and MD5 sums checked
-** using staged installation
-** R
-** byte-compile and prepare package for lazy loading
-** help
-*** installing help indices
-** building package indices
-** testing if installed package can be loaded from temporary location
-** testing if installed package can be loaded from final location
-** testing if installed package keeps a record of temporary installation path
-* DONE (crayon)
-
-The downloaded source packages are in
-	‘/tmp/RtmpElqnGG/downloaded_packages’
-* checking for file ‘/tmp/RtmpElqnGG/filec934103f679/lotri/DESCRIPTION’ ... OK
+* checking for file ‘/tmp/RtmpIIJ6FI/file43ea2dabefbb/lotri/DESCRIPTION’ ... OK
 * preparing ‘lotri’:
 * checking DESCRIPTION meta-information ... OK
 * cleaning src

@@ -30,7 +30,7 @@ gcc -I"/usr/share/R/include" -DNDEBUG      -fpic  -g -O2 -ffile-prefix-map=/buil
 gcc -I"/usr/share/R/include" -DNDEBUG      -fpic  -g -O2 -ffile-prefix-map=/build/r-base-Faorqz/r-base-4.2.2.20221110=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c lotriProp.c -o lotriProp.o
 gcc -I"/usr/share/R/include" -DNDEBUG      -fpic  -g -O2 -ffile-prefix-map=/build/r-base-Faorqz/r-base-4.2.2.20221110=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c matlist.c -o matlist.o
 gcc -shared -L/usr/lib/R/lib -Wl,-Bsymbolic-functions -flto=auto -ffat-lto-objects -flto=auto -Wl,-z,relro -o lotri.so asLotriMat.o lotriBounds.o lotriLstToMat.o lotriNest.o lotriProp.o matlist.o -L/usr/lib/R/lib -lR
-installing to /tmp/Rtmps1dCAA/devtools_install_d5b21c8cf7a/00LOCK-lotri/00new/lotri/libs
+installing to /tmp/Rtmpd5hTPx/devtools_install_447c5e02b2fc/00LOCK-lotri/00new/lotri/libs
 ** checking absolute paths in shared objects and dynamic libraries
 * DONE (lotri)
 ℹ Testing lotri
@@ -38,11 +38,11 @@ installing to /tmp/Rtmps1dCAA/devtools_install_d5b21c8cf7a/00LOCK-lotri/00new/lo
 
 ⠏ |         0 | allNames                                                        
 ⠋ |         1 | allNames                                                        
-✔ |         6 | allNames [0.3s]
+✔ |         6 | allNames [0.4s]
 
 ⠏ |         0 | as.data.frame                                                   
 ⠋ |         1 | as.data.frame                                                   
-⠦ |         7 | as.data.frame                                                   
+⠧ |         8 | as.data.frame                                                   
 ✔ |         9 | as.data.frame [0.3s]
 
 ⠏ |         0 | as.lotri                                                        

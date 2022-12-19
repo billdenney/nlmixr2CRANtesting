@@ -123,7 +123,7 @@ Type 'q()' to quit R.
 > 
 > proc.time()
    user  system elapsed 
-  0.091   0.015   0.100 
+  0.102   0.012   0.106 
 --------[begin src/Makevars]--------
 # -*- mode: makefile-gmake -*-
 CXX_STD = CXX14
@@ -138,7 +138,7 @@ PKG_CFLAGS  =  -D_isrxode2et_
 PKG_CXXFLAGS = $(SHLIB_OPENMP_CXXFLAGS) -D_isrxode2et_ 
 --------[end src/Makevars]--------
 --------[begin R/rxode2et_md5.R]--------
-rxode2et.md5 <- "611cae322d919305311b0bdf15c50b1f"
+rxode2et.md5 <- "4c0dfe74b0631eb129b596de5b346ca4"
 
 --------[begin R/rxode2et_md5.R]--------
 ** libs
@@ -149,9 +149,9 @@ g++ -std=gnu++14 -I"/usr/share/R/include" -DNDEBUG  -I'/home/bill/R/x86_64-pc-li
 gcc -I"/usr/share/R/include" -DNDEBUG  -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/rxode2random/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/rxode2parse/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/Rcpp/include'   -D_isrxode2et_ -fpic  -g -O2 -ffile-prefix-map=/build/r-base-Faorqz/r-base-4.2.2.20221110=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c init.c -o init.o
 gcc -I"/usr/share/R/include" -DNDEBUG  -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/rxode2random/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/rxode2parse/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/Rcpp/include'   -D_isrxode2et_ -fpic  -g -O2 -ffile-prefix-map=/build/r-base-Faorqz/r-base-4.2.2.20221110=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c isEt.c -o isEt.o
 g++ -std=gnu++14 -I"/usr/share/R/include" -DNDEBUG  -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/rxode2random/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/rxode2parse/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/Rcpp/include'   -fopenmp -D_isrxode2et_  -fpic  -g -O2 -ffile-prefix-map=/build/r-base-Faorqz/r-base-4.2.2.20221110=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c rxStack.cpp -o rxStack.o
-gcc -I"/usr/share/R/include" -DNDEBUG  -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/rxode2random/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/rxode2parse/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/Rcpp/include'   -D_isrxode2et_ -fpic  -g -O2 -ffile-prefix-map=/build/r-base-Faorqz/r-base-4.2.2.20221110=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c rxode2random.c -o rxode2random.o
+g++ -std=gnu++14 -I"/usr/share/R/include" -DNDEBUG  -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/rxode2random/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/rxode2parse/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/Rcpp/include'   -fopenmp -D_isrxode2et_  -fpic  -g -O2 -ffile-prefix-map=/build/r-base-Faorqz/r-base-4.2.2.20221110=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c rxode2random.cpp -o rxode2random.o
 g++ -std=gnu++14 -shared -L/usr/lib/R/lib -Wl,-Bsymbolic-functions -flto=auto -ffat-lto-objects -flto=auto -Wl,-z,relro -o rxode2et.so RcppExports.o cbindThetaOmega.o et.o etTran.o init.o isEt.o rxStack.o rxode2random.o -llapack -lblas -lgfortran -lm -lquadmath -fopenmp -L/usr/lib/R/lib -lR
-installing to /tmp/RtmpVfaCtp/devtools_install_19924d44d53e/00LOCK-rxode2et/00new/rxode2et/libs
+installing to /tmp/Rtmp0Aqbd0/devtools_install_4ea52af16760/00LOCK-rxode2et/00new/rxode2et/libs
 ** checking absolute paths in shared objects and dynamic libraries
 * DONE (rxode2et)
 ℹ Testing rxode2et
@@ -163,19 +163,19 @@ installing to /tmp/RtmpVfaCtp/devtools_install_19924d44d53e/00LOCK-rxode2et/00ne
 ⠦ |        97 | et                                                              
 ⠋ |       111 | et                                                              
 ⠙ |       112 | et                                                              
-⠸ |       134 | et                                                              
-⠸ |       164 | et                                                              
+⠼ |       135 | et                                                              
+⠇ |       169 | et                                                              
 ⠇ |       199 | et                                                              
-⠸ |       244 | et                                                              
-⠧ |       258 | et                                                              
-⠹ |       273 | et                                                              
-⠙ |       292 | et                                                              
+⠴ |       246 | et                                                              
+⠇ |       259 | et                                                              
+⠼ |       275 | et                                                              
+⠹ |       293 | et                                                              
 ⠼ |       315 | et                                                              
-✔ |       321 | et [1.6s]
+✔ |       322 | et [1.6s]
 
 ══ Results ═════════════════════════════════════════════════════════════════════
-Duration: 1.7 s
+Duration: 1.6 s
 
-[ FAIL 0 | WARN 0 | SKIP 0 | PASS 321 ]
+[ FAIL 0 | WARN 0 | SKIP 0 | PASS 322 ]
 > 
 > 

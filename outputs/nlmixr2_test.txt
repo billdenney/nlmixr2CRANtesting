@@ -34,7 +34,7 @@ Loading required package: nlmixr2data
 ✔ |         1 | ini-pipe [0.1s]
 
 ══ Results ═════════════════════════════════════════════════════════════════════
-Duration: 4.8 s
+Duration: 4.9 s
 
 [ FAIL 0 | WARN 0 | SKIP 0 | PASS 6 ]
 > 

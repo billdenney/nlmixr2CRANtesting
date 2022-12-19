@@ -18,58 +18,8 @@ Type 'demo()' for some demos, 'help()' for on-line help, or
 Type 'q()' to quit R.
 
 > devtools::install_local(force=TRUE)
-RcppArmad... (0.11.2.4.0 -> 0.11.4.2.1) [CRAN]
-Installing 1 packages: RcppArmadillo
-Installing package into ‘/home/bill/R/x86_64-pc-linux-gnu-library/4.2’
-(as ‘lib’ is unspecified)
-trying URL 'https://cloud.r-project.org/src/contrib/RcppArmadillo_0.11.4.2.1.tar.gz'
-Content type 'application/x-gzip' length 1372103 bytes (1.3 MB)
-==================================================
-downloaded 1.3 MB
 
-* installing *source* package ‘RcppArmadillo’ ...
-** package ‘RcppArmadillo’ successfully unpacked and MD5 sums checked
-** using staged installation
-checking whether the C++ compiler works... yes
-checking for C++ compiler default output file name... a.out
-checking for suffix of executables... 
-checking whether we are cross compiling... no
-checking for suffix of object files... o
-checking whether the compiler supports GNU C++... yes
-checking whether g++ -std=gnu++14 accepts -g... yes
-checking for g++ -std=gnu++14 option to enable C++11 features... none needed
-checking how to run the C++ preprocessor... g++ -std=gnu++14 -E
-checking whether the compiler supports GNU C++... (cached) yes
-checking whether g++ -std=gnu++14 accepts -g... (cached) yes
-checking for g++ -std=gnu++14 option to enable C++11 features... (cached) none needed
-checking whether we have a suitable tempdir... /tmp
-checking whether R CMD SHLIB can already compile programs using OpenMP... yes
-checking LAPACK_LIBS... system LAPACK found
-configure: creating ./config.status
-config.status: creating inst/include/RcppArmadillo/config/RcppArmadilloConfigGenerated.h
-config.status: creating src/Makevars
-** libs
-g++ -std=gnu++11 -I"/usr/share/R/include" -DNDEBUG  -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/Rcpp/include'   -I../inst/include -fopenmp -fpic  -g -O2 -ffile-prefix-map=/build/r-base-Faorqz/r-base-4.2.2.20221110=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c RcppArmadillo.cpp -o RcppArmadillo.o
-g++ -std=gnu++11 -I"/usr/share/R/include" -DNDEBUG  -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/Rcpp/include'   -I../inst/include -fopenmp -fpic  -g -O2 -ffile-prefix-map=/build/r-base-Faorqz/r-base-4.2.2.20221110=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c RcppExports.cpp -o RcppExports.o
-g++ -std=gnu++11 -I"/usr/share/R/include" -DNDEBUG  -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/Rcpp/include'   -I../inst/include -fopenmp -fpic  -g -O2 -ffile-prefix-map=/build/r-base-Faorqz/r-base-4.2.2.20221110=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c fastLm.cpp -o fastLm.o
-g++ -std=gnu++11 -shared -L/usr/lib/R/lib -Wl,-Bsymbolic-functions -flto=auto -ffat-lto-objects -flto=auto -Wl,-z,relro -o RcppArmadillo.so RcppArmadillo.o RcppExports.o fastLm.o -fopenmp -llapack -lblas -lgfortran -lm -lquadmath -L/usr/lib/R/lib -lR
-installing to /home/bill/R/x86_64-pc-linux-gnu-library/4.2/00LOCK-RcppArmadillo/00new/RcppArmadillo/libs
-** R
-** inst
-** byte-compile and prepare package for lazy loading
-** help
-*** installing help indices
-** building package indices
-** installing vignettes
-** testing if installed package can be loaded from temporary location
-** checking absolute paths in shared objects and dynamic libraries
-** testing if installed package can be loaded from final location
-** testing if installed package keeps a record of temporary installation path
-* DONE (RcppArmadillo)
-
-The downloaded source packages are in
-	‘/tmp/Rtmp0SYNRC/downloaded_packages’
-* checking for file ‘/tmp/Rtmp0SYNRC/file12ed2beae59a/rxode2random/DESCRIPTION’ ... OK
+* checking for file ‘/tmp/RtmpBw2p41/file4a557df1a8a9/rxode2random/DESCRIPTION’ ... OK
 * preparing ‘rxode2random’:
 * checking DESCRIPTION meta-information ... OK
 * cleaning src
@@ -94,23 +44,23 @@ PKG_LIBS    = $(LAPACK_LIBS) $(BLAS_LIBS) $(FLIBS) $(SHLIB_OPENMP_CXXFLAGS)
 
 # Release options
 PKG_CFLAGS  =  -D_isrxode2random_
-PKG_CXXFLAGS = $(SHLIB_OPENMP_CXXFLAGS) -D_isrxode2random_ 
+PKG_CXXFLAGS = $(SHLIB_OPENMP_CXXFLAGS) -D_isrxode2random_ -DBOOST_DISABLE_ASSERTS -DBOOST_NO_CXX11_STATIC_ASSERT -DBOOST_PHOENIX_NO_VARIADIC_EXPRESSION -DBOOST_NO_AUTO_PTR -D_REENTRANT
 
 
 --------[end src/Makevars]--------
 --------[begin R/rxode2random_md5.R]--------
-rxode2random.md5 <- "0cbf7265b7d6980b9bdbee92a8cd1b90"
+rxode2random.md5 <- "20aa35f3ae6b3c0eb4bdbeedb86244bf"
 
 --------[end R/rxode2random_md5.R]--------
 ** libs
-g++ -std=gnu++14 -I"/usr/share/R/include" -DNDEBUG  -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/sitmo/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/rxode2parse/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/Rcpp/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/RcppArmadillo/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/BH/include'   -fopenmp -D_isrxode2random_  -fpic  -g -O2 -ffile-prefix-map=/build/r-base-Faorqz/r-base-4.2.2.20221110=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c RcppExports.cpp -o RcppExports.o
-g++ -std=gnu++14 -I"/usr/share/R/include" -DNDEBUG  -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/sitmo/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/rxode2parse/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/Rcpp/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/RcppArmadillo/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/BH/include'   -fopenmp -D_isrxode2random_  -fpic  -g -O2 -ffile-prefix-map=/build/r-base-Faorqz/r-base-4.2.2.20221110=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c checkmate.cpp -o checkmate.o
+g++ -std=gnu++14 -I"/usr/share/R/include" -DNDEBUG  -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/sitmo/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/rxode2parse/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/Rcpp/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/RcppArmadillo/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/BH/include'   -fopenmp -D_isrxode2random_ -DBOOST_DISABLE_ASSERTS -DBOOST_NO_CXX11_STATIC_ASSERT -DBOOST_PHOENIX_NO_VARIADIC_EXPRESSION -DBOOST_NO_AUTO_PTR -D_REENTRANT -fpic  -g -O2 -ffile-prefix-map=/build/r-base-Faorqz/r-base-4.2.2.20221110=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c RcppExports.cpp -o RcppExports.o
+g++ -std=gnu++14 -I"/usr/share/R/include" -DNDEBUG  -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/sitmo/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/rxode2parse/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/Rcpp/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/RcppArmadillo/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/BH/include'   -fopenmp -D_isrxode2random_ -DBOOST_DISABLE_ASSERTS -DBOOST_NO_CXX11_STATIC_ASSERT -DBOOST_PHOENIX_NO_VARIADIC_EXPRESSION -DBOOST_NO_AUTO_PTR -D_REENTRANT -fpic  -g -O2 -ffile-prefix-map=/build/r-base-Faorqz/r-base-4.2.2.20221110=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c checkmate.cpp -o checkmate.o
 gcc -I"/usr/share/R/include" -DNDEBUG  -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/sitmo/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/rxode2parse/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/Rcpp/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/RcppArmadillo/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/BH/include'   -D_isrxode2random_ -fpic  -g -O2 -ffile-prefix-map=/build/r-base-Faorqz/r-base-4.2.2.20221110=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c checkmate_stub.c -o checkmate_stub.o
-g++ -std=gnu++14 -I"/usr/share/R/include" -DNDEBUG  -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/sitmo/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/rxode2parse/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/Rcpp/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/RcppArmadillo/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/BH/include'   -fopenmp -D_isrxode2random_  -fpic  -g -O2 -ffile-prefix-map=/build/r-base-Faorqz/r-base-4.2.2.20221110=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c cvPost.cpp -o cvPost.o
-g++ -std=gnu++14 -I"/usr/share/R/include" -DNDEBUG  -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/sitmo/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/rxode2parse/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/Rcpp/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/RcppArmadillo/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/BH/include'   -fopenmp -D_isrxode2random_  -fpic  -g -O2 -ffile-prefix-map=/build/r-base-Faorqz/r-base-4.2.2.20221110=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c fast_factor.cpp -o fast_factor.o
+g++ -std=gnu++14 -I"/usr/share/R/include" -DNDEBUG  -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/sitmo/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/rxode2parse/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/Rcpp/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/RcppArmadillo/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/BH/include'   -fopenmp -D_isrxode2random_ -DBOOST_DISABLE_ASSERTS -DBOOST_NO_CXX11_STATIC_ASSERT -DBOOST_PHOENIX_NO_VARIADIC_EXPRESSION -DBOOST_NO_AUTO_PTR -D_REENTRANT -fpic  -g -O2 -ffile-prefix-map=/build/r-base-Faorqz/r-base-4.2.2.20221110=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c cvPost.cpp -o cvPost.o
+g++ -std=gnu++14 -I"/usr/share/R/include" -DNDEBUG  -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/sitmo/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/rxode2parse/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/Rcpp/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/RcppArmadillo/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/BH/include'   -fopenmp -D_isrxode2random_ -DBOOST_DISABLE_ASSERTS -DBOOST_NO_CXX11_STATIC_ASSERT -DBOOST_PHOENIX_NO_VARIADIC_EXPRESSION -DBOOST_NO_AUTO_PTR -D_REENTRANT -fpic  -g -O2 -ffile-prefix-map=/build/r-base-Faorqz/r-base-4.2.2.20221110=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c fast_factor.cpp -o fast_factor.o
 gcc -I"/usr/share/R/include" -DNDEBUG  -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/sitmo/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/rxode2parse/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/Rcpp/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/RcppArmadillo/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/BH/include'   -D_isrxode2random_ -fpic  -g -O2 -ffile-prefix-map=/build/r-base-Faorqz/r-base-4.2.2.20221110=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c init.c -o init.o
-g++ -std=gnu++14 -I"/usr/share/R/include" -DNDEBUG  -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/sitmo/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/rxode2parse/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/Rcpp/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/RcppArmadillo/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/BH/include'   -fopenmp -D_isrxode2random_  -fpic  -g -O2 -ffile-prefix-map=/build/r-base-Faorqz/r-base-4.2.2.20221110=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c rxthreefry.cpp -o rxthreefry.o
-g++ -std=gnu++14 -I"/usr/share/R/include" -DNDEBUG  -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/sitmo/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/rxode2parse/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/Rcpp/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/RcppArmadillo/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/BH/include'   -fopenmp -D_isrxode2random_  -fpic  -g -O2 -ffile-prefix-map=/build/r-base-Faorqz/r-base-4.2.2.20221110=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c seed.cpp -o seed.o
+g++ -std=gnu++14 -I"/usr/share/R/include" -DNDEBUG  -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/sitmo/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/rxode2parse/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/Rcpp/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/RcppArmadillo/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/BH/include'   -fopenmp -D_isrxode2random_ -DBOOST_DISABLE_ASSERTS -DBOOST_NO_CXX11_STATIC_ASSERT -DBOOST_PHOENIX_NO_VARIADIC_EXPRESSION -DBOOST_NO_AUTO_PTR -D_REENTRANT -fpic  -g -O2 -ffile-prefix-map=/build/r-base-Faorqz/r-base-4.2.2.20221110=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c rxthreefry.cpp -o rxthreefry.o
+g++ -std=gnu++14 -I"/usr/share/R/include" -DNDEBUG  -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/sitmo/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/rxode2parse/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/Rcpp/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/RcppArmadillo/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/BH/include'   -fopenmp -D_isrxode2random_ -DBOOST_DISABLE_ASSERTS -DBOOST_NO_CXX11_STATIC_ASSERT -DBOOST_PHOENIX_NO_VARIADIC_EXPRESSION -DBOOST_NO_AUTO_PTR -D_REENTRANT -fpic  -g -O2 -ffile-prefix-map=/build/r-base-Faorqz/r-base-4.2.2.20221110=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c seed.cpp -o seed.o
 gcc -I"/usr/share/R/include" -DNDEBUG  -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/sitmo/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/rxode2parse/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/Rcpp/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/RcppArmadillo/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/BH/include'   -D_isrxode2random_ -fpic  -g -O2 -ffile-prefix-map=/build/r-base-Faorqz/r-base-4.2.2.20221110=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c utilc.c -o utilc.o
 g++ -std=gnu++14 -shared -L/usr/lib/R/lib -Wl,-Bsymbolic-functions -flto=auto -ffat-lto-objects -flto=auto -Wl,-z,relro -o rxode2random.so RcppExports.o checkmate.o checkmate_stub.o cvPost.o fast_factor.o init.o rxthreefry.o seed.o utilc.o -llapack -lblas -lgfortran -lm -lquadmath -fopenmp -L/usr/lib/R/lib -lR
 installing to /home/bill/R/x86_64-pc-linux-gnu-library/4.2/00LOCK-rxode2random/00new/rxode2random/libs

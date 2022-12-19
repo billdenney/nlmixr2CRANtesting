@@ -19,7 +19,7 @@ Type 'q()' to quit R.
 
 > devtools::install_local(force=TRUE)
 
-* checking for file ‘/tmp/RtmpMabjZJ/file18d94aa91429/rxode2et/DESCRIPTION’ ... OK
+* checking for file ‘/tmp/RtmpUxIfnl/file4deb1c1fcbbf/rxode2et/DESCRIPTION’ ... OK
 * preparing ‘rxode2et’:
 * checking DESCRIPTION meta-information ... OK
 * cleaning src
@@ -118,7 +118,7 @@ Type 'q()' to quit R.
 > 
 > proc.time()
    user  system elapsed 
-  0.100   0.005   0.099 
+  0.099   0.011   0.103 
 --------[begin src/Makevars]--------
 # -*- mode: makefile-gmake -*-
 CXX_STD = CXX14
@@ -133,7 +133,7 @@ PKG_CFLAGS  =  -D_isrxode2et_
 PKG_CXXFLAGS = $(SHLIB_OPENMP_CXXFLAGS) -D_isrxode2et_ 
 --------[end src/Makevars]--------
 --------[begin R/rxode2et_md5.R]--------
-rxode2et.md5 <- "611cae322d919305311b0bdf15c50b1f"
+rxode2et.md5 <- "4c0dfe74b0631eb129b596de5b346ca4"
 
 --------[begin R/rxode2et_md5.R]--------
 ** libs
@@ -144,7 +144,7 @@ g++ -std=gnu++14 -I"/usr/share/R/include" -DNDEBUG  -I'/home/bill/R/x86_64-pc-li
 gcc -I"/usr/share/R/include" -DNDEBUG  -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/rxode2random/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/rxode2parse/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/Rcpp/include'   -D_isrxode2et_ -fpic  -g -O2 -ffile-prefix-map=/build/r-base-Faorqz/r-base-4.2.2.20221110=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c init.c -o init.o
 gcc -I"/usr/share/R/include" -DNDEBUG  -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/rxode2random/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/rxode2parse/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/Rcpp/include'   -D_isrxode2et_ -fpic  -g -O2 -ffile-prefix-map=/build/r-base-Faorqz/r-base-4.2.2.20221110=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c isEt.c -o isEt.o
 g++ -std=gnu++14 -I"/usr/share/R/include" -DNDEBUG  -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/rxode2random/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/rxode2parse/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/Rcpp/include'   -fopenmp -D_isrxode2et_  -fpic  -g -O2 -ffile-prefix-map=/build/r-base-Faorqz/r-base-4.2.2.20221110=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c rxStack.cpp -o rxStack.o
-gcc -I"/usr/share/R/include" -DNDEBUG  -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/rxode2random/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/rxode2parse/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/Rcpp/include'   -D_isrxode2et_ -fpic  -g -O2 -ffile-prefix-map=/build/r-base-Faorqz/r-base-4.2.2.20221110=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c rxode2random.c -o rxode2random.o
+g++ -std=gnu++14 -I"/usr/share/R/include" -DNDEBUG  -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/rxode2random/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/rxode2parse/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/Rcpp/include'   -fopenmp -D_isrxode2et_  -fpic  -g -O2 -ffile-prefix-map=/build/r-base-Faorqz/r-base-4.2.2.20221110=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c rxode2random.cpp -o rxode2random.o
 g++ -std=gnu++14 -shared -L/usr/lib/R/lib -Wl,-Bsymbolic-functions -flto=auto -ffat-lto-objects -flto=auto -Wl,-z,relro -o rxode2et.so RcppExports.o cbindThetaOmega.o et.o etTran.o init.o isEt.o rxStack.o rxode2random.o -llapack -lblas -lgfortran -lm -lquadmath -fopenmp -L/usr/lib/R/lib -lR
 installing to /home/bill/R/x86_64-pc-linux-gnu-library/4.2/00LOCK-rxode2et/00new/rxode2et/libs
 ** R
