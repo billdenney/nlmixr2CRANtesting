@@ -1,0 +1,112 @@
+
+R version 4.2.2 Patched (2022-11-10 r83330) -- "Innocent and Trusting"
+Copyright (C) 2022 The R Foundation for Statistical Computing
+Platform: x86_64-pc-linux-gnu (64-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+  Natural language support but running in an English locale
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+[Previously saved workspace restored]
+
+> devtools::load_all();pkgdown::build_site()
+ℹ Loading rxode2random
+-- Installing package into temporary library -----------------------------------
+== Building pkgdown site =======================================================
+Reading from: '/home/bill/GitHub/nlmixr2CRANtesting/packages/rxode2random'
+Writing to:   '/home/bill/GitHub/nlmixr2CRANtesting/packages/rxode2random/docs'
+-- Initialising site -----------------------------------------------------------
+Copying '../../../../R/x86_64-pc-linux-gnu-library/4.2/pkgdown/BS5/assets/link.svg' to 'link.svg'
+Copying '../../../../R/x86_64-pc-linux-gnu-library/4.2/pkgdown/BS5/assets/pkgdown.js' to 'pkgdown.js'
+Copying 'pkgdown/favicon/apple-touch-icon-120x120.png' to 'apple-touch-icon-120x120.png'
+Copying 'pkgdown/favicon/apple-touch-icon-152x152.png' to 'apple-touch-icon-152x152.png'
+Copying 'pkgdown/favicon/apple-touch-icon-180x180.png' to 'apple-touch-icon-180x180.png'
+Copying 'pkgdown/favicon/apple-touch-icon-60x60.png' to 'apple-touch-icon-60x60.png'
+Copying 'pkgdown/favicon/apple-touch-icon-76x76.png' to 'apple-touch-icon-76x76.png'
+Copying 'pkgdown/favicon/apple-touch-icon.png' to 'apple-touch-icon.png'
+Copying 'pkgdown/favicon/favicon-16x16.png' to 'favicon-16x16.png'
+Copying 'pkgdown/favicon/favicon-32x32.png' to 'favicon-32x32.png'
+Copying 'pkgdown/favicon/favicon.ico' to 'favicon.ico'
+Copying 'logo.png' to 'logo.png'
+-- Building home ---------------------------------------------------------------
+Writing 'authors.html'
+Writing '404.html'
+-- Building function reference -------------------------------------------------
+Writing 'reference/index.html'
+Reading 'man/cvPost.Rd'
+Writing 'reference/cvPost.html'
+Reading 'man/dot-cbindOme.Rd'
+Writing 'reference/dot-cbindOme.html'
+Reading 'man/dot-vecDf.Rd'
+Writing 'reference/dot-vecDf.html'
+Reading 'man/invWR1d.Rd'
+Writing 'reference/invWR1d.html'
+Reading 'man/phi.Rd'
+Writing 'reference/phi.html'
+Reading 'man/rLKJ1.Rd'
+Writing 'reference/rLKJ1.html'
+Reading 'man/reexports.Rd'
+Writing 'reference/reexports.html'
+Reading 'man/rinvchisq.Rd'
+Writing 'reference/rinvchisq.html'
+Reading 'man/rxGetSeed.Rd'
+Writing 'reference/rxGetSeed.html'
+Reading 'man/rxPp.Rd'
+Writing 'reference/rxPp.html'
+Reading 'man/rxRmvn.Rd'
+Writing 'reference/rxRmvn.html'
+Reading 'man/rxSeedEng.Rd'
+Writing 'reference/rxSeedEng.html'
+Reading 'man/rxSetSeed.Rd'
+Writing 'reference/rxSetSeed.html'
+Reading 'man/rxWithSeed.Rd'
+Writing 'reference/rxWithSeed.html'
+Reading 'man/rxbeta.Rd'
+Writing 'reference/rxbeta.html'
+Reading 'man/rxbinom.Rd'
+Writing 'reference/rxbinom.html'
+Reading 'man/rxcauchy.Rd'
+Writing 'reference/rxcauchy.html'
+Reading 'man/rxchisq.Rd'
+Writing 'reference/rxchisq.html'
+Reading 'man/rxexp.Rd'
+Writing 'reference/rxexp.html'
+Reading 'man/rxf.Rd'
+Writing 'reference/rxf.html'
+Reading 'man/rxgamma.Rd'
+Writing 'reference/rxgamma.html'
+Reading 'man/rxgeom.Rd'
+Writing 'reference/rxgeom.html'
+Reading 'man/rxnbinom.Rd'
+Writing 'reference/rxnbinom.html'
+Reading 'man/rxnorm.Rd'
+Writing 'reference/rxnorm.html'
+Reading 'man/rxode2randomMd5.Rd'
+Writing 'reference/rxode2randomMd5.html'
+Reading 'man/rxord.Rd'
+Writing 'reference/rxord.html'
+Reading 'man/rxpois.Rd'
+Writing 'reference/rxpois.html'
+Reading 'man/rxt.Rd'
+Writing 'reference/rxt.html'
+Reading 'man/rxunif.Rd'
+Writing 'reference/rxunif.html'
+Reading 'man/rxweibull.Rd'
+Writing 'reference/rxweibull.html'
+-- Building news ---------------------------------------------------------------
+Writing 'news/index.html'
+Writing 'sitemap.xml'
+-- Building search index -------------------------------------------------------
+== DONE ========================================================================
+> 
+> 

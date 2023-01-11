@@ -1,0 +1,1982 @@
+==99208== Memcheck, a memory error detector
+==99208== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==99208== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==99208== Command: /usr/lib/R/bin/exec/R -e devtools::load_all();devtools::test()
+==99208== 
+
+R version 4.2.2 Patched (2022-11-10 r83330) -- "Innocent and Trusting"
+Copyright (C) 2022 The R Foundation for Statistical Computing
+Platform: x86_64-pc-linux-gnu (64-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+  Natural language support but running in an English locale
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+> devtools::load_all();devtools::test()
+ℹ Loading nlmixr2est
+Registered S3 methods overwritten by 'RcppEigen':
+  method               from         
+  predict.fastLm       RcppArmadillo
+  print.fastLm         RcppArmadillo
+  summary.fastLm       RcppArmadillo
+  print.summary.fastLm RcppArmadillo
+Exports from /home/bill/GitHub/nlmixr2CRANtesting/packages/nlmixr2est/src/cholse.cpp:
+   NumericMatrix cholSE_(NumericMatrix A, double tol)
+
+Exports from /home/bill/GitHub/nlmixr2CRANtesting/packages/nlmixr2est/src/expandNlme.cpp:
+   List nlmixrExpandFdParNlme_(CharacterVector state, CharacterVector vars)
+
+Exports from /home/bill/GitHub/nlmixr2CRANtesting/packages/nlmixr2est/src/filterNormalLike.cpp:
+   List filterNormalLikeAndDoses(IntegerVector& inCmt, IntegerVector& inDistribution, IntegerVector& inDistCmt)
+   LogicalVector rxode2hasLlik()
+
+Exports from /home/bill/GitHub/nlmixr2CRANtesting/packages/nlmixr2est/src/inner.cpp:
+   void freeFocei()
+   NumericVector foceiInnerLp(NumericVector eta, int id = 1)
+   double likInner(NumericVector eta, int id = 1)
+   double foceiLik(NumericVector theta)
+   double foceiOfv(NumericVector theta)
+   NumericVector foceiNumericGrad(NumericVector theta)
+   NumericVector foceiSetup_(const RObject& obj, const RObject& data, NumericVector theta, Nullable<LogicalVector> thetaFixed = R_NilValue, Nullable<LogicalVector> skipCov = R_NilValue, RObject rxInv = R_NilValue, Nullable<NumericVector> lower = R_NilValue, Nullable<NumericVector> upper = R_NilValue, Nullable<NumericMatrix> etaMat = R_NilValue, Nullable<List> control = R_NilValue)
+   double foceiOuterF(NumericVector& theta)
+   NumericVector foceiOuterG(NumericVector& theta)
+   Environment foceiOuter(Environment e)
+   List nlmixr2Gill83_(Function what, NumericVector args, Environment envir, LogicalVector which, double gillRtol, int gillK = 10, double gillStep = 2, double gillFtol = 0, bool optGillF = true)
+   double nlmixr2Eval_(NumericVector theta, std::string md5)
+   RObject nlmixr2Unscaled_(NumericVector theta, std::string md5)
+   NumericVector nlmixr2Grad_(NumericVector theta, std::string md5)
+   RObject nlmixr2ParHist_(std::string md5)
+   RObject nlmixr2Hess_(RObject thetaT, RObject fT, RObject e, RObject gillInfoT)
+   NumericMatrix sqrtm(NumericMatrix m)
+   NumericMatrix foceiCalcCov(Environment e)
+   Environment foceiFitCpp_(Environment e)
+   NumericVector boxCox_(NumericVector x = 1, double lambda = 1, int yj = 0)
+   NumericVector iBoxCox_(NumericVector x = 1, double lambda = 1, int yj = 0)
+
+Exports from /home/bill/GitHub/nlmixr2CRANtesting/packages/nlmixr2est/src/nearPD.cpp:
+   RObject nmNearPD_(RObject x, bool keepDiag = false, bool do2eigen = true, bool doDykstra = true, bool only_values = false, double eig_tol = 1e-6, double conv_tol = 1e-7, double posd_tol = 1e-8, int maxit = 100, bool trace = false)
+
+Exports from /home/bill/GitHub/nlmixr2CRANtesting/packages/nlmixr2est/src/ode_cmt1.cpp:
+   SEXP lin_cmt_stan(Eigen::Map<Eigen::VectorXd> obs_time, Eigen::Map<Eigen::VectorXd> dose_time, Eigen::Map<Eigen::VectorXd> dose, Eigen::Map<Eigen::VectorXd> Tinf, Eigen::Map<Eigen::VectorXd> params, SEXP oralSEXP, SEXP infusionSEXP, SEXP ncmtSEXP, SEXP parameterizationSEXP)
+   SEXP llik_binomial_c(Eigen::Map<Eigen::VectorXd> y, Eigen::Map<Eigen::VectorXd> N, Eigen::Map<Eigen::VectorXd> params)
+   SEXP llik_poisson(Eigen::Map<Eigen::VectorXd> y, Eigen::Map<Eigen::VectorXd> params)
+   SEXP llik_normal(Eigen::Map<Eigen::VectorXd> y, Eigen::Map<Eigen::VectorXd> params)
+   SEXP llik_betabinomial(Eigen::Map<Eigen::VectorXd> y, Eigen::Map<Eigen::VectorXd> N, Eigen::Map<Eigen::VectorXd> params)
+   SEXP llik_student_t(Eigen::Map<Eigen::VectorXd> y, Eigen::Map<Eigen::VectorXd> params)
+   SEXP llik_beta(Eigen::Map<Eigen::VectorXd> y, Eigen::Map<Eigen::VectorXd> params)
+   SEXP llik_neg_binomial(Eigen::Map<Eigen::VectorXd> y, Eigen::Map<Eigen::VectorXd> params)
+
+Exports from /home/bill/GitHub/nlmixr2CRANtesting/packages/nlmixr2est/src/resid.cpp:
+   RObject augPredTrans(NumericVector& pred, NumericVector& ipred, NumericVector& lambda, RObject& yjIn, NumericVector& low, NumericVector& hi)
+
+Exports from /home/bill/GitHub/nlmixr2CRANtesting/packages/nlmixr2est/src/saem.cpp:
+   SEXP saem_do_pred(SEXP in_phi, SEXP in_evt, SEXP in_opt)
+   SEXP saem_fit(SEXP xSEXP)
+
+Exports from /home/bill/GitHub/nlmixr2CRANtesting/packages/nlmixr2est/src/shrink.cpp:
+   List nlmixr2Parameters(NumericVector theta, DataFrame eta)
+
+/home/bill/GitHub/nlmixr2CRANtesting/packages/nlmixr2est/src/RcppExports.cpp updated.
+/home/bill/GitHub/nlmixr2CRANtesting/packages/nlmixr2est/R/RcppExports.R updated.
+/home/bill/GitHub/nlmixr2CRANtesting/packages/nlmixr2est/inst/include/nlmixr2est_RcppExports.h updated.
+Re-compiling nlmixr2est
+* installing *source* package ‘nlmixr2est’ ...
+** using staged installation
+--------[begin src/Makevars]--------
+# -*- mode: makefile-gmake -*-
+ARMA=/home/bill/R/x86_64-pc-linux-gnu-library/4.2/RcppArmadillo/include
+BH=/home/bill/R/x86_64-pc-linux-gnu-library/4.2/BH/include
+RCPP=/home/bill/R/x86_64-pc-linux-gnu-library/4.2/Rcpp/include
+EG=/home/bill/R/x86_64-pc-linux-gnu-library/4.2/RcppEigen/include
+SH=-isystem'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/StanHeaders/include/src' 
+RXP=/home/bill/R/x86_64-pc-linux-gnu-library/4.2/rxode2parse/include
+
+CXX_STD     = CXX14
+CXX14STD = -std=gnu++14
+
+PKG_LIBS = $(LAPACK_LIBS) $(BLAS_LIBS) $(FLIBS) $(SHLIB_OPENMP_CXXFLAGS)
+PKG_CXXFLAGS = -Id -I../inst/include -DBOOST_DISABLE_ASSERTS -DBOOST_NO_CXX11_STATIC_ASSERT -isystem"$(BH)" -isystem"$(EG)" -isystem"$(SH)" -isystem"$(RCPP)" -isystem"$(ARMA)" -isystem"$(RXP)"  $(SHLIB_OPENMP_CXXFLAGS) -DARMA_64BIT_WORD=1
+SHLIB_LDFLAGS = $(SHLIB_CXXLDFLAGS) 
+SHLIB_LD = $(SHLIB_CXXLD)
+SOURCES_C = init.c rprintf.c merge3.c lbfgsR.c utilc.c
+SOURCES_CPP = filterNormalLike.cpp inner.cpp shi21.cpp nearPD.cpp censEst.cpp saem.cpp expandNlme.cpp npde.cpp shrink.cpp ires.cpp res.cpp cwres.cpp censResid.cpp cholse.cpp neldermead.cpp resid.cpp slice.cpp RcppExportMod.cpp ode_cmt1.cpp RcppExports.cpp
+OBJECTS = $(SOURCES_CPP:.cpp=.o) $(SOURCES_C:.c=.o) 
+
+all: $(SHLIB)
+$(SHLIB): $(OBJECTS)
+
+--------[end src/Makevars]--------
+** libs
+g++ -std=gnu++14 -I"/usr/share/R/include" -DNDEBUG  -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/BH/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/lbfgsb3c/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/Rcpp/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/RcppArmadillo/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/RcppEigen/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/rxode2/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/StanHeaders/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/rxode2parse/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/rxode2random/include'   -Id -I../inst/include -DBOOST_DISABLE_ASSERTS -DBOOST_NO_CXX11_STATIC_ASSERT -isystem"/home/bill/R/x86_64-pc-linux-gnu-library/4.2/BH/include" -isystem"/home/bill/R/x86_64-pc-linux-gnu-library/4.2/RcppEigen/include" -isystem"-isystem'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/StanHeaders/include/src' " -isystem"/home/bill/R/x86_64-pc-linux-gnu-library/4.2/Rcpp/include" -isystem"/home/bill/R/x86_64-pc-linux-gnu-library/4.2/RcppArmadillo/include" -isystem"/home/bill/R/x86_64-pc-linux-gnu-library/4.2/rxode2parse/include"  -fopenmp -DARMA_64BIT_WORD=1 -fpic  -g -O2 -ffile-prefix-map=/build/r-base-Faorqz/r-base-4.2.2.20221110=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c filterNormalLike.cpp -o filterNormalLike.o
+g++ -std=gnu++14 -I"/usr/share/R/include" -DNDEBUG  -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/BH/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/lbfgsb3c/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/Rcpp/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/RcppArmadillo/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/RcppEigen/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/rxode2/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/StanHeaders/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/rxode2parse/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/rxode2random/include'   -Id -I../inst/include -DBOOST_DISABLE_ASSERTS -DBOOST_NO_CXX11_STATIC_ASSERT -isystem"/home/bill/R/x86_64-pc-linux-gnu-library/4.2/BH/include" -isystem"/home/bill/R/x86_64-pc-linux-gnu-library/4.2/RcppEigen/include" -isystem"-isystem'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/StanHeaders/include/src' " -isystem"/home/bill/R/x86_64-pc-linux-gnu-library/4.2/Rcpp/include" -isystem"/home/bill/R/x86_64-pc-linux-gnu-library/4.2/RcppArmadillo/include" -isystem"/home/bill/R/x86_64-pc-linux-gnu-library/4.2/rxode2parse/include"  -fopenmp -DARMA_64BIT_WORD=1 -fpic  -g -O2 -ffile-prefix-map=/build/r-base-Faorqz/r-base-4.2.2.20221110=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c inner.cpp -o inner.o
+g++ -std=gnu++14 -I"/usr/share/R/include" -DNDEBUG  -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/BH/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/lbfgsb3c/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/Rcpp/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/RcppArmadillo/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/RcppEigen/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/rxode2/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/StanHeaders/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/rxode2parse/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/rxode2random/include'   -Id -I../inst/include -DBOOST_DISABLE_ASSERTS -DBOOST_NO_CXX11_STATIC_ASSERT -isystem"/home/bill/R/x86_64-pc-linux-gnu-library/4.2/BH/include" -isystem"/home/bill/R/x86_64-pc-linux-gnu-library/4.2/RcppEigen/include" -isystem"-isystem'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/StanHeaders/include/src' " -isystem"/home/bill/R/x86_64-pc-linux-gnu-library/4.2/Rcpp/include" -isystem"/home/bill/R/x86_64-pc-linux-gnu-library/4.2/RcppArmadillo/include" -isystem"/home/bill/R/x86_64-pc-linux-gnu-library/4.2/rxode2parse/include"  -fopenmp -DARMA_64BIT_WORD=1 -fpic  -g -O2 -ffile-prefix-map=/build/r-base-Faorqz/r-base-4.2.2.20221110=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c shi21.cpp -o shi21.o
+g++ -std=gnu++14 -I"/usr/share/R/include" -DNDEBUG  -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/BH/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/lbfgsb3c/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/Rcpp/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/RcppArmadillo/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/RcppEigen/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/rxode2/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/StanHeaders/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/rxode2parse/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/rxode2random/include'   -Id -I../inst/include -DBOOST_DISABLE_ASSERTS -DBOOST_NO_CXX11_STATIC_ASSERT -isystem"/home/bill/R/x86_64-pc-linux-gnu-library/4.2/BH/include" -isystem"/home/bill/R/x86_64-pc-linux-gnu-library/4.2/RcppEigen/include" -isystem"-isystem'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/StanHeaders/include/src' " -isystem"/home/bill/R/x86_64-pc-linux-gnu-library/4.2/Rcpp/include" -isystem"/home/bill/R/x86_64-pc-linux-gnu-library/4.2/RcppArmadillo/include" -isystem"/home/bill/R/x86_64-pc-linux-gnu-library/4.2/rxode2parse/include"  -fopenmp -DARMA_64BIT_WORD=1 -fpic  -g -O2 -ffile-prefix-map=/build/r-base-Faorqz/r-base-4.2.2.20221110=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c nearPD.cpp -o nearPD.o
+g++ -std=gnu++14 -I"/usr/share/R/include" -DNDEBUG  -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/BH/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/lbfgsb3c/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/Rcpp/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/RcppArmadillo/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/RcppEigen/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/rxode2/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/StanHeaders/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/rxode2parse/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/rxode2random/include'   -Id -I../inst/include -DBOOST_DISABLE_ASSERTS -DBOOST_NO_CXX11_STATIC_ASSERT -isystem"/home/bill/R/x86_64-pc-linux-gnu-library/4.2/BH/include" -isystem"/home/bill/R/x86_64-pc-linux-gnu-library/4.2/RcppEigen/include" -isystem"-isystem'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/StanHeaders/include/src' " -isystem"/home/bill/R/x86_64-pc-linux-gnu-library/4.2/Rcpp/include" -isystem"/home/bill/R/x86_64-pc-linux-gnu-library/4.2/RcppArmadillo/include" -isystem"/home/bill/R/x86_64-pc-linux-gnu-library/4.2/rxode2parse/include"  -fopenmp -DARMA_64BIT_WORD=1 -fpic  -g -O2 -ffile-prefix-map=/build/r-base-Faorqz/r-base-4.2.2.20221110=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c censEst.cpp -o censEst.o
+g++ -std=gnu++14 -I"/usr/share/R/include" -DNDEBUG  -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/BH/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/lbfgsb3c/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/Rcpp/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/RcppArmadillo/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/RcppEigen/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/rxode2/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/StanHeaders/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/rxode2parse/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/rxode2random/include'   -Id -I../inst/include -DBOOST_DISABLE_ASSERTS -DBOOST_NO_CXX11_STATIC_ASSERT -isystem"/home/bill/R/x86_64-pc-linux-gnu-library/4.2/BH/include" -isystem"/home/bill/R/x86_64-pc-linux-gnu-library/4.2/RcppEigen/include" -isystem"-isystem'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/StanHeaders/include/src' " -isystem"/home/bill/R/x86_64-pc-linux-gnu-library/4.2/Rcpp/include" -isystem"/home/bill/R/x86_64-pc-linux-gnu-library/4.2/RcppArmadillo/include" -isystem"/home/bill/R/x86_64-pc-linux-gnu-library/4.2/rxode2parse/include"  -fopenmp -DARMA_64BIT_WORD=1 -fpic  -g -O2 -ffile-prefix-map=/build/r-base-Faorqz/r-base-4.2.2.20221110=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c saem.cpp -o saem.o
+g++ -std=gnu++14 -I"/usr/share/R/include" -DNDEBUG  -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/BH/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/lbfgsb3c/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/Rcpp/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/RcppArmadillo/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/RcppEigen/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/rxode2/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/StanHeaders/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/rxode2parse/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/rxode2random/include'   -Id -I../inst/include -DBOOST_DISABLE_ASSERTS -DBOOST_NO_CXX11_STATIC_ASSERT -isystem"/home/bill/R/x86_64-pc-linux-gnu-library/4.2/BH/include" -isystem"/home/bill/R/x86_64-pc-linux-gnu-library/4.2/RcppEigen/include" -isystem"-isystem'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/StanHeaders/include/src' " -isystem"/home/bill/R/x86_64-pc-linux-gnu-library/4.2/Rcpp/include" -isystem"/home/bill/R/x86_64-pc-linux-gnu-library/4.2/RcppArmadillo/include" -isystem"/home/bill/R/x86_64-pc-linux-gnu-library/4.2/rxode2parse/include"  -fopenmp -DARMA_64BIT_WORD=1 -fpic  -g -O2 -ffile-prefix-map=/build/r-base-Faorqz/r-base-4.2.2.20221110=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c expandNlme.cpp -o expandNlme.o
+g++ -std=gnu++14 -I"/usr/share/R/include" -DNDEBUG  -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/BH/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/lbfgsb3c/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/Rcpp/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/RcppArmadillo/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/RcppEigen/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/rxode2/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/StanHeaders/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/rxode2parse/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/rxode2random/include'   -Id -I../inst/include -DBOOST_DISABLE_ASSERTS -DBOOST_NO_CXX11_STATIC_ASSERT -isystem"/home/bill/R/x86_64-pc-linux-gnu-library/4.2/BH/include" -isystem"/home/bill/R/x86_64-pc-linux-gnu-library/4.2/RcppEigen/include" -isystem"-isystem'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/StanHeaders/include/src' " -isystem"/home/bill/R/x86_64-pc-linux-gnu-library/4.2/Rcpp/include" -isystem"/home/bill/R/x86_64-pc-linux-gnu-library/4.2/RcppArmadillo/include" -isystem"/home/bill/R/x86_64-pc-linux-gnu-library/4.2/rxode2parse/include"  -fopenmp -DARMA_64BIT_WORD=1 -fpic  -g -O2 -ffile-prefix-map=/build/r-base-Faorqz/r-base-4.2.2.20221110=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c npde.cpp -o npde.o
+g++ -std=gnu++14 -I"/usr/share/R/include" -DNDEBUG  -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/BH/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/lbfgsb3c/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/Rcpp/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/RcppArmadillo/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/RcppEigen/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/rxode2/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/StanHeaders/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/rxode2parse/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/rxode2random/include'   -Id -I../inst/include -DBOOST_DISABLE_ASSERTS -DBOOST_NO_CXX11_STATIC_ASSERT -isystem"/home/bill/R/x86_64-pc-linux-gnu-library/4.2/BH/include" -isystem"/home/bill/R/x86_64-pc-linux-gnu-library/4.2/RcppEigen/include" -isystem"-isystem'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/StanHeaders/include/src' " -isystem"/home/bill/R/x86_64-pc-linux-gnu-library/4.2/Rcpp/include" -isystem"/home/bill/R/x86_64-pc-linux-gnu-library/4.2/RcppArmadillo/include" -isystem"/home/bill/R/x86_64-pc-linux-gnu-library/4.2/rxode2parse/include"  -fopenmp -DARMA_64BIT_WORD=1 -fpic  -g -O2 -ffile-prefix-map=/build/r-base-Faorqz/r-base-4.2.2.20221110=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c shrink.cpp -o shrink.o
+g++ -std=gnu++14 -I"/usr/share/R/include" -DNDEBUG  -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/BH/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/lbfgsb3c/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/Rcpp/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/RcppArmadillo/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/RcppEigen/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/rxode2/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/StanHeaders/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/rxode2parse/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/rxode2random/include'   -Id -I../inst/include -DBOOST_DISABLE_ASSERTS -DBOOST_NO_CXX11_STATIC_ASSERT -isystem"/home/bill/R/x86_64-pc-linux-gnu-library/4.2/BH/include" -isystem"/home/bill/R/x86_64-pc-linux-gnu-library/4.2/RcppEigen/include" -isystem"-isystem'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/StanHeaders/include/src' " -isystem"/home/bill/R/x86_64-pc-linux-gnu-library/4.2/Rcpp/include" -isystem"/home/bill/R/x86_64-pc-linux-gnu-library/4.2/RcppArmadillo/include" -isystem"/home/bill/R/x86_64-pc-linux-gnu-library/4.2/rxode2parse/include"  -fopenmp -DARMA_64BIT_WORD=1 -fpic  -g -O2 -ffile-prefix-map=/build/r-base-Faorqz/r-base-4.2.2.20221110=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c ires.cpp -o ires.o
+g++ -std=gnu++14 -I"/usr/share/R/include" -DNDEBUG  -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/BH/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/lbfgsb3c/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/Rcpp/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/RcppArmadillo/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/RcppEigen/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/rxode2/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/StanHeaders/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/rxode2parse/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/rxode2random/include'   -Id -I../inst/include -DBOOST_DISABLE_ASSERTS -DBOOST_NO_CXX11_STATIC_ASSERT -isystem"/home/bill/R/x86_64-pc-linux-gnu-library/4.2/BH/include" -isystem"/home/bill/R/x86_64-pc-linux-gnu-library/4.2/RcppEigen/include" -isystem"-isystem'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/StanHeaders/include/src' " -isystem"/home/bill/R/x86_64-pc-linux-gnu-library/4.2/Rcpp/include" -isystem"/home/bill/R/x86_64-pc-linux-gnu-library/4.2/RcppArmadillo/include" -isystem"/home/bill/R/x86_64-pc-linux-gnu-library/4.2/rxode2parse/include"  -fopenmp -DARMA_64BIT_WORD=1 -fpic  -g -O2 -ffile-prefix-map=/build/r-base-Faorqz/r-base-4.2.2.20221110=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c res.cpp -o res.o
+g++ -std=gnu++14 -I"/usr/share/R/include" -DNDEBUG  -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/BH/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/lbfgsb3c/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/Rcpp/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/RcppArmadillo/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/RcppEigen/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/rxode2/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/StanHeaders/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/rxode2parse/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/rxode2random/include'   -Id -I../inst/include -DBOOST_DISABLE_ASSERTS -DBOOST_NO_CXX11_STATIC_ASSERT -isystem"/home/bill/R/x86_64-pc-linux-gnu-library/4.2/BH/include" -isystem"/home/bill/R/x86_64-pc-linux-gnu-library/4.2/RcppEigen/include" -isystem"-isystem'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/StanHeaders/include/src' " -isystem"/home/bill/R/x86_64-pc-linux-gnu-library/4.2/Rcpp/include" -isystem"/home/bill/R/x86_64-pc-linux-gnu-library/4.2/RcppArmadillo/include" -isystem"/home/bill/R/x86_64-pc-linux-gnu-library/4.2/rxode2parse/include"  -fopenmp -DARMA_64BIT_WORD=1 -fpic  -g -O2 -ffile-prefix-map=/build/r-base-Faorqz/r-base-4.2.2.20221110=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c cwres.cpp -o cwres.o
+g++ -std=gnu++14 -I"/usr/share/R/include" -DNDEBUG  -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/BH/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/lbfgsb3c/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/Rcpp/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/RcppArmadillo/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/RcppEigen/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/rxode2/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/StanHeaders/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/rxode2parse/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/rxode2random/include'   -Id -I../inst/include -DBOOST_DISABLE_ASSERTS -DBOOST_NO_CXX11_STATIC_ASSERT -isystem"/home/bill/R/x86_64-pc-linux-gnu-library/4.2/BH/include" -isystem"/home/bill/R/x86_64-pc-linux-gnu-library/4.2/RcppEigen/include" -isystem"-isystem'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/StanHeaders/include/src' " -isystem"/home/bill/R/x86_64-pc-linux-gnu-library/4.2/Rcpp/include" -isystem"/home/bill/R/x86_64-pc-linux-gnu-library/4.2/RcppArmadillo/include" -isystem"/home/bill/R/x86_64-pc-linux-gnu-library/4.2/rxode2parse/include"  -fopenmp -DARMA_64BIT_WORD=1 -fpic  -g -O2 -ffile-prefix-map=/build/r-base-Faorqz/r-base-4.2.2.20221110=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c censResid.cpp -o censResid.o
+g++ -std=gnu++14 -I"/usr/share/R/include" -DNDEBUG  -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/BH/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/lbfgsb3c/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/Rcpp/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/RcppArmadillo/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/RcppEigen/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/rxode2/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/StanHeaders/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/rxode2parse/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/rxode2random/include'   -Id -I../inst/include -DBOOST_DISABLE_ASSERTS -DBOOST_NO_CXX11_STATIC_ASSERT -isystem"/home/bill/R/x86_64-pc-linux-gnu-library/4.2/BH/include" -isystem"/home/bill/R/x86_64-pc-linux-gnu-library/4.2/RcppEigen/include" -isystem"-isystem'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/StanHeaders/include/src' " -isystem"/home/bill/R/x86_64-pc-linux-gnu-library/4.2/Rcpp/include" -isystem"/home/bill/R/x86_64-pc-linux-gnu-library/4.2/RcppArmadillo/include" -isystem"/home/bill/R/x86_64-pc-linux-gnu-library/4.2/rxode2parse/include"  -fopenmp -DARMA_64BIT_WORD=1 -fpic  -g -O2 -ffile-prefix-map=/build/r-base-Faorqz/r-base-4.2.2.20221110=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c cholse.cpp -o cholse.o
+g++ -std=gnu++14 -I"/usr/share/R/include" -DNDEBUG  -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/BH/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/lbfgsb3c/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/Rcpp/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/RcppArmadillo/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/RcppEigen/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/rxode2/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/StanHeaders/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/rxode2parse/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/rxode2random/include'   -Id -I../inst/include -DBOOST_DISABLE_ASSERTS -DBOOST_NO_CXX11_STATIC_ASSERT -isystem"/home/bill/R/x86_64-pc-linux-gnu-library/4.2/BH/include" -isystem"/home/bill/R/x86_64-pc-linux-gnu-library/4.2/RcppEigen/include" -isystem"-isystem'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/StanHeaders/include/src' " -isystem"/home/bill/R/x86_64-pc-linux-gnu-library/4.2/Rcpp/include" -isystem"/home/bill/R/x86_64-pc-linux-gnu-library/4.2/RcppArmadillo/include" -isystem"/home/bill/R/x86_64-pc-linux-gnu-library/4.2/rxode2parse/include"  -fopenmp -DARMA_64BIT_WORD=1 -fpic  -g -O2 -ffile-prefix-map=/build/r-base-Faorqz/r-base-4.2.2.20221110=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c neldermead.cpp -o neldermead.o
+g++ -std=gnu++14 -I"/usr/share/R/include" -DNDEBUG  -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/BH/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/lbfgsb3c/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/Rcpp/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/RcppArmadillo/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/RcppEigen/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/rxode2/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/StanHeaders/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/rxode2parse/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/rxode2random/include'   -Id -I../inst/include -DBOOST_DISABLE_ASSERTS -DBOOST_NO_CXX11_STATIC_ASSERT -isystem"/home/bill/R/x86_64-pc-linux-gnu-library/4.2/BH/include" -isystem"/home/bill/R/x86_64-pc-linux-gnu-library/4.2/RcppEigen/include" -isystem"-isystem'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/StanHeaders/include/src' " -isystem"/home/bill/R/x86_64-pc-linux-gnu-library/4.2/Rcpp/include" -isystem"/home/bill/R/x86_64-pc-linux-gnu-library/4.2/RcppArmadillo/include" -isystem"/home/bill/R/x86_64-pc-linux-gnu-library/4.2/rxode2parse/include"  -fopenmp -DARMA_64BIT_WORD=1 -fpic  -g -O2 -ffile-prefix-map=/build/r-base-Faorqz/r-base-4.2.2.20221110=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c resid.cpp -o resid.o
+g++ -std=gnu++14 -I"/usr/share/R/include" -DNDEBUG  -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/BH/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/lbfgsb3c/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/Rcpp/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/RcppArmadillo/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/RcppEigen/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/rxode2/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/StanHeaders/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/rxode2parse/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/rxode2random/include'   -Id -I../inst/include -DBOOST_DISABLE_ASSERTS -DBOOST_NO_CXX11_STATIC_ASSERT -isystem"/home/bill/R/x86_64-pc-linux-gnu-library/4.2/BH/include" -isystem"/home/bill/R/x86_64-pc-linux-gnu-library/4.2/RcppEigen/include" -isystem"-isystem'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/StanHeaders/include/src' " -isystem"/home/bill/R/x86_64-pc-linux-gnu-library/4.2/Rcpp/include" -isystem"/home/bill/R/x86_64-pc-linux-gnu-library/4.2/RcppArmadillo/include" -isystem"/home/bill/R/x86_64-pc-linux-gnu-library/4.2/rxode2parse/include"  -fopenmp -DARMA_64BIT_WORD=1 -fpic  -g -O2 -ffile-prefix-map=/build/r-base-Faorqz/r-base-4.2.2.20221110=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c slice.cpp -o slice.o
+g++ -std=gnu++14 -I"/usr/share/R/include" -DNDEBUG  -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/BH/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/lbfgsb3c/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/Rcpp/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/RcppArmadillo/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/RcppEigen/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/rxode2/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/StanHeaders/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/rxode2parse/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/rxode2random/include'   -Id -I../inst/include -DBOOST_DISABLE_ASSERTS -DBOOST_NO_CXX11_STATIC_ASSERT -isystem"/home/bill/R/x86_64-pc-linux-gnu-library/4.2/BH/include" -isystem"/home/bill/R/x86_64-pc-linux-gnu-library/4.2/RcppEigen/include" -isystem"-isystem'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/StanHeaders/include/src' " -isystem"/home/bill/R/x86_64-pc-linux-gnu-library/4.2/Rcpp/include" -isystem"/home/bill/R/x86_64-pc-linux-gnu-library/4.2/RcppArmadillo/include" -isystem"/home/bill/R/x86_64-pc-linux-gnu-library/4.2/rxode2parse/include"  -fopenmp -DARMA_64BIT_WORD=1 -fpic  -g -O2 -ffile-prefix-map=/build/r-base-Faorqz/r-base-4.2.2.20221110=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c RcppExportMod.cpp -o RcppExportMod.o
+g++ -std=gnu++14 -I"/usr/share/R/include" -DNDEBUG  -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/BH/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/lbfgsb3c/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/Rcpp/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/RcppArmadillo/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/RcppEigen/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/rxode2/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/StanHeaders/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/rxode2parse/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/rxode2random/include'   -Id -I../inst/include -DBOOST_DISABLE_ASSERTS -DBOOST_NO_CXX11_STATIC_ASSERT -isystem"/home/bill/R/x86_64-pc-linux-gnu-library/4.2/BH/include" -isystem"/home/bill/R/x86_64-pc-linux-gnu-library/4.2/RcppEigen/include" -isystem"-isystem'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/StanHeaders/include/src' " -isystem"/home/bill/R/x86_64-pc-linux-gnu-library/4.2/Rcpp/include" -isystem"/home/bill/R/x86_64-pc-linux-gnu-library/4.2/RcppArmadillo/include" -isystem"/home/bill/R/x86_64-pc-linux-gnu-library/4.2/rxode2parse/include"  -fopenmp -DARMA_64BIT_WORD=1 -fpic  -g -O2 -ffile-prefix-map=/build/r-base-Faorqz/r-base-4.2.2.20221110=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c ode_cmt1.cpp -o ode_cmt1.o
+g++ -std=gnu++14 -I"/usr/share/R/include" -DNDEBUG  -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/BH/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/lbfgsb3c/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/Rcpp/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/RcppArmadillo/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/RcppEigen/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/rxode2/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/StanHeaders/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/rxode2parse/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/rxode2random/include'   -Id -I../inst/include -DBOOST_DISABLE_ASSERTS -DBOOST_NO_CXX11_STATIC_ASSERT -isystem"/home/bill/R/x86_64-pc-linux-gnu-library/4.2/BH/include" -isystem"/home/bill/R/x86_64-pc-linux-gnu-library/4.2/RcppEigen/include" -isystem"-isystem'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/StanHeaders/include/src' " -isystem"/home/bill/R/x86_64-pc-linux-gnu-library/4.2/Rcpp/include" -isystem"/home/bill/R/x86_64-pc-linux-gnu-library/4.2/RcppArmadillo/include" -isystem"/home/bill/R/x86_64-pc-linux-gnu-library/4.2/rxode2parse/include"  -fopenmp -DARMA_64BIT_WORD=1 -fpic  -g -O2 -ffile-prefix-map=/build/r-base-Faorqz/r-base-4.2.2.20221110=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c RcppExports.cpp -o RcppExports.o
+gcc -I"/usr/share/R/include" -DNDEBUG  -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/BH/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/lbfgsb3c/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/Rcpp/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/RcppArmadillo/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/RcppEigen/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/rxode2/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/StanHeaders/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/rxode2parse/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/rxode2random/include'    -fpic  -g -O2 -ffile-prefix-map=/build/r-base-Faorqz/r-base-4.2.2.20221110=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c init.c -o init.o
+gcc -I"/usr/share/R/include" -DNDEBUG  -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/BH/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/lbfgsb3c/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/Rcpp/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/RcppArmadillo/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/RcppEigen/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/rxode2/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/StanHeaders/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/rxode2parse/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/rxode2random/include'    -fpic  -g -O2 -ffile-prefix-map=/build/r-base-Faorqz/r-base-4.2.2.20221110=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c rprintf.c -o rprintf.o
+gcc -I"/usr/share/R/include" -DNDEBUG  -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/BH/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/lbfgsb3c/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/Rcpp/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/RcppArmadillo/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/RcppEigen/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/rxode2/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/StanHeaders/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/rxode2parse/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/rxode2random/include'    -fpic  -g -O2 -ffile-prefix-map=/build/r-base-Faorqz/r-base-4.2.2.20221110=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c merge3.c -o merge3.o
+gcc -I"/usr/share/R/include" -DNDEBUG  -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/BH/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/lbfgsb3c/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/Rcpp/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/RcppArmadillo/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/RcppEigen/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/rxode2/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/StanHeaders/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/rxode2parse/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/rxode2random/include'    -fpic  -g -O2 -ffile-prefix-map=/build/r-base-Faorqz/r-base-4.2.2.20221110=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c lbfgsR.c -o lbfgsR.o
+gcc -I"/usr/share/R/include" -DNDEBUG  -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/BH/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/lbfgsb3c/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/Rcpp/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/RcppArmadillo/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/RcppEigen/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/rxode2/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/StanHeaders/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/rxode2parse/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/rxode2random/include'    -fpic  -g -O2 -ffile-prefix-map=/build/r-base-Faorqz/r-base-4.2.2.20221110=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c utilc.c -o utilc.o
+g++ -std=gnu++14 -shared -L/usr/lib/R/lib -Wl,-Bsymbolic-functions -flto=auto -ffat-lto-objects -flto=auto -Wl,-z,relro -o nlmixr2est.so filterNormalLike.o inner.o shi21.o nearPD.o censEst.o saem.o expandNlme.o npde.o shrink.o ires.o res.o cwres.o censResid.o cholse.o neldermead.o resid.o slice.o RcppExportMod.o ode_cmt1.o RcppExports.o init.o rprintf.o merge3.o lbfgsR.o utilc.o -llapack -lblas -lgfortran -lm -lquadmath -fopenmp -L/usr/lib/R/lib -lR
+installing to /tmp/RtmpH33Bgn/devtools_install_1838814a9baf9/00LOCK-nlmixr2est/00new/nlmixr2est/libs
+** checking absolute paths in shared objects and dynamic libraries
+* DONE (nlmixr2est)
+Loading required package: nlmixr2data
+ℹ Testing nlmixr2est
+✔ | F W S  OK | Context
+
+⠏ |         0 | 00-reload-ll                                                    
+R version 4.2.2 Patched (2022-11-10 r83330) -- "Innocent and Trusting"
+Copyright (C) 2022 The R Foundation for Statistical Computing
+Platform: x86_64-pc-linux-gnu (64-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+  Natural language support but running in an English locale
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+>     library(nlmixr2est)
+Loading required package: nlmixr2data
+>     rxode2::rxClean()
+>     one.cmt <- function() {
++         ini({
++             tka <- 0.45
++             tcl <- log(c(0, 2.7, 100))
++             tv <- 3.45
++             label("log V")
++             eta.ka ~ 0.6
++             eta.cl ~ 0.3
++             eta.v ~ 0.1
++             add.sd <- 0.7
++         })
++         model({
++             ka <- exp(tka + eta.ka)
++             cl <- exp(tcl + eta.cl)
++             v <- exp(tv + eta.v)
++             linCmt() ~ add(add.sd)
++         })
++     }
+>     fit <- nlmixr(one.cmt, theo_sd, est = "saem", control = saemControl(print = 0))
+ℹ parameter labels from comments are typically ignored in non-interactive mode
+ℹ Need to run with the source intact to parse comments
+→ loading into symengine environment...
+→ pruning branches (`if`/`else`) of saem model...
+✔ done
+→ finding duplicate expressions in saem model...
+[====|====|====|====|====|====|====|====|====|====] 0:00:00 
+
+✔ done
+rxode2 2.0.11.9000 using 16 threads (see ?getRxThreads)
+  no cache: create with `rxCreateCache()`
+Calculating covariance matrix
+[====|====|====|====|====|====|====|====|====|====] 0:00:00 
+
+→ loading into symengine environment...
+→ pruning branches (`if`/`else`) of saem model...
+✔ done
+→ finding duplicate expressions in saem predOnly model 0...
+[====|====|====|====|====|====|====|====|====|====] 0:00:00 
+
+→ finding duplicate expressions in saem predOnly model 1...
+[====|====|====|====|====|====|====|====|====|====] 0:00:00 
+
+→ finding duplicate expressions in saem predOnly model 2...
+[====|====|====|====|====|====|====|====|====|====] 0:00:00 
+
+✔ done
+→ Calculating residuals/tables
+✔ done
+→ compress origData in nlmixr2 object, save 5952
+→ compress phiM in nlmixr2 object, save 63664
+→ compress parHist in nlmixr2 object, save 9544
+→ compress saem0 in nlmixr2 object, save 26696
+>     saveRDS(fit, "fit.rds")
+> 
+> proc.time()
+   user  system elapsed 
+  3.542   0.263   3.796 
+Calculating -2LL by Gaussian quadrature (nnodes=3,nsd=1.6)
+rxode2 2.0.11.9000 using 16 threads (see ?getRxThreads)
+  no cache: create with `rxCreateCache()`
+[====|====|====|====|====|====|====|====|====|====] 0:00:00 
+
+
+⠋ |         1 | 00-reload-ll                                                    
+✔ |         1 | 00-reload-ll [10.4s]
+
+⠏ |         0 | augpred                                                         i parameter labels from comments will be replaced by 'label()'
+> loading into symengine environment...
+> pruning branches (`if`/`else`) of saem model...
+v done
+> finding duplicate expressions in saem model...
+[====|====|====|====|====|====|====|====|====|====] 0:00:00 
+
+v done
+params:	lka	lcl	lv	V(eta.ka)	V(eta.cl)	V(eta.v)	add.err	prop.err
+001: 0.122027	-1.903471	2.170173	0.631086	0.136645	0.122772	2.382548	0.289097	
+050: -0.282187	-1.986358	2.060256	0.462621	0.063158	0.032803	0.866525	0.158887	
+100: -0.332166	-1.990314	2.053456	0.665279	0.070379	0.025848	0.790575	0.169112	
+150: -0.514436	-2.003606	2.041380	0.434866	0.054137	0.041558	0.859271	0.152510	
+200: -0.637969	-1.998790	2.050380	0.231048	0.055997	0.018078	0.870641	0.171968	
+250: -0.605959	-1.989911	2.048652	0.241437	0.052018	0.023403	0.833935	0.172333	
+300: -0.610367	-1.990698	2.048289	0.246492	0.052607	0.025150	0.830118	0.170063	
+350: -0.607153	-1.990659	2.048931	0.255138	0.053111	0.025320	0.826290	0.169615	
+400: -0.608932	-1.992768	2.049489	0.255194	0.053024	0.025679	0.823886	0.170116	
+450: -0.605911	-1.993373	2.050082	0.259684	0.053190	0.025807	0.819464	0.170586	
+500: -0.605279	-1.993756	2.050126	0.261226	0.053316	0.025797	0.818178	0.170247	
+Calculating covariance matrix
+[====|====|====|====|====|====|====|====|====|====] 0:00:00 
+
+> loading into symengine environment...
+> pruning branches (`if`/`else`) of saem model...
+v done
+> finding duplicate expressions in saem predOnly model 0...
+[====|====|====|====|====|====|====|====|====|====] 0:00:00 
+
+> finding duplicate expressions in saem predOnly model 1...
+[====|====|====|====|====|====|====|====|====|====] 0:00:00 
+
+> finding duplicate expressions in saem predOnly model 2...
+[====|====|====|====|====|====|====|====|====|====] 0:00:00 
+
+> optimizing duplicate expressions in saem predOnly model 2...
+[====|====|====|====|====|====|====|====|====|====] 0:00:00 
+
+v done
+> Calculating residuals/tables
+> loading into symengine environment...
+> pruning branches (`if`/`else`) of full model...
+v done
+> calculate jacobian
+
+> calculate d(f)/d(eta)
+[====|====|====|====|====|====|====|====|====|====] 0:00:05 
+
+> calculate d(R^2)/d(eta)
+[====|====|====|====|====|====|====|====|====|====] 0:00:06 
+
+> finding duplicate expressions in inner model...
+[====|====|====|====|====|====|====|====|====|====] 0:00:00 
+
+> optimizing duplicate expressions in inner model...
+[====|====|====|====|====|====|====|====|====|====] 0:00:00 
+
+> finding duplicate expressions in EBE model...
+[====|====|====|====|====|====|====|====|====|====] 0:00:00 
+
+> optimizing duplicate expressions in EBE model...
+[====|====|====|====|====|====|====|====|====|====] 0:00:00 
+
+> compiling inner model...
+v done
+> finding duplicate expressions in FD model...
+[====|====|====|====|====|====|====|====|====|====] 0:00:00 
+
+> optimizing duplicate expressions in FD model...
+[====|====|====|====|====|====|====|====|====|====] 0:00:00 
+
+> compiling EBE model...
+v done
+> compiling events FD model...
+v done
+v done
+> compress origData in nlmixr2 object, save 14912
+> compress phiM in nlmixr2 object, save 168720
+> compress parHist in nlmixr2 object, save 10816
+> loading into symengine environment...
+> pruning branches (`if`/`else`) of full model...
+v done
+> calculate jacobian
+
+> calculate d(f)/d(eta)
+[====|====|====|====|====|====|====|====|====|====] 0:00:05 
+
+> calculate d(R^2)/d(eta)
+[====|====|====|====|====|====|====|====|====|====] 0:00:06 
+
+> finding duplicate expressions in inner model...
+[====|====|====|====|====|====|====|====|====|====] 0:00:00 
+
+> optimizing duplicate expressions in inner model...
+[====|====|====|====|====|====|====|====|====|====] 0:00:00 
+
+> finding duplicate expressions in EBE model...
+[====|====|====|====|====|====|====|====|====|====] 0:00:00 
+
+> optimizing duplicate expressions in EBE model...
+[====|====|====|====|====|====|====|====|====|====] 0:00:00 
+
+> compiling inner model...
+v done
+> finding duplicate expressions in FD model...
+[====|====|====|====|====|====|====|====|====|====] 0:00:00 
+
+> optimizing duplicate expressions in FD model...
+[====|====|====|====|====|====|====|====|====|====] 0:00:00 
+
+> compiling EBE model...
+v done
+> compiling events FD model...
+v done
+
+⠋ |         1 | augpred                                                         > loading into symengine environment...
+> pruning branches (`if`/`else`) of full model...
+v done
+> calculate jacobian
+
+> calculate d(f)/d(eta)
+[====|====|====|====|====|====|====|====|====|====] 0:00:01 
+
+> finding duplicate expressions in inner model...
+[====|====|====|====|====|====|====|====|====|====] 0:00:00 
+
+> optimizing duplicate expressions in inner model...
+[====|====|====|====|====|====|====|====|====|====] 0:00:00 
+
+> finding duplicate expressions in EBE model...
+[====|====|====|====|====|====|====|====|====|====] 0:00:00 
+
+> optimizing duplicate expressions in EBE model...
+[====|====|====|====|====|====|====|====|====|====] 0:00:00 
+
+> compiling inner model...
+v done
+> finding duplicate expressions in FD model...
+[====|====|====|====|====|====|====|====|====|====] 0:00:00 
+
+> compiling EBE model...
+v done
+> compiling events FD model...
+v done
+> Calculating residuals/tables
+v done
+> compress origData in nlmixr2 object, save 2000
+> loading into symengine environment...
+> pruning branches (`if`/`else`) of full model...
+v done
+> calculate jacobian
+
+> calculate d(f)/d(eta)
+[====|====|====|====|====|====|====|====|====|====] 0:00:01 
+
+> calculate d(R^2)/d(eta)
+[====|====|====|====|====|====|====|====|====|====] 0:00:01 
+
+> finding duplicate expressions in inner model...
+[====|====|====|====|====|====|====|====|====|====] 0:00:00 
+
+> optimizing duplicate expressions in inner model...
+[====|====|====|====|====|====|====|====|====|====] 0:00:00 
+
+> finding duplicate expressions in EBE model...
+[====|====|====|====|====|====|====|====|====|====] 0:00:00 
+
+> optimizing duplicate expressions in EBE model...
+[====|====|====|====|====|====|====|====|====|====] 0:00:00 
+
+> compiling inner model...
+v done
+> finding duplicate expressions in FD model...
+[====|====|====|====|====|====|====|====|====|====] 0:00:00 
+
+> optimizing duplicate expressions in FD model...
+[====|====|====|====|====|====|====|====|====|====] 0:00:00 
+
+> compiling EBE model...
+v done
+> compiling events FD model...
+v done
+
+⠙ |         2 | augpred                                                         i parameter labels from comments will be replaced by 'label()'
+> loading into symengine environment...
+> pruning branches (`if`/`else`) of saem model...
+v done
+> finding duplicate expressions in saem model...
+[====|====|====|====|====|====|====|====|====|====] 0:00:00 
+
+v done
+Calculating covariance matrix
+[====|====|====|====|====|====|====|====|====|====] 0:00:00 
+
+> loading into symengine environment...
+> pruning branches (`if`/`else`) of saem model...
+v done
+> finding duplicate expressions in saem predOnly model 0...
+[====|====|====|====|====|====|====|====|====|====] 0:00:00 
+
+> finding duplicate expressions in saem predOnly model 1...
+[====|====|====|====|====|====|====|====|====|====] 0:00:00 
+
+> finding duplicate expressions in saem predOnly model 2...
+[====|====|====|====|====|====|====|====|====|====] 0:00:00 
+
+v done
+> Calculating residuals/tables
+> loading into symengine environment...
+> pruning branches (`if`/`else`) of full model...
+v done
+> calculate jacobian
+
+> calculate d(f)/d(eta)
+[====|====|====|====|====|====|====|====|====|====] 0:00:07 
+
+> calculate d(R^2)/d(eta)
+[====|====|====|====|====|====|====|====|====|====] 0:00:00 
+
+> finding duplicate expressions in inner model...
+[====|====|====|====|====|====|====|====|====|====] 0:00:00 
+
+> optimizing duplicate expressions in inner model...
+[====|====|====|====|====|====|====|====|====|====] 0:00:00 
+
+> finding duplicate expressions in EBE model...
+[====|====|====|====|====|====|====|====|====|====] 0:00:00 
+
+> optimizing duplicate expressions in EBE model...
+[====|====|====|====|====|====|====|====|====|====] 0:00:00 
+
+> compiling inner model...
+v done
+> finding duplicate expressions in FD model...
+[====|====|====|====|====|====|====|====|====|====] 0:00:00 
+
+> compiling EBE model...
+v done
+> compiling events FD model...
+v done
+v done
+> compress origData in nlmixr2 object, save 198904
+> compress phiM in nlmixr2 object, save 550872
+> compress parHist in nlmixr2 object, save 11800
+> loading into symengine environment...
+> pruning branches (`if`/`else`) of full model...
+v done
+> calculate jacobian
+
+> calculate d(f)/d(eta)
+[====|====|====|====|====|====|====|====|====|====] 0:00:07 
+
+> calculate d(R^2)/d(eta)
+[====|====|====|====|====|====|====|====|====|====] 0:00:00 
+
+> finding duplicate expressions in inner model...
+[====|====|====|====|====|====|====|====|====|====] 0:00:00 
+
+> optimizing duplicate expressions in inner model...
+[====|====|====|====|====|====|====|====|====|====] 0:00:00 
+
+> finding duplicate expressions in EBE model...
+[====|====|====|====|====|====|====|====|====|====] 0:00:00 
+
+> optimizing duplicate expressions in EBE model...
+[====|====|====|====|====|====|====|====|====|====] 0:00:00 
+
+> compiling inner model...
+v done
+> finding duplicate expressions in FD model...
+[====|====|====|====|====|====|====|====|====|====] 0:00:00 
+
+> compiling EBE model...
+v done
+> compiling events FD model...
+v done
+
+⠹ |         3 | augpred                                                         i parameter labels from comments will be replaced by 'label()'
+> loading into symengine environment...
+> pruning branches (`if`/`else`) of full model...
+v done
+> finding duplicate expressions in EBE model...
+[====|====|====|====|====|====|====|====|====|====] 0:00:00 
+
+> optimizing duplicate expressions in EBE model...
+[====|====|====|====|====|====|====|====|====|====] 0:00:00 
+
+> compiling EBE model...
+v done
+Key: U: Unscaled Parameters; X: Back-transformed parameters; G: Gill difference gradient approximation
+F: Forward difference gradient approximation
+C: Central difference gradient approximation
+M: Mixed forward and central difference gradient approximation
+Unscaled parameters for Omegas=chol(solve(omega));
+Diagonals are transformed, as specified by foceiControl(diagXform=)
+|-----+---------------+-----------+-----------+-----------+-----------|
+|    #| Objective Fun |       tka |       tcl |        tv |    add.sd |
+|-----+---------------+-----------+-----------+-----------+-----------|
+|    1|     963.69579 |    -1.000 |   -0.6378 |     1.000 |   -0.8333 |
+|    U|     963.69579 |    0.4500 |    0.9933 |     3.450 |    0.7000 |
+|    X|     963.69579 |     1.568 |     2.700 |     31.50 |    0.7000 |
+|    G|    Gill Diff. |     254.7 |    -20.91 |    -810.1 |    -1983. |
+|-----+---------------+-----------+-----------+-----------+-----------|
+|    2|     473.92925 |    -1.118 |   -0.6281 |     1.375 |   0.08591 |
+|    U|     473.92925 |    0.3320 |     1.003 |     3.825 |     1.022 |
+|    X|     473.92925 |     1.394 |     2.726 |     45.85 |     1.022 |
+|    F| Forward Diff. |    -282.0 |     200.6 |     1139. |    -551.1 |
+|-----+---------------+-----------+-----------+-----------+-----------|
+|    3|     865.98130 |   -0.9030 |   -0.7811 |    0.5073 |    0.5062 |
+|    U|      865.9813 |    0.5470 |    0.8500 |     2.957 |     1.169 |
+|    X|      865.9813 |     1.728 |     2.340 |     19.25 |     1.169 |
+|    4|     204.88729 |    -1.035 |   -0.6870 |     1.041 |    0.2477 |
+|    U|     204.88729 |    0.4147 |    0.9441 |     3.491 |     1.078 |
+|    X|     204.88729 |     1.514 |     2.570 |     32.83 |     1.078 |
+|    F| Forward Diff. |    -12.72 |    -16.44 |     5.363 |    -154.4 |
+|-----+---------------+-----------+-----------+-----------+-----------|
+|    5|     166.80013 |    -1.004 |   -0.6464 |     1.028 |    0.6289 |
+|    U|     166.80013 |    0.4461 |    0.9847 |     3.478 |     1.212 |
+|    X|     166.80013 |     1.562 |     2.677 |     32.40 |     1.212 |
+|    F| Forward Diff. |     10.29 |     6.297 |    -25.26 |    -57.86 |
+|-----+---------------+-----------+-----------+-----------+-----------|
+|    6|     170.65607 |    -1.065 |   -0.6841 |     1.179 |    0.9754 |
+|    U|     170.65607 |    0.3845 |    0.9469 |     3.629 |     1.333 |
+|    X|     170.65607 |     1.469 |     2.578 |     37.69 |     1.333 |
+|    7|     162.75677 |    -1.031 |   -0.6627 |     1.093 |    0.7788 |
+|    U|     162.75677 |    0.4195 |    0.9683 |     3.543 |     1.264 |
+|    X|     162.75677 |     1.521 |     2.634 |     34.59 |     1.264 |
+|    F| Forward Diff. |    -27.54 |     21.37 |     104.9 |    -38.59 |
+|-----+---------------+-----------+-----------+-----------+-----------|
+|    8|     162.29231 |    -1.041 |   -0.7826 |     1.009 |    0.8565 |
+|    U|     162.29231 |    0.4091 |    0.8484 |     3.459 |     1.291 |
+|    X|     162.29231 |     1.506 |     2.336 |     31.77 |     1.291 |
+|    F| Forward Diff. |     6.029 |    -62.30 |    -98.03 |    -31.19 |
+|-----+---------------+-----------+-----------+-----------+-----------|
+|    9|     157.63414 |    -1.034 |   -0.7272 |     1.065 |    0.8814 |
+|    U|     157.63414 |    0.4160 |    0.9039 |     3.515 |     1.300 |
+|    X|     157.63414 |     1.516 |     2.469 |     33.61 |     1.300 |
+|    F| Forward Diff. |    -15.60 |    -14.93 |     27.74 |    -24.05 |
+|-----+---------------+-----------+-----------+-----------+-----------|
+|   10|     157.12078 |    -1.004 |   -0.6980 |     1.011 |    0.9284 |
+|    U|     157.12078 |    0.4465 |    0.9331 |     3.461 |     1.317 |
+|    X|     157.12078 |     1.563 |     2.542 |     31.84 |     1.317 |
+|    F| Forward Diff. |     14.27 |    -22.80 |    -66.96 |    -19.67 |
+|-----+---------------+-----------+-----------+-----------+-----------|
+|   11|     155.95114 |    -1.003 |   -0.6294 |     1.054 |    0.9469 |
+|    U|     155.95114 |    0.4465 |     1.002 |     3.504 |     1.323 |
+|    X|     155.95114 |     1.563 |     2.723 |     33.25 |     1.323 |
+|    F| Forward Diff. |    -2.648 |     19.27 |     28.89 |    -16.97 |
+|-----+---------------+-----------+-----------+-----------+-----------|
+|   12|     154.71227 |    -1.025 |   -0.6864 |     1.046 |     1.003 |
+|    U|     154.71227 |    0.4250 |    0.9447 |     3.496 |     1.343 |
+|    X|     154.71227 |     1.530 |     2.572 |     32.98 |     1.343 |
+|    F| Forward Diff. |    -4.717 |    -5.040 |     5.655 |    -11.37 |
+|-----+---------------+-----------+-----------+-----------+-----------|
+|   13|     154.72924 |   -0.9978 |   -0.6573 |     1.013 |     1.069 |
+|    U|     154.72924 |    0.4522 |    0.9738 |     3.463 |     1.366 |
+|    X|     154.72924 |     1.572 |     2.648 |     31.92 |     1.366 |
+|   14|     154.42204 |    -1.012 |   -0.6720 |     1.030 |     1.035 |
+|    U|     154.42204 |    0.4384 |    0.9590 |     3.480 |     1.354 |
+|    X|     154.42204 |     1.550 |     2.609 |     32.45 |     1.354 |
+|    F| Forward Diff. |     4.096 |    -4.733 |    -18.66 |    -8.686 |
+|-----+---------------+-----------+-----------+-----------+-----------|
+|   15|     154.11276 |    -1.001 |   -0.6744 |     1.053 |     1.068 |
+|    U|     154.11276 |    0.4487 |    0.9567 |     3.503 |     1.365 |
+|    X|     154.11276 |     1.566 |     2.603 |     33.21 |     1.365 |
+|    F| Forward Diff. |    -1.897 |     1.513 |     10.66 |    -6.047 |
+|-----+---------------+-----------+-----------+-----------+-----------|
+|   16|     153.99849 |    -1.031 |   -0.6628 |     1.034 |     1.085 |
+|    U|     153.99849 |    0.4193 |    0.9683 |     3.484 |     1.372 |
+|    X|     153.99849 |     1.521 |     2.633 |     32.58 |     1.372 |
+|    F| Forward Diff. |    -1.167 |   -0.4128 |    -3.059 |    -4.680 |
+|-----+---------------+-----------+-----------+-----------+-----------|
+|   17|     153.89323 |    -1.004 |   -0.6715 |     1.049 |     1.111 |
+|    U|     153.89323 |    0.4460 |    0.9596 |     3.499 |     1.381 |
+|    X|     153.89323 |     1.562 |     2.611 |     33.07 |     1.381 |
+|    F| Forward Diff. |   -0.9524 |     1.190 |     6.160 |    -2.775 |
+|-----+---------------+-----------+-----------+-----------+-----------|
+|   18|     154.07680 |   -0.9697 |   -0.6895 |     1.041 |     1.123 |
+|    U|      154.0768 |    0.4803 |    0.9416 |     3.491 |     1.385 |
+|    X|      154.0768 |     1.616 |     2.564 |     32.83 |     1.385 |
+|   19|     153.88032 |    -1.003 |   -0.6730 |     1.041 |     1.115 |
+|    U|     153.88032 |    0.4471 |    0.9581 |     3.491 |     1.382 |
+|    X|     153.88032 |     1.564 |     2.607 |     32.82 |     1.382 |
+|    F| Forward Diff. |     1.725 |    -1.383 |    -4.930 |    -2.528 |
+|-----+---------------+-----------+-----------+-----------+-----------|
+|   20|     153.86025 |    -1.010 |   -0.6697 |     1.043 |     1.118 |
+|    U|     153.86025 |    0.4405 |    0.9614 |     3.493 |     1.383 |
+|    X|     153.86025 |     1.553 |     2.615 |     32.88 |     1.383 |
+|    F| Forward Diff. |   -0.1573 |    0.1704 |    0.8095 |    -2.255 |
+|-----+---------------+-----------+-----------+-----------+-----------|
+|   21|     153.84863 |    -1.009 |   -0.6703 |     1.040 |     1.126 |
+|    U|     153.84863 |    0.4410 |    0.9608 |     3.490 |     1.386 |
+|    X|     153.84863 |     1.554 |     2.614 |     32.79 |     1.386 |
+|    F| Forward Diff. |    0.8695 |   -0.8108 |    -3.388 |    -1.701 |
+|-----+---------------+-----------+-----------+-----------+-----------|
+|   22|     153.83802 |    -1.004 |   -0.6723 |     1.044 |     1.132 |
+|    U|     153.83802 |    0.4459 |    0.9587 |     3.494 |     1.388 |
+|    X|     153.83802 |     1.562 |     2.608 |     32.93 |     1.388 |
+|    F| Forward Diff. |    0.3941 |   -0.2475 |    0.2085 |    -1.343 |
+|-----+---------------+-----------+-----------+-----------+-----------|
+|   23|     153.82840 |    -1.006 |   -0.6709 |     1.043 |     1.140 |
+|    U|      153.8284 |    0.4436 |    0.9602 |     3.493 |     1.391 |
+|    X|      153.8284 |     1.558 |     2.612 |     32.89 |     1.391 |
+|   24|     153.82359 |    -1.010 |   -0.6689 |     1.041 |     1.150 |
+|    U|     153.82359 |    0.4405 |    0.9622 |     3.491 |     1.394 |
+|    X|     153.82359 |     1.553 |     2.617 |     32.83 |     1.394 |
+|    F| Forward Diff. |    0.3144 |  0.003067 |   -0.9371 |  -0.08280 |
+|-----+---------------+-----------+-----------+-----------+-----------|
+|   25|     153.82880 |    -1.019 |   -0.6658 |     1.041 |     1.149 |
+|    U|      153.8288 |    0.4308 |    0.9653 |     3.491 |     1.394 |
+|    X|      153.8288 |     1.538 |     2.626 |     32.81 |     1.394 |
+|   26|     153.82359 |    -1.010 |   -0.6689 |     1.041 |     1.150 |
+|    U|     153.82359 |    0.4405 |    0.9622 |     3.491 |     1.394 |
+|    X|     153.82359 |     1.553 |     2.617 |     32.83 |     1.394 |
+calculating covariance matrix
+[====|====|====|====|====|====|====|====|====|====] 0:00:00 
+done
+> Calculating residuals/tables
+v done
+> compress origData in nlmixr2 object, save 5952
+> compress parHist in nlmixr2 object, save 1512
+
+⠸ |         4 | augpred                                                         
+✔ |         4 | augpred [1202.2s]
+
+⠏ |         0 | broom                                                           Calculating -2LL by Gaussian quadrature (nnodes=3,nsd=1.6)
+
+⠋ |         1 | broom                                                           
+⠹ |         3 | broom                                                           
+⠸ |         4 | broom                                                           
+⠴ |         6 | broom                                                           
+⠦ |         7 | broom                                                           
+⠇ |         9 | broom                                                           
+⠋ |        11 | broom                                                           
+⠹ |        13 | broom                                                           
+⠼ |        15 | broom                                                           
+⠦ |        17 | broom                                                           
+⠇ |        19 | broom                                                           
+⠋ |        21 | broom                                                           
+⠹ |        23 | broom                                                           
+⠼ |        25 | broom                                                           
+⠦ |        27 | broom                                                           
+⠇ |        29 | broom                                                           
+⠋ |        31 | broom                                                           
+⠹ |        33 | broom                                                           
+⠼ |        35 | broom                                                           
+⠦ |        37 | broom                                                           
+⠇ |        39 | broom                                                           
+⠋ |        41 | broom                                                           
+⠹ |        43 | broom                                                           
+⠼ |        45 | broom                                                           
+⠦ |        47 | broom                                                           
+⠇ |        49 | broom                                                           
+⠋ |        51 | broom                                                           
+⠹ |        53 | broom                                                           
+⠼ |        55 | broom                                                           
+⠦ |        57 | broom                                                           
+⠧ |        58 | broom                                                           
+⠏ |        60 | broom                                                           
+⠙ |        62 | broom                                                           
+⠸ |        64 | broom                                                           
+⠴ |        66 | broom                                                           
+⠧ |        68 | broom                                                           
+⠏ |        70 | broom                                                           
+⠙ |        72 | broom                                                           
+⠸ |        74 | broom                                                           
+⠼ |        75 | broom                                                           
+⠦ |        77 | broom                                                           
+⠇ |        79 | broom                                                           
+⠏ |        80 | broom                                                           
+⠙ |        82 | broom                                                           
+⠸ |        84 | broom                                                           
+⠴ |        86 | broom                                                           
+⠦ |        87 | broom                                                           
+⠧ |        88 | broom                                                           
+⠏ |        90 | broom                                                           
+⠙ |        92 | broom                                                           
+⠹ |        93 | broom                                                           
+⠼ |        95 | broom                                                           
+⠦ |        97 | broom                                                           
+⠇ |        99 | broom                                                           
+⠋ |       101 | broom                                                           
+⠹ |       103 | broom                                                           
+⠼ |       105 | broom                                                           
+⠦ |       107 | broom                                                           
+⠇ |       109 | broom                                                           
+⠋ |       111 | broom                                                           
+⠹ |       113 | broom                                                           
+⠼ |       115 | broom                                                           
+⠦ |       117 | broom                                                           
+⠇ |       119 | broom                                                           
+⠋ |       121 | broom                                                           
+⠹ |       123 | broom                                                           
+⠼ |       125 | broom                                                           
+⠦ |       127 | broom                                                           
+⠇ |       129 | broom                                                           
+⠋ |       131 | broom                                                           
+⠹ |       133 | broom                                                           
+⠼ |       135 | broom                                                           
+⠦ |       137 | broom                                                           
+⠇ |       139 | broom                                                           
+⠋ |       141 | broom                                                           
+⠹ |       143 | broom                                                           
+⠸ |       144 | broom                                                           
+⠴ |       146 | broom                                                           
+⠧ |       148 | broom                                                           
+⠇ |       149 | broom                                                           
+⠋ |       151 | broom                                                           
+⠹ |       153 | broom                                                           
+⠼ |       155 | broom                                                           
+⠴ |       156 | broom                                                           
+⠧ |       158 | broom                                                           
+⠏ |       160 | broom                                                           
+⠋ |       161 | broom                                                           
+⠹ |       163 | broom                                                           
+⠼ |       165 | broom                                                           
+⠴ |       166 | broom                                                           
+⠧ |       168 | broom                                                           
+⠏ |       170 | broom                                                           
+⠙ |       172 | broom                                                           
+⠹ |       173 | broom                                                           
+⠼ |       175 | broom                                                           
+⠦ |       177 | broom                                                           
+⠇ |       179 | broom                                                           
+⠋ |       181 | broom                                                           
+⠹ |       183 | broom                                                           
+⠼ |       185 | broom                                                           
+⠦ |       187 | broom                                                           
+⠇ |       189 | broom                                                           
+⠋ |       191 | broom                                                           
+⠹ |       193 | broom                                                           
+⠼ |       195 | broom                                                           
+⠦ |       197 | broom                                                           
+⠇ |       199 | broom                                                           
+⠋ |       201 | broom                                                           
+⠹ |       203 | broom                                                           
+⠼ |       205 | broom                                                           
+⠦ |       207 | broom                                                           
+⠇ |       209 | broom                                                           
+⠋ |       211 | broom                                                           
+⠹ |       213 | broom                                                           
+⠼ |       215 | broom                                                           
+⠦ |       217 | broom                                                           
+⠇ |       219 | broom                                                           
+⠋ |       221 | broom                                                           
+⠹ |       223 | broom                                                           
+⠼ |       225 | broom                                                           
+⠦ |       227 | broom                                                           
+⠇ |       229 | broom                                                           
+⠏ |       230 | broom                                                           
+⠙ |       232 | broom                                                           
+⠸ |       234 | broom                                                           
+⠼ |       235 | broom                                                           
+⠦ |       237 | broom                                                           
+⠇ |       239 | broom                                                           
+⠋ |       241 | broom                                                           
+⠙ |       242 | broom                                                           
+⠸ |       244 | broom                                                           
+⠴ |       246 | broom                                                           
+⠦ |       247 | broom                                                           
+⠇ |       249 | broom                                                           
+⠋ |       251 | broom                                                           
+⠙ |       252 | broom                                                           
+⠸ |       254 | broom                                                           
+⠴ |       256 | broom                                                           
+⠧ |       258 | broom                                                           
+⠇ |       259 | broom                                                           
+⠋ |       261 | broom                                                           
+⠹ |       263 | broom                                                           
+⠼ |       265 | broom                                                           
+⠦ |       267 | broom                                                           
+⠇ |       269 | broom                                                           
+⠋ |       271 | broom                                                           
+⠹ |       273 | broom                                                           
+⠼ |       275 | broom                                                           
+⠦ |       277 | broom                                                           
+⠇ |       279 | broom                                                           
+⠋ |       281 | broom                                                           
+⠹ |       283 | broom                                                           
+⠼ |       285 | broom                                                           
+⠦ |       287 | broom                                                           
+⠇ |       289 | broom                                                           
+⠋ |       291 | broom                                                           
+⠹ |       293 | broom                                                           
+⠼ |       295 | broom                                                           
+⠦ |       297 | broom                                                           
+⠇ |       299 | broom                                                           
+⠋ |       301 | broom                                                           
+⠹ |       303 | broom                                                           
+⠼ |       305 | broom                                                           
+⠦ |       307 | broom                                                           
+⠇ |       309 | broom                                                           
+⠋ |       311 | broom                                                           
+⠹ |       313 | broom                                                           
+⠼ |       315 | broom                                                           
+⠴ |       316 | broom                                                           
+⠧ |       318 | broom                                                           
+⠏ |       320 | broom                                                           
+⠋ |       321 | broom                                                           
+⠹ |       323 | broom                                                           
+⠼ |       325 | broom                                                           
+⠦ |       327 | broom                                                           
+⠧ |       328 | broom                                                           
+⠏ |       330 | broom                                                           
+⠙ |       332 | broom                                                           
+⠹ |       333 | broom                                                           
+⠼ |       335 | broom                                                           
+⠦ |       337 | broom                                                           
+⠧ |       338 | broom                                                           
+⠏ |       340 | broom                                                           
+⠙ |       342 | broom                                                           
+⠸ |       344 | broom                                                           
+⠼ |       345 | broom                                                           
+⠦ |       347 | broom                                                           
+⠇ |       349 | broom                                                           
+⠋ |       351 | broom                                                           
+⠹ |       353 | broom                                                           
+⠼ |       355 | broom                                                           
+⠦ |       357 | broom                                                           
+⠇ |       359 | broom                                                           
+⠋ |       361 | broom                                                           
+⠹ |       363 | broom                                                           
+⠼ |       365 | broom                                                           
+⠦ |       367 | broom                                                           
+⠇ |       369 | broom                                                           
+⠋ |       371 | broom                                                           
+⠹ |       373 | broom                                                           
+⠼ |       375 | broom                                                           
+⠦ |       377 | broom                                                           
+⠇ |       379 | broom                                                           
+⠋ |       381 | broom                                                           
+⠹ |       383 | broom                                                           
+⠼ |       385 | broom                                                           
+⠦ |       387 | broom                                                           
+⠇ |       389 | broom                                                           
+⠋ |       391 | broom                                                           
+⠹ |       393 | broom                                                           
+⠼ |       395 | broom                                                           
+⠦ |       397 | broom                                                           
+⠇ |       399 | broom                                                           
+⠋ |       401 | broom                                                           
+⠙ |       402 | broom                                                           
+⠸ |       404 | broom                                                           
+⠴ |       406 | broom                                                           
+⠦ |       407 | broom                                                           
+⠇ |       409 | broom                                                           
+⠋ |       411 | broom                                                           
+⠹ |       413 | broom                                                           
+⠸ |       414 | broom                                                           
+⠴ |       416 | broom                                                           
+⠧ |       418 | broom                                                           
+⠇ |       419 | broom                                                           
+⠋ |       421 | broom                                                           
+⠹ |       423 | broom                                                           
+⠸ |       424 | broom                                                           
+⠴ |       426 | broom                                                           
+⠧ |       428 | broom                                                           
+⠏ |       430 | broom                                                           
+⠋ |       431 | broom                                                           
+⠹ |       433 | broom                                                           
+⠼ |       435 | broom                                                           
+⠦ |       437 | broom                                                           
+⠇ |       439 | broom                                                           
+⠋ |       441 | broom                                                           
+⠹ |       443 | broom                                                           
+⠼ |       445 | broom                                                           
+⠴ |       446 | broom                                                           
+⠧ |       448 | broom                                                           
+⠏ |       450 | broom                                                           
+⠙ |       452 | broom                                                           
+⠸ |       454 | broom                                                           
+⠴ |       456 | broom                                                           
+⠧ |       458 | broom                                                           
+⠏ |       460 | broom                                                           
+⠙ |       462 | broom                                                           
+⠸ |       464 | broom                                                           
+⠴ |       466 | broom                                                           
+⠧ |       468 | broom                                                           
+⠏ |       470 | broom                                                           
+⠙ |       472 | broom                                                           
+⠸ |       474 | broom                                                           
+⠴ |       476 | broom                                                           
+⠧ |       478 | broom                                                           
+⠏ |       480 | broom                                                           
+⠙ |       482 | broom                                                           
+⠸ |       484 | broom                                                           
+⠼ |       485 | broom                                                           
+⠦ |       487 | broom                                                           
+⠇ |       489 | broom                                                           
+⠋ |       491 | broom                                                           
+⠹ |       493 | broom                                                           
+⠼ |       495 | broom                                                           
+⠴ |       496 | broom                                                           
+⠧ |       498 | broom                                                           
+⠏ |       500 | broom                                                           
+⠙ |       502 | broom                                                           
+⠹ |       503 | broom                                                           
+⠼ |       505 | broom                                                           
+⠦ |       507 | broom                                                           
+⠇ |       509 | broom                                                           
+⠋ |       511 | broom                                                           
+⠹ |       513 | broom                                                           
+⠸ |       514 | broom                                                           
+⠴ |       516 | broom                                                           
+⠧ |       518 | broom                                                           
+⠏ |       520 | broom                                                           
+✔ |       520 | broom [8133.9s]
+
+⠏ |         0 | control                                                         
+⠋ |         1 | control                                                         
+⠙ |         2 | control                                                         
+⠸ |         4 | control                                                         
+⠴ |         6 | control                                                         
+⠧ |         8 | control                                                         
+⠏ |        10 | control                                                         
+⠋ |        11 | control                                                         
+⠙ |        12 | control                                                         
+⠸ |        14 | control                                                         
+⠴ |        16 | control                                                         
+⠧ |        18 | control                                                         
+⠏ |        20 | control                                                         
+⠙ |        22 | control                                                         
+⠸ |        24 | control                                                         
+⠴ |        26 | control                                                         
+⠧ |        28 | control                                                         
+⠇ |        29 | control                                                         
+⠋ |        31 | control                                                         
+⠹ |        33 | control                                                         
+⠼ |        35 | control                                                         
+⠦ |        37 | control                                                         
+⠇ |        39 | control                                                         
+⠏ |        40 | control                                                         
+⠙ |        42 | control                                                         
+✔ |        43 | control [4.5s]
+
+⠏ |         0 | cov-focei                                                       
+⠋ |         1 | cov-focei                                                       
+✔ |         1 | cov-focei [156.9s]
+
+⠏ |         0 | cov-mu                                                          
+⠋ |         1 | cov-mu                                                          
+✔ |         1 | cov-mu [4.3s]
+
+⠏ |         0 | cwres                                                           
+⠋ |         1 | cwres                                                           
+⠙ |         2 | cwres                                                           
+⠹ |         3 | cwres                                                           
+⠸ |         4 | cwres                                                           
+⠼ |         5 | cwres                                                           
+⠴ |         6 | cwres                                                           
+⠧ |         8 | cwres                                                           
+⠇ |         9 | cwres                                                           
+⠏ |        10 | cwres                                                           
+⠋ |        11 | cwres                                                           
+⠙ |        12 | cwres                                                           
+⠹ |        13 | cwres                                                           
+⠸ |        14 | cwres                                                           
+⠴ |        16 | cwres                                                           
+⠦ |        17 | cwres                                                           
+⠧ |        18 | cwres                                                           
+⠏ |        20 | cwres                                                           
+⠙ |        22 | cwres                                                           
+⠸ |        24 | cwres                                                           
+⠴ |        26 | cwres                                                           
+✔ |        26 | cwres [485.8s]
+
+⠏ |         0 | fix-cov                                                         
+⠋ |         1 | fix-cov                                                         
+⠙ |         2 | fix-cov                                                         > loading into symengine environment...
+> pruning branches (`if`/`else`) of saem model...
+v done
+> finding duplicate expressions in saem model...
+[====|====|====|====|====|====|====|====|====|====] 0:00:00 
+
+> optimizing duplicate expressions in saem model...
+[====|====|====|====|====|====|====|====|====|====] 0:00:00 
+
+v done
+params:	tka	tcl	sexf.cl	wt.cl	tv	wt.v2	V(eta.ka)	V(eta.cl)	V(eta.v)	add.sd
+001: 0.270557	0.770382	1.769741	2.871456	3.463009	-2.897344	0.605137	0.285000	0.095000	1.861424	
+002: 0.363018	0.835938	1.895064	3.890897	3.554222	-2.607936	0.574880	0.270750	0.090250	1.183162	
+003: 0.534476	0.619104	1.932307	3.567791	3.585066	-2.540158	0.546136	0.260651	0.085737	0.891734	
+004: 0.648182	0.800453	1.685576	3.394618	3.565994	-2.681491	0.518829	0.247618	0.081451	0.787942	
+005: 0.651113	0.859419	1.687884	3.690326	3.566386	-2.388251	0.492888	0.235237	0.077378	0.788656	
+006: 0.624507	0.835646	1.701050	3.467007	3.590286	-2.235962	0.468243	0.260764	0.073509	0.717002	
+007: 0.605144	0.828523	1.631292	2.996273	3.582809	-2.298658	0.444831	0.250349	0.069834	0.687339	
+008: 0.556006	0.861543	1.526673	2.825847	3.579718	-2.102609	0.422590	0.237831	0.066342	0.687827	
+009: 0.529167	0.854265	1.575457	3.160202	3.568287	-2.115971	0.401460	0.253083	0.063025	0.664509	
+010: 0.547322	0.875637	1.544566	3.117193	3.585662	-2.061289	0.381387	0.240429	0.059874	0.663593	
+011: 0.585747	0.932416	1.456793	3.079115	3.577239	-2.183865	0.362318	0.279065	0.056880	0.683401	
+012: 0.553056	0.901288	1.497299	3.104263	3.570197	-2.207615	0.344202	0.265112	0.054036	0.669911	
+013: 0.555389	0.884457	1.592529	3.324448	3.544511	-2.423912	0.326992	0.255713	0.051334	0.650344	
+014: 0.591640	0.825743	1.649181	3.525288	3.538752	-2.452970	0.310642	0.265662	0.048767	0.663579	
+015: 0.622204	0.811877	1.699183	3.592609	3.590555	-2.251330	0.295110	0.252379	0.046329	0.648742	
+016: 0.622815	0.846549	1.660649	3.384150	3.571255	-2.472086	0.280355	0.256083	0.044013	0.652643	
+017: 0.627384	0.875768	1.640538	3.492565	3.560177	-2.523489	0.266337	0.287245	0.041812	0.639168	
+018: 0.622271	0.921257	1.569142	3.276549	3.541462	-2.360976	0.263854	0.272882	0.039721	0.643724	
+019: 0.514665	0.901663	1.577976	3.034388	3.546881	-2.378674	0.250661	0.259238	0.037735	0.660092	
+020: 0.556914	0.902877	1.526291	2.951081	3.551106	-2.429809	0.241687	0.248195	0.035849	0.659193	
+021: 0.547510	0.824737	1.652200	2.844710	3.573698	-2.264610	0.229603	0.250869	0.041114	0.669636	
+022: 0.526249	0.857331	1.639785	3.040340	3.563231	-2.368264	0.218122	0.243098	0.039059	0.693896	
+023: 0.644378	0.817461	1.669393	3.644318	3.579429	-2.300029	0.207216	0.261318	0.037106	0.695203	
+024: 0.632048	0.844595	1.625655	2.779999	3.601797	-2.061328	0.218811	0.260791	0.036839	0.684557	
+025: 0.632573	0.798865	1.665643	2.964391	3.596381	-2.172640	0.207870	0.308559	0.034997	0.659461	
+026: 0.611790	0.813297	1.698463	2.819839	3.585753	-2.099014	0.197477	0.293131	0.033247	0.664752	
+027: 0.558323	0.884919	1.635695	2.847587	3.575362	-2.114457	0.227550	0.278475	0.031585	0.670975	
+028: 0.594949	0.844661	1.642068	2.837606	3.585961	-2.083286	0.216172	0.264551	0.030005	0.647047	
+029: 0.595990	0.940080	1.532337	3.344896	3.576451	-1.966348	0.205364	0.299780	0.028505	0.689968	
+030: 0.621775	0.850315	1.626591	3.138158	3.578987	-2.013928	0.199498	0.284791	0.027080	0.676045	
+031: 0.585383	0.873127	1.576171	3.085004	3.596092	-1.949139	0.205313	0.270552	0.025726	0.663269	
+032: 0.586947	0.822712	1.604162	3.034787	3.617496	-1.974487	0.195047	0.257024	0.025827	0.656908	
+033: 0.559017	0.947261	1.520553	3.457990	3.597061	-1.939158	0.211274	0.244173	0.030347	0.671749	
+034: 0.592024	0.892732	1.590686	2.977445	3.606075	-2.059992	0.214837	0.231964	0.029374	0.674334	
+035: 0.513318	0.892855	1.547411	2.973435	3.609107	-1.841768	0.204095	0.220366	0.027905	0.677863	
+036: 0.561075	0.899482	1.619079	3.358611	3.589971	-1.928540	0.206004	0.263075	0.026510	0.661899	
+037: 0.548495	0.911134	1.602402	3.363681	3.599202	-1.993634	0.195704	0.284597	0.032081	0.656374	
+038: 0.587485	0.933027	1.565054	3.473901	3.597544	-2.052746	0.186960	0.295004	0.032054	0.673957	
+039: 0.614136	0.878115	1.602954	3.528990	3.599560	-2.271990	0.199256	0.280254	0.035018	0.652914	
+040: 0.550713	0.913483	1.603568	3.568211	3.588800	-2.287882	0.209580	0.266241	0.043420	0.668043	
+041: 0.519154	0.883917	1.564088	3.377324	3.595446	-2.174843	0.199701	0.252929	0.041249	0.675914	
+042: 0.602497	0.881212	1.548164	3.039775	3.595338	-2.148469	0.208024	0.244394	0.039187	0.660772	
+043: 0.554093	0.852745	1.575360	2.866058	3.575042	-2.164051	0.242155	0.242511	0.037228	0.662598	
+044: 0.511401	0.859329	1.643666	2.983426	3.560147	-2.165928	0.230047	0.245596	0.035366	0.657530	
+045: 0.524371	0.952774	1.504009	2.934882	3.543815	-2.197092	0.244022	0.298736	0.033598	0.651607	
+046: 0.570865	0.903848	1.576739	2.897984	3.574673	-2.068284	0.231821	0.298766	0.031918	0.655174	
+047: 0.602050	0.914296	1.580683	3.451435	3.569405	-2.079242	0.229044	0.283828	0.030322	0.655385	
+048: 0.588974	0.921250	1.572752	3.300888	3.564367	-2.056886	0.217592	0.322488	0.028806	0.657015	
+049: 0.573563	0.901635	1.606416	3.182675	3.561966	-2.238151	0.228933	0.306363	0.027429	0.650720	
+050: 0.604714	0.859198	1.546252	3.115826	3.568942	-2.271133	0.217486	0.291045	0.030787	0.666660	
+051: 0.565945	0.822406	1.720795	3.385175	3.549606	-2.419460	0.215753	0.277181	0.031552	0.661418	
+052: 0.570330	0.871144	1.657776	3.374292	3.580574	-2.209071	0.204966	0.263322	0.029975	0.647437	
+053: 0.604718	0.782464	1.746758	3.379192	3.566702	-2.267059	0.194717	0.250156	0.028476	0.669971	
+054: 0.523158	0.732705	1.803066	3.114613	3.579843	-2.225610	0.212117	0.241364	0.028103	0.678677	
+055: 0.529224	0.834290	1.655514	3.064424	3.579542	-2.150369	0.201511	0.229296	0.030609	0.673982	
+056: 0.556032	0.801810	1.662611	3.346459	3.609254	-2.038067	0.191435	0.259035	0.034542	0.693551	
+057: 0.560190	0.879520	1.518312	3.074769	3.620805	-2.103107	0.181864	0.270405	0.040634	0.688574	
+058: 0.624057	0.798435	1.652346	3.161700	3.613561	-1.973246	0.218398	0.256884	0.038602	0.682575	
+059: 0.631201	0.750159	1.731977	3.379291	3.617245	-2.011389	0.208148	0.268936	0.036672	0.677302	
+060: 0.598900	0.749289	1.799381	3.724996	3.591242	-2.251427	0.197741	0.297875	0.034839	0.669448	
+061: 0.598303	0.761385	1.733964	3.578176	3.549376	-2.605068	0.192343	0.282982	0.033097	0.687917	
+062: 0.597355	0.785407	1.766852	3.583651	3.554128	-2.620546	0.204222	0.363696	0.033335	0.684873	
+063: 0.651162	0.703606	1.798332	3.611477	3.521163	-2.804183	0.283539	0.345511	0.031668	0.675387	
+064: 0.621924	0.772681	1.765739	3.861580	3.534916	-2.765681	0.285167	0.328236	0.030085	0.682801	
+065: 0.607697	0.724387	1.814878	3.520431	3.523469	-2.629285	0.270908	0.312119	0.028580	0.655776	
+066: 0.626902	0.802310	1.704883	3.091647	3.529743	-2.606056	0.257363	0.296513	0.029230	0.659760	
+067: 0.591872	0.844505	1.627015	3.333905	3.516407	-2.600601	0.244495	0.281687	0.032449	0.647307	
+068: 0.517791	0.891611	1.575694	3.345714	3.540359	-2.440889	0.232270	0.337303	0.033118	0.665994	
+069: 0.588698	0.859265	1.658537	3.678568	3.556853	-2.317306	0.227070	0.320437	0.037072	0.672839	
+070: 0.592626	0.805845	1.689805	3.106488	3.603229	-2.045276	0.226086	0.304416	0.039585	0.661933	
+071: 0.600497	0.825592	1.641519	2.749241	3.555416	-2.398694	0.214781	0.301280	0.039473	0.652505	
+072: 0.552206	0.811155	1.625203	3.017764	3.554249	-2.496522	0.204042	0.286216	0.040200	0.658610	
+073: 0.622210	0.856008	1.655099	3.536153	3.579035	-2.518608	0.193840	0.271905	0.049820	0.654094	
+074: 0.575214	0.821836	1.660533	3.474791	3.585066	-2.242031	0.184148	0.258310	0.047329	0.644223	
+075: 0.620395	0.856275	1.576769	3.408434	3.595812	-2.331760	0.216492	0.245395	0.044963	0.655557	
+076: 0.644644	0.871897	1.603292	3.480262	3.609113	-2.195084	0.205667	0.244831	0.042714	0.661362	
+077: 0.694130	0.816796	1.631640	3.388434	3.652272	-2.029603	0.208044	0.232590	0.042275	0.654801	
+078: 0.694745	0.887064	1.563428	3.392846	3.637119	-2.163388	0.225377	0.243331	0.045297	0.642406	
+079: 0.697407	0.866208	1.639601	4.013936	3.652384	-2.210260	0.223404	0.285001	0.043032	0.676890	
+080: 0.666351	0.834767	1.603022	3.496662	3.617721	-2.247543	0.212234	0.277799	0.040881	0.696471	
+081: 0.641975	0.768953	1.659397	3.550091	3.629507	-2.202403	0.201622	0.263909	0.040311	0.687020	
+082: 0.670359	0.817315	1.645827	3.914138	3.622713	-2.325193	0.191541	0.264470	0.040794	0.687129	
+083: 0.675351	0.826006	1.576569	3.772326	3.648242	-2.196908	0.204770	0.251247	0.042011	0.696944	
+084: 0.640641	0.820158	1.598634	3.624300	3.604420	-2.387189	0.194531	0.238684	0.060007	0.678542	
+085: 0.660557	0.776641	1.679710	3.404582	3.671286	-1.987555	0.184805	0.226750	0.057007	0.693154	
+086: 0.682056	0.782718	1.692966	3.746067	3.637055	-2.159666	0.183369	0.246789	0.054157	0.667766	
+087: 0.665001	0.760292	1.679986	3.711032	3.645476	-2.164602	0.200235	0.234449	0.051449	0.674334	
+088: 0.579784	0.772308	1.749802	4.058634	3.618506	-2.195632	0.200640	0.239873	0.048876	0.680635	
+089: 0.600979	0.791715	1.710734	3.866172	3.576393	-2.346869	0.190608	0.253269	0.046432	0.663859	
+090: 0.568864	0.836299	1.615702	3.531790	3.554904	-2.448115	0.182156	0.240606	0.044111	0.662659	
+091: 0.552798	0.840583	1.620839	3.625613	3.545690	-2.344619	0.173049	0.228575	0.041905	0.681701	
+092: 0.507195	0.846976	1.629555	3.060833	3.557417	-2.068354	0.185646	0.231268	0.039810	0.694281	
+093: 0.480284	0.888035	1.510863	2.973739	3.562107	-1.978912	0.176364	0.219705	0.037820	0.701209	
+094: 0.489639	0.880880	1.662863	2.993011	3.543632	-2.148292	0.167546	0.247952	0.035929	0.670218	
+095: 0.525211	0.884191	1.623929	3.131154	3.579936	-1.938783	0.184481	0.255193	0.034132	0.669746	
+096: 0.511501	0.875431	1.645311	3.204881	3.547046	-2.163092	0.175257	0.244562	0.032426	0.674101	
+097: 0.543090	0.915894	1.585500	3.125950	3.550403	-2.211801	0.166494	0.232334	0.030804	0.667158	
+098: 0.462645	0.925091	1.581925	3.051748	3.539555	-2.336143	0.158169	0.266215	0.029981	0.673380	
+099: 0.460995	0.860861	1.631922	2.986840	3.511550	-2.360005	0.153605	0.300442	0.028482	0.654995	
+100: 0.481639	0.895525	1.576252	2.891775	3.526953	-2.289375	0.180449	0.285420	0.027058	0.647441	
+101: 0.463391	0.907420	1.562329	3.112277	3.506132	-2.319324	0.177929	0.271149	0.025705	0.651159	
+102: 0.461114	0.909088	1.567270	2.863118	3.496476	-2.319962	0.169033	0.257591	0.024420	0.672691	
+103: 0.502758	0.902920	1.586959	3.272845	3.510347	-2.429945	0.173916	0.244712	0.023199	0.666716	
+104: 0.517271	0.861390	1.696744	3.178395	3.527278	-2.405846	0.165220	0.257167	0.022039	0.665752	
+105: 0.517480	0.823536	1.681977	2.728096	3.524698	-2.456633	0.181640	0.252758	0.021462	0.678274	
+106: 0.520637	0.846299	1.620393	3.124880	3.520356	-2.346761	0.188649	0.240120	0.020389	0.661880	
+107: 0.557083	0.918786	1.541000	3.184409	3.521715	-2.367067	0.267994	0.248266	0.019369	0.673578	
+108: 0.531385	0.904124	1.531068	2.898013	3.520863	-2.253179	0.266935	0.241512	0.018401	0.676961	
+109: 0.488761	0.925546	1.506915	3.090462	3.569561	-2.037583	0.253588	0.267229	0.020390	0.671270	
+110: 0.525992	0.819936	1.676222	3.166471	3.542406	-2.048775	0.248043	0.287204	0.019370	0.660179	
+111: 0.509407	0.879489	1.601670	3.034404	3.527089	-2.206613	0.235641	0.274981	0.018402	0.655833	
+112: 0.463567	0.845458	1.595062	2.903968	3.518083	-2.119311	0.223859	0.282793	0.017482	0.674680	
+113: 0.475293	0.939305	1.585736	3.340452	3.535879	-2.108636	0.212666	0.268654	0.017060	0.653888	
+114: 0.490118	0.913278	1.605120	2.981687	3.529269	-2.195263	0.230362	0.330111	0.016207	0.657447	
+115: 0.546588	0.859095	1.614506	3.351507	3.538980	-2.263103	0.252404	0.313606	0.016925	0.674367	
+116: 0.576354	0.843240	1.693786	3.406051	3.552321	-2.159465	0.239784	0.297925	0.022719	0.675890	
+117: 0.531450	0.848016	1.675053	2.803269	3.577120	-2.053013	0.233946	0.283029	0.021583	0.683733	
+118: 0.558010	0.884323	1.596239	3.304090	3.597396	-1.891111	0.222249	0.289069	0.021261	0.684986	
+119: 0.545684	0.905764	1.570657	3.531227	3.587412	-1.994916	0.211136	0.330878	0.026118	0.683206	
+120: 0.514652	0.825368	1.667757	3.225623	3.564706	-2.171880	0.200580	0.339411	0.024812	0.654477	
+121: 0.557905	0.871493	1.633159	3.086539	3.572281	-2.131311	0.190551	0.376919	0.023572	0.673472	
+122: 0.607446	0.793458	1.649585	3.043463	3.568862	-2.333683	0.181023	0.358073	0.024770	0.673821	
+123: 0.616832	0.887709	1.577182	3.156548	3.543156	-2.426493	0.171972	0.340170	0.027851	0.665220	
+124: 0.594361	0.899355	1.562264	3.011576	3.524525	-2.518938	0.166183	0.323161	0.028341	0.649161	
+125: 0.601880	0.972218	1.472218	3.895578	3.519593	-2.643067	0.197457	0.307003	0.029903	0.648605	
+126: 0.541626	0.964635	1.517008	3.891878	3.465252	-2.907105	0.246881	0.291653	0.033225	0.649695	
+127: 0.532528	0.902089	1.573585	3.511826	3.461606	-2.898217	0.284441	0.277070	0.033573	0.644968	
+128: 0.562857	0.865253	1.599662	3.447703	3.485346	-3.034368	0.270219	0.313578	0.038386	0.659361	
+129: 0.611966	0.907998	1.660598	4.170870	3.488863	-2.987974	0.256708	0.310598	0.036467	0.647002	
+130: 0.623903	0.839801	1.717386	4.045470	3.504664	-2.925153	0.243873	0.295068	0.035297	0.643454	
+131: 0.597514	0.906332	1.585315	3.919925	3.503448	-2.923717	0.231679	0.363553	0.041815	0.653952	
+132: 0.569763	0.890983	1.552704	3.736732	3.514816	-2.705939	0.220095	0.345376	0.039724	0.667275	
+133: 0.567034	0.892108	1.579670	3.709895	3.497292	-2.835279	0.262146	0.328107	0.037738	0.659635	
+134: 0.573740	0.864807	1.654983	3.842398	3.478341	-2.978216	0.288599	0.311702	0.040651	0.674835	
+135: 0.543875	0.816749	1.770572	3.623292	3.491546	-2.843784	0.274169	0.296117	0.038619	0.670915	
+136: 0.539414	0.737478	1.834657	3.452832	3.505863	-2.650637	0.260461	0.281311	0.036688	0.661530	
+137: 0.577313	0.810369	1.680660	3.723225	3.511021	-2.734623	0.276717	0.267245	0.034853	0.672672	
+138: 0.618068	0.855662	1.594340	3.517956	3.505459	-2.800335	0.265174	0.253883	0.038897	0.655910	
+139: 0.606046	0.858846	1.644174	3.542479	3.537386	-2.722966	0.251916	0.262415	0.039709	0.654599	
+140: 0.611417	0.927363	1.567618	3.637328	3.549970	-2.545103	0.239320	0.249294	0.044064	0.670388	
+141: 0.552925	0.763590	1.749826	3.483623	3.549109	-2.500918	0.227354	0.236829	0.042557	0.644118	
+142: 0.585273	0.837107	1.634982	3.574911	3.565230	-2.447300	0.244630	0.276609	0.040429	0.635345	
+143: 0.564802	0.917573	1.606755	3.760489	3.543809	-2.504668	0.252933	0.279415	0.038408	0.659653	
+144: 0.640257	0.899353	1.582335	3.702200	3.569060	-2.377917	0.246154	0.265444	0.036487	0.637347	
+145: 0.601713	0.908458	1.539228	3.568859	3.560687	-2.230524	0.245913	0.252172	0.034663	0.642135	
+146: 0.546331	0.853104	1.658054	3.264817	3.549096	-2.397740	0.233618	0.275764	0.034696	0.644905	
+147: 0.544222	0.821724	1.675534	3.482352	3.558305	-2.331445	0.226232	0.261976	0.032962	0.643554	
+148: 0.555134	0.893732	1.584661	3.287611	3.579913	-2.253287	0.214921	0.248877	0.031314	0.659506	
+149: 0.549776	0.761238	1.689376	2.801106	3.565607	-2.158177	0.221596	0.236433	0.029748	0.676300	
+150: 0.555929	0.793606	1.709041	2.998840	3.538106	-2.223984	0.210516	0.224612	0.028260	0.678096	
+151: 0.482462	0.964390	1.575384	3.553740	3.510668	-2.484019	0.209895	0.231053	0.026847	0.688732	
+152: 0.509573	0.942202	1.575920	3.513477	3.511279	-2.618266	0.208093	0.264122	0.024863	0.662410	
+153: 0.539633	0.868796	1.608646	2.971469	3.541519	-2.396713	0.215654	0.280232	0.026475	0.672972	
+154: 0.585013	0.862996	1.607386	3.196788	3.582873	-2.216325	0.175966	0.253859	0.030492	0.654167	
+155: 0.549678	0.776311	1.709135	2.863514	3.555284	-2.326570	0.164373	0.212407	0.032765	0.656818	
+156: 0.523648	0.792941	1.740670	2.949207	3.537459	-2.377210	0.176762	0.282594	0.039442	0.662651	
+157: 0.516750	0.797258	1.738700	3.249489	3.566920	-2.252168	0.197826	0.250708	0.034757	0.666358	
+158: 0.593777	0.831670	1.688616	3.306366	3.553515	-2.426315	0.201714	0.239043	0.029982	0.664151	
+159: 0.534132	0.846752	1.635282	3.156177	3.554971	-2.408622	0.198181	0.228377	0.033406	0.645983	
+160: 0.635634	0.770583	1.734700	3.535942	3.588056	-2.323852	0.242662	0.246408	0.031157	0.652590	
+161: 0.620627	0.800135	1.727938	3.533218	3.554519	-2.582683	0.224011	0.231200	0.035033	0.658364	
+162: 0.563963	0.869116	1.632356	3.225745	3.524932	-2.568565	0.172495	0.220630	0.027662	0.663114	
+163: 0.558733	0.866706	1.718046	3.721763	3.521545	-2.454151	0.180057	0.210568	0.025364	0.670256	
+164: 0.535970	0.843628	1.720816	3.618848	3.502634	-2.558724	0.211397	0.240798	0.030178	0.653823	
+165: 0.583860	0.799875	1.693760	3.389477	3.530370	-2.557372	0.246757	0.223607	0.032053	0.655050	
+166: 0.602793	0.812085	1.721073	3.276316	3.542394	-2.554464	0.201480	0.246431	0.032113	0.663253	
+167: 0.633246	0.911403	1.587911	3.670467	3.526007	-2.778875	0.251573	0.201597	0.040970	0.682980	
+168: 0.650012	0.903136	1.580721	3.494683	3.512407	-2.881564	0.258842	0.250842	0.049912	0.655580	
+169: 0.572344	0.887363	1.611093	2.942759	3.479036	-2.842421	0.233905	0.261270	0.042223	0.674196	
+170: 0.535855	0.904772	1.626830	3.365440	3.507574	-2.637748	0.221140	0.207149	0.036789	0.649277	
+171: 0.507716	0.928107	1.535154	3.418024	3.512498	-2.709561	0.206533	0.206353	0.037255	0.652079	
+172: 0.530232	0.869163	1.634584	2.922724	3.514542	-2.653971	0.182051	0.236624	0.036350	0.647819	
+173: 0.517121	0.875937	1.587722	2.991375	3.471110	-2.864902	0.214302	0.276343	0.044714	0.636029	
+174: 0.516428	0.977094	1.465165	3.265100	3.506041	-2.651803	0.243669	0.247425	0.038573	0.632739	
+175: 0.557100	0.978291	1.466715	3.306839	3.500720	-2.634941	0.237631	0.248750	0.044824	0.637439	
+176: 0.547283	0.962743	1.535577	3.295223	3.548281	-2.346097	0.183302	0.224028	0.039033	0.644659	
+177: 0.549643	0.878801	1.589936	3.254250	3.580890	-2.278861	0.174048	0.259866	0.039107	0.638225	
+178: 0.591963	0.948372	1.493633	3.406520	3.548299	-2.529714	0.197428	0.287684	0.036500	0.632904	
+179: 0.597132	0.897299	1.559836	3.073762	3.569239	-2.357016	0.175662	0.267109	0.037685	0.649032	
+180: 0.570788	0.945776	1.509691	3.674376	3.552043	-2.565447	0.186052	0.275967	0.035296	0.645871	
+181: 0.595753	0.876728	1.528504	3.052843	3.526673	-2.533778	0.204015	0.296523	0.035769	0.640460	
+182: 0.559327	0.965066	1.459584	3.377081	3.521498	-2.512567	0.217178	0.301456	0.040023	0.664310	
+183: 0.556024	1.048062	1.390353	3.335754	3.528038	-2.455677	0.225498	0.258497	0.041038	0.646657	
+184: 0.557621	0.990663	1.530265	3.451532	3.530743	-2.358462	0.208290	0.236392	0.030487	0.661137	
+185: 0.527587	0.935878	1.623654	3.540375	3.529274	-2.489904	0.178852	0.242929	0.033196	0.649795	
+186: 0.528859	0.998201	1.479938	3.079131	3.545562	-2.300855	0.200612	0.254156	0.033190	0.642645	
+187: 0.537600	0.921807	1.553283	2.874156	3.538571	-2.449482	0.213926	0.215082	0.036643	0.649966	
+188: 0.489503	0.905251	1.517826	2.580282	3.529421	-2.375160	0.125684	0.241136	0.036629	0.670283	
+189: 0.516024	0.918908	1.516314	2.516182	3.545708	-2.378830	0.139596	0.267150	0.039271	0.683301	
+190: 0.502836	0.953339	1.514589	2.871895	3.541914	-2.492628	0.160894	0.267382	0.040488	0.676246	
+191: 0.488701	0.935840	1.579272	2.947517	3.510871	-2.514373	0.132787	0.271818	0.035541	0.668054	
+192: 0.510341	0.878064	1.552852	2.767087	3.553087	-2.368417	0.145867	0.186157	0.032320	0.653320	
+193: 0.525662	0.847672	1.642603	2.778975	3.536125	-2.472063	0.160045	0.196444	0.034102	0.651136	
+194: 0.511126	0.839553	1.619252	2.647581	3.529329	-2.225057	0.159107	0.249615	0.026799	0.660797	
+195: 0.495201	0.840116	1.631710	2.635282	3.532009	-2.148944	0.174945	0.269056	0.027014	0.650347	
+196: 0.505335	0.929898	1.531417	2.865141	3.541676	-2.222721	0.155013	0.320488	0.029527	0.659101	
+197: 0.496460	0.898604	1.545784	2.996477	3.542268	-2.482368	0.184332	0.224312	0.030624	0.679521	
+198: 0.584287	0.868267	1.598340	3.365366	3.521989	-2.666962	0.191987	0.242973	0.033981	0.650253	
+199: 0.555259	0.874824	1.557965	3.207775	3.544554	-2.444673	0.206140	0.262899	0.028426	0.619828	
+200: 0.547229	0.843287	1.659467	3.094874	3.535656	-2.558791	0.244226	0.248998	0.029923	0.628771	
+201: 0.546354	0.851954	1.659368	3.407099	3.526151	-2.739149	0.253238	0.232271	0.032252	0.638203	
+202: 0.545858	0.866348	1.640148	3.514422	3.521169	-2.764030	0.246549	0.235575	0.032096	0.645660	
+203: 0.560804	0.874362	1.627250	3.591877	3.517701	-2.749485	0.251733	0.241015	0.030780	0.645684	
+204: 0.568391	0.887682	1.615843	3.737462	3.516950	-2.766983	0.264826	0.245867	0.030150	0.648661	
+205: 0.568839	0.894820	1.613173	3.715309	3.514920	-2.760764	0.267152	0.247958	0.030664	0.650755	
+206: 0.570517	0.897784	1.608035	3.635676	3.515517	-2.732836	0.268580	0.247132	0.031193	0.653142	
+207: 0.566220	0.899074	1.606390	3.632059	3.513983	-2.727770	0.273667	0.241543	0.031259	0.654066	
+208: 0.564259	0.902523	1.605274	3.654035	3.509810	-2.737777	0.271613	0.240344	0.031540	0.654480	
+209: 0.564311	0.899310	1.602494	3.620173	3.507774	-2.744222	0.267995	0.240635	0.032258	0.654806	
+210: 0.567333	0.888740	1.614826	3.580367	3.509093	-2.743109	0.264538	0.239368	0.032579	0.654637	
+211: 0.569496	0.885980	1.616920	3.574303	3.511855	-2.731912	0.259954	0.242319	0.033401	0.653441	
+212: 0.570732	0.886078	1.614342	3.556606	3.514088	-2.722070	0.255904	0.244997	0.033361	0.653864	
+213: 0.573638	0.888295	1.606008	3.581087	3.515046	-2.716902	0.251786	0.246548	0.033825	0.654394	
+214: 0.575527	0.888522	1.606247	3.593667	3.513803	-2.722903	0.248801	0.248580	0.033683	0.653927	
+215: 0.574183	0.889107	1.607413	3.617629	3.512641	-2.729941	0.245166	0.248500	0.033775	0.655488	
+216: 0.575667	0.887179	1.610753	3.611637	3.512317	-2.730627	0.245624	0.248262	0.034187	0.657638	
+217: 0.573827	0.885039	1.615312	3.577748	3.511839	-2.725363	0.244056	0.248640	0.034029	0.657069	
+218: 0.574255	0.882498	1.619305	3.569556	3.511188	-2.721007	0.242901	0.248425	0.033796	0.656252	
+219: 0.573152	0.881842	1.620172	3.565558	3.509866	-2.721112	0.242608	0.246597	0.034089	0.655870	
+220: 0.570489	0.880944	1.621610	3.566915	3.508674	-2.725009	0.243757	0.245140	0.034312	0.655664	
+221: 0.569168	0.876818	1.625204	3.567185	3.508254	-2.726023	0.244663	0.244028	0.034468	0.655534	
+222: 0.569135	0.873002	1.629862	3.564732	3.507724	-2.729243	0.243974	0.242527	0.034533	0.655356	
+223: 0.568789	0.870444	1.631242	3.555537	3.507094	-2.735441	0.242509	0.240770	0.034449	0.655006	
+224: 0.569194	0.872333	1.627284	3.554893	3.506866	-2.739095	0.240563	0.240506	0.034362	0.654690	
+225: 0.568283	0.871872	1.625775	3.559253	3.507203	-2.734324	0.238292	0.239242	0.034350	0.655088	
+226: 0.567080	0.870136	1.628303	3.563130	3.506304	-2.733000	0.236900	0.239042	0.034035	0.655918	
+227: 0.564497	0.869808	1.627416	3.546652	3.506456	-2.730780	0.235447	0.239584	0.033795	0.656855	
+228: 0.562435	0.868418	1.630553	3.531816	3.504653	-2.732814	0.235256	0.241460	0.033770	0.656874	
+229: 0.560378	0.868388	1.630242	3.529094	3.503671	-2.736054	0.234940	0.242221	0.033918	0.656640	
+230: 0.558698	0.870008	1.628336	3.528855	3.503095	-2.732055	0.234118	0.242426	0.033983	0.656605	
+231: 0.558101	0.872780	1.627953	3.541576	3.503485	-2.726499	0.234018	0.243660	0.034235	0.656158	
+232: 0.555877	0.872737	1.628153	3.548291	3.504896	-2.718005	0.232540	0.243063	0.034709	0.656705	
+233: 0.555291	0.872185	1.627557	3.556469	3.505605	-2.713937	0.231490	0.241590	0.035131	0.657211	
+234: 0.555550	0.870857	1.628554	3.554204	3.506675	-2.710768	0.229778	0.240721	0.035373	0.656630	
+235: 0.556612	0.871401	1.626276	3.562161	3.507749	-2.705243	0.228183	0.239229	0.035502	0.656740	
+236: 0.557144	0.871686	1.625154	3.561082	3.508425	-2.700946	0.228799	0.238849	0.035607	0.656965	
+237: 0.558209	0.873439	1.622003	3.561391	3.509728	-2.692128	0.228371	0.238145	0.035696	0.657236	
+238: 0.558859	0.874516	1.621197	3.559473	3.510416	-2.685753	0.227892	0.238575	0.035931	0.657454	
+239: 0.559124	0.875645	1.620428	3.550043	3.510645	-2.682329	0.227364	0.239902	0.036100	0.657423	
+240: 0.560045	0.874453	1.621181	3.541523	3.510515	-2.683294	0.228663	0.240336	0.036254	0.656999	
+241: 0.560884	0.874614	1.619186	3.532731	3.511588	-2.674761	0.228046	0.240865	0.036271	0.656712	
+242: 0.560278	0.873392	1.619818	3.523976	3.512355	-2.665312	0.227633	0.240255	0.036279	0.657073	
+243: 0.559547	0.872295	1.622336	3.528688	3.513005	-2.657687	0.227502	0.240168	0.036393	0.657668	
+244: 0.559472	0.871135	1.623302	3.529856	3.514997	-2.644092	0.227912	0.239917	0.036540	0.658377	
+245: 0.560020	0.869891	1.622664	3.515241	3.516725	-2.631678	0.228158	0.239661	0.036518	0.658527	
+246: 0.559565	0.870011	1.620416	3.505270	3.518094	-2.622224	0.227845	0.239988	0.036623	0.658212	
+247: 0.559119	0.869643	1.620139	3.493176	3.519831	-2.612647	0.228170	0.239703	0.036772	0.658077	
+248: 0.559466	0.869459	1.619168	3.480610	3.521378	-2.601561	0.227399	0.239182	0.036919	0.657954	
+249: 0.559545	0.869996	1.617911	3.471494	3.522569	-2.592533	0.226605	0.238866	0.037079	0.657784	
+250: 0.560174	0.870225	1.617763	3.455864	3.524182	-2.581760	0.226055	0.239572	0.037258	0.657936	
+251: 0.561049	0.869953	1.619579	3.442815	3.525866	-2.571461	0.225493	0.239678	0.037275	0.658037	
+252: 0.561516	0.870364	1.619385	3.437029	3.527089	-2.564079	0.224196	0.239830	0.037289	0.658280	
+253: 0.560875	0.870871	1.618403	3.424819	3.528483	-2.553497	0.223706	0.239486	0.037294	0.658149	
+254: 0.560458	0.871392	1.617730	3.413363	3.528793	-2.551115	0.222920	0.239025	0.037389	0.658204	
+255: 0.559862	0.871901	1.616734	3.405305	3.528857	-2.549078	0.222870	0.238405	0.037456	0.658410	
+256: 0.560129	0.871703	1.616293	3.397501	3.529391	-2.544831	0.222658	0.237936	0.037493	0.658031	
+257: 0.560072	0.871408	1.615783	3.396559	3.529825	-2.539573	0.222640	0.238872	0.037459	0.657908	
+258: 0.559785	0.871580	1.615500	3.398113	3.530192	-2.535656	0.221824	0.239468	0.037411	0.657888	
+259: 0.559917	0.871614	1.615286	3.394671	3.530682	-2.531171	0.221056	0.239939	0.037376	0.657847	
+260: 0.559783	0.871875	1.615181	3.394216	3.531114	-2.528354	0.220455	0.240338	0.037287	0.657554	
+261: 0.559645	0.871598	1.615042	3.388517	3.531394	-2.525473	0.219405	0.240808	0.037197	0.657631	
+262: 0.559956	0.870861	1.615853	3.383151	3.531941	-2.523386	0.218570	0.241369	0.037147	0.657832	
+263: 0.559710	0.870493	1.617197	3.385931	3.532352	-2.520207	0.217825	0.241232	0.037104	0.657830	
+264: 0.560227	0.869191	1.617588	3.385972	3.532605	-2.521571	0.218156	0.240425	0.037057	0.658148	
+265: 0.561316	0.868532	1.616806	3.378678	3.533098	-2.519201	0.218637	0.240053	0.037117	0.658043	
+266: 0.562806	0.868789	1.615394	3.374241	3.533582	-2.519474	0.219202	0.239529	0.037207	0.658021	
+267: 0.562764	0.869171	1.614495	3.370489	3.533703	-2.520965	0.219561	0.239404	0.037203	0.658259	
+268: 0.562899	0.869140	1.614195	3.371224	3.533492	-2.521957	0.219867	0.239288	0.037136	0.658425	
+269: 0.563434	0.869696	1.614195	3.373746	3.532980	-2.525268	0.220393	0.239501	0.037132	0.658657	
+270: 0.563874	0.870713	1.613878	3.374895	3.532443	-2.527760	0.220534	0.239213	0.037053	0.658434	
+271: 0.563950	0.870953	1.613643	3.369736	3.532290	-2.527032	0.220929	0.238982	0.036925	0.658403	
+272: 0.563899	0.871639	1.612942	3.371152	3.531997	-2.526997	0.221404	0.239139	0.036916	0.658273	
+273: 0.563364	0.871975	1.612389	3.367332	3.531340	-2.530987	0.221648	0.239858	0.036864	0.658114	
+274: 0.562506	0.872251	1.612578	3.371475	3.530724	-2.534008	0.221963	0.240020	0.036815	0.657983	
+275: 0.562081	0.872254	1.613599	3.372024	3.530327	-2.536094	0.221752	0.241232	0.036805	0.657807	
+276: 0.561446	0.871933	1.614154	3.369183	3.530382	-2.535727	0.221685	0.241480	0.036727	0.657666	
+277: 0.561245	0.871446	1.614699	3.364820	3.530654	-2.533685	0.221643	0.241238	0.036618	0.657615	
+278: 0.561096	0.871302	1.615151	3.362817	3.530516	-2.533743	0.221377	0.241220	0.036489	0.657615	
+279: 0.560812	0.870871	1.615234	3.359042	3.530685	-2.531602	0.221184	0.241131	0.036405	0.657651	
+280: 0.560656	0.871503	1.614324	3.357081	3.530750	-2.531437	0.220587	0.241152	0.036333	0.657613	
+281: 0.560610	0.871731	1.614426	3.357173	3.530563	-2.534212	0.220097	0.241531	0.036305	0.657731	
+282: 0.561040	0.871278	1.614882	3.353936	3.531210	-2.531956	0.219454	0.242017	0.036298	0.657867	
+283: 0.561615	0.871339	1.616150	3.359294	3.531860	-2.528940	0.218994	0.242666	0.036278	0.658089	
+284: 0.561979	0.871206	1.616617	3.363779	3.532258	-2.528270	0.219067	0.242722	0.036249	0.658104	
+285: 0.562589	0.871340	1.616189	3.364344	3.532671	-2.525618	0.218739	0.242719	0.036204	0.658232	
+286: 0.562895	0.870751	1.616949	3.357855	3.533302	-2.521646	0.218328	0.244075	0.036160	0.658076	
+287: 0.563265	0.871117	1.616117	3.354592	3.533588	-2.519368	0.218230	0.244687	0.036056	0.658098	
+288: 0.564022	0.871061	1.615762	3.350355	3.534115	-2.516110	0.218104	0.245351	0.036051	0.658192	
+289: 0.565320	0.870230	1.616167	3.349489	3.534734	-2.513506	0.218221	0.245974	0.036039	0.658200	
+290: 0.565753	0.869540	1.617448	3.353801	3.535460	-2.509638	0.217836	0.246484	0.036068	0.658374	
+291: 0.566362	0.869586	1.617781	3.354860	3.536063	-2.507017	0.217130	0.246953	0.036054	0.658397	
+292: 0.566750	0.869493	1.617740	3.354373	3.536592	-2.503205	0.216902	0.247819	0.036052	0.658359	
+293: 0.566907	0.869149	1.617935	3.353359	3.536988	-2.499659	0.216960	0.248028	0.035974	0.658277	
+294: 0.566775	0.868939	1.617926	3.352696	3.537173	-2.497627	0.216664	0.248621	0.035917	0.658230	
+295: 0.566911	0.868321	1.618117	3.353246	3.537454	-2.494643	0.216345	0.249173	0.035870	0.658143	
+296: 0.567130	0.867824	1.618549	3.352035	3.537857	-2.491213	0.216233	0.249349	0.035869	0.658343	
+297: 0.567361	0.868455	1.617909	3.354899	3.538288	-2.488907	0.216147	0.249841	0.035841	0.658367	
+298: 0.567857	0.868724	1.617211	3.356367	3.538688	-2.485809	0.216576	0.250157	0.035809	0.658289	
+299: 0.568111	0.868893	1.616854	3.354788	3.539016	-2.483129	0.216588	0.250149	0.035770	0.658270	
+300: 0.568746	0.868358	1.616945	3.351124	3.539686	-2.479147	0.216299	0.250306	0.035783	0.658242	
+301: 0.568982	0.867718	1.617297	3.345767	3.539779	-2.478070	0.216029	0.250211	0.035718	0.658183	
+302: 0.569202	0.867264	1.617637	3.341929	3.539975	-2.476121	0.216002	0.250180	0.035668	0.658100	
+303: 0.569050	0.867121	1.617588	3.338986	3.540145	-2.474912	0.215646	0.249718	0.035668	0.658000	
+304: 0.569325	0.867230	1.617712	3.339187	3.540339	-2.473826	0.215609	0.249124	0.035633	0.658043	
+305: 0.569485	0.867267	1.617444	3.341865	3.540649	-2.472015	0.215577	0.248816	0.035639	0.658074	
+306: 0.569509	0.866974	1.617763	3.343460	3.540651	-2.472133	0.215863	0.248533	0.035667	0.658041	
+307: 0.569731	0.866817	1.617651	3.340756	3.540639	-2.471801	0.216144	0.248226	0.035676	0.658155	
+308: 0.569600	0.866969	1.617151	3.339938	3.540555	-2.472250	0.216096	0.248420	0.035660	0.658400	
+309: 0.569627	0.866068	1.617779	3.338535	3.540613	-2.472189	0.215872	0.248185	0.035646	0.658608	
+310: 0.570007	0.865487	1.618712	3.337404	3.540491	-2.471622	0.215632	0.248180	0.035585	0.658567	
+311: 0.569783	0.865520	1.618360	3.333413	3.540612	-2.470391	0.215704	0.248204	0.035571	0.658379	
+312: 0.569590	0.865703	1.617745	3.330568	3.540617	-2.468805	0.215283	0.248383	0.035654	0.658202	
+313: 0.569349	0.865555	1.617572	3.329301	3.540719	-2.466769	0.214922	0.248599	0.035636	0.658329	
+314: 0.568707	0.865594	1.617510	3.326601	3.540670	-2.465014	0.214754	0.248745	0.035658	0.658241	
+315: 0.567998	0.865505	1.617729	3.324068	3.540823	-2.462419	0.214619	0.248472	0.035662	0.658299	
+316: 0.567741	0.865080	1.618702	3.324181	3.540661	-2.462381	0.214651	0.248363	0.035657	0.658258	
+317: 0.567513	0.865382	1.618809	3.327454	3.540554	-2.462864	0.214976	0.248172	0.035627	0.658204	
+318: 0.567536	0.865357	1.618975	3.327367	3.540339	-2.463985	0.214992	0.247998	0.035648	0.658046	
+319: 0.567242	0.865345	1.619025	3.328116	3.540435	-2.463180	0.214803	0.247985	0.035644	0.658037	
+320: 0.566791	0.864819	1.619707	3.328081	3.540193	-2.464158	0.214911	0.248206	0.035606	0.658039	
+321: 0.566176	0.865295	1.619648	3.332730	3.540052	-2.463702	0.214774	0.248359	0.035561	0.658189	
+322: 0.565756	0.864478	1.620796	3.333497	3.539640	-2.465282	0.214636	0.248339	0.035524	0.658219	
+323: 0.565052	0.863903	1.621440	3.332567	3.539525	-2.465255	0.214645	0.248348	0.035518	0.658197	
+324: 0.564930	0.864208	1.620735	3.331669	3.539394	-2.466273	0.214348	0.248424	0.035510	0.658083	
+325: 0.564651	0.864690	1.620106	3.332023	3.539077	-2.468283	0.214141	0.248314	0.035490	0.658008	
+326: 0.564678	0.864586	1.619832	3.333412	3.538840	-2.469816	0.214210	0.248239	0.035437	0.658019	
+327: 0.564797	0.864550	1.620134	3.330575	3.538983	-2.469377	0.214062	0.248080	0.035457	0.658180	
+328: 0.564858	0.864907	1.620034	3.331292	3.539089	-2.468192	0.213951	0.248061	0.035446	0.658066	
+329: 0.565119	0.864854	1.619999	3.330406	3.539406	-2.466635	0.214103	0.248082	0.035440	0.657970	
+330: 0.564983	0.864789	1.619847	3.330421	3.539714	-2.464779	0.214087	0.247825	0.035446	0.657953	
+331: 0.565121	0.864700	1.620034	3.328100	3.539977	-2.463684	0.214213	0.247646	0.035447	0.657900	
+332: 0.565301	0.864690	1.620013	3.331324	3.540514	-2.461098	0.214174	0.247036	0.035441	0.658012	
+333: 0.565338	0.864966	1.619616	3.331098	3.540595	-2.459556	0.214203	0.246996	0.035410	0.658042	
+334: 0.564855	0.865134	1.619406	3.331366	3.540290	-2.460348	0.214276	0.246650	0.035409	0.657976	
+335: 0.564755	0.865330	1.618990	3.328251	3.540197	-2.460188	0.214008	0.246524	0.035361	0.658015	
+336: 0.564492	0.865919	1.618413	3.324352	3.540168	-2.459513	0.214103	0.246510	0.035353	0.658070	
+337: 0.564231	0.866185	1.618299	3.320725	3.540060	-2.459652	0.213899	0.246700	0.035295	0.658068	
+338: 0.563846	0.866018	1.618695	3.317797	3.540035	-2.458891	0.213883	0.246787	0.035224	0.657941	
+339: 0.563536	0.865804	1.619061	3.314707	3.539992	-2.457384	0.213873	0.246901	0.035153	0.657954	
+340: 0.563299	0.865283	1.619493	3.312131	3.540111	-2.456222	0.213642	0.247167	0.035101	0.657918	
+341: 0.563319	0.865419	1.619492	3.314217	3.540263	-2.455434	0.213614	0.247270	0.035054	0.657913	
+342: 0.563147	0.865206	1.619518	3.312487	3.540394	-2.453840	0.213571	0.247071	0.035012	0.657865	
+343: 0.562860	0.864996	1.619664	3.311428	3.540538	-2.452964	0.213538	0.247331	0.035004	0.657733	
+344: 0.563144	0.864972	1.619936	3.311409	3.540895	-2.449442	0.213658	0.247228	0.034993	0.657883	
+345: 0.563333	0.864742	1.620656	3.312645	3.541290	-2.446278	0.213625	0.247193	0.034992	0.657841	
+346: 0.563492	0.864607	1.620899	3.312390	3.541549	-2.444572	0.213395	0.247209	0.034960	0.657836	
+347: 0.563755	0.863900	1.621607	3.312899	3.541678	-2.444114	0.213023	0.247551	0.034961	0.657895	
+348: 0.563483	0.863639	1.621898	3.310934	3.541574	-2.444128	0.212998	0.247817	0.034955	0.657890	
+349: 0.563353	0.863524	1.621939	3.312414	3.541504	-2.444700	0.213059	0.248064	0.034959	0.657855	
+350: 0.563231	0.863768	1.621823	3.316023	3.541402	-2.445413	0.212936	0.247919	0.034967	0.657842	
+351: 0.563032	0.864093	1.621425	3.315721	3.541289	-2.444694	0.212973	0.247994	0.034958	0.657876	
+352: 0.562669	0.864032	1.621624	3.314115	3.541272	-2.443759	0.213080	0.247963	0.034948	0.657999	
+353: 0.562542	0.864142	1.621786	3.313562	3.541246	-2.442769	0.212894	0.248012	0.034975	0.658029	
+354: 0.562605	0.864300	1.621834	3.315875	3.540954	-2.444242	0.212729	0.247922	0.034988	0.658043	
+355: 0.562661	0.864297	1.622008	3.319284	3.540680	-2.445580	0.212497	0.247808	0.034971	0.658149	
+356: 0.562509	0.864010	1.622701	3.321676	3.540635	-2.446277	0.212530	0.247880	0.034993	0.658240	
+357: 0.562638	0.863920	1.623053	3.321054	3.540508	-2.447556	0.212902	0.247708	0.035025	0.658251	
+358: 0.562541	0.863816	1.623268	3.319329	3.540508	-2.447532	0.212991	0.247546	0.035057	0.658200	
+359: 0.562170	0.863745	1.623318	3.316624	3.540635	-2.445657	0.212942	0.247578	0.035083	0.658108	
+360: 0.561742	0.863556	1.623647	3.314947	3.540573	-2.444007	0.213011	0.247656	0.035104	0.658004	
+361: 0.561452	0.863708	1.623508	3.315350	3.540493	-2.443144	0.213022	0.247604	0.035087	0.657909	
+362: 0.561229	0.863817	1.623266	3.315466	3.540302	-2.444226	0.213111	0.247512	0.035096	0.657779	
+363: 0.561279	0.863967	1.623062	3.315916	3.540372	-2.443316	0.213079	0.247271	0.035112	0.657678	
+364: 0.561372	0.863869	1.623243	3.314529	3.540320	-2.443815	0.213042	0.247192	0.035135	0.657719	
+365: 0.561268	0.863713	1.623211	3.317100	3.540531	-2.443318	0.212847	0.247031	0.035221	0.657792	
+366: 0.561450	0.863890	1.622673	3.317974	3.540609	-2.442919	0.213035	0.247153	0.035259	0.657830	
+367: 0.561402	0.864160	1.622001	3.314968	3.540593	-2.443105	0.212902	0.247179	0.035259	0.657842	
+368: 0.561392	0.864257	1.621868	3.316156	3.540599	-2.443427	0.212744	0.247194	0.035268	0.657830	
+369: 0.561116	0.864324	1.621702	3.315900	3.540528	-2.443046	0.212546	0.247341	0.035263	0.657807	
+370: 0.560945	0.864383	1.621687	3.315674	3.540544	-2.443167	0.212373	0.247396	0.035324	0.657811	
+371: 0.560589	0.864430	1.621507	3.313168	3.540147	-2.444790	0.212176	0.247382	0.035328	0.657855	
+372: 0.560359	0.864451	1.621573	3.311398	3.539936	-2.445909	0.212035	0.247333	0.035322	0.657961	
+373: 0.560008	0.864392	1.621666	3.309713	3.539783	-2.446773	0.211938	0.247274	0.035305	0.658115	
+374: 0.559867	0.864581	1.621595	3.309420	3.539516	-2.448374	0.211704	0.247239	0.035313	0.658057	
+375: 0.559795	0.864831	1.621107	3.309519	3.539384	-2.449397	0.211613	0.247247	0.035287	0.658042	
+376: 0.559678	0.864998	1.621022	3.308983	3.539363	-2.449529	0.211447	0.247253	0.035254	0.658001	
+377: 0.559710	0.864812	1.621566	3.308216	3.539466	-2.449035	0.211414	0.247356	0.035209	0.657999	
+378: 0.559445	0.864465	1.622130	3.306490	3.539492	-2.447887	0.211407	0.247514	0.035165	0.658043	
+379: 0.559272	0.864292	1.622168	3.305479	3.539654	-2.446731	0.211300	0.247589	0.035151	0.657990	
+380: 0.559019	0.864288	1.622438	3.307262	3.539665	-2.446789	0.211055	0.247938	0.035133	0.657877	
+381: 0.558984	0.864019	1.622449	3.306481	3.539973	-2.444712	0.210903	0.247998	0.035135	0.657776	
+382: 0.559121	0.863784	1.622851	3.305496	3.540259	-2.442931	0.210670	0.248173	0.035148	0.657694	
+383: 0.559572	0.863286	1.623407	3.304569	3.540515	-2.441955	0.210536	0.248381	0.035168	0.657618	
+384: 0.559628	0.863276	1.623385	3.306215	3.540696	-2.441673	0.210417	0.248451	0.035170	0.657579	
+385: 0.559769	0.863493	1.623263	3.308087	3.540823	-2.441495	0.210365	0.248900	0.035206	0.657632	
+386: 0.560022	0.864057	1.622797	3.309651	3.540922	-2.440977	0.210268	0.249351	0.035202	0.657547	
+387: 0.560414	0.863987	1.623056	3.310358	3.541080	-2.441121	0.210136	0.249562	0.035231	0.657486	
+388: 0.560856	0.864093	1.623001	3.310043	3.541239	-2.440460	0.210209	0.249615	0.035215	0.657531	
+389: 0.560970	0.863849	1.623258	3.311321	3.541340	-2.439655	0.210175	0.249642	0.035206	0.657633	
+390: 0.560924	0.863870	1.623095	3.310341	3.541400	-2.438937	0.210369	0.249796	0.035197	0.657681	
+391: 0.561001	0.864188	1.622592	3.310146	3.541402	-2.438410	0.210316	0.249897	0.035212	0.657663	
+392: 0.561111	0.863833	1.622879	3.309251	3.541593	-2.436847	0.210156	0.249799	0.035210	0.657781	
+393: 0.560887	0.863646	1.623024	3.309199	3.541503	-2.437034	0.210042	0.249527	0.035184	0.657850	
+394: 0.560575	0.863764	1.622984	3.309012	3.541234	-2.438312	0.210152	0.249412	0.035214	0.657877	
+395: 0.560790	0.863746	1.623484	3.310930	3.541109	-2.439335	0.210206	0.249483	0.035196	0.657873	
+396: 0.561135	0.863656	1.623722	3.312028	3.541231	-2.438981	0.210149	0.249481	0.035170	0.657922	
+397: 0.561421	0.863886	1.623588	3.314290	3.541346	-2.438911	0.210116	0.249456	0.035179	0.657915	
+398: 0.561642	0.863996	1.623476	3.314642	3.541526	-2.438183	0.210033	0.249366	0.035178	0.657923	
+399: 0.561892	0.864052	1.623554	3.314470	3.541688	-2.437546	0.209942	0.249476	0.035179	0.657835	
+400: 0.562236	0.864248	1.623429	3.313099	3.541856	-2.437290	0.209922	0.249491	0.035217	0.657846	
+401: 0.562509	0.864346	1.623355	3.313327	3.542114	-2.436206	0.209808	0.249507	0.035275	0.657925	
+402: 0.562668	0.864430	1.623468	3.314406	3.542370	-2.435396	0.209565	0.249451	0.035321	0.657988	
+403: 0.563054	0.864452	1.623332	3.312493	3.542531	-2.434754	0.209685	0.249453	0.035321	0.657963	
+404: 0.563239	0.864605	1.623185	3.312903	3.542602	-2.434316	0.209721	0.249501	0.035287	0.657957	
+405: 0.563432	0.864860	1.623157	3.315211	3.542652	-2.434779	0.209627	0.249364	0.035281	0.657904	
+406: 0.563557	0.864923	1.623324	3.316616	3.542673	-2.434866	0.209661	0.249465	0.035297	0.657926	
+407: 0.563759	0.864736	1.623704	3.317906	3.542785	-2.434832	0.209640	0.249397	0.035283	0.657922	
+408: 0.564006	0.864739	1.623529	3.315216	3.542990	-2.433703	0.209743	0.249343	0.035257	0.657930	
+409: 0.563918	0.865026	1.623012	3.315298	3.542887	-2.434018	0.209789	0.249363	0.035201	0.657915	
+410: 0.563905	0.865021	1.623263	3.317319	3.542942	-2.433362	0.209666	0.249533	0.035169	0.657949	
+411: 0.564008	0.864673	1.623460	3.317460	3.543011	-2.432339	0.209661	0.249681	0.035135	0.657979	
+412: 0.564127	0.864561	1.623766	3.316199	3.543055	-2.431881	0.209819	0.249649	0.035114	0.657917	
+413: 0.564148	0.864598	1.624030	3.316536	3.542917	-2.432396	0.210058	0.249668	0.035092	0.657915	
+414: 0.563993	0.864602	1.624278	3.318354	3.542844	-2.432573	0.210178	0.249591	0.035079	0.657873	
+415: 0.564019	0.864782	1.624089	3.319892	3.542688	-2.433464	0.210234	0.249589	0.035071	0.657824	
+416: 0.564095	0.864834	1.624330	3.319961	3.542697	-2.433213	0.210278	0.249506	0.035076	0.657785	
+417: 0.563920	0.864592	1.624850	3.319509	3.542715	-2.432567	0.210278	0.249465	0.035073	0.657838	
+418: 0.563635	0.864301	1.625537	3.319596	3.542778	-2.431691	0.210234	0.249636	0.035071	0.657873	
+419: 0.563516	0.864267	1.625730	3.319413	3.542821	-2.430753	0.210369	0.249726	0.035096	0.657915	
+420: 0.563664	0.863856	1.626283	3.318370	3.542921	-2.430326	0.210414	0.249695	0.035077	0.657860	
+421: 0.563546	0.863291	1.626933	3.317226	3.543049	-2.429839	0.210371	0.249715	0.035071	0.657897	
+422: 0.563841	0.862942	1.627335	3.317984	3.543126	-2.429466	0.210511	0.249751	0.035057	0.657996	
+423: 0.564001	0.862412	1.628087	3.319552	3.543290	-2.428423	0.210446	0.249919	0.035032	0.658095	
+424: 0.563943	0.862193	1.628199	3.318321	3.543428	-2.427178	0.210365	0.250124	0.035038	0.658091	
+425: 0.564243	0.862190	1.627979	3.317127	3.543570	-2.426468	0.210267	0.250293	0.035059	0.658186	
+426: 0.564417	0.862290	1.627836	3.315232	3.543793	-2.424465	0.210115	0.250257	0.035043	0.658193	
+427: 0.564296	0.862273	1.627761	3.313947	3.543978	-2.422443	0.209867	0.250083	0.035017	0.658221	
+428: 0.564061	0.862179	1.628126	3.313884	3.544070	-2.421316	0.209807	0.250000	0.034994	0.658304	
+429: 0.564072	0.862156	1.628273	3.313366	3.544112	-2.420819	0.209729	0.249873	0.034989	0.658337	
+430: 0.564018	0.862091	1.628619	3.314936	3.544112	-2.420692	0.209842	0.249874	0.035005	0.658349	
+431: 0.563870	0.862041	1.628549	3.314392	3.544147	-2.419780	0.209877	0.249835	0.034990	0.658300	
+432: 0.563745	0.862186	1.628656	3.313381	3.544253	-2.418605	0.209893	0.249860	0.035012	0.658238	
+433: 0.563743	0.862514	1.628435	3.314220	3.544419	-2.417715	0.209883	0.249845	0.035062	0.658202	
+434: 0.563630	0.862522	1.628404	3.315894	3.544465	-2.417854	0.209930	0.249804	0.035075	0.658247	
+435: 0.563746	0.862582	1.628282	3.316898	3.544506	-2.417837	0.209830	0.249778	0.035055	0.658189	
+436: 0.563799	0.862140	1.628454	3.315936	3.544692	-2.416989	0.209700	0.249774	0.035053	0.658265	
+437: 0.563499	0.861537	1.629079	3.315133	3.544805	-2.415687	0.209721	0.249744	0.035024	0.658405	
+438: 0.563456	0.861556	1.628946	3.312097	3.544849	-2.415029	0.209729	0.249677	0.035002	0.658507	
+439: 0.563541	0.861632	1.628958	3.310586	3.544774	-2.415044	0.209935	0.249613	0.035004	0.658592	
+440: 0.563436	0.861827	1.628938	3.310816	3.544753	-2.415425	0.209869	0.249757	0.035013	0.658547	
+441: 0.563347	0.861760	1.629129	3.311214	3.544673	-2.415943	0.209854	0.249835	0.035013	0.658460	
+442: 0.563109	0.861622	1.629415	3.309774	3.544655	-2.415691	0.209883	0.249853	0.034990	0.658478	
+443: 0.562934	0.861939	1.628991	3.309333	3.544599	-2.415638	0.209717	0.249705	0.035002	0.658531	
+444: 0.562734	0.862167	1.628721	3.308984	3.544464	-2.416052	0.209669	0.249662	0.034986	0.658581	
+445: 0.562565	0.862522	1.628053	3.307598	3.544384	-2.415877	0.209404	0.249803	0.034950	0.658692	
+446: 0.562347	0.862899	1.627645	3.306764	3.544352	-2.414818	0.209384	0.249941	0.034927	0.658697	
+447: 0.562235	0.863146	1.627215	3.304621	3.544400	-2.414131	0.209112	0.250003	0.034926	0.658727	
+448: 0.562092	0.863160	1.627083	3.302688	3.544465	-2.413451	0.209005	0.250087	0.034932	0.658689	
+449: 0.562113	0.863403	1.626702	3.301594	3.544652	-2.412625	0.208891	0.250058	0.034933	0.658719	
+450: 0.562129	0.863683	1.626072	3.300721	3.544730	-2.412523	0.208661	0.249971	0.034942	0.658700	
+451: 0.562240	0.863745	1.625838	3.300564	3.544779	-2.412152	0.208535	0.249844	0.034986	0.658780	
+452: 0.562120	0.863776	1.625788	3.299391	3.544759	-2.411794	0.208503	0.249963	0.035010	0.658738	
+453: 0.562075	0.863891	1.625519	3.298811	3.544696	-2.412126	0.208492	0.249995	0.035014	0.658618	
+454: 0.562054	0.864199	1.625301	3.298503	3.544673	-2.412285	0.208324	0.250021	0.035014	0.658601	
+455: 0.562225	0.864170	1.625241	3.297620	3.544670	-2.412128	0.208133	0.249881	0.034991	0.658605	
+456: 0.562336	0.864345	1.624896	3.298841	3.544771	-2.411744	0.208117	0.249724	0.035017	0.658595	
+457: 0.562418	0.864345	1.624644	3.299362	3.544871	-2.412098	0.208117	0.249687	0.035033	0.658648	
+458: 0.562538	0.864413	1.624460	3.299727	3.544968	-2.412480	0.208015	0.249677	0.035053	0.658594	
+459: 0.562412	0.864532	1.624363	3.298545	3.545055	-2.411720	0.207928	0.249675	0.035047	0.658629	
+460: 0.562304	0.864533	1.624328	3.298512	3.545074	-2.411467	0.207761	0.249621	0.035042	0.658619	
+461: 0.562143	0.864361	1.624247	3.297085	3.545166	-2.411191	0.207704	0.249476	0.035065	0.658682	
+462: 0.562217	0.864049	1.624343	3.295705	3.545363	-2.410527	0.207655	0.249391	0.035110	0.658753	
+463: 0.562443	0.864023	1.624200	3.294252	3.545600	-2.409241	0.207594	0.249496	0.035108	0.658795	
+464: 0.562673	0.864048	1.623897	3.292858	3.545703	-2.409029	0.207657	0.249470	0.035100	0.658755	
+465: 0.562580	0.863889	1.623622	3.292546	3.545798	-2.408598	0.207641	0.249291	0.035108	0.658797	
+466: 0.562565	0.863774	1.623696	3.292276	3.545744	-2.408802	0.207599	0.249114	0.035096	0.658815	
+467: 0.562637	0.863825	1.623490	3.292679	3.545785	-2.408992	0.207670	0.249196	0.035097	0.658756	
+468: 0.562722	0.863937	1.623402	3.293845	3.545705	-2.410183	0.207761	0.249233	0.035118	0.658850	
+469: 0.562815	0.864107	1.623223	3.293972	3.545641	-2.410963	0.207708	0.249311	0.035126	0.658859	
+470: 0.562898	0.864231	1.623123	3.295203	3.545564	-2.411759	0.207538	0.249376	0.035165	0.658840	
+471: 0.562788	0.864285	1.623054	3.296509	3.545465	-2.412838	0.207480	0.249404	0.035167	0.658885	
+472: 0.562838	0.864273	1.623045	3.298192	3.545450	-2.413497	0.207432	0.249384	0.035193	0.658905	
+473: 0.562741	0.864093	1.623364	3.299034	3.545404	-2.413838	0.207239	0.249351	0.035211	0.658902	
+474: 0.562745	0.864002	1.623551	3.300357	3.545311	-2.415078	0.207123	0.249200	0.035253	0.658904	
+475: 0.562873	0.864018	1.623547	3.299360	3.545189	-2.415947	0.206981	0.249096	0.035249	0.658869	
+476: 0.562904	0.864071	1.623329	3.299273	3.545147	-2.416640	0.206781	0.249036	0.035263	0.658880	
+477: 0.562882	0.864311	1.622891	3.298833	3.545098	-2.417207	0.206655	0.248899	0.035292	0.658819	
+478: 0.562808	0.864593	1.622325	3.298904	3.545031	-2.417669	0.206550	0.248820	0.035299	0.658809	
+479: 0.562944	0.864725	1.622118	3.298561	3.545055	-2.417609	0.206458	0.248951	0.035298	0.658797	
+480: 0.563080	0.864574	1.622223	3.296770	3.545219	-2.416433	0.206346	0.249059	0.035291	0.658809	
+481: 0.563107	0.864565	1.622096	3.295236	3.545232	-2.416581	0.206411	0.249120	0.035291	0.658797	
+482: 0.563224	0.864457	1.622292	3.295157	3.545192	-2.416620	0.206462	0.249015	0.035305	0.658850	
+483: 0.563158	0.864084	1.622580	3.293917	3.545075	-2.417580	0.206420	0.249058	0.035300	0.658845	
+484: 0.563133	0.864024	1.622626	3.295225	3.544909	-2.418603	0.206529	0.249103	0.035300	0.658841	
+485: 0.563220	0.864043	1.622722	3.296874	3.544686	-2.420159	0.206604	0.249196	0.035302	0.658852	
+486: 0.563268	0.864051	1.622705	3.296606	3.544610	-2.420269	0.206598	0.249392	0.035268	0.658830	
+487: 0.563532	0.863981	1.622709	3.295899	3.544647	-2.420402	0.206620	0.249435	0.035251	0.658812	
+488: 0.563688	0.863766	1.622849	3.296329	3.544730	-2.420128	0.206603	0.249433	0.035241	0.658818	
+489: 0.563906	0.863370	1.623198	3.297048	3.544765	-2.419787	0.206705	0.249455	0.035230	0.658861	
+490: 0.564145	0.863266	1.623075	3.295236	3.544859	-2.419741	0.206722	0.249405	0.035237	0.658868	
+491: 0.564269	0.863427	1.622987	3.295690	3.545020	-2.419121	0.206809	0.249440	0.035261	0.658824	
+492: 0.564395	0.863700	1.622746	3.296826	3.545132	-2.418935	0.206757	0.249453	0.035280	0.658882	
+493: 0.564523	0.863826	1.622531	3.297890	3.545258	-2.418839	0.206713	0.249429	0.035316	0.658928	
+494: 0.564798	0.863893	1.622426	3.297210	3.545280	-2.418946	0.206858	0.249575	0.035331	0.658915	
+495: 0.564912	0.863747	1.622466	3.297058	3.545358	-2.418964	0.206961	0.249547	0.035362	0.658838	
+496: 0.565128	0.863969	1.622156	3.297873	3.545381	-2.419192	0.206903	0.249351	0.035403	0.658852	
+497: 0.565157	0.864019	1.622113	3.298505	3.545443	-2.419330	0.206782	0.249263	0.035399	0.658880	
+498: 0.565249	0.864208	1.621847	3.298337	3.545444	-2.419420	0.206842	0.249160	0.035379	0.658833	
+499: 0.565246	0.864426	1.621695	3.298743	3.545425	-2.419507	0.206845	0.249146	0.035359	0.658767	
+500: 0.565384	0.864592	1.621463	3.299354	3.545476	-2.419095	0.206826	0.249197	0.035342	0.658733	
+Calculating covariance matrix
+[====|====|====|====|====|====|====|====|====|====] 0:00:02 
+
+> loading into symengine environment...
+> pruning branches (`if`/`else`) of saem model...
+v done
+> finding duplicate expressions in saem predOnly model 0...
+[====|====|====|====|====|====|====|====|====|====] 0:00:00 
+
+> finding duplicate expressions in saem predOnly model 1...
+[====|====|====|====|====|====|====|====|====|====] 0:00:00 
+
+> optimizing duplicate expressions in saem predOnly model 1...
+[====|====|====|====|====|====|====|====|====|====] 0:00:00 
+
+> finding duplicate expressions in saem predOnly model 2...
+[====|====|====|====|====|====|====|====|====|====] 0:00:00 
+
+v done
+> Calculating residuals/tables
+v done
+> compress origData in nlmixr2 object, save 7016
+> compress phiM in nlmixr2 object, save 60456
+> compress parHist in nlmixr2 object, save 12216
+> loading into symengine environment...
+> pruning branches (`if`/`else`) of saem model...
+v done
+> finding duplicate expressions in saem model...
+[====|====|====|====|====|====|====|====|====|====] 0:00:00 
+
+> optimizing duplicate expressions in saem model...
+[====|====|====|====|====|====|====|====|====|====] 0:00:00 
+
+v done
+params:	tka	tcl	sexf.cl	wt.cl	tv	wt.v2	V(eta.ka)	V(eta.cl)	V(eta.v)	add.sd
+001: 0.270557	0.770382	1.769741	2.871456	3.463009	-2.897344	0.605137	0.285000	0.095000	1.861424	
+002: 0.363018	0.835938	1.895064	3.890897	3.554222	-2.607936	0.574880	0.270750	0.090250	1.183162	
+003: 0.534476	0.619104	1.932307	3.567791	3.585066	-2.540158	0.546136	0.260651	0.085737	0.891734	
+004: 0.648182	0.800453	1.685576	3.394618	3.565994	-2.681491	0.518829	0.247618	0.081451	0.787942	
+005: 0.651113	0.859419	1.687884	3.690326	3.566386	-2.388251	0.492888	0.235237	0.077378	0.788656	
+006: 0.624507	0.835646	1.701050	3.467007	3.590286	-2.235962	0.468243	0.260764	0.073509	0.717002	
+007: 0.605144	0.828523	1.631292	2.996273	3.582809	-2.298658	0.444831	0.250349	0.069834	0.687339	
+008: 0.556006	0.861543	1.526673	2.825847	3.579718	-2.102609	0.422590	0.237831	0.066342	0.687827	
+009: 0.529167	0.854265	1.575457	3.160202	3.568287	-2.115971	0.401460	0.253083	0.063025	0.664509	
+010: 0.547322	0.875637	1.544566	3.117193	3.585662	-2.061289	0.381387	0.240429	0.059874	0.663593	
+011: 0.585747	0.932416	1.456793	3.079115	3.577239	-2.183865	0.362318	0.279065	0.056880	0.683401	
+012: 0.553056	0.901288	1.497299	3.104263	3.570197	-2.207615	0.344202	0.265112	0.054036	0.669911	
+013: 0.555389	0.884457	1.592529	3.324448	3.544511	-2.423912	0.326992	0.255713	0.051334	0.650344	
+014: 0.591640	0.825743	1.649181	3.525288	3.538752	-2.452970	0.310642	0.265662	0.048767	0.663579	
+015: 0.622204	0.811877	1.699183	3.592609	3.590555	-2.251330	0.295110	0.252379	0.046329	0.648742	
+016: 0.622815	0.846549	1.660649	3.384150	3.571255	-2.472086	0.280355	0.256083	0.044013	0.652643	
+017: 0.627384	0.875768	1.640538	3.492565	3.560177	-2.523489	0.266337	0.287245	0.041812	0.639168	
+018: 0.622271	0.921257	1.569142	3.276549	3.541462	-2.360976	0.263854	0.272882	0.039721	0.643724	
+019: 0.514665	0.901663	1.577976	3.034388	3.546881	-2.378674	0.250661	0.259238	0.037735	0.660092	
+020: 0.556914	0.902877	1.526291	2.951081	3.551106	-2.429809	0.241687	0.248195	0.035849	0.659193	
+021: 0.547510	0.824737	1.652200	2.844710	3.573698	-2.264610	0.229603	0.250869	0.041114	0.669636	
+022: 0.526249	0.857331	1.639785	3.040340	3.563231	-2.368264	0.218122	0.243098	0.039059	0.693896	
+023: 0.644378	0.817461	1.669393	3.644318	3.579429	-2.300029	0.207216	0.261318	0.037106	0.695203	
+024: 0.632048	0.844595	1.625655	2.779999	3.601797	-2.061328	0.218811	0.260791	0.036839	0.684557	
+025: 0.632573	0.798865	1.665643	2.964391	3.596381	-2.172640	0.207870	0.308559	0.034997	0.659461	
+026: 0.611790	0.813297	1.698463	2.819839	3.585753	-2.099014	0.197477	0.293131	0.033247	0.664752	
+027: 0.558323	0.884919	1.635695	2.847587	3.575362	-2.114457	0.227550	0.278475	0.031585	0.670975	
+028: 0.594949	0.844661	1.642068	2.837606	3.585961	-2.083286	0.216172	0.264551	0.030005	0.647047	
+029: 0.595990	0.940080	1.532337	3.344896	3.576451	-1.966348	0.205364	0.299780	0.028505	0.689968	
+030: 0.621775	0.850315	1.626591	3.138158	3.578987	-2.013928	0.199498	0.284791	0.027080	0.676045	
+031: 0.585383	0.873127	1.576171	3.085004	3.596092	-1.949139	0.205313	0.270552	0.025726	0.663269	
+032: 0.586947	0.822712	1.604162	3.034787	3.617496	-1.974487	0.195047	0.257024	0.025827	0.656908	
+033: 0.559017	0.947261	1.520553	3.457990	3.597061	-1.939158	0.211274	0.244173	0.030347	0.671749	
+034: 0.592024	0.892732	1.590686	2.977445	3.606075	-2.059992	0.214837	0.231964	0.029374	0.674334	
+035: 0.513318	0.892855	1.547411	2.973435	3.609107	-1.841768	0.204095	0.220366	0.027905	0.677863	
+036: 0.561075	0.899482	1.619079	3.358611	3.589971	-1.928540	0.206004	0.263075	0.026510	0.661899	
+037: 0.548495	0.911134	1.602402	3.363681	3.599202	-1.993634	0.195704	0.284597	0.032081	0.656374	
+038: 0.587485	0.933027	1.565054	3.473901	3.597544	-2.052746	0.186960	0.295004	0.032054	0.673957	
+039: 0.614136	0.878115	1.602954	3.528990	3.599560	-2.271990	0.199256	0.280254	0.035018	0.652914	
+040: 0.550713	0.913483	1.603568	3.568211	3.588800	-2.287882	0.209580	0.266241	0.043420	0.668043	
+041: 0.519154	0.883917	1.564088	3.377324	3.595446	-2.174843	0.199701	0.252929	0.041249	0.675914	
+042: 0.602497	0.881212	1.548164	3.039775	3.595338	-2.148469	0.208024	0.244394	0.039187	0.660772	
+043: 0.554093	0.852745	1.575360	2.866058	3.575042	-2.164051	0.242155	0.242511	0.037228	0.662598	
+044: 0.511401	0.859329	1.643666	2.983426	3.560147	-2.165928	0.230047	0.245596	0.035366	0.657530	
+045: 0.524371	0.952774	1.504009	2.934882	3.543815	-2.197092	0.244022	0.298736	0.033598	0.651607	
+046: 0.570865	0.903848	1.576739	2.897984	3.574673	-2.068284	0.231821	0.298766	0.031918	0.655174	
+047: 0.602050	0.914296	1.580683	3.451435	3.569405	-2.079242	0.229044	0.283828	0.030322	0.655385	
+048: 0.588974	0.921250	1.572752	3.300888	3.564367	-2.056886	0.217592	0.322488	0.028806	0.657015	
+049: 0.573563	0.901635	1.606416	3.182675	3.561966	-2.238151	0.228933	0.306363	0.027429	0.650720	
+050: 0.604714	0.859198	1.546252	3.115826	3.568942	-2.271133	0.217486	0.291045	0.030787	0.666660	
+051: 0.565945	0.822406	1.720795	3.385175	3.549606	-2.419460	0.215753	0.277181	0.031552	0.661418	
+052: 0.570330	0.871144	1.657776	3.374292	3.580574	-2.209071	0.204966	0.263322	0.029975	0.647437	
+053: 0.604718	0.782464	1.746758	3.379192	3.566702	-2.267059	0.194717	0.250156	0.028476	0.669971	
+054: 0.523158	0.732705	1.803066	3.114613	3.579843	-2.225610	0.212117	0.241364	0.028103	0.678677	
+055: 0.529224	0.834290	1.655514	3.064424	3.579542	-2.150369	0.201511	0.229296	0.030609	0.673982	
+056: 0.556032	0.801810	1.662611	3.346459	3.609254	-2.038067	0.191435	0.259035	0.034542	0.693551	
+057: 0.560190	0.879520	1.518312	3.074769	3.620805	-2.103107	0.181864	0.270405	0.040634	0.688574	
+058: 0.624057	0.798435	1.652346	3.161700	3.613561	-1.973246	0.218398	0.256884	0.038602	0.682575	
+059: 0.631201	0.750159	1.731977	3.379291	3.617245	-2.011389	0.208148	0.268936	0.036672	0.677302	
+060: 0.598900	0.749289	1.799381	3.724996	3.591242	-2.251427	0.197741	0.297875	0.034839	0.669448	
+061: 0.598303	0.761385	1.733964	3.578176	3.549376	-2.605068	0.192343	0.282982	0.033097	0.687917	
+062: 0.597355	0.785407	1.766852	3.583651	3.554128	-2.620546	0.204222	0.363696	0.033335	0.684873	
+063: 0.651162	0.703606	1.798332	3.611477	3.521163	-2.804183	0.283539	0.345511	0.031668	0.675387	
+064: 0.621924	0.772681	1.765739	3.861580	3.534916	-2.765681	0.285167	0.328236	0.030085	0.682801	
+065: 0.607697	0.724387	1.814878	3.520431	3.523469	-2.629285	0.270908	0.312119	0.028580	0.655776	
+066: 0.626902	0.802310	1.704883	3.091647	3.529743	-2.606056	0.257363	0.296513	0.029230	0.659760	
+067: 0.591872	0.844505	1.627015	3.333905	3.516407	-2.600601	0.244495	0.281687	0.032449	0.647307	
+068: 0.517791	0.891611	1.575694	3.345714	3.540359	-2.440889	0.232270	0.337303	0.033118	0.665994	
+069: 0.588698	0.859265	1.658537	3.678568	3.556853	-2.317306	0.227070	0.320437	0.037072	0.672839	
+070: 0.592626	0.805845	1.689805	3.106488	3.603229	-2.045276	0.226086	0.304416	0.039585	0.661933	
+071: 0.600497	0.825592	1.641519	2.749241	3.555416	-2.398694	0.214781	0.301280	0.039473	0.652505	
+072: 0.552206	0.811155	1.625203	3.017764	3.554249	-2.496522	0.204042	0.286216	0.040200	0.658610	
+073: 0.622210	0.856008	1.655099	3.536153	3.579035	-2.518608	0.193840	0.271905	0.049820	0.654094	
+074: 0.575214	0.821836	1.660533	3.474791	3.585066	-2.242031	0.184148	0.258310	0.047329	0.644223	
+075: 0.620395	0.856275	1.576769	3.408434	3.595812	-2.331760	0.216492	0.245395	0.044963	0.655557	
+076: 0.644644	0.871897	1.603292	3.480262	3.609113	-2.195084	0.205667	0.244831	0.042714	0.661362	
+077: 0.694130	0.816796	1.631640	3.388434	3.652272	-2.029603	0.208044	0.232590	0.042275	0.654801	
+078: 0.694745	0.887064	1.563428	3.392846	3.637119	-2.163388	0.225377	0.243331	0.045297	0.642406	
+079: 0.697407	0.866208	1.639601	4.013936	3.652384	-2.210260	0.223404	0.285001	0.043032	0.676890	
+080: 0.666351	0.834767	1.603022	3.496662	3.617721	-2.247543	0.212234	0.277799	0.040881	0.696471	
+081: 0.641975	0.768953	1.659397	3.550091	3.629507	-2.202403	0.201622	0.263909	0.040311	0.687020	
+082: 0.670359	0.817315	1.645827	3.914138	3.622713	-2.325193	0.191541	0.264470	0.040794	0.687129	
+083: 0.675351	0.826006	1.576569	3.772326	3.648242	-2.196908	0.204770	0.251247	0.042011	0.696944	
+084: 0.640641	0.820158	1.598634	3.624300	3.604420	-2.387189	0.194531	0.238684	0.060007	0.678542	
+085: 0.660557	0.776641	1.679710	3.404582	3.671286	-1.987555	0.184805	0.226750	0.057007	0.693154	
+086: 0.682056	0.782718	1.692966	3.746067	3.637055	-2.159666	0.183369	0.246789	0.054157	0.667766	
+087: 0.665001	0.760292	1.679986	3.711032	3.645476	-2.164602	0.200235	0.234449	0.051449	0.674334	
+088: 0.579784	0.772308	1.749802	4.058634	3.618506	-2.195632	0.200640	0.239873	0.048876	0.680635	
+089: 0.600979	0.791715	1.710734	3.866172	3.576393	-2.346869	0.190608	0.253269	0.046432	0.663859	
+090: 0.568864	0.836299	1.615702	3.531790	3.554904	-2.448115	0.182156	0.240606	0.044111	0.662659	
+091: 0.552798	0.840583	1.620839	3.625613	3.545690	-2.344619	0.173049	0.228575	0.041905	0.681701	
+092: 0.507195	0.846976	1.629555	3.060833	3.557417	-2.068354	0.185646	0.231268	0.039810	0.694281	
+093: 0.480284	0.888035	1.510863	2.973739	3.562107	-1.978912	0.176364	0.219705	0.037820	0.701209	
+094: 0.489639	0.880880	1.662863	2.993011	3.543632	-2.148292	0.167546	0.247952	0.035929	0.670218	
+095: 0.525211	0.884191	1.623929	3.131154	3.579936	-1.938783	0.184481	0.255193	0.034132	0.669746	
+096: 0.511501	0.875431	1.645311	3.204881	3.547046	-2.163092	0.175257	0.244562	0.032426	0.674101	
+097: 0.543090	0.915894	1.585500	3.125950	3.550403	-2.211801	0.166494	0.232334	0.030804	0.667158	
+098: 0.462645	0.925091	1.581925	3.051748	3.539555	-2.336143	0.158169	0.266215	0.029981	0.673380	
+099: 0.460995	0.860861	1.631922	2.986840	3.511550	-2.360005	0.153605	0.300442	0.028482	0.654995	
+100: 0.481639	0.895525	1.576252	2.891775	3.526953	-2.289375	0.180449	0.285420	0.027058	0.647441	
+101: 0.463391	0.907420	1.562329	3.112277	3.506132	-2.319324	0.177929	0.271149	0.025705	0.651159	
+102: 0.461114	0.909088	1.567270	2.863118	3.496476	-2.319962	0.169033	0.257591	0.024420	0.672691	
+103: 0.502758	0.902920	1.586959	3.272845	3.510347	-2.429945	0.173916	0.244712	0.023199	0.666716	
+104: 0.517271	0.861390	1.696744	3.178395	3.527278	-2.405846	0.165220	0.257167	0.022039	0.665752	
+105: 0.517480	0.823536	1.681977	2.728096	3.524698	-2.456633	0.181640	0.252758	0.021462	0.678274	
+106: 0.520637	0.846299	1.620393	3.124880	3.520356	-2.346761	0.188649	0.240120	0.020389	0.661880	
+107: 0.557083	0.918786	1.541000	3.184409	3.521715	-2.367067	0.267994	0.248266	0.019369	0.673578	
+108: 0.531385	0.904124	1.531068	2.898013	3.520863	-2.253179	0.266935	0.241512	0.018401	0.676961	
+109: 0.488761	0.925546	1.506915	3.090462	3.569561	-2.037583	0.253588	0.267229	0.020390	0.671270	
+110: 0.525992	0.819936	1.676222	3.166471	3.542406	-2.048775	0.248043	0.287204	0.019370	0.660179	
+111: 0.509407	0.879489	1.601670	3.034404	3.527089	-2.206613	0.235641	0.274981	0.018402	0.655833	
+112: 0.463567	0.845458	1.595062	2.903968	3.518083	-2.119311	0.223859	0.282793	0.017482	0.674680	
+113: 0.475293	0.939305	1.585736	3.340452	3.535879	-2.108636	0.212666	0.268654	0.017060	0.653888	
+114: 0.490118	0.913278	1.605120	2.981687	3.529269	-2.195263	0.230362	0.330111	0.016207	0.657447	
+115: 0.546588	0.859095	1.614506	3.351507	3.538980	-2.263103	0.252404	0.313606	0.016925	0.674367	
+116: 0.576354	0.843240	1.693786	3.406051	3.552321	-2.159465	0.239784	0.297925	0.022719	0.675890	
+117: 0.531450	0.848016	1.675053	2.803269	3.577120	-2.053013	0.233946	0.283029	0.021583	0.683733	
+118: 0.558010	0.884323	1.596239	3.304090	3.597396	-1.891111	0.222249	0.289069	0.021261	0.684986	
+119: 0.545684	0.905764	1.570657	3.531227	3.587412	-1.994916	0.211136	0.330878	0.026118	0.683206	
+120: 0.514652	0.825368	1.667757	3.225623	3.564706	-2.171880	0.200580	0.339411	0.024812	0.654477	
+121: 0.557905	0.871493	1.633159	3.086539	3.572281	-2.131311	0.190551	0.376919	0.023572	0.673472	
+122: 0.607446	0.793458	1.649585	3.043463	3.568862	-2.333683	0.181023	0.358073	0.024770	0.673821	
+123: 0.616832	0.887709	1.577182	3.156548	3.543156	-2.426493	0.171972	0.340170	0.027851	0.665220	
+124: 0.594361	0.899355	1.562264	3.011576	3.524525	-2.518938	0.166183	0.323161	0.028341	0.649161	
+125: 0.601880	0.972218	1.472218	3.895578	3.519593	-2.643067	0.197457	0.307003	0.029903	0.648605	
+126: 0.541626	0.964635	1.517008	3.891878	3.465252	-2.907105	0.246881	0.291653	0.033225	0.649695	
+127: 0.532528	0.902089	1.573585	3.511826	3.461606	-2.898217	0.284441	0.277070	0.033573	0.644968	
+128: 0.562857	0.865253	1.599662	3.447703	3.485346	-3.034368	0.270219	0.313578	0.038386	0.659361	
+129: 0.611966	0.907998	1.660598	4.170870	3.488863	-2.987974	0.256708	0.310598	0.036467	0.647002	
+130: 0.623903	0.839801	1.717386	4.045470	3.504664	-2.925153	0.243873	0.295068	0.035297	0.643454	
+131: 0.597514	0.906332	1.585315	3.919925	3.503448	-2.923717	0.231679	0.363553	0.041815	0.653952	
+132: 0.569763	0.890983	1.552704	3.736732	3.514816	-2.705939	0.220095	0.345376	0.039724	0.667275	
+133: 0.567034	0.892108	1.579670	3.709895	3.497292	-2.835279	0.262146	0.328107	0.037738	0.659635	
+134: 0.573740	0.864807	1.654983	3.842398	3.478341	-2.978216	0.288599	0.311702	0.040651	0.674835	
+135: 0.543875	0.816749	1.770572	3.623292	3.491546	-2.843784	0.274169	0.296117	0.038619	0.670915	
+136: 0.539414	0.737478	1.834657	3.452832	3.505863	-2.650637	0.260461	0.281311	0.036688	0.661530	
+137: 0.577313	0.810369	1.680660	3.723225	3.511021	-2.734623	0.276717	0.267245	0.034853	0.672672	
+138: 0.618068	0.855662	1.594340	3.517956	3.505459	-2.800335	0.265174	0.253883	0.038897	0.655910	
+139: 0.606046	0.858846	1.644174	3.542479	3.537386	-2.722966	0.251916	0.262415	0.039709	0.654599	
+140: 0.611417	0.927363	1.567618	3.637328	3.549970	-2.545103	0.239320	0.249294	0.044064	0.670388	
+141: 0.552925	0.763590	1.749826	3.483623	3.549109	-2.500918	0.227354	0.236829	0.042557	0.644118	
+142: 0.585273	0.837107	1.634982	3.574911	3.565230	-2.447300	0.244630	0.276609	0.040429	0.635345	
+143: 0.564802	0.917573	1.606755	3.760489	3.543809	-2.504668	0.252933	0.279415	0.038408	0.659653	
+144: 0.640257	0.899353	1.582335	3.702200	3.569060	-2.377917	0.246154	0.265444	0.036487	0.637347	
+145: 0.601713	0.908458	1.539228	3.568859	3.560687	-2.230524	0.245913	0.252172	0.034663	0.642135	
+146: 0.546331	0.853104	1.658054	3.264817	3.549096	-2.397740	0.233618	0.275764	0.034696	0.644905	
+147: 0.544222	0.821724	1.675534	3.482352	3.558305	-2.331445	0.226232	0.261976	0.032962	0.643554	
+148: 0.555134	0.893732	1.584661	3.287611	3.579913	-2.253287	0.214921	0.248877	0.031314	0.659506	
+149: 0.549776	0.761238	1.689376	2.801106	3.565607	-2.158177	0.221596	0.236433	0.029748	0.676300	
+150: 0.555929	0.793606	1.709041	2.998840	3.538106	-2.223984	0.210516	0.224612	0.028260	0.678096	
+151: 0.482462	0.964390	1.575384	3.553740	3.510668	-2.484019	0.209895	0.231053	0.026847	0.688732	
+152: 0.509573	0.942202	1.575920	3.513477	3.511279	-2.618266	0.208093	0.264122	0.024863	0.662410	
+153: 0.539633	0.868796	1.608646	2.971469	3.541519	-2.396713	0.215654	0.280232	0.026475	0.672972	
+154: 0.585013	0.862996	1.607386	3.196788	3.582873	-2.216325	0.175966	0.253859	0.030492	0.654167	
+155: 0.549678	0.776311	1.709135	2.863514	3.555284	-2.326570	0.164373	0.212407	0.032765	0.656818	
+156: 0.523648	0.792941	1.740670	2.949207	3.537459	-2.377210	0.176762	0.282594	0.039442	0.662651	
+157: 0.516750	0.797258	1.738700	3.249489	3.566920	-2.252168	0.197826	0.250708	0.034757	0.666358	
+158: 0.593777	0.831670	1.688616	3.306366	3.553515	-2.426315	0.201714	0.239043	0.029982	0.664151	
+159: 0.534132	0.846752	1.635282	3.156177	3.554971	-2.408622	0.198181	0.228377	0.033406	0.645983	
+160: 0.635634	0.770583	1.734700	3.535942	3.588056	-2.323852	0.242662	0.246408	0.031157	0.652590	
+161: 0.620627	0.800135	1.727938	3.533218	3.554519	-2.582683	0.224011	0.231200	0.035033	0.658364	
+162: 0.563963	0.869116	1.632356	3.225745	3.524932	-2.568565	0.172495	0.220630	0.027662	0.663114	
+163: 0.558733	0.866706	1.718046	3.721763	3.521545	-2.454151	0.180057	0.210568	0.025364	0.670256	
+164: 0.535970	0.843628	1.720816	3.618848	3.502634	-2.558724	0.211397	0.240798	0.030178	0.653823	
+165: 0.583860	0.799875	1.693760	3.389477	3.530370	-2.557372	0.246757	0.223607	0.032053	0.655050	
+166: 0.602793	0.812085	1.721073	3.276316	3.542394	-2.554464	0.201480	0.246431	0.032113	0.663253	
+167: 0.633246	0.911403	1.587911	3.670467	3.526007	-2.778875	0.251573	0.201597	0.040970	0.682980	
+168: 0.650012	0.903136	1.580721	3.494683	3.512407	-2.881564	0.258842	0.250842	0.049912	0.655580	
+169: 0.572344	0.887363	1.611093	2.942759	3.479036	-2.842421	0.233905	0.261270	0.042223	0.674196	
+170: 0.535855	0.904772	1.626830	3.365440	3.507574	-2.637748	0.221140	0.207149	0.036789	0.649277	
+171: 0.507716	0.928107	1.535154	3.418024	3.512498	-2.709561	0.206533	0.206353	0.037255	0.652079	
+172: 0.530232	0.869163	1.634584	2.922724	3.514542	-2.653971	0.182051	0.236624	0.036350	0.647819	
+173: 0.517121	0.875937	1.587722	2.991375	3.471110	-2.864902	0.214302	0.276343	0.044714	0.636029	
+174: 0.516428	0.977094	1.465165	3.265100	3.506041	-2.651803	0.243669	0.247425	0.038573	0.632739	
+175: 0.557100	0.978291	1.466715	3.306839	3.500720	-2.634941	0.237631	0.248750	0.044824	0.637439	
+176: 0.547283	0.962743	1.535577	3.295223	3.548281	-2.346097	0.183302	0.224028	0.039033	0.644659	
+177: 0.549643	0.878801	1.589936	3.254250	3.580890	-2.278861	0.174048	0.259866	0.039107	0.638225	
+178: 0.591963	0.948372	1.493633	3.406520	3.548299	-2.529714	0.197428	0.287684	0.036500	0.632904	
+179: 0.597132	0.897299	1.559836	3.073762	3.569239	-2.357016	0.175662	0.267109	0.037685	0.649032	
+180: 0.570788	0.945776	1.509691	3.674376	3.552043	-2.565447	0.186052	0.275967	0.035296	0.645871	
+181: 0.595753	0.876728	1.528504	3.052843	3.526673	-2.533778	0.204015	0.296523	0.035769	0.640460	
+182: 0.559327	0.965066	1.459584	3.377081	3.521498	-2.512567	0.217178	0.301456	0.040023	0.664310	
+183: 0.556024	1.048062	1.390353	3.335754	3.528038	-2.455677	0.225498	0.258497	0.041038	0.646657	
+184: 0.557621	0.990663	1.530265	3.451532	3.530743	-2.358462	0.208290	0.236392	0.030487	0.661137	
+185: 0.527587	0.935878	1.623654	3.540375	3.529274	-2.489904	0.178852	0.242929	0.033196	0.649795	
+186: 0.528859	0.998201	1.479938	3.079131	3.545562	-2.300855	0.200612	0.254156	0.033190	0.642645	
+187: 0.537600	0.921807	1.553283	2.874156	3.538571	-2.449482	0.213926	0.215082	0.036643	0.649966	
+188: 0.489503	0.905251	1.517826	2.580282	3.529421	-2.375160	0.125684	0.241136	0.036629	0.670283	
+189: 0.516024	0.918908	1.516314	2.516182	3.545708	-2.378830	0.139596	0.267150	0.039271	0.683301	
+190: 0.502836	0.953339	1.514589	2.871895	3.541914	-2.492628	0.160894	0.267382	0.040488	0.676246	
+191: 0.488701	0.935840	1.579272	2.947517	3.510871	-2.514373	0.132787	0.271818	0.035541	0.668054	
+192: 0.510341	0.878064	1.552852	2.767087	3.553087	-2.368417	0.145867	0.186157	0.032320	0.653320	
+193: 0.525662	0.847672	1.642603	2.778975	3.536125	-2.472063	0.160045	0.196444	0.034102	0.651136	
+194: 0.511126	0.839553	1.619252	2.647581	3.529329	-2.225057	0.159107	0.249615	0.026799	0.660797	
+195: 0.495201	0.840116	1.631710	2.635282	3.532009	-2.148944	0.174945	0.269056	0.027014	0.650347	
+196: 0.505335	0.929898	1.531417	2.865141	3.541676	-2.222721	0.155013	0.320488	0.029527	0.659101	
+197: 0.496460	0.898604	1.545784	2.996477	3.542268	-2.482368	0.184332	0.224312	0.030624	0.679521	
+198: 0.584287	0.868267	1.598340	3.365366	3.521989	-2.666962	0.191987	0.242973	0.033981	0.650253	
+199: 0.555259	0.874824	1.557965	3.207775	3.544554	-2.444673	0.206140	0.262899	0.028426	0.619828	
+200: 0.547229	0.843287	1.659467	3.094874	3.535656	-2.558791	0.244226	0.248998	0.029923	0.628771	
+201: 0.546354	0.851954	1.659368	3.407099	3.526151	-2.739149	0.253238	0.232271	0.032252	0.638203	
+202: 0.545858	0.866348	1.640148	3.514422	3.521169	-2.764030	0.246549	0.235575	0.032096	0.645660	
+203: 0.560804	0.874362	1.627250	3.591877	3.517701	-2.749485	0.251733	0.241015	0.030780	0.645684	
+204: 0.568391	0.887682	1.615843	3.737462	3.516950	-2.766983	0.264826	0.245867	0.030150	0.648661	
+205: 0.568839	0.894820	1.613173	3.715309	3.514920	-2.760764	0.267152	0.247958	0.030664	0.650755	
+206: 0.570517	0.897784	1.608035	3.635676	3.515517	-2.732836	0.268580	0.247132	0.031193	0.653142	
+207: 0.566220	0.899074	1.606390	3.632059	3.513983	-2.727770	0.273667	0.241543	0.031259	0.654066	
+208: 0.564259	0.902523	1.605274	3.654035	3.509810	-2.737777	0.271613	0.240344	0.031540	0.654480	
+209: 0.564311	0.899310	1.602494	3.620173	3.507774	-2.744222	0.267995	0.240635	0.032258	0.654806	
+210: 0.567333	0.888740	1.614826	3.580367	3.509093	-2.743109	0.264538	0.239368	0.032579	0.654637	
+211: 0.569496	0.885980	1.616920	3.574303	3.511855	-2.731912	0.259954	0.242319	0.033401	0.653441	
+212: 0.570732	0.886078	1.614342	3.556606	3.514088	-2.722070	0.255904	0.244997	0.033361	0.653864	
+213: 0.573638	0.888295	1.606008	3.581087	3.515046	-2.716902	0.251786	0.246548	0.033825	0.654394	
+214: 0.575527	0.888522	1.606247	3.593667	3.513803	-2.722903	0.248801	0.248580	0.033683	0.653927	
+215: 0.574183	0.889107	1.607413	3.617629	3.512641	-2.729941	0.245166	0.248500	0.033775	0.655488	
+216: 0.575667	0.887179	1.610753	3.611637	3.512317	-2.730627	0.245624	0.248262	0.034187	0.657638	
+217: 0.573827	0.885039	1.615312	3.577748	3.511839	-2.725363	0.244056	0.248640	0.034029	0.657069	
+218: 0.574255	0.882498	1.619305	3.569556	3.511188	-2.721007	0.242901	0.248425	0.033796	0.656252	
+219: 0.573152	0.881842	1.620172	3.565558	3.509866	-2.721112	0.242608	0.246597	0.034089	0.655870	
+220: 0.570489	0.880944	1.621610	3.566915	3.508674	-2.725009	0.243757	0.245140	0.034312	0.655664	
+221: 0.569168	0.876818	1.625204	3.567185	3.508254	-2.726023	0.244663	0.244028	0.034468	0.655534	
+222: 0.569135	0.873002	1.629862	3.564732	3.507724	-2.729243	0.243974	0.242527	0.034533	0.655356	
+223: 0.568789	0.870444	1.631242	3.555537	3.507094	-2.735441	0.242509	0.240770	0.034449	0.655006	
+224: 0.569194	0.872333	1.627284	3.554893	3.506866	-2.739095	0.240563	0.240506	0.034362	0.654690	
+225: 0.568283	0.871872	1.625775	3.559253	3.507203	-2.734324	0.238292	0.239242	0.034350	0.655088	
+226: 0.567080	0.870136	1.628303	3.563130	3.506304	-2.733000	0.236900	0.239042	0.034035	0.655918	
+227: 0.564497	0.869808	1.627416	3.546652	3.506456	-2.730780	0.235447	0.239584	0.033795	0.656855	
+228: 0.562435	0.868418	1.630553	3.531816	3.504653	-2.732814	0.235256	0.241460	0.033770	0.656874	
+229: 0.560378	0.868388	1.630242	3.529094	3.503671	-2.736054	0.234940	0.242221	0.033918	0.656640	
+230: 0.558698	0.870008	1.628336	3.528855	3.503095	-2.732055	0.234118	0.242426	0.033983	0.656605	
+231: 0.558101	0.872780	1.627953	3.541576	3.503485	-2.726499	0.234018	0.243660	0.034235	0.656158	
+232: 0.555877	0.872737	1.628153	3.548291	3.504896	-2.718005	0.232540	0.243063	0.034709	0.656705	
+233: 0.555291	0.872185	1.627557	3.556469	3.505605	-2.713937	0.231490	0.241590	0.035131	0.657211	
+234: 0.555550	0.870857	1.628554	3.554204	3.506675	-2.710768	0.229778	0.240721	0.035373	0.656630	
+235: 0.556612	0.871401	1.626276	3.562161	3.507749	-2.705243	0.228183	0.239229	0.035502	0.656740	
+236: 0.557144	0.871686	1.625154	3.561082	3.508425	-2.700946	0.228799	0.238849	0.035607	0.656965	
+237: 0.558209	0.873439	1.622003	3.561391	3.509728	-2.692128	0.228371	0.238145	0.035696	0.657236	
+238: 0.558859	0.874516	1.621197	3.559473	3.510416	-2.685753	0.227892	0.238575	0.035931	0.657454	
+239: 0.559124	0.875645	1.620428	3.550043	3.510645	-2.682329	0.227364	0.239902	0.036100	0.657423	
+240: 0.560045	0.874453	1.621181	3.541523	3.510515	-2.683294	0.228663	0.240336	0.036254	0.656999	
+241: 0.560884	0.874614	1.619186	3.532731	3.511588	-2.674761	0.228046	0.240865	0.036271	0.656712	
+242: 0.560278	0.873392	1.619818	3.523976	3.512355	-2.665312	0.227633	0.240255	0.036279	0.657073	
+243: 0.559547	0.872295	1.622336	3.528688	3.513005	-2.657687	0.227502	0.240168	0.036393	0.657668	
+244: 0.559472	0.871135	1.623302	3.529856	3.514997	-2.644092	0.227912	0.239917	0.036540	0.658377	
+245: 0.560020	0.869891	1.622664	3.515241	3.516725	-2.631678	0.228158	0.239661	0.036518	0.658527	
+246: 0.559565	0.870011	1.620416	3.505270	3.518094	-2.622224	0.227845	0.239988	0.036623	0.658212	
+247: 0.559119	0.869643	1.620139	3.493176	3.519831	-2.612647	0.228170	0.239703	0.036772	0.658077	
+248: 0.559466	0.869459	1.619168	3.480610	3.521378	-2.601561	0.227399	0.239182	0.036919	0.657954	
+249: 0.559545	0.869996	1.617911	3.471494	3.522569	-2.592533	0.226605	0.238866	0.037079	0.657784	
+250: 0.560174	0.870225	1.617763	3.455864	3.524182	-2.581760	0.226055	0.239572	0.037258	0.657936	
+251: 0.561049	0.869953	1.619579	3.442815	3.525866	-2.571461	0.225493	0.239678	0.037275	0.658037	
+252: 0.561516	0.870364	1.619385	3.437029	3.527089	-2.564079	0.224196	0.239830	0.037289	0.658280	
+253: 0.560875	0.870871	1.618403	3.424819	3.528483	-2.553497	0.223706	0.239486	0.037294	0.658149	
+254: 0.560458	0.871392	1.617730	3.413363	3.528793	-2.551115	0.222920	0.239025	0.037389	0.658204	
+255: 0.559862	0.871901	1.616734	3.405305	3.528857	-2.549078	0.222870	0.238405	0.037456	0.658410	
+256: 0.560129	0.871703	1.616293	3.397501	3.529391	-2.544831	0.222658	0.237936	0.037493	0.658031	
+257: 0.560072	0.871408	1.615783	3.396559	3.529825	-2.539573	0.222640	0.238872	0.037459	0.657908	
+258: 0.559785	0.871580	1.615500	3.398113	3.530192	-2.535656	0.221824	0.239468	0.037411	0.657888	
+259: 0.559917	0.871614	1.615286	3.394671	3.530682	-2.531171	0.221056	0.239939	0.037376	0.657847	
+260: 0.559783	0.871875	1.615181	3.394216	3.531114	-2.528354	0.220455	0.240338	0.037287	0.657554	
+261: 0.559645	0.871598	1.615042	3.388517	3.531394	-2.525473	0.219405	0.240808	0.037197	0.657631	
+262: 0.559956	0.870861	1.615853	3.383151	3.531941	-2.523386	0.218570	0.241369	0.037147	0.657832	
+263: 0.559710	0.870493	1.617197	3.385931	3.532352	-2.520207	0.217825	0.241232	0.037104	0.657830	
+264: 0.560227	0.869191	1.617588	3.385972	3.532605	-2.521571	0.218156	0.240425	0.037057	0.658148	
+265: 0.561316	0.868532	1.616806	3.378678	3.533098	-2.519201	0.218637	0.240053	0.037117	0.658043	
+266: 0.562806	0.868789	1.615394	3.374241	3.533582	-2.519474	0.219202	0.239529	0.037207	0.658021	
+267: 0.562764	0.869171	1.614495	3.370489	3.533703	-2.520965	0.219561	0.239404	0.037203	0.658259	
+268: 0.562899	0.869140	1.614195	3.371224	3.533492	-2.521957	0.219867	0.239288	0.037136	0.658425	
+269: 0.563434	0.869696	1.614195	3.373746	3.532980	-2.525268	0.220393	0.239501	0.037132	0.658657	
+270: 0.563874	0.870713	1.613878	3.374895	3.532443	-2.527760	0.220534	0.239213	0.037053	0.658434	
+271: 0.563950	0.870953	1.613643	3.369736	3.532290	-2.527032	0.220929	0.238982	0.036925	0.658403	
+272: 0.563899	0.871639	1.612942	3.371152	3.531997	-2.526997	0.221404	0.239139	0.036916	0.658273	
+273: 0.563364	0.871975	1.612389	3.367332	3.531340	-2.530987	0.221648	0.239858	0.036864	0.658114	
+274: 0.562506	0.872251	1.612578	3.371475	3.530724	-2.534008	0.221963	0.240020	0.036815	0.657983	
+275: 0.562081	0.872254	1.613599	3.372024	3.530327	-2.536094	0.221752	0.241232	0.036805	0.657807	
+276: 0.561446	0.871933	1.614154	3.369183	3.530382	-2.535727	0.221685	0.241480	0.036727	0.657666	
+277: 0.561245	0.871446	1.614699	3.364820	3.530654	-2.533685	0.221643	0.241238	0.036618	0.657615	
+278: 0.561096	0.871302	1.615151	3.362817	3.530516	-2.533743	0.221377	0.241220	0.036489	0.657615	
+279: 0.560812	0.870871	1.615234	3.359042	3.530685	-2.531602	0.221184	0.241131	0.036405	0.657651	
+280: 0.560656	0.871503	1.614324	3.357081	3.530750	-2.531437	0.220587	0.241152	0.036333	0.657613	
+281: 0.560610	0.871731	1.614426	3.357173	3.530563	-2.534212	0.220097	0.241531	0.036305	0.657731	
+282: 0.561040	0.871278	1.614882	3.353936	3.531210	-2.531956	0.219454	0.242017	0.036298	0.657867	
+283: 0.561615	0.871339	1.616150	3.359294	3.531860	-2.528940	0.218994	0.242666	0.036278	0.658089	
+284: 0.561979	0.871206	1.616617	3.363779	3.532258	-2.528270	0.219067	0.242722	0.036249	0.658104	
+285: 0.562589	0.871340	1.616189	3.364344	3.532671	-2.525618	0.218739	0.242719	0.036204	0.658232	
+286: 0.562895	0.870751	1.616949	3.357855	3.533302	-2.521646	0.218328	0.244075	0.036160	0.658076	
+287: 0.563265	0.871117	1.616117	3.354592	3.533588	-2.519368	0.218230	0.244687	0.036056	0.658098	
+288: 0.564022	0.871061	1.615762	3.350355	3.534115	-2.516110	0.218104	0.245351	0.036051	0.658192	
+289: 0.565320	0.870230	1.616167	3.349489	3.534734	-2.513506	0.218221	0.245974	0.036039	0.658200	
+290: 0.565753	0.869540	1.617448	3.353801	3.535460	-2.509638	0.217836	0.246484	0.036068	0.658374	
+291: 0.566362	0.869586	1.617781	3.354860	3.536063	-2.507017	0.217130	0.246953	0.036054	0.658397	
+292: 0.566750	0.869493	1.617740	3.354373	3.536592	-2.503205	0.216902	0.247819	0.036052	0.658359	
+293: 0.566907	0.869149	1.617935	3.353359	3.536988	-2.499659	0.216960	0.248028	0.035974	0.658277	
+294: 0.566775	0.868939	1.617926	3.352696	3.537173	-2.497627	0.216664	0.248621	0.035917	0.658230	
+295: 0.566911	0.868321	1.618117	3.353246	3.537454	-2.494643	0.216345	0.249173	0.035870	0.658143	
+296: 0.567130	0.867824	1.618549	3.352035	3.537857	-2.491213	0.216233	0.249349	0.035869	0.658343	
+297: 0.567361	0.868455	1.617909	3.354899	3.538288	-2.488907	0.216147	0.249841	0.035841	0.658367	
+298: 0.567857	0.868724	1.617211	3.356367	3.538688	-2.485809	0.216576	0.250157	0.035809	0.658289	
+299: 0.568111	0.868893	1.616854	3.354788	3.539016	-2.483129	0.216588	0.250149	0.035770	0.658270	
+300: 0.568746	0.868358	1.616945	3.351124	3.539686	-2.479147	0.216299	0.250306	0.035783	0.658242	
+301: 0.568982	0.867718	1.617297	3.345767	3.539779	-2.478070	0.216029	0.250211	0.035718	0.658183	
+302: 0.569202	0.867264	1.617637	3.341929	3.539975	-2.476121	0.216002	0.250180	0.035668	0.658100	
+303: 0.569050	0.867121	1.617588	3.338986	3.540145	-2.474912	0.215646	0.249718	0.035668	0.658000	
+304: 0.569325	0.867230	1.617712	3.339187	3.540339	-2.473826	0.215609	0.249124	0.035633	0.658043	
+305: 0.569485	0.867267	1.617444	3.341865	3.540649	-2.472015	0.215577	0.248816	0.035639	0.658074	
+306: 0.569509	0.866974	1.617763	3.343460	3.540651	-2.472133	0.215863	0.248533	0.035667	0.658041	
+307: 0.569731	0.866817	1.617651	3.340756	3.540639	-2.471801	0.216144	0.248226	0.035676	0.658155	
+308: 0.569600	0.866969	1.617151	3.339938	3.540555	-2.472250	0.216096	0.248420	0.035660	0.658400	
+309: 0.569627	0.866068	1.617779	3.338535	3.540613	-2.472189	0.215872	0.248185	0.035646	0.658608	
+310: 0.570007	0.865487	1.618712	3.337404	3.540491	-2.471622	0.215632	0.248180	0.035585	0.658567	
+311: 0.569783	0.865520	1.618360	3.333413	3.540612	-2.470391	0.215704	0.248204	0.035571	0.658379	
+312: 0.569590	0.865703	1.617745	3.330568	3.540617	-2.468805	0.215283	0.248383	0.035654	0.658202	
+313: 0.569349	0.865555	1.617572	3.329301	3.540719	-2.466769	0.214922	0.248599	0.035636	0.658329	
+314: 0.568707	0.865594	1.617510	3.326601	3.540670	-2.465014	0.214754	0.248745	0.035658	0.658241	
+315: 0.567998	0.865505	1.617729	3.324068	3.540823	-2.462419	0.214619	0.248472	0.035662	0.658299	
+316: 0.567741	0.865080	1.618702	3.324181	3.540661	-2.462381	0.214651	0.248363	0.035657	0.658258	
+317: 0.567513	0.865382	1.618809	3.327454	3.540554	-2.462864	0.214976	0.248172	0.035627	0.658204	
+318: 0.567536	0.865357	1.618975	3.327367	3.540339	-2.463985	0.214992	0.247998	0.035648	0.658046	
+319: 0.567242	0.865345	1.619025	3.328116	3.540435	-2.463180	0.214803	0.247985	0.035644	0.658037	
+320: 0.566791	0.864819	1.619707	3.328081	3.540193	-2.464158	0.214911	0.248206	0.035606	0.658039	
+321: 0.566176	0.865295	1.619648	3.332730	3.540052	-2.463702	0.214774	0.248359	0.035561	0.658189	
+322: 0.565756	0.864478	1.620796	3.333497	3.539640	-2.465282	0.214636	0.248339	0.035524	0.658219	
+323: 0.565052	0.863903	1.621440	3.332567	3.539525	-2.465255	0.214645	0.248348	0.035518	0.658197	
+324: 0.564930	0.864208	1.620735	3.331669	3.539394	-2.466273	0.214348	0.248424	0.035510	0.658083	
+325: 0.564651	0.864690	1.620106	3.332023	3.539077	-2.468283	0.214141	0.248314	0.035490	0.658008	
+326: 0.564678	0.864586	1.619832	3.333412	3.538840	-2.469816	0.214210	0.248239	0.035437	0.658019	
+327: 0.564797	0.864550	1.620134	3.330575	3.538983	-2.469377	0.214062	0.248080	0.035457	0.658180	
+328: 0.564858	0.864907	1.620034	3.331292	3.539089	-2.468192	0.213951	0.248061	0.035446	0.658066	
+329: 0.565119	0.864854	1.619999	3.330406	3.539406	-2.466635	0.214103	0.248082	0.035440	0.657970	
+330: 0.564983	0.864789	1.619847	3.330421	3.539714	-2.464779	0.214087	0.247825	0.035446	0.657953	
+331: 0.565121	0.864700	1.620034	3.328100	3.539977	-2.463684	0.214213	0.247646	0.035447	0.657900	
+332: 0.565301	0.864690	1.620013	3.331324	3.540514	-2.461098	0.214174	0.247036	0.035441	0.658012	
+333: 0.565338	0.864966	1.619616	3.331098	3.540595	-2.459556	0.214203	0.246996	0.035410	0.658042	
+334: 0.564855	0.865134	1.619406	3.331366	3.540290	-2.460348	0.214276	0.246650	0.035409	0.657976	
+335: 0.564755	0.865330	1.618990	3.328251	3.540197	-2.460188	0.214008	0.246524	0.035361	0.658015	
+336: 0.564492	0.865919	1.618413	3.324352	3.540168	-2.459513	0.214103	0.246510	0.035353	0.658070	
+337: 0.564231	0.866185	1.618299	3.320725	3.540060	-2.459652	0.213899	0.246700	0.035295	0.658068	
+338: 0.563846	0.866018	1.618695	3.317797	3.540035	-2.458891	0.213883	0.246787	0.035224	0.657941	
+339: 0.563536	0.865804	1.619061	3.314707	3.539992	-2.457384	0.213873	0.246901	0.035153	0.657954	
+340: 0.563299	0.865283	1.619493	3.312131	3.540111	-2.456222	0.213642	0.247167	0.035101	0.657918	
+341: 0.563319	0.865419	1.619492	3.314217	3.540263	-2.455434	0.213614	0.247270	0.035054	0.657913	
+342: 0.563147	0.865206	1.619518	3.312487	3.540394	-2.453840	0.213571	0.247071	0.035012	0.657865	
+343: 0.562860	0.864996	1.619664	3.311428	3.540538	-2.452964	0.213538	0.247331	0.035004	0.657733	
+344: 0.563144	0.864972	1.619936	3.311409	3.540895	-2.449442	0.213658	0.247228	0.034993	0.657883	
+345: 0.563333	0.864742	1.620656	3.312645	3.541290	-2.446278	0.213625	0.247193	0.034992	0.657841	
+346: 0.563492	0.864607	1.620899	3.312390	3.541549	-2.444572	0.213395	0.247209	0.034960	0.657836	
+347: 0.563755	0.863900	1.621607	3.312899	3.541678	-2.444114	0.213023	0.247551	0.034961	0.657895	
+348: 0.563483	0.863639	1.621898	3.310934	3.541574	-2.444128	0.212998	0.247817	0.034955	0.657890	
+349: 0.563353	0.863524	1.621939	3.312414	3.541504	-2.444700	0.213059	0.248064	0.034959	0.657855	
+350: 0.563231	0.863768	1.621823	3.316023	3.541402	-2.445413	0.212936	0.247919	0.034967	0.657842	
+351: 0.563032	0.864093	1.621425	3.315721	3.541289	-2.444694	0.212973	0.247994	0.034958	0.657876	
+352: 0.562669	0.864032	1.621624	3.314115	3.541272	-2.443759	0.213080	0.247963	0.034948	0.657999	
+353: 0.562542	0.864142	1.621786	3.313562	3.541246	-2.442769	0.212894	0.248012	0.034975	0.658029	
+354: 0.562605	0.864300	1.621834	3.315875	3.540954	-2.444242	0.212729	0.247922	0.034988	0.658043	
+355: 0.562661	0.864297	1.622008	3.319284	3.540680	-2.445580	0.212497	0.247808	0.034971	0.658149	
+356: 0.562509	0.864010	1.622701	3.321676	3.540635	-2.446277	0.212530	0.247880	0.034993	0.658240	
+357: 0.562638	0.863920	1.623053	3.321054	3.540508	-2.447556	0.212902	0.247708	0.035025	0.658251	
+358: 0.562541	0.863816	1.623268	3.319329	3.540508	-2.447532	0.212991	0.247546	0.035057	0.658200	
+359: 0.562170	0.863745	1.623318	3.316624	3.540635	-2.445657	0.212942	0.247578	0.035083	0.658108	
+360: 0.561742	0.863556	1.623647	3.314947	3.540573	-2.444007	0.213011	0.247656	0.035104	0.658004	
+361: 0.561452	0.863708	1.623508	3.315350	3.540493	-2.443144	0.213022	0.247604	0.035087	0.657909	
+362: 0.561229	0.863817	1.623266	3.315466	3.540302	-2.444226	0.213111	0.247512	0.035096	0.657779	
+363: 0.561279	0.863967	1.623062	3.315916	3.540372	-2.443316	0.213079	0.247271	0.035112	0.657678	
+364: 0.561372	0.863869	1.623243	3.314529	3.540320	-2.443815	0.213042	0.247192	0.035135	0.657719	
+365: 0.561268	0.863713	1.623211	3.317100	3.540531	-2.443318	0.212847	0.247031	0.035221	0.657792	
+366: 0.561450	0.863890	1.622673	3.317974	3.540609	-2.442919	0.213035	0.247153	0.035259	0.657830	
+367: 0.561402	0.864160	1.622001	3.314968	3.540593	-2.443105	0.212902	0.247179	0.035259	0.657842	
+368: 0.561392	0.864257	1.621868	3.316156	3.540599	-2.443427	0.212744	0.247194	0.035268	0.657830	
+369: 0.561116	0.864324	1.621702	3.315900	3.540528	-2.443046	0.212546	0.247341	0.035263	0.657807	
+370: 0.560945	0.864383	1.621687	3.315674	3.540544	-2.443167	0.212373	0.247396	0.035324	0.657811	
+371: 0.560589	0.864430	1.621507	3.313168	3.540147	-2.444790	0.212176	0.247382	0.035328	0.657855	
+372: 0.560359	0.864451	1.621573	3.311398	3.539936	-2.445909	0.212035	0.247333	0.035322	0.657961	
+373: 0.560008	0.864392	1.621666	3.309713	3.539783	-2.446773	0.211938	0.247274	0.035305	0.658115	
+374: 0.559867	0.864581	1.621595	3.309420	3.539516	-2.448374	0.211704	0.247239	0.035313	0.658057	
+375: 0.559795	0.864831	1.621107	3.309519	3.539384	-2.449397	0.211613	0.247247	0.035287	0.658042	
+376: 0.559678	0.864998	1.621022	3.308983	3.539363	-2.449529	0.211447	0.247253	0.035254	0.658001	
+377: 0.559710	0.864812	1.621566	3.308216	3.539466	-2.449035	0.211414	0.247356	0.035209	0.657999	
+378: 0.559445	0.864465	1.622130	3.306490	3.539492	-2.447887	0.211407	0.247514	0.035165	0.658043	
+379: 0.559272	0.864292	1.622168	3.305479	3.539654	-2.446731	0.211300	0.247589	0.035151	0.657990	
+380: 0.559019	0.864288	1.622438	3.307262	3.539665	-2.446789	0.211055	0.247938	0.035133	0.657877	
+381: 0.558984	0.864019	1.622449	3.306481	3.539973	-2.444712	0.210903	0.247998	0.035135	0.657776	
+382: 0.559121	0.863784	1.622851	3.305496	3.540259	-2.442931	0.210670	0.248173	0.035148	0.657694	
+383: 0.559572	0.863286	1.623407	3.304569	3.540515	-2.441955	0.210536	0.248381	0.035168	0.657618	
+384: 0.559628	0.863276	1.623385	3.306215	3.540696	-2.441673	0.210417	0.248451	0.035170	0.657579	
+385: 0.559769	0.863493	1.623263	3.308087	3.540823	-2.441495	0.210365	0.248900	0.035206	0.657632	
+386: 0.560022	0.864057	1.622797	3.309651	3.540922	-2.440977	0.210268	0.249351	0.035202	0.657547	
+387: 0.560414	0.863987	1.623056	3.310358	3.541080	-2.441121	0.210136	0.249562	0.035231	0.657486	
+388: 0.560856	0.864093	1.623001	3.310043	3.541239	-2.440460	0.210209	0.249615	0.035215	0.657531	
+389: 0.560970	0.863849	1.623258	3.311321	3.541340	-2.439655	0.210175	0.249642	0.035206	0.657633	
+390: 0.560924	0.863870	1.623095	3.310341	3.541400	-2.438937	0.210369	0.249796	0.035197	0.657681	
+391: 0.561001	0.864188	1.622592	3.310146	3.541402	-2.438410	0.210316	0.249897	0.035212	0.657663	
+392: 0.561111	0.863833	1.622879	3.309251	3.541593	-2.436847	0.210156	0.249799	0.035210	0.657781	
+393: 0.560887	0.863646	1.623024	3.309199	3.541503	-2.437034	0.210042	0.249527	0.035184	0.657850	
+394: 0.560575	0.863764	1.622984	3.309012	3.541234	-2.438312	0.210152	0.249412	0.035214	0.657877	
+395: 0.560790	0.863746	1.623484	3.310930	3.541109	-2.439335	0.210206	0.249483	0.035196	0.657873	
+396: 0.561135	0.863656	1.623722	3.312028	3.541231	-2.438981	0.210149	0.249481	0.035170	0.657922	
+397: 0.561421	0.863886	1.623588	3.314290	3.541346	-2.438911	0.210116	0.249456	0.035179	0.657915	
+398: 0.561642	0.863996	1.623476	3.314642	3.541526	-2.438183	0.210033	0.249366	0.035178	0.657923	
+399: 0.561892	0.864052	1.623554	3.314470	3.541688	-2.437546	0.209942	0.249476	0.035179	0.657835	
+400: 0.562236	0.864248	1.623429	3.313099	3.541856	-2.437290	0.209922	0.249491	0.035217	0.657846	
+401: 0.562509	0.864346	1.623355	3.313327	3.542114	-2.436206	0.209808	0.249507	0.035275	0.657925	
+402: 0.562668	0.864430	1.623468	3.314406	3.542370	-2.435396	0.209565	0.249451	0.035321	0.657988	
+403: 0.563054	0.864452	1.623332	3.312493	3.542531	-2.434754	0.209685	0.249453	0.035321	0.657963	
+404: 0.563239	0.864605	1.623185	3.312903	3.542602	-2.434316	0.209721	0.249501	0.035287	0.657957	
+405: 0.563432	0.864860	1.623157	3.315211	3.542652	-2.434779	0.209627	0.249364	0.035281	0.657904	
+406: 0.563557	0.864923	1.623324	3.316616	3.542673	-2.434866	0.209661	0.249465	0.035297	0.657926	
+407: 0.563759	0.864736	1.623704	3.317906	3.542785	-2.434832	0.209640	0.249397	0.035283	0.657922	
+408: 0.564006	0.864739	1.623529	3.315216	3.542990	-2.433703	0.209743	0.249343	0.035257	0.657930	
+409: 0.563918	0.865026	1.623012	3.315298	3.542887	-2.434018	0.209789	0.249363	0.035201	0.657915	
+410: 0.563905	0.865021	1.623263	3.317319	3.542942	-2.433362	0.209666	0.249533	0.035169	0.657949	
+411: 0.564008	0.864673	1.623460	3.317460	3.543011	-2.432339	0.209661	0.249681	0.035135	0.657979	
+412: 0.564127	0.864561	1.623766	3.316199	3.543055	-2.431881	0.209819	0.249649	0.035114	0.657917	
+413: 0.564148	0.864598	1.624030	3.316536	3.542917	-2.432396	0.210058	0.249668	0.035092	0.657915	
+414: 0.563993	0.864602	1.624278	3.318354	3.542844	-2.432573	0.210178	0.249591	0.035079	0.657873	
+415: 0.564019	0.864782	1.624089	3.319892	3.542688	-2.433464	0.210234	0.249589	0.035071	0.657824	
+416: 0.564095	0.864834	1.624330	3.319961	3.542697	-2.433213	0.210278	0.249506	0.035076	0.657785	
+417: 0.563920	0.864592	1.624850	3.319509	3.542715	-2.432567	0.210278	0.249465	0.035073	0.657838	
+418: 0.563635	0.864301	1.625537	3.319596	3.542778	-2.431691	0.210234	0.249636	0.035071	0.657873	
+419: 0.563516	0.864267	1.625730	3.319413	3.542821	-2.430753	0.210369	0.249726	0.035096	0.657915	
+420: 0.563664	0.863856	1.626283	3.318370	3.542921	-2.430326	0.210414	0.249695	0.035077	0.657860	
+421: 0.563546	0.863291	1.626933	3.317226	3.543049	-2.429839	0.210371	0.249715	0.035071	0.657897	
+422: 0.563841	0.862942	1.627335	3.317984	3.543126	-2.429466	0.210511	0.249751	0.035057	0.657996	
+423: 0.564001	0.862412	1.628087	3.319552	3.543290	-2.428423	0.210446	0.249919	0.035032	0.658095	
+424: 0.563943	0.862193	1.628199	3.318321	3.543428	-2.427178	0.210365	0.250124	0.035038	0.658091	
+425: 0.564243	0.862190	1.627979	3.317127	3.543570	-2.426468	0.210267	0.250293	0.035059	0.658186	
+426: 0.564417	0.862290	1.627836	3.315232	3.543793	-2.424465	0.210115	0.250257	0.035043	0.658193	
+427: 0.564296	0.862273	1.627761	3.313947	3.543978	-2.422443	0.209867	0.250083	0.035017	0.658221	
+428: 0.564061	0.862179	1.628126	3.313884	3.544070	-2.421316	0.209807	0.250000	0.034994	0.658304	

@@ -1,0 +1,85 @@
+==78106== Memcheck, a memory error detector
+==78106== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==78106== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==78106== Command: /usr/lib/R/bin/exec/R -e devtools::install_local(force=TRUE)
+==78106== 
+
+R version 4.2.2 Patched (2022-11-10 r83330) -- "Innocent and Trusting"
+Copyright (C) 2022 The R Foundation for Statistical Computing
+Platform: x86_64-pc-linux-gnu (64-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+  Natural language support but running in an English locale
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+> devtools::install_local(force=TRUE)
+* checking for file ‘/tmp/Rtmpnm8P9b/file1311a1de466bf/nlmixr2data/DESCRIPTION’ ... OK
+* preparing ‘nlmixr2data’:
+* checking DESCRIPTION meta-information ... OK
+* checking for LF line-endings in source and make files and shell scripts
+* checking for empty or unneeded directories
+* building ‘nlmixr2data_2.0.7.tar.gz’
+
+Installing package into ‘/home/bill/R/x86_64-pc-linux-gnu-library/4.2’
+(as ‘lib’ is unspecified)
+* installing *source* package ‘nlmixr2data’ ...
+** using staged installation
+** R
+** data
+*** moving datasets to lazyload DB
+** inst
+** byte-compile and prepare package for lazy loading
+** help
+*** installing help indices
+** building package indices
+** testing if installed package can be loaded from temporary location
+** testing if installed package can be loaded from final location
+** testing if installed package keeps a record of temporary installation path
+* DONE (nlmixr2data)
+> 
+> 
+==78106== 
+==78106== HEAP SUMMARY:
+==78106==     in use at exit: 115,835,287 bytes in 25,207 blocks
+==78106==   total heap usage: 1,202,618 allocs, 1,177,411 frees, 920,917,875 bytes allocated
+==78106== 
+==78106== 352 bytes in 1 blocks are possibly lost in loss record 186 of 1,952
+==78106==    at 0x484DA83: calloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==78106==    by 0x40147D9: calloc (rtld-malloc.h:44)
+==78106==    by 0x40147D9: allocate_dtv (dl-tls.c:375)
+==78106==    by 0x40147D9: _dl_allocate_tls (dl-tls.c:634)
+==78106==    by 0x4DB3834: allocate_stack (allocatestack.c:430)
+==78106==    by 0x4DB3834: pthread_create@@GLIBC_2.34 (pthread_create.c:647)
+==78106==    by 0xD30368E: cli__start_thread (thread.c:54)
+==78106==    by 0xD3036D7: clic_start_thread (thread.c:78)
+==78106==    by 0x49538BD: ??? (in /usr/lib/R/lib/libR.so)
+==78106==    by 0x499577D: ??? (in /usr/lib/R/lib/libR.so)
+==78106==    by 0x49AB6EF: Rf_eval (in /usr/lib/R/lib/libR.so)
+==78106==    by 0x49AD27E: ??? (in /usr/lib/R/lib/libR.so)
+==78106==    by 0x49AE0C4: Rf_applyClosure (in /usr/lib/R/lib/libR.so)
+==78106==    by 0x499B8C9: ??? (in /usr/lib/R/lib/libR.so)
+==78106==    by 0x49AB6EF: Rf_eval (in /usr/lib/R/lib/libR.so)
+==78106== 
+==78106== LEAK SUMMARY:
+==78106==    definitely lost: 0 bytes in 0 blocks
+==78106==    indirectly lost: 0 bytes in 0 blocks
+==78106==      possibly lost: 352 bytes in 1 blocks
+==78106==    still reachable: 115,834,935 bytes in 25,206 blocks
+==78106==                       of which reachable via heuristic:
+==78106==                         newarray           : 4,264 bytes in 1 blocks
+==78106==         suppressed: 0 bytes in 0 blocks
+==78106== Reachable blocks (those to which a pointer was found) are not shown.
+==78106== To see them, rerun with: --leak-check=full --show-leak-kinds=all
+==78106== 
+==78106== For lists of detected and suppressed errors, rerun with: -s
+==78106== ERROR SUMMARY: 1 errors from 1 contexts (suppressed: 0 from 0)
