@@ -1,8 +1,8 @@
-==79486== Memcheck, a memory error detector
-==79486== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
-==79486== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
-==79486== Command: /usr/lib/R/bin/exec/R -e devtools::load_all();devtools::test()
-==79486== 
+==140298== Memcheck, a memory error detector
+==140298== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==140298== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==140298== Command: /usr/lib/R/bin/exec/R -e devtools::load_all();devtools::test()
+==140298== 
 
 R version 4.2.2 Patched (2022-11-10 r83330) -- "Innocent and Trusting"
 Copyright (C) 2022 The R Foundation for Statistical Computing
@@ -75,7 +75,7 @@ gcc -I"/usr/share/R/include" -DNDEBUG  -I'/home/bill/R/x86_64-pc-linux-gnu-libra
 gcc -I"/usr/share/R/include" -DNDEBUG  -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/BH/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/dparser/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/Rcpp/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/RcppEigen/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/StanHeaders/include'   -D_isrxode2parse_ -fpic  -g -O2 -ffile-prefix-map=/build/r-base-Faorqz/r-base-4.2.2.20221110=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c tran.c -o tran.o
 gcc -I"/usr/share/R/include" -DNDEBUG  -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/BH/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/dparser/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/Rcpp/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/RcppEigen/include' -I'/home/bill/R/x86_64-pc-linux-gnu-library/4.2/StanHeaders/include'   -D_isrxode2parse_ -fpic  -g -O2 -ffile-prefix-map=/build/r-base-Faorqz/r-base-4.2.2.20221110=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c utilc.c -o utilc.o
 g++ -std=gnu++14 -shared -L/usr/lib/R/lib -Wl,-Bsymbolic-functions -flto=auto -ffat-lto-objects -flto=auto -Wl,-z,relro -o rxode2parse.so RcppExports.o codegen.o genModelVars.o getOption.o init.o lincmt.o lincmtB.o parseLinCmt.o print_node.o qs.o sbuf.o strncmpi.o tran.o utilc.o -llapack -lblas -lgfortran -lm -lquadmath -fopenmp -L/usr/lib/R/lib -lR
-installing to /tmp/RtmpabZwp7/devtools_install_1367e6390ecbe/00LOCK-rxode2parse/00new/rxode2parse/libs
+installing to /tmp/RtmpGebvfQ/devtools_install_2240a76281de0/00LOCK-rxode2parse/00new/rxode2parse/libs
 ** checking absolute paths in shared objects and dynamic libraries
 * DONE (rxode2parse)
 ℹ Testing rxode2parse
@@ -4655,7 +4655,7 @@ installing to /tmp/RtmpabZwp7/devtools_install_1367e6390ecbe/00LOCK-rxode2parse/
 ⠋ |       4571 | lincmt-parse                                                   
 ⠙ |       4572 | lincmt-parse                                                   
 ⠹ |       4573 | lincmt-parse                                                   
-✔ |       4573 | lincmt-parse [910.6s]
+✔ |       4573 | lincmt-parse [908.6s]
 
 ⠏ |         0 | parsing                                                         
 ⠋ |         1 | parsing                                                         
@@ -4672,6 +4672,7 @@ installing to /tmp/RtmpabZwp7/devtools_install_1367e6390ecbe/00LOCK-rxode2parse/
 ⠇ |        19 | parsing                                                         
 ⠋ |        21 | parsing                                                         
 ⠙ |        22 | parsing                                                         
+⠹ |        23 | parsing                                                         
 ⠸ |        24 | parsing                                                         
 ⠼ |        25 | parsing                                                         
 ⠦ |        27 | parsing                                                         
@@ -4709,7 +4710,7 @@ installing to /tmp/RtmpabZwp7/devtools_install_1367e6390ecbe/00LOCK-rxode2parse/
 ⠧ |        68 | parsing                                                         
 ⠇ |        69 | parsing                                                         
 ⠏ |        70 | parsing                                                         
-⠙ |        72 | parsing                                                         
+⠋ |        71 | parsing                                                         
 ⠹ |        73 | parsing                                                         
 ⠸ |        74 | parsing                                                         
 ⠼ |        75 | parsing                                                         
@@ -4741,7 +4742,6 @@ installing to /tmp/RtmpabZwp7/devtools_install_1367e6390ecbe/00LOCK-rxode2parse/
 ⠧ |       108 | parsing                                                         
 ⠏ |       110 | parsing                                                         
 ⠋ |       111 | parsing                                                         
-⠙ |       112 | parsing                                                         
 ⠹ |       113 | parsing                                                         
 ⠸ |       114 | parsing                                                         
 ⠴ |       116 | parsing                                                         
@@ -4822,28 +4822,26 @@ FAILED at line 210 in function _rxode2_parse_strncmpci! strncmpci("hey", "HEY", 
 ✔ |         1 | strcmp [0.2s]
 
 ══ Results ═════════════════════════════════════════════════════════════════════
-Duration: 932.2 s
+Duration: 930.2 s
 
 [ FAIL 0 | WARN 0 | SKIP 0 | PASS 4720 ]
-
-🔥 Your tests are lit 🔥
 > 
 > 
-==79486== 
-==79486== HEAP SUMMARY:
-==79486==     in use at exit: 359,297,543 bytes in 69,931 blocks
-==79486==   total heap usage: 12,710,343 allocs, 12,640,412 frees, 27,704,007,754 bytes allocated
-==79486== 
-==79486== LEAK SUMMARY:
-==79486==    definitely lost: 0 bytes in 0 blocks
-==79486==    indirectly lost: 0 bytes in 0 blocks
-==79486==      possibly lost: 0 bytes in 0 blocks
-==79486==    still reachable: 359,297,543 bytes in 69,931 blocks
-==79486==                       of which reachable via heuristic:
-==79486==                         newarray           : 4,264 bytes in 1 blocks
-==79486==         suppressed: 0 bytes in 0 blocks
-==79486== Reachable blocks (those to which a pointer was found) are not shown.
-==79486== To see them, rerun with: --leak-check=full --show-leak-kinds=all
-==79486== 
-==79486== For lists of detected and suppressed errors, rerun with: -s
-==79486== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+==140298== 
+==140298== HEAP SUMMARY:
+==140298==     in use at exit: 359,076,275 bytes in 69,698 blocks
+==140298==   total heap usage: 12,709,926 allocs, 12,640,228 frees, 27,696,693,207 bytes allocated
+==140298== 
+==140298== LEAK SUMMARY:
+==140298==    definitely lost: 0 bytes in 0 blocks
+==140298==    indirectly lost: 0 bytes in 0 blocks
+==140298==      possibly lost: 0 bytes in 0 blocks
+==140298==    still reachable: 359,076,275 bytes in 69,698 blocks
+==140298==                       of which reachable via heuristic:
+==140298==                         newarray           : 4,264 bytes in 1 blocks
+==140298==         suppressed: 0 bytes in 0 blocks
+==140298== Reachable blocks (those to which a pointer was found) are not shown.
+==140298== To see them, rerun with: --leak-check=full --show-leak-kinds=all
+==140298== 
+==140298== For lists of detected and suppressed errors, rerun with: -s
+==140298== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)

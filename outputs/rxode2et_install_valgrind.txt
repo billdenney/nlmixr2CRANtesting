@@ -1,8 +1,8 @@
-==80571== Memcheck, a memory error detector
-==80571== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
-==80571== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
-==80571== Command: /usr/lib/R/bin/exec/R -e devtools::install_local(force=TRUE)
-==80571== 
+==141394== Memcheck, a memory error detector
+==141394== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==141394== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==141394== Command: /usr/lib/R/bin/exec/R -e devtools::install_local(force=TRUE)
+==141394== 
 
 R version 4.2.2 Patched (2022-11-10 r83330) -- "Innocent and Trusting"
 Copyright (C) 2022 The R Foundation for Statistical Computing
@@ -24,7 +24,7 @@ Type 'q()' to quit R.
 
 > devtools::install_local(force=TRUE)
 
-* checking for file ‘/tmp/RtmpAd08ex/file13abb7b73ad2/rxode2et/DESCRIPTION’ ... OK
+* checking for file ‘/tmp/RtmpsS3v3H/file2285221a4826a/rxode2et/DESCRIPTION’ ... OK
 * preparing ‘rxode2et’:
 * checking DESCRIPTION meta-information ... OK
 * cleaning src
@@ -123,7 +123,7 @@ Type 'q()' to quit R.
 > 
 > proc.time()
    user  system elapsed 
-  0.107   0.005   0.103 
+  0.097   0.013   0.101 
 --------[begin src/Makevars]--------
 # -*- mode: makefile-gmake -*-
 CXX_STD = CXX14
@@ -165,38 +165,38 @@ installing to /home/bill/R/x86_64-pc-linux-gnu-library/4.2/00LOCK-rxode2et/00new
 * DONE (rxode2et)
 > 
 > 
-==80571== 
-==80571== HEAP SUMMARY:
-==80571==     in use at exit: 124,348,599 bytes in 29,282 blocks
-==80571==   total heap usage: 1,294,317 allocs, 1,265,035 frees, 1,084,880,332 bytes allocated
-==80571== 
-==80571== 352 bytes in 1 blocks are possibly lost in loss record 173 of 1,820
-==80571==    at 0x484DA83: calloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
-==80571==    by 0x40147D9: calloc (rtld-malloc.h:44)
-==80571==    by 0x40147D9: allocate_dtv (dl-tls.c:375)
-==80571==    by 0x40147D9: _dl_allocate_tls (dl-tls.c:634)
-==80571==    by 0x4DB3834: allocate_stack (allocatestack.c:430)
-==80571==    by 0x4DB3834: pthread_create@@GLIBC_2.34 (pthread_create.c:647)
-==80571==    by 0xD30368E: cli__start_thread (thread.c:54)
-==80571==    by 0xD3036D7: clic_start_thread (thread.c:78)
-==80571==    by 0x49538BD: ??? (in /usr/lib/R/lib/libR.so)
-==80571==    by 0x499577D: ??? (in /usr/lib/R/lib/libR.so)
-==80571==    by 0x49AB6EF: Rf_eval (in /usr/lib/R/lib/libR.so)
-==80571==    by 0x49AD27E: ??? (in /usr/lib/R/lib/libR.so)
-==80571==    by 0x49AE0C4: Rf_applyClosure (in /usr/lib/R/lib/libR.so)
-==80571==    by 0x499B8C9: ??? (in /usr/lib/R/lib/libR.so)
-==80571==    by 0x49AB6EF: Rf_eval (in /usr/lib/R/lib/libR.so)
-==80571== 
-==80571== LEAK SUMMARY:
-==80571==    definitely lost: 0 bytes in 0 blocks
-==80571==    indirectly lost: 0 bytes in 0 blocks
-==80571==      possibly lost: 352 bytes in 1 blocks
-==80571==    still reachable: 124,348,247 bytes in 29,281 blocks
-==80571==                       of which reachable via heuristic:
-==80571==                         newarray           : 4,264 bytes in 1 blocks
-==80571==         suppressed: 0 bytes in 0 blocks
-==80571== Reachable blocks (those to which a pointer was found) are not shown.
-==80571== To see them, rerun with: --leak-check=full --show-leak-kinds=all
-==80571== 
-==80571== For lists of detected and suppressed errors, rerun with: -s
-==80571== ERROR SUMMARY: 1 errors from 1 contexts (suppressed: 0 from 0)
+==141394== 
+==141394== HEAP SUMMARY:
+==141394==     in use at exit: 124,513,774 bytes in 29,591 blocks
+==141394==   total heap usage: 1,298,188 allocs, 1,268,597 frees, 1,088,251,822 bytes allocated
+==141394== 
+==141394== 352 bytes in 1 blocks are possibly lost in loss record 185 of 1,872
+==141394==    at 0x484DA83: calloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==141394==    by 0x40147D9: calloc (rtld-malloc.h:44)
+==141394==    by 0x40147D9: allocate_dtv (dl-tls.c:375)
+==141394==    by 0x40147D9: _dl_allocate_tls (dl-tls.c:634)
+==141394==    by 0x4DB3834: allocate_stack (allocatestack.c:430)
+==141394==    by 0x4DB3834: pthread_create@@GLIBC_2.34 (pthread_create.c:647)
+==141394==    by 0xD30368E: cli__start_thread (thread.c:54)
+==141394==    by 0xD3036D7: clic_start_thread (thread.c:78)
+==141394==    by 0x49538BD: ??? (in /usr/lib/R/lib/libR.so)
+==141394==    by 0x499577D: ??? (in /usr/lib/R/lib/libR.so)
+==141394==    by 0x49AB6EF: Rf_eval (in /usr/lib/R/lib/libR.so)
+==141394==    by 0x49AD27E: ??? (in /usr/lib/R/lib/libR.so)
+==141394==    by 0x49AE0C4: Rf_applyClosure (in /usr/lib/R/lib/libR.so)
+==141394==    by 0x499B8C9: ??? (in /usr/lib/R/lib/libR.so)
+==141394==    by 0x49AB6EF: Rf_eval (in /usr/lib/R/lib/libR.so)
+==141394== 
+==141394== LEAK SUMMARY:
+==141394==    definitely lost: 0 bytes in 0 blocks
+==141394==    indirectly lost: 0 bytes in 0 blocks
+==141394==      possibly lost: 352 bytes in 1 blocks
+==141394==    still reachable: 124,513,422 bytes in 29,590 blocks
+==141394==                       of which reachable via heuristic:
+==141394==                         newarray           : 4,264 bytes in 1 blocks
+==141394==         suppressed: 0 bytes in 0 blocks
+==141394== Reachable blocks (those to which a pointer was found) are not shown.
+==141394== To see them, rerun with: --leak-check=full --show-leak-kinds=all
+==141394== 
+==141394== For lists of detected and suppressed errors, rerun with: -s
+==141394== ERROR SUMMARY: 1 errors from 1 contexts (suppressed: 0 from 0)

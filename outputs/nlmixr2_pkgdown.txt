@@ -1,0 +1,106 @@
+
+R version 4.2.2 Patched (2022-11-10 r83330) -- "Innocent and Trusting"
+Copyright (C) 2022 The R Foundation for Statistical Computing
+Platform: x86_64-pc-linux-gnu (64-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+  Natural language support but running in an English locale
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+> devtools::load_all();pkgdown::build_site()
+ℹ Loading nlmixr2
+Loading required package: nlmixr2data
+-- Installing package into temporary library -----------------------------------
+== Building pkgdown site =======================================================
+Reading from: '/home/bill/GitHub/nlmixr2CRANtesting/packages/nlmixr2'
+Writing to:   '/home/bill/GitHub/nlmixr2CRANtesting/packages/nlmixr2/docs'
+-- Initialising site -----------------------------------------------------------
+Copying '../../../../R/x86_64-pc-linux-gnu-library/4.2/pkgdown/BS5/assets/link.svg' to 'link.svg'
+Copying '../../../../R/x86_64-pc-linux-gnu-library/4.2/pkgdown/BS5/assets/pkgdown.js' to 'pkgdown.js'
+Copying 'pkgdown/favicon/apple-touch-icon-120x120.png' to 'apple-touch-icon-120x120.png'
+Copying 'pkgdown/favicon/apple-touch-icon-152x152.png' to 'apple-touch-icon-152x152.png'
+Copying 'pkgdown/favicon/apple-touch-icon-180x180.png' to 'apple-touch-icon-180x180.png'
+Copying 'pkgdown/favicon/apple-touch-icon-60x60.png' to 'apple-touch-icon-60x60.png'
+Copying 'pkgdown/favicon/apple-touch-icon-76x76.png' to 'apple-touch-icon-76x76.png'
+Copying 'pkgdown/favicon/apple-touch-icon.png' to 'apple-touch-icon.png'
+Copying 'pkgdown/favicon/favicon-16x16.png' to 'favicon-16x16.png'
+Copying 'pkgdown/favicon/favicon-32x32.png' to 'favicon-32x32.png'
+Copying 'pkgdown/favicon/favicon.ico' to 'favicon.ico'
+Copying 'logo.png' to 'logo.png'
+-- Building home ---------------------------------------------------------------
+Writing 'authors.html'
+Reading 'LICENSE.md'
+Writing 'LICENSE.html'
+Error: 
+! in callr subprocess.
+Caused by error in `readRDS(con)`:
+! embedded nul in string: 'c(\n    person("Matthew", "Fidler", , "matthew.fidler@gmail.com", role = c("aut", "cre"),\n           comment = c(ORCID = "0000-0001-8538-6691")),\n    person("Yuan", "Xiong", , "yuan.xiong@gmail.com", role = "aut"),\n    person("Rik", "Schoemaker", , "rik.schoemaker@occams.com", role = "aut",\n           comment = c(ORCID = "0000-0002-7538-3005")),\n    person("Justin", "Wilkins", , "justin.wilkins@occams.com", role = "aut",\n           comment = c(ORCID = "0000-0002-7099-9396")),\n    person("Wenping", "Wang", , "wwang8198@gmail.com", role = "aut"),\n    person("Robert", "Leary", role = "ctb"),\n    person("Mason", "McComb", , "mason.c.mccomb@gmail.com", role = "ctb",\n           comment = c(ORCID = "0000-0001-9871-8616")),\n    person("Vipul", "Mann", , "vm2583@columbia.edu", role = "aut"),\n    person("Mirjam", "Trame", , "mirjam.trame@gmail.com", role = "ctb"),\n    person("Mahmoud", "Abdelwahab", , "mah.tareq87@gmail.com", role = "ctb"),\n    person("Teu
+---
+Standard output:
+== Building pkgdown site =======================================================
+Reading from: '/home/bill/GitHub/nlmixr2CRANtesting/packages/nlmixr2'
+Writing to:   '/home/bill/GitHub/nlmixr2CRANtesting/packages/nlmixr2/docs'
+-- Initialising site -----------------------------------------------------------
+Copying '../../../../R/x86_64-pc-linux-gnu-library/4.2/pkgdown/BS5/assets/link.svg' to 'link.svg'
+Copying '../../../../R/x86_64-pc-linux-gnu-library/4.2/pkgdown/BS5/assets/pkgdown.js' to 'pkgdown.js'
+Copying 'pkgdown/favicon/apple-touch-icon-120x120.png' to 'apple-touch-icon-120x120.png'
+Copying 'pkgdown/favicon/apple-touch-icon-152x152.png' to 'apple-touch-icon-152x152.png'
+Copying 'pkgdown/favicon/apple-touch-icon-180x180.png' to 'apple-touch-icon-180x180.png'
+Copying 'pkgdown/favicon/apple-touch-icon-60x60.png' to 'apple-touch-icon-60x60.png'
+Copying 'pkgdown/favicon/apple-touch-icon-76x76.png' to 'apple-touch-icon-76x76.png'
+Copying 'pkgdown/favicon/apple-touch-icon.png' to 'apple-touch-icon.png'
+Copying 'pkgdown/favicon/favicon-16x16.png' to 'favicon-16x16.png'
+Copying 'pkgdown/favicon/favicon-32x32.png' to 'favicon-32x32.png'
+Copying 'pkgdown/favicon/favicon.ico' to 'favicon.ico'
+Copying 'logo.png' to 'logo.png'
+-- Building home ---------------------------------------------------------------
+Writing 'authors.html'
+Reading 'LICENSE.md'
+Writing 'LICENSE.html'
+---
+Backtrace:
+1. pkgdown::build_site()
+2. pkgdown:::build_site_external(pkg = pkg, examples = examples, run_dont_run = run_don…
+3. callr::r(function(..., cli_colors, pkgdown_internet) { …
+4. callr:::get_result(output = out, options)
+5. callr:::throw(callr_remote_error(remerr, output), parent = fix_msg(remerr[[3]]))
+---
+Subprocess backtrace:
+ 1. pkgdown::build_site(...)
+ 2. pkgdown:::build_site_local(pkg = pkg, examples = examples, run_dont_run = run_dont_r…
+ 3. pkgdown::build_home(pkg, override = override, preview = FALSE)
+ 4. pkgdown::build_home_index(pkg, quiet = quiet)
+ 5. pkgdown::render_page(pkg, "home", data, "index.html", quiet = quiet)
+ 6. pkgdown:::tweak_page(html, name, pkg = pkg)
+ 7. downlit::downlit_html_node(html)
+ 8. downlit:::tweak_children(x, xpath_block, highlight, pre_class = "downlit sourceCode …
+ 9. downlit:::map_chr(text, fun, ...)
+10. base::vapply(.x, .f, ..., FUN.VALUE = character(1), USE.NAMES = FALSE)
+11. local FUN(X[[i]], ...)
+12. downlit:::token_href(out$token, out$text)
+13. downlit:::map_chr(gsub("['\"]", "", text[pkg]), href_package)
+14. base::vapply(.x, .f, ..., FUN.VALUE = character(1), USE.NAMES = FALSE)
+15. local FUN(X[[i]], ...)
+16. downlit:::package_urls(package)
+17. downlit:::CRAN_urls()
+18. base::withVisible(eval(mc, parent.frame()))
+19. base::eval(mc, parent.frame())
+20. base::eval(mc, parent.frame())
+21. (function () …
+22. tools::CRAN_package_db()
+23. base::as.data.frame(read_CRAN_object(CRAN_baseurl_for_web_area(), "web/packages/…
+24. tools:::read_CRAN_object(CRAN_baseurl_for_web_area(), "web/packages/packages.rds")
+25. base::readRDS(con)
+26. base::.handleSimpleError(function (e) …
+27. global h(simpleError(msg, call))
+Execution halted

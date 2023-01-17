@@ -1,0 +1,96 @@
+
+R version 4.2.2 Patched (2022-11-10 r83330) -- "Innocent and Trusting"
+Copyright (C) 2022 The R Foundation for Statistical Computing
+Platform: x86_64-pc-linux-gnu (64-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+  Natural language support but running in an English locale
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+[Previously saved workspace restored]
+
+> devtools::load_all();pkgdown::build_site()
+ℹ Loading nlmixr2extra
+-- Installing package into temporary library -----------------------------------
+== Building pkgdown site =======================================================
+Reading from: '/home/bill/GitHub/nlmixr2CRANtesting/packages/nlmixr2extra'
+Writing to:   '/home/bill/GitHub/nlmixr2CRANtesting/packages/nlmixr2extra/docs'
+-- Initialising site -----------------------------------------------------------
+Copying '../../../../R/x86_64-pc-linux-gnu-library/4.2/pkgdown/BS5/assets/link.svg' to 'link.svg'
+Copying '../../../../R/x86_64-pc-linux-gnu-library/4.2/pkgdown/BS5/assets/pkgdown.js' to 'pkgdown.js'
+Copying 'pkgdown/favicon/apple-touch-icon-120x120.png' to 'apple-touch-icon-120x120.png'
+Copying 'pkgdown/favicon/apple-touch-icon-152x152.png' to 'apple-touch-icon-152x152.png'
+Copying 'pkgdown/favicon/apple-touch-icon-180x180.png' to 'apple-touch-icon-180x180.png'
+Copying 'pkgdown/favicon/apple-touch-icon-60x60.png' to 'apple-touch-icon-60x60.png'
+Copying 'pkgdown/favicon/apple-touch-icon-76x76.png' to 'apple-touch-icon-76x76.png'
+Copying 'pkgdown/favicon/apple-touch-icon.png' to 'apple-touch-icon.png'
+Copying 'pkgdown/favicon/favicon-16x16.png' to 'favicon-16x16.png'
+Copying 'pkgdown/favicon/favicon-32x32.png' to 'favicon-32x32.png'
+Copying 'pkgdown/favicon/favicon.ico' to 'favicon.ico'
+Copying 'logo.png' to 'logo.png'
+-- Building home ---------------------------------------------------------------
+Writing 'authors.html'
+Reading 'LICENSE.md'
+Writing 'LICENSE.html'
+Writing '404.html'
+-- Building function reference -------------------------------------------------
+Writing 'reference/index.html'
+Reading 'man/adaptivelassoCoefficients.Rd'
+Writing 'reference/adaptivelassoCoefficients.html'
+Reading 'man/addCatCovariates.Rd'
+Writing 'reference/addCatCovariates.html'
+Reading 'man/addorremoveCovariate.Rd'
+Writing 'reference/addorremoveCovariate.html'
+Reading 'man/adjustedlassoCoefficients.Rd'
+Writing 'reference/adjustedlassoCoefficients.html'
+Reading 'man/backwardSearch.Rd'
+Writing 'reference/backwardSearch.html'
+Reading 'man/bootplot.Rd'
+Writing 'reference/bootplot.html'
+Reading 'man/bootstrapFit.Rd'
+Writing 'reference/bootstrapFit.html'
+Reading 'man/buildcovInfo.Rd'
+Writing 'reference/buildcovInfo.html'
+Reading 'man/buildupatedUI.Rd'
+Writing 'reference/buildupatedUI.html'
+Reading 'man/covarSearchAuto.Rd'
+Writing 'reference/covarSearchAuto.html'
+Reading 'man/foldgen.Rd'
+Writing 'reference/foldgen.html'
+Reading 'man/forwardSearch.Rd'
+Writing 'reference/forwardSearch.html'
+Reading 'man/horseshoeSummardf.Rd'
+Writing 'reference/horseshoeSummardf.html'
+Reading 'man/lassoCoefficients.Rd'
+Writing 'reference/lassoCoefficients.html'
+Reading 'man/lassoSummardf.Rd'
+Writing 'reference/lassoSummardf.html'
+Reading 'man/normalizedData.Rd'
+Writing 'reference/normalizedData.html'
+Reading 'man/optimUnisampling.Rd'
+Writing 'reference/optimUnisampling.html'
+Reading 'man/preconditionFit.Rd'
+Writing 'reference/preconditionFit.html'
+Reading 'man/reexports.Rd'
+Writing 'reference/reexports.html'
+Reading 'man/regularmodel.Rd'
+Writing 'reference/regularmodel.html'
+Reading 'man/theoFitOde.Rd'
+Writing 'reference/theoFitOde.html'
+-- Building news ---------------------------------------------------------------
+Writing 'news/index.html'
+Writing 'sitemap.xml'
+-- Building search index -------------------------------------------------------
+== DONE ========================================================================
+> 
+> 

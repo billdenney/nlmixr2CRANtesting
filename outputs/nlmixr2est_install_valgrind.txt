@@ -1,8 +1,8 @@
-==98921== Memcheck, a memory error detector
-==98921== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
-==98921== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
-==98921== Command: /usr/lib/R/bin/exec/R -e devtools::install_local(force=TRUE)
-==98921== 
+==159872== Memcheck, a memory error detector
+==159872== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==159872== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==159872== Command: /usr/lib/R/bin/exec/R -e devtools::install_local(force=TRUE)
+==159872== 
 
 R version 4.2.2 Patched (2022-11-10 r83330) -- "Innocent and Trusting"
 Copyright (C) 2022 The R Foundation for Statistical Computing
@@ -23,8 +23,31 @@ Type 'demo()' for some demos, 'help()' for on-line help, or
 Type 'q()' to quit R.
 
 > devtools::install_local(force=TRUE)
+evaluate (0.19 -> 0.20) [CRAN]
+Installing 1 packages: evaluate
+Installing package into ‘/home/bill/R/x86_64-pc-linux-gnu-library/4.2’
+(as ‘lib’ is unspecified)
+trying URL 'https://cloud.r-project.org/src/contrib/evaluate_0.20.tar.gz'
+Content type 'application/x-gzip' length 26664 bytes (26 KB)
+==================================================
+downloaded 26 KB
 
-* checking for file ‘/tmp/RtmpkB8dIv/file18269d1a2873/nlmixr2est/DESCRIPTION’ ... OK
+* installing *source* package ‘evaluate’ ...
+** package ‘evaluate’ successfully unpacked and MD5 sums checked
+** using staged installation
+** R
+** byte-compile and prepare package for lazy loading
+** help
+*** installing help indices
+** building package indices
+** testing if installed package can be loaded from temporary location
+** testing if installed package can be loaded from final location
+** testing if installed package keeps a record of temporary installation path
+* DONE (evaluate)
+
+The downloaded source packages are in
+	‘/tmp/RtmpPcXDnt/downloaded_packages’
+* checking for file ‘/tmp/RtmpPcXDnt/file27080304893a9/nlmixr2est/DESCRIPTION’ ... OK
 * preparing ‘nlmixr2est’:
 * checking DESCRIPTION meta-information ... OK
 * cleaning src
@@ -105,38 +128,38 @@ installing to /home/bill/R/x86_64-pc-linux-gnu-library/4.2/00LOCK-nlmixr2est/00n
 * DONE (nlmixr2est)
 > 
 > 
-==98921== 
-==98921== HEAP SUMMARY:
-==98921==     in use at exit: 124,617,559 bytes in 29,566 blocks
-==98921==   total heap usage: 1,336,529 allocs, 1,306,963 frees, 1,259,383,640 bytes allocated
-==98921== 
-==98921== 352 bytes in 1 blocks are possibly lost in loss record 175 of 1,847
-==98921==    at 0x484DA83: calloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
-==98921==    by 0x40147D9: calloc (rtld-malloc.h:44)
-==98921==    by 0x40147D9: allocate_dtv (dl-tls.c:375)
-==98921==    by 0x40147D9: _dl_allocate_tls (dl-tls.c:634)
-==98921==    by 0x4DB3834: allocate_stack (allocatestack.c:430)
-==98921==    by 0x4DB3834: pthread_create@@GLIBC_2.34 (pthread_create.c:647)
-==98921==    by 0xD30368E: cli__start_thread (thread.c:54)
-==98921==    by 0xD3036D7: clic_start_thread (thread.c:78)
-==98921==    by 0x49538BD: ??? (in /usr/lib/R/lib/libR.so)
-==98921==    by 0x499577D: ??? (in /usr/lib/R/lib/libR.so)
-==98921==    by 0x49AB6EF: Rf_eval (in /usr/lib/R/lib/libR.so)
-==98921==    by 0x49AD27E: ??? (in /usr/lib/R/lib/libR.so)
-==98921==    by 0x49AE0C4: Rf_applyClosure (in /usr/lib/R/lib/libR.so)
-==98921==    by 0x499B8C9: ??? (in /usr/lib/R/lib/libR.so)
-==98921==    by 0x49AB6EF: Rf_eval (in /usr/lib/R/lib/libR.so)
-==98921== 
-==98921== LEAK SUMMARY:
-==98921==    definitely lost: 0 bytes in 0 blocks
-==98921==    indirectly lost: 0 bytes in 0 blocks
-==98921==      possibly lost: 352 bytes in 1 blocks
-==98921==    still reachable: 124,617,207 bytes in 29,565 blocks
-==98921==                       of which reachable via heuristic:
-==98921==                         newarray           : 4,264 bytes in 1 blocks
-==98921==         suppressed: 0 bytes in 0 blocks
-==98921== Reachable blocks (those to which a pointer was found) are not shown.
-==98921== To see them, rerun with: --leak-check=full --show-leak-kinds=all
-==98921== 
-==98921== For lists of detected and suppressed errors, rerun with: -s
-==98921== ERROR SUMMARY: 1 errors from 1 contexts (suppressed: 0 from 0)
+==159872== 
+==159872== HEAP SUMMARY:
+==159872==     in use at exit: 123,042,831 bytes in 25,006 blocks
+==159872==   total heap usage: 2,427,178 allocs, 2,402,172 frees, 1,913,135,902 bytes allocated
+==159872== 
+==159872== 352 bytes in 1 blocks are possibly lost in loss record 180 of 1,856
+==159872==    at 0x484DA83: calloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==159872==    by 0x40147D9: calloc (rtld-malloc.h:44)
+==159872==    by 0x40147D9: allocate_dtv (dl-tls.c:375)
+==159872==    by 0x40147D9: _dl_allocate_tls (dl-tls.c:634)
+==159872==    by 0x4DB3834: allocate_stack (allocatestack.c:430)
+==159872==    by 0x4DB3834: pthread_create@@GLIBC_2.34 (pthread_create.c:647)
+==159872==    by 0xD30368E: cli__start_thread (thread.c:54)
+==159872==    by 0xD3036D7: clic_start_thread (thread.c:78)
+==159872==    by 0x49538BD: ??? (in /usr/lib/R/lib/libR.so)
+==159872==    by 0x499577D: ??? (in /usr/lib/R/lib/libR.so)
+==159872==    by 0x49AB6EF: Rf_eval (in /usr/lib/R/lib/libR.so)
+==159872==    by 0x49AD27E: ??? (in /usr/lib/R/lib/libR.so)
+==159872==    by 0x49AE0C4: Rf_applyClosure (in /usr/lib/R/lib/libR.so)
+==159872==    by 0x499B8C9: ??? (in /usr/lib/R/lib/libR.so)
+==159872==    by 0x49AB6EF: Rf_eval (in /usr/lib/R/lib/libR.so)
+==159872== 
+==159872== LEAK SUMMARY:
+==159872==    definitely lost: 0 bytes in 0 blocks
+==159872==    indirectly lost: 0 bytes in 0 blocks
+==159872==      possibly lost: 352 bytes in 1 blocks
+==159872==    still reachable: 123,042,479 bytes in 25,005 blocks
+==159872==                       of which reachable via heuristic:
+==159872==                         newarray           : 4,264 bytes in 1 blocks
+==159872==         suppressed: 0 bytes in 0 blocks
+==159872== Reachable blocks (those to which a pointer was found) are not shown.
+==159872== To see them, rerun with: --leak-check=full --show-leak-kinds=all
+==159872== 
+==159872== For lists of detected and suppressed errors, rerun with: -s
+==159872== ERROR SUMMARY: 1 errors from 1 contexts (suppressed: 0 from 0)
