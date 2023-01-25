@@ -1,8 +1,8 @@
-==139636== Memcheck, a memory error detector
-==139636== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
-==139636== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
-==139636== Command: /usr/lib/R/bin/exec/R -e devtools::load_all();devtools::test()
-==139636== 
+==179166== Memcheck, a memory error detector
+==179166== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==179166== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==179166== Command: /usr/lib/R/bin/exec/R -e devtools::load_all();devtools::test()
+==179166== 
 
 R version 4.2.2 Patched (2022-11-10 r83330) -- "Innocent and Trusting"
 Copyright (C) 2022 The R Foundation for Statistical Computing
@@ -35,7 +35,7 @@ gcc -I"/usr/share/R/include" -DNDEBUG      -fpic  -g -O2 -ffile-prefix-map=/buil
 gcc -I"/usr/share/R/include" -DNDEBUG      -fpic  -g -O2 -ffile-prefix-map=/build/r-base-Faorqz/r-base-4.2.2.20221110=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c lotriProp.c -o lotriProp.o
 gcc -I"/usr/share/R/include" -DNDEBUG      -fpic  -g -O2 -ffile-prefix-map=/build/r-base-Faorqz/r-base-4.2.2.20221110=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c matlist.c -o matlist.o
 gcc -shared -L/usr/lib/R/lib -Wl,-Bsymbolic-functions -flto=auto -ffat-lto-objects -flto=auto -Wl,-z,relro -o lotri.so asLotriMat.o lotriBounds.o lotriLstToMat.o lotriNest.o lotriProp.o matlist.o -L/usr/lib/R/lib -lR
-installing to /tmp/RtmpAEUuA7/devtools_install_221742f03bf4e/00LOCK-lotri/00new/lotri/libs
+installing to /tmp/RtmpkVKQbj/devtools_install_2bbde7633cca5/00LOCK-lotri/00new/lotri/libs
 ** checking absolute paths in shared objects and dynamic libraries
 * DONE (lotri)
 ℹ Testing lotri
@@ -46,7 +46,7 @@ installing to /tmp/RtmpAEUuA7/devtools_install_221742f03bf4e/00LOCK-lotri/00new/
 ⠙ |         2 | allNames                                                        
 ⠹ |         3 | allNames                                                        
 ⠼ |         5 | allNames                                                        
-✔ |         6 | allNames [9.6s]
+✔ |         6 | allNames [9.8s]
 
 ⠏ |         0 | as.data.frame                                                   
 ⠋ |         1 | as.data.frame                                                   
@@ -57,7 +57,7 @@ installing to /tmp/RtmpAEUuA7/devtools_install_221742f03bf4e/00LOCK-lotri/00new/
 ⠦ |         7 | as.data.frame                                                   
 ⠧ |         8 | as.data.frame                                                   
 ⠇ |         9 | as.data.frame                                                   
-✔ |         9 | as.data.frame [9.5s]
+✔ |         9 | as.data.frame [9.6s]
 
 ⠏ |         0 | as.lotri                                                        
 ⠋ |         1 | as.lotri                                                        
@@ -72,7 +72,7 @@ installing to /tmp/RtmpAEUuA7/devtools_install_221742f03bf4e/00LOCK-lotri/00new/
 ⠋ |        11 | as.lotri                                                        
 ⠙ |        12 | as.lotri                                                        
 ⠹ |        13 | as.lotri                                                        
-✔ |        14 | as.lotri [2.2s]
+✔ |        14 | as.lotri [2.3s]
 
 ⠏ |         0 | bad-lotri                                                       
 ⠋ |         1 | bad-lotri                                                       
@@ -89,7 +89,7 @@ installing to /tmp/RtmpAEUuA7/devtools_install_221742f03bf4e/00LOCK-lotri/00new/
 ⠼ |        15 | bounds-c                                                        
 ⠴ |        16 | bounds-c                                                        
 ⠧ |        18 | bounds-c                                                        
-✔ |        18 | bounds-c [2.5s]
+✔ |        18 | bounds-c [2.6s]
 
 ⠏ |         0 | estimate-matrix-combination                                     
 ⠋ |         1 | estimate-matrix-combination                                     
@@ -266,43 +266,43 @@ installing to /tmp/RtmpAEUuA7/devtools_install_221742f03bf4e/00LOCK-lotri/00new/
 ✔ |        11 | transformations [1.8s]
 
 ══ Results ═════════════════════════════════════════════════════════════════════
-Duration: 52.9 s
+Duration: 53.2 s
 
 [ FAIL 0 | WARN 0 | SKIP 0 | PASS 231 ]
 > 
 > 
-==139636== 
-==139636== HEAP SUMMARY:
-==139636==     in use at exit: 150,635,909 bytes in 29,891 blocks
-==139636==   total heap usage: 458,524 allocs, 428,633 frees, 551,909,878 bytes allocated
-==139636== 
-==139636== 352 bytes in 1 blocks are possibly lost in loss record 207 of 2,637
-==139636==    at 0x484DA83: calloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
-==139636==    by 0x40147D9: calloc (rtld-malloc.h:44)
-==139636==    by 0x40147D9: allocate_dtv (dl-tls.c:375)
-==139636==    by 0x40147D9: _dl_allocate_tls (dl-tls.c:634)
-==139636==    by 0x4DB3834: allocate_stack (allocatestack.c:430)
-==139636==    by 0x4DB3834: pthread_create@@GLIBC_2.34 (pthread_create.c:647)
-==139636==    by 0xD30368E: cli__start_thread (thread.c:54)
-==139636==    by 0xD3036D7: clic_start_thread (thread.c:78)
-==139636==    by 0x49538BD: ??? (in /usr/lib/R/lib/libR.so)
-==139636==    by 0x499577D: ??? (in /usr/lib/R/lib/libR.so)
-==139636==    by 0x49AB6EF: Rf_eval (in /usr/lib/R/lib/libR.so)
-==139636==    by 0x49AD27E: ??? (in /usr/lib/R/lib/libR.so)
-==139636==    by 0x49AE0C4: Rf_applyClosure (in /usr/lib/R/lib/libR.so)
-==139636==    by 0x499B8C9: ??? (in /usr/lib/R/lib/libR.so)
-==139636==    by 0x49AB6EF: Rf_eval (in /usr/lib/R/lib/libR.so)
-==139636== 
-==139636== LEAK SUMMARY:
-==139636==    definitely lost: 0 bytes in 0 blocks
-==139636==    indirectly lost: 0 bytes in 0 blocks
-==139636==      possibly lost: 352 bytes in 1 blocks
-==139636==    still reachable: 150,635,557 bytes in 29,890 blocks
-==139636==                       of which reachable via heuristic:
-==139636==                         newarray           : 4,264 bytes in 1 blocks
-==139636==         suppressed: 0 bytes in 0 blocks
-==139636== Reachable blocks (those to which a pointer was found) are not shown.
-==139636== To see them, rerun with: --leak-check=full --show-leak-kinds=all
-==139636== 
-==139636== For lists of detected and suppressed errors, rerun with: -s
-==139636== ERROR SUMMARY: 1 errors from 1 contexts (suppressed: 0 from 0)
+==179166== 
+==179166== HEAP SUMMARY:
+==179166==     in use at exit: 150,628,478 bytes in 29,891 blocks
+==179166==   total heap usage: 458,510 allocs, 428,619 frees, 551,806,394 bytes allocated
+==179166== 
+==179166== 352 bytes in 1 blocks are possibly lost in loss record 207 of 2,636
+==179166==    at 0x484DA83: calloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==179166==    by 0x40147D9: calloc (rtld-malloc.h:44)
+==179166==    by 0x40147D9: allocate_dtv (dl-tls.c:375)
+==179166==    by 0x40147D9: _dl_allocate_tls (dl-tls.c:634)
+==179166==    by 0x4DB3834: allocate_stack (allocatestack.c:430)
+==179166==    by 0x4DB3834: pthread_create@@GLIBC_2.34 (pthread_create.c:647)
+==179166==    by 0xD30368E: cli__start_thread (thread.c:54)
+==179166==    by 0xD3036D7: clic_start_thread (thread.c:78)
+==179166==    by 0x49538BD: ??? (in /usr/lib/R/lib/libR.so)
+==179166==    by 0x499577D: ??? (in /usr/lib/R/lib/libR.so)
+==179166==    by 0x49AB6EF: Rf_eval (in /usr/lib/R/lib/libR.so)
+==179166==    by 0x49AD27E: ??? (in /usr/lib/R/lib/libR.so)
+==179166==    by 0x49AE0C4: Rf_applyClosure (in /usr/lib/R/lib/libR.so)
+==179166==    by 0x499B8C9: ??? (in /usr/lib/R/lib/libR.so)
+==179166==    by 0x49AB6EF: Rf_eval (in /usr/lib/R/lib/libR.so)
+==179166== 
+==179166== LEAK SUMMARY:
+==179166==    definitely lost: 0 bytes in 0 blocks
+==179166==    indirectly lost: 0 bytes in 0 blocks
+==179166==      possibly lost: 352 bytes in 1 blocks
+==179166==    still reachable: 150,628,126 bytes in 29,890 blocks
+==179166==                       of which reachable via heuristic:
+==179166==                         newarray           : 4,264 bytes in 1 blocks
+==179166==         suppressed: 0 bytes in 0 blocks
+==179166== Reachable blocks (those to which a pointer was found) are not shown.
+==179166== To see them, rerun with: --leak-check=full --show-leak-kinds=all
+==179166== 
+==179166== For lists of detected and suppressed errors, rerun with: -s
+==179166== ERROR SUMMARY: 1 errors from 1 contexts (suppressed: 0 from 0)
