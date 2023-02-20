@@ -1,0 +1,67 @@
+
+R version 4.2.2 Patched (2022-11-10 r83330) -- "Innocent and Trusting"
+Copyright (C) 2022 The R Foundation for Statistical Computing
+Platform: x86_64-pc-linux-gnu (64-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+  Natural language support but running in an English locale
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+> devtools::load_all();pkgdown::build_site()
+ℹ Loading dparser
+-- Installing package into temporary library -----------------------------------
+== Building pkgdown site =======================================================
+Reading from: '/home/bill/GitHub/nlmixr2CRANtesting/packages/dparser-R'
+Writing to:   '/home/bill/GitHub/nlmixr2CRANtesting/packages/dparser-R/docs'
+-- Initialising site -----------------------------------------------------------
+Copying '../../../../R/x86_64-pc-linux-gnu-library/4.2/pkgdown/BS5/assets/link.svg' to 'link.svg'
+Copying '../../../../R/x86_64-pc-linux-gnu-library/4.2/pkgdown/BS5/assets/pkgdown.js' to 'pkgdown.js'
+-- Building home ---------------------------------------------------------------
+Writing 'authors.html'
+Reading 'Readme.md'
+Writing 'Readme.html'
+Writing 'LICENSE-text.html'
+Writing '404.html'
+-- Building function reference -------------------------------------------------
+Writing 'reference/index.html'
+Reading 'man/dpDefaultSkip.Rd'
+Writing 'reference/dpDefaultSkip.html'
+Reading 'man/dpGetFile.Rd'
+Writing 'reference/dpGetFile.html'
+Reading 'man/dpIncludeDir.Rd'
+Writing 'reference/dpIncludeDir.html'
+Reading 'man/dpReload.Rd'
+Writing 'reference/dpReload.html'
+Reading 'man/dpRparse.Rd'
+Writing 'reference/dpRparse.html'
+Reading 'man/dpVersion.Rd'
+Writing 'reference/dpVersion.html'
+Reading 'man/dparse.Rd'
+Writing 'reference/dparse.html'
+Reading 'man/dparser-package.Rd'
+Writing 'reference/dparser-package.html'
+Reading 'man/dparserFunction-class.Rd'
+Writing 'reference/dparserFunction-class.html'
+Reading 'man/gc.dparser.Rd'
+Writing 'reference/gc.dparser.html'
+Reading 'man/mkdparse.Rd'
+Writing 'reference/mkdparse.html'
+Reading 'man/show-dparserFunction-method.Rd'
+Writing 'reference/show-dparserFunction-method.html'
+-- Building news ---------------------------------------------------------------
+Writing 'news/index.html'
+Writing 'sitemap.xml'
+-- Building search index -------------------------------------------------------
+== DONE ========================================================================
+> 
+> 
