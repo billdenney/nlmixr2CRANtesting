@@ -1,8 +1,8 @@
-==179633== Memcheck, a memory error detector
-==179633== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
-==179633== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
-==179633== Command: /usr/lib/R/bin/exec/R -e devtools::install_local(force=TRUE)
-==179633== 
+==7824== Memcheck, a memory error detector
+==7824== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==7824== Using Valgrind-3.18.1 and LibVEX; rerun with -h for copyright info
+==7824== Command: /usr/lib/R/bin/exec/R -e devtools::install_local(force=TRUE)
+==7824== 
 
 R version 4.2.2 Patched (2022-11-10 r83330) -- "Innocent and Trusting"
 Copyright (C) 2022 The R Foundation for Statistical Computing
@@ -23,40 +23,55 @@ Type 'demo()' for some demos, 'help()' for on-line help, or
 Type 'q()' to quit R.
 
 > devtools::install_local(force=TRUE)
-Rcpp  (1.0.9    -> 1.0.10  ) [CRAN]
-vctrs (0.5.1    -> 0.5.2   ) [CRAN]
-BH    (1.78.0-0 -> 1.81.0-1) [CRAN]
-Installing 3 packages: Rcpp, vctrs, BH
+yaml  (2.3.6 -> 2.3.7) [CRAN]
+knitr (1.41  -> 1.42 ) [CRAN]
+Installing 2 packages: yaml, knitr
 Installing packages into ‘/home/bill/R/x86_64-pc-linux-gnu-library/4.2’
 (as ‘lib’ is unspecified)
-trying URL 'https://cloud.r-project.org/src/contrib/Rcpp_1.0.10.tar.gz'
-Content type 'application/x-gzip' length 2936173 bytes (2.8 MB)
+trying URL 'https://cloud.r-project.org/src/contrib/yaml_2.3.7.tar.gz'
+Content type 'application/x-gzip' length 94330 bytes (92 KB)
 ==================================================
-downloaded 2.8 MB
+downloaded 92 KB
 
-trying URL 'https://cloud.r-project.org/src/contrib/vctrs_0.5.2.tar.gz'
-Content type 'application/x-gzip' length 967426 bytes (944 KB)
+trying URL 'https://cloud.r-project.org/src/contrib/knitr_1.42.tar.gz'
+Content type 'application/x-gzip' length 893585 bytes (872 KB)
 ==================================================
-downloaded 944 KB
+downloaded 872 KB
 
-trying URL 'https://cloud.r-project.org/src/contrib/BH_1.81.0-1.tar.gz'
-Content type 'application/x-gzip' length 13938979 bytes (13.3 MB)
-==================================================
-downloaded 13.3 MB
-
-* installing *source* package ‘Rcpp’ ...
-** package ‘Rcpp’ successfully unpacked and MD5 sums checked
+* installing *source* package ‘yaml’ ...
+** package ‘yaml’ successfully unpacked and MD5 sums checked
 ** using staged installation
 ** libs
-g++ -std=gnu++14 -I"/usr/share/R/include" -DNDEBUG -I../inst/include/     -fpic  -g -O2 -ffile-prefix-map=/build/r-base-Faorqz/r-base-4.2.2.20221110=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c api.cpp -o api.o
-g++ -std=gnu++14 -I"/usr/share/R/include" -DNDEBUG -I../inst/include/     -fpic  -g -O2 -ffile-prefix-map=/build/r-base-Faorqz/r-base-4.2.2.20221110=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c attributes.cpp -o attributes.o
-g++ -std=gnu++14 -I"/usr/share/R/include" -DNDEBUG -I../inst/include/     -fpic  -g -O2 -ffile-prefix-map=/build/r-base-Faorqz/r-base-4.2.2.20221110=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c barrier.cpp -o barrier.o
-g++ -std=gnu++14 -I"/usr/share/R/include" -DNDEBUG -I../inst/include/     -fpic  -g -O2 -ffile-prefix-map=/build/r-base-Faorqz/r-base-4.2.2.20221110=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c date.cpp -o date.o
-g++ -std=gnu++14 -I"/usr/share/R/include" -DNDEBUG -I../inst/include/     -fpic  -g -O2 -ffile-prefix-map=/build/r-base-Faorqz/r-base-4.2.2.20221110=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c module.cpp -o module.o
-g++ -std=gnu++14 -I"/usr/share/R/include" -DNDEBUG -I../inst/include/     -fpic  -g -O2 -ffile-prefix-map=/build/r-base-Faorqz/r-base-4.2.2.20221110=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c rcpp_init.cpp -o rcpp_init.o
-g++ -std=gnu++14 -shared -L/usr/lib/R/lib -Wl,-Bsymbolic-functions -flto=auto -ffat-lto-objects -flto=auto -Wl,-z,relro -o Rcpp.so api.o attributes.o barrier.o date.o module.o rcpp_init.o -L/usr/lib/R/lib -lR
-installing to /home/bill/R/x86_64-pc-linux-gnu-library/4.2/00LOCK-Rcpp/00new/Rcpp/libs
+gcc -I"/usr/share/R/include" -DNDEBUG -I. -DNDEBUG     -fpic  -g -O2 -ffile-prefix-map=/build/r-base-Faorqz/r-base-4.2.2.20221110=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c api.c -o api.o
+gcc -I"/usr/share/R/include" -DNDEBUG -I. -DNDEBUG     -fpic  -g -O2 -ffile-prefix-map=/build/r-base-Faorqz/r-base-4.2.2.20221110=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c dumper.c -o dumper.o
+gcc -I"/usr/share/R/include" -DNDEBUG -I. -DNDEBUG     -fpic  -g -O2 -ffile-prefix-map=/build/r-base-Faorqz/r-base-4.2.2.20221110=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c emitter.c -o emitter.o
+gcc -I"/usr/share/R/include" -DNDEBUG -I. -DNDEBUG     -fpic  -g -O2 -ffile-prefix-map=/build/r-base-Faorqz/r-base-4.2.2.20221110=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c implicit.c -o implicit.o
+gcc -I"/usr/share/R/include" -DNDEBUG -I. -DNDEBUG     -fpic  -g -O2 -ffile-prefix-map=/build/r-base-Faorqz/r-base-4.2.2.20221110=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c loader.c -o loader.o
+gcc -I"/usr/share/R/include" -DNDEBUG -I. -DNDEBUG     -fpic  -g -O2 -ffile-prefix-map=/build/r-base-Faorqz/r-base-4.2.2.20221110=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c parser.c -o parser.o
+gcc -I"/usr/share/R/include" -DNDEBUG -I. -DNDEBUG     -fpic  -g -O2 -ffile-prefix-map=/build/r-base-Faorqz/r-base-4.2.2.20221110=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c r_emit.c -o r_emit.o
+gcc -I"/usr/share/R/include" -DNDEBUG -I. -DNDEBUG     -fpic  -g -O2 -ffile-prefix-map=/build/r-base-Faorqz/r-base-4.2.2.20221110=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c r_ext.c -o r_ext.o
+gcc -I"/usr/share/R/include" -DNDEBUG -I. -DNDEBUG     -fpic  -g -O2 -ffile-prefix-map=/build/r-base-Faorqz/r-base-4.2.2.20221110=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c r_parse.c -o r_parse.o
+gcc -I"/usr/share/R/include" -DNDEBUG -I. -DNDEBUG     -fpic  -g -O2 -ffile-prefix-map=/build/r-base-Faorqz/r-base-4.2.2.20221110=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c reader.c -o reader.o
+gcc -I"/usr/share/R/include" -DNDEBUG -I. -DNDEBUG     -fpic  -g -O2 -ffile-prefix-map=/build/r-base-Faorqz/r-base-4.2.2.20221110=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c scanner.c -o scanner.o
+gcc -I"/usr/share/R/include" -DNDEBUG -I. -DNDEBUG     -fpic  -g -O2 -ffile-prefix-map=/build/r-base-Faorqz/r-base-4.2.2.20221110=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c writer.c -o writer.o
+gcc -shared -L/usr/lib/R/lib -Wl,-Bsymbolic-functions -flto=auto -ffat-lto-objects -flto=auto -Wl,-z,relro -o yaml.so api.o dumper.o emitter.o implicit.o loader.o parser.o r_emit.o r_ext.o r_parse.o reader.o scanner.o writer.o -L/usr/lib/R/lib -lR
+installing to /home/bill/R/x86_64-pc-linux-gnu-library/4.2/00LOCK-yaml/00new/yaml/libs
 ** R
+** inst
+** byte-compile and prepare package for lazy loading
+** help
+*** installing help indices
+** building package indices
+** testing if installed package can be loaded from temporary location
+** checking absolute paths in shared objects and dynamic libraries
+** testing if installed package can be loaded from final location
+** testing if installed package keeps a record of temporary installation path
+* DONE (yaml)
+* installing *source* package ‘knitr’ ...
+** package ‘knitr’ successfully unpacked and MD5 sums checked
+** using staged installation
+** R
+** demo
 ** inst
 ** byte-compile and prepare package for lazy loading
 ** help
@@ -64,121 +79,13 @@ installing to /home/bill/R/x86_64-pc-linux-gnu-library/4.2/00LOCK-Rcpp/00new/Rcp
 ** building package indices
 ** installing vignettes
 ** testing if installed package can be loaded from temporary location
-** checking absolute paths in shared objects and dynamic libraries
 ** testing if installed package can be loaded from final location
 ** testing if installed package keeps a record of temporary installation path
-* DONE (Rcpp)
-* installing *source* package ‘vctrs’ ...
-** package ‘vctrs’ successfully unpacked and MD5 sums checked
-** using staged installation
-** libs
-gcc -I"/usr/share/R/include" -DNDEBUG -I./rlang    -fvisibility=hidden -fpic  -g -O2 -ffile-prefix-map=/build/r-base-Faorqz/r-base-4.2.2.20221110=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c altrep-rle.c -o altrep-rle.o
-gcc -I"/usr/share/R/include" -DNDEBUG -I./rlang    -fvisibility=hidden -fpic  -g -O2 -ffile-prefix-map=/build/r-base-Faorqz/r-base-4.2.2.20221110=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c altrep.c -o altrep.o
-gcc -I"/usr/share/R/include" -DNDEBUG -I./rlang    -fvisibility=hidden -fpic  -g -O2 -ffile-prefix-map=/build/r-base-Faorqz/r-base-4.2.2.20221110=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c arg-counter.c -o arg-counter.o
-gcc -I"/usr/share/R/include" -DNDEBUG -I./rlang    -fvisibility=hidden -fpic  -g -O2 -ffile-prefix-map=/build/r-base-Faorqz/r-base-4.2.2.20221110=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c arg.c -o arg.o
-gcc -I"/usr/share/R/include" -DNDEBUG -I./rlang    -fvisibility=hidden -fpic  -g -O2 -ffile-prefix-map=/build/r-base-Faorqz/r-base-4.2.2.20221110=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c assert.c -o assert.o
-gcc -I"/usr/share/R/include" -DNDEBUG -I./rlang    -fvisibility=hidden -fpic  -g -O2 -ffile-prefix-map=/build/r-base-Faorqz/r-base-4.2.2.20221110=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c bind.c -o bind.o
-gcc -I"/usr/share/R/include" -DNDEBUG -I./rlang    -fvisibility=hidden -fpic  -g -O2 -ffile-prefix-map=/build/r-base-Faorqz/r-base-4.2.2.20221110=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c c-unchop.c -o c-unchop.o
-gcc -I"/usr/share/R/include" -DNDEBUG -I./rlang    -fvisibility=hidden -fpic  -g -O2 -ffile-prefix-map=/build/r-base-Faorqz/r-base-4.2.2.20221110=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c c.c -o c.o
-gcc -I"/usr/share/R/include" -DNDEBUG -I./rlang    -fvisibility=hidden -fpic  -g -O2 -ffile-prefix-map=/build/r-base-Faorqz/r-base-4.2.2.20221110=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c callables.c -o callables.o
-gcc -I"/usr/share/R/include" -DNDEBUG -I./rlang    -fvisibility=hidden -fpic  -g -O2 -ffile-prefix-map=/build/r-base-Faorqz/r-base-4.2.2.20221110=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c cast-bare.c -o cast-bare.o
-gcc -I"/usr/share/R/include" -DNDEBUG -I./rlang    -fvisibility=hidden -fpic  -g -O2 -ffile-prefix-map=/build/r-base-Faorqz/r-base-4.2.2.20221110=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c cast-dispatch.c -o cast-dispatch.o
-gcc -I"/usr/share/R/include" -DNDEBUG -I./rlang    -fvisibility=hidden -fpic  -g -O2 -ffile-prefix-map=/build/r-base-Faorqz/r-base-4.2.2.20221110=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c cast.c -o cast.o
-gcc -I"/usr/share/R/include" -DNDEBUG -I./rlang    -fvisibility=hidden -fpic  -g -O2 -ffile-prefix-map=/build/r-base-Faorqz/r-base-4.2.2.20221110=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c compare.c -o compare.o
-gcc -I"/usr/share/R/include" -DNDEBUG -I./rlang    -fvisibility=hidden -fpic  -g -O2 -ffile-prefix-map=/build/r-base-Faorqz/r-base-4.2.2.20221110=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c complete.c -o complete.o
-gcc -I"/usr/share/R/include" -DNDEBUG -I./rlang    -fvisibility=hidden -fpic  -g -O2 -ffile-prefix-map=/build/r-base-Faorqz/r-base-4.2.2.20221110=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c conditions.c -o conditions.o
-gcc -I"/usr/share/R/include" -DNDEBUG -I./rlang    -fvisibility=hidden -fpic  -g -O2 -ffile-prefix-map=/build/r-base-Faorqz/r-base-4.2.2.20221110=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c dictionary.c -o dictionary.o
-gcc -I"/usr/share/R/include" -DNDEBUG -I./rlang    -fvisibility=hidden -fpic  -g -O2 -ffile-prefix-map=/build/r-base-Faorqz/r-base-4.2.2.20221110=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c dim.c -o dim.o
-gcc -I"/usr/share/R/include" -DNDEBUG -I./rlang    -fvisibility=hidden -fpic  -g -O2 -ffile-prefix-map=/build/r-base-Faorqz/r-base-4.2.2.20221110=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c empty.c -o empty.o
-gcc -I"/usr/share/R/include" -DNDEBUG -I./rlang    -fvisibility=hidden -fpic  -g -O2 -ffile-prefix-map=/build/r-base-Faorqz/r-base-4.2.2.20221110=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c equal.c -o equal.o
-gcc -I"/usr/share/R/include" -DNDEBUG -I./rlang    -fvisibility=hidden -fpic  -g -O2 -ffile-prefix-map=/build/r-base-Faorqz/r-base-4.2.2.20221110=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c expand.c -o expand.o
-gcc -I"/usr/share/R/include" -DNDEBUG -I./rlang    -fvisibility=hidden -fpic  -g -O2 -ffile-prefix-map=/build/r-base-Faorqz/r-base-4.2.2.20221110=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c fields.c -o fields.o
-gcc -I"/usr/share/R/include" -DNDEBUG -I./rlang    -fvisibility=hidden -fpic  -g -O2 -ffile-prefix-map=/build/r-base-Faorqz/r-base-4.2.2.20221110=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c fill.c -o fill.o
-gcc -I"/usr/share/R/include" -DNDEBUG -I./rlang    -fvisibility=hidden -fpic  -g -O2 -ffile-prefix-map=/build/r-base-Faorqz/r-base-4.2.2.20221110=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c globals.c -o globals.o
-gcc -I"/usr/share/R/include" -DNDEBUG -I./rlang    -fvisibility=hidden -fpic  -g -O2 -ffile-prefix-map=/build/r-base-Faorqz/r-base-4.2.2.20221110=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c group.c -o group.o
-gcc -I"/usr/share/R/include" -DNDEBUG -I./rlang    -fvisibility=hidden -fpic  -g -O2 -ffile-prefix-map=/build/r-base-Faorqz/r-base-4.2.2.20221110=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c growable.c -o growable.o
-gcc -I"/usr/share/R/include" -DNDEBUG -I./rlang    -fvisibility=hidden -fpic  -g -O2 -ffile-prefix-map=/build/r-base-Faorqz/r-base-4.2.2.20221110=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c hash.c -o hash.o
-gcc -I"/usr/share/R/include" -DNDEBUG -I./rlang    -fvisibility=hidden -fpic  -g -O2 -ffile-prefix-map=/build/r-base-Faorqz/r-base-4.2.2.20221110=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c init.c -o init.o
-gcc -I"/usr/share/R/include" -DNDEBUG -I./rlang    -fvisibility=hidden -fpic  -g -O2 -ffile-prefix-map=/build/r-base-Faorqz/r-base-4.2.2.20221110=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c interval.c -o interval.o
-gcc -I"/usr/share/R/include" -DNDEBUG -I./rlang    -fvisibility=hidden -fpic  -g -O2 -ffile-prefix-map=/build/r-base-Faorqz/r-base-4.2.2.20221110=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c match-joint.c -o match-joint.o
-gcc -I"/usr/share/R/include" -DNDEBUG -I./rlang    -fvisibility=hidden -fpic  -g -O2 -ffile-prefix-map=/build/r-base-Faorqz/r-base-4.2.2.20221110=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c match.c -o match.o
-gcc -I"/usr/share/R/include" -DNDEBUG -I./rlang    -fvisibility=hidden -fpic  -g -O2 -ffile-prefix-map=/build/r-base-Faorqz/r-base-4.2.2.20221110=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c missing.c -o missing.o
-gcc -I"/usr/share/R/include" -DNDEBUG -I./rlang    -fvisibility=hidden -fpic  -g -O2 -ffile-prefix-map=/build/r-base-Faorqz/r-base-4.2.2.20221110=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c names.c -o names.o
-gcc -I"/usr/share/R/include" -DNDEBUG -I./rlang    -fvisibility=hidden -fpic  -g -O2 -ffile-prefix-map=/build/r-base-Faorqz/r-base-4.2.2.20221110=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c order-collate.c -o order-collate.o
-gcc -I"/usr/share/R/include" -DNDEBUG -I./rlang    -fvisibility=hidden -fpic  -g -O2 -ffile-prefix-map=/build/r-base-Faorqz/r-base-4.2.2.20221110=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c order-groups.c -o order-groups.o
-gcc -I"/usr/share/R/include" -DNDEBUG -I./rlang    -fvisibility=hidden -fpic  -g -O2 -ffile-prefix-map=/build/r-base-Faorqz/r-base-4.2.2.20221110=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c order-sortedness.c -o order-sortedness.o
-gcc -I"/usr/share/R/include" -DNDEBUG -I./rlang    -fvisibility=hidden -fpic  -g -O2 -ffile-prefix-map=/build/r-base-Faorqz/r-base-4.2.2.20221110=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c order-truelength.c -o order-truelength.o
-gcc -I"/usr/share/R/include" -DNDEBUG -I./rlang    -fvisibility=hidden -fpic  -g -O2 -ffile-prefix-map=/build/r-base-Faorqz/r-base-4.2.2.20221110=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c order.c -o order.o
-gcc -I"/usr/share/R/include" -DNDEBUG -I./rlang    -fvisibility=hidden -fpic  -g -O2 -ffile-prefix-map=/build/r-base-Faorqz/r-base-4.2.2.20221110=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c poly-op.c -o poly-op.o
-gcc -I"/usr/share/R/include" -DNDEBUG -I./rlang    -fvisibility=hidden -fpic  -g -O2 -ffile-prefix-map=/build/r-base-Faorqz/r-base-4.2.2.20221110=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c proxy-restore.c -o proxy-restore.o
-gcc -I"/usr/share/R/include" -DNDEBUG -I./rlang    -fvisibility=hidden -fpic  -g -O2 -ffile-prefix-map=/build/r-base-Faorqz/r-base-4.2.2.20221110=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c proxy.c -o proxy.o
-gcc -I"/usr/share/R/include" -DNDEBUG -I./rlang    -fvisibility=hidden -fpic  -g -O2 -ffile-prefix-map=/build/r-base-Faorqz/r-base-4.2.2.20221110=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c ptype-common.c -o ptype-common.o
-gcc -I"/usr/share/R/include" -DNDEBUG -I./rlang    -fvisibility=hidden -fpic  -g -O2 -ffile-prefix-map=/build/r-base-Faorqz/r-base-4.2.2.20221110=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c ptype.c -o ptype.o
-gcc -I"/usr/share/R/include" -DNDEBUG -I./rlang    -fvisibility=hidden -fpic  -g -O2 -ffile-prefix-map=/build/r-base-Faorqz/r-base-4.2.2.20221110=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c ptype2-dispatch.c -o ptype2-dispatch.o
-gcc -I"/usr/share/R/include" -DNDEBUG -I./rlang    -fvisibility=hidden -fpic  -g -O2 -ffile-prefix-map=/build/r-base-Faorqz/r-base-4.2.2.20221110=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c ptype2.c -o ptype2.o
-gcc -I"/usr/share/R/include" -DNDEBUG -I./rlang    -fvisibility=hidden -fpic  -g -O2 -ffile-prefix-map=/build/r-base-Faorqz/r-base-4.2.2.20221110=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c rank.c -o rank.o
-gcc -I"/usr/share/R/include" -DNDEBUG -I./rlang    -fvisibility=hidden -fpic  -g -O2 -ffile-prefix-map=/build/r-base-Faorqz/r-base-4.2.2.20221110=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c rep.c -o rep.o
-gcc -I"/usr/share/R/include" -DNDEBUG -I./rlang    -fvisibility=hidden -fpic  -g -O2 -ffile-prefix-map=/build/r-base-Faorqz/r-base-4.2.2.20221110=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c rlang-dev.c -o rlang-dev.o
-g++ -std=gnu++11 -I"/usr/share/R/include" -DNDEBUG -I./rlang     -fpic  -g -O2 -ffile-prefix-map=/build/r-base-Faorqz/r-base-4.2.2.20221110=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c rlang-rcc.cpp -o rlang-rcc.o
-gcc -I"/usr/share/R/include" -DNDEBUG -I./rlang    -fvisibility=hidden -fpic  -g -O2 -ffile-prefix-map=/build/r-base-Faorqz/r-base-4.2.2.20221110=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c rlang.c -o rlang.o
-gcc -I"/usr/share/R/include" -DNDEBUG -I./rlang    -fvisibility=hidden -fpic  -g -O2 -ffile-prefix-map=/build/r-base-Faorqz/r-base-4.2.2.20221110=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c runs.c -o runs.o
-gcc -I"/usr/share/R/include" -DNDEBUG -I./rlang    -fvisibility=hidden -fpic  -g -O2 -ffile-prefix-map=/build/r-base-Faorqz/r-base-4.2.2.20221110=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c set.c -o set.o
-gcc -I"/usr/share/R/include" -DNDEBUG -I./rlang    -fvisibility=hidden -fpic  -g -O2 -ffile-prefix-map=/build/r-base-Faorqz/r-base-4.2.2.20221110=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c shape.c -o shape.o
-gcc -I"/usr/share/R/include" -DNDEBUG -I./rlang    -fvisibility=hidden -fpic  -g -O2 -ffile-prefix-map=/build/r-base-Faorqz/r-base-4.2.2.20221110=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c size-common.c -o size-common.o
-gcc -I"/usr/share/R/include" -DNDEBUG -I./rlang    -fvisibility=hidden -fpic  -g -O2 -ffile-prefix-map=/build/r-base-Faorqz/r-base-4.2.2.20221110=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c size.c -o size.o
-gcc -I"/usr/share/R/include" -DNDEBUG -I./rlang    -fvisibility=hidden -fpic  -g -O2 -ffile-prefix-map=/build/r-base-Faorqz/r-base-4.2.2.20221110=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c slice-array.c -o slice-array.o
-gcc -I"/usr/share/R/include" -DNDEBUG -I./rlang    -fvisibility=hidden -fpic  -g -O2 -ffile-prefix-map=/build/r-base-Faorqz/r-base-4.2.2.20221110=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c slice-assign-array.c -o slice-assign-array.o
-gcc -I"/usr/share/R/include" -DNDEBUG -I./rlang    -fvisibility=hidden -fpic  -g -O2 -ffile-prefix-map=/build/r-base-Faorqz/r-base-4.2.2.20221110=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c slice-assign.c -o slice-assign.o
-gcc -I"/usr/share/R/include" -DNDEBUG -I./rlang    -fvisibility=hidden -fpic  -g -O2 -ffile-prefix-map=/build/r-base-Faorqz/r-base-4.2.2.20221110=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c slice-chop.c -o slice-chop.o
-gcc -I"/usr/share/R/include" -DNDEBUG -I./rlang    -fvisibility=hidden -fpic  -g -O2 -ffile-prefix-map=/build/r-base-Faorqz/r-base-4.2.2.20221110=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c slice-interleave.c -o slice-interleave.o
-gcc -I"/usr/share/R/include" -DNDEBUG -I./rlang    -fvisibility=hidden -fpic  -g -O2 -ffile-prefix-map=/build/r-base-Faorqz/r-base-4.2.2.20221110=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c slice.c -o slice.o
-gcc -I"/usr/share/R/include" -DNDEBUG -I./rlang    -fvisibility=hidden -fpic  -g -O2 -ffile-prefix-map=/build/r-base-Faorqz/r-base-4.2.2.20221110=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c split.c -o split.o
-gcc -I"/usr/share/R/include" -DNDEBUG -I./rlang    -fvisibility=hidden -fpic  -g -O2 -ffile-prefix-map=/build/r-base-Faorqz/r-base-4.2.2.20221110=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c subscript-loc.c -o subscript-loc.o
-gcc -I"/usr/share/R/include" -DNDEBUG -I./rlang    -fvisibility=hidden -fpic  -g -O2 -ffile-prefix-map=/build/r-base-Faorqz/r-base-4.2.2.20221110=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c subscript.c -o subscript.o
-gcc -I"/usr/share/R/include" -DNDEBUG -I./rlang    -fvisibility=hidden -fpic  -g -O2 -ffile-prefix-map=/build/r-base-Faorqz/r-base-4.2.2.20221110=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c translate.c -o translate.o
-gcc -I"/usr/share/R/include" -DNDEBUG -I./rlang    -fvisibility=hidden -fpic  -g -O2 -ffile-prefix-map=/build/r-base-Faorqz/r-base-4.2.2.20221110=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c type-data-frame.c -o type-data-frame.o
-gcc -I"/usr/share/R/include" -DNDEBUG -I./rlang    -fvisibility=hidden -fpic  -g -O2 -ffile-prefix-map=/build/r-base-Faorqz/r-base-4.2.2.20221110=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c type-date-time.c -o type-date-time.o
-gcc -I"/usr/share/R/include" -DNDEBUG -I./rlang    -fvisibility=hidden -fpic  -g -O2 -ffile-prefix-map=/build/r-base-Faorqz/r-base-4.2.2.20221110=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c type-factor.c -o type-factor.o
-gcc -I"/usr/share/R/include" -DNDEBUG -I./rlang    -fvisibility=hidden -fpic  -g -O2 -ffile-prefix-map=/build/r-base-Faorqz/r-base-4.2.2.20221110=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c type-info.c -o type-info.o
-gcc -I"/usr/share/R/include" -DNDEBUG -I./rlang    -fvisibility=hidden -fpic  -g -O2 -ffile-prefix-map=/build/r-base-Faorqz/r-base-4.2.2.20221110=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c type-integer64.c -o type-integer64.o
-gcc -I"/usr/share/R/include" -DNDEBUG -I./rlang    -fvisibility=hidden -fpic  -g -O2 -ffile-prefix-map=/build/r-base-Faorqz/r-base-4.2.2.20221110=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c type-tibble.c -o type-tibble.o
-gcc -I"/usr/share/R/include" -DNDEBUG -I./rlang    -fvisibility=hidden -fpic  -g -O2 -ffile-prefix-map=/build/r-base-Faorqz/r-base-4.2.2.20221110=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c typeof2-s3.c -o typeof2-s3.o
-gcc -I"/usr/share/R/include" -DNDEBUG -I./rlang    -fvisibility=hidden -fpic  -g -O2 -ffile-prefix-map=/build/r-base-Faorqz/r-base-4.2.2.20221110=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c typeof2.c -o typeof2.o
-gcc -I"/usr/share/R/include" -DNDEBUG -I./rlang    -fvisibility=hidden -fpic  -g -O2 -ffile-prefix-map=/build/r-base-Faorqz/r-base-4.2.2.20221110=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c unspecified.c -o unspecified.o
-gcc -I"/usr/share/R/include" -DNDEBUG -I./rlang    -fvisibility=hidden -fpic  -g -O2 -ffile-prefix-map=/build/r-base-Faorqz/r-base-4.2.2.20221110=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c utils-dispatch.c -o utils-dispatch.o
-gcc -I"/usr/share/R/include" -DNDEBUG -I./rlang    -fvisibility=hidden -fpic  -g -O2 -ffile-prefix-map=/build/r-base-Faorqz/r-base-4.2.2.20221110=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c utils.c -o utils.o
-gcc -I"/usr/share/R/include" -DNDEBUG -I./rlang    -fvisibility=hidden -fpic  -g -O2 -ffile-prefix-map=/build/r-base-Faorqz/r-base-4.2.2.20221110=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c vctrs-core.c -o vctrs-core.o
-gcc -I"/usr/share/R/include" -DNDEBUG -I./rlang    -fvisibility=hidden -fpic  -g -O2 -ffile-prefix-map=/build/r-base-Faorqz/r-base-4.2.2.20221110=. -fstack-protector-strong -Wformat -Werror=format-security -Wdate-time -D_FORTIFY_SOURCE=2  -c version.c -o version.o
-g++ -std=gnu++11 -shared -L/usr/lib/R/lib -Wl,-Bsymbolic-functions -flto=auto -ffat-lto-objects -flto=auto -Wl,-z,relro -o vctrs.so altrep-rle.o altrep.o arg-counter.o arg.o assert.o bind.o c-unchop.o c.o callables.o cast-bare.o cast-dispatch.o cast.o compare.o complete.o conditions.o dictionary.o dim.o empty.o equal.o expand.o fields.o fill.o globals.o group.o growable.o hash.o init.o interval.o match-joint.o match.o missing.o names.o order-collate.o order-groups.o order-sortedness.o order-truelength.o order.o poly-op.o proxy-restore.o proxy.o ptype-common.o ptype.o ptype2-dispatch.o ptype2.o rank.o rep.o rlang-dev.o rlang-rcc.o rlang.o runs.o set.o shape.o size-common.o size.o slice-array.o slice-assign-array.o slice-assign.o slice-chop.o slice-interleave.o slice.o split.o subscript-loc.o subscript.o translate.o type-data-frame.o type-date-time.o type-factor.o type-info.o type-integer64.o type-tibble.o typeof2-s3.o typeof2.o unspecified.o utils-dispatch.o utils.o vctrs-core.o version.o -L/usr/lib/R/lib -lR
-installing to /home/bill/R/x86_64-pc-linux-gnu-library/4.2/00LOCK-vctrs/00new/vctrs/libs
-** R
-** inst
-** byte-compile and prepare package for lazy loading
-** help
-*** installing help indices
-*** copying figures
-** building package indices
-** installing vignettes
-** testing if installed package can be loaded from temporary location
-** checking absolute paths in shared objects and dynamic libraries
-** testing if installed package can be loaded from final location
-** testing if installed package keeps a record of temporary installation path
-* DONE (vctrs)
-* installing *source* package ‘BH’ ...
-** package ‘BH’ successfully unpacked and MD5 sums checked
-** using staged installation
-** inst
-** help
-*** installing help indices
-** building package indices
-** testing if installed package can be loaded from temporary location
-** testing if installed package can be loaded from final location
-** testing if installed package keeps a record of temporary installation path
-* DONE (BH)
+* DONE (knitr)
 
 The downloaded source packages are in
-	‘/tmp/RtmpHotKPU/downloaded_packages’
-* checking for file ‘/tmp/RtmpHotKPU/file2bdb142053d23/rxode2parse/DESCRIPTION’ ... OK
+	‘/tmp/RtmpXxHM6W/downloaded_packages’
+* checking for file ‘/tmp/RtmpXxHM6W/file1e903a66a3d0/rxode2parse/DESCRIPTION’ ... OK
 * preparing ‘rxode2parse’:
 * checking DESCRIPTION meta-information ... OK
 * cleaning src
@@ -244,38 +151,38 @@ installing to /home/bill/R/x86_64-pc-linux-gnu-library/4.2/00LOCK-rxode2parse/00
 * DONE (rxode2parse)
 > 
 > 
-==179633== 
-==179633== HEAP SUMMARY:
-==179633==     in use at exit: 120,511,439 bytes in 24,138 blocks
-==179633==   total heap usage: 2,834,874 allocs, 2,810,736 frees, 1,797,549,814 bytes allocated
-==179633== 
-==179633== 352 bytes in 1 blocks are possibly lost in loss record 179 of 1,837
-==179633==    at 0x484DA83: calloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
-==179633==    by 0x40147D9: calloc (rtld-malloc.h:44)
-==179633==    by 0x40147D9: allocate_dtv (dl-tls.c:375)
-==179633==    by 0x40147D9: _dl_allocate_tls (dl-tls.c:634)
-==179633==    by 0x4DB3834: allocate_stack (allocatestack.c:430)
-==179633==    by 0x4DB3834: pthread_create@@GLIBC_2.34 (pthread_create.c:647)
-==179633==    by 0xD30368E: cli__start_thread (thread.c:54)
-==179633==    by 0xD3036D7: clic_start_thread (thread.c:78)
-==179633==    by 0x49538BD: ??? (in /usr/lib/R/lib/libR.so)
-==179633==    by 0x499577D: ??? (in /usr/lib/R/lib/libR.so)
-==179633==    by 0x49AB6EF: Rf_eval (in /usr/lib/R/lib/libR.so)
-==179633==    by 0x49AD27E: ??? (in /usr/lib/R/lib/libR.so)
-==179633==    by 0x49AE0C4: Rf_applyClosure (in /usr/lib/R/lib/libR.so)
-==179633==    by 0x499B8C9: ??? (in /usr/lib/R/lib/libR.so)
-==179633==    by 0x49AB6EF: Rf_eval (in /usr/lib/R/lib/libR.so)
-==179633== 
-==179633== LEAK SUMMARY:
-==179633==    definitely lost: 0 bytes in 0 blocks
-==179633==    indirectly lost: 0 bytes in 0 blocks
-==179633==      possibly lost: 352 bytes in 1 blocks
-==179633==    still reachable: 120,511,087 bytes in 24,137 blocks
-==179633==                       of which reachable via heuristic:
-==179633==                         newarray           : 4,264 bytes in 1 blocks
-==179633==         suppressed: 0 bytes in 0 blocks
-==179633== Reachable blocks (those to which a pointer was found) are not shown.
-==179633== To see them, rerun with: --leak-check=full --show-leak-kinds=all
-==179633== 
-==179633== For lists of detected and suppressed errors, rerun with: -s
-==179633== ERROR SUMMARY: 1 errors from 1 contexts (suppressed: 0 from 0)
+==7824== 
+==7824== HEAP SUMMARY:
+==7824==     in use at exit: 122,245,804 bytes in 24,974 blocks
+==7824==   total heap usage: 2,604,436 allocs, 2,579,462 frees, 1,751,167,566 bytes allocated
+==7824== 
+==7824== 352 bytes in 1 blocks are possibly lost in loss record 180 of 1,841
+==7824==    at 0x484DA83: calloc (in /usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so)
+==7824==    by 0x40147D9: calloc (rtld-malloc.h:44)
+==7824==    by 0x40147D9: allocate_dtv (dl-tls.c:375)
+==7824==    by 0x40147D9: _dl_allocate_tls (dl-tls.c:634)
+==7824==    by 0x4DB3834: allocate_stack (allocatestack.c:430)
+==7824==    by 0x4DB3834: pthread_create@@GLIBC_2.34 (pthread_create.c:647)
+==7824==    by 0xD30368E: cli__start_thread (thread.c:54)
+==7824==    by 0xD3036D7: clic_start_thread (thread.c:78)
+==7824==    by 0x49538BD: ??? (in /usr/lib/R/lib/libR.so)
+==7824==    by 0x499577D: ??? (in /usr/lib/R/lib/libR.so)
+==7824==    by 0x49AB6EF: Rf_eval (in /usr/lib/R/lib/libR.so)
+==7824==    by 0x49AD27E: ??? (in /usr/lib/R/lib/libR.so)
+==7824==    by 0x49AE0C4: Rf_applyClosure (in /usr/lib/R/lib/libR.so)
+==7824==    by 0x499B8C9: ??? (in /usr/lib/R/lib/libR.so)
+==7824==    by 0x49AB6EF: Rf_eval (in /usr/lib/R/lib/libR.so)
+==7824== 
+==7824== LEAK SUMMARY:
+==7824==    definitely lost: 0 bytes in 0 blocks
+==7824==    indirectly lost: 0 bytes in 0 blocks
+==7824==      possibly lost: 352 bytes in 1 blocks
+==7824==    still reachable: 122,245,452 bytes in 24,973 blocks
+==7824==                       of which reachable via heuristic:
+==7824==                         newarray           : 4,264 bytes in 1 blocks
+==7824==         suppressed: 0 bytes in 0 blocks
+==7824== Reachable blocks (those to which a pointer was found) are not shown.
+==7824== To see them, rerun with: --leak-check=full --show-leak-kinds=all
+==7824== 
+==7824== For lists of detected and suppressed errors, rerun with: -s
+==7824== ERROR SUMMARY: 1 errors from 1 contexts (suppressed: 0 from 0)
