@@ -20,8 +20,11 @@ done
 
 # Packages must be listed in dependency order and must be submodules
 # in the "packages" directory of this git repo
-packages=("nlmixr2data" "lotri" \
-          "rxode2parse" "rxode2random" "rxode2et" "rxode2ll" "rxode2" \
+packages=("dparser-R"
+          "nlmixr2data" "lotri" \
+          "rxode2parse"
+          "nonmem2rx"
+          "rxode2random" "rxode2et" "rxode2ll" "rxode2" \
           "nlmixr2est" "nlmixr2plot" "nlmixr2extra" "nlmixr2")
 
 base_clone_url="git@github.com:nlmixr2/"
